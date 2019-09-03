@@ -1,0 +1,198 @@
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body .tm_page {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	line-height: 1.5;
+}
+
+body .tm_page .row {
+	margin-bottom:0;
+}
+
+body .tm_page a:not(.btn) {
+	text-decoration:none;
+	font-weight:500;
+}
+
+body .tm_page a:not(.btn):hover {
+    text-decoration: underline;
+}
+
+body .tm_page a.btn {
+	text-decoration:none;
+}
+
+.tm_events_container .card {
+	overflow: hidden;
+}
+
+.tm_events_container .card-img-top {
+	height: 10em;
+	background-size: cover;
+	background-position: center center;
+	background-color: #f9f9f9;
+}
+
+.tm_page #calendar .fc-event {
+	margin-bottom:2px;
+}
+
+
+.tm_events_container .card-meta {
+	font-weight: 500;
+}
+
+.tm_events_container .card-meta-tag {
+	display: inline-block;
+	padding-right: 1em;
+}
+
+.tm_events_container .card-meta-tag.keyword {
+	display: inline-block;
+	padding: 0.2em 1em;
+	border-radius: 1em;
+}
+
+.tm_events_container .card-date {
+	display: inline-block;
+	position: absolute;
+	width: 3em;
+	height: 3em;
+	overflow: hidden;
+	border: 1px solid #eee;
+	border-radius: 100%;
+	text-align: center;
+	margin-top: -5px;
+	margin-left: -5px;
+}
+
+.tm_events_container .card-day {
+	font-weight: 700;
+	font-size: 1.1rem;
+	line-height: 1rem;
+	padding-top: 0.4em;
+}
+
+.tm_events_container .card-month {
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 0.7rem;
+}
+
+.tm_events_container h5.card-title {
+	height: 2.2em;
+	margin-left: 3.6em;
+	margin-right: 3.6em;
+	overflow: hidden;
+	font-size: 1.0675rem;
+}
+
+.tm_events_container .card-price {
+	right: 1.1em;
+	position: absolute;
+	top: 1.3em;
+	font-weight: 500;
+}
+
+.tm_events_container .card-group .card:hover {
+	box-shadow: 0 1px 5px rgba(124, 124, 124, 0.1);
+}
+
+.tm_events_container .card-group .card:hover>.card-img-top {
+	opacity: 0.95;
+}
+
+.tm_events_container .card-state {
+	background: #ffffff57;
+	font-weight: 500;
+	height: 100%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.tm_events_container .card-state>div {
+	background: #ffffff;
+	padding: 0.5em 20em;
+	border: 1px solid #00000021;
+	transform: rotate(342deg);
+}
+
+.tm_events_container .btn-primary:hover,
+.tm_events_container .btn-primary:active,
+.tm_events_container .btn-primary:focus {
+	text-decoration:none !important;
+}
+
+.tm_events_container .btn-primary.disabled,
+.tm_events_container .btn-primary:disabled {
+	opacity: 0.3;
+}
+
+.tm_page .line-header {
+	position: relative;
+    text-align: center;    
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
+.tm_page .line-header span {
+    background: #FFF;
+    padding: 0 10px;
+    position: relative;    
+	font-size: 16pt;
+}
+
+.line-header:before {
+    content: '';
+    display: block;
+    border-top: solid 1px rgba(0,0,0,0.05);
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+}
+
+/* Calendar */
+#calendar .fc-day-grid-event {
+    padding: 5px;
+    font-size: 1em;
+	border-width: 0;
+}
+
+#calendar .fc-day-grid-event .fc-time {
+    display: none;
+}
+
+#calendar .fc-scroller {
+   overflow: visible !important;
+}
+
+#calendar .fc-row .fc-content-skeleton td {
+	border-color: #dee2e6 !important;
+}
+
+#calendar .table-bordered {
+    margin: 0;
+}
+
+#calendar .table-bordered thead td, .table-bordered thead th {
+    border-bottom-width: 1px;
+}
+
+#calendar .fc-head tr {
+    background: #f9f9f9;
+}
+
+#calendar .fc-head tr th {
+    padding: 0.75em 0;
+}
+
+#calendar .fc-list-empty-wrap2 {
+    position: relative;
+}

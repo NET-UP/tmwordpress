@@ -1,0 +1,47 @@
+<?php
+	defined("ABSPATH") or die("Permission denied");
+	global $wpdb;
+	$tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config");
+	$tm_config = $tm_config[0];
+    $tm_design = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_design LIMIT 0,1");
+    $tm_design = $tm_design[0];
+	
+	$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'design';
+?>
+
+<div class="wrap">
+	<h1>TicketMachine > <?php echo __('Einstellungen', 'ticketmachine') ?></h1>
+ 
+	<h2 class="nav-tab-wrapper">
+		<a href="?page=tm_settings&tab=design" class="nav-tab <?php echo $active_tab == 'design' ? 'nav-tab-active' : ''; ?>">
+			<?php echo __('Design', 'ticketmachine'); ?>
+		</a>
+		<a href="?page=tm_settings&tab=list" class="nav-tab <?php echo $active_tab == 'list' ? 'nav-tab-active' : ''; ?>">
+			<?php echo __('Liste', 'ticketmachine'); ?>
+		</a>
+		<a href="?page=tm_settings&tab=calendar" class="nav-tab <?php echo $active_tab == 'calendar' ? 'nav-tab-active' : ''; ?>">
+			<?php echo __('Kalender', 'ticketmachine'); ?>
+		</a>
+		<a href="?page=tm_settings&tab=api" class="nav-tab <?php echo $active_tab == 'api' ? 'nav-tab-active' : ''; ?>">
+			<?php echo __('API', 'ticketmachine'); ?>
+		</a>
+	</h2>
+
+	<form method="post" action="#">
+
+		<?php
+			if( $active_tab == 'list' ) {
+				include( plugin_dir_path( __FILE__ ) . 'settings_list.php');
+			}elseif( $active_tab == 'calendar' ) {
+				include( plugin_dir_path( __FILE__ ) . 'settings_calendar.php');
+			}elseif( $active_tab == 'design' ) {
+				include( plugin_dir_path( __FILE__ ) . 'settings_design.php');
+			}elseif( $active_tab == 'api' ) {
+				include( plugin_dir_path( __FILE__ ) . 'settings_api.php');
+			}
+			
+			submit_button(); 
+		?>
+		 
+	</form>
+</div>
