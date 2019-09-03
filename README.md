@@ -1,1 +1,1 @@
-# tmwordpress
+# TicketMachine Wordpress Plugin
