@@ -26,6 +26,10 @@ body .tm_page a.btn {
 	text-decoration:none;
 }
 
+.tm_page .badge {
+	padding: 4px 7px!important;
+}
+
 .tm_page .card {
 	overflow: hidden;
 }
