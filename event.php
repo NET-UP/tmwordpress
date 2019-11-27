@@ -32,7 +32,7 @@ require_once('../../../wp-load.php');
 		$calendar[] = array(
 			'id' =>$tm_event->id,
 			'title' => $tm_event->ev_name,
-			'url' => $globals->webshop_url . "/events/unseated/select_unseated?event_id=" . $tm_event->id,
+			'url' => "/event/?id=" . $tm_event->id,
 			'start' => $start,
 			'end' => $end,
 			'class' => "event-success",
