@@ -3,12 +3,12 @@
 #<% unless @event.categories.select{|ec| ec.ec_price >= 0}.empty? %>
 #<% end %>
         if($event->state["prices_shown"] == true){
-            $tm_output .= '
+            
+        }
+        $tm_output .= '
                 <a class="btn btn-secondary px-3" href="/events">
                     <i class="fas fa-chevron-left"></i> &nbsp; Zurück
-                </a>'
-        ;
-        }
+                </a>';
         return $tm_output;
 	}
 ?>
