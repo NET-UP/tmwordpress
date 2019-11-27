@@ -6,7 +6,7 @@
 		$tm_output = '<div class="col-12 col-md-6 col-xl-4 card-group">';
 			$tm_output .= '<card class="card mb-4">';
 				$tm_output .= '<a aria-label="' . $event->ev_name . ' am ' . date( "d", strtotime($event->ev_date) ) . '. ' . strftime( "%B", strtotime($event->ev_date) ) . ' ' . date( "Y", strtotime($event->ev_date) ) . '" href="/event/?id=' . $event->id . '" class="card-img-top" style="background-image:url( ' . $event->event_img_url . ' )" title="' . $event->ev_name . '">';
-					$tm_output .= '<div></div>';
+					$tm_output .= '<div class="badge badge-danger float-right mt-1 mr-2">'. $event->rules["badge"] .'</div>';
 				$tm_output .= '</a>';
 				$tm_output .= '<div class="card-body position-relative">';
 
