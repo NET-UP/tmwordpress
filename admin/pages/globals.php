@@ -5,7 +5,6 @@
 
 	$globals = new stdClass();
 	$api = new stdClass();
-	$api->auth = new stdClass();
 	
 	$globals->map_query_url = "https://www.google.de/maps?q=";
 	$globals->lang = "de";
@@ -62,27 +61,9 @@
 	if($_GET['q']) {
 		$api->get_event_calendar .= "&ev_name[contains]=" . $globals->search_query;
 	}
-
-	#TODO: Refactor api request
 	
 	$api->get_event_status = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/event_infos/event_contingent_data?event_id=";
 	$api->token = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/token";
-
-	$api->auth->url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/token";
-	$api->auth->key = $api->client_id.":".$api->client_secret;
-	$api->auth->encoded_key = base64_encode($api->auth->key);
-	$api->auth->headers = array();
-	$api->auth->headers = [
-		'Authorization: Basic' . $api->auth->encoded_key,
-		'Content-Type: application/x-www-form-urlencoded'
-	];
-	$api->auth->data = array(
-		'response_type' => 'code',
-		'client_id' => $api->client_id,
-		'redirect_uri' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
-		'state' => $_SESSION['state'],
-		'scope' => 'system',
-	);
 	
 	include('functions.php');
 ?>

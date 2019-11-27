@@ -196,3 +196,15 @@ body .tm_page a.btn {
 #calendar .fc-list-empty-wrap2 {
     position: relative;
 }
+
+td.fc-today {
+    background: #fcf8e3;
+}
+
+.fc-content-skeleton tr {
+	background: none !important;
+}
+
+#calendar .fc-past {
+    background: #f2f2f2;
+}

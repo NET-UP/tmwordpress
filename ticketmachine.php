@@ -12,10 +12,10 @@
 	
 	// load dynamic form for calculator from template
 	function tm_initialize( $atts ) {
+
+		include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
 		
 		if( $atts ) {
-			
-		include( plugin_dir_path( __FILE__ ) . 'globals.php');
 			
 			foreach($_GET as $key => $value) {
 				$atts[$key] = $value;
@@ -85,6 +85,10 @@
                     organizer varchar(64) DEFAULT '' NOT NULL,
                     api_client_id varchar(64) DEFAULT '' NOT NULL,
                     api_client_secret varchar(64) DEFAULT '' NOT NULL,
+                    api_refresh_token varchar(64) DEFAULT '' NOT NULL,
+                    api_access_token varchar(64) DEFAULT '' NOT NULL,
+                    api_refresh_interval int(11) DEFAULT 7200 NOT NULL,
+                    api_last_refresh datetime(6) DEFAULT NULL,
                     api_environment varchar(64) DEFAULT 'shop' NOT NULL,
                     show_list bit(1) DEFAULT 1 NOT NULL,
                     show_calendar bit(1) DEFAULT 1 NOT NULL,

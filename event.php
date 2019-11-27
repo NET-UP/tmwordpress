@@ -3,7 +3,7 @@ require_once('../../../wp-load.php');
 
 	include "globals.php";
 
-	$tm_json = apiRequest($api->get_event_list);
+	$tm_json = apiRequest($api->get_event_calendar);
 
 	$calendar = array();
 
@@ -23,6 +23,12 @@ require_once('../../../wp-load.php');
 		
 		$start = strtotime($tm_event->ev_date) * 1000;
 		$end = strtotime($tm_event->endtime) * 1000;	
+
+		if ($end < (strtotime("midnight", time())*1000)){
+			$tm_event->status_color = "#eeeeee";
+			$tm_event->status_text_color = "#999999";
+		}
+		
 		$calendar[] = array(
 			'id' =>$tm_event->id,
 			'title' => $tm_event->ev_name,

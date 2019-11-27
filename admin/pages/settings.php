@@ -1,12 +1,21 @@
 <?php
 	defined("ABSPATH") or die("Permission denied");
 	global $wpdb;
-	$tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config");
-	$tm_config = $tm_config[0];
     $tm_design = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_design LIMIT 0,1");
     $tm_design = $tm_design[0];
 	
 	$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'design';
+	
+
+	if($_GET['code']){
+		echo "success";
+		$tm_config->api_access_token = "test";
+		#TODO: Send auth code to /oauth/token to retrieve access & refresh tokens.
+		# Save access & refresh tokens
+		# Save last_refresh (datetime)
+	  }
+
+	#if($tm_config->api_access_token){
 ?>
 
 <div class="wrap">
@@ -22,9 +31,9 @@
 		<a href="?page=tm_settings&tab=calendar" class="nav-tab <?php echo $active_tab == 'calendar' ? 'nav-tab-active' : ''; ?>">
 			<?php echo __('Kalender', 'ticketmachine'); ?>
 		</a>
-		<a href="?page=tm_settings&tab=api" class="nav-tab <?php echo $active_tab == 'api' ? 'nav-tab-active' : ''; ?>">
-			<?php echo __('API', 'ticketmachine'); ?>
-		</a>
+		<!-- <a href="?page=tm_settings&tab=api" class="nav-tab <?php #echo $active_tab == 'api' ? 'nav-tab-active' : ''; ?>">
+			<?php #echo __('API', 'ticketmachine'); ?>
+		</a> -->
 	</h2>
 
 	<form method="post" action="#">
@@ -45,3 +54,9 @@
 		 
 	</form>
 </div>
+
+<?php	
+	#}else{
+	#	include( plugin_dir_path( __FILE__ ) . 'connect.php');
+	#}
+?>

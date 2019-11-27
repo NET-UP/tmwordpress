@@ -48,10 +48,10 @@
 
     .tm_events_container .btn-primary:hover,
     .tm_events_container .btn-primary:active,
-    .tm_events_container .btn-primary:focus, {
-        background-color: <?php echo $tm_design->button_primary_background_color_hover; ?>;
+    .tm_events_container .btn-primary:focus {
+        background-color: <?php echo $tm_design->button_primary_background_color_hover; ?> !important;
         color: <?php echo $tm_design->button_primary_text_color_hover; ?> !important;
-        border-color: <?php echo $tm_design->button_primary_border_color_hover; ?>;
+        border-color: <?php echo $tm_design->button_primary_border_color_hover; ?> !important;
     }
 
     .btn-secondary,
@@ -67,7 +67,7 @@
     .btn-secondary:active,
     .btn-secondary:focus,
     .show>.btn-secondary.dropdown-toggle {
-        background-color: <?php echo $tm_design->button_secondary_background_color_hover; ?>;
+        background-color: <?php echo $tm_design->button_secondary_background_color_hover; ?> !important;
         color: <?php echo $tm_design->button_secondary_text_color_hover; ?> !important;
-        border-color: <?php echo $tm_design->button_secondary_border_color_hover; ?>;
+        border-color: <?php echo $tm_design->button_secondary_border_color_hover; ?> !important;
     }
