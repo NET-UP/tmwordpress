@@ -19,10 +19,12 @@
                         '. $event->ev_description .'
                     </div>
 
-                    <div class="card-meta">
-                        'foreach($event->tags as $tags) {
-                            echo "<div card-meta-tag keyword>". $tags ."</div>"
-                        }'
+                    <div class="card-meta">';
+
+                    foreach($event->tags as $tags) {
+                        $tm_output .= "<div card-meta-tag keyword>". $tags ."</div>";
+                    }
+        $tm_output .= '
                     </div>
 
                 </div>
