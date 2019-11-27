@@ -1,4 +1,4 @@
-<? php
+<?php
     function tm_event_page_information ( $event, $globals ) {
 
         $tm_output .= '
