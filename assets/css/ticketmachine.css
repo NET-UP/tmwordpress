@@ -26,38 +26,38 @@ body .tm_page a.btn {
 	text-decoration:none;
 }
 
-.tm_events_container .card {
+.tm_page .card {
 	overflow: hidden;
 }
 
-.tm_events_container .card-img-top {
+.tm_page .card-img-top {
 	height: 10em;
 	background-size: cover;
 	background-position: center center;
 	background-color: #f9f9f9;
 }
 
-.tm_page #calendar .fc-event {
+.tm_page .fc-event {
 	margin-bottom:2px;
 }
 
 
-.tm_events_container .card-meta {
+.tm_page .card-meta {
 	font-weight: 500;
 }
 
-.tm_events_container .card-meta-tag {
+.tm_page .card-meta-tag {
 	display: inline-block;
 	padding-right: 1em;
 }
 
-.tm_events_container .card-meta-tag.keyword {
+.tm_page .card-meta-tag.keyword {
 	display: inline-block;
 	padding: 0.2em 1em;
 	border-radius: 1em;
 }
 
-.tm_events_container .card-date {
+.tm_page .card-date {
 	display: inline-block;
 	position: absolute;
 	width: 3em;
@@ -70,20 +70,20 @@ body .tm_page a.btn {
 	margin-left: -5px;
 }
 
-.tm_events_container .card-day {
+.tm_page .card-day {
 	font-weight: 700;
 	font-size: 1.1rem;
 	line-height: 1rem;
 	padding-top: 0.4em;
 }
 
-.tm_events_container .card-month {
+.tm_page .card-month {
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 0.7rem;
 }
 
-.tm_events_container h5.card-title {
+.tm_page h5.card-title {
 	height: 2.2em;
 	margin-left: 3.6em;
 	margin-right: 3.6em;
@@ -91,22 +91,22 @@ body .tm_page a.btn {
 	font-size: 1.0675rem;
 }
 
-.tm_events_container .card-price {
+.tm_page .card-price {
 	right: 1.1em;
 	position: absolute;
 	top: 1.3em;
 	font-weight: 500;
 }
 
-.tm_events_container .card-group .card:hover {
+.tm_page .card-group .card:hover {
 	box-shadow: 0 1px 5px rgba(124, 124, 124, 0.1);
 }
 
-.tm_events_container .card-group .card:hover>.card-img-top {
+.tm_page .card-group .card:hover>.card-img-top {
 	opacity: 0.95;
 }
 
-.tm_events_container .card-state {
+.tm_page .card-state {
 	background: #ffffff57;
 	font-weight: 500;
 	height: 100%;
@@ -115,21 +115,21 @@ body .tm_page a.btn {
 	justify-content: center;
 }
 
-.tm_events_container .card-state>div {
+.tm_page .card-state>div {
 	background: #ffffff;
 	padding: 0.5em 20em;
 	border: 1px solid #00000021;
 	transform: rotate(342deg);
 }
 
-.tm_events_container .btn-primary:hover,
-.tm_events_container .btn-primary:active,
-.tm_events_container .btn-primary:focus {
+.tm_page .btn-primary:hover,
+.tm_page .btn-primary:active,
+.tm_page .btn-primary:focus {
 	text-decoration:none !important;
 }
 
-.tm_events_container .btn-primary.disabled,
-.tm_events_container .btn-primary:disabled {
+.tm_page .btn-primary.disabled,
+.tm_page .btn-primary:disabled {
 	opacity: 0.3;
 }
 
