@@ -5,7 +5,7 @@
 		
 		$tm_output = '<div class="col-12 col-md-6 col-xl-4 card-group">';
 			$tm_output .= '<card class="card mb-4">';
-				$tm_output .= '<a aria-label="' . $event->ev_name . ' am ' . date( "d", strtotime($event->ev_date) ) . '. ' . strftime( "%B", strtotime($event->ev_date) ) . ' ' . date( "Y", strtotime($event->ev_date) ) . '" href="' . $globals->webshop_url . '/events/unbestuhlt/select_unseated?event_id=' . $event->id . '" class="card-img-top" style="background-image:url( ' . $event->event_img_url . ' )" title="' . $event->ev_name . '">';
+				$tm_output .= '<a aria-label="' . $event->ev_name . ' am ' . date( "d", strtotime($event->ev_date) ) . '. ' . strftime( "%B", strtotime($event->ev_date) ) . ' ' . date( "Y", strtotime($event->ev_date) ) . '" href="/event/?id=' . $event->id . '" class="card-img-top" style="background-image:url( ' . $event->event_img_url . ' )" title="' . $event->ev_name . '">';
 					$tm_output .= '<div></div>';
 				$tm_output .= '</a>';
 				$tm_output .= '<div class="card-body position-relative">';
@@ -25,7 +25,7 @@
 					  $tm_output .= '</p>';
 					$tm_output .= '</div>';
 					$tm_output .= '<div class="col-sm-4 col-md-5">';
-					  $tm_output .= '<a aria-label="' . __("Zur Ticketauswahlseite für ") . $event->ev_name  . '" href="' . $globals->webshop_url . '/events/unbestuhlt/select_unseated?event_id=' . $event->id . '" class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . __("Zur Ticketauswahlseite ") . '">';
+					  $tm_output .= '<a aria-label="' . __("Zur Ticketauswahlseite für ") . $event->ev_name  . '" href="/event/?id=' . $event->id . '" class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . __("Zur Ticketauswahlseite ") . '">';
 						$tm_output .= '<i class="fas fa-ticket-alt"></i> &nbsp;' . __("Tickets");
 					  $tm_output .= '</a>';
 					$tm_output .= '</div>';
