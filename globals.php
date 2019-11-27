@@ -48,6 +48,11 @@
 		$api->get_event_list .= "&ev_name[contains]=" . $globals->search_query;
 	}
 	
+	/* Get single event */
+	$api->get_single_event = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
+	
+	$api->get_single_event .= "id[eq]=" . $_GET['id'];
+	
 	/* Get event calendar */
 	$api->get_event_calendar = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
 

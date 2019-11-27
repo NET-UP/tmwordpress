@@ -31,7 +31,7 @@
 					break;
 				case 'event_details':
 					include "pages/event.php";
-					$tm_output .= tm_display_event( $atts, $globals );
+					$tm_output .= tm_display_event( $atts, $globals, $api );
 					break;
 			}
 
