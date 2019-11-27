@@ -22,7 +22,7 @@
                     <div class="card-meta">';
 
                     foreach($event->tags as $tags) {
-                        $tm_output .= "<div card-meta-tag keyword>". $tags ."</div>";
+                        $tm_output .= "<div class='card-meta-tag keyword'>". $tags ."</div>";
                     }
         $tm_output .= '
                     </div>
