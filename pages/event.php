@@ -10,9 +10,7 @@
 					<div class="col-12">
 						<h5>
 						<span>
-							<h3 class="d-inline-block" role="fe_nu_ev_name">' .
-								$event->ev_name .
-							'</h3>
+							<h3 class="d-inline-block" role="fe_nu_ev_name">' . $event->ev_name . '</h3>
 						</span>
 						</h5>
 					</div>
