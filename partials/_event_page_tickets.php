@@ -4,8 +4,8 @@
 #<% end %>
         if($event->state["prices_shown"] == true){
             $tm_output .= '
-                <a href="/events">
-                    <i class="fas fa-chevron-left"></i> &nbsp;<%= custom_locale("webshop.check_out.billinginfo.back") %>
+                <a class="btn btn-secondary px-3" href="/events">
+                    <i class="fas fa-chevron-left"></i> &nbsp; Zurück
                 </a>'
         ;
         }
