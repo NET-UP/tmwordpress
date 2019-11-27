@@ -2,8 +2,9 @@
 
 	function tm_display_event ( $atts, $globals, $api ) {
 
-		$tm_json= apiRequest($api->get_single_event);
-		$event = (object)$tm_json['result'];
+		$tm_json = apiRequest($api->get_single_event);
+
+		$event = (object)$tm_json['result'][0];
 		#print_r($event);
 
 		$tm_output .= '
