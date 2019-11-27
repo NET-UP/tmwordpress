@@ -3,7 +3,7 @@
 	/*
 	Plugin Name: TicketMachine
 	Description: Easily sell tickets for your events
-	Version:     0.8.7
+	Version:     0.7.1
 	Author:      NET-UP
 	Author URI:  https://www.net-up.de
 	*/
