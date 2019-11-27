@@ -4,7 +4,7 @@
 
 		$tm_json = apiRequest($api->get_single_event);
 
-		$event = (object)$tm_json['result'][0];
+		$event = (object)$tm_json['result'];
 		#print_r($event);
 
 		$tm_output .= '
