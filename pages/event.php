@@ -3,6 +3,7 @@
 	function tm_display_event ( $atts, $globals, $api ) {
 
 		$event = apiRequest($api->get_single_event);
+		print_r($event);
 
 		$tm_output .= '
 			<div class=	"col-12">
