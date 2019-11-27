@@ -28,6 +28,7 @@ body .tm_page a.btn {
 
 .tm_page .badge {
 	padding: 4px 7px!important;
+    font-size: 0.8em;
 }
 
 .tm_page .card {
