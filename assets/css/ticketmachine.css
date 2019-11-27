@@ -41,6 +41,13 @@ body .tm_page a.btn {
 	background-color: #f9f9f9;
 }
 
+.tm_page .card-meta-tag.keyword {
+    display: inline-block;
+    background: #eee;
+    padding: .2em 1em;
+    border-radius: 1em;
+}
+
 .tm_page .fc-event {
 	margin-bottom:2px;
 }
