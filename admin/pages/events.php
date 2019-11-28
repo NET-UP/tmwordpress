@@ -467,22 +467,6 @@ class TT_Example_List_Table extends WP_List_Table {
 }
 
 
-
-
-
-/** ************************ REGISTER THE TEST PAGE ****************************
- *******************************************************************************
- * Now we just need to define an admin page. For this example, we'll add a top-level
- * menu item to the bottom of the admin menus.
- */
-function tt_add_menu_items(){
-    add_menu_page('Example Plugin List Table', 'List Table Example', 'activate_plugins', 'tt_list_test', 'tt_render_list_page');
-} add_action('admin_menu', 'tt_add_menu_items');
-
-
-
-
-
 /** *************************** RENDER TEST PAGE ********************************
  *******************************************************************************
  * This function renders the admin page and the example list table. Although it's
