@@ -10,6 +10,7 @@
 				"show_list" => $_POST['show_list'],
 			);
 		if (!empty($tm_config)) {
+			echo "saved";
 			$wpdb->update(
 				$wpdb->prefix . "ticketmachine_config",
 				$save_array,
