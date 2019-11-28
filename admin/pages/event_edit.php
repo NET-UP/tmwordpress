@@ -16,7 +16,7 @@
         }
     ?>
    
-    <label class="screen-reader-text" id="event-name-prompt-text" for="ev_name">Event Name hier eingeben</label>
+    <label class="screen-reader-text" id="event-name-prompt-text" for="ev_name"><?php echo __('Event Name hier eingeben', 'ticketmachine') ?></label>
     <input type="text" name="ev_name" size="30" id="ev_name" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
     <?php 
         $content = '';
@@ -26,30 +26,30 @@
     ?>
 
     <div class="col-xs-12">
-        <label for="event_edit_locationname">Veranstaltungsort</label>
+        <label for="event_edit_locationname"><?php echo __('Veranstaltungsort', 'ticketmachine') ?></label>
         <input id="event_location_name" type="text" class="form-control">
         <div class="row">
             <div class="col-xs-8">
-                <label for="event_edit_strasse">Straße</label>
+                <label for="event_edit_strasse"><?php echo __('Straße', 'ticketmachine') ?></label>
                 <input id="event_edit_strasse" type="text" class="form-control" value="">
             </div>
             <div class="col-xs-4">
-                <label for="house_number">Haus-Nr.</label>
+                <label for="house_number"><?php echo __('Haus-Nr.', 'ticketmachine') ?></label>
                 <input id="event_edit_hausnr" type="text" class="form-control">
             </div>
         </div>
         <div class="row">
             <div class="col-xs-4">
-                <label for="event_edit_plz">PLZ</label>
+                <label for="event_edit_plz"><?php echo __('PLZ', 'ticketmachine') ?></label>
                 <input id="event_edit_plz" type="text" class="form-control">
             </div>
             <div class="col-xs-8">
-                <label for="event_edit_ort">Ort</label>
+                <label for="event_edit_ort"><?php echo __('Ort', 'ticketmachine') ?></label>
                 <input id="event_edit_ort" type="text" class="form-control">
             </div>
         </div>
         <div class="row">
-            <label for="event_edit_land">Land</label>
+            <label for="event_edit_land"><?php echo __('Land', 'ticketmachine') ?></label>
             <input id="event_edit_land" type="text" class="form-control">
         </div>
     </div>
@@ -57,7 +57,7 @@
     <div class="col-xs-12">
         <div class="row">
             <div class="col-xs-4">
-                <label>Einlasszeit</label>
+                <label><?php echo __('Einlasszeit', 'ticketmachine') ?></label>
             </div>
             <div class="col-xs-4">
                 <div class="input-group">
@@ -78,7 +78,7 @@
         </div>
         <div class="row">
             <div class="col-xs-4">
-                <label>Veranstaltungsbeginn</label>
+                <label><?php echo __('Veranstaltungsbeginn', 'ticketmachine') ?></label>
             </div>
             <div class="col-xs-4">
                 <div class="input-group">
@@ -99,7 +99,7 @@
         </div>
         <div class="row">
             <div class="col-xs-4">
-                <label>Veranstaltungsende</label>
+                <label><?php echo __('Veranstaltungsende', 'ticketmachine') ?></label>
             </div>
             <div class="col-xs-4">
                 <div class="input-group">
