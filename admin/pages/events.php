@@ -148,8 +148,6 @@ class TT_Example_List_Table extends WP_List_Table {
     function __construct(){
         global $status, $page;
     
-        $tm_json = apiRequest($api->get_event_list);
-        return print_r($tm_json);
         //Set parent defaults
         parent::__construct( array(
             'singular'  => 'movie',     //singular name of the listed records
@@ -506,7 +504,10 @@ function tt_render_list_page(){
             <!-- Now we can render the completed list table -->
             <?php $testListTable->display() ?>
         </form>
-        
+        <?php
+                $tm_json = apiRequest($api->get_event_list);
+                return print_r($tm_json);
+        ?>
     </div>
     <?php
 }
