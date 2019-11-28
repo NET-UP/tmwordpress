@@ -75,71 +75,6 @@ include(str_replace("/admin/pages", "", plugin_dir_path( __FILE__ )) . 'globals.
  * Our theme for this list table is going to be movies.
  */
 class TT_Example_List_Table extends WP_List_Table {
-    
-    /** ************************************************************************
-     * Normally we would be querying data from a database and manipulating that
-     * for use in your list table. For this example, we're going to simplify it
-     * slightly and create a pre-built array. Think of this as the data that might
-     * be returned by $wpdb->query()
-     * 
-     * In a real-world scenario, you would make your own custom query inside
-     * this class' prepare_items() method.
-     * 
-     * @var array 
-     **************************************************************************/
-
-
-    var $example_data = array(
-            array(
-                'ID'        => 1,
-                'title'     => '300',
-                'rating'    => 'R',
-                'director'  => 'Zach Snyder'
-            ),
-            array(
-                'ID'        => 2,
-                'title'     => 'Eyes Wide Shut',
-                'rating'    => 'R',
-                'director'  => 'Stanley Kubrick'
-            ),
-            array(
-                'ID'        => 3,
-                'title'     => 'Moulin Rouge!',
-                'rating'    => 'PG-13',
-                'director'  => 'Baz Luhrman'
-            ),
-            array(
-                'ID'        => 4,
-                'title'     => 'Snow White',
-                'rating'    => 'G',
-                'director'  => 'Walt Disney'
-            ),
-            array(
-                'ID'        => 5,
-                'title'     => 'Super 8',
-                'rating'    => 'PG-13',
-                'director'  => 'JJ Abrams'
-            ),
-            array(
-                'ID'        => 6,
-                'title'     => 'The Fountain',
-                'rating'    => 'PG-13',
-                'director'  => 'Darren Aronofsky'
-            ),
-            array(
-                'ID'        => 7,
-                'title'     => 'Watchmen',
-                'rating'    => 'R',
-                'director'  => 'Zach Snyder'
-            ),
-            array(
-                'ID'        => 8,
-                'title'     => '2001',
-                'rating'    => 'G',
-                'director'  => 'Stanley Kubrick'
-            ),
-        );
-
 
     /** ************************************************************************
      * REQUIRED. Set up a constructor that references the parent constructor. We 
@@ -159,7 +94,7 @@ class TT_Example_List_Table extends WP_List_Table {
 
     function get_events(){
         global $globals, $api;
-        $tm_json = apiRequest($api->get_event_list);
+        $tm_json = apiRequest($api->get_event_list_backend);
         return $tm_json['result'];
     }
 
