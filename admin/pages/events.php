@@ -152,7 +152,7 @@ class TT_Example_List_Table extends WP_List_Table {
         global $status, $page;
     
         $tm_json = apiRequest($api->get_event_list);
-        print_r($tm_json);
+        return print_r($tm_json);
         //Set parent defaults
         parent::__construct( array(
             'singular'  => 'movie',     //singular name of the listed records
