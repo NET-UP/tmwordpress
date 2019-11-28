@@ -18,6 +18,7 @@
 			);
 		}else{
 			echo "failed";
+			print_r($tm_config);
 		}
 		$tm_config = (object)$_POST;
 	}
