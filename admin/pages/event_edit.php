@@ -4,7 +4,7 @@
     $event = (object)$tm_json;
 ?>
 <?php
-    print_r($event);
+    print_r($event->ev_name);
 ?>
 
 <div class="wrap">
