@@ -3,9 +3,6 @@
     $tm_json = apiRequest($api->get_single_event);
     $event = (object)$tm_json;
 ?>
-<?php
-    print_r($event);
-?>
 
 <form name="event" action="" method="post" id="event">
     <div id="eventstuff">
