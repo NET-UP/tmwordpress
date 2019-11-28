@@ -423,25 +423,33 @@ class Event_List_Table extends WP_List_Table {
  * it's the way the list tables are used in the WordPress core.
  */
 function tt_render_list_page(){
+
+    if( !$_GET['action'] == "edit" && isset($_GET['id']) ) {
+
     
-    //Create an instance of our package class...
-    $EventListTable = new Event_List_Table();
-    //Fetch, prepare, sort, and filter our data...
-    $EventListTable->prepare_items();
-    
-    ?>
-    <div class="wrap">
+    } else {
         
-        <div id="icon-users" class="icon32"><br/></div>
-        <h2>TicketMachine > <?php echo __('Veranstaltungen'); ?></h2>
+        //Create an instance of our package class...
+        $EventListTable = new Event_List_Table();
+        //Fetch, prepare, sort, and filter our data...
+        $EventListTable->prepare_items();
         
-        <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
-        <form id="movies-filter" method="get">
-            <!-- For plugins, we also need to ensure that the form posts back to our current page -->
-            <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
-            <!-- Now we can render the completed list table -->
-            <?php $EventListTable->display() ?>
-        </form>
-    </div>
-    <?php
+        ?>
+        <div class="wrap">
+            
+            <div id="icon-users" class="icon32"><br/></div>
+            <h2>TicketMachine > <?php echo __('Veranstaltungen'); ?></h2>
+            
+            <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
+            <form id="movies-filter" method="get">
+                <!-- For plugins, we also need to ensure that the form posts back to our current page -->
+                <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
+                <!-- Now we can render the completed list table -->
+                <?php $EventListTable->display() ?>
+            </form>
+        </div>
+        <?php
+
+    }
+
 }

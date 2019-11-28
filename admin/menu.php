@@ -34,17 +34,6 @@
 			null,
 			98
 		);
-		
-		add_submenu_page(
-			'options.php',
-			__('Event bearbeiten', 'ticketmachine'),
-			__('Event bearbeiten', 'ticketmachine'),
-			'manage_options',
-			'tm_edit_event',
-			'tm_edit_event_page',
-			null,
-			97
-		);
 	}
 
 	add_filter( 'submenu_file', function($submenu_file){
