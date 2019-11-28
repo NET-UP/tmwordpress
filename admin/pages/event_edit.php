@@ -32,7 +32,7 @@
                     <div id="postbox-container-1">
                         <div class="postbox">
                             <button type="button" class="handlediv" aria-expanded="true">
-                                <span class="screen-reader-text">Bedienfeld umschalten: Standort</span>
+                                <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Standort', 'ticketmachine') ?></span>
                                 <span class="toggle-indicator" aria-hidden="true"></span>
                             </button>
                             <h2 class="hndle ui-sortable-handle">
@@ -71,7 +71,7 @@
 
                         <div class="postbox">
                             <button type="button" class="handlediv" aria-expanded="true">
-                                <span class="screen-reader-text">Bedienfeld umschalten: Termine</span>
+                                <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Termine', 'ticketmachine') ?></span>
                                 <span class="toggle-indicator" aria-hidden="true"></span>
                             </button>
                             <h2 class="hndle ui-sortable-handle">
@@ -148,11 +148,11 @@
                     <div id="side-sortables" class="meta-box-sortables ui-sortable">
                         <div id="submitdiv" class="postbox">
                             <button type="button" class="handlediv" aria-expanded="true">
-                                <span class="screen-reader-text">Bedienfeld umschalten: Veröffentlichen</span>
+                                <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Veröffentlichen', 'ticketmachine') ?></span>
                                 <span class="toggle-indicator" aria-hidden="true"></span>
                             </button>
                             <h2 class="hndle ui-sortable-handle">
-                                <span>Veröffentlichen</span>
+                                <span><?php echo __('Veröffentlichen', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
                                 <div class="submitbox" id="submitpost">
@@ -161,12 +161,12 @@
                                             <div class="misc-pub-section misc-pub-post-status">
                                                 <span>Status: </span>
                                                 <select>
-                                                    <option value="Entwurf">Entwurf</option>
+                                                    <option value="Entwurf"><?php echo __('Entwurf', 'ticketmachine') ?></option>
                                                 </select>
                                             </div>
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
                                                 <input checked="checked" type="checkbox">
-                                                <span>Aus Veranstaltungs-Liste ausblenden</span>
+                                                <span><?php echo __('Aus Veranstaltungs-Liste ausblenden', 'ticketmachine') ?></span>
                                             </div>
                                         </div>
                                     </div>
@@ -181,30 +181,30 @@
                         </div>
                         <div id="eventimagediv" class="postbox">
                             <button type="button" class="handlediv" aria-expanded="true">
-                                <span class="screen-reader-text">Bedienfeld umschalten: Eventbild</span>
+                                <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Eventbild', 'ticketmachine') ?></span>
                                 <span class="toggle-indicator" aria-hidden="true"></span>
                             </button>
                             <h2 class="hndle ui-sortable-handle">
-                                <span>Eventbild</span>
+                                <span><?php echo __('Eventbild', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
                                 <p class="hide-if-no-js">
-                                    <a href="" id="set-event-thumbnail" class="thickbox">Eventbild festlegen</a> <!-- needs correct href -->
+                                    <a href="" id="set-event-thumbnail" class="thickbox"><?php echo __('Eventbild festlegen', 'ticketmachine') ?></a> <!-- needs correct href -->
                                 </p>
                                 <input type="hidden" id="_thumbnail_id" name="_thumbnail_id" value="-1">
                             </div>
                         </div>
                         <div id="eventtags" class="postbox">
                             <button type="button" class="handlediv" aria-expanded="true">
-                                <span class="screen-reader-text">Bedienfeld umschalten: Seiten-Attribute</span>
+                                <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Seiten-Attribute', 'ticketmachine') ?></span>
                                 <span class="toggle-indicator" aria-hidden="true"></span>
                             </button>
                             <h2 class="hndle ui-sortable-handle">
-                                <span>Schlagwörter</span>
+                                <span><?php echo __('Schlagwörter', 'ticketmachine') ?></span>
                             </h2>
                             <input type="text">
                             <button type="button">OK</button>
-                            <span>Schlagwörter durch Kommas trennen.</span>
+                            <span><?php echo __('Schlagwörter durch Kommas trennen.', 'ticketmachine') ?></span>
                         </div>
                     </div>
                 </div>
