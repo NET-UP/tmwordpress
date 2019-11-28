@@ -504,10 +504,13 @@ function tt_render_list_page(){
             <!-- Now we can render the completed list table -->
             <?php $testListTable->display() ?>
         </form>
-        <?php
-                $tm_json = apiRequest($api->get_event_list);
-                print_r($tm_json);
-        ?>
+
+        <pre id="example-data">
+            <?php
+                    $tm_json = apiRequest($api->get_event_list);
+                    print_r($tm_json);
+            ?>
+        </pre>
     </div>
     <?php
 }
