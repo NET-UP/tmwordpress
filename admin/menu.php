@@ -9,16 +9,16 @@
 			null,
 			98
 		);
-		// add_submenu_page(
-			// 'tm_events',
-			// __('Veranstaltungen', 'ticketmachine'),
-			// __('Veranstaltungen', 'ticketmachine'),
-			// 'manage_options',
-			// 'tm_events',
-			// 'tm_events_page',
-			// null,
-			// 98
-		// );
+		add_submenu_page(
+			'tm_events',
+			__('Veranstaltungen', 'ticketmachine'),
+			__('Veranstaltungen', 'ticketmachine'),
+			'manage_options',
+			'tm_events',
+			'tm_events_page',
+			null,
+			98
+		);
 		add_submenu_page(
 			'tm_settings',
 			__('Einstellungen', 'ticketmachine'),
