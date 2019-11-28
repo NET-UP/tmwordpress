@@ -156,8 +156,8 @@ class TT_Example_List_Table extends WP_List_Table {
         
         //Build row actions
         $actions = array(
-            'edit'      => sprintf('<a href="?page=%s&action=%s&event=%s">Edit</a>',$_REQUEST['page'],'edit',$item['id']),
-            'delete'    => sprintf('<a href="?page=%s&action=%s&event=%s">Delete</a>',$_REQUEST['page'],'delete',$item['id']),
+            'edit'      => sprintf('<a href="?page=%s&action=%s&event=%s">Bearbeiten</a>',$_REQUEST['page'],'edit',$item['id']),
+            'delete'    => sprintf('<a href="?page=%s&action=%s&event=%s">Löschen</a>',$_REQUEST['page'],'delete',$item['id']),
         );
         
         //Return the title contents
@@ -202,9 +202,9 @@ class TT_Example_List_Table extends WP_List_Table {
      **************************************************************************/
     function get_columns(){
         $columns = array(
-            'cb'        => '<input type="checkbox" />', //Render a checkbox instead of text
-            'ev_name'     => 'Name',
-            'tags'    => 'Schlagwörter',
+            'cb'       => '<input type="checkbox" />', //Render a checkbox instead of text
+            'ev_name'  => 'Name',
+            'tags'     => 'Schlagwörter',
             'ev_date'  => 'Anfangsdatum',
             'endtime'  => 'Enddatum'
         );
@@ -232,7 +232,6 @@ class TT_Example_List_Table extends WP_List_Table {
             'tags'      => array('tags',false),
             'ev_date'   => array('ev_date',false),
             'endtime'   => array('endtime',false)
-            
         );
         return $sortable_columns;
     }
