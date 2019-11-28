@@ -9,6 +9,7 @@
 			null,
 			98
 		);
+		add_menu_page('Example Plugin List Table', 'List Table Example', 'activate_plugins', 'tt_list_test', 'tt_render_list_page');
 		add_submenu_page(
 			'tm_events',
 			__('Veranstaltungen', 'ticketmachine'),
