@@ -10,16 +10,22 @@
 				"show_list" => $_POST['show_list'],
 			);
 		if (!empty($tm_config)) {
-			echo "saved";
 			$wpdb->update(
 				$wpdb->prefix . "ticketmachine_config",
 				$save_array,
 				array('id' => $tm_config->id)
 			);
+			?>
+			<div class="updated notice">
+				<p><?php echo __('Gespeichert!'); ?></p>
+			</div>
+			<?php
 		}else{
-			echo "failed";
-			print_r($tm_config);
-			print_r($tm_design);
+			?>
+			<div class="updated notice">
+				<p><?php echo __('Etwas ist schiefgelaufen.'); ?></p>
+			</div>
+			<?php
 		}
 		$tm_config = (object)$_POST;
 	}

@@ -30,6 +30,17 @@
 				$save_array,
 				array('id' => $tm_design->id)
 			);
+			?>
+			<div class="updated notice">
+				<p><?php echo __('Gespeichert!'); ?></p>
+			</div>
+			<?php
+		}else{
+			?>
+			<div class="updated notice">
+				<p><?php echo __('Etwas ist schiefgelaufen.'); ?></p>
+			</div>
+			<?php
 		}
 		echo $_POST['button_primary_background_color'];
 		$tm_design = (object)$_POST;

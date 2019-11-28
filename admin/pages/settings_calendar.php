@@ -15,6 +15,17 @@
 				$save_array,
 				array('id' => $tm_config->id)
 			);
+			?>
+			<div class="updated notice">
+				<p><?php echo __('Gespeichert!'); ?></p>
+			</div>
+			<?php
+		}else{
+			?>
+			<div class="updated notice">
+				<p><?php echo __('Etwas ist schiefgelaufen.'); ?></p>
+			</div>
+			<?php
 		}
 		$tm_config = (object)$_POST;
 	}
