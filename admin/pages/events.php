@@ -425,9 +425,9 @@ class Event_List_Table extends WP_List_Table {
 function tt_render_list_page(){
     
     //Create an instance of our package class...
-    $testListTable = new Event_List_Table();
+    $EventListTable = new Event_List_Table();
     //Fetch, prepare, sort, and filter our data...
-    $testListTable->prepare_items();
+    $EventListTable->prepare_items();
     
     ?>
     <div class="wrap">
@@ -440,7 +440,7 @@ function tt_render_list_page(){
             <!-- For plugins, we also need to ensure that the form posts back to our current page -->
             <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
             <!-- Now we can render the completed list table -->
-            <?php $testListTable->display() ?>
+            <?php $EventListTable->display() ?>
         </form>
     </div>
     <?php
