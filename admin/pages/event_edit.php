@@ -166,7 +166,7 @@
                                             </div>
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
                                                 <input checked="checked" type="checkbox">
-                                                <span>Aus Veranstaltung-Liste ausblenden</span>
+                                                <span>Aus Veranstaltungs-Liste ausblenden</span>
                                             </div>
                                         </div>
                                     </div>
@@ -185,7 +185,7 @@
                                 <span class="toggle-indicator" aria-hidden="true"></span>
                             </button>
                             <h2 class="hndle ui-sortable-handle">
-                                <span>Beitragsbild</span>
+                                <span>Eventbild</span>
                             </h2>
                             <div class="inside">
                                 <p class="hide-if-no-js">
