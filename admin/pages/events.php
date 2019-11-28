@@ -254,7 +254,7 @@ class TT_Example_List_Table extends WP_List_Table {
      **************************************************************************/
     function get_bulk_actions() {
         $actions = array(
-            'delete'    => 'Delete'
+            'delete'    => 'Löschen'
         );
         return $actions;
     }
