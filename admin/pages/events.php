@@ -57,7 +57,7 @@ License: GPL2
 if(!class_exists('WP_List_Table')){
     require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
-include(str_replace("/admin/pages", "", plugin_dir_path( __FILE__ )) . 'globals.php');
+include_once(str_replace("/admin/pages", "", plugin_dir_path( __FILE__ )) . 'globals.php');
 
 
 
