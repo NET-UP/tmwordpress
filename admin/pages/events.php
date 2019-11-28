@@ -506,7 +506,7 @@ function tt_render_list_page(){
         </form>
         <?php
                 $tm_json = apiRequest($api->get_event_list);
-                return print_r($tm_json);
+                print_r($tm_json);
         ?>
     </div>
     <?php
