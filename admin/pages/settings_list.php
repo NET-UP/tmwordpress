@@ -1,6 +1,5 @@
 <?php
 	if (isset($_POST['submit'])) {
-		echo "lol";
 
         if (isset($_POST['show_list'])){
             $_POST['show_list'] = 1;
