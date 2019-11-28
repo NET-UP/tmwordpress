@@ -225,8 +225,8 @@ class Event_List_Table extends WP_List_Table {
      **************************************************************************/
     function get_sortable_columns() {
         $sortable_columns = array(
-            'ev_name'   => array('ev_name',false), //true means it's already sorted
-            'tags'      => array('tags',false),
+            'ev_name'   => array('ev_name',true), //true means it's already sorted
+            'tags'      => array('tags',true),
             'ev_date'   => array('ev_date',false),
             'endtime'   => array('endtime',false)
         );
