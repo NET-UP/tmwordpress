@@ -74,7 +74,7 @@ include(str_replace("/admin/pages", "", plugin_dir_path( __FILE__ )) . 'globals.
  * 
  * Our theme for this list table is going to be movies.
  */
-class TT_Example_List_Table extends WP_List_Table {
+class Event_List_Table extends WP_List_Table {
 
     /** ************************************************************************
      * REQUIRED. Set up a constructor that references the parent constructor. We 
@@ -437,7 +437,7 @@ class TT_Example_List_Table extends WP_List_Table {
 function tt_render_list_page(){
     
     //Create an instance of our package class...
-    $testListTable = new TT_Example_List_Table();
+    $testListTable = new Event_List_Table();
     //Fetch, prepare, sort, and filter our data...
     $testListTable->prepare_items();
     
