@@ -128,7 +128,7 @@ class TT_Example_List_Table extends WP_List_Table {
                 return $item[$column_name];
             case 'ev_date':
                 return $item[$column_name];
-            case 'end_time':
+            case 'endtime':
                 return $item[$column_name];
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
@@ -206,7 +206,7 @@ class TT_Example_List_Table extends WP_List_Table {
             'ev_name'     => 'Name',
             'tags'    => 'Schlagwörter',
             'ev_date'  => 'Anfangsdatum',
-            'end_time'  => 'Enddatum'
+            'endtime'  => 'Enddatum'
         );
         return $columns;
     }
