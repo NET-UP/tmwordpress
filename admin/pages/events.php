@@ -123,7 +123,7 @@ class Event_List_Table extends WP_List_Table {
     function column_default($item, $column_name){
         switch($column_name){
             case 'ev_name':
-                return sprintf($item[$column_name]);
+                return ($item[$column_name]);
             case 'tags':
                 return implode(", ", $item[$column_name]);
             case 'ev_date':
