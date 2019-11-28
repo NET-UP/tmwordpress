@@ -8,7 +8,14 @@
 ?>
 
 <div class="wrap">
-    <h2>TicketMachine > Veranstaltung bearbeiten</h2>  <!-- needs create/update -->
+    <?php 
+        if(isset($_GET['id'])){
+            echo "<h2>TicketMachine > " . __('Veranstaltung bearbeiten', 'ticketmachine') . "</h2>";
+        } else {
+            echo "<h2>TicketMachine > " . __('Veranstaltung erstellen', 'ticketmachine') . "</h2>";
+        }
+    ?>
+   
     <label class="screen-reader-text" id="event-name-prompt-text" for="ev_name">Event Name hier eingeben</label>
     <input type="text" name="ev_name" size="30" id="ev_name" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
     <?php 

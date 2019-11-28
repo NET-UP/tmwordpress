@@ -428,7 +428,7 @@ function remove_event(){
  */
 function tt_render_list_page(){
 
-    if( $_GET['action'] == "edit" && isset($_GET['id']) ) {
+    if( $_GET['action'] == "edit" ) {
         include "event_edit.php";
     } elseif( $_GET['action'] == "delete" && isset($_GET['id']) ) {
         remove_event();
