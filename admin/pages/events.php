@@ -87,66 +87,18 @@ class TT_Example_List_Table extends WP_List_Table {
      * 
      * @var array 
      **************************************************************************/
-	$tm_json = apiRequest($api->get_event_list); //get event list
-	print_r($tm_json);
-    var $example_data = array(
-            array(
-                'ID'        => 1,
-                'title'     => '300',
-                'rating'    => 'R',
-                'director'  => 'Zach Snyder'
-            ),
-            array(
-                'ID'        => 2,
-                'title'     => 'Eyes Wide Shut',
-                'rating'    => 'R',
-                'director'  => 'Stanley Kubrick'
-            ),
-            array(
-                'ID'        => 3,
-                'title'     => 'Moulin Rouge!',
-                'rating'    => 'PG-13',
-                'director'  => 'Baz Luhrman'
-            ),
-            array(
-                'ID'        => 4,
-                'title'     => 'Snow White',
-                'rating'    => 'G',
-                'director'  => 'Walt Disney'
-            ),
-            array(
-                'ID'        => 5,
-                'title'     => 'Super 8',
-                'rating'    => 'PG-13',
-                'director'  => 'JJ Abrams'
-            ),
-            array(
-                'ID'        => 6,
-                'title'     => 'The Fountain',
-                'rating'    => 'PG-13',
-                'director'  => 'Darren Aronofsky'
-            ),
-            array(
-                'ID'        => 7,
-                'title'     => 'Watchmen',
-                'rating'    => 'R',
-                'director'  => 'Zach Snyder'
-            ),
-            array(
-                'ID'        => 8,
-                'title'     => '2001',
-                'rating'    => 'G',
-                'director'  => 'Stanley Kubrick'
-            ),
-        );
-
-
+    
+    var $example_data = array();
+    
     /** ************************************************************************
      * REQUIRED. Set up a constructor that references the parent constructor. We 
      * use the parent reference to set some default configs.
      ***************************************************************************/
     function __construct(){
         global $status, $page;
+
+        $tm_json = apiRequest($api->get_event_list);
+        $this->example_data = $tm_json['result'];
                 
         //Set parent defaults
         parent::__construct( array(

@@ -21,7 +21,7 @@
 			'tm_events',
 			'tt_render_list_page',
 			null,
-			98
+			97
 		);
 		add_submenu_page(
 			'tm_settings',
