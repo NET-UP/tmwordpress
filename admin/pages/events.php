@@ -198,9 +198,10 @@ class TT_Example_List_Table extends WP_List_Table {
     function get_columns(){
         $columns = array(
             'cb'        => '<input type="checkbox" />', //Render a checkbox instead of text
-            'title'     => 'Title',
-            'rating'    => 'Rating',
-            'director'  => 'Director'
+            'ev_name'     => 'Name',
+            'tags'    => 'Schlagwörter',
+            'ev_date'  => 'Anfangsdatum',
+            'end_time'  => 'Enddatum'
         );
         return $columns;
     }
