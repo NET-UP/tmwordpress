@@ -160,7 +160,7 @@ class TT_Example_List_Table extends WP_List_Table {
     function get_events(){
         global $globals, $api;
         $tm_json = apiRequest($api->get_event_list);
-        return $tm_json;
+        return $tm_json['result'];
     }
 
 
