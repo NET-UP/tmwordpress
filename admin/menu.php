@@ -1,5 +1,4 @@
 <?php
-	include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 
 	function tm_admin_menu () {
 		
