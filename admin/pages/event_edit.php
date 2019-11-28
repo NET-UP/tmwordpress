@@ -1,4 +1,5 @@
 <?php
+    global $globals, $api;
     $tm_json = apiRequest($api->get_single_event);
     $event = (object)$tm_json;
     print_r($event);
