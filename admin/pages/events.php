@@ -100,11 +100,11 @@ class TT_Example_List_Table extends WP_List_Table {
 
         $tm_json = apiRequest($api->get_event_list);
         $this->example_data = $tm_json['result'];
-                
+        
         //Set parent defaults
         parent::__construct( array(
-            'singular'  => 'movie',     //singular name of the listed records
-            'plural'    => 'movies',    //plural name of the listed records
+            'singular'  => 'event',     //singular name of the listed records
+            'plural'    => 'events',    //plural name of the listed records
             'ajax'      => false        //does this table support ajax?
         ) );
         
@@ -134,8 +134,11 @@ class TT_Example_List_Table extends WP_List_Table {
      **************************************************************************/
     function column_default($item, $column_name){
         switch($column_name){
-            case 'rating':
-            case 'director':
+            case 'tags':
+                return $item[$column_name];
+            case 'ev_date'
+                return $item[$column_name];
+            case 'endtime'
                 return $item[$column_name];
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
@@ -162,15 +165,15 @@ class TT_Example_List_Table extends WP_List_Table {
     function column_title($item){
         
         //Build row actions
-        $actions = array(
-            'edit'      => sprintf('<a href="?page=%s&action=%s&movie=%s">Edit</a>',$_REQUEST['page'],'edit',$item['ID']),
-            'delete'    => sprintf('<a href="?page=%s&action=%s&movie=%s">Delete</a>',$_REQUEST['page'],'delete',$item['ID']),
-        );
+        //$actions = array(
+        //    'edit'      => sprintf('<a href="?page=%s&action=%s&movie=%s">Edit</a>',$_REQUEST['page'],'edit',$item['ID']),
+        //    'delete'    => sprintf('<a href="?page=%s&action=%s&movie=%s">Delete</a>',$_REQUEST['page'],'delete',$item['ID']),
+        //);
         
         //Return the title contents
         return sprintf('%1$s <span style="color:silver">(id:%2$s)</span>%3$s',
-            /*$1%s*/ $item['title'],
-            /*$2%s*/ $item['ID'],
+            /*$1%s*/ $item['ev_name'],
+            /*$2%s*/ $item['id'],
             /*$3%s*/ $this->row_actions($actions)
         );
     }
@@ -189,7 +192,7 @@ class TT_Example_List_Table extends WP_List_Table {
         return sprintf(
             '<input type="checkbox" name="%1$s[]" value="%2$s" />',
             /*$1%s*/ $this->_args['singular'],  //Let's simply repurpose the table's singular label ("movie")
-            /*$2%s*/ $item['ID']                //The value of the checkbox should be the record's id
+            /*$2%s*/ $item['id']                //The value of the checkbox should be the record's id
         );
     }
 
@@ -210,9 +213,10 @@ class TT_Example_List_Table extends WP_List_Table {
     function get_columns(){
         $columns = array(
             'cb'        => '<input type="checkbox" />', //Render a checkbox instead of text
-            'title'     => 'Title',
-            'rating'    => 'Rating',
-            'director'  => 'Director'
+            'ev_name'     => 'Title',
+            'tags'    => 'Schlagwörter',
+            'ev_date'  => 'Anfangsdatum',
+            'endtime' => 'Enddatum'
         );
         return $columns;
     }
@@ -234,9 +238,10 @@ class TT_Example_List_Table extends WP_List_Table {
      **************************************************************************/
     function get_sortable_columns() {
         $sortable_columns = array(
-            'title'     => array('title',false),     //true means it's already sorted
-            'rating'    => array('rating',false),
-            'director'  => array('director',false)
+            'ev_name'     => array('ev_name',false),     //true means it's already sorted
+            'tags'    => array('tags',false),
+            'ev_date'  => array('ev_date',false),
+            'endtime' => array('endtime',false)
         );
         return $sortable_columns;
     }
@@ -256,12 +261,12 @@ class TT_Example_List_Table extends WP_List_Table {
      * 
      * @return array An associative array containing all the bulk actions: 'slugs'=>'Visible Titles'
      **************************************************************************/
-    function get_bulk_actions() {
-        $actions = array(
-            'delete'    => 'Delete'
-        );
-        return $actions;
-    }
+    //function get_bulk_actions() {
+    //   $actions = array(
+    //        'delete'    => 'Delete'
+    //    );
+    //   return $actions;
+    //}
 
 
     /** ************************************************************************
