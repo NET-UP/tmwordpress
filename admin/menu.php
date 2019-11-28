@@ -23,6 +23,7 @@
 			null,
 			97
 		);
+
 		add_submenu_page(
 			'tm_events',
 			__('Einstellungen', 'ticketmachine'),
@@ -32,6 +33,17 @@
 			'tm_settings_page',
 			null,
 			98
+		);
+		
+		add_submenu_page(
+			'tm_events',
+			__('Veranstaltungen', 'ticketmachine'),
+			__('Veranstaltungen', 'ticketmachine'),
+			'manage_options',
+			'tm_edit_event',
+			'tm_edit_event_page',
+			null,
+			97
 		);
 	}
 	
