@@ -46,6 +46,14 @@
 			97
 		);
 	}
+
+	add_filter( 'submenu_file', function($submenu_file){
+		$screen = get_current_screen();
+		if($screen->id === 'tm_events'){
+			$submenu_file = 'tm_events';
+		}
+		return $submenu_file;
+	});
 	
 	add_action('admin_menu', 'tm_admin_menu');
 
