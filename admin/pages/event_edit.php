@@ -29,102 +29,122 @@
                         wp_editor( $event->ev_description, $editor_id, $editor_class);
                     ?>
 
-                    <div class="">
-                        <label for="event_edit_locationname"><?php echo __('Veranstaltungsort', 'ticketmachine') ?></label>
-                        <input id="event_location_name" type="text" class="form-control" value="<?php echo $event->ev_location_name; ?>">
-                        <div class="">
-                            <div class="">
-                                <label for="event_edit_strasse"><?php echo __('Straße', 'ticketmachine') ?></label>
-                                <input id="event_edit_strasse" type="text" class="form-control" value="<?php echo $event->street; ?>">
-                            </div>
-                            <div class="">
-                                <label for="house_number"><?php echo __('Haus-Nr.', 'ticketmachine') ?></label>
-                                <input id="event_edit_hausnr" type="text" class="form-control" value="<?php echo $event->house_number; ?>">
+                    <div id="postbox-container-1">
+                        <div class="postbox">
+                            <button type="button" class="handlediv" aria-expanded="true">
+                                <span class="screen-reader-text">Bedienfeld umschalten: Standort</span>
+                                <span class="toggle-indicator" aria-hidden="true"></span>
+                            </button>
+                            <h2 class="hndle ui-sortable-handle">
+                                <span>Standort</span>
+                            </h2>
+                            <div class="inside">
+                                <label for="event_edit_locationname"><?php echo __('Veranstaltungsort', 'ticketmachine') ?></label>
+                                <input id="event_location_name" type="text" class="form-control" value="<?php echo $event->ev_location_name; ?>">
+                                <div>
+                                    <div>
+                                        <label for="event_edit_strasse"><?php echo __('Straße', 'ticketmachine') ?></label>
+                                        <input id="event_edit_strasse" type="text" class="form-control" value="<?php echo $event->street; ?>">
+                                    </div>
+                                    <div>
+                                        <label for="house_number"><?php echo __('Haus-Nr.', 'ticketmachine') ?></label>
+                                        <input id="event_edit_hausnr" type="text" class="form-control" value="<?php echo $event->house_number; ?>">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+                                        <label for="event_edit_plz"><?php echo __('PLZ', 'ticketmachine') ?></label>
+                                        <input id="event_edit_plz" type="text" class="form-control" value="<?php echo $event->zip; ?>">
+                                    </div>
+                                    <div>
+                                        <label for="event_edit_ort"><?php echo __('Ort', 'ticketmachine') ?></label>
+                                        <input id="event_edit_ort" type="text" class="form-control" value="<?php echo $event->city; ?>">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="event_edit_land"><?php echo __('Land', 'ticketmachine') ?></label>
+                                    <input id="event_edit_land" type="text" class="form-control" value="<?php echo $event->country; ?>">
+                                </div>
                             </div>
                         </div>
-                        <div class="">
-                            <div class="">
-                                <label for="event_edit_plz"><?php echo __('PLZ', 'ticketmachine') ?></label>
-                                <input id="event_edit_plz" type="text" class="form-control" value="<?php echo $event->zip; ?>">
-                            </div>
-                            <div class="">
-                                <label for="event_edit_ort"><?php echo __('Ort', 'ticketmachine') ?></label>
-                                <input id="event_edit_ort" type="text" class="form-control" value="<?php echo $event->city; ?>">
-                            </div>
-                        </div>
-                        <div class="">
-                            <label for="event_edit_land"><?php echo __('Land', 'ticketmachine') ?></label>
-                            <input id="event_edit_land" type="text" class="form-control" value="<?php echo $event->country; ?>">
-                        </div>
-                    </div>
+                    
 
-                    <div class="">
-                        <div class="">
-                            <div class="">
-                                <label><?php echo __('Einlasszeit', 'ticketmachine') ?></label>
-                            </div>
-                            <div class="">
-                                <div class="input-group">
-                                    <input type="text" class="form-control event_date hasDatepicker" value="<?php echo $event->entrytime; ?>">
-                                    <label for="event_time_entry_date" class="input-group-addon w50">
-                                        <i class="fa fa-calendar"></i>
-                                    </label>
+                        <div class="postbox">
+                            <button type="button" class="handlediv" aria-expanded="true">
+                                <span class="screen-reader-text">Bedienfeld umschalten: Termine</span>
+                                <span class="toggle-indicator" aria-hidden="true"></span>
+                            </button>
+                            <h2 class="hndle ui-sortable-handle">
+                                <span>Termine</span>
+                            </h2>
+                            <div class="inside">
+                                <div>
+                                    <label><?php echo __('Einlasszeit', 'ticketmachine') ?></label>
+                                </div>
+                                <div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control event_date hasDatepicker" value="<?php echo $event->entrytime; ?>">
+                                        <label for="event_time_entry_date" class="input-group-addon w50">
+                                            <i class="fa fa-calendar"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="input-group time">
+                                        <input type="text" class="form-control">
+                                        <label for="event_time_entry_time" class="input-group-addon w50">
+                                            <i class="fa fa-clock-o"></i>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="">
-                                <div class="input-group time">
-                                    <input type="text" class="form-control">
-                                    <label for="event_time_entry_time" class="input-group-addon w50">
-                                        <i class="fa fa-clock-o"></i>
-                                    </label>
+                            <div>
+                                <div>
+                                    <label><?php echo __('Veranstaltungsbeginn', 'ticketmachine') ?></label>
+                                </div>
+                                <div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control event_date hasDatepicker" value="<?php echo $event->ev_date; ?>">
+                                        <label for="event_time_start_date" class="input-group-addon w50">
+                                            <i class="fa fa-calendar"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="input-group time">
+                                        <input type="text" class="form-control">
+                                        <label for="event_time_start_date" class="input-group-addon w50">
+                                            <i class="fa fa-clock-o"></i>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="">
-                            <div class="">
-                                <label><?php echo __('Veranstaltungsbeginn', 'ticketmachine') ?></label>
-                            </div>
-                            <div class="">
-                                <div class="input-group">
-                                    <input type="text" class="form-control event_date hasDatepicker" value="<?php echo $event->ev_date; ?>">
-                                    <label for="event_time_start_date" class="input-group-addon w50">
-                                        <i class="fa fa-calendar"></i>
-                                    </label>
+                            <div>
+                                <div>
+                                    <label><?php echo __('Veranstaltungsende', 'ticketmachine') ?></label>
                                 </div>
-                            </div>
-                            <div class="">
-                                <div class="input-group time">
-                                    <input type="text" class="form-control">
-                                    <label for="event_time_start_date" class="input-group-addon w50">
-                                        <i class="fa fa-clock-o"></i>
-                                    </label>
+                                <div>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control event_date hasDatepicker" value="<?php echo $event->endtime; ?>">
+                                        <label for="event_edit_end_date" class="input-group-addon w50">
+                                            <i class="fa fa-calendar"></i>
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="">
-                                <label><?php echo __('Veranstaltungsende', 'ticketmachine') ?></label>
-                            </div>
-                            <div class="">
-                                <div class="input-group">
-                                    <input type="text" class="form-control event_date hasDatepicker" value="<?php echo $event->endtime; ?>">
-                                    <label for="event_edit_end_date" class="input-group-addon w50">
-                                        <i class="fa fa-calendar"></i>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="">
-                                <div class="input-group time">
-                                    <input type="text" class="form-control">
-                                    <label for="event_edit_end_date" class="input-group-addon w50">
-                                        <i class="fa fa-clock-o"></i>
-                                    </label>
+                                <div>
+                                    <div class="input-group time">
+                                        <input type="text" class="form-control">
+                                        <label for="event_edit_end_date" class="input-group-addon w50">
+                                            <i class="fa fa-clock-o"></i>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="postbox-container-1" class="postbox-container">
+
+                <div id="postbox-container-2" class="postbox-container">
                     <div id="side-sortables" class="meta-box-sortables ui-sortable">
                         <div id="submitdiv" class="postbox">
                             <button type="button" class="handlediv" aria-expanded="true">
