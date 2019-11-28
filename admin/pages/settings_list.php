@@ -16,6 +16,8 @@
 				$save_array,
 				array('id' => $tm_config->id)
 			);
+		}else{
+			echo "failed";
 		}
 		$tm_config = (object)$_POST;
 	}
