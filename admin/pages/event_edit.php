@@ -19,10 +19,9 @@
     <label class="screen-reader-text" id="event-name-prompt-text" for="ev_name"><?php echo __('Event Name hier eingeben', 'ticketmachine') ?></label>
     <input type="text" name="ev_name" size="30" id="ev_name" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
     <?php 
-        $content = '';
         $editor_id = 'mycustomeditor';
 
-        wp_editor( $content, $editor_id );
+        wp_editor( $event->ev_description, $editor_id );
     ?>
 
     <div class="col-xs-12">
@@ -120,6 +119,3 @@
         </div>
     </div>
 </div>
-<?php
-    
-?>
