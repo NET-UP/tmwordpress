@@ -12,6 +12,16 @@
 			null,
 			96
 		);
+		add_submenu_page(
+			'tm_settings',
+			__('Einstellungen', 'ticketmachine'),
+			__('Einstellungen', 'ticketmachine'),
+			'manage_options',
+			'tm_settings',
+			'tm_settings_page',
+			null,
+			98
+		);
 		
 		add_submenu_page(
 			'tm_settings',
@@ -22,16 +32,6 @@
 			'tt_render_list_page',
 			null,
 			97
-		);
-		add_submenu_page(
-			'tm_settings',
-			__('Einstellungen', 'ticketmachine'),
-			__('Einstellungen', 'ticketmachine'),
-			'manage_options',
-			'tm_settings',
-			'tm_settings_page',
-			null,
-			98
 		);
 	}
 	
