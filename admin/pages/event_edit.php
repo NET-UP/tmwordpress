@@ -8,7 +8,7 @@
 <div class="wrap">
     <h2>TicketMachine > Veranstaltung bearbeiten</h2>  <!-- needs create/update -->
     <label class="screen-reader-text" id="event-name-prompt-text" for="ev_name">Event Name hier eingeben</label>
-    <input type="text" name="ev_name" size="30" value="" id="ev_name" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name ?>"> <!-- load event name to value -->
+    <input type="text" name="ev_name" size="30" value="" id="ev_name" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>"> <!-- load event name to value -->
     <?php 
         $content = '';
         $editor_id = 'mycustomeditor';
