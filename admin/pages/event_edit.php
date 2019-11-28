@@ -24,9 +24,9 @@
                     </div>
 
                     <?php 
-                        $editor_id = 'mycustomeditor';
-
-                        wp_editor( $event->ev_description, $editor_id );
+                        $editor_id = 'wp-content-editor-container';
+                        $editor_class = 'wp-editor-container';
+                        wp_editor( $event->ev_description, $editor_id, $editor_class);
                     ?>
 
                     <div class="col-xs-12">
