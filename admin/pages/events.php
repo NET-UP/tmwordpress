@@ -413,6 +413,10 @@ class Event_List_Table extends WP_List_Table {
 
 }
 
+function remove_event(){
+    
+}
+
 
 /** *************************** RENDER TEST PAGE ********************************
  *******************************************************************************
@@ -425,8 +429,9 @@ class Event_List_Table extends WP_List_Table {
 function tt_render_list_page(){
 
     if( $_GET['action'] == "edit" && isset($_GET['id']) ) {
-
-    
+        include "event_edit.php";
+    } elseif( $_GET['action'] == "delete" && isset($_GET['id']) ) {
+        remove_event();
     } else {
         
         //Create an instance of our package class...
