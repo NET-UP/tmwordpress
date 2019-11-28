@@ -150,8 +150,8 @@ class TT_Example_List_Table extends WP_List_Table {
     
         //Set parent defaults
         parent::__construct( array(
-            'singular'  => 'movie',     //singular name of the listed records
-            'plural'    => 'movies',    //plural name of the listed records
+            'singular'  => 'event',     //singular name of the listed records
+            'plural'    => 'events',    //plural name of the listed records
             'ajax'      => false        //does this table support ajax?
         ) );
         
@@ -216,8 +216,8 @@ class TT_Example_List_Table extends WP_List_Table {
         
         //Build row actions
         $actions = array(
-            'edit'      => sprintf('<a href="?page=%s&action=%s&movie=%s">Edit</a>',$_REQUEST['page'],'edit',$item['ID']),
-            'delete'    => sprintf('<a href="?page=%s&action=%s&movie=%s">Delete</a>',$_REQUEST['page'],'delete',$item['ID']),
+            'edit'      => sprintf('<a href="?page=%s&action=%s&event=%s">Edit</a>',$_REQUEST['page'],'edit',$item['ID']),
+            'delete'    => sprintf('<a href="?page=%s&action=%s&event=%s">Delete</a>',$_REQUEST['page'],'delete',$item['ID']),
         );
         
         //Return the title contents
@@ -355,7 +355,7 @@ class TT_Example_List_Table extends WP_List_Table {
         /**
          * First, lets decide how many records per page to show
          */
-        $per_page = 5;
+        $per_page = 10;
         
         
         /**
