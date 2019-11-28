@@ -8,7 +8,7 @@
 			"TicketMachine",
 			'manage_options',
 			'tm_settings',
-			'tm_settings_page',
+			'tm_plugin_menu',
 			null,
 			98
 		);
