@@ -123,7 +123,16 @@ class TT_Example_List_Table extends WP_List_Table {
     function column_default($item, $column_name){
         switch($column_name){
             case 'ev_name':
-                return $item[$column_name];
+                $actions = array(
+                    'edit'      => sprintf('<a href="?page=%s&action=%s&event=%s">Bearbeiten</a>',$_REQUEST['page'],'edit',$item['id']),
+                    'delete'    => sprintf('<a href="?page=%s&action=%s&event=%s">Löschen</a>',$_REQUEST['page'],'delete',$item['id']),
+                );
+                return sprintf($item[$column_name],
+                '%1$s <span style="color:silver">(id:%2$s)</span>%3$s',
+                /*$1%s*/ $item['ev_name'],
+                /*$2%s*/ $item['id'],
+                /*$3%s*/ $this->row_actions($actions)
+                );
             case 'tags':
                 return implode(", ", $item[$column_name]);
             case 'ev_date':
