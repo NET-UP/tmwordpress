@@ -424,7 +424,7 @@ class Event_List_Table extends WP_List_Table {
  */
 function tt_render_list_page(){
 
-    if( !$_GET['action'] == "edit" && isset($_GET['id']) ) {
+    if( $_GET['action'] == "edit" && isset($_GET['id']) ) {
 
     
     } else {
