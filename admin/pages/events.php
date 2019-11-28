@@ -507,6 +507,7 @@ function tt_render_list_page(){
 
         <pre id="example-data">
             <?php
+                    echo $api->get_event_list;
                     $tm_json = apiRequest($api->get_event_list);
                     print_r($tm_json);
             ?>
