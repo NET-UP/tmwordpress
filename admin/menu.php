@@ -36,7 +36,7 @@
 		);
 		
 		add_submenu_page(
-			'tm_settings',
+			'options.php',
 			__('Event bearbeiten', 'ticketmachine'),
 			__('Event bearbeiten', 'ticketmachine'),
 			'manage_options',
