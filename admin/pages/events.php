@@ -59,8 +59,6 @@ if(!class_exists('WP_List_Table')){
 }
 include(str_replace("/admin/pages", "", plugin_dir_path( __FILE__ )) . 'globals.php');
 
-print_r($api);
-
 
 
 /************************** CREATE A PACKAGE CLASS *****************************
@@ -157,6 +155,11 @@ class TT_Example_List_Table extends WP_List_Table {
             'ajax'      => false        //does this table support ajax?
         ) );
         
+    }
+
+    function get_events(){
+        $tm_json = apiRequest($api->get_event_list);
+        return $tm_json;
     }
 
 
@@ -391,7 +394,7 @@ class TT_Example_List_Table extends WP_List_Table {
          * use sort and pagination data to build a custom query instead, as you'll
          * be able to use your precisely-queried data immediately.
          */
-        $data = $this->example_data;
+        $data = $this->get_events();
                 
         
         /**
@@ -506,14 +509,6 @@ function tt_render_list_page(){
             <!-- Now we can render the completed list table -->
             <?php $testListTable->display() ?>
         </form>
-
-        <pre id="example-data">
-            <?php
-                    echo $api->get_event_list;
-                    $tm_json = apiRequest($api->get_event_list);
-                    print_r($tm_json);
-            ?>
-        </pre>
     </div>
     <?php
 }
