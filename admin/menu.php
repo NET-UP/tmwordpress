@@ -7,10 +7,10 @@
 			'TicketMachine',
 			"TicketMachine",
 			'manage_options',
-			'tm_settings',
-			'tm_settings_page',
+			'tm_events',
+			'tm_plugin_menu',
 			null,
-			98
+			96
 		);
 		
 		add_submenu_page(
@@ -24,7 +24,7 @@
 			97
 		);
 		add_submenu_page(
-			'tm_settings',
+			'tm_events',
 			__('Einstellungen', 'ticketmachine'),
 			__('Einstellungen', 'ticketmachine'),
 			'manage_options',
