@@ -16,9 +16,13 @@
         <div id="eventstuff">
             <div id="event-body" class="metabox-holder columns-2">
                 <div id="event-body-content" style="position: relative;">
+                    <div id="eventdiv">
+                        <div id="eventwrap">
+                            <label class="screen-reader-text" id="event-name-prompt-text" for="ev_name"><?php echo __('Event Name hier eingeben', 'ticketmachine') ?></label>
+                            <input type="text" name="ev_name" size="30" id="ev_name" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
+                        </div>
+                    </div>
 
-                    <label class="screen-reader-text" id="event-name-prompt-text" for="ev_name"><?php echo __('Event Name hier eingeben', 'ticketmachine') ?></label>
-                    <input type="text" name="ev_name" size="30" id="ev_name" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
                     <?php 
                         $editor_id = 'mycustomeditor';
 
