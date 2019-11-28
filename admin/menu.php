@@ -10,7 +10,7 @@
 			'tm_settings',
 			'tm_plugin_menu',
 			null,
-			98
+			96
 		);
 		
 		add_submenu_page(
