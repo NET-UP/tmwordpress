@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-xs-8">
                 <label for="event_edit_strasse">Straße</label>
-                <input id="event_edit_strasse" type="text" class="form-control">
+                <input id="event_edit_strasse" type="text" class="form-control" value="<?php $event->ev_name ?>">
             </div>
             <div class="col-xs-4">
                 <label for="house_number">Haus-Nr.</label>
