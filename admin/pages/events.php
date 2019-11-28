@@ -228,9 +228,8 @@ class TT_Example_List_Table extends WP_List_Table {
      **************************************************************************/
     function get_sortable_columns() {
         $sortable_columns = array(
-            'title'     => array('title',false),     //true means it's already sorted
-            'rating'    => array('rating',false),
-            'director'  => array('director',false)
+            'ev_date'   => array('ev_date',false),     //true means it's already sorted
+            'ev_name'   => array('ev_name',false)
         );
         return $sortable_columns;
     }
