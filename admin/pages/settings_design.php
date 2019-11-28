@@ -42,7 +42,6 @@
 			</div>
 			<?php
 		}
-		echo $_POST['button_primary_background_color'];
 		$tm_design = (object)$_POST;
 
 	}
