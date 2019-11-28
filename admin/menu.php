@@ -36,9 +36,9 @@
 		);
 		
 		add_submenu_page(
-			'tm_events',
-			__('Veranstaltungen', 'ticketmachine'),
-			__('Veranstaltungen', 'ticketmachine'),
+			'tm_settings',
+			__('Event bearbeiten', 'ticketmachine'),
+			__('Event bearbeiten', 'ticketmachine'),
 			'manage_options',
 			'tm_edit_event',
 			'tm_edit_event_page',
