@@ -87,9 +87,6 @@ class TT_Example_List_Table extends WP_List_Table {
      * 
      * @var array 
      **************************************************************************/
-	
-	var $tm_json = apiRequest($api->get_event_list); //get event list
-	print_r($tm_json);
 
 
     var $example_data = array(
