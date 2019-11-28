@@ -125,7 +125,7 @@ class TT_Example_List_Table extends WP_List_Table {
             case 'ev_name':
                 return $item[$column_name];
             case 'tags':
-                return $item[$column_name];
+                return implode(", ", $item[$column_name]);
             case 'ev_date':
                 return $item[$column_name];
             case 'endtime':
