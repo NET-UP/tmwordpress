@@ -122,8 +122,13 @@ class TT_Example_List_Table extends WP_List_Table {
      **************************************************************************/
     function column_default($item, $column_name){
         switch($column_name){
-            case 'rating':
-            case 'director':
+            case 'ev_name':
+                return $item[$column_name];
+            case 'tags':
+                return $item[$column_name];
+            case 'ev_date':
+                return $item[$column_name];
+            case 'end_time':
                 return $item[$column_name];
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
