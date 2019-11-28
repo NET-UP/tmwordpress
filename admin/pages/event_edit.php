@@ -14,50 +14,50 @@
 
         wp_editor( $content, $editor_id );
     ?>
+
     <div class="col-xs-12">
+        <label for="event_edit_locationname">Veranstaltungsort</label>
+        <input id="event_location_name" type="text" class="form-control">
         <div class="row">
-            <label for="ev_">Veranstaltungsort</label>
-            <input type="text">
-        </div>
-        <div class="row">
-            <div col-xs-8>
-                <label for="street">Straße</label>
-                <input type="text">
+            <div class="col-xs-8">
+                <label for="event_edit_strasse">Straße</label>
+                <input id="event_edit_strasse" type="text" class="form-control">
             </div>
-            <div col-xs-4>
+            <div class="col-xs-4">
                 <label for="house_number">Haus-Nr.</label>
-                <input type="text">
+                <input id="event_edit_hausnr" type="text" class="form-control">
             </div>
         </div>
         <div class="row">
-            <div col-xs-4>
-                <label for="zip">PLZ</label>
-                <input type="text">
+            <div class="col-xs-4">
+                <label for="event_edit_plz">PLZ</label>
+                <input id="event_edit_plz" type="text" class="form-control">
             </div>
-            <div col-xs-8>
-                <label for="city">Ort</label>
-                <input type="text">
+            <div class="col-xs-8">
+                <label for="event_edit_ort">Ort</label>
+                <input id="event_edit_ort" type="text" class="form-control">
             </div>
         </div>
         <div class="row">
-            <label for="country">Land</label>
-            <input type="text">
+            <label for="event_edit_land">Land</label>
+            <input id="event_edit_land" type="text" class="form-control">
         </div>
     </div>
+
     <div class="col-xs-12">
         <div class="row">
-            <div col-xs-4>
+            <div class="col-xs-4">
                 <label>Einlasszeit</label>
             </div>
-            <div col-xs-4>
-                <div>
+            <div class="col-xs-4">
+                <div class="input-group">
                     <input type="text" class="form-control event_date hasDatepicker">
                     <label for="event_time_entry_date" class="input-group-addon w50">
                         <i class="fa fa-calendar"></i>
                     </label>
                 </div>
             </div>
-            <div col-xs-4>
+            <div class="col-xs-4">
                 <div class="input-group time">
                     <input type="text" class="form-control">
                     <label for="event_time_entry_time" class="input-group-addon w50">
@@ -67,18 +67,18 @@
             </div>
         </div>
         <div class="row">
-            <div col-xs-4>
+            <div class="col-xs-4">
                 <label>Veranstaltungsbeginn</label>
             </div>
-            <div col-xs-4>
-                <div>
+            <div class="col-xs-4">
+                <div class="input-group">
                     <input type="text" class="form-control event_date hasDatepicker">
                     <label for="event_time_start_date" class="input-group-addon w50">
                         <i class="fa fa-calendar"></i>
                     </label>
                 </div>
             </div>
-            <div col-xs-4>
+            <div class="col-xs-4">
                 <div class="input-group time">
                     <input type="text" class="form-control">
                     <label for="event_time_start_date" class="input-group-addon w50">
@@ -88,18 +88,18 @@
             </div>
         </div>
         <div class="row">
-            <div col-xs-4>
+            <div class="col-xs-4">
                 <label>Veranstaltungsende</label>
             </div>
-            <div col-xs-4>
-                <div>
+            <div class="col-xs-4">
+                <div class="input-group">
                     <input type="text" class="form-control event_date hasDatepicker">
                     <label for="event_edit_end_date" class="input-group-addon w50">
                         <i class="fa fa-calendar"></i>
                     </label>
                 </div>
             </div>
-            <div col-xs-4>
+            <div class="col-xs-4">
                 <div class="input-group time">
                     <input type="text" class="form-control">
                     <label for="event_edit_end_date" class="input-group-addon w50">
