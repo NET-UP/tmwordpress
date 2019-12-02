@@ -1,6 +1,8 @@
 <?php
 
 	function tm_display_events ( $atts, $globals, $api ) {
+
+		print_r($globals);
 		
 		$tm_json = apiRequest($api->get_event_list);
 		
