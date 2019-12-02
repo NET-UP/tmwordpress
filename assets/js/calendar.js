@@ -10,6 +10,7 @@ $.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search).succe
 
 
 	document.addEventListener('DOMContentLoaded', function() {
+		console.log("xd");
 		var calendarEl = document.getElementById('calendar');
 
 		var calendar = new FullCalendar.Calendar(calendarEl, {
