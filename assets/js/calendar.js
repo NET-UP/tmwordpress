@@ -2,6 +2,11 @@ var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
+var events_array = new Array();
+
+$.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search, function(data) {
+    events_array = data;
+});
 
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
@@ -24,12 +29,7 @@ var yyyy = today.getFullYear();
 		height: "auto",
 		firstDay: 1,
 		eventLimit: false, // allow "more" link when too many events
-		events: {
-			url: '/wp-content/plugins/ticketmachine/event.php' + location.search,
-			failure: function() {
-				document.getElementById('script-warning').style.display = 'block'
-			}
-		},
+		events: events_array,
 		loading: function(bool) {
 			document.getElementById('loading').style.display =
 			bool ? 'block' : 'none';
