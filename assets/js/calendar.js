@@ -29,9 +29,6 @@ var yyyy = today.getFullYear();
 			failure: function() {
 				document.getElementById('script-warning').style.display = 'block'
 			}
-		}, 
-		eventRender: function (info) {
-			console.log(info.event.start)
 		},
 		loading: function(bool) {
 			document.getElementById('loading').style.display =
