@@ -246,15 +246,6 @@ class Event_List_Table extends WP_List_Table {
         </p>
     <?php }
 
-    function get_views() {
-        $status_links = array(
-            "all"       => __("<a href='#'>Alle</a>",'my-plugin-slug'),
-            "published" => __("<a href='#'>Veröffentlichte</a>",'my-plugin-slug'),
-            "trashed"   => __("<a href='#'>Entwürfe</a>",'my-plugin-slug')
-        );
-        return $status_links;  
-    }
-
     /** ************************************************************************
      * REQUIRED! This is where you prepare your data for display. This method will
      * usually be used to query the database, sort and filter the data, and generally
@@ -434,6 +425,20 @@ function tt_render_list_page(){
                 <!-- For plugins, we also need to ensure that the form posts back to our current page -->
                 <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
                 <!-- Now we can render the completed list table -->
+                <ul class="subsubsub">
+                    <li class="all">
+                        <a href="#" class="current">
+                            <?php _e('All'); ?> 
+                            <span class="count">(1)</span>
+                        </a> |
+                    </li>
+                    <li class="publish">
+                        <a href="#">
+                            <?php _e('Active'); ?> 
+                            <span class="count">(5)</span>
+                        </a>
+                    </li>
+                </ul>
                 <?php $EventListTable->search_box('Search', 'search'); ?>
                 <!--Fetch, prepare, sort, and filter our data... -->
                 <?php $EventListTable->prepare_items(); ?>
