@@ -72,7 +72,7 @@
 	
     if(is_admin()){
         include_once( plugin_dir_path( __FILE__ ) . 'admin/admin.php');
-		wp_enqueue_style( 'admin_CSS', plugins_url('assets/css/admin.css', __FILE__ ) );
+		wp_enqueue_style( 'admin_CSS', plugins_url('admin/assets/css/style.css', __FILE__ ) );
     }
 	
     register_activation_hook(__FILE__, 'tm_activate');
