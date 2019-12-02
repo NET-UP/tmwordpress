@@ -238,13 +238,22 @@ class Event_List_Table extends WP_List_Table {
         
     }
 
-    public function search_box( $text, $input_id ) { ?>
+    function search_box( $text, $input_id ) { ?>
         <p class="search-box">
-          <label class="screen-reader-text" for="<?php echo $input_id ?>"><?php echo $text; ?>:</label>
-          <input type="search" id="<?php echo $input_id ?>" name="s" value="<?php _admin_search_query(); ?>" />
-          <?php submit_button( $text, 'button', false, false, array('id' => 'search-submit') ); ?>
-      </p>
+            <label class="screen-reader-text" for="<?php echo $input_id ?>"><?php echo $text; ?>:</label>
+            <input type="search" id="<?php echo $input_id ?>" name="s" value="<?php _admin_search_query(); ?>" />
+            <?php submit_button( $text, 'button', false, false, array('id' => 'search-submit') ); ?>
+        </p>
     <?php }
+
+    function get_views() {
+        $status_links = array(
+            "all"       => __("<a href='#'>Alle</a>",'my-plugin-slug'),
+            "published" => __("<a href='#'>Veröffentlichte</a>",'my-plugin-slug'),
+            "trashed"   => __("<a href='#'>Entwürfe</a>",'my-plugin-slug')
+        );
+        return $status_links;  
+    }
 
     /** ************************************************************************
      * REQUIRED! This is where you prepare your data for display. This method will
@@ -415,11 +424,6 @@ function tt_render_list_page(){
         //Create an instance of our package class...
         $EventListTable = new Event_List_Table();
 
-        $EventListTable->search_box('Search', 'search');
-
-        //Fetch, prepare, sort, and filter our data...
-        $EventListTable->prepare_items();
-        
         ?>
         <div class="wrap">
             <h1 class="wp-heading-inline">TicketMachine > <?php echo __('Veranstaltungen'); ?></h1>
@@ -430,7 +434,10 @@ function tt_render_list_page(){
                 <!-- For plugins, we also need to ensure that the form posts back to our current page -->
                 <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
                 <!-- Now we can render the completed list table -->
-                <?php $EventListTable->display() ?>
+                <?php $EventListTable->search_box('Search', 'search'); ?>
+                <!--Fetch, prepare, sort, and filter our data... -->
+                <?php $EventListTable->prepare_items(); ?>
+                <?php $EventListTable->display(); ?>
             </form>
         </div>
         <?php
