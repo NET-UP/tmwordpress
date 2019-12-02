@@ -31,11 +31,7 @@
 
                     <div id="test">
                         <div class="postbox">
-                            <button type="button" class="handlediv" aria-expanded="true">
-                                <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Standort', 'ticketmachine') ?></span>
-                                <span class="toggle-indicator" aria-hidden="true"></span>
-                            </button>
-                            <h2 class="hndle ui-sortable-handle">
+                            <h2 class="hndle">
                                 <span>Standort</span>
                             </h2>
                             <div class="inside">
@@ -70,11 +66,7 @@
                     
 
                         <div class="postbox">
-                            <button type="button" class="handlediv" aria-expanded="true">
-                                <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Termine', 'ticketmachine') ?></span>
-                                <span class="toggle-indicator" aria-hidden="true"></span>
-                            </button>
-                            <h2 class="hndle ui-sortable-handle">
+                            <h2 class="hndle">
                                 <span>Termine</span>
                             </h2>
                             <div class="inside">
