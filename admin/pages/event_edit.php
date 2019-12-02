@@ -42,7 +42,7 @@
                                         <div id="misc-publishing-actions">
                                             <div class="misc-pub-section misc-pub-post-status">
                                                 <span>Status: </span>
-                                                <select>
+                                                <select style="float: right; margin-top: -2px;">
                                                     <option value="Published"><?php echo __('Veröffentlicht', 'ticketmachine') ?></option>
                                                     <option value="Draft"><?php echo __('Entwurf', 'ticketmachine') ?></option>
                                                 </select>
