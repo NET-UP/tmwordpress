@@ -71,3 +71,9 @@
         color: <?php echo $tm_design->button_secondary_text_color_hover; ?> !important;
         border-color: <?php echo $tm_design->button_secondary_border_color_hover; ?> !important;
     }
+
+    .spinner-border {
+        border-color: <?php echo $tm_design->button_primary_background_color; ?> !important;
+        color: <?php echo $tm_design->button_primary_background_color; ?> !important;
+        border-right-color: transparent !important;
+    }
