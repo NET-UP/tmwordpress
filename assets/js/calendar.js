@@ -30,14 +30,14 @@ var yyyy = today.getFullYear();
 				document.getElementById('script-warning').style.display = 'block'
 			}
 		},
-		defaultDate: events[0].defaultDate,
 		loading: function(bool) {
 			document.getElementById('loading').style.display =
 			bool ? 'block' : 'none';
 		}
     });
 
-    calendar.render();
+	calendar.render();
+	calendar.gotoDate(calendar.events[0].start)
 	
 	var view = calendar.view;
 	
