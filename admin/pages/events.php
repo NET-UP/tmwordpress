@@ -1,39 +1,4 @@
 <?php
-/*
-Plugin Name: Custom List Table Example
-Plugin URI: http://www.mattvanandel.com/
-Description: A highly documented plugin that demonstrates how to create custom List Tables using official WordPress APIs.
-Version: 1.4.1
-Author: Matt van Andel
-Author URI: http://www.mattvanandel.com
-License: GPL2
-*/
-/*  Copyright 2015  Matthew Van Andel  (email : matt@mattvanandel.com)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
-
-
-/* == NOTICE ===================================================================
- * Please do not alter this file. Instead: make a copy of the entire plugin, 
- * rename it, and work inside the copy. If you modify this plugin directly and 
- * an update is released, your changes will be lost!
- * ========================================================================== */
-
-
-
 /*************************** LOAD THE BASE CLASS *******************************
  *******************************************************************************
  * The WP_List_Table class isn't automatically available to plugins, so we need
@@ -273,7 +238,6 @@ class Event_List_Table extends WP_List_Table {
         
     }
 
-
     /** ************************************************************************
      * REQUIRED! This is where you prepare your data for display. This method will
      * usually be used to query the database, sort and filter the data, and generally
@@ -406,8 +370,8 @@ class Event_List_Table extends WP_List_Table {
          */
         $this->set_pagination_args( array(
             'total_items' => $total_items,                  //WE have to calculate the total number of items
-            'per_page'    => $per_page,                     //WE have to determine how many items to show on a page
-            'total_pages' => ceil($total_items/$per_page)   //WE have to calculate the total number of pages
+            //'per_page'    => $per_page,                     //WE have to determine how many items to show on a page
+            //'total_pages' => ceil($total_items/$per_page)   //WE have to calculate the total number of pages
         ) );
     }
 
