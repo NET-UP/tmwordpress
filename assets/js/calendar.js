@@ -36,8 +36,8 @@ var yyyy = today.getFullYear();
 		}
     });
 
-	calendar.render();
 	var calEv = calendar.getEvents();
+	calendar.render();
 	console.log(calEv);
 	
 	var view = calendar.view;
