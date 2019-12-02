@@ -14,7 +14,7 @@
 	function tm_initialize( $atts ) {
 
 		include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
-        print_r($globals);
+        print_r($api);
 		
 		if( $atts ) {
 			
