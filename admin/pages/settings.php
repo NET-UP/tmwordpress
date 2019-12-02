@@ -20,7 +20,7 @@
 	#if($tm_config->api_access_token){
 ?>
 
-<div class="wrap">
+<div class="wrap tm-admin-page">
 	<h1>TicketMachine > <?php echo __('Einstellungen', 'ticketmachine') ?></h1>
  
 	<h2 class="nav-tab-wrapper">

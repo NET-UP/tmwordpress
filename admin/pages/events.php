@@ -416,7 +416,7 @@ function tt_render_list_page(){
         $EventListTable = new Event_List_Table();
 
         ?>
-        <div class="wrap">
+        <div class="wrap tm-admin-page">
             <h1 class="wp-heading-inline">TicketMachine > <?php echo __('Veranstaltungen'); ?></h1>
             <a href="?page=tm_events&action=edit" class="page-title-action">Hinzufügen</a>
             <hr class="wp-header-end">
