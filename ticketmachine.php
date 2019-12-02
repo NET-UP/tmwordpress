@@ -72,8 +72,7 @@
 	
     if(is_admin()){
         include_once( plugin_dir_path( __FILE__ ) . 'admin/admin.php');
-        wp_enqueue_script( 'bootstrap-4_JS', plugins_url( "assets/js/ext/bootstrap.min.js", __FILE__ ), array("jquery") );
-		wp_enqueue_style( 'boostrap-4_CSS', plugins_url('assets/css/ext/bootstrap.min.css', __FILE__ ) );
+		wp_enqueue_style( 'admin_CSS', plugins_url('assets/css/admin.css', __FILE__ ) );
     }
 	
     register_activation_hook(__FILE__, 'tm_activate');
