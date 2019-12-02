@@ -13,7 +13,7 @@
 	// load dynamic form for calculator from template
 	function tm_initialize( $atts ) {
 
-		include( plugin_dir_path( __FILE__ ) . 'globals.php');
+		include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
         print_r($globals);
 		
 		if( $atts ) {
