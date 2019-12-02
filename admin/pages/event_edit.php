@@ -74,13 +74,20 @@
                                 <input type="hidden" id="_thumbnail_id" name="_thumbnail_id" value="-1">
                             </div>
                         </div>
-                        <div id="posttags" class="postbox">
-                            <h2 class="hndle">
-                                <span><?php echo __('Schlagwörter', 'ticketmachine') ?></span>
-                            </h2>
-                            <input type="text">
-                            <button type="button">OK</button>
-                            <span><?php echo __('Schlagwörter durch Kommas trennen.', 'ticketmachine') ?></span>
+                        <div id="tagsdiv-post_tag" class="postbox ">
+                            <div class="inside">
+                                <div class="tagsdiv" id="post_tag">
+                                    <div class="jaxtag">
+                                        <div class="ajaxtag hide-if-no-js">
+                                            <label class="screen-reader-text" for="new-tag-post_tag">Neues Schlagwort erstellen</label>
+                                            <input data-wp-taxonomy="post_tag" type="text" id="new-tag-post_tag" name="newtag[post_tag]" class="newtag form-input-tip ui-autocomplete-input" size="16" autocomplete="off" aria-describedby="new-tag-post_tag-desc" value="" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="ui-id-1">
+                                            <input type="button" class="button tagadd" value="OK">
+                                        </div>
+                                        <p class="howto" id="new-tag-post_tag-desc">Schlagwörter durch Kommas trennen.</p>
+                                    </div>
+                                    <ul class="tagchecklist" role="list"></ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
