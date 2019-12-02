@@ -175,6 +175,7 @@
                                             <span class="spinner"></span>
                                             <input name="save" type="submit" class="button button-primary button-large" id="publish" value="Aktualisieren">
                                         </div>
+                                        <div class="clear"></div>
                                     </div>
                                 </div>
                             </div>
