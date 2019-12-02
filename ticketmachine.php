@@ -71,7 +71,6 @@
 		wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
 	}
 	
-	include( plugin_dir_path( __FILE__ ) . 'admin/admin.php');
 	
     register_activation_hook(__FILE__, 'tm_activate');
     register_deactivation_hook(__FILE__, 'tm_deactivate');
