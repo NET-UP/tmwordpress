@@ -36,6 +36,17 @@ var yyyy = today.getFullYear();
 		}
     });
 
+    var dateObj = new Date();
+    var month = dateObj.getUTCMonth() + 1; //months from 1-12
+    var day = dateObj.getUTCDate();
+    var year = dateObj.getUTCFullYear();
+
+    events_array.sort(function(x, y){
+        return new Date(year, month, day).getTime() -  new Date(x.start).getTime();
+	});
+	
+	calendar.gotoDate(events_array[0].start);
+
 	calendar.render();
 	
 	var view = calendar.view;
