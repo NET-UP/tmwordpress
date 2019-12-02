@@ -30,8 +30,9 @@ var yyyy = today.getFullYear();
 				document.getElementById('script-warning').style.display = 'block'
 			}
 		},
+		defaultDate: events[0].defaultDate,
 		loading: function(bool) {
-		document.getElementById('loading').style.display =
+			document.getElementById('loading').style.display =
 			bool ? 'block' : 'none';
 		}
     });
