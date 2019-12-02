@@ -406,6 +406,9 @@ function tt_render_list_page(){
         
         //Create an instance of our package class...
         $EventListTable = new Event_List_Table();
+
+        $EventListTable->search_box('Search', 'search');
+
         //Fetch, prepare, sort, and filter our data...
         $EventListTable->prepare_items();
         
