@@ -346,7 +346,7 @@ class Event_List_Table extends WP_List_Table {
          * without filtering. We'll need this later, so you should always include it 
          * in your own package classes.
          */
-        $total_items = count($data);
+        $total_events = count($data);
         
         
         /**
@@ -369,9 +369,9 @@ class Event_List_Table extends WP_List_Table {
          * REQUIRED. We also have to register our pagination options & calculations.
          */
         $this->set_pagination_args( array(
-            'total_items' => count($total_items)                  //WE have to calculate the total number of items
-            //'per_page'    => $per_page,                     //WE have to determine how many items to show on a page
-            //'total_pages' => ceil($total_items/$per_page)   //WE have to calculate the total number of pages
+            'total_events' => $total_events,            //WE have to calculate the total number of items
+            'per_page'    => $per_page,                     //WE have to determine how many items to show on a page
+            'total_pages' => ceil($total_events/$per_page)   //WE have to calculate the total number of pages
         ) );
     }
 
