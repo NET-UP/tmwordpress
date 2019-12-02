@@ -99,5 +99,5 @@
 		'scope' => 'system',
 	);
 	
-	include('functions.php');
+	#include('functions.php');
 ?>
