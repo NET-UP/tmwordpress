@@ -147,11 +147,7 @@
                 <div id="postbox-container-1" class="postbox-container">
                     <div id="side-sortables" class="meta-box-sortables ui-sortable">
                         <div id="submitdiv" class="postbox">
-                            <button type="button" class="handlediv" aria-expanded="true">
-                                <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Veröffentlichen', 'ticketmachine') ?></span>
-                                <span class="toggle-indicator" aria-hidden="true"></span>
-                            </button>
-                            <h2 class="hndle ui-sortable-handle">
+                            <h2 class="hndle">
                                 <span><?php echo __('Veröffentlichen', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
@@ -182,11 +178,7 @@
                             </div>
                         </div>
                         <div id="postimagediv" class="postbox">
-                            <button type="button" class="handlediv" aria-expanded="true">
-                                <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Eventbild', 'ticketmachine') ?></span>
-                                <span class="toggle-indicator" aria-hidden="true"></span>
-                            </button>
-                            <h2 class="hndle ui-sortable-handle">
+                            <h2 class="hndle">
                                 <span><?php echo __('Eventbild', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
@@ -197,11 +189,7 @@
                             </div>
                         </div>
                         <div id="posttags" class="postbox">
-                            <button type="button" class="handlediv" aria-expanded="true">
-                                <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Seiten-Attribute', 'ticketmachine') ?></span>
-                                <span class="toggle-indicator" aria-hidden="true"></span>
-                            </button>
-                            <h2 class="hndle ui-sortable-handle">
+                            <h2 class="hndle">
                                 <span><?php echo __('Schlagwörter', 'ticketmachine') ?></span>
                             </h2>
                             <input type="text">
