@@ -28,7 +28,7 @@ $.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search).succe
 		firstDay: 1,
 		eventLimit: false, // allow "more" link when too many events
 		events: events_array,
-		defaultDate: events_array[events_array.length - 1][defaultDate],
+		defaultDate: events_array[events_array.length - 1]['defaultDate'],
 		loading: function(bool) {
 			document.getElementById('loading').style.display =
 			bool ? 'block' : 'none';
