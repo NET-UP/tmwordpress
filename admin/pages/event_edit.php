@@ -74,7 +74,10 @@
                                 <input type="hidden" id="_thumbnail_id" name="_thumbnail_id" value="-1">
                             </div>
                         </div>
-                        <div id="tagsdiv-post_tag" class="postbox ">
+                        <div id="tagsdiv-post_tag" class="postbox">
+                            <h2 class="hndle">
+                                <span><?php echo __('Schlagwörter', 'ticketmachine') ?></span>
+                            </h2>
                             <div class="inside">
                                 <div class="tagsdiv" id="post_tag">
                                     <div class="jaxtag">
