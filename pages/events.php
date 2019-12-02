@@ -65,7 +65,7 @@
 						<div class='col-12'>
 							<div id='tm_spinner'>
 								<div class='text-center'>
-									<div class='spinner-border' role='status'>
+									<div class='spinner-border text-primary' role='status'>
 										<span class='sr-only'>Laden...</span>
 									</div>
 								</div>
