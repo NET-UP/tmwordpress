@@ -414,11 +414,11 @@ class Event_List_Table extends WP_List_Table {
 
 }
 
-function remove_event(id){
+function remove_event(){
     // make api call to delete the event
 }
 
-function copy_event(id){
+function copy_event(){
     // make api call to copy event
 }
 
@@ -435,9 +435,9 @@ function tt_render_list_page(){
     if( $_GET['action'] == "edit" ) {
         include "event_edit.php";
     } elseif( $_GET['action'] == "delete" && isset($_GET['id']) ) {
-        remove_event($_GET['id']);
+        remove_event();
     } elseif ( $_GET['action'] == "copy" && isset($_GET['id']) ){
-        copy_event($_GET['id']);
+        copy_event();
     } else {
         
         //Create an instance of our package class...
