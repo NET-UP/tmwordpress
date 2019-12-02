@@ -100,7 +100,7 @@
                         <h2 class="hndle">
                             <span>Standort</span>
                         </h2>
-                        <div class="inside">
+                        <div class="inside inside-pad">
                             <div class="row">
                                 <div class="col-12">
                                     <label for="event_edit_locationname"><?php echo __('Veranstaltungsort', 'ticketmachine') ?></label>
@@ -141,7 +141,7 @@
                         <h2 class="hndle">
                             <span>Termine</span>
                         </h2>
-                        <div class="inside">
+                        <div class="inside inside-pad">
                             <div>
                                 <label><?php echo __('Einlasszeit', 'ticketmachine') ?></label>
                             </div>
@@ -161,8 +161,6 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
-                        <div>
                             <div>
                                 <label><?php echo __('Veranstaltungsbeginn', 'ticketmachine') ?></label>
                             </div>
@@ -182,8 +180,6 @@
                                     </label>
                                 </div>
                             </div>
-                        </div>
-                        <div>
                             <div>
                                 <label><?php echo __('Veranstaltungsende', 'ticketmachine') ?></label>
                             </div>

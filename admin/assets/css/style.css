@@ -18,3 +18,7 @@
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+.tm-admin-page .inside-pad {
+    padding: 10px 20px 20px;
+}
