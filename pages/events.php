@@ -62,7 +62,7 @@
 				</div>
 				<div class='col-12 mt-3'>
 					<div class='row'>
-						<div id='loading'></div>
+						<div id='tm_spinner'></div>
 						<div id='calendar' class='col-12'></div>
 					</div>
 				</div>";
