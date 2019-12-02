@@ -13,12 +13,12 @@
         }
     ?>
     <form name="event" action="" method="post" id="event">
-        <div id="eventstuff">
-            <div id="event-body" class="metabox-holder columns-2">
-                <div id="event-body-content" style="position: relative;">
-                    <div id="eventdiv">
-                        <div id="eventwrap">
-                            <label class="screen-reader-text" id="event-name-prompt-text" for="ev_name"><?php echo __('Event Name hier eingeben', 'ticketmachine') ?></label>
+        <div id="poststuff">
+            <div id="post-body" class="metabox-holder columns-2">
+                <div id="post-body-content" style="position: relative;">
+                    <div id="postdiv">
+                        <div id="postwrap">
+                            <label class="screen-reader-text" id="post-name-prompt-text" for="ev_name"><?php echo __('Event Name hier eingeben', 'ticketmachine') ?></label>
                             <input type="text" name="ev_name" size="30" id="ev_name" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
                         </div>
                     </div>
@@ -29,7 +29,7 @@
                         wp_editor( $event->ev_description, $editor_id, $editor_class);
                     ?>
 
-                    <div id="postbox-container-1">
+                    <div id="test">
                         <div class="postbox">
                             <button type="button" class="handlediv" aria-expanded="true">
                                 <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Standort', 'ticketmachine') ?></span>
@@ -144,7 +144,7 @@
                     </div>
                 </div>
 
-                <div id="postbox-container-2" class="postbox-container">
+                <div id="postbox-container-1" class="postbox-container">
                     <div id="side-sortables" class="meta-box-sortables ui-sortable">
                         <div id="submitdiv" class="postbox">
                             <button type="button" class="handlediv" aria-expanded="true">
