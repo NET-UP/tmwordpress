@@ -98,8 +98,6 @@
 		'state' => $_SESSION['state'],
 		'scope' => 'system',
 	);
-
-	print_r($globals);
 	
 	include('functions.php');
 ?>
