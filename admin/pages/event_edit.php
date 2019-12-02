@@ -179,7 +179,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="eventimagediv" class="postbox">
+                        <div id="postimagediv" class="postbox">
                             <button type="button" class="handlediv" aria-expanded="true">
                                 <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Eventbild', 'ticketmachine') ?></span>
                                 <span class="toggle-indicator" aria-hidden="true"></span>
@@ -189,12 +189,12 @@
                             </h2>
                             <div class="inside">
                                 <p class="hide-if-no-js">
-                                    <a href="" id="set-event-thumbnail" class="thickbox"><?php echo __('Eventbild festlegen', 'ticketmachine') ?></a> <!-- needs correct href -->
+                                    <a href="" id="set-post-thumbnail" class="thickbox"><?php echo __('Eventbild festlegen', 'ticketmachine') ?></a> <!-- needs correct href -->
                                 </p>
                                 <input type="hidden" id="_thumbnail_id" name="_thumbnail_id" value="-1">
                             </div>
                         </div>
-                        <div id="eventtags" class="postbox">
+                        <div id="posttags" class="postbox">
                             <button type="button" class="handlediv" aria-expanded="true">
                                 <span class="screen-reader-text"><?php echo __('Bedienfeld umschalten: Seiten-Attribute', 'ticketmachine') ?></span>
                                 <span class="toggle-indicator" aria-hidden="true"></span>
