@@ -26,7 +26,8 @@
 			switch ($atts['page']) {
 				case 'events_list':
 					include "partials/_event_list_item.php";
-					include "pages/events.php";
+                    include "pages/events.php";
+                    print_r($globals);
 					$tm_output .= tm_display_events( $atts, $globals, $api );
 					break;
 				case 'event_details':
