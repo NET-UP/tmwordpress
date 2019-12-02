@@ -4,7 +4,7 @@
     $event = (object)$tm_json;
 ?>
 
-<div class="wrap">
+<div class="wrap tm-admin-page">
     <?php 
         if(isset($_GET['id'])){
             echo "<h1 class='wp-heading-inline'>TicketMachine > " . __('Veranstaltung bearbeiten', 'ticketmachine') . "</h1>";
