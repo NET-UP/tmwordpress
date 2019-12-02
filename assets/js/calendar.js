@@ -44,8 +44,6 @@ $.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search, funct
     events_array.sort(function(x, y){
         return new Date(year, month, day).getTime() -  new Date(x.start).getTime();
 	});
-	
-	calendar.gotoDate(events_array[0].start);
 
 	calendar.render();
 	
