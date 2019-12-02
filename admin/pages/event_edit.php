@@ -16,8 +16,8 @@
         <div id="poststuff">
             <div id="post-body" class="metabox-holder columns-2">
                 <div id="post-body-content" style="position: relative;">
-                    <div id="postdiv">
-                        <div id="postwrap">
+                    <div id="titlediv">
+                        <div id="titlewrap">
                             <label class="screen-reader-text" id="post-name-prompt-text" for="ev_name"><?php echo __('Event Name hier eingeben', 'ticketmachine') ?></label>
                             <input type="text" name="ev_name" size="30" id="ev_name" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
                         </div>
