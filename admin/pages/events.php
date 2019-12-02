@@ -156,6 +156,7 @@ class Event_List_Table extends WP_List_Table {
         $actions = array(
             'edit'      => sprintf('<a href="?page=%s&action=%s&id=%s">Bearbeiten</a>',$_REQUEST['page'],'edit',$item['id']),
             'delete'    => sprintf('<a href="?page=%s&action=%s&id=%s">Löschen</a>',$_REQUEST['page'],'delete',$item['id']),
+            'copy'      => sprintf('<a href="?page=%s&action=%s&id=%s">Kopieren</a>',$_REQUEST['page'],'copy',$item['id'])
         );
         
         //Return the title contents
