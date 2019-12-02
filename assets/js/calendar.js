@@ -4,9 +4,8 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 var events_array = new Array();
 
-$.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search, function(data) {
-	events_array = data;
-	return events_array;
+var events_array = $.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search, function(data) {
+	return data;
 });
 console.log(events_array);
 
