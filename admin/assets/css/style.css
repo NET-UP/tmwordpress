@@ -3,6 +3,14 @@
     font-weight:500;
 }
 
+.tm-admin-page .form-group {
+    margin-bottom: 1rem;
+}
+
+.tm-admin-page label {
+    margin-bottom: .5rem;
+}
+
 .tm-admin-page .form-control {
     display: block;
     width: 100%;

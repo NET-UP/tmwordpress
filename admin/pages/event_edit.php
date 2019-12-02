@@ -102,33 +102,33 @@
                         </h2>
                         <div class="inside inside-pad">
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-12 form-group">
                                     <label for="event_edit_locationname"><?php echo __('Veranstaltungsort', 'ticketmachine') ?></label>
                                     <input id="event_location_name" type="text" class="form-control" value="<?php echo $event->ev_location_name; ?>">
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-8">
+                                <div class="col-sm-8 form-group">
                                     <label for="event_edit_strasse"><?php echo __('Straße', 'ticketmachine') ?></label>
                                     <input id="event_edit_strasse" type="text" class="form-control" value="<?php echo $event->street; ?>">
                                 </div>
-                                <div class="col-sm-4">
+                                <div class="col-sm-4 form-group">
                                     <label for="house_number"><?php echo __('Haus-Nr.', 'ticketmachine') ?></label>
                                     <input id="event_edit_hausnr" type="text" class="form-control" value="<?php echo $event->house_number; ?>">
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-4">
+                                <div class="col-sm-4 form-group">
                                     <label for="event_edit_plz"><?php echo __('PLZ', 'ticketmachine') ?></label>
                                     <input id="event_edit_plz" type="text" class="form-control" value="<?php echo $event->zip; ?>">
                                 </div>
-                                <div class="col-sm-8">
+                                <div class="col-sm-8 form-group">
                                     <label for="event_edit_ort"><?php echo __('Ort', 'ticketmachine') ?></label>
                                     <input id="event_edit_ort" type="text" class="form-control" value="<?php echo $event->city; ?>">
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-12">
+                                <div class="col-12 form-group">
                                     <label for="event_edit_land"><?php echo __('Land', 'ticketmachine') ?></label>
                                     <input id="event_edit_land" type="text" class="form-control" value="<?php echo $event->country; ?>">
                                 </div>
