@@ -415,11 +415,6 @@ function tt_render_list_page(){
         //Create an instance of our package class...
         $EventListTable = new Event_List_Table();
 
-        $EventListTable->search_box('Search', 'search');
-
-        //Fetch, prepare, sort, and filter our data...
-        $EventListTable->prepare_items();
-        
         ?>
         <div class="wrap">
             <h1 class="wp-heading-inline">TicketMachine > <?php echo __('Veranstaltungen'); ?></h1>
@@ -430,6 +425,9 @@ function tt_render_list_page(){
                 <!-- For plugins, we also need to ensure that the form posts back to our current page -->
                 <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
                 <!-- Now we can render the completed list table -->
+                <?php $EventListTable->search_box('Search', 'search'); ?>
+                <!--Fetch, prepare, sort, and filter our data... -->
+                <?php $EventListTable->prepare_items();?>
                 <?php $EventListTable->display() ?>
             </form>
         </div>
