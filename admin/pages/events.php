@@ -428,14 +428,20 @@ function tt_render_list_page(){
                 <ul class="subsubsub">
                     <li class="all">
                         <a href="#" class="current">
-                            <?php _e('All'); ?> 
+                            <?php _e('Alle'); ?> 
                             <span class="count">(1)</span>
                         </a> |
                     </li>
                     <li class="publish">
                         <a href="#">
-                            <?php _e('Active'); ?> 
-                            <span class="count">(5)</span>
+                            <?php _e('Veröffentlichte'); ?> 
+                            <span class="count">(5)</span> <!-- TO DO add logic -->
+                        </a>
+                    </li>
+                    <li class="draft">
+                        <a href="#">
+                            <?php _e('Entwürfe'); ?> 
+                            <span class="count">(5)</span> <!-- TO DO add logic -->
                         </a>
                     </li>
                 </ul>
