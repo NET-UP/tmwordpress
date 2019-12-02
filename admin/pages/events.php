@@ -238,6 +238,14 @@ class Event_List_Table extends WP_List_Table {
         
     }
 
+    public function search_box( $text, $input_id ) { ?>
+        <p class="search-box">
+          <label class="screen-reader-text" for="<?php echo $input_id ?>"><?php echo $text; ?>:</label>
+          <input type="search" id="<?php echo $input_id ?>" name="s" value="<?php _admin_search_query(); ?>" />
+          <?php submit_button( $text, 'button', false, false, array('id' => 'search-submit') ); ?>
+      </p>
+    <?php }
+
     /** ************************************************************************
      * REQUIRED! This is where you prepare your data for display. This method will
      * usually be used to query the database, sort and filter the data, and generally
@@ -398,7 +406,7 @@ function tt_render_list_page(){
 
     if( $_GET['action'] == "edit" ) {
         include "event_edit.php";
-    } elseif( $_GET['action'] == "delete" && isset($_GET['id']) ) {
+    } elseif ( $_GET['action'] == "delete" && isset($_GET['id']) ) {
         remove_event();
     } elseif ( $_GET['action'] == "copy" && isset($_GET['id']) ){
         copy_event();
@@ -430,3 +438,4 @@ function tt_render_list_page(){
     }
 
 }
+?>
