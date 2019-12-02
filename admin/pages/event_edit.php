@@ -206,3 +206,9 @@
         </div>
     </form>
 </div>
+
+<script>
+    jQuery(document).ready(function($) {
+        $('.hasDatepicker').datepicker();
+    });
+</script>
