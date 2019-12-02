@@ -2,7 +2,6 @@ var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
-var events_array = new Array();
 
 var events_array = $.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search, function(data) {
 	return data;
@@ -36,17 +35,8 @@ console.log(events_array);
 			document.getElementById('loading').style.display =
 			bool ? 'block' : 'none';
 		}
-    });
-
-    var dateObj = new Date();
-    var month = dateObj.getUTCMonth() + 1; //months from 1-12
-    var day = dateObj.getUTCDate();
-    var year = dateObj.getUTCFullYear();
-
-    events_array.sort(function(x, y){
-        return new Date(year, month, day).getTime() -  new Date(x.start).getTime();
 	});
-
+	
 	calendar.render();
 	
 	var view = calendar.view;
