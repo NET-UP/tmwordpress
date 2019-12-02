@@ -126,7 +126,7 @@ class Event_List_Table extends WP_List_Table {
         
         //Return the title contents
         return sprintf('%1$s %2$s',
-        /*$1%s*/ '<strong><a class="row-title" href=""></a>'$item['ev_name']'</strong>',
+        /*$1%s*/ '<a href="?page=%s&action=%s&id=%s">'$item['ev_name']'</a>',$_REQUEST['page'],'edit',$item['id'],
         /*$2%s*/ $this->row_actions($actions)
         );
     }
