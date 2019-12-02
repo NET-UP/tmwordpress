@@ -161,7 +161,8 @@
                                             <div class="misc-pub-section misc-pub-post-status">
                                                 <span>Status: </span>
                                                 <select>
-                                                    <option value="Entwurf"><?php echo __('Entwurf', 'ticketmachine') ?></option>
+                                                    <option value="Published"><?php echo __('Veröffentlicht', 'ticketmachine') ?></option>
+                                                    <option value="Draft"><?php echo __('Entwurf', 'ticketmachine') ?></option>
                                                 </select>
                                             </div>
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
