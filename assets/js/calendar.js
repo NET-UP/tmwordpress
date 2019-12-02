@@ -8,6 +8,8 @@ $.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search, funct
     events_array = data;
 });
 
+console.log(events_array);
+
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
