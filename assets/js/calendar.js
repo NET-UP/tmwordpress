@@ -8,7 +8,6 @@ $.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search).succe
 	var events_array = data;
 	console.log(data);
 
-	console.log("xd");
 	var calendarEl = document.getElementById('calendar');
 
 	var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -30,6 +29,7 @@ $.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search).succe
 		firstDay: 1,
 		eventLimit: false, // allow "more" link when too many events
 		events: events_array,
+		defaultDate: events_array[events_array.length - 1],
 		loading: function(bool) {
 			document.getElementById('loading').style.display =
 			bool ? 'block' : 'none';
