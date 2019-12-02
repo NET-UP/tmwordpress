@@ -6,6 +6,7 @@ var yyyy = today.getFullYear();
 $.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search).success(function(data) {
 
 	var events_array = data;
+	console.log(data);
 
 
 	document.addEventListener('DOMContentLoaded', function() {
