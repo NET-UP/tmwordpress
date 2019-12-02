@@ -14,6 +14,7 @@
 	function tm_initialize( $atts ) {
 
 		include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
+        print_r($globals);
 		
 		if( $atts ) {
 			
@@ -27,7 +28,6 @@
 				case 'events_list':
 					include "partials/_event_list_item.php";
                     include "pages/events.php";
-                    print_r($globals);
 					$tm_output .= tm_display_events( $atts, $globals, $api );
 					break;
 				case 'event_details':
