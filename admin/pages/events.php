@@ -447,9 +447,7 @@ function tt_render_list_page(){
         
         ?>
         <div class="wrap">
-            
-            <div id="icon-users" class="icon32"><br/></div>
-            <h1>TicketMachine > <?php echo __('Veranstaltungen'); ?></h1>
+            <h1 class="wp-heading-inline">TicketMachine > <?php echo __('Veranstaltungen'); ?></h1>
             <a href="?page=tm_events&action=edit" class="page-title-action">Hinzufügen</a>
             <hr class="wp-header-end">
             <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
