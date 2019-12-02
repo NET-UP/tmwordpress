@@ -29,6 +29,9 @@ var yyyy = today.getFullYear();
 			failure: function() {
 				document.getElementById('script-warning').style.display = 'block'
 			}
+		}, 
+		eventRender: function (info) {
+			console.log(info.event.start)
 		},
 		loading: function(bool) {
 			document.getElementById('loading').style.display =
@@ -36,9 +39,7 @@ var yyyy = today.getFullYear();
 		}
     });
 
-	var calEv = calendar.getEvents();
 	calendar.render();
-	console.log(calEv);
 	
 	var view = calendar.view;
 	
