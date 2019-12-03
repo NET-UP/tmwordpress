@@ -211,6 +211,8 @@
 
 <script>
     jQuery(document).ready(function($) {
-        $('input.date').datetimepicker();
+        $('input.time').datetimepicker({
+            format: 'LT'
+        });
     });
 </script>
