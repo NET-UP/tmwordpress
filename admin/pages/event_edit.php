@@ -157,7 +157,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control time">
+                                    <input type="text" class="form-control time" value="<?php echo date("H:i", strtotime($event->entrytime)); ?>">
                                     <label for="event_time_entry_time" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
                                     </label>
@@ -176,7 +176,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control time">
+                                    <input type="text" class="form-control time" value="<?php echo date("H:i", strtotime($event->ev_date)); ?>">
                                     <label for="event_time_start_date" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
                                     </label>
@@ -195,7 +195,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control time">
+                                    <input type="text" class="form-control time" value="<?php echo date("H:i", strtotime($event->endtime)); ?>">
                                     <label for="event_edit_end_date" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
                                     </label>
