@@ -21,5 +21,6 @@
 ?>
 
 <pre>
-<?php print_r($_POST); ?>
+<?php #print_r($_POST); ?>
+<?php primt_r($tm_json); ?>
 </pre>
