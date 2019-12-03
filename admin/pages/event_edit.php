@@ -13,6 +13,8 @@
         }
     ?>
     <form name="event" action="?page=tm_events&action=save&id=<?php echo $_GET['id']; ?>" method="post" id="event">
+        <input type="hidden" name="organizer_id" value="<?php echo $event->organizer_id; ?>">
+
         <div id="poststuff">
             <div id="post-body" class="metabox-holder columns-2">
                 <div id="post-body-content" style="position: relative;">
