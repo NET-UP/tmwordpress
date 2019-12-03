@@ -149,7 +149,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control date"<?php echo $event->entrytime; ?>>
+                                    <input type="text" class="form-control date" value="<?php echo $event->entrytime; ?>">
                                     <label for="event_time_entry_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
@@ -168,7 +168,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control date" <?php echo $event->ev_date; ?>>
+                                    <input type="text" class="form-control date" value="<?php echo $event->ev_date; ?>">
                                     <label for="event_time_start_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
@@ -187,7 +187,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control date" <?php echo $event->endtime; ?>>
+                                    <input type="text" class="form-control date" value="<?php echo $event->endtime; ?>">
                                     <label for="event_edit_end_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
