@@ -85,10 +85,7 @@
                                         <div class="ajaxtag hide-if-no-js">
                                             <label class="screen-reader-text" for="new-tag-post_tag">Neues Schlagwort erstellen</label>
                                             <input type="text" 
-                                                value="
-                                                    <?php foreach($event->tags as $tag) {
-                                                        echo $tag.",";
-                                                    }?>" 
+                                                value="<?php foreach($event->tags as $tag) { echo $tag.","; }?>" 
                                                 name="tags" data-role="tagsinput" >
                                         </div>
                                         <p class="howto" id="new-tag-post_tag-desc">Schlagwörter durch Kommas trennen.</p>
