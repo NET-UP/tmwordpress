@@ -2,8 +2,6 @@
     global $globals, $api;
     $tm_json = apiRequest($api->get_single_event);
     $event = (object)$tm_json;
-
-    print_r($event);
 ?>
 
 <div class="wrap tm-admin-page">
@@ -116,23 +114,23 @@
                                 </div>
                                 <div class="col-sm-4 form-group">
                                     <label for="house_number"><?php echo __('Haus-Nr.', 'ticketmachine') ?></label>
-                                    <input id="event_edit_hausnr" type="text" class="form-control" value="<?php echo $event->house_number; ?>">
+                                    <input id="event_edit_hausnr" type="text" class="form-control" value="<?php echo $event->event_location['house_number']; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-4 form-group">
                                     <label for="event_edit_plz"><?php echo __('PLZ', 'ticketmachine') ?></label>
-                                    <input id="event_edit_plz" type="text" class="form-control" value="<?php echo $event->zip; ?>">
+                                    <input id="event_edit_plz" type="text" class="form-control" value="<?php echo $event->event_location['zip']; ?>">
                                 </div>
                                 <div class="col-sm-8 form-group">
                                     <label for="event_edit_ort"><?php echo __('Ort', 'ticketmachine') ?></label>
-                                    <input id="event_edit_ort" type="text" class="form-control" value="<?php echo $event->city; ?>">
+                                    <input id="event_edit_ort" type="text" class="form-control" value="<?php echo $event->event_location['city']; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="event_edit_land"><?php echo __('Land', 'ticketmachine') ?></label>
-                                    <input id="event_edit_land" type="text" class="form-control" value="<?php echo $event->country; ?>">
+                                    <input id="event_edit_land" type="text" class="form-control" value="<?php echo $event->event_location['country']; ?>">
                                 </div>
                             </div>
                         </div>
