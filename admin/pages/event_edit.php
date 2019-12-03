@@ -57,7 +57,7 @@
                                     <div id="major-publishing-actions">
                                         <div id="publishing-action">
                                             <span class="spinner"></span>
-                                            <input name="save" type="submit" class="button button-primary button-large" id="publish" value="Aktualisieren">
+                                            <input type="submit" class="button button-primary button-large" id="publish" value="<?php echo __('Aktualisieren', 'ticketmachine') ?>">
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -72,7 +72,7 @@
                                 <p class="hide-if-no-js">
                                     <a href="" id="set-post-thumbnail" class="thickbox"><?php echo __('Eventbild festlegen', 'ticketmachine') ?></a> <!-- needs correct href -->
                                 </p>
-                                <input type="hidden" id="_thumbnail_id" name="_thumbnail_id" value="-1">
+                                <input type="hidden" id="_thumbnail_id" name="event_img_url" value="-1">
                             </div>
                         </div>
                         <div id="tagsdiv-post_tag" class="postbox">
@@ -83,12 +83,12 @@
                                 <div class="tagsdiv" id="post_tag">
                                     <div class="jaxtag">
                                         <div class="ajaxtag hide-if-no-js">
-                                            <label class="screen-reader-text" for="new-tag-post_tag">Neues Schlagwort erstellen</label>
+                                            <label class="screen-reader-text" for="new-tag-post_tag"><?php echo __('Neues Schlagwort erstellen', 'ticketmachine') ?></label>
                                             <input type="text" class="form-control" 
                                                 value="<?php foreach($event->tags as $tag) { echo $tag.","; }?>" 
                                                 name="tags" data-role="tagsinput" >
                                         </div>
-                                        <p class="howto" id="new-tag-post_tag-desc">Schlagwörter mit Enter-Taste hinzufügen.</p>
+                                        <p class="howto" id="new-tag-post_tag-desc"><?php echo __('Schlagwörter mit Enter-Taste hinzufügen.', 'ticketmachine') ?></p>
                                     </div>
                                 </div>
                             </div>
