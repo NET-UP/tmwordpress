@@ -406,6 +406,8 @@ function tt_render_list_page(){
 
     if( $_GET['action'] == "edit" ) {
         include "event_edit.php";
+    } elseif ( $_GET['action'] == "save") {
+        include "event_save.php";
     } elseif ( $_GET['action'] == "delete" && isset($_GET['id']) ) {
         remove_event();
     } elseif ( $_GET['action'] == "copy" && isset($_GET['id']) ){
