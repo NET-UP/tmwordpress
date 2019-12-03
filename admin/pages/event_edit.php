@@ -1,6 +1,6 @@
 <?php
     global $globals, $api;
-    $tm_json = apiRequest($api->get_single_event);
+    $tm_json = apiRequest($api->get_single_event_no_categories);
     $event = (object)$tm_json;
 ?>
 
