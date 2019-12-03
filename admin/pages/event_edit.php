@@ -110,27 +110,27 @@
                             <div class="row">
                                 <div class="col-sm-8 form-group">
                                     <label for="event_edit_strasse"><?php echo __('Straße', 'ticketmachine') ?></label>
-                                    <input id="event_edit_strasse" name="event_location['street']" type="text" class="form-control" value="<?php echo $event->event_location['street']; ?>">
+                                    <input id="event_edit_strasse" name="event_location[street]" type="text" class="form-control" value="<?php echo $event->event_location['street']; ?>">
                                 </div>
                                 <div class="col-sm-4 form-group">
                                     <label for="house_number"><?php echo __('Haus-Nr.', 'ticketmachine') ?></label>
-                                    <input id="event_edit_hausnr" name="event_location['house_number']" type="text" class="form-control" value="<?php echo $event->event_location['house_number']; ?>">
+                                    <input id="event_edit_hausnr" name="event_location[house_number]" type="text" class="form-control" value="<?php echo $event->event_location['house_number']; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-4 form-group">
                                     <label for="event_edit_plz"><?php echo __('PLZ', 'ticketmachine') ?></label>
-                                    <input id="event_edit_plz" name="event_location['zip']" type="text" class="form-control" value="<?php echo $event->event_location['zip']; ?>">
+                                    <input id="event_edit_plz" name="event_location[zip]" type="text" class="form-control" value="<?php echo $event->event_location['zip']; ?>">
                                 </div>
                                 <div class="col-sm-8 form-group">
                                     <label for="event_edit_ort"><?php echo __('Ort', 'ticketmachine') ?></label>
-                                    <input id="event_edit_ort" name="event_location['city']" type="text" class="form-control" value="<?php echo $event->event_location['city']; ?>">
+                                    <input id="event_edit_ort" name="event_location[city]" type="text" class="form-control" value="<?php echo $event->event_location['city']; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="event_edit_land"><?php echo __('Land', 'ticketmachine') ?></label>
-                                    <input id="event_edit_land" name="event_location['country']" type="text" class="form-control" value="<?php echo $event->event_location['country']; ?>">
+                                    <input id="event_edit_land" name="event_location[country]" type="text" class="form-control" value="<?php echo $event->event_location['country']; ?>">
                                 </div>
                             </div>
                         </div>
@@ -147,13 +147,13 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="entrytime['date']" class="form-control date entrytime" value="<?php echo date("d.m.Y", strtotime($event->entrytime)); ?>">
+                                    <input type="text" name="entrytime[date]" class="form-control date entrytime" value="<?php echo date("d.m.Y", strtotime($event->entrytime)); ?>">
                                     <label for="event_time_entry_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="entrytime['time']" class="form-control time" value="<?php echo date("H:i", strtotime($event->entrytime)); ?>">
+                                    <input type="text" name="entrytime[time]" class="form-control time" value="<?php echo date("H:i", strtotime($event->entrytime)); ?>">
                                     <label for="event_time_entry_time" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
                                     </label>
@@ -164,13 +164,13 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="ev_date['date']" class="form-control date starttime" value="<?php echo date("d.m.Y", strtotime($event->ev_date)); ?>">
+                                    <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo date("d.m.Y", strtotime($event->ev_date)); ?>">
                                     <label for="event_time_start_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="ev_date['time']" class="form-control time" value="<?php echo date("H:i", strtotime($event->ev_date)); ?>">
+                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo date("H:i", strtotime($event->ev_date)); ?>">
                                     <label for="event_time_start_date" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
                                     </label>
@@ -181,13 +181,13 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="endtime['date']" class="form-control date endtime" value="<?php echo date("d.m.Y", strtotime($event->endtime)); ?>">
+                                    <input type="text" name="endtime[date]" class="form-control date endtime" value="<?php echo date("d.m.Y", strtotime($event->endtime)); ?>">
                                     <label for="event_edit_end_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="endtime['time']" class="form-control time" value="<?php echo date("H:i", strtotime($event->endtime)); ?>">
+                                    <input type="text" name="endtime[time]" class="form-control time" value="<?php echo date("H:i", strtotime($event->endtime)); ?>">
                                     <label for="event_edit_end_date" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
                                     </label>
