@@ -17,6 +17,6 @@
         $endtime = new DateTime($_POST['endtime']['date'] . $_POST['endtime']['time']);
         $_POST['endtime'] = $endtime->format(DateTime::ATOM);
     }
-    print_r($_POST); 
+    print_r("<pre>" . $_POST . "</pre>"); 
 
 ?>
