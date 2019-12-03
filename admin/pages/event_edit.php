@@ -25,7 +25,7 @@
                     </div>
 
                     <?php 
-                        $editor_id = 'wp-content-editor-container';
+                        $editor_id = 'ev_description';
                         $editor_class = 'wp-editor-container';
                         wp_editor( $event->ev_description, $editor_id, $editor_class);
                     ?>
