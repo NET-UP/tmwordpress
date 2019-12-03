@@ -179,7 +179,7 @@
                             <div>
                                 <label><?php echo __('Veranstaltungsende', 'ticketmachine') ?></label>
                             </div>
-                            <div>
+                            <div class="row">
                                 <div class="input-group col-8">
                                     <input type="text" class="form-control date endtime" value="<?php echo date("d.m.Y", strtotime($event->endtime)); ?>">
                                     <label for="event_edit_end_date" class="input-group-addon w50">
