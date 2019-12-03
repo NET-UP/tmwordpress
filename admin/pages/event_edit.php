@@ -49,7 +49,7 @@
                                                 </select>
                                             </div>
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
-                                                <input checked="checked" type="checkbox">
+                                                <input value="1" name="shown" checked="checked" type="checkbox" <?php if($event->state['shown'] == 1){ echo "checked"; } ?>>
                                                 <span><?php echo __('Aus Veranstaltungs-Liste ausblenden', 'ticketmachine') ?></span>
                                             </div>
                                         </div>
