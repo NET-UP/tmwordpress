@@ -218,6 +218,6 @@
             format: 'HH:mm'
         });
 
-        $('.starttime').val($('.starttime').val());
+        $('.starttime').val("<?php echo $event->endtime; ?>");
     });
 </script>
