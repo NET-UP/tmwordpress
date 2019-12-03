@@ -90,7 +90,6 @@
                                         </div>
                                         <p class="howto" id="new-tag-post_tag-desc">Schlagwörter mit Enter-Taste hinzufügen.</p>
                                     </div>
-                                    <ul class="tagchecklist" role="list"></ul>
                                 </div>
                             </div>
                         </div>
