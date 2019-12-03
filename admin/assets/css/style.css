@@ -3,7 +3,7 @@
     font-weight:500;
 }
 
-.tm-admin-page .form-group {
+.tm-admin-page .form-group, .tm-admin-page .input-group {
     margin-bottom: 0.5rem;
 }
 
