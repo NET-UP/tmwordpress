@@ -212,7 +212,7 @@
 <script>
     jQuery(document).ready(function($) {
         $('input.date').datetimepicker({
-            format: 'DD.MM.YYYY'
+            format: 'DD.MM.YYYY',
             defaultDate: "11/1/2016",
             minDate: moment()       
         });
