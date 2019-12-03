@@ -209,6 +209,6 @@
 
 <script>
     jQuery(document).ready(function($) {
-        $('.form-control').datepicker();
+        $('.hasDatepicker').datepicker();
     });
 </script>
