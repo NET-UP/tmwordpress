@@ -17,8 +17,7 @@
         $_POST['endtime'] = date(DATE_ISO8601, strtotime($_POST['endtime']['date'] . $_POST['endtime']['time']));
     }
     
-    $tm_json = apiRequest($api->get_single_event_no_categories, TRUE, $_POST);
-?>
+    $tm_json = apiRequest($api->get_single_event_no_categories, $_POST);?>
 
 <pre>
 <?php print_r($_POST); ?>
