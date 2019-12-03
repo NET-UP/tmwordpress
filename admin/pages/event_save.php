@@ -1,7 +1,7 @@
 <?php 
     global $globals, $api;
 
-    echo $_POST['entrytime']['date'] . $_POST['entrytime']['time'];
+    echo date($_POST['entrytime']['date'] . $_POST['entrytime']['time']);
 
     if(!isset($_POST['shown'])) {
         $_POST['shown'] = 0;
@@ -25,5 +25,3 @@
 <pre>
 <?php print_r($_POST); ?>
 </pre>
-
-true
