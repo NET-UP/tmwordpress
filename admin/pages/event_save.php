@@ -1,4 +1,6 @@
 <?php 
+    global $globals, $api;
+
     if(!isset($_POST['shown'])) {
         $_POST['shown'] = 0;
     }
@@ -14,8 +16,12 @@
     if(isset($_POST['endtime'])) {
         $_POST['endtime'] = date(DATE_ISO8601, strtotime($_POST['endtime']['date'] . $_POST['endtime']['time']));
     }
+    
+    #$tm_json = apiRequest($api->get_single_event, TRUE);
 ?>
 
 <pre>
 <?php print_r($_POST); ?>
 </pre>
+
+true
