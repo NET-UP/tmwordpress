@@ -34,7 +34,7 @@
 .tm-admin-page .tag + input[type="text"] {
     width: 100%;
     display: block;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .tm-admin-page .tag.label {
