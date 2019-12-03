@@ -82,7 +82,7 @@
                             <div class="inside">
                                 <div>
                                     <?php foreach($event->tags as $tag) {
-                                        echo ("<span class='tag'>".$tag."<button type='button' class='close'>x</button>");
+                                        echo ("<div><span class='tag'>".$tag."<button type='button' class='close'>x</button></div>");
                                     }?>
                                 </div>
                                 <div class="tagsdiv" id="post_tag">
