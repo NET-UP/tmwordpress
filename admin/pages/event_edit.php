@@ -43,9 +43,9 @@
                                         <div id="misc-publishing-actions">
                                             <div class="misc-pub-section misc-pub-post-status">
                                                 <span>Status: </span>
-                                                <select style="float: right; margin-top: -2px;">
-                                                    <option value="Published"><?php echo __('Veröffentlicht', 'ticketmachine') ?></option>
-                                                    <option value="Draft"><?php echo __('Entwurf', 'ticketmachine') ?></option>
+                                                <select style="float: right; margin-top: -2px;" name="approved">
+                                                    <option value="1" <?php if($event->approved == 1){ echo "selected"; } ?>><?php echo __('Veröffentlicht', 'ticketmachine') ?></option>
+                                                    <option value="0" <?php if($event->approved != 1){ echo "selected"; } ?>><?php echo __('Entwurf', 'ticketmachine') ?></option>
                                                 </select>
                                             </div>
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
