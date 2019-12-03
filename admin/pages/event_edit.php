@@ -2,6 +2,8 @@
     global $globals, $api;
     $tm_json = apiRequest($api->get_single_event);
     $event = (object)$tm_json;
+
+    include "./includes/date-timepicker.php";
 ?>
 
 <div class="wrap tm-admin-page">
@@ -147,7 +149,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control hasDatepicker"<?php #echo $event->entrytime; ?>>
+                                    <input type="text" class="form-control date"<?php #echo $event->entrytime; ?>>
                                     <label for="event_time_entry_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
@@ -166,7 +168,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control hasDatepicker" <?php #echo $event->ev_date; ?>>
+                                    <input type="text" class="form-control date" <?php #echo $event->ev_date; ?>>
                                     <label for="event_time_start_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
@@ -185,7 +187,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control hasDatepicker" <?php #echo $event->endtime; ?>>
+                                    <input type="text" class="form-control date" <?php #echo $event->endtime; ?>>
                                     <label for="event_edit_end_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
@@ -209,6 +211,9 @@
 
 <script>
     jQuery(document).ready(function($) {
-        $('.hasDatepicker').datepicker();
+        $('input.date').datepicker();
+        $('input.time').timepicker({
+            timeFormat: 'HH:mm:ss'
+        });
     });
 </script>
