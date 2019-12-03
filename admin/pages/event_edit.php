@@ -145,16 +145,14 @@
                             <div>
                                 <label><?php echo __('Einlasszeit', 'ticketmachine') ?></label>
                             </div>
-                            <div>
-                                <div class="input-group">
+                            <div class="row">
+                                <div class="input-group col-8">
                                     <input type="text" class="form-control date entrytime" value="<?php echo date("d.m.Y", strtotime($event->entrytime)); ?>">
                                     <label for="event_time_entry_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="input-group">
+                                <div class="input-group col-4">
                                     <input type="text" class="form-control time" value="<?php echo date("H:i", strtotime($event->entrytime)); ?>">
                                     <label for="event_time_entry_time" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
@@ -164,16 +162,14 @@
                             <div>
                                 <label><?php echo __('Veranstaltungsbeginn', 'ticketmachine') ?></label>
                             </div>
-                            <div>
-                                <div class="input-group">
+                            <div class="row">
+                                <div class="input-group col-8">
                                     <input type="text" class="form-control date starttime" value="<?php echo date("d.m.Y", strtotime($event->ev_date)); ?>">
                                     <label for="event_time_start_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="input-group">
+                                <div class="input-group col-4">
                                     <input type="text" class="form-control time" value="<?php echo date("H:i", strtotime($event->ev_date)); ?>">
                                     <label for="event_time_start_date" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
@@ -184,15 +180,13 @@
                                 <label><?php echo __('Veranstaltungsende', 'ticketmachine') ?></label>
                             </div>
                             <div>
-                                <div class="input-group">
+                                <div class="input-group col-8">
                                     <input type="text" class="form-control date endtime" value="<?php echo date("d.m.Y", strtotime($event->endtime)); ?>">
                                     <label for="event_edit_end_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
                                 </div>
-                            </div>
-                            <div>
-                                <div class="input-group">
+                                <div class="input-group col-4">
                                     <input type="text" class="form-control time" value="<?php echo date("H:i", strtotime($event->endtime)); ?>">
                                     <label for="event_edit_end_date" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
