@@ -4,8 +4,6 @@
     $event = (object)$tm_json;
 
     print_r($event);
-
-    include "./includes/date-timepicker.php";
 ?>
 
 <div class="wrap tm-admin-page">
@@ -114,7 +112,7 @@
                             <div class="row">
                                 <div class="col-sm-8 form-group">
                                     <label for="event_edit_strasse"><?php echo __('Straße', 'ticketmachine') ?></label>
-                                    <input id="event_edit_strasse" type="text" class="form-control" value="<?php echo $event->street; ?>">
+                                    <input id="event_edit_strasse" type="text" class="form-control" value="<?php echo $event->event_location['street']; ?>">
                                 </div>
                                 <div class="col-sm-4 form-group">
                                     <label for="house_number"><?php echo __('Haus-Nr.', 'ticketmachine') ?></label>
