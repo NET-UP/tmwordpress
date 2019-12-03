@@ -63,6 +63,9 @@
 	/* Get single event */
 	$api->get_single_event = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "?categories=true";
 	
+	/* Get single event */
+	$api->get_single_event_no_categories = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'];
+	
 	/* Get event calendar */
 	$api->get_event_calendar = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
 
