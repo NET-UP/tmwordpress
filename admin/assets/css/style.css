@@ -31,7 +31,7 @@
     padding: 10px 20px 20px;
 }
 
-.tm-admin-page .tag + input[type="text"] {
+.tm-admin-page .bootstrap-tagsinput > input[type="text"] {
     width: 100%;
     display: block;
     margin-top: 10px;
