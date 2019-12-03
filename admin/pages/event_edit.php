@@ -201,8 +201,6 @@
     </form>
 </div>
 
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.4357179438844!2d11.371360915651142!3d48.198222779228296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e78d710507ff7%3A0xf37bada8b0d55d3!2sbai%20poo%20thai%20massage%20gr%C3%B6benzell!5e0!3m2!1sen!2sde!4v1575383721244!5m2!1sen!2sde" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-
 <script>
     jQuery(document).ready(function($) {
         $('input.date').datetimepicker({
