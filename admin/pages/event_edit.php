@@ -80,16 +80,16 @@
                                 <span><?php echo __('Schlagwörter', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
-                                <div class="tags">
-                                    <?php foreach($event->tags as $tag) {
-                                        echo ("<div><span class='tag'>".$tag."<button type='button' class='close'>x</button></div>");
-                                    }?>
-                                </div>
                                 <div class="tagsdiv" id="post_tag">
                                     <div class="jaxtag">
                                         <div class="ajaxtag hide-if-no-js">
                                             <label class="screen-reader-text" for="new-tag-post_tag">Neues Schlagwort erstellen</label>
-                                            <input type="text" name="tags" data-provide="tag">
+                                            <input type="text" 
+                                                value="
+                                                    <?php foreach($event->tags as $tag) {
+                                                        echo ("<div><span class='tag'>".$tag."<button type='button' class='close'>x</button></div>");
+                                                    }?>" 
+                                                name="tags" data-role="tagsinput" >
                                         </div>
                                         <p class="howto" id="new-tag-post_tag-desc">Schlagwörter durch Kommas trennen.</p>
                                     </div>
