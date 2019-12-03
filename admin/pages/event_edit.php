@@ -82,7 +82,7 @@
                             <div class="inside">
                                 <div>
                                     <?php foreach($event->tags as $tag) {
-                                        echo ($tag ", ");
+                                        echo ($tag.", ");
                                     }?>
                                 </div>
                                 <div class="tagsdiv" id="post_tag">
