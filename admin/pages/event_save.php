@@ -1,7 +1,7 @@
 <?php 
     global $globals, $api;
 
-    echo date($_POST['entrytime']['date'] . $_POST['entrytime']['time']);
+    echo "test: " . date($_POST['entrytime']['date'] . $_POST['entrytime']['time']);
 
     if(!isset($_POST['shown'])) {
         $_POST['shown'] = 0;
