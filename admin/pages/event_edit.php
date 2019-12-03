@@ -209,7 +209,9 @@
 
 <script>
     jQuery(document).ready(function($) {
-        $('.date').datepicker();
-        $('.time').timepicker();
+        $('input.date').datepicker();
+        $('input.time').timepicker({
+            timeFormat: 'HH:mm:ss'
+        });
     });
 </script>
