@@ -84,7 +84,7 @@
                                     <div class="jaxtag">
                                         <div class="ajaxtag hide-if-no-js">
                                             <label class="screen-reader-text" for="new-tag-post_tag">Neues Schlagwort erstellen</label>
-                                            <input type="text" 
+                                            <input type="text" class="form-control" 
                                                 value="<?php foreach($event->tags as $tag) { echo $tag.","; }?>" 
                                                 name="tags" data-role="tagsinput" >
                                         </div>
