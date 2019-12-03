@@ -213,11 +213,11 @@
     jQuery(document).ready(function($) {
         $('input.date').datetimepicker({
             format: 'DD.MM.YYYY'
+            defaultDate: "11/1/2016",
+            minDate: moment()       
         });
         $('input.time').datetimepicker({
-            format: 'HH:mm'
+            format: 'HH:mm'   
         });
-
-        $('.starttime').val("<?php echo $event->endtime; ?>");
     });
 </script>
