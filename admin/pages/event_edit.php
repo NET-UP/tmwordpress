@@ -215,10 +215,7 @@
             format: 'DD/MM/YYYY'
         });
         $('input.time').datetimepicker({
-            format: 'HH:mm',
-            pickDate: false,
-            pickSeconds: false,
-            pick12HourFormat: false   
+            format: 'HH:mm'
         });
     });
 </script>
