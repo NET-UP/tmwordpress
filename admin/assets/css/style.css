@@ -30,3 +30,18 @@
 .tm-admin-page .inside-pad {
     padding: 10px 20px 20px;
 }
+
+.tm-admin-page .tag + input[type="text"] {
+    width: 100%;
+    display: block;
+    margin-top: 15px;
+}
+
+.tm-admin-page .tag.label {
+    background: #0085ba;
+    padding: 2px 10px;
+    color: #EEE;
+    margin-bottom: 3px;
+    display: inline-block;
+    border-radius: 3px;
+}
