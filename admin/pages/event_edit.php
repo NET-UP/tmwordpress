@@ -156,8 +156,8 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="input-group time">
-                                    <input type="text" class="form-control">
+                                <div class="input-group">
+                                    <input type="text" class="form-control time">
                                     <label for="event_time_entry_time" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
                                     </label>
@@ -175,8 +175,8 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="input-group time">
-                                    <input type="text" class="form-control">
+                                <div class="input-group">
+                                    <input type="text" class="form-control time">
                                     <label for="event_time_start_date" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
                                     </label>
@@ -194,8 +194,8 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="input-group time">
-                                    <input type="text" class="form-control">
+                                <div class="input-group">
+                                    <input type="text" class="form-control time">
                                     <label for="event_edit_end_date" class="input-group-addon w50">
                                         <i class="fa fa-clock-o"></i>
                                     </label>
@@ -211,6 +211,9 @@
 
 <script>
     jQuery(document).ready(function($) {
+        $('input.date').datetimepicker({
+            format: 'DD/MM/YYYY'
+        });
         $('input.time').datetimepicker({
             format: 'LT'
         });
