@@ -80,6 +80,11 @@
                                 <span><?php echo __('Schlagwörter', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
+                                <div>
+                                    <?php foreach($event->tags as $tag) {
+                                        echo ($tag ", ");
+                                    }?>
+                                </div>
                                 <div class="tagsdiv" id="post_tag">
                                     <div class="jaxtag">
                                         <div class="ajaxtag hide-if-no-js">
