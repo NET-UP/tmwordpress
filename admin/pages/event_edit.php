@@ -80,7 +80,7 @@
                                 <span><?php echo __('Schlagwörter', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
-                                <div>
+                                <div class="tags">
                                     <?php foreach($event->tags as $tag) {
                                         echo ("<div><span class='tag'>".$tag."<button type='button' class='close'>x</button></div>");
                                     }?>
