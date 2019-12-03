@@ -212,9 +212,7 @@
 <script>
     jQuery(document).ready(function($) {
         $('input.date').datetimepicker({
-            format: 'DD.MM.YYYY',
-            defaultDate: new Date("<?php echo $event->endtime; ?>"),
-            minDate: moment()       
+            format: 'DD.MM.YYYY'
         });
         $('input.time').datetimepicker({
             format: 'HH:mm'   
