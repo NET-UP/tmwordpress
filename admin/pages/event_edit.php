@@ -149,7 +149,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control date entrytime" value="<?php echo date($event->entrytime); ?>">
+                                    <input type="text" class="form-control date entrytime" value="<?php echo $event->entrytime; ?>">
                                     <label for="event_time_entry_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
@@ -168,7 +168,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control date starttime" value="<?php echo date($event->ev_date); ?>">
+                                    <input type="text" class="form-control date starttime" value="<?php echo $event->ev_date; ?>">
                                     <label for="event_time_start_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
@@ -187,7 +187,7 @@
                             </div>
                             <div>
                                 <div class="input-group">
-                                    <input type="text" class="form-control date endtime" value="<?php echo date($event->endtime); ?>">
+                                    <input type="text" class="form-control date endtime" value="<?php echo $event->endtime; ?>">
                                     <label for="event_edit_end_date" class="input-group-addon w50">
                                         <i class="fa fa-calendar"></i>
                                     </label>
@@ -213,7 +213,7 @@
     jQuery(document).ready(function($) {
         $('input.date').datetimepicker({
             format: 'DD.MM.YYYY',
-            defaultDate: "11/1/2016",
+            defaultDate: new Date("<?php echo $event->endtime; ?>"),
             minDate: moment()       
         });
         $('input.time').datetimepicker({
