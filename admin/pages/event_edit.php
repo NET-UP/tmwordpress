@@ -3,6 +3,8 @@
     $tm_json = apiRequest($api->get_single_event);
     $event = (object)$tm_json;
 
+    print_r($event);
+
     include "./includes/date-timepicker.php";
 ?>
 
