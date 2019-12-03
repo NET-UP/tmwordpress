@@ -89,8 +89,7 @@
                                     <div class="jaxtag">
                                         <div class="ajaxtag hide-if-no-js">
                                             <label class="screen-reader-text" for="new-tag-post_tag">Neues Schlagwort erstellen</label>
-                                            <input data-wp-taxonomy="post_tag" type="text" id="new-tag-post_tag" name="newtag[post_tag]" class="newtag form-input-tip ui-autocomplete-input" size="16" autocomplete="off" aria-describedby="new-tag-post_tag-desc" value="" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="ui-id-1">
-                                            <input type="button" class="button tagadd" value="OK">
+                                            <input type="text" name="tags" data-provide="tag">
                                         </div>
                                         <p class="howto" id="new-tag-post_tag-desc">Schlagwörter durch Kommas trennen.</p>
                                     </div>
