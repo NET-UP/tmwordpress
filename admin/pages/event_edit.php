@@ -87,7 +87,7 @@
                                             <input type="text" 
                                                 value="
                                                     <?php foreach($event->tags as $tag) {
-                                                        echo ("<div><span class='tag'>".$tag."<button type='button' class='close'>x</button></div>");
+                                                        echo $tag.",";
                                                     }?>" 
                                                 name="tags" data-role="tagsinput" >
                                         </div>
