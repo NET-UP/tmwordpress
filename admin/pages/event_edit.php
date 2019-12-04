@@ -92,6 +92,7 @@
                                 <span><?php echo __('Eventbild', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
+                                <img src="<?php echo $event->event_img_url; ?>"/>
                                 <p class="hide-if-no-js">
                                     <a href="" id="set-post-thumbnail" class="thickbox"><?php echo __('Eventbild festlegen', 'ticketmachine') ?></a> <!-- needs correct href -->
                                 </p>
