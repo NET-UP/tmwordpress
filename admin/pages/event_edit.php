@@ -12,6 +12,8 @@
         $event->ev_date =  date(DATE_ISO8601, strtotime("today 11:00"));
         $event->endtime =  date(DATE_ISO8601, strtotime("today 23:59"));
     }
+
+    print_r($event);
 ?>
 
 
@@ -70,6 +72,9 @@
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
                                                 <input value="1" name="shown" type="checkbox" <?php if($event->state['shown'] == 1){ echo "checked"; } ?>>
                                                 <span><?php echo __('In Veranstaltungs-Liste anzeigen', 'ticketmachine') ?></span>
+                                            </div>
+                                            <div class="misc-pub-section misc-pub-section misc-pub-visibility">
+                                                <input type="text" name="rules[badge_text]"/>>
                                             </div>
                                         </div>
                                     </div>
