@@ -1,7 +1,7 @@
 <?php 
     global $globals, $api;
     
-    $tm_json = apiRequest($api->get_single_event_no_categories, FALSE, "POST");
+    $tm_json = apiRequest($api->copy_single_event, FALSE, "POST");
     $response = (object)$tm_json['model_error'][0];
 ?>
 
