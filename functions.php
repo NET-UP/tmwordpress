@@ -27,23 +27,23 @@
 	#}
 
 	function apiRequest($url, $data=FALSE, $method){
-		$curl = curl_init();
+		$curl = curl_init($url);
 		$headers = [];
 	
 		switch ($method){
-		case "POST":
-			curl_setopt($curl, CURLOPT_POST, 1);
-			if ($data)
-				curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-			break;
-		case "PUT":
-			curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
-			if ($data)
-				curl_setopt($curl, CURLOPT_POSTFIELDS, $data);			 					
-			break;
-		default:
-			if ($data)
-				$url = sprintf("%s?%s", $url, http_build_query($data));
+			case "POST":
+				curl_setopt($curl, CURLOPT_POST, 1);
+				if ($data)
+					curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+				break;
+			case "PUT":
+				curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+				if ($data)
+					curl_setopt($curl, CURLOPT_POSTFIELDS, $data);			 					
+				break;
+			default:
+				if ($data)
+					$url = sprintf("%s?%s", $url, http_build_query($data));
 		}
 		$headers[] = 'Content-Type: application/json';
 		$headers[] = 'User-Agent: https://www.ticketmachine.de/';
