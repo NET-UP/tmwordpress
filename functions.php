@@ -10,7 +10,6 @@
 	  if($method == "POST") {
 		curl_setopt($ch, CURLOPT_POST, 1);
 		$headers[] = 'Content-Type: application/json';
-		echo "test";
 	  }else{
 		$headers[] = 'Accept: application/json';
 	  }
