@@ -1,6 +1,6 @@
 <?php
     global $globals, $api;
-    if($_GET['id']){
+    if($_GET['id'] > 0){
         $tm_json = apiRequest($api->get_single_event_no_categories);
         $event = (object)$tm_json;
     }else{
