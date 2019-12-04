@@ -8,9 +8,9 @@
         $event->shown = 1;
 
         $timestamp = new DateTime();
-        $event->entrytime = date(DATE_ISO8601, time());
-        $event->ev_date =  date(DATE_ISO8601, time());
-        $event->endtime =  date(DATE_ISO8601, time());
+        $event->entrytime = date(DATE_ISO8601, strtotime("today 10:00"));
+        $event->ev_date =  date(DATE_ISO8601, strtotime("today 11:00"));
+        $event->endtime =  date(DATE_ISO8601, strtotime("today 23:59"));
     }
 ?>
 
