@@ -45,12 +45,11 @@
 			if ($data)
 				$url = sprintf("%s?%s", $url, http_build_query($data));
 		}
+		$headers[] = 'Content-Type: application/json';
+		$headers[] = 'User-Agent: https://www.ticketmachine.de/';
 
 		if(isset($_SESSION['access_token']))
 			$headers[] = 'Authorization: Bearer '.$_SESSION['access_token'];
-
-		$headers[] = 'Content-Type: application/json';
-		$headers[] = 'User-Agent: https://www.ticketmachine.de/';
 	
 		// OPTIONS:
 		curl_setopt($curl, CURLOPT_URL, $url);
