@@ -32,7 +32,7 @@
     $response = (object)$tm_json['model_error'][0];
 ?>
 
-<pre><?php print_r($_POST); ?></pre>
+<pre><?php print_r($response); ?></pre>
 
 <?php if(strlen($response->error_code) > 0){ ?>
     <div class="notice notice-error is-dismissable">
