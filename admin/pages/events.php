@@ -406,14 +406,14 @@ function tt_render_list_page(){
 
     if( $_GET['action'] == "edit" ) {
         include "event_edit.php";
-    } elseif ( $_GET['action'] == "delete" && isset($_GET['id']) ) {
-        remove_event();
-    } elseif ( $_GET['action'] == "copy" && isset($_GET['id']) ){
-        copy_event();
     } else {
 
-        if ( $_GET['action'] == "save" && $_POST ) {
-            include "event_save.php";
+        if ( $_GET['action'] == "save" && isset($_GET['id']) && $_POST ) {
+            include "actions/event_save.php";
+        } elseif ( $_GET['action'] == "delete" && isset($_GET['id']) ) {
+            include "actions/event_remove.php";
+        } elseif ( $_GET['action'] == "copy" && isset($_GET['id']) ){
+            include "actions/event_copy.php";
         }
 
         //Create an instance of our package class...
