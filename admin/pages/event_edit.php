@@ -8,7 +8,7 @@
 
 <div class="wrap tm-admin-page">
     <?php 
-        if($_GET['id'] > 0){
+        if($event->id > 0){
             echo "<h1 class='wp-heading-inline'>TicketMachine > " . __('Veranstaltung bearbeiten', 'ticketmachine') . "</h1>";
         } else {
             echo "<h1 class='wp-heading-inline'>TicketMachine > " . __('Veranstaltung erstellen', 'ticketmachine') . "</h1>";
@@ -17,7 +17,7 @@
     <form name="event" action="?page=tm_events&action=save&id=<?php echo $_GET['id']; ?>" method="post" id="event">
         <input type="hidden" name="organizer_id" value="<?php echo $event->organizer_id; ?>">
         
-        <?php if($_GET['id'] > 0){ ?>
+        <?php if($event->id > 0){ ?>
             <input type="hidden" name="id" value="<?php echo $event->id; ?>">
         <?php } ?>
 
