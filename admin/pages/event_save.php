@@ -23,12 +23,10 @@
     $_POST['organizer_id'] = (int)$_POST['organizer_id'];
     $_POST['approved'] = (int)$_POST['approved'];
     $_POST['shown'] = (int)$_POST['shown'];
-
-    $post_json = json_encode($_POST);
     
-    $tm_json = apiRequest($api->get_single_event_no_categories, $post_json);?>
+    $tm_json = apiRequest($api->get_single_event_no_categories, $_POST);?>
 
 <pre>
-<?php print_r($post_json); ?>
+<?php print_r($_POST); ?>
 <?php print_r($tm_json); ?>
 </pre>
