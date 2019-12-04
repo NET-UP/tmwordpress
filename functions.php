@@ -1,4 +1,9 @@
 <?php
+	function isJson($string) {
+		json_decode($string);
+		return (json_last_error() == JSON_ERROR_NONE);
+   	}
+
 	function apiRequest($url, $post=FALSE, $headers=array()) {
 	  $ch = curl_init($url);
 	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -7,7 +12,7 @@
 	  if($post)
 		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
 
-	  if(is_object($post)) {
+	  if(isJson($post)) {
 		curl_setopt($ch, CURLOPT_POST, 1);
 		$headers[] = 'Content-Type: application/json';
 	  }else{
