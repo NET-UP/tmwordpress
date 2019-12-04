@@ -15,6 +15,10 @@
     <div class="notice notice-error is-dismissable">
         <p><?php echo __($response->error_message); ?></p>
     </div>
+<?php }elseif(empty($response)){ ?>
+    <div class="notice notice-error is-dismissable">
+        <p><?php echo __('Etwas ist schiefgelaufen!'); ?></p>
+    </div>
 <?php }else{ ?>
     <div class="notice notice-success is-dismissable">
         <p><?php echo __('Gespeichert!'); ?></p>
