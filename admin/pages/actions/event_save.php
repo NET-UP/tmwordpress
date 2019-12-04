@@ -22,7 +22,9 @@
     }
     $_POST['organizer_id'] = (int)$_POST['organizer_id'];
     $_POST['approved'] = (int)$_POST['approved'];
-    $_POST['shown'] = (int)$_POST['shown'];
+    $_POST['state']['shown'] = (int)$_POST['state']['shown'];
+    $_POST['state']['sale_active'] = (int)$_POST['state']['sale_active'];
+    $_POST['state']['show_prices'] = (int)$_POST['state']['show_prices'];
 
     $post_json = json_encode($_POST);
     
