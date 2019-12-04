@@ -22,6 +22,6 @@
     $tm_json = apiRequest($api->get_single_event_no_categories, $post_json);?>
 
 <pre>
-<?php print_r($_POST); ?>
+<?php print_r($post_json); ?>
 <?php print_r($tm_json); ?>
 </pre>
