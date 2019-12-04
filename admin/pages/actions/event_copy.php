@@ -11,7 +11,7 @@
     }
 ?>
 
-<?php if(strlen($response->error_code) > 0){ ?>
+<?php if(strlen($response->error_code) > 0 || !$response){ ?>
     <div class="notice notice-error is-dismissable">
         <p><?php echo __($response->error_message); ?></p>
     </div>
