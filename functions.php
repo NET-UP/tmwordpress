@@ -60,7 +60,7 @@
 		// EXECUTE:
 		$result = curl_exec($curl);
 		if(!$result){die("Connection Failure");}
-		return json_decode($result);
+		return json_decode($result, true);
 	}
 	
 	switch ($globals->lang) {
