@@ -16,8 +16,10 @@
     if(isset($_POST['endtime'])) {
         $_POST['endtime'] = date(DATE_ISO8601, strtotime($_POST['endtime']['date'] . $_POST['endtime']['time']));
     }
+
+    $post_json = json_encode($_POST);
     
-    $tm_json = apiRequest($api->get_single_event_no_categories, $_POST);?>
+    $tm_json = apiRequest($api->get_single_event_no_categories, $post_json);?>
 
 <pre>
 <?php print_r($_POST); ?>
