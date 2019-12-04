@@ -32,7 +32,7 @@
 
 <?php if(strlen($response->error_code) > 0){ ?>
     <div class="notice notice-error is-dismissable">
-        <p><?php echo __('Etwas ist schiefgelaufen.'); ?></p>
+        <p><?php echo __($response->error_message); ?></p>
     </div>
 <?php }else{ ?>
     <div class="notice notice-success is-dismissable">
