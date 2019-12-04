@@ -279,7 +279,7 @@
                 attachment = file_frame.state().get('selection').first().toJSON();
                 // Do something with attachment.id and/or attachment.url here
                 $( '#image-preview' ).attr( 'src', attachment.url ).css( 'width', 'auto' );
-                $( '#image_attachment_id' ).val( attachment.id );
+                $( '#image_attachment_id' ).val( attachment.url );
                 // Restore the main post ID
                 wp.media.model.settings.post.id = wp_media_post_id;
             });
