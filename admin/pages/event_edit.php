@@ -5,7 +5,7 @@
         $event = (object)$tm_json;
     }else{
         $event = new stdClass();
-        $event->shown = 1;
+        $event->state['shown'] = 1;
 
         $timestamp = new DateTime();
         $event->entrytime = date(DATE_ISO8601, strtotime("today 10:00"));
