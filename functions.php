@@ -3,15 +3,18 @@
 	  $ch = curl_init($url);
 	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	  $headers = [];
-	 
-	  if($post)
-		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
 
 	  if($method == "POST") {
-		curl_setopt($ch, CURLOPT_POST, 1);
-		$headers[] = 'Content-Type: application/json';
+		if($post) {
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+			curl_setopt($ch, CURLOPT_POST, 1);
+			$headers[] = 'Content-Type: application/json';
+		}
 	  }else{
-		$headers[] = 'Accept: application/json';
+		if($post) {
+			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
+			$headers[] = 'Accept: application/json';
+		}
 	  }
 
 	  $headers[] = 'User-Agent: https://www.ticketmachine.de/';
