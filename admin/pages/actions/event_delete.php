@@ -20,3 +20,5 @@
         <p><?php echo __('Gespeichert!'); ?></p>
     </div>
 <?php } ?>
+
+<?php print_r($tm_json); ?>
