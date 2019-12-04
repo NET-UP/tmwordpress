@@ -96,7 +96,7 @@
                                 <p class="hide-if-no-js">
                                     <a href="" id="set-post-thumbnail" class="thickbox"><?php echo __('Eventbild festlegen', 'ticketmachine') ?></a> <!-- needs correct href -->
                                 </p>
-                                <input type="hidden" id="_thumbnail_id" value="-1"> <!-- #event_img_url -->
+                                <input type="hidden" name="event_img_url" id="_thumbnail_id" value="<?php $event->event_img_url; ?>"> <!-- #event_img_url -->
                             </div>
                         </div>
                         <div id="tagsdiv-post_tag" class="postbox">
