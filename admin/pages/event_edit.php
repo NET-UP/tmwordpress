@@ -72,6 +72,7 @@
                                                 <span><?php echo __('In Veranstaltungs-Liste anzeigen', 'ticketmachine') ?></span>
                                             </div>
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
+                                                <label for="event_edit_locationname"><?php echo __('Hinweistext','ticketmachine'); ?></label>
                                                 <input type="text" name="rules[badge]" class="fullw-input"/>
                                             </div>
                                         </div>
