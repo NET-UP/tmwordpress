@@ -59,7 +59,7 @@
 		$api->get_event_list_backend .= "organizer.og_abbreviation[eq]=" . $_GET['organizer'];
 	}
 	
-	$api->get_event_list_backend .= "&sort=ev_date";
+	$api->get_event_list_backend .= "&sort=ev_date&per_page=100";
 	
 	/* Get single event */
 	$api->get_single_event = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "?categories=true";
