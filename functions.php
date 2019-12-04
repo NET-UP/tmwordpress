@@ -7,9 +7,8 @@
 	  if($post)
 		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
 
-	  if(is_object($post)) {
+	  if(strlen($post) > 0 || is_object($post)) {
 		curl_setopt($ch, CURLOPT_POST, 1);
-		$post = json_encode($post);
 		$headers[] = 'Content-Type: application/json';
 	  }else{
 		$headers[] = 'Accept: application/json';
