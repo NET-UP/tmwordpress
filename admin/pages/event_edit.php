@@ -12,8 +12,6 @@
         $event->ev_date =  date(DATE_ISO8601, strtotime("today 11:00"));
         $event->endtime =  date(DATE_ISO8601, strtotime("today 23:59"));
     }
-
-    print_r($event);
 ?>
 
 
@@ -74,7 +72,7 @@
                                                 <span><?php echo __('In Veranstaltungs-Liste anzeigen', 'ticketmachine') ?></span>
                                             </div>
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
-                                                <input type="text" name="rules[badge_text]"/>>
+                                                <input type="text" name="rules[badge]" class="fullw-input"/>
                                             </div>
                                         </div>
                                     </div>
