@@ -411,8 +411,8 @@ function tt_render_list_page(){
     } elseif ( $_GET['action'] == "copy" && isset($_GET['id']) ){
         copy_event();
     } else {
-        
-        if ( $_GET['action'] == "save") {
+
+        if ( $_GET['action'] == "save" && $_POST ) {
             include "event_save.php";
         }
 
