@@ -6,7 +6,7 @@
     }
 ?>
 
-<pre><?php print_r($event); ?></pre>
+<pre><?php #print_r($event); ?></pre>
 
 <div class="wrap tm-admin-page">
     <?php 
