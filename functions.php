@@ -10,7 +10,6 @@
 	  if(strlen($post) > 0 || is_object($post)) {
 		curl_setopt($ch, CURLOPT_POST, 1);
 		$headers[] = 'Content-Type: application/json';
-		echo "lol";
 	  }else{
 		$headers[] = 'Accept: application/json';
 	  }
