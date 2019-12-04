@@ -6,9 +6,11 @@
     }else{
         $event = new stdClass();
         $event->shown = 1;
-        $event->entrytime = date();
-        $event->ev_date = date();
-        $event->endtime = date();
+
+        $timestamp = new DateTime();
+        $event->entrytime = date(DATE_ISO8601, time());
+        $event->ev_date =  date(DATE_ISO8601, time());
+        $event->endtime =  date(DATE_ISO8601, time());
     }
 ?>
 
