@@ -14,13 +14,11 @@
 <?php if(strlen($response->error_code) > 0){ ?>
     <div class="notice notice-error is-dismissable">
         <p><?php echo __($response->error_message); ?></p>
+        <button type="button" class="notice-dismiss"></button>
     </div>
 <?php }else{ ?>
     <div class="notice notice-success is-dismissable">
         <p><?php echo __('Gespeichert!'); ?></p>
+        <button type="button" class="notice-dismiss"></button>
     </div>
 <?php } ?>
-
-<pre>
-    <?php #print_r($_POST); ?>
-</pre>
