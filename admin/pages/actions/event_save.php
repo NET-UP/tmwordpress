@@ -40,7 +40,7 @@
     <div class="notice notice-error is-dismissable">
         <p><?php echo __($response->error_message); ?></p>
     </div>
-<?php }elseif(empty($response)){ ?>
+<?php }elseif(empty($tm_json)){ ?>
     <div class="notice notice-error is-dismissable">
         <p><?php echo __('Etwas ist schiefgelaufen!'); ?></p>
     </div>
