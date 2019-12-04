@@ -3,6 +3,12 @@
     if($_GET['id']){
         $tm_json = apiRequest($api->get_single_event_no_categories);
         $event = (object)$tm_json;
+    }else{
+        $event = new stdClass();
+        $event->shown = 1;
+        $event->entrytime = date();
+        $event->ev_date = date();
+        $event->endtime = date();
     }
 ?>
 
