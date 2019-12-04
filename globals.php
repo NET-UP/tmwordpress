@@ -19,6 +19,7 @@
 	$globals->show_list = $tm_config->show_list;
 	$globals->show_calendar = $tm_config->show_calendar;
 	$globals->environment = $tm_config->api_environment;
+	$globals->organizer_id = $tm_config->organizer_id;
 	$globals->organizer = $tm_config->organizer;
 	$globals->group_by = "Y";
 	$globals->format_date = "Y";

@@ -86,6 +86,7 @@
         $charset_collate = $wpdb->get_charset_collate();
         $sql = "CREATE TABLE $table (
                     id mediumint(9) NOT NULL AUTO_INCREMENT,
+                    organizer_id int(11) DEFAULT 0 NOT NULL,
                     organizer varchar(64) DEFAULT '' NOT NULL,
                     api_client_id varchar(64) DEFAULT '' NOT NULL,
                     api_client_secret varchar(64) DEFAULT '' NOT NULL,
