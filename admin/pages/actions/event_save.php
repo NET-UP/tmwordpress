@@ -24,7 +24,7 @@
     $_POST['approved'] = (int)$_POST['approved'];
     $_POST['state']['shown'] = (int)$_POST['state']['shown'];
     $_POST['rules']['sale_active'] = (int)$_POST['rules']['sale_active'];
-    $_POST['rules']['prices_shown'] = (int)$_POST['rules']['prices_shown'];
+    $_POST['vat_id'] = (int)$_POST['vat_id'];
 
     $post_json = json_encode($_POST);
     

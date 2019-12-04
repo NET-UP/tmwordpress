@@ -27,6 +27,7 @@
         <input type="hidden" name="organizer_id" value="<?php echo $globals->organizer_id; ?>">
         <input type="hidden" name="rules[sale_active]" value="0">
         <input type="hidden" name="rules[prices_shown]" value="0">
+        <input type="hidden" name="vat_id" value="0">
         
         <?php if($event->id > 0){ ?>
             <input type="hidden" name="id" value="<?php echo $event->id; ?>">
