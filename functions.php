@@ -61,7 +61,6 @@
 		// EXECUTE:
 		$result = curl_exec($curl);
 		if(!$result){die("Connection Failure");}
-		curl_close($curl);
 		return json_decode($result);
 	}
 	
