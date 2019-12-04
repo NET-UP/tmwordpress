@@ -3,13 +3,14 @@
 	  $ch = curl_init($url);
 	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	  $headers = [];
+	 
+	  if($post)
+		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
 
 	  if(is_object($post)) {
 		curl_setopt($ch, CURLOPT_POST, 1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 		$headers[] = 'Content-Type: application/json';
 	  }else{
-		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
 		$headers[] = 'Accept: application/json';
 	  }
 
