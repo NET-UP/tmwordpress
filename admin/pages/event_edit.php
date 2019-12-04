@@ -73,7 +73,7 @@
                                             </div>
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
                                                 <label for="event_edit_locationname"><?php echo __('Hinweistext','ticketmachine'); ?></label>
-                                                <input type="text" name="rules[badge]" class="fullw-input"/>
+                                                <input type="text" name="rules[badge]" class="fullw-input" value="<?php echo $event->rules['badge']; ?>"/>
                                             </div>
                                         </div>
                                     </div>
