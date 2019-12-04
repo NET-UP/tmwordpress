@@ -28,7 +28,7 @@
 
     $post_json = json_encode($_POST);
     
-    $tm_json = apiRequest($api->get_single_event_no_categories, $post_json, "POST");
+    $tm_json = apiRequest($api->get_single_event, $post_json, "POST");
     $response = (object)$tm_json['model_error'][0];
 ?>
 
