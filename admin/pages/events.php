@@ -406,14 +406,16 @@ function tt_render_list_page(){
 
     if( $_GET['action'] == "edit" ) {
         include "event_edit.php";
-    } elseif ( $_GET['action'] == "save") {
-        include "event_save.php";
     } elseif ( $_GET['action'] == "delete" && isset($_GET['id']) ) {
         remove_event();
     } elseif ( $_GET['action'] == "copy" && isset($_GET['id']) ){
         copy_event();
     } else {
         
+        if ( $_GET['action'] == "save") {
+            include "event_save.php";
+        }
+
         //Create an instance of our package class...
         $EventListTable = new Event_List_Table();
 
