@@ -95,7 +95,7 @@
                                 <div class='image-preview-wrapper'>
                                     <img id='image-preview' src='<?php echo $event->event_img_url; ?>' width='100' height='100' style='max-height: 100px; width: 100px;'>
                                 </div>
-                                <input id="upload_image_button" type="button" class="button" value="<?php _e( 'Upload image' ); ?>" />
+                                <input id="upload_image_button" type="button" class="button" value="<?php _e( 'Bild festlegen' ); ?>" />
                                 <input type='hidden' name='event_img_url' id='image_attachment_id' value='<?php echo $event->event_img_url; ?>'>
                             </div>
                         </div>
