@@ -92,11 +92,11 @@
                                 <span><?php echo __('Eventbild', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
-                                <img src="<?php echo $event->event_img_url; ?>"/>
-                                <p class="hide-if-no-js">
-                                    <a href="" id="set-post-thumbnail" class="thickbox"><?php echo __('Eventbild festlegen', 'ticketmachine') ?></a> <!-- needs correct href -->
-                                </p>
-                                <input type="hidden" name="event_img_url" id="_thumbnail_id" value="<?php echo $event->event_img_url; ?>"> <!-- #event_img_url -->
+                                <div class='image-preview-wrapper'>
+                                    <img id='image-preview' src='<?php echo $event->event_img_url; ?>' width='100' height='100' style='max-height: 100px; width: 100px;'>
+                                </div>
+                                <input id="upload_image_button" type="button" class="button" value="<?php _e( 'Upload image' ); ?>" />
+                                <input type='hidden' name='event_img_url' id='image_attachment_id' value='<?php echo $event->event_img_url; ?>'>
                             </div>
                         </div>
                         <div id="tagsdiv-post_tag" class="postbox">
