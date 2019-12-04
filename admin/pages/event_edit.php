@@ -12,7 +12,6 @@
         $event->ev_date =  date(DATE_ISO8601, strtotime("today 11:00"));
         $event->endtime =  date(DATE_ISO8601, strtotime("today 23:59"));
     }
-    print_r($event);
 ?>
 
 
