@@ -1,8 +1,14 @@
 <?php 
     global $globals, $api;
     
-    $tm_json = apiRequest($api->copy_single_event, FALSE, "POST");
-    $response = (object)$tm_json['model_error'][0];
+    if(isset($_GET['id'])){
+        $_POST['id'] = $_GET['id'];
+        $_POST['organizer_id'] = $globals->organizer_id;
+        
+        $post_json = json_encode($_POST);
+        $tm_json = apiRequest($api->copy_single_event, $post_json, "POST");
+        $response = (object)$tm_json['model_error'][0];
+    }
 ?>
 
 <?php if(strlen($response->error_code) > 0){ ?>
