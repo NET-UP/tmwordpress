@@ -16,6 +16,10 @@
     ?>
     <form name="event" action="?page=tm_events&action=save&id=<?php echo $_GET['id']; ?>" method="post" id="event">
         <input type="hidden" name="organizer_id" value="<?php echo $event->organizer_id; ?>">
+        
+        <?php if(isset($_GET['id'])){ ?>
+            <input type="hidden" name="id" value="<?php echo $event->id; ?>">
+        <?php } ?>
 
         <div id="poststuff">
             <div id="post-body" class="metabox-holder columns-2">

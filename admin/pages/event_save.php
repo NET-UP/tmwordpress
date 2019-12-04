@@ -17,7 +17,12 @@
         $_POST['endtime'] = date(DATE_ISO8601, strtotime($_POST['endtime']['date'] . $_POST['endtime']['time']));
     }
 
+    if($_POST['id'] > 0)
+        $_POST['id'] = (int)$_POST['id'];
+    }
     $_POST['organizer_id'] = (int)$_POST['organizer_id'];
+    $_POST['approved'] = (int)$_POST['approved'];
+    $_POST['shown'] = (int)$_POST['shown'];
 
     $post_json = json_encode($_POST);
     
