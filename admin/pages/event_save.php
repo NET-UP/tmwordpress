@@ -27,3 +27,10 @@
     $post_json = json_encode($_POST);
     
     $tm_json = apiRequest($api->get_single_event_no_categories, $post_json, "POST");?>
+
+<pre>
+    <?php print_r($post_json); ?>
+</pre>
+<pre>
+    <?php print_r($tm_json); ?>
+</pre>
