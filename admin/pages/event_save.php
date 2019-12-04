@@ -17,6 +17,8 @@
         $_POST['endtime'] = date(DATE_ISO8601, strtotime($_POST['endtime']['date'] . $_POST['endtime']['time']));
     }
 
+    $_POST['organizer_id'] = (int)$_POST['organizer_id'];
+
     $post_json = json_encode($_POST);
     
     $tm_json = apiRequest($api->get_single_event_no_categories, $post_json);?>
