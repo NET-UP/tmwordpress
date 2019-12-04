@@ -10,7 +10,6 @@
 		  'Content-Type: application/json',
 		  'User-Agent: https://www.ticketmachine.de/'
 		];
-		echo "lol";
 	  }else{
 		$headers = [
 		  'Accept: application/json',
