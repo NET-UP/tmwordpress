@@ -3,13 +3,15 @@
 	  $ch = curl_init($url);
 	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	 
-	  if($post)
-		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
-	 
 	  $headers = [
 		'Accept: application/json',
 		'User-Agent: https://www.ticketmachine.de/'
 	  ];
+	 
+	  if($post) {
+		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
+		$headers[] = "Content-Type: application/json"; 
+	  }
 	 
 	  if(isset($_SESSION['access_token']))
 		$headers[] = 'Authorization: Bearer '.$_SESSION['access_token'];
