@@ -20,6 +20,9 @@
     if($_POST['id'] > 0) {
         $_POST['id'] = (int)$_POST['id'];
     }
+    if(isset($_POST['vat_id'])){
+        $_POST['vat_id'] = 1;
+    }
     $_POST['organizer_id'] = (int)$_POST['organizer_id'];
     $_POST['approved'] = (int)$_POST['approved'];
     $_POST['state']['shown'] = (int)$_POST['state']['shown'];
