@@ -3,7 +3,7 @@
 	  $ch = curl_init($url);
 	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	 
-	  if($post) {
+	  if(is_object($post)) {
 		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
 		$headers = [
 		  'Content-Type: application/json',
