@@ -20,7 +20,6 @@
 		$headers[] = 'Authorization: Bearer '.$_SESSION['access_token'];
 	 
 	  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	  curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 	 
 	  $response = curl_exec($ch);
