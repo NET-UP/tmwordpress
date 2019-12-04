@@ -33,14 +33,12 @@
 			?>
 			<div class="notice notice-success is-dismissable">
 				<p><?php echo __('Gespeichert!'); ?></p>
-        		<button type="button" class="notice-dismiss"></button>
 			</div>
 			<?php
 		}else{
 			?>
 			<div class="notice notice-error is-dismissable">
 				<p><?php echo __('Etwas ist schiefgelaufen.'); ?></p>
-        		<button type="button" class="notice-dismiss"></button>
 			</div>
 			<?php
 		}
