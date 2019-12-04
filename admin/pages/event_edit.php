@@ -4,7 +4,7 @@
     $event = (object)$tm_json;
 ?>
 
-<pre><?php #print_r($event); ?></pre>
+<pre><?php print_r($event); ?></pre>
 
 <div class="wrap tm-admin-page">
     <?php 
@@ -16,7 +16,7 @@
     ?>
     <form name="event" action="?page=tm_events&action=save&id=<?php echo $_GET['id']; ?>" method="post" id="event">
         <input type="hidden" name="organizer_id" value="<?php echo $event->organizer_id; ?>">
-        <input type="hidden" name="og_abbreviation" value="<?php echo $event->og_abbreviation; ?>">
+        <input type="hidden" name="og_abbreviation" value="nu">
         
         <?php if($event->id > 0){ ?>
             <input type="hidden" name="id" value="<?php echo $event->id; ?>">
