@@ -25,4 +25,4 @@
     </div>
 <?php } ?>
 
-<?php print_r($tm_json); ?>
+<pre><?php print_r($tm_json); ?></pre>
