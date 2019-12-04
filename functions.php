@@ -8,16 +8,13 @@
 
 	  if(is_object($post)) {
 		curl_setopt($ch, CURLOPT_POST, 1);
-		$headers = [
-		  'Content-Type: application/json',
-		  'User-Agent: https://www.ticketmachine.de/'
-		];
-	  }else{
-		$headers = [
-		  'Accept: application/json',
-		  'User-Agent: https://www.ticketmachine.de/'
-		];
 	  }
+
+	  $headers = [
+		'Content-Type: application/json',
+		'Accept: application/json',
+		'User-Agent: https://www.ticketmachine.de/'
+	  ];
 	 
 	  if(isset($_SESSION['access_token']))
 		$headers[] = 'Authorization: Bearer '.$_SESSION['access_token'];
