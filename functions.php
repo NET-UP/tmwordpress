@@ -2,19 +2,19 @@
 	function apiRequest($url, $post=FALSE, $headers=array()) {
 	  $ch = curl_init($url);
 	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	  $headers = [];
 	 
 	  if($post)
 		curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
 
 	  if(is_object($post)) {
 		curl_setopt($ch, CURLOPT_POST, 1);
+		$headers[] = 'Content-Type: application/json';
+	  }else{
+		$headers[] = 'Accept: application/json';
 	  }
 
-	  $headers = [
-		'Content-Type: application/json',
-		'Accept: application/json',
-		'User-Agent: https://www.ticketmachine.de/'
-	  ];
+	  $headers[] = 'User-Agent: https://www.ticketmachine.de/';
 	 
 	  if(isset($_SESSION['access_token']))
 		$headers[] = 'Authorization: Bearer '.$_SESSION['access_token'];
