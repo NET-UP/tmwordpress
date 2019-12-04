@@ -49,3 +49,7 @@
         <p><?php echo __('Gespeichert!'); ?></p>
     </div>
 <?php } ?>
+
+<pre>
+<?php print_r($tm_json); ?>
+</pre>
