@@ -16,13 +16,13 @@
 				array('id' => $tm_config->id)
 			);
 			?>
-			<div class="updated notice">
+			<div class="notice notice-success is-dismissable">
 				<p><?php echo __('Gespeichert!'); ?></p>
 			</div>
 			<?php
 		}else{
 			?>
-			<div class="updated notice">
+			<div class="notice notice-error is-dismissable">
 				<p><?php echo __('Etwas ist schiefgelaufen.'); ?></p>
 			</div>
 			<?php
