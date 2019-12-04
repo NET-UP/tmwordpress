@@ -70,6 +70,9 @@
 	/* Copy single event */
 	$api->copy_single_event = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/copy";
 	
+	/* Delete single event */
+	$api->delete_single_event = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/delete";
+	
 	/* Get event calendar */
 	$api->get_event_calendar = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
 
