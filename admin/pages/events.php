@@ -128,7 +128,7 @@ class Event_List_Table extends WP_List_Table {
         //Build row actions
         $actions = array(
             'edit'      => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Bearbeiten', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
-            'delete'    => sprintf('<a href="?page=%s&action=%s&id=%s">'.__($toggle_text, 'ticketmachine').'</a></a>',$_REQUEST['page'],$toggle_action,$item['id']),
+            'toggle'    => sprintf('<a href="?page=%s&action=%s&id=%s">'.__($toggle_text, 'ticketmachine').'</a></a>',$_REQUEST['page'],$toggle_action,$item['id']),
             'copy'      => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Kopieren', 'ticketmachine').'/a>',$_REQUEST['page'],'copy',$item['id'])
         );
         
