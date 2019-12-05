@@ -28,6 +28,7 @@
         <input type="hidden" name="rules[sale_active]" value="0">
         <input type="hidden" name="rules[prices_shown]" value="0">
         <input type="hidden" name="vat_id" value="1">
+        <input type="hidden" name="rules[shown]" value="1">
         
         <?php if($event->id > 0){ ?>
             <input type="hidden" name="id" value="<?php echo $event->id; ?>">
@@ -66,10 +67,6 @@
                                                     <option value="1" <?php if($event->approved == 1){ echo "selected"; } ?>><?php echo __('Veröffentlicht', 'ticketmachine') ?></option>
                                                     <option value="0" <?php if($event->approved != 1){ echo "selected"; } ?>><?php echo __('Entwurf', 'ticketmachine') ?></option>
                                                 </select>
-                                            </div>
-                                            <div class="misc-pub-section misc-pub-section misc-pub-visibility">
-                                                <input value="1" name="rules[shown]" type="hidden">
-                                                <span><?php echo __('In Veranstaltungs-Liste anzeigen', 'ticketmachine') ?></span>
                                             </div>
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
                                                 <label for="event_edit_locationname"><?php echo __('Hinweistext','ticketmachine'); ?></label>
