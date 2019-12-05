@@ -116,12 +116,20 @@ class Event_List_Table extends WP_List_Table {
      * @return string Text to be placed inside the column <td> (movie title only)
      **************************************************************************/
     function column_ev_name($item){
+
+        if($item['rules']['shown'] == 1){
+            $toggle_text = "Deaktivieren";
+            $toggle_action = "deactivate";
+        }else{
+            $toggle_text = "Aktivieren";
+            $toggle_action = "activate";
+        }
         
         //Build row actions
         $actions = array(
-            'edit'      => sprintf('<a href="?page=%s&action=%s&id=%s">Bearbeiten</a>',$_REQUEST['page'],'edit',$item['id']),
-            'delete'    => sprintf('<a href="?page=%s&action=%s&id=%s">Deaktivieren</a>',$_REQUEST['page'],'deactivate',$item['id']),
-            'copy'      => sprintf('<a href="?page=%s&action=%s&id=%s">Kopieren</a>',$_REQUEST['page'],'copy',$item['id'])
+            'edit'      => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Bearbeiten', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
+            'delete'    => sprintf('<a href="?page=%s&action=%s&id=%s">'.__($toggle_text, 'ticketmachine').'</a></a>',$_REQUEST['page'],$toggle_action,$item['id']),
+            'copy'      => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Kopieren', 'ticketmachine').'/a>',$_REQUEST['page'],'copy',$item['id'])
         );
         
         //Return the title contents
