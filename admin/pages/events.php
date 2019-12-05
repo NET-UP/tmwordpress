@@ -118,7 +118,7 @@ class Event_List_Table extends WP_List_Table {
     function column_ev_name($item){
 
         if($item['approved'] == 0){
-            $additional_text .= "- " . __('Entwurf' , 'ticketmachine');
+            $additional_text .= "<span class='post-state'>" . __('Entwurf' , 'ticketmachine') . "</span>";
         }
 
         if($item['rules']['shown'] == 1){
@@ -129,7 +129,7 @@ class Event_List_Table extends WP_List_Table {
             $toggle_type = "undelete";
             $toggle_text = "Aktivieren";
             $toggle_action = "activate";
-            $additional_text .= "- " . __('Inaktiv' , 'ticketmachine');
+            $additional_text .= "<span class='post-state'>" . __('Inaktiv' , 'ticketmachine') . "</span>";
         }
         
         //Build row actions
