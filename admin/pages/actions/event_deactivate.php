@@ -8,10 +8,7 @@
         $_POST['id'] = $_GET['id'];
         $_POST['organizer_id'] = $globals->organizer_id;
         $_POST['state']['shown'] = 0;
-
-        if(!isset($_POST['state']['shown'])) {
-            $_POST['state']['shown'] = 0;
-        }
+        
         if(!isset($_POST['approved'])) {
             $_POST['approved'] = 0;
         }
