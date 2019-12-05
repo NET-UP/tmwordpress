@@ -118,7 +118,7 @@ class Event_List_Table extends WP_List_Table {
     function column_ev_name($item){
 
         if($item['approved'] == 1){
-            $additional_text .= "- Entwurf";
+            $additional_text .= "- " . __('Entwurf' , 'ticketmachine');
         }
 
         if($item['rules']['shown'] == 1){
@@ -129,7 +129,7 @@ class Event_List_Table extends WP_List_Table {
             $toggle_type = "undelete";
             $toggle_text = "Aktivieren";
             $toggle_action = "activate";
-            $additional_text .= "- Inaktiv";
+            $additional_text .= "- " . __('Inaktiv' , 'ticketmachine');
         }
         
         //Build row actions
@@ -141,7 +141,7 @@ class Event_List_Table extends WP_List_Table {
         
         //Return the title contents
         return sprintf('%1$s %2$s',
-        /*$1%s*/ '<strong><a class="row-title" href="?page='.$_REQUEST['page'].'&action=edit&id='.$item['id'].'">'.$item['ev_name'].'</a> '.__($additional_text, 'ticketmachine').'</strong>',
+        /*$1%s*/ '<strong><a class="row-title" href="?page='.$_REQUEST['page'].'&action=edit&id='.$item['id'].'">'.$item['ev_name'].'</a> '.$additional_text.'</strong>',
         /*$2%s*/ $this->row_actions($actions)
         );
     }
