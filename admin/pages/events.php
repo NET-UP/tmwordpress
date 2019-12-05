@@ -117,7 +117,7 @@ class Event_List_Table extends WP_List_Table {
      **************************************************************************/
     function column_ev_name($item){
 
-        if($item['approved'] == 1){
+        if($item['approved'] == 0){
             $additional_text .= "- " . __('Entwurf' , 'ticketmachine');
         }
 
