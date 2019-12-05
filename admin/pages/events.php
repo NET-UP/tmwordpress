@@ -410,8 +410,8 @@ function tt_render_list_page(){
 
         if ( $_GET['action'] == "save" && isset($_GET['id']) && $_POST ) {
             include "actions/event_save.php";
-        } elseif ( $_GET['action'] == "deactivate" && isset($_GET['id']) ) {
-            include "actions/event_deactivate.php";
+        } elseif ( $_GET['action'] == "deactivate" && isset($_GET['id']) || $_GET['action'] == "activate" && isset($_GET['id']) ) {
+            include "actions/event_toggle.php";
         } elseif ( $_GET['action'] == "delete" && isset($_GET['id']) ) {
             include "actions/event_remove.php";
         } elseif ( $_GET['action'] == "copy" && isset($_GET['id']) ){
