@@ -123,16 +123,9 @@ class Event_List_Table extends WP_List_Table {
             $toggle_action = "publish";
             $additional_text .= " — <span class='post-state'>" . __('Entwurf' , 'ticketmachine') . "</span>";
         }else{
-            if($item['rules']['shown'] == 1){
-                $toggle_type = "delete";
-                $toggle_text = "Deaktivieren";
-                $toggle_action = "deactivate";
-            }else{
-                $toggle_type = "undelete";
-                $toggle_text = "Aktivieren";
-                $toggle_action = "activate";
-                $additional_text .= " — <span class='post-state'>" . __('Inaktiv' , 'ticketmachine') . "</span>";
-            }
+            $toggle_type = "delete";
+            $toggle_text = "Deaktivieren";
+            $toggle_action = "deactivate";
         }
         
         //Build row actions
@@ -428,10 +421,8 @@ function tt_render_list_page(){
 
         if ( $_GET['action'] == "save" && isset($_GET['id']) && $_POST ) {
             include "actions/event_save.php";
-        } elseif ( $_GET['action'] == "deactivate" && isset($_GET['id']) || $_GET['action'] == "activate" && isset($_GET['id']) ) {
+        } elseif ( $_GET['action'] == "publish" && isset($_GET['id']) || $_GET['action'] == "deactivate" && isset($_GET['id']) ) {
             include "actions/event_shown_toggle.php";
-        } elseif ( $_GET['action'] == "publish" && isset($_GET['id']) || $_GET['action'] == "unpublish" && isset($_GET['id']) ) {
-            include "actions/event_publish_toggle.php";
         } elseif ( $_GET['action'] == "delete" && isset($_GET['id']) ) {
             include "actions/event_remove.php";
         } elseif ( $_GET['action'] == "copy" && isset($_GET['id']) ){

@@ -2,7 +2,7 @@
     global $globals, $api;
 
     if(!isset($_POST['rules']['shown'])) {
-        $_POST['rules']['shown'] = 0;
+        $_POST['rules']['shown'] = 1;
     }
     if(!isset($_POST['approved'])) {
         $_POST['approved'] = 0;
