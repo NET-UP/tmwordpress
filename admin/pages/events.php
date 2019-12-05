@@ -120,6 +120,7 @@ class Event_List_Table extends WP_List_Table {
         if($item['approved'] == 0){
             $toggle_type = "publish";
             $toggle_text = "Veröffentlichen";
+            $toggle_action = "publish";
             $additional_text .= " — <span class='post-state'>" . __('Entwurf' , 'ticketmachine') . "</span>";
         }else{
             if($item['rules']['shown'] == 1){
