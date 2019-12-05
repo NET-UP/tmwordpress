@@ -37,14 +37,6 @@
 					break;
 			}
 
-			switch ($atts['widget']) {
-				case 'events_list':
-					include "partials/_event_list_item.php";
-                    include "widgets/events.php";
-					$tm_output .= tm_display_events( $atts, $globals, $api );
-					break;
-			}
-
 			$tm_output .= "</div>";
 			
 			$tm_output = shortcode_unautop($tm_output);
