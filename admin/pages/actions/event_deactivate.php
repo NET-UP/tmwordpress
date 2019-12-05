@@ -7,7 +7,6 @@
 
         $_POST['id'] = $_GET['id'];
         $_POST['organizer_id'] = $globals->organizer_id;
-        $_POST['state']['shown'] = 0;
         $_POST['rules']['shown'] = 0;
         
         $post_json = json_encode($_POST);
