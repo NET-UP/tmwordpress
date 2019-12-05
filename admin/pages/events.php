@@ -118,9 +118,11 @@ class Event_List_Table extends WP_List_Table {
     function column_ev_name($item){
 
         if($item['rules']['shown'] == 1){
+            $toggle_type = "delete";
             $toggle_text = "Deaktivieren";
             $toggle_action = "deactivate";
         }else{
+            $toggle_type = "undelete";
             $toggle_text = "Aktivieren";
             $toggle_action = "activate";
         }
@@ -128,8 +130,8 @@ class Event_List_Table extends WP_List_Table {
         //Build row actions
         $actions = array(
             'edit'      => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Bearbeiten', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
-            'toggle'    => sprintf('<a href="?page=%s&action=%s&id=%s">'.__($toggle_text, 'ticketmachine').'</a></a>',$_REQUEST['page'],$toggle_action,$item['id']),
-            'copy'      => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Kopieren', 'ticketmachine').'/a>',$_REQUEST['page'],'copy',$item['id'])
+            $toggle_type    => sprintf('<a href="?page=%s&action=%s&id=%s">'.__($toggle_text, 'ticketmachine').'</a>',$_REQUEST['page'],$toggle_action,$item['id']),
+            'copy'      => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Kopieren', 'ticketmachine').'</a>',$_REQUEST['page'],'copy',$item['id'])
         );
         
         //Return the title contents
