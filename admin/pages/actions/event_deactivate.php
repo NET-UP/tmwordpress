@@ -16,7 +16,7 @@
     }
 ?>
 
-<?php print_r($tm_json); ?>
+<?php print_r($_POST); ?>
 
 <?php if(strlen($response->error_code) > 0){ ?>
     <div class="notice notice-error is-dismissable">
