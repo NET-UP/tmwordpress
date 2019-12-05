@@ -2,6 +2,9 @@
     global $globals, $api;
     
     if(isset($_GET['id'])){
+        $tm_json = apiRequest($api->get_single_event_no_categories);
+        $_POST = $tm_json;
+
         $_POST['id'] = $_GET['id'];
         $_POST['organizer_id'] = $globals->organizer_id;
         $_POST['state']['shown'] = 0;
