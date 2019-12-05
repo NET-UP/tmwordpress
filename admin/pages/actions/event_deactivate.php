@@ -16,8 +16,6 @@
     }
 ?>
 
-<?php print_r($_POST); ?>
-
 <?php if(strlen($response->error_code) > 0){ ?>
     <div class="notice notice-error is-dismissable">
         <p><?php echo __($response->error_message); ?></p>
