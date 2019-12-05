@@ -1,8 +1,8 @@
 <?php 
     global $globals, $api;
 
-    if(!isset($_POST['state']['shown'])) {
-        $_POST['state']['shown'] = 0;
+    if(!isset($_POST['rules']['shown'])) {
+        $_POST['rules']['shown'] = 0;
     }
     if(!isset($_POST['approved'])) {
         $_POST['approved'] = 0;
