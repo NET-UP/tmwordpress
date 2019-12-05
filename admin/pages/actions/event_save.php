@@ -1,8 +1,11 @@
 <?php 
     global $globals, $api;
 
-    if(!isset($_POST['shown'])) {
-        $_POST['shown'] = 0;
+    if(!isset($_POST['state']['shown'])) {
+        $_POST['state']['shown'] = 0;
+    }
+    if(!isset($_POST['approved'])) {
+        $_POST['approved'] = 0;
     }
     if(isset($_POST['tags'])) {
         $_POST['tags'] = explode(",", $_POST['tags']);
