@@ -3,10 +3,10 @@ var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
-$("#tm_spinner").show();
-$.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search).success(function(data) {
+jQuery("#tm_spinner").show();
+jQuery.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search).success(function(data) {
 
-	$("#tm_spinner").hide();
+	jQuery("#tm_spinner").hide();
 	var events_array = data;
 
 	var calendarEl = document.getElementById('calendar');
