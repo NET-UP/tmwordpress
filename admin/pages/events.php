@@ -117,15 +117,19 @@ class Event_List_Table extends WP_List_Table {
      **************************************************************************/
     function column_ev_name($item){
 
-        if($item['approved'] == 1){
-            $toggle_type = "delete";
-            $toggle_text = "Deaktivieren";
-            $toggle_action = "deactivate";
-        }else{
-            $toggle_type = "undelete";
-            $toggle_text = "Veröffentlichen";
-            $toggle_action = "activate";
+        if($item['approved'] == 0){
             $additional_text .= " — <span class='post-state'>" . __('Entwurf' , 'ticketmachine') . "</span>";
+        }else{
+            if($item['rules']['shown'] == 1){
+                $toggle_type = "delete";
+                $toggle_text = "Deaktivieren";
+                $toggle_action = "deactivate";
+            }else{
+                $toggle_type = "undelete";
+                $toggle_text = "Veröffentlichen";
+                $toggle_action = "activate";
+                $additional_text .= " — <span class='post-state'>" . __('Inaktiv' , 'ticketmachine') . "</span>";
+            }
         }
         
         //Build row actions
