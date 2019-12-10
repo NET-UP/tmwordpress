@@ -207,20 +207,21 @@
 
 <script>
     jQuery(document).ready(function($) {
-        $('input.date').datetimepicker({
+        jQuery('input.date').datetimepicker({
             format: 'DD.MM.YYYY'
         });
-        $('input.time').datetimepicker({
+        jQuery('input.time').datetimepicker({
             format: 'HH:mm'   
         });
+        
+        jQuery(window).keydown(function(event){
+            if(event.keyCode == 13) {
+                jQuery('form').submit(false);
+            }
+        });
 
-        $(document).ready(function() {
-            $(window).keydown(function(event){
-                if(event.keyCode == 13) {
-                event.preventDefault();
-                return false;
-                }
-            });
+        jQuery(document).on("click", "input[type='text']", function(){
+                jQuery('form').submit(true);
         });
     });
 </script>
