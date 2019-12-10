@@ -7,13 +7,13 @@
             
         }
 
-        $google_calendar_url =   'https://calendar.google.com/calendar/r/eventedit?
-                                &text='. urlencode($event->ev_name) .'
-                                &dates='. date("Ymd", strtotime($event->ev_date)) .'T'. date("His", strtotime($event->ev_date)) . 'Z' . '/'. date("Ymd", strtotime($event->endtime)).'T'. date("His", strtotime($event->endtime)) . 'Z
-                                &details='. urlencode(wp_strip_all_tags($event->ev_description)) .'
-                                &location='. urlencode($event->ev_location_name) .'
-                                sf=true&
-                                output=xml';
+$google_calendar_url ='https://calendar.google.com/calendar/r/eventedit?
+&text='. urlencode($event->ev_name) .'
+&dates='. date("Ymd", strtotime($event->ev_date)) .'T'. date("His", strtotime($event->ev_date)) . 'Z' . '/'. date("Ymd", strtotime($event->endtime)).'T'. date("His", strtotime($event->endtime)) . 'Z
+&details='. urlencode(wp_strip_all_tags($event->ev_description)) .'
+&location='. urlencode($event->ev_location_name) .'
+sf=true&
+output=xml';
 
         $tm_output .= '
                 <a class="btn btn-secondary px-3" href="/events">
