@@ -1,7 +1,7 @@
 <?php
 
   if(!$globals->webshop_url) {
-      include(str_replace("/admin/pages", "", plugin_dir_path( __FILE__ )) . 'globals.php');
+      include(WP_PLUGIN_DIR . "/ticketmachine/globals.php");
   }
     
   $authorize_url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/authorize";
