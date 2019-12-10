@@ -2,8 +2,6 @@
 
 	function tm_display_events ( $atts, $globals, $api ) {
 		$events = tmapi_events($api, $globals);
-
-		print_r($events);
 		
 		//echo "<pre>" . print_r($tm_json) . "</pre>";
 		

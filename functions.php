@@ -56,7 +56,7 @@
 		}
 
 		$events = apiRequest($get_event_list, $post, $method, $headers);
-		return $events;
+		return (object)$events['result'];
 	}
 	
 	switch ($globals->lang) {
