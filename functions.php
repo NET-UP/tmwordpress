@@ -53,7 +53,7 @@
 		$get_event_list .= "&sort=". $params->sort;
 		
 		if($params->query) {
-			$get_event_list .= "&ev_name[contains]=" . $params->query;
+			$get_event_list .= "&ev_name[contains]=" . htmlspecialchars($params->query);
 		}
 
 		$events = apiRequest($get_event_list, $post, $method, $headers);
