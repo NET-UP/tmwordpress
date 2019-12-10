@@ -7,7 +7,7 @@
             
         }
 
-        $googe_calendar_url =   'http://www.google.com/calendar/render?
+        $google_calendar_url =   'http://www.google.com/calendar/render?
                                 action=TEMPLATE
                                 &text='. urlencode($event->ev_name) .'
                                 &dates='. date("Ymd", strtotime($event->ev_date)) .'T'. date("His", strtotime($event->ev_date)) . 'Z' . '/'. date("Ymd", strtotime($event->endtime)).'T'. date("His", strtotime($event->endtime)) . 'Z
