@@ -74,7 +74,7 @@
 			$params = (object)$params;
 		}
 
-		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $id;
+		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id;
 		if($params->categories > 0) {
 			$url .= "?categories=true";
 		}
