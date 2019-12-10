@@ -4,7 +4,6 @@
 
 		$params = [ "id" => $_GET['id'] ];
 		$event = tmapi_event($params);
-		$event = (object)$event->result;
 
 		$tm_output .= '
 			<div class=	"col-12">
