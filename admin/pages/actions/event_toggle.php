@@ -3,7 +3,7 @@
     
     if(isset($_GET['id'])){
         $params = [ "id" => $_GET['id'] ];
-        $tm_json_a = tmapi_event($params);
+        $tm_json_a = (object)tmapi_event($params);
         $_POST = $tm_json_a;
 
         $_POST['id'] = $_GET['id'];
