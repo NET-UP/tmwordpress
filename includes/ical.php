@@ -1,8 +1,11 @@
 <?php
+	if ( !defined('ABSPATH') ) {
+        //If wordpress isn't loaded load it up.
+        $path = $_SERVER['DOCUMENT_ROOT'];
+        include_once $path . '/wp-load.php';
+    }
 
     include(str_replace("/admin/pages", "", plugin_dir_path( __FILE__ )) . 'globals.php');
-
-    global $globals, $api;
 
     $tm_json = apiRequest($api->get_single_event_no_categories);
     $event = (object)$tm_json;
@@ -18,6 +21,9 @@
             SUMMARY:". $event->ev_name ."
             END:VEVENT
             END:VCALENDAR";
+
     header('Content-type: text/calendar; charset=utf-8');
     header('Content-Disposition: inline; filename=calendar.ics');
+
+    echo $ical;
 ?>
