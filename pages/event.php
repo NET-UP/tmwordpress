@@ -3,7 +3,7 @@
 	function tm_display_event ( $atts, $globals, $api ) {
 
 		$params = [ "id" => $_GET['id'] ];
-		$event = tmapi_event($params)->result;
+		$event = (object)tmapi_event($params)->result;
 
 		$tm_output .= '
 			<div class=	"col-12">
