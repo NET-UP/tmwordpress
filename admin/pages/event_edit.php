@@ -1,8 +1,8 @@
 <?php
     global $globals, $api;
     if($_GET['id'] > 0){
-        $tm_json = apiRequest($api->get_single_event_no_categories);
-        $event = (object)$tm_json;
+        $params = [ "id" => $_GET['id'] ];
+        $event = (object)$tmapi_event($params)->result;
     }else{
         $event = new stdClass();
         $event->state['shown'] = 1;
