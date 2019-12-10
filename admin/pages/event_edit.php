@@ -219,10 +219,6 @@
                 jQuery('form').submit(false);
             }
         });
-
-        jQuery(document).on("click", "input[type='text']", function(){
-                jQuery('form').submit(true);
-        });
     });
 </script>
 
