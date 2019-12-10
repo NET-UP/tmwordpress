@@ -32,7 +32,7 @@
 
 	/* API Requests */
 	/* Get event list */
-	function tmapi_all_events($params=array(), $post=FALSE, $method="GET", $headers=array()){
+	function tmapi_events($params=array(), $post=FALSE, $method="GET", $headers=array()){
 
 		$params = (object)$params;
 		if(!$params->sort){
