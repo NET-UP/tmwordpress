@@ -33,12 +33,6 @@
 	}else{
 		$api->environment = "";
 	}
-
-	/* Copy single event */
-	$api->copy_single_event = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/copy";
-	
-	/* Delete single event */
-	$api->delete_single_event = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/delete";
 	
 	#TODO: Refactor api request
 	$api->token = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/token";

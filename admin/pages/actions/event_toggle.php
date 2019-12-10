@@ -2,7 +2,8 @@
     global $globals, $api;
     
     if(isset($_GET['id'])){
-        $tm_json_a = apiRequest($api->get_single_event_no_categories);
+        $params = [ "id" => $_GET['id'] ];
+        $tm_json_a = tmapi_event($params);
         $_POST = $tm_json_a;
 
         $_POST['id'] = $_GET['id'];
@@ -12,8 +13,8 @@
         
         $post_json = json_encode($_POST);
 
-        $tm_json = apiRequest($api->get_single_event_no_categories, $post_json, "POST");
-        $response = (object)$tm_json['model_error'][0];
+        $tm_json = tmapi_event($post_json, "POST");
+        $response = (object)$tm_json->model_error[0];
     }
 ?>
 

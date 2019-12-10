@@ -68,13 +68,13 @@
 	/* Get event list */
 	function tmapi_event($params=array(), $method="GET", $post=FALSE, $headers=array()){
 		global $api, $globals;
-		if($method != "POST"){
-			$params = (object)$params;
-		}else{
+		if($method == "POST"){
 			$post = $params;
+		}else{
+			$params = (object)$params;
 		}
 
-		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id;
+		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $id;
 		if($params->categories > 0) {
 			$url .= "?categories=true";
 		}
@@ -83,9 +83,16 @@
 		return (object)$event;
 	}
 
-	
+	/* Get event list */
+	function tmapi_event_copy($id){
+		global $api, $globals;
 
-	
+		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $id . "/copy";
+
+		$event = apiRequest($url, TRUE, "POST");
+		return (object)$event;
+	}
+
 	switch ($globals->lang) {
 		case 'en':
 			setlocale(LC_TIME, 'en_US.UTF-8');
