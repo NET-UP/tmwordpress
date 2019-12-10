@@ -60,7 +60,9 @@ class Event_List_Table extends WP_List_Table {
     function get_events(){
         global $globals, $api;
         $params = [ "q" => $_GET['s'], "show_old" => 1 ];
-        return tmapi_events($params);
+        $events = tmapi_events($params)->result;
+        print_r($events);
+        return $events;
     }
 
 
