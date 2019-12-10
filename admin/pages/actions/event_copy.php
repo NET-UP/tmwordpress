@@ -9,7 +9,7 @@
         $post_json = json_encode($_POST);
         
         print_r($post_json);
-        $tm_json = tmapi_event($post_json, "POST");
+        $tm_json = tmapi_event_copy($post_json, "POST");
         $response = (object)$tm_json->model_error[0];
     }
 ?>

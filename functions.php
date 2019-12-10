@@ -86,12 +86,12 @@
 	}
 
 	/* Get event list */
-	function tmapi_event_copy($id){
+	function tmapi_event_copy($params){
 		global $api, $globals;
 
-		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $id . "/copy";
+		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id . "/copy";
 
-		$event = apiRequest($url, TRUE, "POST");
+		$event = apiRequest($url, $params, "POST");
 		return (object)$event;
 	}
 
