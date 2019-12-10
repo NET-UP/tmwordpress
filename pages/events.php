@@ -1,7 +1,8 @@
 <?php
 
 	function tm_display_events ( $atts, $globals, $api ) {
-		$events = tmapi_events();
+		$params = [ "query" => $_GET['q'] ];
+		$events = tmapi_events($params);
 		
 		//echo "<pre>" . print_r($tm_json) . "</pre>";
 		
