@@ -3,6 +3,7 @@
 	function tm_display_events ( $atts, $globals, $api ) {
 		
 		$tm_json = apiRequest($api->get_event_list);
+		$event = (object)$tm_json['result'];
 		
 		//echo "<pre>" . print_r($tm_json) . "</pre>";
 		
@@ -110,16 +111,16 @@
 				$tm_output .= "</div>";
 				
 			}else{
-				foreach($tm_json['result'] as $tm_event_array) {
-					$tm_event = (object)$tm_event_array;
+				foreach($events as $event) {
+					$event = (object)$event;
 					
-					$curr = $tm_event->ev_date;
+					$curr = $event->ev_date;
 					if ($i == 0 || date( $globals->group_by , strtotime( $curr ) ) != date( $globals->group_by, strtotime( $prev ) ) ) {
-						$tm_output .= "<div class='col-12 mt-2'><h5 class='line-header'><span>" . date( $globals->format_date, strtotime($tm_event->ev_date) ) . "</span></h5></div>";
+						$tm_output .= "<div class='col-12 mt-2'><h5 class='line-header'><span>" . date( $globals->format_date, strtotime($event->ev_date) ) . "</span></h5></div>";
 						$prev = $curr;
 					}
 					
-					$tm_output .= tm_event_list_item ( $tm_event, $globals );
+					$tm_output .= tm_event_list_item ( $event, $globals );
 					
 					$i++;
 				}

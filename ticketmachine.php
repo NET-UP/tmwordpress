@@ -44,7 +44,7 @@
                 switch ($atts['widget']) {
                     case 'event_list':
                         include "widgets/event_list.php";
-                        $tm_output .= tm_display_events( $atts, $globals, $api );
+                        $tm_output .= tm_widget_event_list( $atts, $globals, $api );
                         break;
                 }
             }
