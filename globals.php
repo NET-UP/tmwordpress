@@ -33,17 +33,6 @@
 	}else{
 		$api->environment = "";
 	}
-	
-	/* Get event list backend */
-	$api->get_event_list_backend = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
-	
-	if($globals->organizer && $globals->organizer != "" ){
-		$api->get_event_list_backend .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
-	}elseif($_GET['organizer']){
-		$api->get_event_list_backend .= "organizer.og_abbreviation[eq]=" . $_GET['organizer'];
-	}
-	
-	$api->get_event_list_backend .= "&sort=ev_date&per_page=100";
 
 	/* Copy single event */
 	$api->copy_single_event = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/copy";

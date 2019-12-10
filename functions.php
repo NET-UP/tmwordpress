@@ -49,7 +49,9 @@
 			$url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
 		}
 		
-		$url .= "&endtime[gte]=" . $globals->first_event_date;
+		if($params->show_old != 1) {
+			$url .= "&endtime[gte]=" . $globals->first_event_date;
+		}
 		$url .= "&sort=". $params->sort;
 		if($params->per_page > 0) {
 			$url .= "&per_page=" . (int)$params->per_page;
