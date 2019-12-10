@@ -66,7 +66,7 @@
 	}
 
 	/* Get event list */
-	function tmapi_event($params=array(), $method="GET", $post=FALSE,  $headers=array()){
+	function tmapi_event($params=array(), $method="GET", $post=FALSE, $headers=array()){
 		global $api, $globals;
 		$params = (object)$params;
 
@@ -75,6 +75,9 @@
 			$url .= "?categories=true";
 		}
 
+		if($method == "POST"){
+			$post = $params;
+		}
 
 		$event = apiRequest($url, $post, $method, $headers);
 		return (object)$event;
