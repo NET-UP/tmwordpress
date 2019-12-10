@@ -55,8 +55,10 @@
 			$get_event_list .= "&ev_name[contains]=" . $params->query;
 		}
 
-		print_r($get_event_list);
-		return apiRequest($api->get_event_list, $post, $method, $headers);
+		echo $get_event_list;
+
+		$events = apiRequest($api->get_event_list, $post, $method, $headers);
+		return $events['result'];
 	}
 	
 	switch ($globals->lang) {
