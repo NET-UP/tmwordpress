@@ -2,7 +2,7 @@
 
 	function tm_display_events ( $atts, $globals, $api ) {
 		$params = [ "query" => $_GET['q'], "sort" => $_GET['sort'] ];
-		$events = tmapi_events($params);
+		$events = tmapi_events($params)->result;
 		
 		//echo "<pre>" . print_r($tm_json) . "</pre>";
 		

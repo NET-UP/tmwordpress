@@ -57,7 +57,7 @@
 		}
 
 		$events = apiRequest($url, $post, $method, $headers);
-		return (object)$events['result'];
+		return (object)$events;
 	}
 
 	/* Get event list */
@@ -68,7 +68,7 @@
 		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id . "?categories=true";
 
 		$event = apiRequest($url, $post, $method, $headers);
-		return (object)$event['result'];
+		return (object)$event;
 	}
 
 	
