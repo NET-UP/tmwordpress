@@ -91,6 +91,7 @@
 
 		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id . "/copy";
 
+		print_r($params);
 		$event = apiRequest($url, $params, "POST");
 		return (object)$event;
 	}
