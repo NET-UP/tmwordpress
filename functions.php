@@ -89,10 +89,10 @@
 	function tmapi_event_copy($params){
 		global $api, $globals;
 
-		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id . "/copy";
+		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/copy";
 
 		print_r($params);
-		$event = apiRequest($url, TRUE, "POST");
+		$event = apiRequest($url, $params, "POST");
 		return (object)$event;
 	}
 
