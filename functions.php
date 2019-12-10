@@ -79,7 +79,7 @@
 			$post = $params;
 		}
 
-		$event = apiRequest($url, $post, $method, $headers);
+		$event = apiRequest($url, $method, $post, $headers);
 		return (object)$event;
 	}
 
