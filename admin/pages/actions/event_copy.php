@@ -5,7 +5,9 @@
         $_POST['id'] = $_GET['id'];
         $_POST['organizer_id'] = $globals->organizer_id;
         
+
         $post_json = json_encode($_POST);
+        
         $tm_json = tmapi_event($post_json, "POST");
         $response = (object)$tm_json->model_error[0];
     }
