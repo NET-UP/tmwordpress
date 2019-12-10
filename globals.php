@@ -9,7 +9,6 @@
 	
 	$globals->map_query_url = "https://www.google.de/maps?q=";
 	$globals->lang = "de";
-	$globals->search_query = htmlspecialchars($_GET['q']);
 	$globals->current_url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 	
 	/* Backend Settings */
@@ -32,22 +31,6 @@
 		$api->environment = $globals->environment . ".";
 	}else{
 		$api->environment = "";
-	}
-	
-	/* Get event list */
-	$api->get_event_list = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
-	
-	if($globals->organizer && $globals->organizer != "" ){
-		$api->get_event_list .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
-	}elseif($_GET['organizer']){
-		$api->get_event_list .= "organizer.og_abbreviation[eq]=" . $_GET['organizer'];
-	}
-	
-	$api->get_event_list .= "&endtime[gte]=" . $globals->first_event_date;
-	$api->get_event_list .= "&sort=ev_date";
-	
-	if($_GET['q']) {
-		$api->get_event_list .= "&ev_name[contains]=" . $globals->search_query;
 	}
 	
 	/* Get event list backend */

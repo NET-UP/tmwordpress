@@ -1,10 +1,11 @@
 <?php
 
     function tm_widget_event_list ( $atts, $globals, $api ) {
-		$tm_json = apiRequest($api->get_event_list);
-		$events = $tm_json['result'];
+		$events = tmapi_all_events();
 
-        $tm_output = json_decode($events);
+        foreach($events as $event){
+            $tm_output = $event->id;
+        }
 
         return $tm_output;
     }

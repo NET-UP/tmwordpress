@@ -29,6 +29,34 @@
 	  return json_decode($response, true);
 	  
 	}
+
+	/* API Requests */
+	/* Get event list */
+	function tmapi_all_events($params=array(), $post=FALSE, $method="GET", $headers=array()){
+
+		$params = (object)$params;
+		if(!$params->sort){
+			$params->sort = "ev_date";
+		}
+
+		$api->get_event_list = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
+		
+		if($globals->organizer && $globals->organizer != "" ){
+			$api->get_event_list .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
+		}elseif($_GET['organizer']){
+			$api->get_event_list .= "organizer.og_abbreviation[eq]=" . $_GET['organizer'];
+		}
+		
+		$api->get_event_list .= "&endtime[gte]=" . $globals->first_event_date;
+		$api->get_event_list .= "&sort=". $params->sort;
+		
+		if($params->query) {
+			$api->get_event_list .= "&ev_name[contains]=" . $params->query;
+		}
+
+		$events = apiRequest($api->get_event_list, $post, $method);
+		return (object)$events['result'];
+	}
 	
 	switch ($globals->lang) {
 		case 'en':
