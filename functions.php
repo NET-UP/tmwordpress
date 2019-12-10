@@ -51,6 +51,9 @@
 		
 		$url .= "&endtime[gte]=" . $globals->first_event_date;
 		$url .= "&sort=". $params->sort;
+		if($params->per_page > 0) {
+			$url .= "&per_page=1" . (int)$params->per_page;
+		}
 		
 		if($params->query) {
 			$url .= "&ev_name[contains]=" . htmlspecialchars($params->query);
