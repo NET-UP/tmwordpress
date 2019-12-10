@@ -85,7 +85,7 @@
 		return (object)$event;
 	}
 
-	/* Get event list */
+	/* Copy event */
 	function tmapi_event_copy($params){
 		global $api, $globals;
 
