@@ -214,14 +214,10 @@
             format: 'HH:mm'   
         });
         
-        jQuery(window).keydown(function(event){
+        jQuery('.bootstrap-tagsinput').keydown(function(event){
             if(event.keyCode == 13) {
                 jQuery('form').submit(false);
             }
-        });
-
-        jQuery(document).on("click", "input[type='text']", function(){
-                jQuery('form').submit(true);
         });
     });
 </script>
