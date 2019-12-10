@@ -70,9 +70,9 @@
 			$url .= "?categories=true";
 		}
 
-		print_r($url);
 
 		$event = apiRequest($url, $post, $method, $headers);
+		print_r($event);
 		return (object)$event;
 	}
 
