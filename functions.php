@@ -57,7 +57,7 @@
 
 		print_r($get_event_list);
 
-		$events = apiRequest($api->get_event_list, $post, $method);
+		$events = apiRequest($api->get_event_list, $post, $method, $headers);
 		return $events['result'];
 	}
 	
