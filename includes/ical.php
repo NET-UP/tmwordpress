@@ -9,21 +9,24 @@
 
     $tm_json = apiRequest($api->get_single_event_no_categories);
     $event = (object)$tm_json;
-    
-    $ical = "BEGIN:VCALENDAR
-            VERSION:2.0
-            PRODID:-//hacksw/handcal//NONSGML v1.0//EN
-            BEGIN:VEVENT
-            UID:" . md5(uniqid(mt_rand(), true)) . "@yourhost.test
-            DTSTAMP:" . gmdate('Ymd').'T'. gmdate('His') . "Z
-            DTSTART:19970714T170000Z
-            DTEND:19970715T035959Z
-            SUMMARY:". $event->ev_name ."
-            END:VEVENT
-            END:VCALENDAR";
+#19970714T170000Z
+#19970715T035959Z
+    if($event->id) {
+        $ical = "BEGIN:VCALENDAR
+                VERSION:2.0
+                PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+                BEGIN:VEVENT
+                UID:" . md5(uniqid(mt_rand(), true)) . "@yourhost.test
+                DTSTAMP:" . gmdate('Ymd').'T'. gmdate('His') . "Z
+                DTSTART:". date("Ymd", strtotime($event->ev_date))."T". date("His", strtotime($event->ev_date)) ."
+                DTEND:  ". date("Ymd", strtotime($event->endtime))."T". date("His", strtotime($event->endtime)) ."
+                SUMMARY:". $event->ev_name ."
+                END:VEVENT
+                END:VCALENDAR";
 
-    header('Content-type: text/calendar; charset=utf-8');
-    header('Content-Disposition: inline; filename=calendar.ics');
+        header('Content-type: text/calendar; charset=utf-8');
+        header('Content-Disposition: inline; filename=calendar.ics');
 
-    echo $ical;
+        echo $ical;   
+    }
 ?>
