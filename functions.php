@@ -55,7 +55,6 @@
 			$api->get_event_list .= "&ev_name[contains]=" . $params->query;
 		}
 
-		print_r($api->get_event_list);
 
 		$events = apiRequest($api->get_event_list, $post, $method);
 		return $events['result'];
