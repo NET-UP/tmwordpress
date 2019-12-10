@@ -33,7 +33,9 @@
 
 	/* API Requests */
 	/* Get event list */
-	function tmapi_events($api, $globals, $params=array(), $post=FALSE, $method="GET", $headers=array()){
+	function tmapi_events($params=array(), $post=FALSE, $method="GET", $headers=array()){
+
+		global $api, $globals;
 
 		$params = (object)$params;
 		if(!$params->sort){
