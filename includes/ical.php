@@ -10,7 +10,7 @@
             DTSTAMP:" . gmdate('Ymd').'T'. gmdate('His') . "Z
             DTSTART:19970714T170000Z
             DTEND:19970715T035959Z
-            SUMMARY:$event->ev_name
+            SUMMARY:". $event->ev_name ."
             END:VEVENT
             END:VCALENDAR";
     header('Content-type: text/calendar; charset=utf-8');
