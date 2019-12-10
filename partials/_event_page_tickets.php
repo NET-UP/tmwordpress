@@ -22,8 +22,8 @@
         $tm_output .= '
                 <a class="btn btn-secondary px-3" href="/events">
                     <i class="fas fa-chevron-left"></i> &nbsp; Zurück
-                </a>'
-                $ical;
+                </a>
+                <div>'. $ical .'</div>';
         return $tm_output;
 	}
 ?>
