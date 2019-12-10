@@ -57,22 +57,22 @@
 		}
 
 		$events = apiRequest($url, $post, $method, $headers);
-		return (object)$events['result'];
+		return (object)$events;
 	}
 
-	/* API Requests */
 	/* Get event list */
-	function tmapi_event_status($params=array(), $method="GET", $post=FALSE,  $headers=array()){
+	function tmapi_event($params=array(), $method="GET", $post=FALSE,  $headers=array()){
 		global $api, $globals;
-
 		$params = (object)$params;
-		if($params->id){
-			$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/event_infos/event_contingent_data?event_id=" . $params->id;
-		}
 
-		$event_status = apiRequest($url, $post, $method, $headers);
-		return (object)$event_status;
+		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "?categories=true";
+
+		$event = apiRequest($url, $post, $method, $headers);
+		return (object)$event;
 	}
+
+	
+
 	
 	switch ($globals->lang) {
 		case 'en':

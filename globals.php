@@ -44,13 +44,7 @@
 	}
 	
 	$api->get_event_list_backend .= "&sort=ev_date&per_page=100";
-	
-	/* Get single event */
-	$api->get_single_event = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "?categories=true";
-	
-	/* Get single event */
-	$api->get_single_event_no_categories = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'];
-	
+
 	/* Copy single event */
 	$api->copy_single_event = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/copy";
 	

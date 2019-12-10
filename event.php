@@ -9,13 +9,12 @@
 	$calendar = array();
 	$i = 0;
 
-	foreach($events as $event) {
+	foreach($events->result as $event) {
 		$event = (object) $event;
 		
 		$params = [ "id" => $event->id ];
-		$event_status = tmapi_event_status($params);
 		
-		if($event_status->free > 0){
+		if($event->state['sale_active'] > 0){
 			$event->status_color = "#d4edda";
 			$event->status_text_color = "#155724";
 		}else{
