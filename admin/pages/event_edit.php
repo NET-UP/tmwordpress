@@ -2,7 +2,7 @@
     global $globals, $api;
     if($_GET['id'] > 0){
         $params = [ "id" => $_GET['id'] ];
-        $event = (object)tmapi_event($params)->result;
+        $event = (object)tmapi_event($params);
     }else{
         $event = new stdClass();
         $event->state['shown'] = 1;
