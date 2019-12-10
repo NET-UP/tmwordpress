@@ -41,22 +41,36 @@
 			$params->sort = "ev_date";
 		}
 
-		$get_event_list = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
+		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
 		
 		if($globals->organizer && $globals->organizer != "" ){
-			$get_event_list .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
+			$url .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
 		}elseif($params->organizer){
-			$get_event_list .= "organizer.og_abbreviation[eq]=" . $params->organizer;
+			$url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
 		}
 		
-		$get_event_list .= "&endtime[gte]=" . $globals->first_event_date;
-		$get_event_list .= "&sort=". $params->sort;
+		$url .= "&endtime[gte]=" . $globals->first_event_date;
+		$url .= "&sort=". $params->sort;
 		
 		if($params->query) {
-			$get_event_list .= "&ev_name[contains]=" . htmlspecialchars($params->query);
+			$url .= "&ev_name[contains]=" . htmlspecialchars($params->query);
 		}
 
-		$events = apiRequest($get_event_list, $post, $method, $headers);
+		$events = apiRequest($url, $post, $method, $headers);
+		return (object)$events['result'];
+	}
+
+	/* API Requests */
+	/* Get event list */
+	function tmapi_event_status($params=array(), $method="GET", $post=FALSE,  $headers=array()){
+		global $api, $globals;
+
+		$params = (object)$params;
+		if($params->id){
+			$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/event_infos/event_contingent_data?event_id=" . $params->id;
+		}
+
+		$events = apiRequest($url, $post, $method, $headers);
 		return (object)$events['result'];
 	}
 	

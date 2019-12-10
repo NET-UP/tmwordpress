@@ -12,10 +12,9 @@
 	foreach($events as $event) {
 		$event = (object) $event;
 		
-		$tm_json_getEventStatus = apiRequest($api->get_event_status . $event->id);
-		$tm_json_contingent = (object) $tm_json_getEventStatus;
+		$event_status = tmapi_event_status($event->id);
 		
-		if($tm_json_contingent->free > 0){
+		if($event_status->free > 0){
 			$event->status_color = "#d4edda";
 			$event->status_text_color = "#155724";
 		}else{
