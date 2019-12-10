@@ -35,6 +35,8 @@
 	/* Get event list */
 	function tmapi_events($params=array(), $post=FALSE, $method="GET", $headers=array()){
 
+		global $globals, $api;
+
 		$params = (object)$params;
 		if(!$params->sort){
 			$params->sort = "ev_date";
