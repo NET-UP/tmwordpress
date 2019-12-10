@@ -3,7 +3,7 @@
 	function tm_display_events ( $atts, $globals, $api ) {
 		
 		$events = tmapi_events();
-		print_r(tm_api_events());
+		print_r(tmapi_events());
 		
 		//echo "<pre>" . print_r($tm_json) . "</pre>";
 		
