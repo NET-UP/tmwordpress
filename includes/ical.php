@@ -14,18 +14,18 @@
     if($event->id) {
         $ical = "BEGIN:VCALENDAR
                 VERSION:2.0
-                PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+                PRODID:-//TicketMachine WP-Plugin//DE
                 BEGIN:VEVENT
-                UID:" . md5(uniqid(mt_rand(), true)) . "@yourhost.test
+                UID:" . md5(uniqid(mt_rand(), true)) . "@ticketmachine.de
                 DTSTAMP:" . gmdate('Ymd').'T'. gmdate('His') . "Z
-                DTSTART:". date("Ymd", strtotime($event->ev_date))."T". date("His", strtotime($event->ev_date)) ."
-                DTEND:  ". date("Ymd", strtotime($event->endtime))."T". date("His", strtotime($event->endtime)) ."
+                DTSTART:". date("Ymd", strtotime($event->ev_date))."T". date("His", strtotime($event->ev_date)) . "Z" . "
+                DTEND:". date("Ymd", strtotime($event->endtime))."T". date("His", strtotime($event->endtime)) . "Z" . "
                 SUMMARY:". $event->ev_name ."
                 END:VEVENT
                 END:VCALENDAR";
 
         header('Content-type: text/calendar; charset=utf-8');
-        header('Content-Disposition: inline; filename=calendar.ics');
+        header('Content-Disposition: inline; filename='. $event->ev_name .'.ics');
 
         echo $ical;   
     }
