@@ -24,21 +24,31 @@
 				$atts[$key] = $value;
 			}
 			
-			$tm_output = "<div class='tm_page'>";
-
-			switch ($atts['page']) {
-				case 'events_list':
-					include "partials/_event_list_item.php";
-                    include "pages/events.php";
-					$tm_output .= tm_display_events( $atts, $globals, $api );
-					break;
-				case 'event_details':
-					include "partials/_event_page_information.php";
-					include "partials/_event_page_tickets.php";
-					include "pages/event.php";
-					$tm_output .= tm_display_event( $atts, $globals, $api );
-					break;
-			}
+            $tm_output = "<div class='tm_page'>";
+            
+            if($atts['page']){
+                switch ($atts['page']) {
+                    case 'event_list':
+                        include "partials/_event_list_item.php";
+                        include "pages/events.php";
+                        $tm_output .= tm_display_events( $atts, $globals, $api );
+                        break;
+                    case 'event_details':
+                        include "partials/_event_page_information.php";
+                        include "partials/_event_page_tickets.php";
+                        include "pages/event.php";
+                        $tm_output .= tm_display_event( $atts, $globals, $api );
+                        break;
+                }
+            }elseif($atts['widget']){
+                switch ($atts['widget']) {
+                    case 'event_list':
+                        include "partials/_event_list_item.php";
+                        include "pages/events.php";
+                        $tm_output .= tm_display_events( $atts, $globals, $api );
+                        break;
+                }
+            }
 
 			$tm_output .= "</div>";
 			
