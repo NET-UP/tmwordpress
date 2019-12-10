@@ -41,20 +41,6 @@
 		}
 
 		$get_event_list = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
-		
-		if($globals->organizer && $globals->organizer != "" ){
-			$get_event_list .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
-		}elseif($params->organizer){
-			$get_event_list .= "organizer.og_abbreviation[eq]=" . $params->organizer;
-		}
-		
-		$get_event_list .= "&endtime[gte]=" . $globals->first_event_date;
-		$get_event_list .= "&sort=". $params->sort;
-		
-		if($params->query) {
-			$get_event_list .= "&ev_name[contains]=" . $params->query;
-		}
-
 		echo $get_event_list;
 
 		$events = apiRequest($api->get_event_list, $post, $method, $headers);
