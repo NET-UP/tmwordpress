@@ -2,9 +2,8 @@
 
 	function tm_display_event ( $atts, $globals, $api ) {
 
-		$tm_json = apiRequest($api->get_single_event);
-
-		$event = (object)$tm_json;
+		$event = tmapi_event($params);
+		$event = (object)$event->result;
 
 		$tm_output .= '
 			<div class=	"col-12">
