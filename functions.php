@@ -52,7 +52,7 @@
 		$url .= "&endtime[gte]=" . $globals->first_event_date;
 		$url .= "&sort=". $params->sort;
 		if($params->per_page > 0) {
-			$url .= "&per_page=1" . (int)$params->per_page;
+			$url .= "&per_page=" . (int)$params->per_page;
 		}
 		
 		if($params->query) {
