@@ -40,22 +40,22 @@
 			$params->sort = "ev_date";
 		}
 
-		$api->get_event_list = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
+		$get_event_list = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
 		
 		if($globals->organizer && $globals->organizer != "" ){
-			$api->get_event_list .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
-		}elseif($_GET['organizer']){
-			$api->get_event_list .= "organizer.og_abbreviation[eq]=" . $_GET['organizer'];
+			$get_event_list .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
+		}elseif($params->organizer){
+			$get_event_list .= "organizer.og_abbreviation[eq]=" . $params->organizer;
 		}
 		
-		$api->get_event_list .= "&endtime[gte]=" . $globals->first_event_date;
-		$api->get_event_list .= "&sort=". $params->sort;
+		$get_event_list .= "&endtime[gte]=" . $globals->first_event_date;
+		$get_event_list .= "&sort=". $params->sort;
 		
 		if($params->query) {
-			$api->get_event_list .= "&ev_name[contains]=" . $params->query;
+			$get_event_list .= "&ev_name[contains]=" . $params->query;
 		}
 
-		print_r($api->get_event_list);
+		print_r($get_event_list);
 
 		$events = apiRequest($api->get_event_list, $post, $method);
 		return $events['result'];
