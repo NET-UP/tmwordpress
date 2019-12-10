@@ -3,7 +3,7 @@
 	function tm_display_event ( $atts, $globals, $api ) {
 
 		$params = [ "id" => $_GET['id'] ];
-		$event = (object)tmapi_event($params)->result;
+		$event = tmapi_event($params);
 		print_r($event);
 
 		$tm_output .= '
