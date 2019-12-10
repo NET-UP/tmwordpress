@@ -79,8 +79,6 @@
 			$url .= "?categories=true";
 		}
 
-        print_r($post);
-
 		$event = apiRequest($url, $post, $method, $headers);
 		return (object)$event;
 	}
