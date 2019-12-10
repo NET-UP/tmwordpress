@@ -10,7 +10,7 @@
                 <a class="btn btn-secondary px-3" href="/events">
                     <i class="fas fa-chevron-left"></i> &nbsp; Zurück
                 </a>
-                <a href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '">ICAL</a>';
+                <a href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '"><i class="fas fa-calendar-alt"></i></a>';
         return $tm_output;
 	}
 ?>

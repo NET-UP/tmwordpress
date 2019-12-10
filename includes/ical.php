@@ -11,6 +11,7 @@
     $event = (object)$tm_json;
 
     if($event->id) {
+        
 $ical = "BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//TicketMachine WP-Plugin//DE
