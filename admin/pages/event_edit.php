@@ -109,7 +109,7 @@
                                                 value="<?php foreach($event->tags as $tag) { echo $tag.","; }?>" 
                                                 name="tags" data-role="tagsinput" >
                                         </div>
-                                        <p class="howto" id="new-tag-post_tag-desc"><?php echo __('Schlagwörter mit Enter-Taste hinzufügen.', 'ticketmachine') ?></p>
+                                        <p class="howto" id="new-tag-post_tag-desc"><?php echo __('Schlagwörter durch Kommas trennen.', 'ticketmachine') ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -212,12 +212,6 @@
         });
         $('input.time').datetimepicker({
             format: 'HH:mm'   
-        });
-        
-        $(window).keydown(function(event){
-            if(event.keyCode == 13) {
-                $('form').submit(false)
-            }
         });
     });
 </script>

@@ -2,7 +2,7 @@
 
 	/*
 	Plugin Name: TicketMachine
-	Description: Easily sell tickets for your events
+	Description: Easily create and manage events for your wordpress site.
 	Version:     0.7.1
 	Author:      NET-UP
 	Author URI:  https://www.net-up.de
