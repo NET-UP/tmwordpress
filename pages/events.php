@@ -3,7 +3,7 @@
 	function tm_display_events ( $atts, $globals, $api ) {
 		
 		$tm_json = apiRequest($api->get_event_list);
-		$event = $tm_json['result'];
+		$events = (object)$tm_json['result'];
 		
 		//echo "<pre>" . print_r($tm_json) . "</pre>";
 		
