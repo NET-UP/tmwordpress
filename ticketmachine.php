@@ -43,8 +43,7 @@
             }elseif($atts['widget']){
                 switch ($atts['widget']) {
                     case 'event_list':
-                        include "partials/_event_list_item.php";
-                        include "pages/events.php";
+                        include "widgets/event_list.php";
                         $tm_output .= tm_display_events( $atts, $globals, $api );
                         break;
                 }
