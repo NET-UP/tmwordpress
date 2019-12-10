@@ -7,20 +7,15 @@
             
         }
 
-$google_calendar_url ='https://calendar.google.com/calendar/r/eventedit?
-&text='. urlencode($event->ev_name) .'
-&dates='. date("Ymd", strtotime($event->ev_date)) .'T'. date("His", strtotime($event->ev_date)) . 'Z' . '/'. date("Ymd", strtotime($event->endtime)).'T'. date("His", strtotime($event->endtime)) . 'Z
-&details='. str_replace(' ', '+', wp_strip_all_tags($event->ev_description)) .'
-&location='. urlencode($event->ev_location_name) .'
-&sf=true
-&output=xml';
+        include "";
 
         $tm_output .= '
                 <a class="btn btn-secondary px-3" href="/events">
                     <i class="fas fa-chevron-left"></i> &nbsp; Zurück
                 </a>
-                <a target="_blank" href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '"><i class="fas fa-calendar-alt" title="Als ical speichern"></i></a>
-                <a target="_blank" href="' . $google_calendar_url . '">GOOGLE</a>';
+                <a class="btn btn-secondary" target="_blank" href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '" title="' . __('Als iCal speichern', 'ticketmachine') . '"><i class="fas fa-calendar-alt"></i></a>
+                
+                <a class="btn btn-secondary" target="_blank" href="' . $google_calendar_url . '" title="' . __('Im Google Kalender speichern', 'ticketmachine') . '"><i class="fab fa-google"></i></a>';
 
         return $tm_output;
 	}
