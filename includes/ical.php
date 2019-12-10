@@ -1,6 +1,9 @@
 <?php
+
+    include(str_replace("/admin/pages", "", plugin_dir_path( __FILE__ )) . 'globals.php');
+
     global $globals, $api;
-    
+
     $tm_json = apiRequest($api->get_single_event_no_categories);
     $event = (object)$tm_json;
     
