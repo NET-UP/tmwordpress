@@ -25,7 +25,7 @@
                 END:VCALENDAR";
 
         header('Content-type: text/calendar; charset=utf-8');
-        header('Content-Disposition: inline; filename='. $event->ev_name .'.ics');
+        header('Content-Disposition: inline; filename='. sanitize_file_name($event->ev_name) .'.ics');
 
         echo $ical;   
     }
