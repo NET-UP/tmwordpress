@@ -19,8 +19,8 @@ $google_calendar_url ='https://calendar.google.com/calendar/r/eventedit?
                 <a class="btn btn-secondary px-3" href="/events">
                     <i class="fas fa-chevron-left"></i> &nbsp; Zurück
                 </a>
-                <a href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '"><i class="fas fa-calendar-alt" title="Als ical speichern"></i></a>
-                <a href="' . $google_calendar_url . '">GOOGLE</a>';
+                <a target="_blank" href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '"><i class="fas fa-calendar-alt" title="Als ical speichern"></i></a>
+                <a target="_blank" href="' . $google_calendar_url . '">GOOGLE</a>';
 
         return $tm_output;
 	}
