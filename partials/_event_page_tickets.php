@@ -23,7 +23,7 @@
                 <a class="btn btn-secondary px-3" href="/events">
                     <i class="fas fa-chevron-left"></i> &nbsp; Zurück
                 </a>'
-                echo $ical;
+                $ical;
         return $tm_output;
 	}
 ?>
