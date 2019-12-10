@@ -12,7 +12,8 @@
 	foreach($events as $event) {
 		$event = (object) $event;
 		
-		$event_status = tmapi_event_status($event->id);
+		$params = [ "id" => $event->id ];
+		$event_status = tmapi_event_status($params);
 		
 		if($event_status->free > 0){
 			$event->status_color = "#d4edda";
