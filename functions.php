@@ -70,8 +70,8 @@
 			$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/event_infos/event_contingent_data?event_id=" . $params->id;
 		}
 
-		$events = apiRequest($url, $post, $method, $headers);
-		return (object)$events['result'];
+		$event_status = apiRequest($url, $post, $method, $headers);
+		return (object)$event_status;
 	}
 	
 	switch ($globals->lang) {
