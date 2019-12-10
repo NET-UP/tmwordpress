@@ -70,6 +70,7 @@
 		global $api, $globals;
 		if($method != "POST"){
 			$params = (object)$params;
+		}else{
 			$post = $params;
 		}
 
