@@ -65,7 +65,7 @@
 		global $api, $globals;
 		$params = (object)$params;
 
-		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "?categories=true";
+		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id . "?categories=true";
 
 		$event = apiRequest($url, $post, $method, $headers);
 		return (object)$event;
