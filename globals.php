@@ -56,21 +56,6 @@
 	/* Delete single event */
 	$api->delete_single_event = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/delete";
 	
-	/* Get event calendar */
-	$api->get_event_calendar = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
-
-	if($globals->organizer && $globals->organizer != "" ){
-		$api->get_event_calendar .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
-	}elseif($_GET['organizer']){
-		$api->get_event_calendar .= "organizer.og_abbreviation[eq]=" . $_GET['organizer'];
-	}
-	
-	$api->get_event_calendar .= "&endtime[gte]=" . $globals->first_event_date_calendar . "&sort=ev_date";
-	
-	if($_GET['q']) {
-		$api->get_event_calendar .= "&ev_name[contains]=" . $globals->search_query;
-	}
-
 	#TODO: Refactor api request
 	
 	$api->get_event_status = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/event_infos/event_contingent_data?event_id=";
