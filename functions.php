@@ -68,15 +68,14 @@
 	/* Get event list */
 	function tmapi_event($params=array(), $method="GET", $post=FALSE, $headers=array()){
 		global $api, $globals;
-		$params = (object)$params;
+		if($method != "POST"){
+			$params = (object)$params;
+			$post = $params;
+		}
 
 		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id;
 		if($params->categories > 0) {
 			$url .= "?categories=true";
-		}
-
-		if($method == "POST"){
-			$post = $params;
 		}
 
 		$event = apiRequest($url, $post, $method, $headers);
