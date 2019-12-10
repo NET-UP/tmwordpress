@@ -9,10 +9,10 @@
 
         $googe_calendar_url =   'http://www.google.com/calendar/render?
                                 action=TEMPLATE
-                                &text='. url_encode($event->ev_name) .'
+                                &text='. urlencode($event->ev_name) .'
                                 &dates='. date("Ymd", strtotime($event->ev_date)) .'T'. date("His", strtotime($event->ev_date)) . 'Z' . '/'. date("Ymd", strtotime($event->endtime)).'T'. date("His", strtotime($event->endtime)) . 'Z
-                                &details='. url_encode($event->ev_description) .'
-                                &location='. url_encode($event->ev_location_name) .'
+                                &details='. urlencode($event->ev_description) .'
+                                &location='. urlencode($event->ev_location_name) .'
                                 &trp=false
                                 &sprop=
                                 &sprop=name:';
