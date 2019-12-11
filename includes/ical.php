@@ -21,6 +21,7 @@ DTSTAMP:" . gmdate('Ymd').'T'. gmdate('His') . "Z
 DTSTART:". date("Ymd", strtotime($event->ev_date))."T". date("His", strtotime($event->ev_date)) . "Z" . "
 DTEND:". date("Ymd", strtotime($event->endtime))."T". date("His", strtotime($event->endtime)) . "Z" . "
 SUMMARY:". $event->ev_name ."
+LOCATION:". $event->ev_location_name ."
 END:VEVENT
 END:VCALENDAR";
 
