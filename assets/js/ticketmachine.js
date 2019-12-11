@@ -11,7 +11,7 @@ jQuery(document).ready(function(){
     });
 
     var t = jQuery('.card-text');
-    if(t > 202) {
+    if(t.height() > 202) {
         t.addClass('closed');
     }
 });
