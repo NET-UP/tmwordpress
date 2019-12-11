@@ -175,6 +175,8 @@ body .tm_page a.btn {
 	vertical-align:top;
 	width:64px;
 	height:64px;
+	background-position: center center;
+    background-size: cover;
 }
 
 .tm_page .media-body {
