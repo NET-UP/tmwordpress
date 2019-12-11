@@ -10,7 +10,12 @@
                         <div>Eintritt:</div>
                         <div>kostenlos</div>
                         <div>Schlagwörter:</div>
-                        <div>'. foreach($event->tags as $tag) { echo $tag.","; } .'</div>
+                        <div>';
+                        foreach($event->tags as $tag) { 
+                            $tm_output .= "<div>".$tag."</div>"; 
+                        } 
+                        
+        $tm_output .=  '</div>
                         <h2>Veranstaltungsort</h2>
                         <div>'. $event->ev_location_name .'</div>
                         <div>'. $event->event_location['city'] $event->event_location['zip'] .'</div>
