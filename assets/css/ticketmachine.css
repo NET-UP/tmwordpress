@@ -170,16 +170,23 @@ body .tm_page a.btn {
     z-index: 0;
 }
 
+.tm-page li.media {
+    border-bottom: 1px solid #EEE;
+    margin-bottom: 7px;
+    padding-bottom: 9px;
+}
+
 .tm_page .media-img {
-	display:inline-block;
-	vertical-align:top;
 	width:64px;
 	height:64px;
+	background-color: #EEE;
+	background-position: center center;
+    background-size: cover;
+    border-radius: 3px;
 }
 
 .tm_page .media-body {
-	display:inline-block;
-	vertical-align:top;
+	word-break: break-word;
 }
 
 /* Calendar */
