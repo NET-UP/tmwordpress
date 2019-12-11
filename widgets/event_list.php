@@ -12,6 +12,8 @@
 
                 $tm_output .= '<li class="media">';
 
+                print_r($attr);
+
                 if($attr['show_image'] == 1){
                     $tm_output .= '<div class="mr-3 media-img" style="background-image:url('. $event->event_img_url .')"></div>';
                 }
