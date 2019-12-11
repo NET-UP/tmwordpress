@@ -5,12 +5,12 @@
         $params = $atts;
         $events = tmapi_events($params)->result;
         $tm_output .= '<div class="tm_widget_event_list">';
-            $tm_output .= '<ul class="list-unstyled">';
+            $tm_output .= '<ul class="list-group list-group-flush">';
 
             foreach($events as $event){
                 $event = (object)$event;
 
-                $tm_output .= '<li class="media">
+                $tm_output .= '<li class="list-group-item">
                                     <a href="#">
                                         <div class="mr-3 media-img" style="background-image:url('. $event->event_img_url .')"></div>
                                         <div class="media-body">
