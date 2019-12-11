@@ -1,4 +1,5 @@
 jQuery(document).ready(function(){
+
     jQuery(document).on('click', '.allow-google-maps', function(){
         createCookie('allow_google_maps', 1);
         var url = jQuery(this).data("embed");
@@ -13,6 +14,17 @@ jQuery(document).ready(function(){
     var t = jQuery('.card-text');
     if(t.height() > 202) {
         t.addClass('closed');
-        t.closest('.read-more-container').removeClass('hidden');
+        t.parent().find('.read-more-container').removeClass('hidden');
     }
+
+    jQuery(document).on('click', '.read-more:not(.open)', function(){
+        $(this).html('<i class="fas fa-chevron-up"></i>').addClass('open');
+        t.parent().find('.card-text').removeClass('closed');
+    });
+
+    jQuery(document).on('click', '.read-more.open', function(){
+        $(this).html('<i class="fas fa-chevron-down"></i>').removeClass('open');
+        t.parent().find('.card-text').addClass('closed');
+    });
+
 });
