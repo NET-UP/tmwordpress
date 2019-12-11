@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="card-meta text-center pt-1 pb-1">
-                        <a href="#" class="btn btn-sm btn-secondary" style="border-radius: 20px;">
+                        <a href="#" class="btn btn-sm btn-secondary read-more" style="border-radius: 20px;">
                             <i class="fas fa-chevron-down"></i>
                         </a>
                     </div>
