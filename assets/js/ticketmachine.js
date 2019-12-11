@@ -9,6 +9,7 @@ jQuery(document).on('click', '.disallow-google-maps', function(){
     location.reload();
 });
 
-if(jQuery('.card-text').height() > 202) {
-    jQuery(this).removeClass('closed').addClass('closed');
+var t = jQuery('.card-text');
+if(t > 202) {
+    t.addClass('closed');
 }
