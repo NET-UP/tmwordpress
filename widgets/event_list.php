@@ -14,7 +14,7 @@
                                         <div class="mr-3 media-img" style="background-image:url('. $event->event_img_url .')"></div>
                                         <div class="media-body">
                                             <h5 class="mt-0 mb-1">' . $event->ev_name . '</h5>
-                                            <div>' . wp_strip_all_tags($event->ev_description) . '</div>
+                                            <div>' . wp_trim_words(wp_strip_all_tags($event->ev_description), 40, "...") . '</div>
                                         </div>
                                 </li>';
             }
