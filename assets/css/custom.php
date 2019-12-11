@@ -22,33 +22,33 @@
         box-shadow: 0px 0px 1px 2px <?php echo $tm_design->button_primary_background_color; ?>;
     }
 
-    .tm_events_container .card {
+    .tm_page .card {
         background: <?php echo $tm_design->container_background_color; ?>;
     }
 
-    .tm_events_container .card-date {
+    .tm_page .card-date {
         color: <?php echo $tm_design->date_text_color; ?>;
     }
 
-    .tm_events_container .card-price {
+    .tm_page .card-price {
         color: <?php echo $tm_design->price_text_color; ?>;
     }
 
-    .tm_events_container .btn-primary,
-    .tm_events_container .btn-primary:visited,
-    .tm_events_container .btn-primary:not(:disabled):not(.disabled).active,
-    .tm_events_container .btn-primary:not(:disabled):not(.disabled):active,
-    .show>.tm_events_container .btn-primary.dropdown-toggle,
-    .tm_events_container .btn-primary.disabled,
-    .tm_events_container .btn-primary:disabled {
+    .tm_page .btn-primary,
+    .tm_page .btn-primary:visited,
+    .tm_page .btn-primary:not(:disabled):not(.disabled).active,
+    .tm_page .btn-primary:not(:disabled):not(.disabled):active,
+    .show>.tm_page .btn-primary.dropdown-toggle,
+    .tm_page .btn-primary.disabled,
+    .tm_page .btn-primary:disabled {
         background-color: <?php echo $tm_design->button_primary_background_color; ?>;
         color: <?php echo $tm_design->button_primary_text_color; ?> !important;
         border-color: <?php echo $tm_design->button_primary_border_color; ?>;
     }
 
-    .tm_events_container .btn-primary:hover,
-    .tm_events_container .btn-primary:active,
-    .tm_events_container .btn-primary:focus {
+    .tm_page .btn-primary:hover,
+    .tm_page .btn-primary:active,
+    .tm_page .btn-primary:focus {
         background-color: <?php echo $tm_design->button_primary_background_color_hover; ?> !important;
         color: <?php echo $tm_design->button_primary_text_color_hover; ?> !important;
         border-color: <?php echo $tm_design->button_primary_border_color_hover; ?> !important;
