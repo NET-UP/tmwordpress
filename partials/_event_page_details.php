@@ -1,23 +1,23 @@
 <?php
 
     function tm_event_page_details ( $event, $globals ) {
-        $tm_output .= '<div class="card mb-4">
+        $tm_output .= '<div class="card mb-2">
                             <div class="row card-body position-relative">
-                                <div class="col-sm-6 card-meta">
-                                    <h3 class="d-inline-block card-meta-tag">Details</h3>
-                                    <div class="card-meta-tag"> Beginn &nbsp;
+                                <div class="col-sm-6">
+                                    <h3 class="d-inline-block">Details</h3>
+                                    <div> Beginn &nbsp;
                                         <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date( "d. F", strtotime($event->ev_date) ) .'
                                     </div> 
-                                    <div class="card-meta-tag">Ende &nbsp;
+                                    <div>Ende &nbsp;
                                         <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date( "d. F", strtotime($event->endtime) ) .'
                                     </div> 
-                                    <div class="card-meta-tag">Eintritt: kostenlos</div>';       
+                                    <div>Eintritt: kostenlos</div>';       
             $tm_output .=       '</div>
-                                <div class="col-sm-6 card-meta">
-                                    <h3 class="d-inline-block card-meta-tag">Veranstaltungsort</h3>
-                                    <div class="card-meta-tag">'. $event->ev_location_name .'</div>
-                                    <div class="card-meta-tag">'. $event->event_location['city'] .' '. $event->event_location['zip'] .'</div>
-                                    <div class="card-meta-tag">'. $event->event_location['street'] .' '. $event->event_location['house_number'] .'</div>
+                                <div class="col-sm-6">
+                                    <h3 class="d-inline-block">Veranstaltungsort</h3>
+                                    <div>'. $event->ev_location_name .'</div>
+                                    <div>'. $event->event_location['city'] .' '. $event->event_location['zip'] .'</div>
+                                    <div>'. $event->event_location['street'] .' '. $event->event_location['house_number'] .'</div>
                                 </div>
                             </div>
                        </div>';
