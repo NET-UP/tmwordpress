@@ -17,7 +17,7 @@
                 }
                                     
                     $tm_output .= '<div class="media-body">';
-                    $tm_output .= '<h5 class="mt-0 mb-1">' . $event->ev_name . '</h5>';
+                    $tm_output .= '<h5 class="mt-0 mb-1"><a href="/event?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
 
                     if($atts['show_description'] > 0){
                         if(!$atts['description_length']){
@@ -31,7 +31,7 @@
             }
 
             if($atts['show_more'] > 0){
-                $tm_output .= '<li class="media"><a href="#">' . __("Alle Events anzeigen", "ticketmachine") . '</a></li>';
+                $tm_output .= '<li class="media"><a href="/events">' . __("Alle Events anzeigen", "ticketmachine") . '</a></li>';
             }
 
             $tm_output .= '</ul>';
