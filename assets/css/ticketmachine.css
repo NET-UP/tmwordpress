@@ -159,7 +159,7 @@ body .tm_page a.btn {
 	font-size: 16pt;
 }
 
-.tm-page .line-header:before {
+.tm_page .line-header:before {
     content: '';
     display: block;
     border-top: solid 1px rgba(0,0,0,0.05);
@@ -170,13 +170,13 @@ body .tm_page a.btn {
     z-index: 0;
 }
 
-.tm-page li.media {
+.tm_page li.media {
     border-bottom: 1px solid #EEE;
     margin-bottom: 7px;
     padding-bottom: 9px;
 }
 
-.tm-page .media-img {
+.tm_page .media-img {
 	width:64px;
 	height:64px;
 	background-color: #EEE;
