@@ -4,7 +4,7 @@
 		$events = tmapi_events($params);
 
         foreach($events->result as $event){
-            $tm_output = $event->id;
+            $tm_output .= $event->id;
         }
 
         return $tm_output;
