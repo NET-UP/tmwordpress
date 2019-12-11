@@ -7,8 +7,8 @@
 
     include(WP_PLUGIN_DIR . "/ticketmachine/globals.php");
 
-    $tm_json = apiRequest($api->get_single_event_no_categories);
-    $event = (object)$tm_json;
+    $params = [ "id" => $_GET['id'] ];
+    $event = tmapi_event($params);
 
     if($event->id) {
         
