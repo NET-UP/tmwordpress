@@ -189,6 +189,10 @@ body .tm_page a.btn {
     border-radius: 3px;
 }
 
+.tm_page .tm_widget_event_list ul {
+	margin-left:0;
+}
+
 .tm_page .media-body {
 	word-break: break-word;
 }
