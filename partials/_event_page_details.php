@@ -2,11 +2,11 @@
 
     function tm_event_page_details ( $event, $globals ) {
         $tm_output .= '<div>
-                        <h2>Details</h2>
+                        <h3>Details</h3>
                         <div>Beginn:</div>
-                        <div>'. date( "d", strtotime($event->ev_date) ) .'</div>
+                        <div>'. date( "d F", strtotime($event->ev_date) ) .'</div>
                         <div>Ende:</div>
-                        <div>'. date( "d", strtotime($event->endtime)) .'</div>
+                        <div>'. date( "d F", strtotime($event->endtime)) .'</div>
                         <div>Eintritt:</div>
                         <div>kostenlos</div>
                         <div>Schlagwörter:</div>
@@ -16,7 +16,7 @@
                         } 
                         
         $tm_output .=  '</div>
-                        <h2>Veranstaltungsort</h2>
+                        <h3>Veranstaltungsort</h3>
                         <div>'. $event->ev_location_name .'</div>
                         <div>'. $event->event_location['city'] .' '. $event->event_location['zip'] .'</div>
                         <div>'. $event->event_location['street'] .' '. $event->event_location['house_number'] .'</div>

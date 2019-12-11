@@ -23,8 +23,8 @@
 		$tm_output .= '
 					</div>
 					<div class="col-12 col-lg-7 col-xl-6">';
+		$tm_output .= tm_event_page_details($event, $globals);			
 		$tm_output .= tm_event_page_tickets($event, $globals);
-		$tm_output .= tm_event_page_details($event, $globals);
 		$tm_output .= '
 					</div>
 				</div>
