@@ -1,4 +1,5 @@
 jQuery(document).ready(function(){
+
     jQuery(document).on('click', '.allow-google-maps', function(){
         createCookie('allow_google_maps', 1);
         var url = jQuery(this).data("embed");
@@ -15,4 +16,10 @@ jQuery(document).ready(function(){
         t.addClass('closed');
         t.parent().find('.read-more-container').removeClass('hidden');
     }
+
+    jQuery(document).on('click', '.read-more', function(){
+        eraseCookie('allow_google_maps');
+        location.reload();
+    });
+
 });
