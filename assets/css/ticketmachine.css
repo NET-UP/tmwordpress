@@ -220,7 +220,8 @@ body .tm_page a.btn {
 }
 
 .tm_page .card-text {
-    overflow: hidden;
+	overflow: hidden;
+	position:relative;
 }  
 
 .tm_page .card-text.closed {
