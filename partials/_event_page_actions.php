@@ -19,7 +19,7 @@
                     <a class="btn btn-secondary px-3" href="/events">
                         <i class="fas fa-chevron-left"></i> &nbsp; Zurück
                     </a>
-                    <a class="btn btn-secondary" target="_blank" href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '+url=' . $url .'" title="' . __('Als iCal speichern', 'ticketmachine') . '"><i class="fas fa-calendar-alt"></i></a>
+                    <a class="btn btn-secondary" target="_blank" href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '&url=' . $url .'" title="' . __('Als iCal speichern', 'ticketmachine') . '"><i class="fas fa-calendar-alt"></i></a>
                     
                     <a class="btn btn-secondary" target="_blank" href="' . $google_calendar_url . '" title="' . __('Im Google Kalender speichern', 'ticketmachine') . '"><i class="fab fa-google"></i></a>
                     </div>';
