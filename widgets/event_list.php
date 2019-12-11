@@ -14,6 +14,7 @@
                                         <img class="mr-3" style="background-image:url('. $event->event_img_url .')"/>
                                         <div class="media-body">
                                             <h5 class="mt-0 mb-1">' . $event->ev_name . '</h5>
+                                            ' . $event->ev_description . '
                                         </div>
                                 </li>';
             }
