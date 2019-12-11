@@ -9,7 +9,7 @@
         include(WP_PLUGIN_DIR . "/ticketmachine/includes/google_calendar.php");
 
         $tm_output .= '
-                <div>
+                <div class="title-height">
                     <a class="btn btn-secondary px-3" href="/events">
                         <i class="fas fa-chevron-left"></i> &nbsp; Zurück
                     </a>
