@@ -30,11 +30,11 @@
                             </li>';
             }
 
-            $tm_output .= '</ul>';
-
             if($atts['show_more'] > 0){
-                $tm_output .= '<a href="#">' . __("Alle Events anzeigen", "ticketmachine") . '</a>';
+                $tm_output .= '<li class="media"><a href="#">' . __("Alle Events anzeigen", "ticketmachine") . '</a></li>';
             }
+
+            $tm_output .= '</ul>';
 
         $tm_output .= '</div>';
 
