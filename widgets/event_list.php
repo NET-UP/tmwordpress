@@ -8,13 +8,6 @@
             $params = array_push_assoc($params, 'per_page', (int)$atts['per_page']);
         }
 
-        switch ($atts['per_page']) {
-            case 'event_list':
-                include "widgets/event_list.php";
-                $tm_output .= tm_widget_event_list( $atts, $globals, $api );
-                break;
-        }
-
         $events = tmapi_events($params)->result;
         $tm_output .= '<div class="tm_widget_event_list">';
 
