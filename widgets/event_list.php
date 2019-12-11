@@ -2,12 +2,7 @@
 
     function tm_widget_event_list ( $atts, $globals, $api ) {
 
-        $params = array();
-
-        if($atts['per_page']) {
-            $params = array_push_assoc($params, 'per_page', (int)$atts['per_page']);
-        }
-
+        $params = $atts;
         $events = tmapi_events($params)->result;
         $tm_output .= '<div class="tm_widget_event_list">';
 
