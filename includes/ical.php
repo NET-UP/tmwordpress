@@ -22,7 +22,7 @@ DTSTART:". date("Ymd", strtotime($event->ev_date))."T". date("His", strtotime($e
 DTEND:". date("Ymd", strtotime($event->endtime))."T". date("His", strtotime($event->endtime)) . "Z" . "
 SUMMARY:". $event->ev_name ."
 LOCATION:". $event->ev_location_name ."
-DESCRIPTION:". htmlentities(wp_strip_all_tags($event->ev_description)) ."
+DESCRIPTION:". html_entity_decode(wp_strip_all_tags($event->ev_description)) ."
 END:VEVENT
 END:VCALENDAR";
 
