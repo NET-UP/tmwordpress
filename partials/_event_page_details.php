@@ -12,7 +12,7 @@
                         <div>Schlagwörter:</div>
                         <div>';
                         foreach($event->tags as $tag) { 
-                            $tm_output .= "<div>".$tag."</div>"; 
+                            $tm_output .= '<div>'. $tag '.</div>'; 
                         } 
                         
         $tm_output .=  '</div>
@@ -20,7 +20,7 @@
                         <div>'. $event->ev_location_name .'</div>
                         <div>'. $event->event_location['city'] .' '. $event->event_location['zip'] .'</div>
                         <div>'. $event->event_location['street'] .' '. $event->event_location['house_number'] .'</div>
-                       </div>'
+                       </div>';
         return $tm_output;
     }
 
