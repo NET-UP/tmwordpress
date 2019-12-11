@@ -176,6 +176,10 @@ body .tm_page a.btn {
     padding-bottom: 9px;
 }
 
+.tm_page ul > li.media:last-child {
+    border-bottom: none;
+}
+
 .tm_page .media-img {
 	width:64px;
 	height:64px;
