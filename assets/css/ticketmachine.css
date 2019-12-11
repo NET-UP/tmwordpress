@@ -172,6 +172,12 @@ body .tm_page a.btn {
 
 .tm_page .media-img {
 	display:inline-block;
+	vertical-align:top;
+}
+
+.tm_page .media-body {
+	display:inline-block;
+	vertical-align:top;
 }
 
 /* Calendar */
