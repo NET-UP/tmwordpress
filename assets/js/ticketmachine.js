@@ -20,11 +20,17 @@ jQuery(document).ready(function(){
     jQuery(document).on('click', '.read-more:not(.open)', function(){
         $(this).html('<i class="fas fa-chevron-up"></i>').addClass('open');
         t.parent().find('.card-text').removeClass('closed');
+        if ($('.card-text').height() > 1000) {
+            $('.no-height-mobile').clone().appendTo('.ggg');
+        }
     });
 
     jQuery(document).on('click', '.read-more.open', function(){
         $(this).html('<i class="fas fa-chevron-down"></i>').removeClass('open');
         t.parent().find('.card-text').addClass('closed');
+        if ($('.no-height-mobile').length === 2) {
+            $(this).closest(".no-height-mobile").remove();
+        }
     });
 
 });
