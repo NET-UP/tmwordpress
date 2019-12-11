@@ -18,8 +18,8 @@
         $tm_output .=  '</div>
                         <h2>Veranstaltungsort</h2>
                         <div>'. $event->ev_location_name .'</div>
-                        <div>'. $event->event_location['city'] $event->event_location['zip'] .'</div>
-                        <div>'. $event->event_location['street'] $event->event_location['house_number'] .'</div>
+                        <div>'. $event->event_location['city'] .' '. $event->event_location['zip'] .'</div>
+                        <div>'. $event->event_location['street'] .' '. $event->event_location['house_number'] .'</div>
                        </div>'
         return $tm_output;
     }
