@@ -219,6 +219,11 @@ body .tm_page a.btn {
   width:100%;
 }
 
+.tm_page .card-text.closed {
+	max-height: 240px;
+    overflow: hidden;
+}  
+
 /* Calendar */
 #calendar .fc-day-grid-event {
     padding: 5px;
