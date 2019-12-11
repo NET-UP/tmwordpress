@@ -219,9 +219,12 @@ body .tm_page a.btn {
   width:100%;
 }
 
+.tm_page .card-text {
+    overflow: hidden;
+}  
+
 .tm_page .card-text.closed {
 	max-height: 240px;
-    overflow: hidden;
 }  
 
 /* Calendar */

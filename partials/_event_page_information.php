@@ -24,9 +24,7 @@
                     </div>
 
                     <div class="card-text mt-3" role="fe_nu_ev_des">
-                        <div class="max-height">
                             '. $event->ev_description .'
-                        </div>
                     </div>
 
                     <div class="card-meta">';
