@@ -178,6 +178,7 @@ body .tm_page a.btn {
 }
 
 .tm_page .media-body {
+	word-break: break-word;
 }
 
 /* Calendar */
