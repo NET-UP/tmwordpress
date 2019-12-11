@@ -24,7 +24,13 @@
                     </div>
 
                     <div class="card-text mt-3" role="fe_nu_ev_des">
-                            '. $event->ev_description .'
+                        '. $event->ev_description .'
+                    </div>
+
+                    <div class="card-meta text-center pt-1 pb-1">
+                        <a href="#" class="btn btn-sm btn-secondary" style="border-radius: 20px;">
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
                     </div>
 
                     <div class="card-meta">';
