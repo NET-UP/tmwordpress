@@ -8,6 +8,7 @@
     include(WP_PLUGIN_DIR . "/ticketmachine/globals.php");
 
     $params = [ "id" => $_GET['id'] ];
+    $params = [ "url" => $_GET['url']];
     $event = tmapi_event($params);
 
     if($event->id) {
@@ -22,7 +23,7 @@ DTSTART:". date("Ymd", strtotime($event->ev_date))."T". date("His", strtotime($e
 DTEND:". date("Ymd", strtotime($event->endtime))."T". date("His", strtotime($event->endtime)) . "Z" . "
 SUMMARY:". $event->ev_name ."
 LOCATION:". $event->ev_location_name ."
-DESCRIPTION:". $_SERVER['REQUEST_URI'] ."
+DESCRIPTION:". $url ."
 END:VEVENT
 END:VCALENDAR";
 
