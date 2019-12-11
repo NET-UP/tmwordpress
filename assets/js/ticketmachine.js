@@ -1,3 +1,4 @@
-// jQuery( document ).ready(function() {
-    // jQuery( ".tm_events_container" ).load( "/wp-content/plugins/ticketmachine/partials/_event_list_item.php" );
-// });
+jQuery(document).on('click', '.allow-google-maps', function(){
+    setCookie('allow_google_maps', 1)
+    location.reload();
+});
