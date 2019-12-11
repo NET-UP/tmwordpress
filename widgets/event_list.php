@@ -9,9 +9,16 @@
         foreach($events as $event){
             $event = (object)$event;
 
-            $tm_output .= '<ul class="list-group list-group-flush">';
-                $tm_output .= '<li class="list-group-item"><a href="#">' . $event->ev_name . '</a></li>';
-            $tm_output .= '</ul>';
+            $tm_output .= '<ul class="list-unstyled">
+                                <li class="media">
+                                    <a href="#">
+                                        <div class="mr-3 media-img"></div>
+                                        <div class="media-body">
+                                            ' . $event->ev_name . '
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>';
         }
 
         $tm_output .= '</div>';
