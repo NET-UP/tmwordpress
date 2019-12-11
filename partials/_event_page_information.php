@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="card-text mt-3" role="fe_nu_ev_des">
-                        '. substr($event->ev_description, 0, 100) .'
+                        '. $event->ev_description .'
                     </div>
 
                     <div class="card-meta">';
