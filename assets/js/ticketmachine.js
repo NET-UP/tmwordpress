@@ -8,3 +8,7 @@ jQuery(document).on('click', '.disallow-google-maps', function(){
     eraseCookie('allow_google_maps');
     location.reload();
 });
+
+if(jQuery('.card-text').height() > 202) {
+    jQuery(this).removeClass('closed').addClass('closed');
+}
