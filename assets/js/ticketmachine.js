@@ -13,5 +13,6 @@ jQuery(document).ready(function(){
     var t = jQuery('.card-text');
     if(t.height() > 202) {
         t.addClass('closed');
+        t.closest('.read-more-container').removeClass('hidden');
     }
 });
