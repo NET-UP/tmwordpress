@@ -251,3 +251,9 @@ td.fc-today {
 #calendar .fc-past {
     background: #f2f2f2;
 }
+
+@media only screen and (max-width: 991px) {
+	.no-mobile-height {
+	  height: auto !important;
+	}
+  }
