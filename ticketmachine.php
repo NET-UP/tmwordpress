@@ -67,6 +67,9 @@
 		wp_enqueue_script( 'jquery-ui_JS', plugins_url( "assets/js/ext/jquery_ui.js", __FILE__ ), array("jquery") );
 		wp_enqueue_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
 		
+		//Cookies
+		wp_enqueue_script( 'cookies_JS', plugins_url( "assets/js/cookies.js", __FILE__ ) );
+
 		//Popper
 		wp_enqueue_script( 'popper_JS', plugins_url('assets/js/ext/popper.js', __FILE__ ) );
 		
