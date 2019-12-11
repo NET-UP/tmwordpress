@@ -36,6 +36,7 @@
                     case 'event_details':
                         include "partials/_event_page_information.php";
                         include "partials/_event_page_tickets.php";
+                        include "partials/_event_page_details.php";
                         include "pages/event.php";
                         $tm_output .= tm_display_event( $atts, $globals, $api );
                         break;
