@@ -12,7 +12,7 @@
                         <div>Schlagwörter:</div>
                         <div>';
                         foreach($event->tags as $tag) { 
-                            $tm_output .= '<div>'. $tag '.</div>'; 
+                            $tm_output .= '<div>'. $tag .'</div>';
                         } 
                         
         $tm_output .=  '</div>
