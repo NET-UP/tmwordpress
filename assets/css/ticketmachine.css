@@ -210,6 +210,10 @@ body .tm_page a.btn {
 	border: 1px solid #DDD;
 }
 
+.hidden {
+	display:none;
+}
+
 .tm_page .vertical-center {
   margin: 0;
   position: absolute;

@@ -27,7 +27,7 @@
                         '. $event->ev_description .'
                     </div>
 
-                    <div class="card-meta text-center pt-1 pb-1">
+                    <div class="card-meta text-center pt-1 pb-1 hidden">
                         <a href="#" class="btn btn-sm btn-secondary read-more" style="border-radius: 20px;">
                             <i class="fas fa-chevron-down"></i>
                         </a>
