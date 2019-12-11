@@ -173,6 +173,7 @@ body .tm_page a.btn {
 .tm_page .media-img {
 	width:64px;
 	height:64px;
+	background-color: #EEE;
 	background-position: center center;
     background-size: cover;
 }
