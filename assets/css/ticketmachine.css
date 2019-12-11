@@ -170,7 +170,11 @@ body .tm_page a.btn {
     z-index: 0;
 }
 
-
+.tm-page li.media {
+    border-bottom: 1px solid #EEE;
+    margin-bottom: 7px;
+    padding-bottom: 9px;
+}
 
 .tm-page .media-img {
 	width:64px;
