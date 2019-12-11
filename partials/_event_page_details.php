@@ -2,13 +2,13 @@
 
     function tm_event_page_details ( $event, $globals ) {
         $tm_output .= '<div class="card mb-4">
-                            <div class="row">
+                            <div class="row card-body position-relative">
                                 <div class="col-sm-6">
                                     <h3 class="d-inline-block">Details</h3>
                                     <div>Beginn:</div>
-                                    <div>'. date( "d. F", strtotime($event->ev_date) ) .'</div>
+                                    <div><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date( "d. F", strtotime($event->ev_date) ) .'</div> 
                                     <div>Ende:</div>
-                                    <div>'. date( "d. F", strtotime($event->endtime)) .'</div>
+                                    <div><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date( "d. F", strtotime($event->endtime) ) .'</div> 
                                     <div>Eintritt:</div>
                                     <div>kostenlos</div>
                                     <div>Schlagwörter:</div>';
