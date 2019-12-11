@@ -3,7 +3,7 @@
 
         $tm_output .= '
         
-            <div class="title-height">
+            <div class="title-height no-height-mobile">
                 <h5>
                     <span>
                         <h3 class="d-inline-block" role="fe_nu_ev_name">' . $event->ev_name . '</h3>

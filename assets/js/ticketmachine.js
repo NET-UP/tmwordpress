@@ -21,15 +21,15 @@ jQuery(document).ready(function(){
         $(this).html('<i class="fas fa-chevron-up"></i>').addClass('open');
         t.parent().find('.card-text').removeClass('closed');
         if ($('.card-text').height() > 1000) {
-            $('.no-height-mobile').clone().appendTo('.ggg');
+            $('.tm_actions').clone().appendTo('.tm_left');
         }
     });
 
     jQuery(document).on('click', '.read-more.open', function(){
         $(this).html('<i class="fas fa-chevron-down"></i>').removeClass('open');
         t.parent().find('.card-text').addClass('closed');
-        if ($('.no-height-mobile').length === 2) {
-            $(this).closest(".no-height-mobile").remove();
+        if ($('.tm_actions').length === 2) {
+            $('.tm_left').find(".tm_actions").remove();
         }
     });
 
