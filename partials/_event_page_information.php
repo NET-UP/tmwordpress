@@ -2,7 +2,7 @@
     function tm_event_page_information ( $event, $globals ) {
 
         $tm_output .= '
-            <card class="card mb-4">
+            <card class="card mb-3">
                 <div class="card-img-top" style="background-image:url('. $event->event_img_url .')">
                     <div class="badge badge-danger float-right mt-1 mr-2">'. $event->rules["badge"] .'</div>
                 </div>
