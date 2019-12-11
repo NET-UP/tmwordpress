@@ -1,5 +1,10 @@
 <?php
 
+	function array_push_assoc($array, $key, $value){
+		$array[$key] = $value;
+		return $array;
+	}
+
 	function apiRequest($url, $post=FALSE, $method="GET", $headers=array()) {
 	  $ch = curl_init($url);
 	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
