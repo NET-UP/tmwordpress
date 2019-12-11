@@ -31,6 +31,11 @@
             }
 
             $tm_output .= '</ul>';
+
+            if($atts['show_more'] > 0){
+                $tm_output .= '<a href="#">' . __("Alle Events anzeigen", "ticketmachine") . '</a>';
+            }
+
         $tm_output .= '</div>';
 
         return $tm_output;
