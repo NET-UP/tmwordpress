@@ -17,9 +17,14 @@ jQuery(document).ready(function(){
         t.parent().find('.read-more-container').removeClass('hidden');
     }
 
-    jQuery(document).on('click', '.read-more', function(){
-        eraseCookie('allow_google_maps');
-        location.reload();
+    jQuery(document).on('click', '.read-more:not(.open)', function(){
+        $(this).html('<i class="fas fa-chevron-up"></i>').addClass('open');
+        t.parent().find('.card-text').removeClass('closed');
+    });
+
+    jQuery(document).on('click', '.read-more.open', function(){
+        $(this).html('<i class="fas fa-chevron-down"></i>').removeClass('open');
+        t.parent().find('.card-text').addClass('closed');
     });
 
 });
