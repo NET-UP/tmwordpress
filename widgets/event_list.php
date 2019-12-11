@@ -14,7 +14,7 @@
                                     <a href="#">
                                         <div class="mr-3 media-img"></div>
                                         <div class="media-body">
-                                            ' . $event->ev_name . '
+                                            <h5 class="mt-0 mb-1">' . $event->ev_name . '</h5>
                                         </div>
                                     </a>
                                 </li>
