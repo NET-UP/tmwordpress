@@ -11,7 +11,7 @@
                                 };
                                 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
                             }
-                    </script>'
+                    </script>';
         $tm_output .= '<h1>My First Google Map</h1>
                        <div id="googleMap" style="width:100%;height:400px;"></div>';
         return $tm_output;
