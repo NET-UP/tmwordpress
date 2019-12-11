@@ -171,8 +171,6 @@ body .tm_page a.btn {
 }
 
 .tm_page .media-img {
-	display:inline-block;
-	vertical-align:top;
 	width:64px;
 	height:64px;
 	background-position: center center;
@@ -180,8 +178,6 @@ body .tm_page a.btn {
 }
 
 .tm_page .media-body {
-	display:inline-block;
-	vertical-align:top;
 }
 
 /* Calendar */
