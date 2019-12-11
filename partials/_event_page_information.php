@@ -11,7 +11,7 @@
                 </h5>
             </div>
             <card class="card mb-3">
-                <div class="card-img-top" style="background-image:url('. $event->event_img_url .')">
+                <div class="card-img-top full" style="background-image:url('. $event->event_img_url .')">
                     <div class="badge badge-danger float-right mt-1 mr-2">'. $event->rules["badge"] .'</div>
                 </div>
                 <div class="card-body position-relative">
@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="card-meta text-center pt-1 pb-1 hidden read-more-container">
-                        <a href="#" class="btn btn-sm btn-secondary read-more" style="border-radius: 20px;">
+                        <a href="#" title="' . __("Weiterlesen", "Ticketmachine") . '" class="btn btn-sm btn-secondary read-more" style="border-radius: 20px;">
                             <i class="fas fa-chevron-down"></i>
                         </a>
                     </div>
