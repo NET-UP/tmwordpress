@@ -12,20 +12,20 @@
 
                 $tm_output .= '<li class="media">';
 
-                print_r($attr);
+                print_r($atts);
 
-                if($attr['show_image'] == 1){
+                if($atts['show_image'] == 1){
                     $tm_output .= '<div class="mr-3 media-img" style="background-image:url('. $event->event_img_url .')"></div>';
                 }
                                     
                     $tm_output .= '<div class="media-body">';
                     $tm_output .= '<h5 class="mt-0 mb-1">' . $event->ev_name . '</h5>';
 
-                    if($attr['show_description'] == 1){
+                    if($atts['show_description'] == 1){
                         if(!$atts['description_length']){
                             $atts['description_length'] = 15;
                         }
-                        $tm_output .= '<div>' . wp_trim_words(wp_strip_all_tags($event->ev_description), $attr['description_length'], "...") . '</div>';
+                        $tm_output .= '<div>' . wp_trim_words(wp_strip_all_tags($event->ev_description), $atts['description_length'], "...") . '</div>';
                     }
 
                 $tm_output .= '</div>
