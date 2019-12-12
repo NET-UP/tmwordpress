@@ -10,10 +10,10 @@
                         </a>
                       </div>';
 
-        $a = $_SERVER[REQUEST_URI];
-        $b = urlencode($globals->tag);
-        #$b = rawurlencode("Fußball");
-        if (strcmp($a, $b)){
+        #$a = $_SERVER[REQUEST_URI];
+        $a = urlencode(htmlentities($globals->tag), ENT_QUOTES, "UTF-8");
+        $b = urlencode(htmlentities("Fußball"), ENT_QUOTES, "UTF-8");
+        if (strpos($a, $b)){
             print_r($b . " was found in " . $a);
             #print_r(mb_detect_encoding($a) . mb_detect_encoding($b));
         }else{
