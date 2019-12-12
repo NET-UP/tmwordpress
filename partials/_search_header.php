@@ -1,6 +1,15 @@
 <?php
 
     function tm_search_header ( $globals ) {
+
+        if($globals->search_query){
+            $params = "q=" . $globals->search_query;
+        }
+        if($globals->tag){
+            $params = "&tag=" . $globals->tag;
+        }
+
+
         $tm_output .= "<form>
                             <input type='hidden' name='display' value='calendar'/>
                             <div class='form-row'>
@@ -28,7 +37,7 @@
                                                         }else{
                                                             $tm_output .= "btn-secondary"; 
                                                         }
-                                                    $tm_output .="' aria-label='" . __("Events als Liste anzeigen") . "' href='" . $globals->current_url . "?q=" . $globals->search_query . "&tag=" . $globals->tag . "'><i class='fas fa-list'></i></a>";
+                                                    $tm_output .="' aria-label='" . __("Events als Liste anzeigen") . "' href='" . $globals->current_url . "?" . $params . "'><i class='fas fa-list'></i></a>";
                                                 }
 
                                                 if($globals->show_list){
@@ -38,7 +47,7 @@
                                                         }else{
                                                             $tm_output .= "btn-secondary"; 
                                                         }
-                                                    $tm_output .="'aria-label='" . __("Events als Kalender anzeigen") . "' href='" . $globals->current_url . "?display=calendar&q=" . $globals->search_query . "&tag=" . $globals->tag . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
+                                                    $tm_output .="'aria-label='" . __("Events als Kalender anzeigen") . "' href='" . $globals->current_url . "?display=calendar&" . $params . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
                                                 }
 
                                             $tm_output .= "</div>";
