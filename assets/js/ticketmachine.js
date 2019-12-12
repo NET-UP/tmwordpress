@@ -20,7 +20,7 @@ jQuery(document).ready(function(){
     jQuery(document).on('click', '.read-more:not(.open)', function(){
         $(this).html('<i class="fas fa-chevron-up"></i>').addClass('open');
         t.parent().find('.card-text').removeClass('closed');
-        if ($('.card-text').height() > 720 && $('.card-text').width() > 991) {
+        if ($('.card-text').height() > 720 && $(window).width() > 991) {
             $('.tm_actions').clone().appendTo('.tm_left');
         }
     });
