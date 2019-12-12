@@ -2,14 +2,19 @@
 
     function tm_search_header ( $globals ) {
 
-        $params = "";
+        if(!$_GET['display']){
+            $params = "?";
+        }else{
+            $params = "&";
+        }
+
         if($globals->search_query){
             $params .= "q=" . $globals->search_query;
         }
+
         if($globals->tag){
             $params .= "&tag=" . $globals->tag;
         }
-
 
         $tm_output .= "<form>
                             <input type='hidden' name='display' value='calendar'/>
