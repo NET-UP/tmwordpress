@@ -233,8 +233,9 @@
 <?php $my_saved_attachment_post_id = get_option( 'media_selector_attachment_id', 0 );?>
     
 <script type='text/javascript'>
+    $('#wp-ev_description-media-buttons').remove(); //remove upload files button
     jQuery( document ).ready( function( $ ) {
-        $('#wp-ev_description-media-buttons').remove(); //remove upload files button
+        //$('#wp-ev_description-media-buttons').remove(); //remove upload files button
         // Uploading files
         var file_frame;
         var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
