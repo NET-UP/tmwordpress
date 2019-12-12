@@ -4,11 +4,11 @@
             <div class="row">
                 <div class="col-xs-12 text-center">
                     <img class="" src="">
-                    <div class="">Vielen Dank, dass Sie mich installiert haben!</div>
+                    <h1 class="">Vielen Dank, dass Sie mich installiert haben!</h1>
                     <div class="">Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
-                    <i class=""></i>
+                    <i class="fas fa-cloud"></i>
                     <div class="">Alle Veranstaltungen werden über den TicketMachine Cloud Service <i></i> gespeichert.</div>
-                    <i class=""></i>
+                    <i class="far fa-user-circle"></i>
                     <div class="">Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen), benötigen wir Ihre E-Mail-Adresse</div>
                     <input class="" type="email">
                     <div class="">
