@@ -31,6 +31,7 @@
                     case 'event_list':
                         include "partials/_event_list_item.php";
                         include "partials/_search_header.php";
+                        include "partials/_tag_header.php";
                         include "pages/events.php";
                         $tm_output .= tm_display_events( $atts, $globals, $api );
                         break;
