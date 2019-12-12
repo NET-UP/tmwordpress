@@ -5,7 +5,7 @@
 
         $a = $_SERVER[REQUEST_URI];
         #$b = urlencode($globals->tag);
-        $b = htmlentities("Fußball");
+        $b = urlencode(htmlentities("Fußball"));
 
         $tm_output = '<label class="mr-3 ml-1">' . __("Schlagwörter", "ticketmachine") . ':</label> 
                       <div class="card-meta-tag keyword">' . $globals->tag . ' 
