@@ -67,7 +67,7 @@
 		}
 		
 		if($params->tag) {
-			$url .= "&tag[eq]=" . htmlspecialchars(urlencode($params->query));
+			$url .= "&tags[eq]=" . htmlspecialchars(urlencode($params->query));
 		}
 
 		$events = apiRequest($url, $post, $method, $headers);
