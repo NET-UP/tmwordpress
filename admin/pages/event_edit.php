@@ -47,11 +47,12 @@
                     <?php 
                         $editor_id = 'ev_description';
                         $editor_class = 'wp-editor-container';
+                        $media_buttons = 'false';
                         if ($event->ev_description == ""){
                             wp_editor( __('Beschreibung der Veranstaltung', 'ticketmachine'), $editor_id, $editor_class);
                         }
                         else{
-                            wp_editor( $event->ev_description, $editor_id, $editor_class);
+                            wp_editor( $event->ev_description, $editor_id, $editor_class, $media_buttons);
                         }
                         
                     ?>
@@ -234,7 +235,6 @@
     
 <script type='text/javascript'>
     jQuery( document ).ready( function( $ ) {
-        $('#wp-ev_description-media-buttons').remove(); //remove upload files button
         // Uploading files
         var file_frame;
         var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
