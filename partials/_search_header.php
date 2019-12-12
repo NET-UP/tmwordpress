@@ -12,9 +12,13 @@
             $params .= "&tag=" . $globals->tag;
         }
 
-        $tm_output .= "<form>
-                            <input type='hidden' name='display' value='" . $_GET['display'] . "'/>
-                            <div class='form-row'>
+        $tm_output .= "<form>";
+
+            if($_GET['display']){
+                $tm_output .= "<input type='hidden' name='display' value='" . $_GET['display'] . "'/>";
+            }
+
+            $tm_output .= "<div class='form-row'>
                                 <div class='col-12'>
                                     <div class='input-group'>
                                         <input name='q' class='form-control' placeholder='" . __("Suche nach Veranstaltungen") . "' value='" . $globals->search_query . "'/>
