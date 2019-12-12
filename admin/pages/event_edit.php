@@ -40,14 +40,20 @@
                     <div id="titlediv">
                         <div id="titlewrap">
                             <label class="screen-reader-text" id="post-name-prompt-text" for="ev_name"><?php echo __('Event Name hier eingeben', 'ticketmachine') ?></label>
-                            <input type="text" name="ev_name" size="30" id="title" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
+                            <input type="text" placeholder="<?php echo __('Name der Veranstaltung', 'ticketmachine') ?>" name="ev_name" size="30" id="title" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
                         </div>
                     </div>
 
                     <?php 
                         $editor_id = 'ev_description';
                         $editor_class = 'wp-editor-container';
-                        wp_editor( $event->ev_description, $editor_id, $editor_class);
+                        if ($event->ev_description == ""){
+                            wp_editor( __('Beschreibung der Veranstaltung', 'ticketmachine'), $editor_id, $editor_class);
+                        }
+                        else{
+                            wp_editor( $event->ev_description, $editor_id, $editor_class);
+                        }
+                        
                     ?>
                 </div>
 
