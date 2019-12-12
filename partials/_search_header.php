@@ -6,7 +6,7 @@
             $params = "q=" . $globals->search_query;
         }
         if($globals->tag){
-            $params = "&tag=" . $globals->tag;
+            $params .= "&tag=" . $globals->tag;
         }
 
 
