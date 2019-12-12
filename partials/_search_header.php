@@ -18,7 +18,7 @@
                                 <div class='col-12'>
                                     <div class='input-group'>
                                         <input name='q' class='form-control' placeholder='" . __("Suche nach Veranstaltungen") . "' value='" . $globals->search_query . "'/>
-                                        <input type='hidden' name='tag' value='" . $_GET['tag'] . "'/>
+                                        <input type='hidden' name='tag' value='" . $globals->tag . "'/>
                                         <div class='input-group-append'>
                                             <button type='submit' alt='" . __("Suche absenden") . "' class='btn btn-secondary form-control'><i class='fas fa-search'></i></button>
                                         </div>
