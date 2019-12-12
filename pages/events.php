@@ -8,6 +8,12 @@
 		
 		$tm_output = "<div class='row tm_events_container'>";
 		
+		$tm_output .= "<div class='page-header col-12'>" . tm_search_header($globals);
+			if($globals->tag){
+				$tm_output .= tm_tag_header($globals);
+			}
+		$tm_output .= "</div>";
+		
 		if($atts['display'] == "calendar" && $globals->show_calendar || $globals->show_calendar && !$globals->show_list){
 		
 			//Calendar Packages
@@ -31,9 +37,6 @@
 			wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ) );
 			
 			$tm_output .= "
-				<div class='page-header col-12'>
-					" . tm_search_header($globals) .  "
-				</div>
 				<div class='col-12 mt-3'>
 					<div class='row'>
 						<div class='col-12'>
@@ -50,11 +53,6 @@
 				</div>";
 			
 		}elseif($globals->show_list){
-			
-			$tm_output .= "
-				<div class='page-header col-12'>
-					" . tm_search_header($globals) .  "
-				</div>";
 		
 			$prev = NULL;
 			$i = 0;
