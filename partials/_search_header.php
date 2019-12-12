@@ -38,7 +38,7 @@
                                                         }else{
                                                             $tm_output .= "btn-secondary"; 
                                                         }
-                                                    $tm_output .="aria-label='" . __("Events als Kalender anzeigen") . "' href='" . $globals->current_url . "?display=calendar&q=" . $globals->search_query . "&tag=" . $globals->tag . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
+                                                    $tm_output .="'aria-label='" . __("Events als Kalender anzeigen") . "' href='" . $globals->current_url . "?display=calendar&q=" . $globals->search_query . "&tag=" . $globals->tag . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
                                                 }
 
                                             $tm_output .= "</div>";
