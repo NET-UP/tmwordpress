@@ -21,6 +21,6 @@
     </div>
 <?php }else{ ?>
     <div class="notice notice-success is-dismissable">
-        <p><?php echo __('Gespeichert!'); ?></p>
+        <p><?php echo __('Event erfolgreich kopiert!'); ?></p>
     </div>
 <?php } ?>
