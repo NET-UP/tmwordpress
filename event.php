@@ -3,7 +3,7 @@
 
 	include "globals.php";
 
-	$params = [ "query" => $_GET['q'], "sort" => $_GET['sort'] ];
+	$params = [ "query" => $_GET['q'], "sort" => $_GET['sort'], "tag" => $_GET['tag'] ];
 	$events = tmapi_events($params);
 
 	$calendar = array();
