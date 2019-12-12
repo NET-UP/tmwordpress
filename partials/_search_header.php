@@ -2,11 +2,7 @@
 
     function tm_search_header ( $globals ) {
 
-        if(!$_GET['display']){
-            $params = "?";
-        }else{
-            $params = "&";
-        }
+        $params = "";
 
         if($globals->search_query){
             $params .= "q=" . $globals->search_query;
