@@ -12,7 +12,7 @@
 
         #$a = $_SERVER[REQUEST_URI];
         $a = $globals->tag;
-        $b = htmlentities("Fußball");
+        $b = htmlentities("Fuß");
         if (strpos($a, $b)){
             print_r($b . " was found in " . $a);
             #print_r(mb_detect_encoding($a) . mb_detect_encoding($b));
