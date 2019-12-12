@@ -12,7 +12,7 @@
             $params .= "&tag=" . $globals->tag;
         }
 
-        $tm_output .= "<form>";
+        $tm_output .= "<form class='mb-2'>";
 
             if($_GET['display']){
                 $tm_output .= "<input type='hidden' name='display' value='" . $_GET['display'] . "'/>";
