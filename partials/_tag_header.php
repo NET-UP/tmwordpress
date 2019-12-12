@@ -8,6 +8,8 @@
         $b = $globals->tag;
         if (strpos($a, $b)){
             print_r($b . " was found in " . $a);
+        }else{
+            print_r($b . " was NOT found in " . $a);
         }
         return $tm_output;
     }
