@@ -1,5 +1,5 @@
 <div class="wrap tm-admin-page">
-    <div class="container">
+    <div class="d-flex justify-content-center">
         <img src="">
         <div class="text-align-center">Vielen Dank, dass Sie mich installiert haben!</div>
         <div>Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
