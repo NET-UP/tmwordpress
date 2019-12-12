@@ -20,6 +20,7 @@
 	$globals->environment = $tm_config->api_environment;
 	$globals->organizer_id = $tm_config->organizer_id;
 	$globals->search_query = htmlentities($_GET['q']);
+	$globals->tag = htmlentities($_GET['q']);
 	$globals->organizer = $tm_config->organizer;
 	$globals->group_by = "Y";
 	$globals->format_date = "Y";
