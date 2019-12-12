@@ -21,22 +21,26 @@
                                         if($globals->show_list && $globals->show_calendar){
                                             $tm_output .= "<div class='btn-group ml-4'>";
                                             
-                                                $tm_output .= "<a class='btn ";
-                                                    if(!$_GET['display']){ 
-                                                        $tm_output .= "btn-primary active"; 
-                                                    }else{
-                                                        $tm_output .= "btn-secondary"; 
-                                                    }
-                                                $tm_output .="' aria-label='" . __("Events als Liste anzeigen") . "' href='" . $globals->current_url . "?q=" . $globals->search_query . "&tag=" . $globals->tag . "'><i class='fas fa-list'></i></a>";
-                                                
-                                                $tm_output .= "<a class='btn ";
-                                                    if($_GET['display'] == 'calendar'){ 
-                                                        $tm_output .= "btn-primary active"; 
-                                                    }else{
-                                                        $tm_output .= "btn-secondary"; 
-                                                    }
-                                                $tm_output .="aria-label='" . __("Events als Kalender anzeigen") . "' href='" . $globals->current_url . "?display=calendar&q=" . $globals->search_query . "&tag=" . $globals->tag . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
-                                            
+                                                if($globals->show_list){
+                                                    $tm_output .= "<a class='btn ";
+                                                        if(!$_GET['display']){ 
+                                                            $tm_output .= "btn-primary active"; 
+                                                        }else{
+                                                            $tm_output .= "btn-secondary"; 
+                                                        }
+                                                    $tm_output .="' aria-label='" . __("Events als Liste anzeigen") . "' href='" . $globals->current_url . "?q=" . $globals->search_query . "&tag=" . $globals->tag . "'><i class='fas fa-list'></i></a>";
+                                                }
+
+                                                if($globals->show_list){
+                                                    $tm_output .= "<a class='btn ";
+                                                        if($_GET['display'] == 'calendar'){ 
+                                                            $tm_output .= "btn-primary active"; 
+                                                        }else{
+                                                            $tm_output .= "btn-secondary"; 
+                                                        }
+                                                    $tm_output .="aria-label='" . __("Events als Kalender anzeigen") . "' href='" . $globals->current_url . "?display=calendar&q=" . $globals->search_query . "&tag=" . $globals->tag . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
+                                                }
+
                                             $tm_output .= "</div>";
                                         }
 
