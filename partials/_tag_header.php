@@ -4,12 +4,12 @@
 
         $tm_output = '<label class="mr-3 ml-1">' . __("Schlagwörter", "ticketmachine") . ':</label> 
                       <div class="card-meta-tag keyword">' . $globals->tag . ' 
-                        <a class="ml-2" href="' . $_SERVER[QUERY_STRING] . '">
+                        <a class="ml-2" href="' . $_SERVER[REQUEST_URI] . '">
                             <i class="fa fa-times"></i>
                         </a>
                       </div>';
 
-        $a = $_SERVER[QUERY_STRING];
+        $a = $_SERVER[REQUEST_URI];
         $b = urlencode($globals->tag);
         #$b = rawurlencode("Fußball");
         if (strcmp($a, $b)){
