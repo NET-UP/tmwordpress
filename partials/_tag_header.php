@@ -11,8 +11,8 @@
                       </div>';
 
         #$a = $_SERVER[REQUEST_URI];
-        $a = urlencode($globals->tag);
-        $b = urlencode(htmlentities("Fußball"));
+        $a = $globals->tag;
+        $b = htmlentities("Fußball");
         if (strpos($a, $b)){
             print_r($b . " was found in " . $a);
             #print_r(mb_detect_encoding($a) . mb_detect_encoding($b));
