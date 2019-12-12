@@ -67,7 +67,7 @@
 		}
 		
 		if($params->tag) {
-			$url .= "&tags[eq]=" . $params->query;
+			$url .= "&tags[eq]=" . $params->tag;
 		}
 
 		print_r($url);
