@@ -6,7 +6,7 @@
 
         print_r(str_replace("tag=" . urlencode($globals->tag), "", $_SERVER[REQUEST_URI]));
 
-        print_r($_SERVER[REQUEST_URI]);
+        print_r(urldecode($_SERVER[REQUEST_URI]));
         return $tm_output;
     }
 
