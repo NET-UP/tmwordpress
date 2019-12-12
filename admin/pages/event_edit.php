@@ -54,7 +54,7 @@
                         else{
                             $content =$event->ev_description;
                         }
-                        wp_editor( $content, $editor_id, $editor_class, $settings);
+                        wp_editor( $content, $editor_id, $settings);
                     ?>
                 </div>
 
