@@ -34,6 +34,16 @@
 			null,
 			98
 		);
+		add_submenu_page(
+			'tm_events',
+			__('Installations Dummy', 'ticketmachine'),
+			__('Installations Dummy', 'ticketmachine'),
+			'manage_options',
+			'tm_installation',
+			'tm_installation_page',
+			null,
+			99
+		);
 	}
 
 	add_filter( 'submenu_file', function($submenu_file){
