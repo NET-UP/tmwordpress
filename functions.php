@@ -65,6 +65,10 @@
 		if($params->query) {
 			$url .= "&ev_name[contains]=" . htmlspecialchars(urlencode($params->query));
 		}
+		
+		if($params->tag) {
+			$url .= "&tags[eq]=" . htmlspecialchars(urlencode($params->query));
+		}
 
 		$events = apiRequest($url, $post, $method, $headers);
 		return (object)$events;
