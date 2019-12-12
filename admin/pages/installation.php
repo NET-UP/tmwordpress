@@ -9,10 +9,13 @@
                     <i class="fas fa-cloud" style="font-size: 30px;margin-bottom: 10px;margin-top: 30px;"></i>
                     <div style="font-size: 16px;">Alle Veranstaltungen werden über den TicketMachine Cloud Service <i></i> gespeichert.</div>
                     <i class="far fa-user-circle" style="font-size: 30px;margin-bottom: 10px;margin-top: 30px;"></i>
-                    <div style="font-size: 16px;">Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen), benötigen wir Ihre E-Mail-Adresse</div>
-                    <input type="email">
+                    <div style="font-size: 16px;">Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen),
+                    <br>
+                     benötigen wir Ihre E-Mail-Adresse.
+                    </div>
+                    <input type="email" style="width: 100%;height: 35px;order-left-width: 4px;border-left-color: orange;" placeholder="E-Mail Adresse bitte eingeben">
                     <div style="font-size: 16px;">
-                        <label><input type="checkbox">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und akzeptiert.</label>
+                        <label><input type="checkbox" style="border-color: orange;">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und akzeptiert.</label>
                     </div>
                     <button>LOS GEHT'S!</button>
                 </div>
