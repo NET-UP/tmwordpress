@@ -3,7 +3,7 @@
     function tm_tag_header ( $globals ) {
         
 
-        $a = $_SERVER[REQUEST_URI];
+        $a = urlencode(htmlentities(urldecode($_SERVER[REQUEST_URI])));
         $b = urlencode($globals->tag);
         #$b = urlencode(htmlentities("Fußball"));
 
