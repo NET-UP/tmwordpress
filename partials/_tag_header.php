@@ -3,9 +3,8 @@
     function tm_tag_header ( $globals ) {
         
 
-        $a = urlencode(htmlentities(urldecode($_SERVER[REQUEST_URI])));
-        $b = urlencode($globals->tag);
-        #$b = urlencode(htmlentities("Fußball"));
+        $a = htmlentities(urldecode($_SERVER[REQUEST_URI]));
+        $b = "tag=" . $globals->tag;
 
         $tm_output = '<label class="mr-3 ml-1">' . __("Schlagwörter", "ticketmachine") . ':</label> 
                       <div class="card-meta-tag keyword">' . $globals->tag . ' 
