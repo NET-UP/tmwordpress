@@ -13,7 +13,7 @@
         }
 
         $tm_output .= "<form>
-                            <input type='hidden' name='display' value='calendar'/>
+                            <input type='hidden' name='display' value='" . $_GET['display'] . "'/>
                             <div class='form-row'>
                                 <div class='col-12'>
                                     <div class='input-group'>
