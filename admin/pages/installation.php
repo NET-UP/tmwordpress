@@ -6,13 +6,13 @@
                     <img  src="">
                     <h1>Vielen Dank, dass Sie mich installiert haben!</h1>
                     <div style="font-size: 16px;">Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
-                    <i class="fas fa-cloud" style="font-size: 30px;"></i>
+                    <i class="fas fa-cloud" style="font-size: 30px;margin-bottom: 10px;margin-top: 30px;"></i>
                     <div style="font-size: 16px;">Alle Veranstaltungen werden über den TicketMachine Cloud Service <i></i> gespeichert.</div>
-                    <i class="far fa-user-circle" style="font-size: 30px;"></i>
+                    <i class="far fa-user-circle" style="font-size: 30px;margin-bottom: 10px;margin-top: 30px;"></i>
                     <div style="font-size: 16px;">Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen), benötigen wir Ihre E-Mail-Adresse</div>
                     <input type="email">
                     <div style="font-size: 16px;">
-                        <label><input type="checkbox">Ich habe die <a>Datenschutzerklärung</a>gelesen und akzeptiert.</label>
+                        <label><input type="checkbox">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und akzeptiert.</label>
                     </div>
                     <button>LOS GEHT'S!</button>
                 </div>
