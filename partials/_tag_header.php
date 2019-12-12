@@ -7,12 +7,12 @@
         $a = $_SERVER[QUERY_STRING];
         $b = urlencode($globals->tag);
         #$b = rawurlencode("Fußball");
-        if (strpos($a, $b)){
+        if (strcmp($a, $b)){
             print_r($b . " was found in " . $a);
-            print_r(mb_detect_encoding($a) . mb_detect_encoding($b));
+            #print_r(mb_detect_encoding($a) . mb_detect_encoding($b));
         }else{
             print_r($b . " was NOT found in " . $a);
-            print_r(mb_detect_encoding($a) . mb_detect_encoding($b));
+            #print_r(mb_detect_encoding($a) . mb_detect_encoding($b));
         }
         return $tm_output;
     }
