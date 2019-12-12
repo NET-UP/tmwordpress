@@ -6,7 +6,7 @@
 
         print_r(str_replace("tag=" . html_entity_decode($globals->tag), "", $_SERVER[REQUEST_URI]));;
 
-        print_r($globals->tag);
+        print_r(urlencode($globals->tag));
         return $tm_output;
     }
 
