@@ -12,7 +12,7 @@
                     <div style="font-size: 16px;">Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen), benötigen wir Ihre E-Mail-Adresse</div>
                     <input type="email">
                     <div style="font-size: 16px;">
-                        <input type="checkbox"><label>Ich habe die <a>Datenschutzerklärung</a>gelesen und akzeptiert.</label>
+                        <label><input type="checkbox">Ich habe die <a>Datenschutzerklärung</a>gelesen und akzeptiert.</label>
                     </div>
                     <button>LOS GEHT'S!</button>
                 </div>
