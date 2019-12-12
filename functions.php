@@ -70,8 +70,6 @@
 			$url .= "&tags[eq]=" . $params->tag;
 		}
 
-		print_r($url);
-
 		$events = apiRequest($url, $post, $method, $headers);
 		return (object)$events;
 	}
