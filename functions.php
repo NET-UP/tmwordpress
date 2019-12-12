@@ -63,7 +63,7 @@
 		}
 		
 		if($params->query) {
-			$url .= "&ev_name[contains]=" . htmlspecialchars($params->query);
+			$url .= "&ev_name[contains]=" . htmlspecialchars(urlencode($params->query));
 		}
 
 		$events = apiRequest($url, $post, $method, $headers);
