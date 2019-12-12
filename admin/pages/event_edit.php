@@ -40,7 +40,7 @@
                     <div id="titlediv">
                         <div id="titlewrap">
                             <label class="screen-reader-text" id="post-name-prompt-text" for="ev_name"><?php echo __('Event Name hier eingeben', 'ticketmachine') ?></label>
-                            <input type="text" name="ev_name" size="30" id="title" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
+                            <input type="text" placeholder="Name der Veranstaltung" name="ev_name" size="30" id="title" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
                         </div>
                     </div>
 
