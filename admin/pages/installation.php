@@ -13,7 +13,7 @@
                     <br>
                      benötigen wir Ihre E-Mail-Adresse.
                     </div>
-                    <input type="email" style="width: 100%;height: 35px;order-left-width: 4px;border-left-color: orange;" placeholder="E-Mail Adresse bitte eingeben">
+                    <input type="email" style="width: 100%;height: 35px;border-left-width: 4px;border-left-color: orange;" placeholder="E-Mail Adresse bitte eingeben">
                     <div style="font-size: 16px;">
                         <label><input type="checkbox" style="border-color: orange;">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und akzeptiert.</label>
                     </div>
