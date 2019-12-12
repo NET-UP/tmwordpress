@@ -38,7 +38,7 @@
                                         }
 
                                         if($globals->show_list && $globals->show_calendar){
-                                            $tm_output .= "<div class='btn-group ml-4'>";
+                                            $tm_output .= "<div class='btn-group ml-sm-4'>";
                                             
                                                 if($globals->show_list){
                                                     $tm_output .= "<a class='btn ";
