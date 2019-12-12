@@ -47,12 +47,12 @@
                     <?php 
                         $editor_id = 'ev_description';
                         $editor_class = 'wp-editor-container';
-                        $media_buttons = false;
+                        $settings = array( 'media_buttons' => false );
                         if ($event->ev_description == ""){
                             wp_editor( __('Beschreibung der Veranstaltung', 'ticketmachine'), $editor_id, $editor_class);
                         }
                         else{
-                            wp_editor( $event->ev_description, $editor_id, $editor_class, $media_buttons);
+                            wp_editor( $event->ev_description, $editor_id, $editor_class, $settings);
                         }
                         
                     ?>
