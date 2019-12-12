@@ -46,7 +46,6 @@
 
                     <?php 
                         $editor_id = 'ev_description';
-                        $editor_class = 'wp-editor-container';
                         $settings = array( 'media_buttons' => false );
                         if ($event->ev_description == ""){
                             $content = __('Beschreibung der Veranstaltung', 'ticketmachine');
@@ -54,7 +53,7 @@
                         else{
                             $content =$event->ev_description;
                         }
-                        wp_editor( $content, $editor_id, $editor_class, $settings);
+                        wp_editor( $content, $editor_id, $settings);
                     ?>
                 </div>
 
