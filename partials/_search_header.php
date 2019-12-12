@@ -2,10 +2,10 @@
 
     function tm_search_header ( $globals ) {
 
-        $params = "";
+        $params = "?";
 
         if($globals->search_query){
-            $params .= "q=" . $globals->search_query;
+            $params .= "&q=" . $globals->search_query;
         }
 
         if($globals->tag){
@@ -43,7 +43,7 @@
                                                         }else{
                                                             $tm_output .= "btn-secondary"; 
                                                         }
-                                                    $tm_output .="' aria-label='" . __("Events als Liste anzeigen") . "' href='" . $globals->current_url . "?" . $params . "'><i class='fas fa-list'></i></a>";
+                                                    $tm_output .="' aria-label='" . __("Events als Liste anzeigen") . "' href='" . ($globals->current_url . $params) . "'><i class='fas fa-list'></i></a>";
                                                 }
 
                                                 if($globals->show_list){
@@ -53,7 +53,7 @@
                                                         }else{
                                                             $tm_output .= "btn-secondary"; 
                                                         }
-                                                    $tm_output .="'aria-label='" . __("Events als Kalender anzeigen") . "' href='" . $globals->current_url . "?display=calendar&" . $params . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
+                                                    $tm_output .="'aria-label='" . __("Events als Kalender anzeigen") . "' href='" . ($globals->current_url . $params) . "&display=calendar' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
                                                 }
 
                                             $tm_output .= "</div>";
