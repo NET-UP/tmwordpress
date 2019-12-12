@@ -92,7 +92,7 @@
                         </div>
                         <div id="postimagediv" class="postbox">
                             <h2 class="hndle">
-                                <span><?php echo __('Eventbild', 'ticketmachine') ?></span>
+                                <span><?php echo __('Veranstaltungsbild', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
                                 <div class='image-preview-wrapper'>
