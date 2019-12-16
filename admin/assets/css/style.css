@@ -49,6 +49,11 @@
     border: 1px solid #ed7b25;
 }
 
+.tm-icon-big {
+    font-size: 30px;
+}
+
+
 .tm-admin-page img#image-preview {
     margin-bottom: 7px;
 }

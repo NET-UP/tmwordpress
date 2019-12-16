@@ -6,13 +6,13 @@
                     <img style="width: 90px;" src=" <?php echo dirname(plugin_dir_url( __FILE__ ), 1) . '/assets/img/logo.png'; ?>" alt="TicketMachine Logo">
                     <h1>Vielen Dank, dass Sie mich installiert haben!</h1>
                     <div>Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
-                    <i class="fas fa-cloud" style="font-size: 30px;margin-bottom: 10px;margin-top: 20px;"></i>
+                    <i class="fas fa-cloud" class="tm-icon"></i>
                     <div>Alle Veranstaltungen werden über den TicketMachine Cloud Service
                         <i class="fas fa-info-circle" title="Was soll hier stehen?"></i>
                         <br>
                         gespeichert.
                     </div>
-                    <i class="far fa-user-circle" style="font-size: 30px;margin-bottom: 10px;margin-top: 20px;"></i>
+                    <i class="far fa-user-circle" class="tm-icon"></i>
                     <div>Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen),
                     <br>
                      benötigen wir Ihre E-Mail-Adresse.
@@ -22,10 +22,10 @@
                         <input type="email" style="width: 100%;height: 35px;border-left-width: 4px;border-left-color: #ed7b25;" placeholder="E-Mail Adresse bitte eingeben">
                     </div>
                         
-                    <div style="text-align:left;">
+                    <div class="text-left">
                         <label><input type="checkbox" style="border-color: #ed7b25;">Ich habe die <a href="#" style="text-decoration-line: none;">Datenschutzerklärung</a> gelesen und akzeptiert.</label>
                     </div>
-                    <button class="mt-3 tm-button">LOS GEHT'S!<i class="fas fa-check" style="font-size: 20px;color: #FFF;float: right;margin-right: 0.5em;"></i></button>
+                    <button class="mt-3 tm-button">LOS GEHT'S!<i class="fas fa-check" style="font-size: 19px;color: #FFF;float: right;margin-right: 0.5em;"></i></button>
                 </div>
             </div>
         </div>
