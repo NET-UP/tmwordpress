@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="email-icon-right mt-4 mb-2">
-                        <input type="email" style="width: 100%;height: 35px;border-left-width: 4px;border-left-color: #ed7b25;" placeholder="E-Mail Adresse bitte eingeben">
+                        <input type="email" class="tm-input" placeholder="E-Mail Adresse bitte eingeben">
                     </div>
                         
                     <div class="text-left">
