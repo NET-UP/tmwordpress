@@ -6,6 +6,8 @@
 		$params = [ "id" => $_GET['id'] ];
 		$event = tmapi_event($params);
 
+		$tm_config = (object)$_POST;
+
 		$tm_output .= '
 			<div class=	"col-12">
 				<div class="row">
