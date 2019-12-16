@@ -1,8 +1,10 @@
 <?php
 
 	function tm_display_event ( $atts, $globals, $api ) {
+		global $event;
+		
 		$params = [ "id" => $_GET['id'] ];
-		global $event = tmapi_event($params);
+		$event = tmapi_event($params);
 
 		$tm_output .= '
 			<div class=	"col-12">
