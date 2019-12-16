@@ -54,7 +54,7 @@
 <table class="form-table">
 	<tbody>
 		<tr>
-			<th><label><?php echo __('Social Media teilen aktiviert?', 'ticketmachine'); ?></label></th>
+			<th><label><?php echo __('Social Media teilen aktivieren?', 'ticketmachine'); ?></label></th>
             <td><input name="show_social_media" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
@@ -87,10 +87,11 @@
         </tr>
     </tbody>
 </table>
+
 <table class="form-table">
     <tbody>
         <tr>
-            <th><label><?php echo __('Google Maps aktiviert?', 'ticketmachine'); ?></label></th>
+            <th><label><?php echo __('Google Maps aktivieren?', 'ticketmachine'); ?></label></th>
             <td><input name="show_google_map" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_google_map){ ?>checked <?php  } ?>/></td>
         </tr>
     </tbody>
