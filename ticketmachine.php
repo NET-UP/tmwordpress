@@ -43,7 +43,6 @@
                         include "partials/_event_page_actions.php";
                         include "pages/event.php";
                         $tm_output .= tm_display_event( $atts, $globals, $api );
-                        add_action( 'wp_head', 'theme_xyz_header_metadata' );
                         break;
                 }
             }elseif($atts['widget']){
@@ -166,24 +165,6 @@
         $table_name = $wpdb->prefix . 'ticketmachine_design';
         $wpdb->query("DROP TABLE IF EXISTS $table_name");
     }
-
-    
-
-	function theme_xyz_header_metadata() {
-
-		// Post object if needed
-		// global $post;
-	
-		// Page conditional if needed
-		// if( is_page() ){}
-	
-	  ?>
-	
-		<meta name="abc" content="xyz" />
-	
-	  <?php
-	
-	}
 	
 
 ?>
