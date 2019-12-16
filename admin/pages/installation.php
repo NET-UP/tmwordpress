@@ -25,7 +25,7 @@
                     <div style="text-align:left;">
                         <label><input type="checkbox" style="border-color: #ed7b25;">Ich habe die <a href="#" style="text-decoration-line: none;">Datenschutzerklärung</a> gelesen und akzeptiert.</label>
                     </div>
-                    <button class="mt-3" style="font-size: 16px;font-weight: bold;color: white;width: 100%;background-color: #ed7b25;padding: 7px 0px;">LOS GEHT'S!<i class="fas fa-check" style="font-size: 20px;color: #FFF;float: right;margin-right: 0.5em;"></i></button>
+                    <button class="mt-3 tm-button">LOS GEHT'S!<i class="fas fa-check" style="font-size: 20px;color: #FFF;float: right;margin-right: 0.5em;"></i></button>
                 </div>
             </div>
         </div>

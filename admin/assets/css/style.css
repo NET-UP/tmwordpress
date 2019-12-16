@@ -39,6 +39,16 @@
     font-size: 20px;
 }
 
+.tm-admin-page .tm-button {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    background-color: #ed7b25;
+    padding: 7px 0px;
+    border: 1px solid #ed7b25;
+}
+
 .tm-admin-page img#image-preview {
     margin-bottom: 7px;
 }
