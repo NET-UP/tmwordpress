@@ -301,5 +301,6 @@ td.fc-today {
 @media only screen and (max-width: 991px) {
 	.no-mobile-height {
 	  height: auto !important;
+	  margin-bottom:1em;
 	}
 }
