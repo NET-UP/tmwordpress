@@ -31,7 +31,7 @@
                     <a class="btn btn-secondary share-popup" target="_blank" href="https://twitter.com/intent/tweet?text='. $url .'" title="' . __('Auf Twitter teilen', 'ticketmachine') . '">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a class="btn btn-secondary" href="mailto:?subject=Willst du auch kommen?;body='. $url .'" title="' . __('Per E-Mail teilen', 'ticketmachine') . '">
+                    <a class="btn btn-secondary" href="mailto:?subject=Du kommst auch!&body='. $url .'" title="' . __('Per E-Mail teilen', 'ticketmachine') . '">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>';
