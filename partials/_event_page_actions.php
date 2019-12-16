@@ -34,6 +34,9 @@
                     <a class="btn btn-secondary" href="mailto:?subject='. $event->ev_name .'&body='. $url .'" title="' . __('Per E-Mail teilen', 'ticketmachine') . '">
                         <i class="fas fa-envelope"></i>
                     </a>
+                    <a class="btn btn-secondary" href="WhatsApp://send?text=Text durch native Deeplink!" title="' . __('Per WhatsApp teilen', 'ticketmachine') . '">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
                 </div>';
 
         return $tm_output;
