@@ -146,6 +146,10 @@ body .tm_page a.btn {
 	text-decoration:none !important;
 }
 
+.btn {
+	min-width: 40px;
+}
+
 .tm_page .btn-primary.disabled,
 .tm_page .btn-primary:disabled {
 	opacity: 0.3;
