@@ -33,6 +33,11 @@
 		<a href="?page=tm_settings&tab=calendar" class="nav-tab <?php echo $active_tab == 'calendar' ? 'nav-tab-active' : ''; ?>">
 			<?php echo __('Kalender', 'ticketmachine'); ?>
 		</a>
+		<a href="?page=tm_settings&tab=details" class="nav-tab <?php echo $active_tab == 'detail' ? 'nav-tab-active' : ''; ?>">
+			<?php echo __('Details', 'ticketmachine'); ?>
+		</a>
+
+
 		<!-- <a href="?page=tm_settings&tab=api" class="nav-tab <?php #echo $active_tab == 'api' ? 'nav-tab-active' : ''; ?>">
 			<?php #echo __('API', 'ticketmachine'); ?>
 		</a> -->
@@ -47,6 +52,8 @@
 				include( plugin_dir_path( __FILE__ ) . 'settings_calendar.php');
 			}elseif( $active_tab == 'design' ) {
 				include( plugin_dir_path( __FILE__ ) . 'settings_design.php');
+			}elseif( $active_tab == 'detail' ) {
+				include( plugin_dir_path( __FILE__ ) . 'settings_detail.php');
 			}elseif( $active_tab == 'api' ) {
 				include( plugin_dir_path( __FILE__ ) . 'settings_api.php');
 			}
