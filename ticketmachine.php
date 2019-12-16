@@ -169,8 +169,6 @@
 
 	function tm_event_metadata() {
         if($_GET['id']){
-            $params = [ "id" => $_GET['id'] ];
-            $event = tmapi_event($params);
             echo '<meta property="og:title" content="' . $event->ev_name . '" />';
         }
 	}
