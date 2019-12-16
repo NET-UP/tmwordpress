@@ -33,5 +33,6 @@
 		echo '<meta property="og:title" content="' . $event->ev_name . '" />';
 	}
 
+	add_action('wp_head','tm_event_metadata');
 
 ?>
