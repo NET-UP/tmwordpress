@@ -146,7 +146,7 @@ body .tm_page a.btn {
 	text-decoration:none !important;
 }
 
-.btn {
+.tm_page .btn {
 	min-width: 40px;
 }
 
