@@ -212,7 +212,7 @@ body .tm_page a.btn {
 }
 
 .tm_page .read-more {
-	min-width:auto;
+	min-width:auto !important;
 }
 
 .tm_page .allow-google-maps-container {
