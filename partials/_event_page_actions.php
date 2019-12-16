@@ -25,7 +25,7 @@
                     <a class="btn btn-secondary" target="_blank" href="' . $google_calendar_url . '" title="' . __('Im Google Kalender speichern', 'ticketmachine') . '">
                         <i class="fab fa-google"></i>
                     </a>
-                    <a class="btn btn-secondary" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='. $url .'">
+                    <a class="btn btn-secondary" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='. $url .'" title="' . __('Auf Facebook teilen', 'ticketmachine') . '">
                         <i class="fab fa-facebook-f"></i>
                     </a>              
                 </div>';
