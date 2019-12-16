@@ -53,6 +53,13 @@
     font-size: 30px;
 }
 
+.tm-admin-page .tm-input {
+    width: 100%;
+    height: 35px;
+    border-left-width: 4px;
+    border-left-color: #ed7b25;
+}
+
 
 .tm-admin-page img#image-preview {
     margin-bottom: 7px;
@@ -98,6 +105,6 @@
     padding: 4px 5px;
 }
 
-input[type=checkbox]:checked:before {
+.tm-admin-page input[type=checkbox]:checked:before {
     color: #ed7b25;
 }
