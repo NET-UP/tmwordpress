@@ -166,4 +166,23 @@
         $wpdb->query("DROP TABLE IF EXISTS $table_name");
     }
 
+    
+
+	function theme_xyz_header_metadata() {
+
+		// Post object if needed
+		// global $post;
+	
+		// Page conditional if needed
+		// if( is_page() ){}
+	
+	  ?>
+	
+		<meta name="abc" content="xyz" />
+	
+	  <?php
+	
+	}
+	add_action( 'wp_head', 'theme_xyz_header_metadata' );
+
 ?>
