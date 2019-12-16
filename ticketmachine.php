@@ -117,6 +117,15 @@
                     api_environment varchar(64) DEFAULT 'shop' NOT NULL,
                     show_list bit(1) DEFAULT 1 NOT NULL,
                     show_calendar bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_ical bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_google_cal bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_facebook bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_twitter bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_email bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_messenger bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_whatsapp bit(1) DEFAULT 1 NOT NULL,
+                    show_google_map bit(1) DEFAULT 1 NOT NULL,
                 PRIMARY KEY  (id)
                 ) $charset_collate;";
 
