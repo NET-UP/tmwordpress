@@ -8,7 +8,7 @@
                     <div style="font-size: 16px;">Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
                     <i class="fas fa-cloud" style="font-size: 30px;margin-bottom: 10px;margin-top: 30px;"></i>
                     <div style="font-size: 16px;">Alle Veranstaltungen werden über den TicketMachine Cloud Service
-                        <i class="fas fa-info-circle" style="font-size: 15px;"></i>
+                        <i class="fas fa-info-circle" style="font-size: 15px;" title="Was soll hier stehen?"></i>
                         <br>
                         gespeichert.
                     </div>
