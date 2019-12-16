@@ -170,15 +170,24 @@
 	function tm_event_metadata() {
         if($_GET['id']){
             $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+            echo '<meta property="og:url" content="' . $actual_link . '" />';
+        }
+	}
+	
+
+	function tm_event_metadata_event() {
+        if($_GET['id']){
             include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
             $params = [ "id" => $_GET['id'] ];
             $event = tmapi_event($params);
-            echo '<meta property="og:url" content="' . $actual_link . '" />';
             echo '<meta property="og:title" content="' . $event->ev_name . '" />';
             echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
         }
 	}
 
 	add_action('wp_head','tm_event_metadata');
+    if($_GET['id']){
+        add_action('wp_head','tm_event_metadata_event');
+    }
 
 ?>
