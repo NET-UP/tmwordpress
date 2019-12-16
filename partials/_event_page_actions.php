@@ -37,7 +37,7 @@
                     <a class="btn btn-secondary d-inline-block d-sm-none mb-1 mb-sm-0" href="WhatsApp://send?text='. $url .'" title="' . __('Per WhatsApp teilen', 'ticketmachine') . '">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="fb-messenger://share/?link='. $url .'">
+                    <a class="btn btn-secondary d-inline-block d-sm-none mb-1 mb-sm-0" href="fb-messenger://share/?link='. $url .'">
                         <i class="fab fa-facebook-messenger"></i>
                     </a>
                 </div>';
