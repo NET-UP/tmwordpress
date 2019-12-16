@@ -3,7 +3,7 @@
 	$tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
 	$tm_config = $tm_config[0];
 
-	$globals = new stdClass();
+	$globals = (object)$tm_config;
 	$api = new stdClass();
 	$api->auth = new stdClass();
 	
@@ -14,11 +14,8 @@
 	/* Backend Settings */
 	$api->client_id = $tm_config->api_client_id;
 	$api->client_secret = $tm_config->api_client_secret;
-
-	$globals->show_list = $tm_config->show_list;
-	$globals->show_calendar = $tm_config->show_calendar;
 	$globals->environment = $tm_config->api_environment;
-	$globals->organizer_id = $tm_config->organizer_id;
+	
 	$globals->search_query = htmlentities($_GET['q']);
 	$globals->tag = htmlentities($_GET['tag']);
 	$globals->organizer = $tm_config->organizer;
