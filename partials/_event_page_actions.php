@@ -40,12 +40,12 @@
                         <i class="fas fa-envelope"></i>
                     </a>';}
                     if ($globals->show_social_media_messenger && $globals->show_social_media) {
-                    $tm_output .= '<a class="btn btn-secondary d-inline-block d-md-none mb-1 mb-lg-0" href="WhatsApp://send?text='. $url .'" title="' . __('Per WhatsApp teilen', 'ticketmachine') . '">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>';}
-                    if ($globals->show_social_media_whatsapp && $globals->show_social_media) {
                     $tm_output .= '<a class="btn btn-secondary d-inline-block d-md-none mb-1 mb-lg-0" href="fb-messenger://share/?link='. $url .'">
                         <i class="fab fa-facebook-messenger"></i>
+                    </a>';}
+                    if ($globals->show_social_media_whatsapp && $globals->show_social_media) {
+                    $tm_output .= '<a class="btn btn-secondary d-inline-block d-md-none mb-1 mb-lg-0" href="WhatsApp://send?text='. $url .'" title="' . __('Per WhatsApp teilen', 'ticketmachine') . '">
+                        <i class="fab fa-whatsapp"></i>
                     </a>';}
         $tm_output .= '
                 </div>';
