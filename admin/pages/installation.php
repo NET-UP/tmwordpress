@@ -6,18 +6,25 @@
                     <img style="width: 90px;" src=" <?php echo dirname(plugin_dir_url( __FILE__ ), 1) . '/assets/img/logo.png'; ?>" alt="TicketMachine Logo">
                     <h1>Vielen Dank, dass Sie mich installiert haben!</h1>
                     <div style="font-size: 16px;">Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
-                    <i class="fas fa-cloud" style="font-size: 30px;margin-bottom: 10px;margin-top: 30px;"></i>
+                    <i class="fas fa-cloud" style="font-size: 30px;margin-bottom: 10px;margin-top: 20px;"></i>
                     <div style="font-size: 16px;">Alle Veranstaltungen werden über den TicketMachine Cloud Service
                         <i class="fas fa-info-circle" style="font-size: 15px;" title="Was soll hier stehen?"></i>
                         <br>
                         gespeichert.
                     </div>
-                    <i class="far fa-user-circle" style="font-size: 30px;margin-bottom: 10px;margin-top: 30px;"></i>
+                    <i class="far fa-user-circle" style="font-size: 30px;margin-bottom: 10px;margin-top: 20px;"></i>
                     <div style="font-size: 16px;">Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen),
                     <br>
                      benötigen wir Ihre E-Mail-Adresse.
                     </div>
-                    <input type="email" style="width: 100%;height: 35px;border-left-width: 4px;border-left-color: orange;margin: 15px 0px;" placeholder="E-Mail Adresse bitte eingeben">
+
+                    <div class="input-group mb-3">
+                        <input type="email" style="width: 100%;height: 35px;border-left-width: 4px;border-left-color: orange;margin: 15px 0px;" placeholder="E-Mail Adresse bitte eingeben">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">@</span>
+                        </div>
+                    </div>
+                        
                     <div style="font-size: 16px;">
                         <label><input type="checkbox" style="border-color: orange;">Ich habe die <a href="#" style="text-decoration-line: none;">Datenschutzerklärung</a> gelesen und akzeptiert.</label>
                     </div>
