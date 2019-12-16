@@ -33,7 +33,7 @@
 		<a href="?page=tm_settings&tab=calendar" class="nav-tab <?php echo $active_tab == 'calendar' ? 'nav-tab-active' : ''; ?>">
 			<?php echo __('Kalender', 'ticketmachine'); ?>
 		</a>
-		<a href="?page=tm_settings&tab=details" class="nav-tab <?php echo $active_tab == 'detail' ? 'nav-tab-active' : ''; ?>">
+		<a href="?page=tm_settings&tab=detail" class="nav-tab <?php echo $active_tab == 'detail' ? 'nav-tab-active' : ''; ?>">
 			<?php echo __('Details', 'ticketmachine'); ?>
 		</a>
 
