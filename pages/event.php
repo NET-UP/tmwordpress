@@ -1,7 +1,7 @@
 <?php
 
 	function tm_display_event ( $atts, $globals, $api ) {
-		global $event;
+		global $event, $globals;
 
 		$params = [ "id" => $_GET['id'] ];
 		$event = tmapi_event($params);
