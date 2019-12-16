@@ -27,6 +27,18 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.tm-admin-page .email-icon-right {
+    position:relative;
+}
+
+.tm-admin-page .email-icon-right:after {
+    content: "@";
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    font-size: 20px;
+}
+
 .tm-admin-page img#image-preview {
     margin-bottom: 7px;
 }
