@@ -211,6 +211,10 @@ body .tm_page a.btn {
 	height:50px;
 }
 
+.tm_page .read-more {
+	min-width:auto !important;
+}
+
 .tm_page .allow-google-maps-container {
 	width: 100%;
     height: 300px;
