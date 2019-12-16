@@ -1,9 +1,12 @@
 <?php
 
+	$params = [ "id" => $_GET['id'] ];
+	global $event = tmapi_event($params);
+
+
 	function tm_display_event ( $atts, $globals, $api ) {
 
-		$params = [ "id" => $_GET['id'] ];
-		$event = tmapi_event($params);
+		global $event;
 
 		$tm_output .= '
 			<div class=	"col-12">
@@ -26,5 +29,12 @@
 		return $tm_output;
 		
 	}
+
+	function tm_event_metadata($event) {
+		global $event;
+		echo '<meta property="og:title" content="' . $event->ev_name . '" />';
+	}
+
+	add_action('wp_head','tm_event_metadata',1,1);
 
 ?>
