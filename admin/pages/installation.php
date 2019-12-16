@@ -7,7 +7,11 @@
                     <h1>Vielen Dank, dass Sie mich installiert haben!</h1>
                     <div style="font-size: 16px;">Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
                     <i class="fas fa-cloud" style="font-size: 30px;margin-bottom: 10px;margin-top: 30px;"></i>
-                    <div style="font-size: 16px;">Alle Veranstaltungen werden über den TicketMachine Cloud Service gespeichert.<i class="fas fa-info-circle" style="font-size: 30px;margin-bottom: 10px;margin-top: 30px;"></i></div>
+                    <div style="font-size: 16px;">Alle Veranstaltungen werden über den TicketMachine Cloud Service
+                        <i class="fas fa-info-circle" style="font-size: 15px;"></i>
+                        <br>
+                        gespeichert.
+                    </div>
                     <i class="far fa-user-circle" style="font-size: 30px;margin-bottom: 10px;margin-top: 30px;"></i>
                     <div style="font-size: 16px;">Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen),
                     <br>
