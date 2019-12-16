@@ -28,9 +28,9 @@
                     </div>
 
                     <div class="card-meta text-center pt-1 pb-1 hidden read-more-container">
-                        <a href="#" title="' . __("Weiterlesen", "Ticketmachine") . '" class="btn btn-sm btn-secondary read-more" style="border-radius: 20px;">
+                        <button title="' . __("Weiterlesen", "Ticketmachine") . '" class="btn btn-sm btn-secondary read-more" style="border-radius: 20px;">
                             <i class="fas fa-chevron-down"></i>
-                        </a>
+                        </button>
                     </div>
 
                     <div class="card-meta mt-2">';
