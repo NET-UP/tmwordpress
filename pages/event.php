@@ -2,7 +2,7 @@
 
 	function tm_display_event ( $atts, $globals, $api ) {
 		global $event;
-		
+
 		$params = [ "id" => $_GET['id'] ];
 		$event = tmapi_event($params);
 
@@ -23,7 +23,7 @@
 				</div>
 			</div>
 		';
-		add_action('wp_head','tm_event_metadata',1,1);
+		add_action('wp_head','tm_event_metadata');
 		
 		return $tm_output;
 		
