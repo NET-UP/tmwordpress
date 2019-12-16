@@ -174,6 +174,7 @@
             $event = tmapi_event($params);
             echo '<meta property="og:title" content="' . $event->ev_name . '" />';
             echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
+            echo '<meta property="og:description" content="' . wp_strip_all_tags($event->ev_description) . '" />';
         }
 	}
 
