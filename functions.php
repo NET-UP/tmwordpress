@@ -69,6 +69,10 @@
 		if($params->tag) {
 			$url .= "&tags[eq]=" . htmlspecialchars(urlencode($params->tag));
 		}
+		
+		if($params->shown) {
+			$url .= "&shown[eq]=" . htmlspecialchars(urlencode($params->tag));
+		}
 
 		$events = apiRequest($url, $post, $method, $headers);
 		return (object)$events;

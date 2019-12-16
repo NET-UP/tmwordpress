@@ -16,25 +16,25 @@
 
         $tm_output .= '
                 <div class="title-height tm_actions text-right no-mobile-height mb-3 mb-sm-0">
-                    <a class="btn btn-secondary px-3 mb-1 mb-sm-0" href="/events">
+                    <a class="btn btn-secondary px-3 mb-1 mb-md-0" href="/events">
                         <i class="fas fa-chevron-left"></i> &nbsp; Zurück
                     </a>
-                    <a class="btn btn-secondary mb-1 mb-sm-0" target="_blank" href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '&url=' . $url .'" title="' . __('Als iCal speichern', 'ticketmachine') . '">
+                    <a class="btn btn-secondary mb-1 mb-md-0" target="_blank" href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '&url=' . $url .'" title="' . __('Als iCal speichern', 'ticketmachine') . '">
                         <i class="fas fa-calendar-alt"></i>
                     </a>
-                    <a class="btn btn-secondary mb-1 mb-sm-0" target="_blank" href="' . $google_calendar_url . '" title="' . __('Im Google Kalender speichern', 'ticketmachine') . '">
+                    <a class="btn btn-secondary mb-1 mb-md-0" target="_blank" href="' . $google_calendar_url . '" title="' . __('Im Google Kalender speichern', 'ticketmachine') . '">
                         <i class="fab fa-google"></i>
                     </a>
-                    <a class="btn btn-secondary share-popup mb-1 mb-sm-0" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='. $url .'" title="' . __('Auf Facebook teilen', 'ticketmachine') . '">
+                    <a class="btn btn-secondary share-popup mb-1 mb-md-0" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='. $url .'" title="' . __('Auf Facebook teilen', 'ticketmachine') . '">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a class="btn btn-secondary share-popup mb-1 mb-sm-0" target="_blank" href="https://twitter.com/intent/tweet?text='. $url .'" title="' . __('Auf Twitter teilen', 'ticketmachine') . '">
+                    <a class="btn btn-secondary share-popup mb-1 mb-md-0" target="_blank" href="https://twitter.com/intent/tweet?text='. $url .'" title="' . __('Auf Twitter teilen', 'ticketmachine') . '">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a class="btn btn-secondary mb-1 mb-sm-0" href="mailto:?subject='. $event->ev_name .'&body='. $url .'" title="' . __('Per E-Mail teilen', 'ticketmachine') . '">
+                    <a class="btn btn-secondary mb-1 mb-md-0" href="mailto:?subject='. $event->ev_name .'&body='. $url .'" title="' . __('Per E-Mail teilen', 'ticketmachine') . '">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a class="btn btn-secondary d-inline-block d-sm-none mb-1 mb-sm-0" href="WhatsApp://send?text='. $url .'" title="' . __('Per WhatsApp teilen', 'ticketmachine') . '">
+                    <a class="btn btn-secondary d-inline-block d-sm-none mb-1 mb-md-0" href="WhatsApp://send?text='. $url .'" title="' . __('Per WhatsApp teilen', 'ticketmachine') . '">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>';
