@@ -12,13 +12,13 @@
                         <br>
                         gespeichert.
                     </div>
-                    <i class="far fa-user-circle tm-icon-big mt-3 mb-2"></i>
+                    <i class="far fa-user-circle tm-icon-big mt-4 mb-2"></i>
                     <div>Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen),
                     <br>
                      benötigen wir Ihre E-Mail-Adresse.
                     </div>
 
-                    <div class="email-icon-right mt-3 mb-2">
+                    <div class="email-icon-right mt-4 mb-2">
                         <input type="email" style="width: 100%;height: 35px;border-left-width: 4px;border-left-color: #ed7b25;" placeholder="E-Mail Adresse bitte eingeben">
                     </div>
                         
