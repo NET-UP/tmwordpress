@@ -27,7 +27,10 @@
                     </a>
                     <a class="btn btn-secondary share-popup" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='. $url .'" title="' . __('Auf Facebook teilen', 'ticketmachine') . '">
                         <i class="fab fa-facebook-f"></i>
-                    </a>              
+                    </a>
+                    <a class="btn btn-secondary share-popup" target="_blank" href="https://twitter.com/intent/tweet?text='. $url .'" title="' . __('Auf Twitter teilen', 'ticketmachine') . '">
+                        <i class="fab fa-twitter"></i>
+                    </a>
                 </div>';
 
         return $tm_output;
