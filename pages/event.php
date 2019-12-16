@@ -20,6 +20,7 @@
 		if ($globals->show_google_map) {
 			$tm_output .= tm_event_page_google_map($event, $globals);
 		}
+		print_r($globals);
 		$tm_output .= '
 					</div>
 				</div>
