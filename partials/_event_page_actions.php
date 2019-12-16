@@ -16,37 +16,44 @@
 
         $tm_output .= '
                 <div class="title-height tm_actions text-right no-mobile-height mb-3 mb-lg-0">
-                    <a class="btn btn-secondary px-3 mb-1 mb-lg-0" href="/events">
+                    <a class="btn btn-secondary px-3 mb-1 mb-lg-0 ml-1" href="/events">
                         <i class="fas fa-chevron-left"></i> &nbsp; ' . __('Zurück', 'ticketmachine') . '
                     </a>';
                     if ($globals->show_social_media_ical && $globals->show_social_media) {
-                    $tm_output .= '<a class="btn btn-secondary mb-1 mb-lg-0" target="_blank" href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '&url=' . $url .'" title="' . __('Als iCal speichern', 'ticketmachine') . '">
-                        <i class="fas fa-calendar-alt"></i>
-                    </a>';}
+                        $tm_output .= '<a class="btn btn-secondary mb-1 mb-lg-0 ml-1" target="_blank" href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '&url=' . $url .'" title="' . __('Als iCal speichern', 'ticketmachine') . '">
+                            <i class="fas fa-calendar-alt"></i>
+                        </a>';
+                    }
                     if ($globals->show_social_media_google_cal && $globals->show_social_media) {
-                    $tm_output .= '<a class="btn btn-secondary mb-1 mb-lg-0" target="_blank" href="' . $google_calendar_url . '" title="' . __('Im Google Kalender speichern', 'ticketmachine') . '">
-                        <i class="fab fa-google"></i>
-                    </a>';}
+                        $tm_output .= '<a class="btn btn-secondary mb-1 mb-lg-0 ml-1" target="_blank" href="' . $google_calendar_url . '" title="' . __('Im Google Kalender speichern', 'ticketmachine') . '">
+                            <i class="fab fa-google"></i>
+                        </a>';
+                    }
                     if ($globals->show_social_media_facebook && $globals->show_social_media) {
-                    $tm_output .= '<a class="btn btn-secondary share-popup mb-1 mb-lg-0" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='. $url .'" title="' . __('Auf Facebook teilen', 'ticketmachine') . '">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>';}
+                        $tm_output .= '<a class="btn btn-secondary share-popup mb-1 mb-lg-0 ml-1" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='. $url .'" title="' . __('Auf Facebook teilen', 'ticketmachine') . '">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>';
+                    }
                     if ($globals->show_social_media_twitter && $globals->show_social_media) {
-                    $tm_output .= '<a class="btn btn-secondary share-popup mb-1 mb-lg-0" target="_blank" href="https://twitter.com/intent/tweet?text='. $url .'" title="' . __('Auf Twitter teilen', 'ticketmachine') . '">
-                        <i class="fab fa-twitter"></i>
-                    </a>';}
+                        $tm_output .= '<a class="btn btn-secondary share-popup mb-1 mb-lg-0 ml-1" target="_blank" href="https://twitter.com/intent/tweet?text='. $url .'" title="' . __('Auf Twitter teilen', 'ticketmachine') . '">
+                            <i class="fab fa-twitter"></i>
+                        </a>';
+                    }
                     if ($globals->show_social_media_email && $globals->show_social_media) {
-                    $tm_output .= '<a class="btn btn-secondary mb-1 mb-lg-0" href="mailto:?subject='. $event->ev_name .'&body='. $url .'" title="' . __('Per E-Mail teilen', 'ticketmachine') . '">
-                        <i class="fas fa-envelope"></i>
-                    </a>';}
+                        $tm_output .= '<a class="btn btn-secondary mb-1 mb-lg-0 ml-1" href="mailto:?subject='. $event->ev_name .'&body='. $url .'" title="' . __('Per E-Mail teilen', 'ticketmachine') . '">
+                            <i class="fas fa-envelope"></i>
+                        </a>';
+                    }
                     if ($globals->show_social_media_messenger && $globals->show_social_media) {
-                    $tm_output .= '<a class="btn btn-secondary d-inline-block d-md-none mb-1 mb-lg-0" href="fb-messenger://share/?link='. $url .'">
-                        <i class="fab fa-facebook-messenger"></i>
-                    </a>';}
+                        $tm_output .= '<a class="btn btn-secondary d-inline-block d-md-none mb-1 mb-lg-0 ml-1" href="fb-messenger://share/?link='. $url .'">
+                            <i class="fab fa-facebook-messenger"></i>
+                        </a>';
+                    }
                     if ($globals->show_social_media_whatsapp && $globals->show_social_media) {
-                    $tm_output .= '<a class="btn btn-secondary d-inline-block d-md-none mb-1 mb-lg-0" href="WhatsApp://send?text='. $url .'" title="' . __('Per WhatsApp teilen', 'ticketmachine') . '">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>';}
+                        $tm_output .= '<a class="btn btn-secondary d-inline-block d-md-none mb-1 mb-lg-0 ml-1" href="WhatsApp://send?text='. $url .'" title="' . __('Per WhatsApp teilen', 'ticketmachine') . '">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>';
+                    }
         $tm_output .= '
                 </div>';
 
