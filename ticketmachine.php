@@ -43,6 +43,7 @@
                         include "partials/_event_page_actions.php";
                         include "pages/event.php";
                         $tm_output .= tm_display_event( $atts, $globals, $api );
+                        add_action('wp_head','tm_event_metadata');
                         break;
                 }
             }elseif($atts['widget']){

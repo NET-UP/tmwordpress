@@ -23,7 +23,6 @@
 				</div>
 			</div>
 		';
-		add_action('wp_head','tm_event_metadata');
 		
 		return $tm_output;
 		
