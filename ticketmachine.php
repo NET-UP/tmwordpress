@@ -169,11 +169,11 @@
 
 	function tm_event_metadata() {
         if($_GET['id']){
-            $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"
+            $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
             $params = [ "id" => $_GET['id'] ];
             $event = tmapi_event($params);
-            echo '<meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />';
+            echo '<meta property="og:url" content="' . $actual_link . '" />';
             echo '<meta property="og:title" content="' . $event->ev_name . '" />';
             echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
         }
