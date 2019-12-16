@@ -39,7 +39,7 @@ include_once(str_replace("/admin/pages", "", plugin_dir_path( __FILE__ )) . 'glo
  * 
  * Our theme for this list table is going to be movies.
  */
-class Event_List_Table extends WP_List_Table {
+class Categorie_List_Table extends WP_List_Table {
 
     /** ************************************************************************
      * REQUIRED. Set up a constructor that references the parent constructor. We 
@@ -50,18 +50,18 @@ class Event_List_Table extends WP_List_Table {
     
         //Set parent defaults
         parent::__construct( array(
-            'singular'  => 'event',     //singular name of the listed records
-            'plural'    => 'events',    //plural name of the listed records
+            'singular'  => 'categorie',     //singular name of the listed records
+            'plural'    => 'categorys',    //plural name of the listed records
             'ajax'      => false        //does this table support ajax?
         ) );
         
     }
 
-    function get_events(){
+    function get_categories(){
         global $globals, $api;
         $params = [ "query" => $_GET['s'], "show_old" => 1, "per_page" => 100 ];
-        $events = tmapi_events($params)->result;
-        return $events;
+        $categories = tmapi_categories($params)->result;
+        return $categories;
     }
 
 
@@ -88,12 +88,6 @@ class Event_List_Table extends WP_List_Table {
      **************************************************************************/
     function column_default($item, $column_name){
         switch($column_name){
-            case 'tags':
-                return implode(", ", $item[$column_name]);
-            case 'ev_date':
-                return date( "d.m.Y", strtotime($item[$column_name]) );
-            case 'endtime':
-                return date( "d.m.Y", strtotime($item[$column_name]) );
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
         }
@@ -116,7 +110,7 @@ class Event_List_Table extends WP_List_Table {
      * @param array $item A singular item (one full row's worth of data)
      * @return string Text to be placed inside the column <td> (movie title only)
      **************************************************************************/
-    function column_ev_name($item){
+    function column_categorie($item){ /** TO DO */
 
         if($item['approved'] == 0){
             $toggle_type = "publish";
@@ -131,9 +125,8 @@ class Event_List_Table extends WP_List_Table {
         
         //Build row actions
         $actions = array(
-            'edit'      => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Bearbeiten', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
-            $toggle_type    => sprintf('<a href="?page=%s&action=%s&id=%s">'.__($toggle_text, 'ticketmachine').'</a>',$_REQUEST['page'],$toggle_action,$item['id']),
-            'copy'      => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Kopieren', 'ticketmachine').'</a>',$_REQUEST['page'],'copy',$item['id'])
+            'edit'       => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Bearbeiten', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
+            $toggle_type => sprintf('<a href="?page=%s&action=%s&id=%s">'.__($toggle_text, 'ticketmachine').'</a>',$_REQUEST['page'],$toggle_action,$item['id'])
         );
         
         //Return the title contents
@@ -153,13 +146,13 @@ class Event_List_Table extends WP_List_Table {
      * @param array $item A singular item (one full row's worth of data)
      * @return string Text to be placed inside the column <td> (movie title only)
      **************************************************************************/
-    function column_cb($item){
-        return sprintf(
-            '<input type="checkbox" name="%1$s[]" value="%2$s" />',
+    //function column_cb($item){
+    //    return sprintf(
+    //        '<input type="checkbox" name="%1$s[]" value="%2$s" />',
             /*$1%s*/ $this->_args['singular'],  //Let's simply repurpose the table's singular label ("movie")
             /*$2%s*/ $item['id']                //The value of the checkbox should be the record's id
-        );
-    }
+    //    );
+    //}
 
 
     /** ************************************************************************
@@ -177,11 +170,7 @@ class Event_List_Table extends WP_List_Table {
      **************************************************************************/
     function get_columns(){
         $columns = array(
-            'cb'       => '<input type="checkbox" />', //Render a checkbox instead of text
-            'ev_name'  => 'Name',
-            'tags'     => 'Schlagwörter',
-            'ev_date'  => 'Anfangsdatum',
-            'endtime'  => 'Enddatum'
+            'name'  => 'Name'
         );
         return $columns;
     }
@@ -203,10 +192,7 @@ class Event_List_Table extends WP_List_Table {
      **************************************************************************/
     function get_sortable_columns() {
         $sortable_columns = array(
-            'ev_name'   => array('ev_name',false), //true means it's already sorted
-            'tags'      => array('tags',false),
-            'ev_date'   => array('ev_date',false),
-            'endtime'   => array('endtime',false)
+            'name'   => array('name',false) //true means it's already sorted
         );
         return $sortable_columns;
     }
@@ -245,7 +231,7 @@ class Event_List_Table extends WP_List_Table {
         
         //Detect when a bulk action is being triggered...
         if( 'delete'===$this->current_action() ) {
-            include "actions/event_delete.php";
+            include "actions/categorie_delete.php";
         }
         
     }
@@ -319,7 +305,7 @@ class Event_List_Table extends WP_List_Table {
          * use sort and pagination data to build a custom query instead, as you'll
          * be able to use your precisely-queried data immediately.
          */
-        $data = $this->get_events();
+        $data = $this->get_categories();
                 
         
         /**
@@ -366,7 +352,7 @@ class Event_List_Table extends WP_List_Table {
          * without filtering. We'll need this later, so you should always include it 
          * in your own package classes.
          */
-        $total_events = count($data);
+        $total_categories = count($data);
         
         
         /**
@@ -389,22 +375,19 @@ class Event_List_Table extends WP_List_Table {
          * REQUIRED. We also have to register our pagination options & calculations.
          */
         $this->set_pagination_args( array(
-            'total_items' => $total_events,            //WE have to calculate the total number of items
+            'total_items' => $total_categories,            //WE have to calculate the total number of items
             'per_page'    => $per_page,                     //WE have to determine how many items to show on a page
-            'total_pages' => ceil($total_events/$per_page)   //WE have to calculate the total number of pages
+            'total_pages' => ceil($total_categories/$per_page)   //WE have to calculate the total number of pages
         ) );
     }
 
 
 }
 
-function remove_event(){
-    // make api call to delete the event
+function remove_categorie(){
+    // make api call to delete the categorie
 }
 
-function copy_event(){
-    // make api call to copy event
-}
 
 /** *************************** RENDER TEST PAGE ********************************
  *******************************************************************************
@@ -417,56 +400,31 @@ function copy_event(){
 function tm_render_categories_page(){
 
     if( $_GET['action'] == "edit" ) {
-        include "event_edit.php";
+        include "categorie_edit.php";
     } else {
 
         if ( $_GET['action'] == "save" && isset($_GET['id']) && $_POST ) {
-            include "actions/event_save.php";
-        } elseif ( $_GET['action'] == "publish" && isset($_GET['id']) || $_GET['action'] == "deactivate" && isset($_GET['id']) ) {
-            include "actions/event_toggle.php";
+            include "actions/categories_save.php";
         } elseif ( $_GET['action'] == "delete" && isset($_GET['id']) ) {
-            include "actions/event_remove.php";
-        } elseif ( $_GET['action'] == "copy" && isset($_GET['id']) ){
-            include "actions/event_copy.php";
+            include "actions/categorie_remove.php";
         }
 
         //Create an instance of our package class...
-        $EventListTable = new Event_List_Table();
+        $CategorieListTable = new Categorie_List_Table();
 
         ?>
         <div class="wrap tm-admin-page">
             <h1 class="wp-heading-inline">TicketMachine > <?php echo __('Kategorien'); ?></h1>
-            <a href="?page=tm_events&action=edit" class="page-title-action">Hinzufügen</a>
             <hr class="wp-header-end">
             <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
-            <form id="movies-filter" method="get">
+            <form method="get">
                 <!-- For plugins, we also need to ensure that the form posts back to our current page -->
                 <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
                 <!-- Now we can render the completed list table -->
-                <ul class="subsubsub">
-                    <li class="all">
-                        <a href="#" class="current">
-                            <?php _e('Alle'); ?> 
-                            <span class="count">(1)</span>
-                        </a> |
-                    </li>
-                    <li class="publish">
-                        <a href="#">
-                            <?php _e('Veröffentlichte'); ?> 
-                            <span class="count">(5)</span> <!-- TO DO add logic -->
-                        </a>
-                    </li>
-                    <li class="draft">
-                        <a href="#">
-                            <?php _e('Entwürfe'); ?> 
-                            <span class="count">(5)</span> <!-- TO DO add logic -->
-                        </a>
-                    </li>
-                </ul>
-                <?php $EventListTable->search_box('Search', 'search'); ?>
+                <?php $CategorieListTable->search_box('Search', 'search'); ?>
                 <!--Fetch, prepare, sort, and filter our data... -->
-                <?php $EventListTable->prepare_items(); ?>
-                <?php $EventListTable->display(); ?>
+                <?php $CategorieListTable->prepare_items(); ?>
+                <?php $CategorieListTable->display(); ?>
             </form>
         </div>
         <?php
