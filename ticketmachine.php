@@ -168,7 +168,11 @@
 	
 
 	function tm_event_metadata() {
+        include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
+        
         if($_GET['id']){
+            $params = [ "id" => $_GET['id'] ];
+            $event = tmapi_event($params);
             echo '<meta property="og:title" content="' . $event->ev_name . '" />';
         }
 	}
