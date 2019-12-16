@@ -35,42 +35,56 @@
 	}
 ?>
 
+<script type='text/javascript'>
+    jQuery( document ).ready( function( $ ) {
+        if (document.querySelector('input[name="show_social_media"]').checked) {
+            jQuery('.social_media').removeClass('hidden');
+        }
+
+        jQuery('input[name="show_social_media"]').on('click', function( event ){
+            if (document.querySelector('input[name="show_social_media"]').checked) {
+                jQuery('.social_media').removeClass('hidden');
+            } else {
+                jQuery('.social_media').addClass('hidden');
+            }
+        });
+    });
+</script>
+
 <table class="form-table">
 	<tbody>
 		<tr>
 			<th><label><?php echo __('Social Media teilen aktiviert?', 'ticketmachine'); ?></label></th>
             <td><input name="show_social_media" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media){ ?>checked <?php  } ?>/></td>
         </tr>
-        <?php if ($tm_config->show_social_media) { ?>
-            <tr>
-                <th class="pl-4"><label><?php echo __('iCal', 'ticketmachine'); ?></label></th>
-                <td><input name="show_social_media_ical" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_ical){ ?>checked <?php  } ?>/></td>
-            </tr>
-            <tr>
-                <th class="pl-4"><label><?php echo __('Google Kalender', 'ticketmachine'); ?></label></th>
-                <td><input name="show_social_media_google_cal" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_google_cal){ ?>checked <?php  } ?>/></td>
-            </tr>
-            <tr>
-                <th class="pl-4"><label><?php echo __('Facebook', 'ticketmachine'); ?></label></th>
-                <td><input name="show_social_media_facebook" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_facebook){ ?>checked <?php  } ?>/></td>
-            </tr>
-            <tr>
-                <th class="pl-4"><label><?php echo __('Twitter', 'ticketmachine'); ?></label></th>
-                <td><input name="show_social_media_twitter" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_twitter){ ?>checked <?php  } ?>/></td>
-            </tr>
-            <tr>
-                <th class="pl-4"><label><?php echo __('E-Mail', 'ticketmachine'); ?></label></th>
-                <td><input name="show_social_media_email" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_email){ ?>checked <?php  } ?>/></td>
-            </tr>
-            <tr>
-                <th class="pl-4"><label><?php echo __('Messenger', 'ticketmachine'); ?></label></th>
-                <td><input name="show_social_media_messenger" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_messenger){ ?>checked <?php  } ?>/></td>
-            </tr>
-            <tr>
-                <th class="pl-4"><label><?php echo __('WhatsApp', 'ticketmachine'); ?></label></th>
-                <td><input name="show_social_media_whatsapp" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_whatsapp){ ?>checked <?php  } ?>/></td>
-            </tr>
-        <?php } ?>
+        <tr class="social_media">
+            <th class="pl-4 hidden"><label><?php echo __('iCal', 'ticketmachine'); ?></label></th>
+            <td><input name="show_social_media_ical" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_ical){ ?>checked <?php  } ?>/></td>
+        </tr>
+        <tr class="social_media">
+            <th class="pl-4 hidden"><label><?php echo __('Google Kalender', 'ticketmachine'); ?></label></th>
+            <td><input name="show_social_media_google_cal" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_google_cal){ ?>checked <?php  } ?>/></td>
+        </tr>
+        <tr class="social_media">
+            <th class="pl-4 hidden"><label><?php echo __('Facebook', 'ticketmachine'); ?></label></th>
+            <td><input name="show_social_media_facebook" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_facebook){ ?>checked <?php  } ?>/></td>
+        </tr>
+        <tr class="social_media">
+            <th class="pl-4 hidden"><label><?php echo __('Twitter', 'ticketmachine'); ?></label></th>
+            <td><input name="show_social_media_twitter" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_twitter){ ?>checked <?php  } ?>/></td>
+        </tr>
+        <tr class="social_media">
+            <th class="pl-4 hidden"><label><?php echo __('E-Mail', 'ticketmachine'); ?></label></th>
+            <td><input name="show_social_media_email" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_email){ ?>checked <?php  } ?>/></td>
+        </tr>
+        <tr class="social_media">
+            <th class="pl-4 hidden"><label><?php echo __('Messenger', 'ticketmachine'); ?></label></th>
+            <td><input name="show_social_media_messenger" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_messenger){ ?>checked <?php  } ?>/></td>
+        </tr>
+        <tr class="social_media">
+            <th class="pl-4 hidden"><label><?php echo __('WhatsApp', 'ticketmachine'); ?></label></th>
+            <td><input name="show_social_media_whatsapp" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_whatsapp){ ?>checked <?php  } ?>/></td>
+        </tr>
     </tbody>
 </table>
 <table class="form-table">
