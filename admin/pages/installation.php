@@ -6,13 +6,13 @@
                     <img style="width: 90px;" src=" <?php echo dirname(plugin_dir_url( __FILE__ ), 1) . '/assets/img/logo.png'; ?>" alt="TicketMachine Logo">
                     <h1>Vielen Dank, dass Sie mich installiert haben!</h1>
                     <div>Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
-                    <i class="fas fa-cloud" class="tm-icon-big mt-3 mb-2"></i>
+                    <i class="fas fa-cloud tm-icon-big mt-3 mb-2"></i>
                     <div>Alle Veranstaltungen werden über den TicketMachine Cloud Service
                         <i class="fas fa-info-circle" title="Was soll hier stehen?"></i>
                         <br>
                         gespeichert.
                     </div>
-                    <i class="far fa-user-circle" class="tm-icon-big mt-3 mb-2"></i>
+                    <i class="far fa-user-circle tm-icon-big mt-3 mb-2"></i>
                     <div>Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen),
                     <br>
                      benötigen wir Ihre E-Mail-Adresse.
