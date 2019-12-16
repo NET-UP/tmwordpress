@@ -15,9 +15,11 @@
 					</div>
 					<div class="col-12 col-lg-7 col-xl-6 tm_right">';
 		$tm_output .= tm_event_page_actions($event, $globals);
-		$tm_output .= tm_event_page_tickets($event, $globals);			
-		$tm_output .= tm_event_page_details($event, $globals);			
-		$tm_output .= tm_event_page_google_map($event, $globals);
+		$tm_output .= tm_event_page_tickets($event, $globals);
+		$tm_output .= tm_event_page_details($event, $globals);
+		if ($tm_config->show_google_map) {
+			$tm_output .= tm_event_page_google_map($event, $globals);
+		}
 		$tm_output .= '
 					</div>
 				</div>
