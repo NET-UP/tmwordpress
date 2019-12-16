@@ -15,7 +15,7 @@
         include(WP_PLUGIN_DIR . "/ticketmachine/includes/google_calendar.php");
 
         $tm_output .= '
-                <div class="title-height tm_actions text-right no-mobile-height mb-3 mb-sm-0">
+                <div class="title-height tm_actions text-right no-mobile-height mb-3 mb-md-0">
                     <a class="btn btn-secondary px-3 mb-1 mb-md-0" href="/events">
                         <i class="fas fa-chevron-left"></i> &nbsp; Zurück
                     </a>
