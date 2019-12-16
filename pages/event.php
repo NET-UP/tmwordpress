@@ -30,7 +30,7 @@
 		
 	}
 
-	function tm_event_metadata($event) {
+	function tm_event_metadata() {
 		global $event;
 		echo '<meta property="og:title" content="' . $event->ev_name . '" />';
 	}
