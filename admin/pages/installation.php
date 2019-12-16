@@ -3,7 +3,7 @@
         <div class="d-flex justify-content-center">
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <img  src="">
+                    <img src="admin/assets/img/logo.png" alt="TicketMachine Logo">
                     <h1>Vielen Dank, dass Sie mich installiert haben!</h1>
                     <div style="font-size: 16px;">Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
                     <i class="fas fa-cloud" style="font-size: 30px;margin-bottom: 10px;margin-top: 30px;"></i>
