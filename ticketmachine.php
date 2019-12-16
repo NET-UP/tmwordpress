@@ -39,7 +39,7 @@
                         include "partials/_event_page_information.php";
                         include "partials/_event_page_tickets.php";
                         include "partials/_event_page_details.php";
-                        include "partials/_event_page_google.php";
+                        include "partials/_event_page_google_map.php";
                         include "partials/_event_page_actions.php";
                         include "pages/event.php";
                         $tm_output .= tm_display_event( $atts, $globals, $api );

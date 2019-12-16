@@ -16,7 +16,7 @@
 		$tm_output .= tm_event_page_actions($event, $globals);
 		$tm_output .= tm_event_page_tickets($event, $globals);			
 		$tm_output .= tm_event_page_details($event, $globals);			
-		$tm_output .= tm_event_page_google($event, $globals);
+		$tm_output .= tm_event_page_google_map($event, $globals);
 		$tm_output .= '
 					</div>
 				</div>
