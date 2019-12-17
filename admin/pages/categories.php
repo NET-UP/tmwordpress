@@ -399,37 +399,42 @@ function remove_categorie(){
  */
 function tm_render_categories_page(){
 
-    if( $_GET['action'] == "edit" ) {
-        include "categorie_edit.php";
-    } else {
+    //Create an instance of our package class...
+    $CategorieListTable = new Categorie_List_Table();
 
-        if ( $_GET['action'] == "save" && isset($_GET['id']) && $_POST ) {
-            include "actions/categories_save.php";
-        } elseif ( $_GET['action'] == "delete" && isset($_GET['id']) ) {
-            include "actions/categorie_remove.php";
-        }
-
-        //Create an instance of our package class...
-        $CategorieListTable = new Categorie_List_Table();
-
-        ?>
-        <div class="wrap tm-admin-page">
-            <h1 class="wp-heading-inline">TicketMachine > <?php echo __('Kategorien'); ?></h1>
-            <hr class="wp-header-end">
-            <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
-            <form method="get">
-                <!-- For plugins, we also need to ensure that the form posts back to our current page -->
-                <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
-                <!-- Now we can render the completed list table -->
-                <?php $CategorieListTable->search_box('Search', 'search'); ?>
-                <!--Fetch, prepare, sort, and filter our data... -->
-                <?php $CategorieListTable->prepare_items(); ?>
-                <?php $CategorieListTable->display(); ?>
-            </form>
+    ?>
+    <div class="wrap tm-admin-page">
+        <h1 class="wp-heading-inline">TicketMachine > <?php echo __('Kategorien'); ?></h1>
+        <hr class="wp-header-end">
+        <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
+        <div id="col-container" class="wp-clearfix">
+            <div id="col-left">
+                <div class="col-wrap">
+                    <div class="form-warp">
+                        <?php if ( $_GET['action'] == "add" && isset($_GET['id']) && $_POST ) {
+                            include "actions/category_add.php";
+                        } else {
+                            include "action/category_rename.php";
+                        }?>
+                    </div>
+                </div>
+            </div>
+            <div id="col-right">
+                <div class="col-wrap">
+                    <form method="get">
+                        <!-- For plugins, we also need to ensure that the form posts back to our current page -->
+                        <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
+                        <!-- Now we can render the completed list table -->
+                        <?php $CategorieListTable->search_box('Search', 'search'); ?>
+                        <!--Fetch, prepare, sort, and filter our data... -->
+                        <?php $CategorieListTable->prepare_items(); ?>
+                        <?php $CategorieListTable->display(); ?>
+                    </form>
+                </div>
+            </div>
         </div>
-        <?php
-
-    }
+    </div>
+    <?php
 
 }
 ?>
