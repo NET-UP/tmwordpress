@@ -149,8 +149,8 @@ class Categorie_List_Table extends WP_List_Table {
     //function column_cb($item){
     //    return sprintf(
     //        '<input type="checkbox" name="%1$s[]" value="%2$s" />',
-            /*$1%s*/ $this->_args['singular'],  //Let's simply repurpose the table's singular label ("movie")
-            /*$2%s*/ $item['id']                //The value of the checkbox should be the record's id
+            /*$1%s $this->_args['singular'],*/  //Let's simply repurpose the table's singular label ("movie")
+            /*$2%s $item['id']*/               //The value of the checkbox should be the record's id
     //    );
     //}
 
