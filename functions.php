@@ -78,7 +78,7 @@
 		return (object)$events;
 	}
 
-	/* Get event list */
+	/* Get event */
 	function tmapi_event($params=array(), $method="GET", $post=FALSE, $headers=array()){
 		global $api, $globals;
 		if($method == "POST"){
@@ -104,6 +104,42 @@
 
 		$event = apiRequest($url, $params, "POST");
 		return (object)$event;
+	}
+
+	/* Get all categories */
+	function tmapi_categories($params=array(), $method="GET", $headers=array()){
+		global $api, $globals;
+
+		$params = (object)$params;
+		if(!$params->sort){
+			$params->sort = "name";
+		}
+
+		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/tags";
+
+		$categories = apiRequest($url, $params, $method);
+		return (object)$categories;
+	}
+
+	/* Add to category */
+	function tmapi_category_add($params=array(), $method="POST", $headers=array()){
+		global $api, $globals;
+
+		$params = (object)$params;
+		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/add";
+
+		$category = apiRequest($url, $params, $method);
+		return (object)$category;
+	}
+
+	/* Remove from category */
+	function tmapi_category_remove($params=array(), $method="POST", $headers=array()){
+		global $api, $globals;
+
+		$params = (object)$params;
+		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/remove";
+		$category = apiRequest($url, $params, $method);
+		return (object)$category;
 	}
 
 	switch ($globals->lang) {
