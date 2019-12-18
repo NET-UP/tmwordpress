@@ -46,19 +46,17 @@
 			null,
 			99
 		);
-
-		if(1 == 2) {	
-			add_submenu_page(
-				'tm_events',
-				__('Installations Dummy', 'ticketmachine'),
-				__('Installations Dummy', 'ticketmachine'),
-				'manage_options',
-				'tm_installation',
-				'tm_installation_page',
-				null,
-				100
-			);
-		}	
+	
+		add_submenu_page(
+			'tm_events',
+			__('Installations Dummy', 'ticketmachine'),
+			__('Installations Dummy', 'ticketmachine'),
+			'manage_options',
+			'tm_installation',
+			'tm_installation_page',
+			null,
+			100
+		);
 	}
 
 	add_filter( 'submenu_file', function($submenu_file){
