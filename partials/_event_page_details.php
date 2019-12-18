@@ -7,16 +7,17 @@
                                     <h3 class="d-inline-block">'. __("Details", "ticketmachine") .'</h3>
                                     <br>
                                     <label>'. __("Beginn", "ticketmachine") .':</label>
-                                    <div>
+                                    <div class="mb-2">
                                         <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%e. %B", strtotime($event->ev_date) ) .' 
                                         &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%H:%M", strtotime($event->ev_date) ) .'
                                     </div>
                                     <label>'. __("Ende", "ticketmachine").':</label>
-                                    <div>
+                                    <div class="mb-2">
                                         <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%e. %B", strtotime($event->endtime) ) .' 
                                         &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%H:%M", strtotime($event->endtime) ) .'
                                     </div> 
-                                    <div><label>'. __("Eintritt", "ticketmachine").': </label><br>'. __("kostenlos", "ticketmachine") .'</div>';       
+                                    <label>'. __("Eintritt", "ticketmachine").': </label>
+                                    <div class="mb-2">'. __("kostenlos", "ticketmachine") .'</div>';       
             $tm_output .=       '</div>
                                 <div class="col-sm-6">
                                     <h3 class="d-inline-block">'. __("Veranstaltungsort", "ticketmachine") .'</h3>
