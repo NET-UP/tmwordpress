@@ -21,7 +21,7 @@
 				__('Installation', 'ticketmachine'),
 				__('Installation', 'ticketmachine'),
 				'manage_options',
-				'tm_installation',
+				'tm_events',
 				'tm_installation_page',
 				null,
 				100
