@@ -3,6 +3,7 @@
 	include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 
 	function tm_admin_menu () {
+		global $globals, $api;
 		
 		add_menu_page(
 			'TicketMachine',
@@ -46,17 +47,19 @@
 			null,
 			99
 		);
-	
-		add_submenu_page(
-			'tm_events',
-			__('Installations Dummy', 'ticketmachine'),
-			__('Installations Dummy', 'ticketmachine'),
-			'manage_options',
-			'tm_installation',
-			'tm_installation_page',
-			null,
-			100
-		);
+
+		if(!$api->client_secret) {	
+			add_submenu_page(
+				'tm_events',
+				__('Installations Dummy', 'ticketmachine'),
+				__('Installations Dummy', 'ticketmachine'),
+				'manage_options',
+				'tm_installation',
+				'tm_installation_page',
+				null,
+				100
+			);
+		}	
 	}
 
 	add_filter( 'submenu_file', function($submenu_file){
