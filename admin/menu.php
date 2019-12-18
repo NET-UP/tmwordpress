@@ -48,7 +48,7 @@
 			99
 		);
 
-		if(!$api->client_secret) {	
+		if(1 == 2) {	
 			add_submenu_page(
 				'tm_events',
 				__('Installations Dummy', 'ticketmachine'),
