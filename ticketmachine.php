@@ -193,11 +193,17 @@
             $event = tmapi_event($params);
             echo '<meta property="og:title" content="' . $event->ev_name . '" />';
             echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
-            echo '<meta property="og:type" content="article" />';
-            echo '<meta property="og:author" content="blank" />';
+            echo '<meta property="og:type" content="website" />';
             echo '<meta property="og:description" content="'. date( "d.m.Y", strtotime($event->ev_date) ) .' @ '. date( "H:i", strtotime($event->ev_date) ) .'" />';
         }
-	}
+    }
+    
+    add_filter( 'oembed_response_data', 'disable_embeds_filter_oembed_response_data_' );
+    function disable_embeds_filter_oembed_response_data_( $data ) {
+        unset($data['author_url']);
+        unset($data['author_name']);
+        return $data;
+    }
 
 	add_action('wp_head','tm_event_metadata');
     if($_GET['id']){
