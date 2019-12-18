@@ -14,52 +14,52 @@
 			null,
 			96
 		);
-		
-		add_submenu_page(
-			'tm_events',
-			__('Veranstaltungen', 'ticketmachine'),
-			__('Veranstaltungen', 'ticketmachine'),
-			'manage_options',
-			'tm_events',
-			'tt_render_list_page',
-			null,
-			97
-		);
 
-		add_submenu_page(
-			'tm_events',
-			__('Einstellungen', 'ticketmachine'),
-			__('Einstellungen', 'ticketmachine'),
-			'manage_options',
-			'tm_settings',
-			'tm_settings_page',
-			null,
-			98
-		);
-
-		add_submenu_page(
-			'tm_events',
-			__('Kategorien', 'ticketmachine'),
-			__('Kategorien', 'ticketmachine'),
-			'manage_options',
-			'tm_categories',
-			'tm_render_categories_page',
-			null,
-			99
-		);
-
-		if(!$api->client_secret) {	
+		if(!$globals->activated) {	
 			add_submenu_page(
 				'tm_events',
-				__('Installations Dummy', 'ticketmachine'),
-				__('Installations Dummy', 'ticketmachine'),
+				__('Installation', 'ticketmachine'),
+				__('Installation', 'ticketmachine'),
 				'manage_options',
 				'tm_installation',
 				'tm_installation_page',
 				null,
 				100
 			);
-		}	
+		}else{
+			add_submenu_page(
+				'tm_events',
+				__('Veranstaltungen', 'ticketmachine'),
+				__('Veranstaltungen', 'ticketmachine'),
+				'manage_options',
+				'tm_events',
+				'tt_render_list_page',
+				null,
+				97
+			);
+
+			add_submenu_page(
+				'tm_events',
+				__('Einstellungen', 'ticketmachine'),
+				__('Einstellungen', 'ticketmachine'),
+				'manage_options',
+				'tm_settings',
+				'tm_settings_page',
+				null,
+				98
+			);
+
+			add_submenu_page(
+				'tm_events',
+				__('Kategorien', 'ticketmachine'),
+				__('Kategorien', 'ticketmachine'),
+				'manage_options',
+				'tm_categories',
+				'tm_render_categories_page',
+				null,
+				99
+			);
+		}
 	}
 
 	add_filter( 'submenu_file', function($submenu_file){
