@@ -49,16 +49,16 @@
 				98
 			);
 
-			add_submenu_page(
-				'tm_events',
-				__('Kategorien', 'ticketmachine'),
-				__('Kategorien', 'ticketmachine'),
-				'manage_options',
-				'tm_categories',
-				'tm_render_categories_page',
-				null,
-				99
-			);
+			#add_submenu_page(
+			#	'tm_events',
+			#	__('Kategorien', 'ticketmachine'),
+			#	__('Kategorien', 'ticketmachine'),
+			#	'manage_options',
+			#	'tm_categories',
+			#	'tm_render_categories_page',
+			#	null,
+			#	99
+			#);
 		}
 	}
 

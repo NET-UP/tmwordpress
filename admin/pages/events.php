@@ -458,7 +458,7 @@ function tt_render_list_page(){
                 <!-- Now we can render the completed list table -->
                 <ul class="subsubsub">
                     <li class="all">
-    <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
+                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" <?php if(!isset($_GET['status'] )){ ?>class="current"<?php } ?>>
                             <?php _e('Alle'); ?> 
                             <span class="count"></span>
                         </a> |
