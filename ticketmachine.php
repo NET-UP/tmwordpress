@@ -17,6 +17,7 @@
 	function tm_initialize( $atts ) {
 
 		include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
+        include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
 		
 		if( $atts ) {
 			

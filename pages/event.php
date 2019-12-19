@@ -31,6 +31,9 @@
 					</div>
 				</div>
 			';
+		}else{
+			$error = __("Es konnte keine Veranstaltung gefunden werden", "ticketmachine");
+			$tm_output .= tm_error_page($error);
 		}
 		
 		return $tm_output;
