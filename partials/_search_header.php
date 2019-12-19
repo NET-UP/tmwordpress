@@ -5,17 +5,17 @@
         $tm_output = "";
         $params = "?";
 
-        if($globals->search_query){
+        if(isset($globals->search_query)){
             $params .= "&q=" . $globals->search_query;
         }
 
-        if($globals->tag){
+        if(isset($globals->tag)){
             $params .= "&tag=" . $globals->tag;
         }
 
         $tm_output .= "<form class='mb-3'>";
 
-            if($_GET['display']){
+            if(isset($_GET['display'])){
                 $tm_output .= "<input type='hidden' name='display' value='" . $_GET['display'] . "'/>";
             }
 
@@ -30,7 +30,7 @@
                                         <div class='col-12 d-sm-none mb-3'></div>";
 
 
-                                        if($_GET['display'] == "calendar"){
+                                        if(isset($_GET['display']) && $_GET['display'] == "calendar"){
                             $tm_output .= "<div class='btn-group ml-0 ml-sm-4'>
                                                 <a href='#' aria-label='" . __("Zum vorigen Monat") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
                                                 <a href='#' class='btn btn-secondary' id='calendar-title'></a>
