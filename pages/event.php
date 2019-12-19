@@ -4,6 +4,8 @@
 		global $event, $globals, $api;
 
 		$params = array();
+		$tm_output = "";
+		
 		if(!empty($_GET['id'])){
 			$params = array_push_assoc($params, "id", $_GET['id']);
 		}
