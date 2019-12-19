@@ -2,6 +2,7 @@
 
     function tm_search_header ( $globals ) {
 
+        $tm_output = "";
         $params = "?";
 
         if($globals->search_query){
