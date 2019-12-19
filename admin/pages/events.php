@@ -452,21 +452,21 @@ function tt_render_list_page(){
                 <!-- Now we can render the completed list table -->
                 <ul class="subsubsub">
                     <li class="all">
-                        <a href="#" class="current">
+                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" class="current">
                             <?php _e('Alle'); ?> 
-                            <span class="count">(1)</span>
+                            <span class="count"></span>
                         </a> |
                     </li>
                     <li class="publish">
-                        <a href="/lol">
+                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=published'; ?>">
                             <?php _e('Veröffentlichte'); ?> 
-                            <span class="count">(5)</span> <!-- TO DO add logic -->
+                            <span class="count"></span> <!-- TO DO add logic -->
                         </a>
                     </li>
                     <li class="draft">
-                        <a href="/lol2">
+                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=drafts'; ?>">
                             <?php _e('Entwürfe'); ?> 
-                            <span class="count">(5)</span> <!-- TO DO add logic -->
+                            <span class="count"></span> <!-- TO DO add logic -->
                         </a>
                     </li>
                 </ul>
