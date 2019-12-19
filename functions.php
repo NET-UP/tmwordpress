@@ -48,13 +48,13 @@
 
 		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
 		
-		if(!empty($globals->organizer)){
+		if($globals->organizer && $globals->organizer != "" ){
 			$url .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
 		}elseif($params->organizer){
 			$url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
 		}
 		
-		if(!empty($params->show_old)) {
+		if(!empty($params->show_old) && $params->show_old != 1) {
 			$url .= "&endtime[gte]=" . $globals->first_event_date;
 		}
 		$url .= "&sort=". $params->sort;
