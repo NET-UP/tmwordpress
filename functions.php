@@ -62,15 +62,15 @@
 			$url .= "&per_page=" . (int)$params->per_page;
 		}
 		
-		if($params->query) {
+		if(isset($params->query)) {
 			$url .= "&ev_name[contains]=" . htmlspecialchars(urlencode($params->query));
 		}
 		
-		if($params->tag) {
+		if(isset($params->tag)) {
 			$url .= "&tags[eq]=" . htmlspecialchars(urlencode($params->tag));
 		}
 		
-		if($params->shown) {
+		if(isset($params->shown)) {
 			$url .= "&shown[eq]=" . htmlspecialchars(urlencode($params->tag));
 		}
 
