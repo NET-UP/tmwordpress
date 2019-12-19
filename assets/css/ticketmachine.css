@@ -298,6 +298,18 @@ td.fc-today {
     background: #f2f2f2;
 }
 
+.tm_page .alert-danger {
+	border-color: #f5c6cb;
+}
+
+.tm_page .alert-warning {
+	border-color: #ffeeba;
+}
+
+.tm_page .alert-success {
+	border-color: #c3e6cb;
+}
+
 @media only screen and (max-width: 991px) {
 	.no-mobile-height {
 	  height: auto !important;
