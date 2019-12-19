@@ -23,7 +23,7 @@
 			}
 		$tm_output .= "</div>";
 		
-		if($atts['display'] == "calendar" && $globals->show_calendar || $globals->show_calendar && !$globals->show_list){
+		if(isset($atts['display']) && $atts['display'] == "calendar" && $globals->show_calendar || $globals->show_calendar && !$globals->show_list){
 		
 			//Calendar Packages
 			wp_enqueue_style( 'calendar_CSS_1', plugins_url('../assets/packages/core/main.css', __FILE__ ) );
