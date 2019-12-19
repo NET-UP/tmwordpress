@@ -467,7 +467,7 @@ function tt_render_list_page(){
                         <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=published'; ?>">
                             <?php _e('Veröffentlichte'); ?> 
                             <span class="count"></span> <!-- TO DO add logic -->
-                        </a>
+                        </a> |
                     </li>
                     <li class="draft">
                         <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=drafts'; ?>">
