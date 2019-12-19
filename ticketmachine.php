@@ -187,15 +187,17 @@
 	
 
 	function tm_event_metadata_event() {
-        if($_GET['id']){
+        if(isset($_GET['id']) && $_GET['id'] > 0){
             include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
             $params = [ "id" => $_GET['id'] ];
             $event = tmapi_event($params);
-            echo '<meta property="og:title" content="' . $event->ev_name . '" />';
-            echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
-            echo '<meta property="og:type" content="website" />';
-            echo '<meta property="og:description" content="'. date( "d.m.Y", strtotime($event->ev_date) ) .' @ '. date( "H:i", strtotime($event->ev_date) ) .'" />';
-        }
+            if(isset($event->id)){            
+                echo '<meta property="og:title" content="' . $event->ev_name . '" />';
+                echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
+                echo '<meta property="og:type" content="website" />';
+                echo '<meta property="og:description" content="'. date( "d.m.Y", strtotime($event->ev_date) ) .' @ '. date( "H:i", strtotime($event->ev_date) ) .'" />';
+            }
+       }
     }
     
     add_filter( 'oembed_response_data', 'disable_embeds_filter_oembed_response_data_' );
@@ -206,7 +208,7 @@
     }
 
 	add_action('wp_head','tm_event_metadata');
-    if($_GET['id']){
+    if(isset($_GET['id']) && $_GET['id'] > 0){
         add_action('wp_head','tm_event_metadata_event');
     }
 
