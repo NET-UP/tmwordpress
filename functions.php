@@ -70,8 +70,8 @@
 			$url .= "&tags[eq]=" . htmlspecialchars(urlencode($params->tag));
 		}
 		
-		if(isset($params->shown)) {
-			$url .= "&shown[eq]=" . (int)$params->shown;
+		if(isset($params->approved)) {
+			$url .= "&approved[eq]=" . (int)$params->approved;
 		}
 
 		print_r($url);
