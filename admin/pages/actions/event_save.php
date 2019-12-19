@@ -28,7 +28,7 @@
     }
     $_POST['organizer_id'] = (int)$_POST['organizer_id'];
     $_POST['approved'] = (int)$_POST['approved'];
-    $_POST['state']['shown'] = (int)$_POST['state']['shown'];
+    $_POST['state']['shown'] = (int)$_POST['rules']['shown'];
     $_POST['rules']['sale_active'] = (int)$_POST['rules']['sale_active'];
     $_POST['vat_id'] = (int)$_POST['vat_id'];
 
