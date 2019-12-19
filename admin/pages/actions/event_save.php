@@ -39,7 +39,7 @@
 ?>
 
 
-<?php if(strlen($response->error_code) > 0){ ?>
+<?php if(isset($response->error_code) && strlen($response->error_code) > 0){ ?>
     <div class="notice notice-error is-dismissable">
         <p><?php echo __($response->error_message); ?></p>
     </div>
