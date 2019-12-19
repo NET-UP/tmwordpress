@@ -53,7 +53,7 @@
 
                                                 if($globals->show_list){
                                                     $tm_output .= "<a class='btn ";
-                                                        if($_GET['display'] == 'calendar'){ 
+                                                        if(!isset($_GET['display']) == 'calendar'){ 
                                                             $tm_output .= "btn-primary active"; 
                                                         }else{
                                                             $tm_output .= "btn-secondary"; 
