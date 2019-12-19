@@ -458,13 +458,13 @@ function tt_render_list_page(){
                         </a> |
                     </li>
                     <li class="publish">
-                        <a href="#">
+                        <a href="/lol">
                             <?php _e('Veröffentlichte'); ?> 
                             <span class="count">(5)</span> <!-- TO DO add logic -->
                         </a>
                     </li>
                     <li class="draft">
-                        <a href="#">
+                        <a href="/lol2">
                             <?php _e('Entwürfe'); ?> 
                             <span class="count">(5)</span> <!-- TO DO add logic -->
                         </a>
