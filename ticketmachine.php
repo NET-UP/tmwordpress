@@ -178,7 +178,7 @@
 	
 
 	function tm_event_metadata() {
-        if($_GET['id']){
+        if(isset($_GET['id']) && $_GET['id'] > 0){
             $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             echo '<meta property="og:url" content="' . $actual_link . '" />';
             echo '<meta property="og:type" content="website" />';
