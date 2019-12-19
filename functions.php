@@ -74,8 +74,6 @@
 			$url .= "&approved[eq]=" . (int)$params->approved;
 		}
 
-		print_r($url);
-
 		$events = (object)apiRequest($url, $post, $method, $headers);
 		return $events;
 	}
