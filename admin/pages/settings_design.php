@@ -10,6 +10,7 @@
 				"button_primary_border_color" => $_POST['button_primary_border_color'],
 				"button_primary_background_color_hover" => $_POST['button_primary_background_color_hover'],
 				"button_primary_text_color_hover" => $_POST['button_primary_text_color_hover'],
+				"button_primary_border_color_hover" => $_POST['button_primary_border_color_hover'],
 
 				"button_secondary_border_color_hover" => $_POST['button_secondary_border_color_hover'],
 				"button_secondary_background_color" => $_POST['button_secondary_background_color'],
