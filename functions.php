@@ -73,6 +73,7 @@
 		if(isset($params->shown)) {
 			$url .= "&shown[eq]=" . htmlspecialchars(urlencode($params->tag));
 		}
+		print_r($url);
 
 		$events = (object)apiRequest($url, $post, $method, $headers);
 		return $events;
