@@ -1,6 +1,6 @@
 <?php
 
-    function tm_error( $message ) {
+    function tm_message( $message, $type ) {
         $tm_output = $message;
 
         return $tm_output;
