@@ -19,19 +19,19 @@ jQuery(document).ready(function(){
     }
 
     jQuery(document).on('click', '.read-more:not(.open)', function(e){
-        $(this).html('<i class="fas fa-chevron-up"></i>').addClass('open');
+        jQuery(this).html('<i class="fas fa-chevron-up"></i>').addClass('open');
         t.parent().find('.card-text').removeClass('closed');
-        if ($('.card-text').height() > 720 && $(window).width() > 991) {
-            $('.tm_actions').clone().appendTo('.tm_left');
+        if (jQuery('.card-text').height() > 720 && jQuery(window).width() > 991) {
+            jQuery('.tm_actions').clone().appendTo('.tm_left');
         }
         e.preventDefault();
     });
 
     jQuery(document).on('click', '.read-more.open', function(e){
-        $(this).html('<i class="fas fa-chevron-down"></i>').removeClass('open');
+        jQuery(this).html('<i class="fas fa-chevron-down"></i>').removeClass('open');
         t.parent().find('.card-text').addClass('closed');
-        if ($('.tm_actions').length === 2) {
-            $('.tm_left').find(".tm_actions").remove();
+        if (jQuery('.tm_actions').length === 2) {
+            jQuery('.tm_left').find(".tm_actions").remove();
         }
         e.preventDefault();
     });
