@@ -9,7 +9,7 @@
 	$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'design';
 	
 
-	if($_GET['code']){
+	if(isset($_GET['code'])){
 		echo "success";
 		$tm_config->api_access_token = "test";
 		#TODO: Send auth code to /oauth/token to retrieve access & refresh tokens.
