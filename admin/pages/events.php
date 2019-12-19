@@ -67,9 +67,9 @@ class Event_List_Table extends WP_List_Table {
         $params = array_push_assoc($params, "show_old", 1);
         $params = array_push_assoc($params, "per_page", 100);
         if(isset($_GET['status']) && $_GET['status'] == "published"){
-            $params = array_push_assoc($params, "shown", 1);
+            $params = array_push_assoc($params, "approved", 1);
         }elseif(isset($_GET['status']) && $_GET['status'] == "drafts") {
-            $params = array_push_assoc($params, "shown", 0);
+            $params = array_push_assoc($params, "approved", 0);
         }
         $params = array_push_assoc($params, "per_page", 100);
         $events = tmapi_events($params)->result;
