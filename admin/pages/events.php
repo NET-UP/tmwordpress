@@ -59,7 +59,13 @@ class Event_List_Table extends WP_List_Table {
 
     function get_events(){
         global $globals, $api;
-        $params = [ "query" => $_GET['s'], "show_old" => 1, "per_page" => 100 ];
+
+		$params = array();
+		if(isset($_GET['s'])){
+			$params = array_push_assoc($params, "query", $_GET['s']);
+		}
+        $params = array_push_assoc($params, "show_old", 1);
+        $params = array_push_assoc($params, "per_page", 100);
         $events = tmapi_events($params)->result;
         return $events;
     }
