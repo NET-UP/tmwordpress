@@ -39,6 +39,9 @@
 	}
 	
 	#TODO: Refactor api request
+	if(!isset($_SESSION['state'])){
+		$_SESSION['state'] = "";
+	}
 	$api->token = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/token";
 	$api->auth->url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/token";
 	$api->auth->key = $api->client_id.":".$api->client_secret;
