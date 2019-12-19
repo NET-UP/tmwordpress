@@ -42,7 +42,7 @@
 		global $api, $globals;
 
 		$params = (object)$params;
-		if(!$params->sort){
+		if(!isset($params->sort)){
 			$params->sort = "ev_date";
 		}
 
