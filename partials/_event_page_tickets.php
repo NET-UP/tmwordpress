@@ -9,7 +9,7 @@
 
         include(WP_PLUGIN_DIR . "/ticketmachine/includes/google_calendar.php");
 
-        $tm_output .= '';
+        $tm_output = '';
 
         return $tm_output;
 	}

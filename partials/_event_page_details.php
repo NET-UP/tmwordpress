@@ -1,7 +1,7 @@
 <?php
 
     function tm_event_page_details ( $event, $globals ) {
-        $tm_output .= '<div class="card mb-3">
+        $tm_output = '<div class="card mb-3">
                             <div class="row card-body position-relative">
                                 <div class="col-sm-6">
                                     <h3 class="d-inline-block">'. __("Details", "ticketmachine") .'</h3>
