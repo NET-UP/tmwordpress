@@ -3,6 +3,7 @@
 	function tm_display_event ( $atts ) {
 		global $event, $globals, $api;
 
+		$params = array();
 		if(!empty($_GET['id'])){
 			$params = array_push_assoc($params, "id", $_GET['id']);
 		}
