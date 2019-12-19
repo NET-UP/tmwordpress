@@ -48,17 +48,17 @@
 
 		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
 		
-		if($globals->organizer && $globals->organizer != "" ){
+		if(!empty($globals->organizer)){
 			$url .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
 		}elseif($params->organizer){
 			$url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
 		}
 		
-		if(!isset($params->show_old) || isset($params->show_old) && $params->show_old != 1) {
+		if(!empty($params->show_old)) {
 			$url .= "&endtime[gte]=" . $globals->first_event_date;
 		}
 		$url .= "&sort=". $params->sort;
-		if(isset($params->per_page) && $params->per_page > 0) {
+		if(!empty($params->per_page)) {
 			$url .= "&per_page=" . (int)$params->per_page;
 		}
 		
@@ -88,7 +88,7 @@
 		}
 
 		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id;
-		if(isset($params->categories)) {
+		if(!empty($params->categories)) {
 			$url .= "?categories=true";
 		}
 
