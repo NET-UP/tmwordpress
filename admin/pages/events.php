@@ -458,19 +458,19 @@ function tt_render_list_page(){
                 <!-- Now we can render the completed list table -->
                 <ul class="subsubsub">
                     <li class="all">
-                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" class="current">
+    <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
                             <?php _e('Alle'); ?> 
                             <span class="count"></span>
                         </a> |
                     </li>
                     <li class="publish">
-                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=published'; ?>">
+                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=published'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "published"){ ?>class="current"<?php } ?>>
                             <?php _e('Veröffentlichte'); ?> 
                             <span class="count"></span> <!-- TO DO add logic -->
                         </a> |
                     </li>
                     <li class="draft">
-                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=drafts'; ?>">
+                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=drafts'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "drafts"){ ?>class="current"<?php } ?>>
                             <?php _e('Entwürfe'); ?> 
                             <span class="count"></span> <!-- TO DO add logic -->
                         </a>
