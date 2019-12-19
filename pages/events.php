@@ -1,16 +1,15 @@
 <?php
 
 	function tm_display_events ( $atts, $globals, $api ) {
-		$query = $_GET;
 		$params = [];
-		if(isset($query['q'])){
-			$params[] = [ "query" => $query['q'] ];
+		if(isset($_GET['q'])){
+			$params[] = [ "$_GET" => $_GET['q'] ];
 		}
-		if(isset($query['sort'])){
-			$params[] = [ "sort" => $query['sort'] ];
+		if(isset($_GET['sort'])){
+			$params[] = [ "sort" => $_GET['sort'] ];
 		}
-		if(isset($query['tag'])){
-			$params[] = [ "tag" => $query['tag'] ];
+		if(isset($_GET['tag'])){
+			$params[] = [ "tag" => $_GET['tag'] ];
 		}
 		print_r($params);
 		$events = tmapi_events($params)->result;
