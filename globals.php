@@ -24,7 +24,7 @@
 		$globals->search_query = htmlentities($_GET['q']);
 	}
 	$globals->tag = "";
-	if(isset($_GET['q'])){
+	if(isset($_GET['tag'])){
 		$globals->tag = htmlentities($_GET['tag']);
 	}
 	$globals->organizer = $tm_config->organizer;
