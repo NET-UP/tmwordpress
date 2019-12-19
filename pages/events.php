@@ -3,7 +3,7 @@
 	function tm_display_events ( $atts, $globals, $api ) {
 		$params = [];
 		if(isset($_GET['q'])){
-			$params[] = [ "$_GET" => $_GET['q'] ];
+			$params[] = [ "query" => $_GET['q'] ];
 		}
 		if(isset($_GET['sort'])){
 			$params[] = [ "sort" => $_GET['sort'] ];
