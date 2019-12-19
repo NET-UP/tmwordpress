@@ -11,7 +11,6 @@
 		if(isset($_GET['tag'])){
 			$params = array_push_assoc($params, "tag", $_GET['tag']);
 		}
-		print_r($params);
 		$events = tmapi_events($params)->result;
 		
 		//echo "<pre>" . print_r($tm_json) . "</pre>";
