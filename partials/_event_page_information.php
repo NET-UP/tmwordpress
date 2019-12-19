@@ -1,7 +1,7 @@
 <?php
     function tm_event_page_information ( $event, $globals ) {
 
-        $tm_output .= '
+        $tm_output = '
         
             <div class="title-height no-height-mobile">
                 <h5>
