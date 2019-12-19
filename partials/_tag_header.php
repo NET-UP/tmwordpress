@@ -3,7 +3,7 @@
     function tm_tag_header ( $globals ) {
         
 
-        $url = htmlentities(urldecode($_SERVER[REQUEST_URI]));
+        $url = htmlentities(urldecode($_SERVER['REQUEST_URI']));
         $tag = "tag=" . $globals->tag;
 
         $tm_output = '<label class="mr-3 ml-1">' . __("Schlagwörter", "ticketmachine") . ':</label> 
