@@ -19,7 +19,7 @@
 
 <?php if(isset($response->model_error[0]['error_code']) && strlen($response->model_error[0]['error_code']) > 0){ ?>
     <div class="notice notice-error is-dismissable">
-        <p><?php echo __($response->error_message); ?></p>
+        <p><?php echo __($response->model_error[0]['error_message']); ?></p>
     </div>
 <?php }elseif(empty($tm_json)){ ?>
     <div class="notice notice-error is-dismissable">
