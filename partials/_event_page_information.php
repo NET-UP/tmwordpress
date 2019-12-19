@@ -19,7 +19,7 @@
                     <div class="card-meta">
                         <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date( "d.m.Y", strtotime($event->ev_date) ) .'</div> 
                         <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date( "H:i", strtotime($event->ev_date) ) .'</div>
-                        <div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; <a aria-label="' . __("Veranstaltungsort: ") . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->event_location->street . " " . $event->event_location["house_number"] . " " . $event->event_location["zip"] . " " . $event->event_location["city"] . " " . $event->event_location["country"] ) . '" target="_blank" title="' . __("Veranstaltungsort: ") . $event->ev_location_name . '">' . $event->ev_location_name . '</a> </div>
+                        <div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; <a aria-label="' . __("Veranstaltungsort: ") . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->event_location['street'] . " " . $event->event_location["house_number"] . " " . $event->event_location["zip"] . " " . $event->event_location["city"] . " " . $event->event_location["country"] ) . '" target="_blank" title="' . __("Veranstaltungsort: ") . $event->ev_location_name . '">' . $event->ev_location_name . '</a> </div>
                         
                     </div>
 
