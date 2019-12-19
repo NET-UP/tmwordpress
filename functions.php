@@ -71,7 +71,7 @@
 		}
 		
 		if(isset($params->shown)) {
-			$url .= "&shown[eq]=" . (int)$params->tag);
+			$url .= "&shown[eq]=" . (int)$params->tag;
 		}
 		print_r($url);
 
