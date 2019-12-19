@@ -6,10 +6,10 @@
 			$params = array_push($params, "query", $_GET['q']);
 		}
 		if(isset($_GET['sort'])){
-			$params[] += [ "sort" => $_GET['sort'] ];
+			$params = array_push($params, "sort", $_GET['sort']);
 		}
 		if(isset($_GET['tag'])){
-			$params[] += [ "tag" => $_GET['tag'] ];
+			$params = array_push($params, "tag", $_GET['tag']);
 		}
 		print_r($params);
 		$events = tmapi_events($params)->result;
