@@ -28,8 +28,8 @@
 		$globals->tag = htmlentities($_GET['tag']);
 	}
 	$globals->organizer = $tm_config->organizer;
-	$globals->group_by = "Y";
-	$globals->format_date = "Y";
+	$globals->group_by = "m Y";
+	$globals->format_date = "M Y";
 	$globals->first_event_date = date('Y-m-d');
 	$globals->first_event_date_calendar = date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "-1 month" ) );
 
