@@ -124,6 +124,7 @@ class Event_List_Table extends WP_List_Table {
      **************************************************************************/
     function column_ev_name($item){
 
+        $additional_text = "";
         if($item['approved'] == 0){
             $toggle_type = "publish";
             $toggle_text = "Veröffentlichen";
