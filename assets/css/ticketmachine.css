@@ -306,6 +306,10 @@ td.fc-today {
 	border-color: #ffeeba;
 }
 
+.tm_page .title-height h3 {
+	font-size: 19px !important;
+}
+
 .tm_page .alert-success {
 	border-color: #c3e6cb;
 }
