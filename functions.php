@@ -54,11 +54,11 @@
 			$url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
 		}
 		
-		if(!isset($params->show_old) || isset($params->show_old) && $params->show_old != 1) {
+		if(empty($params->show_old)) {
 			$url .= "&endtime[gte]=" . $globals->first_event_date;
 		}
 		$url .= "&sort=". $params->sort;
-		if(!empty($params->per_page)) {
+		if(!empty((int)$params->per_page)) {
 			$url .= "&per_page=" . (int)$params->per_page;
 		}
 		
