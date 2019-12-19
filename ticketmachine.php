@@ -33,7 +33,7 @@
                         include "partials/_search_header.php";
                         include "partials/_tag_header.php";
                         include "pages/events.php";
-                        $tm_output .= tm_display_events( $atts, $globals, $api );
+                        $tm_output .= tm_display_events( $atts );
                         break;
                     case 'event_details':
                         include "partials/_event_page_information.php";
@@ -42,14 +42,14 @@
                         include "partials/_event_page_google_map.php";
                         include "partials/_event_page_actions.php";
                         include "pages/event.php";
-                        $tm_output .= tm_display_event( $atts, $globals, $api );
+                        $tm_output .= tm_display_event( $atts );
                         break;
                 }
             }elseif($atts['widget']){
                 switch ($atts['widget']) {
                     case 'event_list':
                         include "widgets/event_list.php";
-                        $tm_output .= tm_widget_event_list( $atts, $globals, $api );
+                        $tm_output .= tm_widget_event_list( $atts );
                         break;
                 }
             }

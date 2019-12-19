@@ -1,6 +1,8 @@
 <?php
 
-	function tm_display_events ( $atts, $globals, $api ) {
+	function tm_display_events ( $atts ) {
+		global $globals, $api;
+
 		$params = array();
 		if(isset($_GET['q'])){
 			$params = array_push_assoc($params, "query", $_GET['q']);

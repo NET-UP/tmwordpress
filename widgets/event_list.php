@@ -1,6 +1,7 @@
 <?php
 
-    function tm_widget_event_list ( $atts, $globals, $api ) {
+    function tm_widget_event_list ( $atts ) {
+		global $globals, $api;
 
         $params = $atts;
         $events = tmapi_events($params)->result;
