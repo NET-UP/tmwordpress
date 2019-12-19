@@ -82,7 +82,7 @@
 	function tmapi_event($params=array(), $method="GET", $post=FALSE, $headers=array()){
 		global $api, $globals;
 		if($method == "POST"){
-			$post = (object)$params;
+			$post = $params;
 		}else{
 			$params = (object)$params;
 		}
