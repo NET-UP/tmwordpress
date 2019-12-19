@@ -16,8 +16,14 @@
 	$api->client_secret = $tm_config->api_client_secret;
 	$globals->environment = $tm_config->api_environment;
 	
-	$globals->search_query = htmlentities($_GET['q']);
-	$globals->tag = htmlentities($_GET['tag']);
+	$globals->search_query = "";
+	if(isset($_GET['q'])){
+		$globals->search_query = htmlentities($_GET['q']);
+	}
+	$globals->tag = "";
+	if(isset($_GET['q'])){
+		$globals->tag = htmlentities($_GET['tag']);
+	}
 	$globals->organizer = $tm_config->organizer;
 	$globals->group_by = "Y";
 	$globals->format_date = "Y";
