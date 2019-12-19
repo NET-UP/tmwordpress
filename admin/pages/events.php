@@ -73,7 +73,6 @@ class Event_List_Table extends WP_List_Table {
         }
         $params = array_push_assoc($params, "per_page", 100);
         $events = tmapi_events($params)->result;
-        print_r($events);
         return $events;
     }
 
