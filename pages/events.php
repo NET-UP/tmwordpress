@@ -70,7 +70,7 @@
 			
 			if(empty($events)) {	
 				$tm_output .= "<div class='col-12 text-center mt-2 p-4'>";
-				$tm_output .= __("Es konnten keine Veranstaltungen gefunden werden", "ticketmachine");
+					$tm_output .= tm_error(__("Es konnten keine Veranstaltungen gefunden werden", "ticketmachine"));
 				$tm_output .= "</div>";
 				
 			}else{
