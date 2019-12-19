@@ -94,8 +94,8 @@
 
 		$event = (object)apiRequest($url, $post, $method, $headers);
 		
-		if(!isset($event->event_location->street)) { 
-			$event->event_location->street = "";
+		if(!isset($event->event_location['street'])) { 
+			$event->event_location['street'] = "";
 		}
 
 		return $event;
