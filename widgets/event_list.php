@@ -4,8 +4,8 @@
 		global $globals, $api;
 
         $params = $atts;
-        if(empty($params->shown)) {
-            $params->shown = 1;
+        if(empty($params->approved)) {
+            $params->approved = 1;
         }
         $events = tmapi_events($params)->result;
         $tm_output .= '<div class="tm_widget_event_list">';
