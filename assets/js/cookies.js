@@ -20,5 +20,5 @@ function tm_readCookie(name) {
 }
 
 function tm_eraseCookie(name) {
-	createCookie(name,"",-10);
+	tm_createCookie(name,"",-10);
 }
