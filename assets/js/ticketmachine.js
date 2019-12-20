@@ -9,7 +9,7 @@ jQuery(document).ready(function(){
 
     jQuery(document).on('click', '.disallow-google-maps', function(){
         tm_eraseCookie('allow_google_maps');
-        //location.reload();
+        location.reload();
     });
 
     var t = jQuery('.card-text');
