@@ -20,5 +20,5 @@ function readCookie(name) {
 }
 
 function eraseCookie(name) {
-	createCookie(name,"",-1);
+	createCookie(name,"",-10);
 }
