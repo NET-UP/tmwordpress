@@ -1,4 +1,4 @@
-function createCookie(name,value,days) {
+function tm_createCookie(name,value,days) {
 	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
@@ -8,7 +8,7 @@ function createCookie(name,value,days) {
 	document.cookie = name+"="+value+expires+"; path=/";
 }
 
-function readCookie(name) {
+function tm_readCookie(name) {
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(';');
 	for(var i=0;i < ca.length;i++) {
@@ -19,6 +19,6 @@ function readCookie(name) {
 	return null;
 }
 
-function eraseCookie(name) {
+function tm_eraseCookie(name) {
 	createCookie(name,"",-10);
 }
