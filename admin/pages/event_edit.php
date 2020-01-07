@@ -236,7 +236,6 @@
     jQuery( document ).ready( function( $ ) {
         // Uploading files
         var file_frame;
-        var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
         var set_to_post_id = <?php echo $my_saved_attachment_post_id; ?>; // Set this
         jQuery('#upload_image_button').on('click', function( event ){
             event.preventDefault();
