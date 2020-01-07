@@ -236,6 +236,7 @@
     jQuery( document ).ready( function( $ ) {
         // Uploading files
         var file_frame;
+        //var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
         var set_to_post_id = <?php echo $my_saved_attachment_post_id; ?>; // Set this
         jQuery('#upload_image_button').on('click', function( event ){
             event.preventDefault();
@@ -248,7 +249,7 @@
                 return;
             } else {
                 // Set the wp.media post id so the uploader grabs the ID we want when initialised
-                wp.media.model.settings.post.id = set_to_post_id;
+                //wp.media.model.settings.post.id = set_to_post_id;
             }
             // Create the media frame.
             file_frame = wp.media.frames.file_frame = wp.media({
@@ -266,14 +267,14 @@
                 $( '#image-preview' ).attr( 'src', attachment.url ).css( 'width', 'auto' );
                 $( '#image_attachment_id' ).val( attachment.url );
                 // Restore the main post ID
-                wp.media.model.settings.post.id = wp_media_post_id;
+               // wp.media.model.settings.post.id = wp_media_post_id;
             });
                 // Finally, open the modal
                 file_frame.open();
         });
         // Restore the main ID when the add media button is pressed
         jQuery( 'a.add_media' ).on( 'click', function() {
-            wp.media.model.settings.post.id = wp_media_post_id;
+            //wp.media.model.settings.post.id = wp_media_post_id;
         });
     });
 </script>
