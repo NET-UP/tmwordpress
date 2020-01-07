@@ -71,7 +71,7 @@
 			
 			if(empty($events)) {	
 				$tm_output .= "<div class='col-12 text-center mt-1'>";
-					$tm_output .= tm_alert(__("Es konnten keine Veranstaltungen gefunden werden", "ticketmachine"), "error");
+					$tm_output .= tm_alert(__("No events could be found", "ticketmachine"), "error");
 				$tm_output .= "</div>";
 				
 			}else{
@@ -90,7 +90,7 @@
 				}
 			}
 		}else{
-			echo __("Liste & Kalender sind deaktiviert", "ticketmachine");
+			echo __("List & Calendar are deactivated", "ticketmachine");
 		}
 		return $tm_output;
 		

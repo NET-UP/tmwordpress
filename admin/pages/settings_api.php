@@ -14,13 +14,13 @@
 			);
 			?>
 			<div class="notice notice-success is-dismissable">
-				<p><?php echo __('Gespeichert!'); ?></p>
+				<p><?php echo __('Saved', 'ticketmachine'); ?>!</p>
 			</div>
 			<?php
 		}else{
 			?>
 			<div class="notice notice-error is-dismissable">
-				<p><?php echo __('Etwas ist schiefgelaufen.'); ?></p>
+				<p><?php echo __('Something went wrong', 'ticketmachine'); ?>!</p>
 			</div>
 			<?php
 		}
@@ -39,7 +39,7 @@
 			<td><input name="api_client_secret" type="text" value="<?php echo $tm_config->api_client_secret; ?>" class="regular-text" /></td>
 		</tr>
 		<tr>
-			<th><label><?php echo __('Organizer-Kürzel', 'ticketmachine'); ?></label></th>
+			<th><label><?php echo __('Organizer', 'ticketmachine'); ?></label></th>
 			<td><input name="organizer" type="text" value="<?php echo $tm_config->organizer; ?>" class="regular-text" /></td>
 		</tr>
 

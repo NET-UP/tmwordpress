@@ -32,7 +32,7 @@
 				</div>
 			';
 		}else{
-			$error = __("Es konnte keine Veranstaltung gefunden werden", "ticketmachine");
+			$error = __("No events could be found", "ticketmachine");
 			$tm_output .= tm_error_page($error);
 		}
 		

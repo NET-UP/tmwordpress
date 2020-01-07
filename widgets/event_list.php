@@ -35,7 +35,7 @@
             }
 
             if($atts['show_more'] > 0){
-                $tm_output .= '<li class="media"><a href="/events">' . __("Alle Veranstaltungen anzeigen", "ticketmachine") . '</a></li>';
+                $tm_output .= '<li class="media"><a href="/events">' . __("Show all events", "ticketmachine") . '</a></li>';
             }
 
             $tm_output .= '</ul>';

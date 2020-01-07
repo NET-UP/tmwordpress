@@ -21,13 +21,13 @@
 			);
 			?>
 			<div class="notice notice-success is-dismissable">
-				<p><?php echo __('Gespeichert!'); ?></p>
+				<p><?php echo __('Saved', 'ticketmachine'); ?>!</p>
 			</div>
 			<?php
 		}else{
 			?>
 			<div class="notice notice-error is-dismissable">
-				<p><?php echo __('Etwas ist schiefgelaufen.'); ?></p>
+				<p><?php echo __('Something went wrong', 'ticketmachine'); ?>!</p>
 			</div>
 			<?php
 		}
@@ -54,7 +54,7 @@
 <table class="form-table">
 	<tbody>
 		<tr>
-			<th><label><?php echo __('Social Media teilen aktivieren?', 'ticketmachine'); ?></label></th>
+			<th><label><?php echo __('Activate Social Media sharing?', 'ticketmachine'); ?></label></th>
             <td><input name="show_social_media" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
@@ -62,7 +62,7 @@
             <td><input name="show_social_media_ical" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_ical){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
-            <th class="pl-4"><label><?php echo __('Google Kalender', 'ticketmachine'); ?></label></th>
+            <th class="pl-4"><label><?php echo __('Google Calendar', 'ticketmachine'); ?></label></th>
             <td><input name="show_social_media_google_cal" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_google_cal){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
@@ -74,7 +74,7 @@
             <td><input name="show_social_media_twitter" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_twitter){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
-            <th class="pl-4"><label><?php echo __('E-Mail', 'ticketmachine'); ?></label></th>
+            <th class="pl-4"><label><?php echo __('Email', 'ticketmachine'); ?></label></th>
             <td><input name="show_social_media_email" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_social_media_email){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
@@ -91,7 +91,7 @@
 <table class="form-table">
     <tbody>
         <tr>
-            <th><label><?php echo __('Google Maps aktivieren?', 'ticketmachine'); ?></label></th>
+            <th><label><?php echo __('Activate Google Maps?', 'ticketmachine'); ?></label></th>
             <td><input name="show_google_map" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_google_map){ ?>checked <?php  } ?>/></td>
         </tr>
     </tbody>

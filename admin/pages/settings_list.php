@@ -17,13 +17,13 @@
 			);
 			?>
 			<div class="notice notice-success is-dismissable">
-				<p><?php echo __('Gespeichert!'); ?></p>
+				<p><?php echo __('Saved', 'ticketmachine'); ?>!</p>
 			</div>
 			<?php
 		}else{
 			?>
 			<div class="notice notice-error is-dismissable">
-				<p><?php echo __('Etwas ist schiefgelaufen.'); ?></p>
+				<p><?php echo __('Something went wrong', 'ticketmachine'); ?>!</p>
 			</div>
 			<?php
 		}
@@ -34,7 +34,7 @@
 <table class="form-table">
 	<tbody>
 		<tr>
-			<th><label><?php echo __('Liste aktivieren?', 'ticketmachine'); ?></label></th>
+			<th><label><?php echo __('Activate List?', 'ticketmachine'); ?></label></th>
             <td><input name="show_list" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_list){ ?>checked <?php } ?>/></td>
 		</tr>
 

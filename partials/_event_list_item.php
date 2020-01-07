@@ -21,12 +21,12 @@
 					$tm_output .= '<div class="col-sm-8 col-md-7">';
 					  $tm_output .= '<p class="card-text mt-0 px-2 pt-sm-1 pb-3 pb-sm-2 ellipsis">';
 						$tm_output .= '<i class="fas fa-map-marker-alt tm-icon"></i> &nbsp;';
-						$tm_output .= '<a aria-label="' . __("Veranstaltungsort: ") . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country ) . '" target="_blank" title="' . __("Veranstaltungsort: ") . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
+						$tm_output .= '<a aria-label="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country ) . '" target="_blank" title="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
 					  $tm_output .= '</p>';
 					$tm_output .= '</div>';
 					$tm_output .= '<div class="col-sm-4 col-md-5">';
-					  $tm_output .= '<a aria-label="' . __("Zur Ticketauswahlseite für ") . $event->ev_name  . '" href="/event/?id=' . $event->id . '" class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . __("Zur Ticketauswahlseite ") . '">';
-						$tm_output .= __("Weiter") . ' &nbsp;<i class="fas fa-angle-right"></i>';
+					  $tm_output .= '<a aria-label="' . __("To ticket selection for ", 'ticketmachine') . ' ' . $event->ev_name  . '" href="/event/?id=' . $event->id . '" class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . __("To ticket selection", 'ticketmachine') . '">';
+						$tm_output .= __("More") . ' &nbsp;<i class="fas fa-angle-right"></i>';
 					  $tm_output .= '</a>';
 					$tm_output .= '</div>';
 				  $tm_output .= '</div>';

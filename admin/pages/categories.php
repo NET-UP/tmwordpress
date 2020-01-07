@@ -114,18 +114,18 @@ class Categorie_List_Table extends WP_List_Table {
 
         if($item['approved'] == 0){
             $toggle_type = "publish";
-            $toggle_text = "Veröffentlichen";
+            $toggle_text = "Publish";
             $toggle_action = "publish";
-            $additional_text .= " — <span class='post-state'>" . __('Entwurf' , 'ticketmachine') . "</span>";
+            $additional_text .= " — <span class='post-state'>" . __('Draft' , 'ticketmachine') . "</span>";
         }else{
             $toggle_type = "delete";
-            $toggle_text = "Deaktivieren";
+            $toggle_text = "Deactivate";
             $toggle_action = "deactivate";
         }
         
         //Build row actions
         $actions = array(
-            'edit'       => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Bearbeiten', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
+            'edit'       => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Edit', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
             $toggle_type => sprintf('<a href="?page=%s&action=%s&id=%s">'.__($toggle_text, 'ticketmachine').'</a>',$_REQUEST['page'],$toggle_action,$item['id'])
         );
         
@@ -404,7 +404,7 @@ function tm_render_categories_page(){
 
     ?>
     <div class="wrap tm-admin-page">
-        <h1 class="wp-heading-inline">TicketMachine > <?php echo __('Kategorien'); ?></h1>
+        <h1 class="wp-heading-inline">TicketMachine > <?php echo __('Categories', 'ticketmachine'); ?></h1>
         <hr class="wp-header-end">
         <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
         <div id="col-container" class="wp-clearfix">

@@ -1,7 +1,7 @@
 <?php
     global $globals, $api;
     wp_enqueue_media();
-    
+
     if($_GET['id'] > 0){
         $params = [ "id" => $_GET['id'] ];
         $event = (object)tmapi_event($params);
@@ -20,9 +20,9 @@
 <div class="wrap tm-admin-page">
     <?php 
         if($event->id > 0){
-            echo "<h1 class='wp-heading-inline'>TicketMachine > " . __('Veranstaltung bearbeiten', 'ticketmachine') . "</h1>";
+            echo "<h1 class='wp-heading-inline'>TicketMachine > " . __('Edit event', 'ticketmachine') . "</h1>";
         } else {
-            echo "<h1 class='wp-heading-inline'>TicketMachine > " . __('Veranstaltung erstellen', 'ticketmachine') . "</h1>";
+            echo "<h1 class='wp-heading-inline'>TicketMachine > " . __('Create event', 'ticketmachine') . "</h1>";
         }
     ?>
     <form name="event" action="?page=tm_events&action=save&id=<?php echo $_GET['id']; ?>" method="post" id="event">
@@ -42,7 +42,7 @@
                     <div id="titlediv">
                         <div id="titlewrap">
                             <label class="screen-reader-text" id="post-name-prompt-text" for="ev_name"><?php echo __('Event Name hier eingeben', 'ticketmachine') ?></label>
-                            <input type="text" placeholder="<?php echo __('Name der Veranstaltung', 'ticketmachine') ?>" name="ev_name" size="30" id="title" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
+                            <input type="text" placeholder="<?php echo __('Event Name', 'ticketmachine') ?>" name="ev_name" size="30" id="title" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
                         </div>
                     </div>
 
@@ -50,7 +50,7 @@
                         $editor_id = 'ev_description';
                         $settings = array( 'media_buttons' => false );
                         if ($event->ev_description == ""){
-                            $content = __('Beschreibung der Veranstaltung', 'ticketmachine');
+                            $content = __('Event Description', 'ticketmachine');
                         }
                         else{
                             $content =$event->ev_description;
@@ -63,21 +63,21 @@
                     <div id="side-sortables" class="meta-box-sortables ui-sortable">
                         <div id="submitdiv" class="postbox">
                             <h2 class="hndle">
-                                <span><?php echo __('Veröffentlichen', 'ticketmachine') ?></span>
+                                <span><?php echo __('Publish', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
                                 <div class="submitbox" id="submitpost">
                                     <div id="minor-publishing">
                                         <div id="misc-publishing-actions">
                                             <div class="misc-pub-section misc-pub-post-status">
-                                                <span>Status: </span>
+                                                <span><?php echo __('Status', 'ticketmachine') ?>: </span>
                                                 <select style="float: right; margin-top: -2px;" name="approved">
-                                                    <option value="1" <?php if($event->approved == 1){ echo "selected"; } ?>><?php echo __('Veröffentlicht', 'ticketmachine') ?></option>
-                                                    <option value="0" <?php if($event->approved != 1){ echo "selected"; } ?>><?php echo __('Entwurf', 'ticketmachine') ?></option>
+                                                    <option value="1" <?php if($event->approved == 1){ echo "selected"; } ?>><?php echo __('Published', 'ticketmachine') ?></option>
+                                                    <option value="0" <?php if($event->approved != 1){ echo "selected"; } ?>><?php echo __('Draft', 'ticketmachine') ?></option>
                                                 </select>
                                             </div>
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
-                                                <label for="event_edit_locationname"><?php echo __('Hinweistext','ticketmachine'); ?></label>
+                                                <label for="event_edit_locationname"><?php echo __('Hint Text','ticketmachine'); ?></label>
                                                 <input type="text" name="rules[badge]" class="fullw-input" value="<?php echo $event->rules['badge']; ?>"/>
                                             </div>
                                         </div>
@@ -85,7 +85,7 @@
                                     <div id="major-publishing-actions">
                                         <div id="publishing-action">
                                             <span class="spinner"></span>
-                                            <input type="submit" class="button button-primary button-large" id="publish" value="<?php echo __('Aktualisieren', 'ticketmachine') ?>">
+                                            <input type="submit" class="button button-primary button-large" id="publish" value="<?php echo __('Update', 'ticketmachine') ?>">
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -94,30 +94,30 @@
                         </div>
                         <div id="postimagediv" class="postbox">
                             <h2 class="hndle">
-                                <span><?php echo __('Veranstaltungsbild', 'ticketmachine') ?></span>
+                                <span><?php echo __('Event Image', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
                                 <div class='image-preview-wrapper'>
                                     <img id='image-preview' src='<?php echo $event->event_img_url; ?>' width='100' height='100' style='max-height: 500px; width: 100%;'>
                                 </div>
-                                <input id="upload_image_button" type="button" class="button" style="display:block;width:100%;" value="<?php _e( 'Bild festlegen' ); ?>" />
+                                <input id="upload_image_button" type="button" class="button" style="display:block;width:100%;" value="<?php _e( 'Add Image' ); ?>" />
                                 <input type='hidden' name='event_img_url' id='image_attachment_id' value='<?php echo $event->event_img_url; ?>'>
                             </div>
                         </div>
                         <div id="tagsdiv-post_tag" class="postbox">
                             <h2 class="hndle">
-                                <span><?php echo __('Schlagwörter', 'ticketmachine') ?></span>
+                                <span><?php echo __('Tags', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
                                 <div class="tagsdiv" id="post_tag">
                                     <div class="jaxtag">
                                         <div class="ajaxtag hide-if-no-js">
-                                            <label class="screen-reader-text" for="new-tag-post_tag"><?php echo __('Neues Schlagwort erstellen', 'ticketmachine') ?></label>
+                                            <label class="screen-reader-text" for="new-tag-post_tag"><?php echo __('Create new tag', 'ticketmachine') ?></label>
                                             <input type="text" class="form-control" 
                                                 value="<?php foreach($event->tags as $tag) { echo $tag.","; }?>" 
                                                 name="tags" data-role="tagsinput" >
                                         </div>
-                                        <p class="howto" id="new-tag-post_tag-desc"><?php echo __('Schlagwörter durch Kommas trennen.', 'ticketmachine') ?></p>
+                                        <p class="howto" id="new-tag-post_tag-desc"><?php echo __('Seperate tags with comma', 'ticketmachine') ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -128,38 +128,38 @@
                 <div id="postbox-container-2" class="postbox-container">
                     <div class="postbox">
                         <h2 class="hndle">
-                            <span><?php echo __('Standort', 'ticketmachine') ?></span>
+                            <span><?php echo __('Location', 'ticketmachine') ?></span>
                         </h2>
                         <div class="inside inside-pad">
                             <div class="row">
                                 <div class="col-12 form-group">
-                                    <label for="event_edit_locationname"><?php echo __('Veranstaltungsort', 'ticketmachine') ?></label>
+                                    <label for="event_edit_locationname"><?php echo __('Event Location', 'ticketmachine') ?></label>
                                     <input id="event_location_name" name="ev_location_name" type="text" class="form-control" value="<?php echo $event->ev_location_name; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-8 form-group">
-                                    <label for="event_edit_strasse"><?php echo __('Straße', 'ticketmachine') ?></label>
+                                    <label for="event_edit_strasse"><?php echo __('Street', 'ticketmachine') ?></label>
                                     <input id="event_edit_strasse" name="event_location[street]" type="text" class="form-control" value="<?php echo $event->event_location['street']; ?>">
                                 </div>
                                 <div class="col-sm-4 form-group">
-                                    <label for="house_number"><?php echo __('Haus-Nr.', 'ticketmachine') ?></label>
+                                    <label for="house_number"><?php echo __('House No.', 'ticketmachine') ?></label>
                                     <input id="event_edit_hausnr" name="event_location[house_number]" type="text" class="form-control" value="<?php echo $event->event_location['house_number']; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-4 form-group">
-                                    <label for="event_edit_plz"><?php echo __('PLZ', 'ticketmachine') ?></label>
+                                    <label for="event_edit_plz"><?php echo __('Zipcode', 'ticketmachine') ?></label>
                                     <input id="event_edit_plz" name="event_location[zip]" type="text" class="form-control" value="<?php echo $event->event_location['zip']; ?>">
                                 </div>
                                 <div class="col-sm-8 form-group">
-                                    <label for="event_edit_ort"><?php echo __('Ort', 'ticketmachine') ?></label>
+                                    <label for="event_edit_ort"><?php echo __('City', 'ticketmachine') ?></label>
                                     <input id="event_edit_ort" name="event_location[city]" type="text" class="form-control" value="<?php echo $event->event_location['city']; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 form-group">
-                                    <label for="event_edit_land"><?php echo __('Land', 'ticketmachine') ?></label>
+                                    <label for="event_edit_land"><?php echo __('Country', 'ticketmachine') ?></label>
                                     <input id="event_edit_land" name="event_location[country]" type="text" class="form-control" value="<?php echo $event->event_location['country']; ?>">
                                 </div>
                             </div>
@@ -169,11 +169,11 @@
 
                     <div class="postbox">
                         <h2 class="hndle">
-                            <span><?php echo __('Termine', 'ticketmachine') ?></span>
+                            <span><?php echo __('Dates & Times', 'ticketmachine') ?></span>
                         </h2>
                         <div class="inside inside-pad">
                             <div>
-                                <label><?php echo __('Einlasszeit', 'ticketmachine') ?></label>
+                                <label><?php echo __('Entry Time', 'ticketmachine') ?></label>
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
@@ -184,7 +184,7 @@
                                 </div>
                             </div>
                             <div>
-                                <label><?php echo __('Veranstaltungsbeginn', 'ticketmachine') ?></label>
+                                <label><?php echo __('Event begins at', 'ticketmachine') ?></label>
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
@@ -195,7 +195,7 @@
                                 </div>
                             </div>
                             <div>
-                                <label><?php echo __('Veranstaltungsende', 'ticketmachine') ?></label>
+                                <label><?php echo __('Event ends at', 'ticketmachine') ?></label>
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">

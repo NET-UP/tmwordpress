@@ -18,8 +18,8 @@
 		if(!$globals->activated) {	
 			add_submenu_page(
 				'tm_events',
-				__('Installation', 'ticketmachine'),
-				__('Installation', 'ticketmachine'),
+				__('Install', 'ticketmachine'),
+				__('Install', 'ticketmachine'),
 				'manage_options',
 				'tm_events',
 				'tm_installation_page',
@@ -29,8 +29,8 @@
 		}else{
 			add_submenu_page(
 				'tm_events',
-				__('Veranstaltungen', 'ticketmachine'),
-				__('Veranstaltungen', 'ticketmachine'),
+				__('Events', 'ticketmachine'),
+				__('Events', 'ticketmachine'),
 				'manage_options',
 				'tm_events',
 				'tt_render_list_page',
@@ -40,8 +40,8 @@
 
 			add_submenu_page(
 				'tm_events',
-				__('Einstellungen', 'ticketmachine'),
-				__('Einstellungen', 'ticketmachine'),
+				__('Settings', 'ticketmachine'),
+				__('Settings', 'ticketmachine'),
 				'manage_options',
 				'tm_settings',
 				'tm_settings_page',
@@ -51,8 +51,8 @@
 
 			#add_submenu_page(
 			#	'tm_events',
-			#	__('Kategorien', 'ticketmachine'),
-			#	__('Kategorien', 'ticketmachine'),
+			#	__('Categories', 'ticketmachine'),
+			#	__('Categories', 'ticketmachine'),
 			#	'manage_options',
 			#	'tm_categories',
 			#	'tm_render_categories_page',

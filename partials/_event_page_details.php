@@ -6,21 +6,21 @@
                                 <div class="col-sm-6">
                                     <h3 class="d-inline-block">'. __("Details", "ticketmachine") .'</h3>
                                     <br>
-                                    <label>'. __("Beginn", "ticketmachine") .':</label>
+                                    <label>'. __("Start", "ticketmachine") .':</label>
                                     <div class="mb-2">
                                         <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%e. %B", strtotime($event->ev_date) ) .' 
                                         &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%H:%M", strtotime($event->ev_date) ) .'
                                     </div>
-                                    <label>'. __("Ende", "ticketmachine").':</label>
+                                    <label>'. __("End", "ticketmachine").':</label>
                                     <div class="mb-2">
                                         <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%e. %B", strtotime($event->endtime) ) .' 
                                         &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%H:%M", strtotime($event->endtime) ) .'
                                     </div> 
-                                    <label>'. __("Eintritt", "ticketmachine").': </label>
-                                    <div class="mb-2">'. __("kostenlos", "ticketmachine") .'</div>';       
+                                    <label>'. __("Entry", "ticketmachine").': </label>
+                                    <div class="mb-2">'. __("free", "ticketmachine") .'</div>';       
             $tm_output .=       '</div>
                                 <div class="col-sm-6">
-                                    <h3 class="d-inline-block">'. __("Veranstaltungsort", "ticketmachine") .'</h3>
+                                    <h3 class="d-inline-block">'. __("Event Location", "ticketmachine") .'</h3>
                                     <br>
                                     <div>'. $event->ev_location_name .'</div>
                                     <div>'. $event->event_location['city'] .' '. $event->event_location['zip'] .'</div>

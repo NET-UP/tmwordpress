@@ -17,10 +17,10 @@
     </div>
 <?php }elseif(empty($tm_json)){ ?>
     <div class="notice notice-error is-dismissable">
-        <p><?php echo __('Etwas ist schiefgelaufen!'); ?></p>
+        <p><?php echo __('Something went wrong', 'ticketmachine'); ?>!</p>
     </div>
 <?php }else{ ?>
     <div class="notice notice-success is-dismissable">
-        <p><?php echo __('Event erfolgreich kopiert!'); ?></p>
+        <p><?php echo __('Event successfully copied', 'ticketmachine'); ?>!</p>
     </div>
 <?php } ?>
