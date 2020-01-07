@@ -6,7 +6,7 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 
 ## [0.9.3] - 2019-12-19
 +   Veranstaltungen können nun über die Event-Liste im Wordpress Backend aktiviert oder deaktiviert werden
-+	Veranstaltungslisten können jetzt per Shortcode eingebunden werden
++   Veranstaltungslisten können jetzt per Shortcode eingebunden werden
 +   Veranstaltungslisten per Shortcode können vollständig über Parameter konfiguriert werden
 +   Social-Media teilen kann im Wordpress Backend individuell aktiviert / deaktiviert werden
 +   Google Maps Integration ist jetzt DSGVO-konform (Wird nur mit aktiver Einwilligung vom Endbenutzer eingebunden. Kann auch deaktiviert werden.)
