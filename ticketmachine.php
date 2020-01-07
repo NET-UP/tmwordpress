@@ -11,12 +11,15 @@
 	Author URI:         https://www.net-up.de
 	*/
 
-	add_action( 'wp_enqueue_scripts', 'add_core_files' );
+    add_action( 'wp_enqueue_scripts', 'add_core_files' );
+    
+    add_action( 'init', 'wpdocs_load_textdomain' );
+    function wpdocs_load_textdomain() {
+        load_plugin_textdomain( 'ticketmachine', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+    }
 	
 	// load dynamic form for calculator from template
 	function tm_initialize( $atts ) {
-
-        load_plugin_textdomain('ticketmachine', false, "/ticketmachine/languages");
 
 		include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
