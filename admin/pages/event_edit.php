@@ -98,7 +98,7 @@
                                 <div class='image-preview-wrapper'>
                                     <img id='image-preview' src='<?php echo $event->event_img_url; ?>' width='100' height='100' style='max-height: 500px; width: 100%;'>
                                 </div>
-                                <input id="upload_image_button" type="button" class="button" style="display:block;width:100%;" value="<?php _e( 'Bild festlegen' ); ?>" />
+                                <input id="set-post-thumbnail" type="button" class="button thickbox" style="display:block;width:100%;" value="<?php _e( 'Bild festlegen' ); ?>" />
                                 <input type='hidden' name='event_img_url' id='image_attachment_id' value='<?php echo $event->event_img_url; ?>'>
                             </div>
                         </div>
@@ -238,7 +238,7 @@
         var file_frame;
         var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
         var set_to_post_id = <?php echo $my_saved_attachment_post_id; ?>; // Set this
-        jQuery('#upload_image_button').on('click', function( event ){
+        jQuery('#set-post-thumbnail').on('click', function( event ){
             event.preventDefault();
             // If the media frame already exists, reopen it.
             if ( file_frame ) {
