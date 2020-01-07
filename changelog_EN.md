@@ -17,7 +17,7 @@ All notable changes to this project will be documented in this file.
 
 ## [0.9.2] - 2019-12-12
 +   Searching for events is now a Fulltext search
-+   Open-Graph included on event-detail page
++   Open-Graph metadata included on event-detail page
 +   Social Media sharing can now be displayed the Event-Detail page
 +   Share Event to Facebook integrated
 +   Share Event to Twitter integrated
