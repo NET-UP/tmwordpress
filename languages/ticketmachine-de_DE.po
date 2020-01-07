@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-07 16:48+0100\n"
-"PO-Revision-Date: 2020-01-07 16:50+0100\n"
+"POT-Creation-Date: 2020-01-07 17:01+0100\n"
+"PO-Revision-Date: 2020-01-07 17:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -317,6 +317,14 @@ msgstr "Eintritt"
 #: partials/_event_page_details.php:20
 msgid "free"
 msgstr "kostenlos"
+
+#: partials/_event_page_google_map.php:7
+msgid "Disallow Google Maps"
+msgstr "Google Maps nicht erlauben"
+
+#: partials/_event_page_google_map.php:9
+msgid "Allow Google Maps"
+msgstr "Google Maps erlauben"
 
 #: partials/_event_page_information.php:31
 msgid "Read More"
