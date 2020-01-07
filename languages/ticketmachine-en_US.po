@@ -1,0 +1,354 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-01-07 16:31+0100\n"
+"PO-Revision-Date: 2020-01-07 16:33+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .git\n"
+"X-Poedit-SearchPathExcluded-1: webfonts\n"
+"X-Poedit-SearchPathExcluded-2: languages\n"
+"X-Poedit-SearchPathExcluded-3: assets\n"
+
+#: admin/menu.php:21 admin/menu.php:22
+msgid "Install"
+msgstr "Install"
+
+#: admin/menu.php:32 admin/menu.php:33 admin/pages/events.php:451
+msgid "Events"
+msgstr "Events"
+
+#: admin/menu.php:43 admin/menu.php:44 admin/pages/settings.php:24
+msgid "Settings"
+msgstr "Settings"
+
+#: admin/pages/actions/event_copy.php:20
+#: admin/pages/actions/event_delete.php:21
+#: admin/pages/actions/event_save.php:48
+#: admin/pages/actions/event_toggle.php:26 admin/pages/settings_api.php:23
+#: admin/pages/settings_calendar.php:26 admin/pages/settings_design.php:42
+#: admin/pages/settings_detail.php:30 admin/pages/settings_list.php:26
+msgid "Something went wrong"
+msgstr "Something went wrong"
+
+#: admin/pages/actions/event_copy.php:24
+msgid "Event successfully copied"
+msgstr "Event successfully copied"
+
+#: admin/pages/actions/event_delete.php:25
+msgid "Event successfully deleted"
+msgstr "Event successfully deleted"
+
+#: admin/pages/actions/event_save.php:52
+msgid "Gespeichert"
+msgstr "Gespeichert"
+
+#: admin/pages/actions/event_toggle.php:30 admin/pages/settings_api.php:17
+#: admin/pages/settings_calendar.php:20 admin/pages/settings_design.php:36
+#: admin/pages/settings_detail.php:24 admin/pages/settings_list.php:20
+msgid "Saved"
+msgstr "Saved"
+
+#: admin/pages/categories.php:119 admin/pages/event_edit.php:76
+#: admin/pages/events.php:138
+msgid "Draft"
+msgstr "Draft"
+
+#: admin/pages/categories.php:128 admin/pages/events.php:147
+msgid "Edit"
+msgstr "Edit"
+
+#: admin/pages/categories.php:407
+msgid "Categories"
+msgstr "Categories"
+
+#: admin/pages/event_edit.php:23
+msgid "Edit event"
+msgstr "Edit event"
+
+#: admin/pages/event_edit.php:25
+msgid "Create event"
+msgstr "Create event"
+
+#: admin/pages/event_edit.php:44
+msgid "Event Name hier eingeben"
+msgstr "Event Name hier eingeben"
+
+#: admin/pages/event_edit.php:45
+msgid "Event Name"
+msgstr "Event Name"
+
+#: admin/pages/event_edit.php:53
+msgid "Event Description"
+msgstr "Event Description"
+
+#: admin/pages/event_edit.php:66
+msgid "Publish"
+msgstr "Publish"
+
+#: admin/pages/event_edit.php:73
+msgid "Status"
+msgstr "Status"
+
+#: admin/pages/event_edit.php:75
+msgid "Published"
+msgstr "Published"
+
+#: admin/pages/event_edit.php:80
+msgid "Hint Text"
+msgstr "Hint Text"
+
+#: admin/pages/event_edit.php:88
+msgid "Update"
+msgstr "Update"
+
+#: admin/pages/event_edit.php:97
+msgid "Event Image"
+msgstr "Event Image"
+
+#: admin/pages/event_edit.php:109 partials/_tag_header.php:9
+msgid "Tags"
+msgstr "Tags"
+
+#: admin/pages/event_edit.php:115
+msgid "Create new tag"
+msgstr "Create new tag"
+
+#: admin/pages/event_edit.php:120
+msgid "Seperate tags with comma"
+msgstr "Seperate tags with comma"
+
+#: admin/pages/event_edit.php:131
+msgid "Location"
+msgstr "Location"
+
+#: admin/pages/event_edit.php:136 partials/_event_list_item.php:24
+#: partials/_event_page_details.php:23 partials/_event_page_information.php:22
+msgid "Event Location"
+msgstr "Event Location"
+
+#: admin/pages/event_edit.php:142
+msgid "Street"
+msgstr "Street"
+
+#: admin/pages/event_edit.php:146
+msgid "House No."
+msgstr "House No."
+
+#: admin/pages/event_edit.php:152
+msgid "Zipcode"
+msgstr "Zipcode"
+
+#: admin/pages/event_edit.php:156
+msgid "City"
+msgstr "City"
+
+#: admin/pages/event_edit.php:162
+msgid "Country"
+msgstr "Country"
+
+#: admin/pages/event_edit.php:172
+msgid "Dates & Times"
+msgstr "Dates & Times"
+
+#: admin/pages/event_edit.php:176
+msgid "Entry Time"
+msgstr "Entry Time"
+
+#: admin/pages/event_edit.php:187
+msgid "Event begins at"
+msgstr "Event begins at"
+
+#: admin/pages/event_edit.php:198
+msgid "Event ends at"
+msgstr "Event ends at"
+
+#: admin/pages/events.php:149
+msgid "Copy"
+msgstr "Copy"
+
+#: admin/pages/settings.php:28
+msgid "Design"
+msgstr "Design"
+
+#: admin/pages/settings.php:31
+msgid "List"
+msgstr "List"
+
+#: admin/pages/settings.php:34
+msgid "Calendar"
+msgstr "Calendar"
+
+#: admin/pages/settings.php:37 partials/_event_page_details.php:7
+msgid "Details"
+msgstr "Details"
+
+#: admin/pages/settings_api.php:34
+msgid "API Client ID"
+msgstr "API Client ID"
+
+#: admin/pages/settings_api.php:38
+msgid "API Client Secret"
+msgstr "API Client Secret"
+
+#: admin/pages/settings_api.php:42
+msgid "Organizer"
+msgstr "Organizer"
+
+#: admin/pages/settings_calendar.php:37
+msgid "Activate calendar?"
+msgstr "Activate calendar?"
+
+#: admin/pages/settings_design.php:55
+msgid "Primary Button"
+msgstr "Primary Button"
+
+#: admin/pages/settings_design.php:59 admin/pages/settings_design.php:85
+msgid "Background color"
+msgstr "Background color"
+
+#: admin/pages/settings_design.php:61 admin/pages/settings_design.php:67
+#: admin/pages/settings_design.php:73 admin/pages/settings_design.php:87
+#: admin/pages/settings_design.php:93 admin/pages/settings_design.php:99
+#: admin/pages/settings_design.php:113
+msgid "On hover"
+msgstr "On hover"
+
+#: admin/pages/settings_design.php:65 admin/pages/settings_design.php:91
+#: admin/pages/settings_design.php:111 admin/pages/settings_design.php:125
+msgid "Text color"
+msgstr "Text color"
+
+#: admin/pages/settings_design.php:71 admin/pages/settings_design.php:97
+msgid "Border color"
+msgstr "Border color"
+
+#: admin/pages/settings_design.php:81
+msgid "Secondary Button"
+msgstr "Secondary Button"
+
+#: admin/pages/settings_design.php:107
+msgid "Links"
+msgstr "Links"
+
+#: admin/pages/settings_design.php:121
+msgid "Date"
+msgstr "Date"
+
+#: admin/pages/settings_detail.php:57
+msgid "Activate Social Media sharing?"
+msgstr "Activate Social Media sharing?"
+
+#: admin/pages/settings_detail.php:61
+msgid "iCal"
+msgstr "iCal"
+
+#: admin/pages/settings_detail.php:65
+msgid "Google Calendar"
+msgstr "Google Calendar"
+
+#: admin/pages/settings_detail.php:69
+msgid "Facebook"
+msgstr "Facebook"
+
+#: admin/pages/settings_detail.php:73
+msgid "Twitter"
+msgstr "Twitter"
+
+#: admin/pages/settings_detail.php:77
+msgid "Email"
+msgstr "Email"
+
+#: admin/pages/settings_detail.php:81
+msgid "Messenger"
+msgstr "Messenger"
+
+#: admin/pages/settings_detail.php:85
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: admin/pages/settings_detail.php:94
+msgid "Activate Google Maps?"
+msgstr "Activate Google Maps?"
+
+#: admin/pages/settings_list.php:37
+msgid "Activate List?"
+msgstr "Activate List?"
+
+#: pages/event.php:35 pages/events.php:74
+msgid "No events could be found"
+msgstr "No events could be found"
+
+#: pages/events.php:93
+msgid "List & Calendar are deactivated"
+msgstr "List & Calendar are deactivated"
+
+#: partials/_event_list_item.php:28
+msgid "To ticket selection for "
+msgstr "To ticket selection for "
+
+#: partials/_event_list_item.php:28
+msgid "To ticket selection"
+msgstr "To ticket selection"
+
+#: partials/_event_list_item.php:29
+msgid "More"
+msgstr "More"
+
+#: partials/_event_page_details.php:9
+msgid "Start"
+msgstr "Start"
+
+#: partials/_event_page_details.php:14
+msgid "End"
+msgstr "End"
+
+#: partials/_event_page_details.php:19
+msgid "Entry"
+msgstr "Entry"
+
+#: partials/_event_page_details.php:20
+msgid "free"
+msgstr "free"
+
+#: partials/_event_page_information.php:31
+msgid "Read More"
+msgstr "Read More"
+
+#: partials/_search_header.php:25
+msgid "Search for events"
+msgstr "Search for events"
+
+#: partials/_search_header.php:28
+msgid "Submit search"
+msgstr "Submit search"
+
+#: partials/_search_header.php:35
+msgid "To previous month"
+msgstr "To previous month"
+
+#: partials/_search_header.php:37
+msgid "To next month"
+msgstr "To next month"
+
+#: partials/_search_header.php:51
+msgid "Show events as list"
+msgstr "Show events as list"
+
+#: partials/_search_header.php:61
+msgid "Show events in calendar"
+msgstr "Show events in calendar"
+
+#: widgets/event_list.php:38
+msgid "Show all events"
+msgstr "Show all events"
