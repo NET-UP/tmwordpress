@@ -1,7 +1,7 @@
 # Change Log (English)
 All notable changes to this project will be documented in this file.
 
-## [0.9.4] - 2019-12-19
+## UNRELEASED [0.9.4] - 2020-01-09
 -   Fixed Event-Image upload bug in Wordpress 5.3.x
 
 ## [0.9.3] - 2019-12-19
