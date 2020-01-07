@@ -2,6 +2,8 @@
 Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumentiert.
 
 ## UNVERÖFFENTLICHT [0.9.4] - 2020-01-09
++   Plugin ins Englische übersetzt
++   Plugin ins Deutsche übersetzt
 -   Fehler beim Hochladen von Verantaltungsbildern in Wordpress 5.3.x behoben
 
 ## [0.9.3] - 2019-12-19
