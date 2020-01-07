@@ -252,13 +252,13 @@
                 //wp.media.model.settings.post.id = set_to_post_id;
             }
             // Create the media frame.
-            file_frame = wp.media.frames.file_frame = wp.media({
+            /*file_frame = wp.media.frames.file_frame = wp.media({
                 title: 'Select a image to upload',
                 button: {
                     text: 'Use this image',
                 },
                 multiple: false	// Set to true to allow multiple files to be selected
-            });
+            }); */
             // When an image is selected, run a callback.
             file_frame.on( 'select', function() {
                 // We set multiple to false so only get one image from the uploader
