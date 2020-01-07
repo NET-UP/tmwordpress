@@ -41,7 +41,7 @@
                 <div id="post-body-content" style="position: relative;">
                     <div id="titlediv">
                         <div id="titlewrap">
-                            <label class="screen-reader-text" id="post-name-prompt-text" for="ev_name"><?php echo __('Event Name hier eingeben', 'ticketmachine') ?></label>
+                            <label class="screen-reader-text" id="post-name-prompt-text" for="ev_name"><?php echo __('Enter the event name', 'ticketmachine') ?></label>
                             <input type="text" placeholder="<?php echo __('Event Name', 'ticketmachine') ?>" name="ev_name" size="30" id="title" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                                                 value="<?php foreach($event->tags as $tag) { echo $tag.","; }?>" 
                                                 name="tags" data-role="tagsinput" >
                                         </div>
-                                        <p class="howto" id="new-tag-post_tag-desc"><?php echo __('Seperate tags with comma', 'ticketmachine') ?></p>
+                                        <p class="howto" id="new-tag-post_tag-desc"><?php echo __('Seperate tags with comma', 'ticketmachine') ?>.</p>
                                     </div>
                                 </div>
                             </div>

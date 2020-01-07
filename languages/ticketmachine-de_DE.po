@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-07 16:37+0100\n"
-"PO-Revision-Date: 2020-01-07 16:37+0100\n"
+"POT-Creation-Date: 2020-01-07 16:39+0100\n"
+"PO-Revision-Date: 2020-01-07 16:41+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -22,15 +22,15 @@ msgstr ""
 
 #: admin/menu.php:21 admin/menu.php:22
 msgid "Install"
-msgstr "Install"
+msgstr "Installation"
 
 #: admin/menu.php:32 admin/menu.php:33 admin/pages/events.php:451
 msgid "Events"
-msgstr "Events"
+msgstr "Veranstaltungen"
 
 #: admin/menu.php:43 admin/menu.php:44 admin/pages/settings.php:24
 msgid "Settings"
-msgstr "Settings"
+msgstr "Einstellungen"
 
 #: admin/pages/actions/event_copy.php:20
 #: admin/pages/actions/event_delete.php:21
@@ -39,59 +39,59 @@ msgstr "Settings"
 #: admin/pages/settings_calendar.php:26 admin/pages/settings_design.php:42
 #: admin/pages/settings_detail.php:30 admin/pages/settings_list.php:26
 msgid "Something went wrong"
-msgstr "Something went wrong"
+msgstr "Etwas ist schiefgelaufen"
 
 #: admin/pages/actions/event_copy.php:24
 msgid "Event successfully copied"
-msgstr "Event successfully copied"
+msgstr "Event erfolgreich kopiert"
 
 #: admin/pages/actions/event_delete.php:25
 msgid "Event successfully deleted"
-msgstr "Event successfully deleted"
+msgstr "Event erfolgreich gelöscht"
 
 #: admin/pages/actions/event_save.php:52
 #: admin/pages/actions/event_toggle.php:30 admin/pages/settings_api.php:17
 #: admin/pages/settings_calendar.php:20 admin/pages/settings_design.php:36
 #: admin/pages/settings_detail.php:24 admin/pages/settings_list.php:20
 msgid "Saved"
-msgstr "Saved"
+msgstr "Gespeichert"
 
 #: admin/pages/categories.php:119 admin/pages/event_edit.php:76
 #: admin/pages/events.php:138
 msgid "Draft"
-msgstr "Draft"
+msgstr "Entwurf"
 
 #: admin/pages/categories.php:128 admin/pages/events.php:147
 msgid "Edit"
-msgstr "Edit"
+msgstr "Bearbeiten"
 
 #: admin/pages/categories.php:407
 msgid "Categories"
-msgstr "Categories"
+msgstr "Kategorien"
 
 #: admin/pages/event_edit.php:23
 msgid "Edit event"
-msgstr "Edit event"
+msgstr "Event bearbeiten"
 
 #: admin/pages/event_edit.php:25
 msgid "Create event"
-msgstr "Create event"
+msgstr "Event erstellen"
 
 #: admin/pages/event_edit.php:44
-msgid "Event Name hier eingeben"
-msgstr "Event Name hier eingeben"
+msgid "Enter the event name"
+msgstr "Veranstaltungsname eingeben"
 
 #: admin/pages/event_edit.php:45
 msgid "Event Name"
-msgstr "Event Name"
+msgstr "Name der Veranstaltung"
 
 #: admin/pages/event_edit.php:53
 msgid "Event Description"
-msgstr "Event Description"
+msgstr "Beschreibung der Veranstaltung"
 
 #: admin/pages/event_edit.php:66
 msgid "Publish"
-msgstr "Publish"
+msgstr "Veröffentlichen"
 
 #: admin/pages/event_edit.php:73
 msgid "Status"
@@ -99,31 +99,31 @@ msgstr "Status"
 
 #: admin/pages/event_edit.php:75
 msgid "Published"
-msgstr "Published"
+msgstr "Veröffentlicht"
 
 #: admin/pages/event_edit.php:80
 msgid "Hint Text"
-msgstr "Hint Text"
+msgstr "Hinweistext"
 
 #: admin/pages/event_edit.php:88
 msgid "Update"
-msgstr "Update"
+msgstr "Aktualisieren"
 
 #: admin/pages/event_edit.php:97
 msgid "Event Image"
-msgstr "Event Image"
+msgstr "Veranstaltungsbild"
 
 #: admin/pages/event_edit.php:109 partials/_tag_header.php:9
 msgid "Tags"
-msgstr "Tags"
+msgstr "Schlagwörter"
 
 #: admin/pages/event_edit.php:115
 msgid "Create new tag"
-msgstr "Create new tag"
+msgstr "Neues Schlagwort erstellen"
 
 #: admin/pages/event_edit.php:120
 msgid "Seperate tags with comma"
-msgstr "Seperate tags with comma"
+msgstr "Schlagwörter durch Kommas trennen"
 
 #: admin/pages/event_edit.php:131
 msgid "Location"
@@ -349,6 +349,9 @@ msgstr "Show events in calendar"
 #: widgets/event_list.php:38
 msgid "Show all events"
 msgstr "Show all events"
+
+#~ msgid "Event Name hier eingeben"
+#~ msgstr "Event Name hier eingeben"
 
 #~ msgid "Gespeichert"
 #~ msgstr "Gespeichert"

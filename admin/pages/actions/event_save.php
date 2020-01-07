@@ -49,6 +49,6 @@
     </div>
 <?php }else{ ?>
     <div class="notice notice-success is-dismissable">
-        <p><?php echo __('Gespeichert', 'ticketmachine'); ?>!</p>
+        <p><?php echo __('Saved', 'ticketmachine'); ?>!</p>
     </div>
 <?php } ?>
