@@ -24,22 +24,22 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 +   Event per Email teilen integriert
 +   Event teilen über Facebook Messenger integriert
 +   Event teilen über WhatsApp integriert
-+   Add Event-Tag(s) to Event in Wordpress backend integrated
-+   Minor Design improvements to Event-List and Event-Detail pages
++   Veransltatungs-Schlagwörter im Wordpress Backend hinzugefügt
++   Kleinere Designverbesserungen an den Veranstaltungslisten- und Veranstaltungsdetail Seiten
 
 ## [0.9.1] - 2019-12-09
-+   Save Event as iCal (For Outlook etc.) integrated
-+   Save Event to Google Calendar integrated
-+   Google Maps integrated on Event-Detail page
-+   Google Maps can be activated/deactivated in the Wordpress backend
-+   Additional event information is now shown on the Event-Detail page
-+   Edit event via Wordpress backend integrated
-+   Upload Event-Image via Wordpress backend added
++   Veranstaltungen speichern als iCal (für Outlook usw.) integriert
++   Veranstaltungen in Google-Kalender speichern integriert
++   Google Maps auf der Veranstaltungsdetail-Seite integriert
++   Google Maps kann im Wordpress-Backend aktiviert / deaktiviert werden
++   Zusätzliche Veranstaltungsinformationen werden jetzt auf der Veranstaltungsdetail-Seite angezeigt
++   Veranstaltung über Wordpress Backend bearbeiten Seite hinzugefügt
++   Veranstaltungsbild über Wordpress-Backend hochladen Funktionalität hinzugefügt
 
 ## [0.9.0] - 2019-12-02
-+   Design settings added to Wordpress backend
-+   Activate/deactivate Event-Calendar added to Wordpress backend
-+   Activate/deactivate Event-List added to Wordpress backend
-+   Event-List page can now be added via Shortcode
-+   Event-Calendar page can now be added to Event-List page
-+   Event-Detail page created with basic information of event
++   Designeinstellungen zum Wordpress-Backend hinzugefügt
++   Aktivieren / Deaktivieren des Veranstaltungskalenders im Wordpress-Backend
++   Aktivieren / Deaktivieren der Veranstaltungsliste im Wordpress-Backend
++   Veranstaltungsliste-Seite kann jetzt per Shortcode hinzugefügt werden
++   Veranstaltungsalender-Seite kann jetzt zur Veranstaltungsliste-Seite hinzugefügt werden
++   Veranstaltungsdetail-Seite mit Basisinformationen zum Event eingefügt
