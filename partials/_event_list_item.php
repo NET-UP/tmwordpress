@@ -25,7 +25,7 @@
 					  $tm_output .= '</p>';
 					$tm_output .= '</div>';
 					$tm_output .= '<div class="col-sm-4 col-md-5">';
-					  $tm_output .= '<a aria-label="' . __("To ticket selection for ", 'ticketmachine') . ' ' . $event->ev_name  . '" href="/event/?id=' . $event->id . '" class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . __("To ticket selection", 'ticketmachine') . '">';
+					  $tm_output .= '<a aria-label="' . __("To ticket selection for", 'ticketmachine') . ' ' . $event->ev_name  . '" href="/event/?id=' . $event->id . '" class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . __("To ticket selection", 'ticketmachine') . '">';
 						$tm_output .= __("More") . ' &nbsp;<i class="fas fa-angle-right"></i>';
 					  $tm_output .= '</a>';
 					$tm_output .= '</div>';

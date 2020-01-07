@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-07 16:39+0100\n"
-"PO-Revision-Date: 2020-01-07 16:41+0100\n"
+"POT-Creation-Date: 2020-01-07 16:48+0100\n"
+"PO-Revision-Date: 2020-01-07 16:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: en_US\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -127,52 +127,52 @@ msgstr "Schlagwörter durch Kommas trennen"
 
 #: admin/pages/event_edit.php:131
 msgid "Location"
-msgstr "Location"
+msgstr "Standort"
 
 #: admin/pages/event_edit.php:136 partials/_event_list_item.php:24
 #: partials/_event_page_details.php:23 partials/_event_page_information.php:22
 msgid "Event Location"
-msgstr "Event Location"
+msgstr "Veranstaltungsort"
 
 #: admin/pages/event_edit.php:142
 msgid "Street"
-msgstr "Street"
+msgstr "Straße"
 
 #: admin/pages/event_edit.php:146
 msgid "House No."
-msgstr "House No."
+msgstr "House Nr."
 
 #: admin/pages/event_edit.php:152
 msgid "Zipcode"
-msgstr "Zipcode"
+msgstr "PLZ"
 
 #: admin/pages/event_edit.php:156
 msgid "City"
-msgstr "City"
+msgstr "Ort"
 
 #: admin/pages/event_edit.php:162
 msgid "Country"
-msgstr "Country"
+msgstr "Land"
 
 #: admin/pages/event_edit.php:172
 msgid "Dates & Times"
-msgstr "Dates & Times"
+msgstr "Termine"
 
 #: admin/pages/event_edit.php:176
 msgid "Entry Time"
-msgstr "Entry Time"
+msgstr "Einlasszeit"
 
 #: admin/pages/event_edit.php:187
 msgid "Event begins at"
-msgstr "Event begins at"
+msgstr "Veranstaltungsbeginn"
 
 #: admin/pages/event_edit.php:198
 msgid "Event ends at"
-msgstr "Event ends at"
+msgstr "Veranstaltungsende"
 
 #: admin/pages/events.php:149
 msgid "Copy"
-msgstr "Copy"
+msgstr "Kopieren"
 
 #: admin/pages/settings.php:28
 msgid "Design"
@@ -180,11 +180,11 @@ msgstr "Design"
 
 #: admin/pages/settings.php:31
 msgid "List"
-msgstr "List"
+msgstr "Liste"
 
 #: admin/pages/settings.php:34
 msgid "Calendar"
-msgstr "Calendar"
+msgstr "Kalender"
 
 #: admin/pages/settings.php:37 partials/_event_page_details.php:7
 msgid "Details"
@@ -204,35 +204,35 @@ msgstr "Organizer"
 
 #: admin/pages/settings_calendar.php:37
 msgid "Activate calendar?"
-msgstr "Activate calendar?"
+msgstr "Kalender aktivieren?"
 
 #: admin/pages/settings_design.php:55
 msgid "Primary Button"
-msgstr "Primary Button"
+msgstr "Primär-Button"
 
 #: admin/pages/settings_design.php:59 admin/pages/settings_design.php:85
 msgid "Background color"
-msgstr "Background color"
+msgstr "Hintergrundfarbe"
 
 #: admin/pages/settings_design.php:61 admin/pages/settings_design.php:67
 #: admin/pages/settings_design.php:73 admin/pages/settings_design.php:87
 #: admin/pages/settings_design.php:93 admin/pages/settings_design.php:99
 #: admin/pages/settings_design.php:113
 msgid "On hover"
-msgstr "On hover"
+msgstr "bei Mouseover"
 
 #: admin/pages/settings_design.php:65 admin/pages/settings_design.php:91
 #: admin/pages/settings_design.php:111 admin/pages/settings_design.php:125
 msgid "Text color"
-msgstr "Text color"
+msgstr "Textfarbe"
 
 #: admin/pages/settings_design.php:71 admin/pages/settings_design.php:97
 msgid "Border color"
-msgstr "Border color"
+msgstr "Randfarbe"
 
 #: admin/pages/settings_design.php:81
 msgid "Secondary Button"
-msgstr "Secondary Button"
+msgstr "Secondär-Button"
 
 #: admin/pages/settings_design.php:107
 msgid "Links"
@@ -240,11 +240,11 @@ msgstr "Links"
 
 #: admin/pages/settings_design.php:121
 msgid "Date"
-msgstr "Date"
+msgstr "Datum"
 
 #: admin/pages/settings_detail.php:57
 msgid "Activate Social Media sharing?"
-msgstr "Activate Social Media sharing?"
+msgstr "Social Media teilen aktivieren?"
 
 #: admin/pages/settings_detail.php:61
 msgid "iCal"
@@ -252,7 +252,7 @@ msgstr "iCal"
 
 #: admin/pages/settings_detail.php:65
 msgid "Google Calendar"
-msgstr "Google Calendar"
+msgstr "Google Kalender"
 
 #: admin/pages/settings_detail.php:69
 msgid "Facebook"
@@ -264,7 +264,7 @@ msgstr "Twitter"
 
 #: admin/pages/settings_detail.php:77
 msgid "Email"
-msgstr "Email"
+msgstr "E-Mail"
 
 #: admin/pages/settings_detail.php:81
 msgid "Messenger"
@@ -276,79 +276,79 @@ msgstr "WhatsApp"
 
 #: admin/pages/settings_detail.php:94
 msgid "Activate Google Maps?"
-msgstr "Activate Google Maps?"
+msgstr "Google Maps aktivieren?"
 
 #: admin/pages/settings_list.php:37
 msgid "Activate List?"
-msgstr "Activate List?"
+msgstr "Liste aktivieren?"
 
 #: pages/event.php:35 pages/events.php:74
 msgid "No events could be found"
-msgstr "No events could be found"
+msgstr "Es konnte keine Veranstaltung gefunden werden"
 
 #: pages/events.php:93
 msgid "List & Calendar are deactivated"
-msgstr "List & Calendar are deactivated"
+msgstr "Liste & Kalender sind deaktiviert"
 
 #: partials/_event_list_item.php:28
-msgid "To ticket selection for "
-msgstr "To ticket selection for "
+msgid "To ticket selection for"
+msgstr "Zur Ticketauswahlseite für"
 
 #: partials/_event_list_item.php:28
 msgid "To ticket selection"
-msgstr "To ticket selection"
+msgstr "Zur Ticketauswahlseite"
 
 #: partials/_event_list_item.php:29
 msgid "More"
-msgstr "More"
+msgstr "Weiter"
 
 #: partials/_event_page_details.php:9
 msgid "Start"
-msgstr "Start"
+msgstr "Beginn"
 
 #: partials/_event_page_details.php:14
 msgid "End"
-msgstr "End"
+msgstr "Ende"
 
 #: partials/_event_page_details.php:19
 msgid "Entry"
-msgstr "Entry"
+msgstr "Eintritt"
 
 #: partials/_event_page_details.php:20
 msgid "free"
-msgstr "free"
+msgstr "kostenlos"
 
 #: partials/_event_page_information.php:31
 msgid "Read More"
-msgstr "Read More"
+msgstr "Weiterlesen"
 
 #: partials/_search_header.php:25
 msgid "Search for events"
-msgstr "Search for events"
+msgstr "Suche nach Veranstaltungen"
 
 #: partials/_search_header.php:28
 msgid "Submit search"
-msgstr "Submit search"
+msgstr "Suche absenden"
 
 #: partials/_search_header.php:35
 msgid "To previous month"
-msgstr "To previous month"
+msgstr "Zum vorherigen Monat"
 
 #: partials/_search_header.php:37
 msgid "To next month"
-msgstr "To next month"
+msgstr "Zum nächsten Monat"
 
 #: partials/_search_header.php:51
 msgid "Show events as list"
-msgstr "Show events as list"
+msgstr "Events als Liste anzeigen"
 
 #: partials/_search_header.php:61
 msgid "Show events in calendar"
-msgstr "Show events in calendar"
+msgstr "Events im Kalender anzeigen"
 
 #: widgets/event_list.php:38
 msgid "Show all events"
-msgstr "Show all events"
+msgstr "Alle Veranstaltungen anzeigen"
 
 #~ msgid "Event Name hier eingeben"
 #~ msgstr "Event Name hier eingeben"

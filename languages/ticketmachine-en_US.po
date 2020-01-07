@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-07 16:37+0100\n"
-"PO-Revision-Date: 2020-01-07 16:37+0100\n"
+"POT-Creation-Date: 2020-01-07 16:48+0100\n"
+"PO-Revision-Date: 2020-01-07 16:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -78,8 +78,8 @@ msgid "Create event"
 msgstr "Create event"
 
 #: admin/pages/event_edit.php:44
-msgid "Event Name hier eingeben"
-msgstr "Event Name hier eingeben"
+msgid "Enter the event name"
+msgstr "Enter the event name"
 
 #: admin/pages/event_edit.php:45
 msgid "Event Name"
@@ -291,8 +291,8 @@ msgid "List & Calendar are deactivated"
 msgstr "List & Calendar are deactivated"
 
 #: partials/_event_list_item.php:28
-msgid "To ticket selection for "
-msgstr "To ticket selection for "
+msgid "To ticket selection for"
+msgstr "To ticket selection for"
 
 #: partials/_event_list_item.php:28
 msgid "To ticket selection"
@@ -349,6 +349,9 @@ msgstr "Show events in calendar"
 #: widgets/event_list.php:38
 msgid "Show all events"
 msgstr "Show all events"
+
+#~ msgid "Event Name hier eingeben"
+#~ msgstr "Event Name hier eingeben"
 
 #~ msgid "Gespeichert"
 #~ msgstr "Gespeichert"
