@@ -12,10 +12,6 @@
 	*/
 
     add_action( 'wp_enqueue_scripts', 'add_core_files' );
-
-    echo get_locale();
-
-    echo " - " . dirname( plugin_basename( __FILE__ ) ) . '/languages';
     
     add_action( 'init', 'wpdocs_load_textdomain' );
     function wpdocs_load_textdomain() {
