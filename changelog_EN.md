@@ -1,7 +1,7 @@
 # Change Log (English)
 All notable changes to this project will be documented in this file.
 
-## UNRELEASED [0.9.4] - 2020-01-09
+## [0.9.4] - 2020-01-09
 +   Plugin translated into English
 +   Plugin translated into German
 -   Fixed Event-Image upload bug in Wordpress 5.3.x
