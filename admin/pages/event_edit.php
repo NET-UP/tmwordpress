@@ -219,7 +219,8 @@
             format: 'DD.MM.YYYY'
         });
         jQuery('input.time').datetimepicker({
-            format: 'HH:mm'   
+            format: 'HH:mm',
+            stepping: 15
         });
         
         $('.bootstrap-tagsinput').on('keypress', function(e){
