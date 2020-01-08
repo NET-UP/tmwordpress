@@ -10,7 +10,7 @@
 	$api = new stdClass();
 	$api->auth = new stdClass();
 
-	switch ($globals->grouping) {
+	switch ($globals->event_grouping) {
 		case 'None':
 			$globals->group_by = "";
 			$globals->format_date = "";
