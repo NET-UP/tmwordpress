@@ -5,7 +5,8 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 +   Plugin ins Englische übersetzt
 +   Plugin ins Deutsche übersetzt
 +   Steuerbare Gruppierung für Veranstaltungen in Veranstaltungslisten implementiert (Nach Monat oder Jahr)
-+   Die Datums- / Uhrzeitauswahl wurde überarbeitet und die Funktionalität verbessert
++   Die Datums- / Uhrzeitauswahl (DateTimePicker) wurde überarbeitet und die Funktionalität verbessert
++   Datums- / Uhrzeitauswahl (DateTimePicker) wurde in alle Sprachen übersetzt
 -   Fehler beim Hochladen von Verantaltungsbildern in Wordpress 5.3.x behoben
 
 ## [0.9.3] - 2019-12-19
