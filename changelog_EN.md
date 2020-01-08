@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [0.9.4] - 2020-01-08
 +   Plugin translated into English
 +   Plugin translated into German
-+   Added configurable grouping for events in the event list (None, Month, Year)
++   Added configurable grouping for events in the event list (By Month or Year)
 -   Fixed Event-Image upload bug in Wordpress 5.3.x
 
 ## [0.9.3] - 2019-12-19

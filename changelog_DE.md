@@ -4,7 +4,7 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 ## [0.9.4] - 2020-01-07
 +   Plugin ins Englische übersetzt
 +   Plugin ins Deutsche übersetzt
-+   Steuerbare Gruppierung für Veranstaltungen in Veranstaltungslisten implementiert (Keine, Monat, Jahr)
++   Steuerbare Gruppierung für Veranstaltungen in Veranstaltungslisten implementiert (Nach Monat oder Jahr)
 -   Fehler beim Hochladen von Verantaltungsbildern in Wordpress 5.3.x behoben
 
 ## [0.9.3] - 2019-12-19
