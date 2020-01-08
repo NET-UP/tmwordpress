@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 +   Plugin translated into English
 +   Plugin translated into German
 +   Added configurable grouping for events in the event list (By Month or Year)
++   Date/Time pickers redesigned and improved functionality
 -   Fixed Event-Image upload bug in Wordpress 5.3.x
 
 ## [0.9.3] - 2019-12-19
