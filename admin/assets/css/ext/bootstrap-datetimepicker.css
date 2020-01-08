@@ -366,4 +366,29 @@
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+  }    
+  
+  .tm-admin-page .glyphicon {
+    font-family: "Font Awesome 5 Free";
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
   }
+
+  .tm-admin-page .glyphicon-chevron-right:before {
+    content: "\e080";
+  }
+  .tm-admin-page .glyphicon-chevron-left:before {
+    content: "\e080";
+  }
+  .tm-admin-page .glyphicon-chevron-up:before {
+    content: "\e080";
+  }
+  .tm-admin-page .glyphicon-chevron-down:before {
+    content: "\e080";
+  }
+
+
