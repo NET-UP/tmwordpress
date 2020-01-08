@@ -3,9 +3,19 @@
   }
   .bootstrap-datetimepicker-widget.dropdown-menu {
     display: block;
+    position:absolute;
     margin: 2px 0;
     padding: 4px;
     width: 19em;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
   @media (min-width: 768px) {
     .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
