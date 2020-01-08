@@ -100,7 +100,7 @@
                                 <div class='image-preview-wrapper'>
                                     <img id='image-preview' src='<?php echo $event->event_img_url; ?>' width='100' height='100' style='max-height: 500px; width: 100%;'>
                                 </div>
-                                <input id="upload_image_button" type="button" class="button" style="display:block;width:100%;" value="<?php _e( 'Add Image' ); ?>" />
+                                <input id="upload_image_button" type="button" class="button" style="display:block;width:100%;" value="<?php __( 'Add Image', 'ticketmachine' ); ?>" />
                                 <input type='hidden' name='event_img_url' id='image_attachment_id' value='<?php echo $event->event_img_url; ?>'>
                             </div>
                         </div>
