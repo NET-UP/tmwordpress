@@ -11,10 +11,6 @@
 	$api->auth = new stdClass();
 
 	switch ($globals->event_grouping) {
-		case 'None':
-			$globals->group_by = "";
-			$globals->format_date = "";
-			break;
 		case 'Month':
 			$globals->group_by = "m Y";
 			$globals->format_date = "%b %Y";
@@ -24,8 +20,8 @@
 			$globals->format_date = "%Y";
 			break;
 		default:
-			$globals->group_by = "";
-			$globals->format_date = "";
+			$globals->group_by = "Y";
+			$globals->format_date = "%Y";
 			break;
 	}
 	
