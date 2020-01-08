@@ -379,16 +379,16 @@
   }
 
   .tm-admin-page .glyphicon-chevron-right:before {
-    content: "\e080";
+    content: "\f105";
   }
   .tm-admin-page .glyphicon-chevron-left:before {
-    content: "\e080";
+    content: "\f104";
   }
   .tm-admin-page .glyphicon-chevron-up:before {
-    content: "\e080";
+    content: "\f106";
   }
   .tm-admin-page .glyphicon-chevron-down:before {
-    content: "\e080";
+    content: "\f107";
   }
 
 
