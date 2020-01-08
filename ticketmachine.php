@@ -134,6 +134,7 @@
                     show_social_media_messenger bit(1) DEFAULT 1 NOT NULL,
                     show_social_media_whatsapp bit(1) DEFAULT 1 NOT NULL,
                     show_google_map bit(1) DEFAULT 1 NOT NULL,
+                    event_grouping varchar(64) DEFAULT 'Month' NOT NULL,
                 PRIMARY KEY  (id)
                 ) $charset_collate;";
 
