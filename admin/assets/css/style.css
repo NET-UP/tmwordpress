@@ -102,7 +102,6 @@
 .tm-admin-page .fullw-input {
     width: 100%;
     display: block;
-    padding: 4px 5px;
 }
 
 .tm-admin-page input[type=checkbox]:checked:before {
