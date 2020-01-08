@@ -378,17 +378,17 @@
     line-height: 1;
   }
 
-  .tm-admin-page .glyphicon-chevron-right:before {
-    content: "\f105";
-  }
   .tm-admin-page .glyphicon-chevron-left:before {
     content: "\f104";
   }
+  .tm-admin-page .glyphicon-chevron-right:before {
+    content: "\f105";
+  }
   .tm-admin-page .glyphicon-chevron-up:before {
-    content: "\f106";
+    content: "\f104";
   }
   .tm-admin-page .glyphicon-chevron-down:before {
-    content: "\f107";
+    content: "\f105";
   }
 
 
