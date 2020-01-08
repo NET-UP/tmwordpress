@@ -73,7 +73,7 @@
     width: 100%;
     display: block;
     margin-top: 10px;
-    padding:4px 5px;
+    padding: 3px 8px;
 }
 
 .tm-admin-page .tag.label {
@@ -102,6 +102,7 @@
 .tm-admin-page .fullw-input {
     width: 100%;
     display: block;
+    padding: 3px 8px;
 }
 
 .tm-admin-page input[type=checkbox]:checked:before {
