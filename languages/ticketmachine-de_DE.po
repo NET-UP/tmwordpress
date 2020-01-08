@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-07 17:01+0100\n"
-"PO-Revision-Date: 2020-01-07 17:02+0100\n"
+"POT-Creation-Date: 2020-01-08 14:07+0100\n"
+"PO-Revision-Date: 2020-01-08 14:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -37,7 +37,7 @@ msgstr "Einstellungen"
 #: admin/pages/actions/event_save.php:48
 #: admin/pages/actions/event_toggle.php:26 admin/pages/settings_api.php:23
 #: admin/pages/settings_calendar.php:26 admin/pages/settings_design.php:42
-#: admin/pages/settings_detail.php:30 admin/pages/settings_list.php:26
+#: admin/pages/settings_detail.php:30 admin/pages/settings_list.php:27
 msgid "Something went wrong"
 msgstr "Etwas ist schiefgelaufen"
 
@@ -52,7 +52,7 @@ msgstr "Event erfolgreich gelöscht"
 #: admin/pages/actions/event_save.php:52
 #: admin/pages/actions/event_toggle.php:30 admin/pages/settings_api.php:17
 #: admin/pages/settings_calendar.php:20 admin/pages/settings_design.php:36
-#: admin/pages/settings_detail.php:24 admin/pages/settings_list.php:20
+#: admin/pages/settings_detail.php:24 admin/pages/settings_list.php:21
 msgid "Saved"
 msgstr "Gespeichert"
 
@@ -278,9 +278,25 @@ msgstr "WhatsApp"
 msgid "Activate Google Maps?"
 msgstr "Google Maps aktivieren?"
 
-#: admin/pages/settings_list.php:37
+#: admin/pages/settings_list.php:38
 msgid "Activate List?"
 msgstr "Liste aktivieren?"
+
+#: admin/pages/settings_list.php:42
+msgid "Group events by"
+msgstr "Veranstaltungen gruppieren nach"
+
+#: admin/pages/settings_list.php:45
+msgid "None"
+msgstr "Keine"
+
+#: admin/pages/settings_list.php:46
+msgid "Month"
+msgstr "Monat"
+
+#: admin/pages/settings_list.php:47
+msgid "Year"
+msgstr "Jahr"
 
 #: pages/event.php:35 pages/events.php:74
 msgid "No events could be found"
