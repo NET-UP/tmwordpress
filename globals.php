@@ -9,6 +9,21 @@
 	$globals = (object)$tm_config;
 	$api = new stdClass();
 	$api->auth = new stdClass();
+
+	switch ($globals->grouping) {
+		case 'None':
+			$globals->group_by = "";
+			$globals->format_date = "";
+			break;
+		case 'Month':
+			$globals->group_by = "m Y";
+			$globals->format_date = "%b %Y";
+			break;
+		default:
+			$globals->group_by = "m Y";
+			$globals->format_date = "%b %Y";
+			break;
+	}
 	
 	$globals->map_query_url = "https://www.google.de/maps?q=";
 	$globals->lang = "de";
@@ -28,8 +43,9 @@
 		$globals->tag = htmlentities($_GET['tag']);
 	}
 	$globals->organizer = $tm_config->organizer;
-	$globals->group_by = "m Y";
-	$globals->format_date = "%b %Y";
+
+	
+
 	$globals->first_event_date = date('Y-m-d');
 	$globals->first_event_date_calendar = date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "-1 month" ) );
 
