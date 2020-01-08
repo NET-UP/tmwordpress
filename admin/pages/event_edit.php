@@ -217,11 +217,11 @@
     jQuery(document).ready(function($) {
         jQuery('input.date').datetimepicker({
             format: 'DD.MM.YYYY',
-            locale: 'de'
+            locale: '<?php echo get_locale(); ?>'
         });
         jQuery('input.time').datetimepicker({
             format: 'HH:mm',
-            locale: 'de',
+            locale: '<?php echo get_locale(); ?>',
             stepping: 15
         });
         
