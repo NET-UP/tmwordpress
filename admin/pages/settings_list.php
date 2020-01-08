@@ -35,16 +35,15 @@
 	<tbody>
 		<tr>
 			<th><label><?php echo __('Activate List?', 'ticketmachine'); ?></label></th>
-            <td><input name="show_list" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_list){ ?>checked <?php } ?>/></td>
+            <td><input name="show_list" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_list){ ?>checked<?php } ?>/></td>
 		</tr>
 		<tr>
 			<th><label><?php echo __('Group events by', 'ticketmachine'); ?></label></th>
             <td>
 				<select name="event_grouping">
-					<option><?php echo __('None', 'ticketmachine'); ?></option>
-					<option><?php echo __('Day', 'ticketmachine'); ?></option>
-					<option><?php echo __('Month', 'ticketmachine'); ?></option>
-					<option><?php echo __('Year', 'ticketmachine'); ?></option>
+					<option value="None" <?php if(isset($tm_config->event_grouping) && $tm_config->event_grouping == "None" || !isset($tm_config->event_grouping)){ ?>selected<?php } ?>><?php echo __('None', 'ticketmachine'); ?></option>
+					<option value="Month"><?php echo __('Month', 'ticketmachine'); ?></option>
+					<option value="Year"><?php echo __('Year', 'ticketmachine'); ?></option>
 				</select>
 			</td>
 		</tr>

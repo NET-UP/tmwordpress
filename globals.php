@@ -19,6 +19,10 @@
 			$globals->group_by = "m Y";
 			$globals->format_date = "%b %Y";
 			break;
+		case 'Year':
+			$globals->group_by = "Y";
+			$globals->format_date = "%Y";
+			break;
 		default:
 			$globals->group_by = "";
 			$globals->format_date = "";
