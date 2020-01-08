@@ -41,7 +41,7 @@
 			<th><label><?php echo __('Group events by', 'ticketmachine'); ?></label></th>
             <td>
 				<select name="event_grouping">
-					<option value="None" <?php if(isset($tm_config->event_grouping) && $tm_config->event_grouping == "None" || !isset($tm_config->event_grouping)){ ?>selected<?php } ?>><?php echo __('None', 'ticketmachine'); ?></option>
+					<option value="None" <?php if($tm_config->event_grouping == "None" || !isset($tm_config->event_grouping)){ ?>selected<?php } ?>><?php echo __('None', 'ticketmachine'); ?></option>
 					<option value="Month"><?php echo __('Month', 'ticketmachine'); ?></option>
 					<option value="Year"><?php echo __('Year', 'ticketmachine'); ?></option>
 				</select>
