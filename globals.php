@@ -20,8 +20,8 @@
 			$globals->format_date = "%b %Y";
 			break;
 		default:
-			$globals->group_by = "m Y";
-			$globals->format_date = "%b %Y";
+			$globals->group_by = "";
+			$globals->format_date = "";
 			break;
 	}
 	
