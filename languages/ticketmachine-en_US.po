@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-08 14:06+0100\n"
-"PO-Revision-Date: 2020-01-08 14:07+0100\n"
+"POT-Creation-Date: 2020-01-08 14:46+0100\n"
+"PO-Revision-Date: 2020-01-08 14:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -112,6 +112,10 @@ msgstr "Update"
 #: admin/pages/event_edit.php:97
 msgid "Event Image"
 msgstr "Event Image"
+
+#: admin/pages/event_edit.php:103
+msgid "Add Image"
+msgstr "Add Image"
 
 #: admin/pages/event_edit.php:109 partials/_tag_header.php:9
 msgid "Tags"
@@ -287,14 +291,10 @@ msgid "Group events by"
 msgstr "Group events by"
 
 #: admin/pages/settings_list.php:45
-msgid "None"
-msgstr "None"
-
-#: admin/pages/settings_list.php:46
 msgid "Month"
 msgstr "Month"
 
-#: admin/pages/settings_list.php:47
+#: admin/pages/settings_list.php:46
 msgid "Year"
 msgstr "Year"
 
@@ -373,6 +373,9 @@ msgstr "Show events in calendar"
 #: widgets/event_list.php:38
 msgid "Show all events"
 msgstr "Show all events"
+
+#~ msgid "None"
+#~ msgstr "None"
 
 #~ msgid "Event Name hier eingeben"
 #~ msgstr "Event Name hier eingeben"
