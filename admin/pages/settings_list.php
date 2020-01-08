@@ -8,6 +8,7 @@
 		$save_array = 
 			array(
 				"show_list" => $_POST['show_list'],
+				"event_grouping" => $_POST['event_grouping'],
 			);
 		if (!empty($tm_config)) {
 			$wpdb->update(
