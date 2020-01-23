@@ -74,10 +74,7 @@
 			$url .= "&approved[eq]=" . (int)$params->approved;
 		}
 
-		print_r($url);
-		print_r(" - ");
 		$events = (object)apiRequest($url, $post, $method, $headers);
-		print_r($events);
 		return $events;
 	}
 
@@ -163,7 +160,5 @@
 	'scope' => "system"
 	));
 	$_SESSION['access_token'] = $token['access_token'];
-
-	print_r($token);
       
 ?>
