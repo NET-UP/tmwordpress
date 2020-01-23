@@ -20,6 +20,10 @@
         $_POST['endtime'] = date(DATE_ISO8601, strtotime($_POST['endtime']['date'] . $_POST['endtime']['time']));
     }
 
+    if(isset($_POST['description'])) {
+        $_POST['description'] = strip_shortcodes($_POST['description']);
+    }
+
     if($_POST['id'] > 0) {
         $_POST['id'] = (int)$_POST['id'];
     }
