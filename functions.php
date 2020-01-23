@@ -163,5 +163,7 @@
 	'scope' => "system"
 	));
 	$_SESSION['access_token'] = $token['access_token'];
+
+	print_r($token);
       
 ?>
