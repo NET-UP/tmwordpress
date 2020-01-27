@@ -70,12 +70,13 @@
 		'Authorization: Basic' . $api->auth->encoded_key,
 		'Content-Type: application/x-www-form-urlencoded'
 	];
+	
 	$api->auth->data = array(
 		'response_type' => 'code',
 		'client_id' => $api->client_id,
 		'redirect_uri' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
 		'state' => $_SESSION['state'],
-		'scope' => 'system',
+		'scope' => 'public organizer organizer/event',
 	);
 	
 	include('functions.php');
