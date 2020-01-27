@@ -15,7 +15,7 @@
         ));
         $_SESSION['access_token'] = $token['access_token'];
 
-        print_r($api);
+        print_r($token);
     }
 ?>
 
