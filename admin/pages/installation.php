@@ -27,7 +27,6 @@
                       $authorize_url = "http://localhost:3002/oauth/authorize";
                       $authorize_url .= "?";
                       $authorize_url .= http_build_query($api->auth->data);
-                      echo '<p>Not authorized</p>';
                       echo '<p><a class="button button-primary" href="'.$authorize_url.'">Mit TicketMachine verbinden</a></p>';
                     ?>
 

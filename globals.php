@@ -77,6 +77,7 @@
 		'redirect_uri' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
 		'state' => $_SESSION['state'],
 		'scope' => 'public organizer organizer/event',
+		'trusted' => 1
 	);
 	
 	include('functions.php');
