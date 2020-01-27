@@ -20,7 +20,7 @@
 
                     <?php
                       //$authorize_url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/authorize";
-                      $authorize_url = "http://localhost:3002/ticketmachine.de/oauth/authorize";
+                      $authorize_url = "http://localhost:3002/oauth/authorize";
                       $authorize_url .= "?";
                       $authorize_url .= http_build_query($api->auth->data);
                       echo '<p>Not authorized</p>';
