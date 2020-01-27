@@ -1,3 +1,7 @@
+
+<?php
+    global $globals, $api;
+?>
 <div class="wrap tm-admin-page">
     <div class="container">
         <div class="d-flex justify-content-center">
