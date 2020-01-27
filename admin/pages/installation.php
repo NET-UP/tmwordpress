@@ -10,7 +10,8 @@
             'grant_type' => 'authorization_code',
             'client_id' => $api->client_id,
             'client_secret' => $api->client_secret,
-            'code' => $_GET['code']
+            'code' => $_GET['code'],
+            'redirect_uri' => $api->auth->redirect_uri
         ));
         $_SESSION['access_token'] = $token['access_token'];
 
