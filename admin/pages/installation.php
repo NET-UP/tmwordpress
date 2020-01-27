@@ -19,13 +19,14 @@
                     </div>
 
                     <?php
-                      $authorize_url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/authorize";
+                      //$authorize_url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/authorize";
+                      $authorize_url = "localhost:3002/ticketmachine.de/oauth/authorize";
                       $authorize_url .= "?";
                       $authorize_url .= http_build_query($api->auth->data);
                       echo '<p>Not authorized</p>';
                       echo '<p><a class="button button-primary" href="'.$authorize_url.'">Mit TicketMachine verbinden</a></p>';
                     ?>
-                    
+
                 </div>
             </div>
         </div>
