@@ -4,6 +4,18 @@
 
     if($_GET['code']) {
         echo "Authorization complete!<br>Code: " . $_GET['code'];
+
+        // Exchange the auth code for an access token
+	    $token = apiRequest($api->token, array(
+            'grant_type' => 'client_credentials',
+            'client_id' => $api->client_id,
+            'client_secret' => $api->client_secret,
+            'code' => $_GET['code'],
+            'scope' => "system"
+        ));
+        $_SESSION['access_token'] = $token['access_token'];
+
+        print_r($token);
     }
 ?>
 
