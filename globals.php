@@ -74,7 +74,7 @@
 	$api->auth->data = array(
 		'response_type' => 'code',
 		'client_id' => $api->client_id,
-		'redirect_uri' => "https://www.ticketmachine.de/oauth/start.php",
+		'redirect_uri' => "https://www.ticketmachine.de/oauth/start.php?start_uri=" . (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
 		'start_uri' => (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]",
 		'state' => $_SESSION['state'],
 		'scope' => 'public organizer organizer/event'
