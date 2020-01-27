@@ -11,7 +11,7 @@
             'client_id' => $api->client_id,
             'client_secret' => $api->client_secret,
             'code' => $_GET['code'],
-            'redirect_uri' => $api->auth->redirect_uri
+            'redirect_uri' => $api->auth->redirect_uri . "?start_uri=" . $api->auth->start_uri
         ));
         $_SESSION['access_token'] = $token['access_token'];
 
@@ -41,8 +41,8 @@
                     </div>
 
                     <?php
-                      //$authorize_url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/authorize";
-                      $authorize_url = "http://localhost:3002/oauth/authorize";
+                      $authorize_url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/authorize";
+                      //$authorize_url = "http://localhost:3002/oauth/authorize";
                       $authorize_url .= "?";
                       $authorize_url .= http_build_query($api->auth->data);
                       echo '<p><a class="button button-primary" href="'.$authorize_url.'">Mit TicketMachine verbinden</a></p>';
