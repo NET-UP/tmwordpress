@@ -1,7 +1,13 @@
 
 <?php
     global $globals, $api;
+
+    if($_GET['code']) {
+        echo "Authorization complete!<br>Code: " . $_GET['code'];
+    }
 ?>
+
+
 <div class="wrap tm-admin-page">
     <div class="container">
         <div class="d-flex justify-content-center">
