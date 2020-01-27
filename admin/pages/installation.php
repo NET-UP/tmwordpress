@@ -18,14 +18,14 @@
                      benötigen wir Ihre E-Mail-Adresse.
                     </div>
 
-                    <div class="email-icon-right mt-4 mb-2">
-                        <input type="email" class="tm-input" placeholder="E-Mail Adresse bitte eingeben">
-                    </div>
-                        
-                    <div class="text-left">
-                        <label><input type="checkbox" style="border-color: #ed7b25;">Ich habe die <a href="#" style="text-decoration-line: none;">Datenschutzerklärung</a> gelesen und akzeptiert.</label>
-                    </div>
-                    <button class="mt-4 tm-button">LOS GEHT'S!<i class="fas fa-check" style="font-size: 19px;color: #FFF;float: right;margin-right: 0.5em;"></i></button>
+                    <?php
+                      $authorize_url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/authorize";
+                      $authorize_url .= "?";
+                      $authorize_url .= http_build_query($api->auth->data);
+                      echo '<p>Not authorized</p>';
+                      echo '<p><a class="button button-primary" href="'.$authorize_url.'">Mit TicketMachine verbinden</a></p>';
+                    ?>
+                    
                 </div>
             </div>
         </div>
