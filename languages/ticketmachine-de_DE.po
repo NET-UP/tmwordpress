@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-28 21:14+0100\n"
-"PO-Revision-Date: 2020-01-28 21:59+0100\n"
+"POT-Creation-Date: 2020-01-28 22:39+0100\n"
+"PO-Revision-Date: 2020-01-28 22:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -42,21 +42,39 @@ msgstr "Installation"
 msgid "Something went wrong"
 msgstr "Etwas ist schiefgelaufen"
 
-#: admin/pages/actions/event_copy.php:24
+#: admin/pages/actions/event_copy.php:25
 msgid "Event successfully copied"
 msgstr "Event erfolgreich kopiert"
+
+#: admin/pages/actions/event_copy.php:30 admin/pages/actions/event_save.php:62
+#: admin/pages/events.php:154
+msgid "View"
+msgstr "Anzeigen"
+
+#: admin/pages/actions/event_copy.php:32 admin/pages/actions/event_save.php:64
+#: admin/pages/events.php:152
+msgid "Preview"
+msgstr "Vorschau"
 
 #: admin/pages/actions/event_delete.php:25
 msgid "Event successfully deleted"
 msgstr "Event erfolgreich gelöscht"
 
-#: admin/pages/actions/event_save.php:56
-#: admin/pages/actions/event_toggle.php:30 admin/pages/settings_api.php:17
+#: admin/pages/actions/event_save.php:57 admin/pages/settings_api.php:17
 #: admin/pages/settings_boxes.php:21 admin/pages/settings_calendar.php:20
 #: admin/pages/settings_design.php:36 admin/pages/settings_detail.php:24
 #: admin/pages/settings_list.php:21
 msgid "Saved"
 msgstr "Gespeichert"
+
+#: admin/pages/actions/event_toggle.php:33 admin/pages/event_edit.php:76
+#: admin/pages/events.php:487
+msgid "Published"
+msgstr "Veröffentlicht"
+
+#: admin/pages/actions/event_toggle.php:35
+msgid "Deactivated"
+msgstr "Deaktiviert"
 
 #: admin/pages/categories.php:119 admin/pages/event_edit.php:77
 #: admin/pages/events.php:144
@@ -98,10 +116,6 @@ msgstr "Veröffentlichen"
 #: admin/pages/event_edit.php:74
 msgid "Status"
 msgstr "Status"
-
-#: admin/pages/event_edit.php:76 admin/pages/events.php:487
-msgid "Published"
-msgstr "Veröffentlicht"
 
 #: admin/pages/event_edit.php:81
 msgid "Hint Text"
@@ -179,14 +193,6 @@ msgstr "Veranstaltungsende"
 #: admin/pages/events.php:147
 msgid "Deactivate"
 msgstr "Deaktivieren"
-
-#: admin/pages/events.php:152
-msgid "Preview"
-msgstr "Vorschau"
-
-#: admin/pages/events.php:154
-msgid "View"
-msgstr "Anzeigen"
 
 #: admin/pages/events.php:161
 msgid "Copy"
@@ -370,7 +376,7 @@ msgstr "Liste aktivieren?"
 msgid "No events could be found"
 msgstr "Es konnte keine Veranstaltung gefunden werden"
 
-#: pages/events.php:117 widgets/event_list.php:38
+#: pages/events.php:117 widgets/event_list.php:44
 msgid "Show all events"
 msgstr "Alle Veranstaltungen anzeigen"
 
@@ -426,11 +432,11 @@ msgstr "Suche nach Veranstaltungen"
 msgid "Submit search"
 msgstr "Suche absenden"
 
-#: partials/_search_header.php:35
+#: partials/_search_header.php:35 widgets/event_calendar.php:30
 msgid "To previous month"
 msgstr "Zum vorherigen Monat"
 
-#: partials/_search_header.php:37
+#: partials/_search_header.php:37 widgets/event_calendar.php:32
 msgid "To next month"
 msgstr "Zum nächsten Monat"
 

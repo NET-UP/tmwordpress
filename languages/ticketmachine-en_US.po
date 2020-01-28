@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-28 21:15+0100\n"
-"PO-Revision-Date: 2020-01-28 21:15+0100\n"
+"POT-Creation-Date: 2020-01-28 22:39+0100\n"
+"PO-Revision-Date: 2020-01-28 22:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -42,21 +42,39 @@ msgstr "Install"
 msgid "Something went wrong"
 msgstr "Something went wrong"
 
-#: admin/pages/actions/event_copy.php:24
+#: admin/pages/actions/event_copy.php:25
 msgid "Event successfully copied"
 msgstr "Event successfully copied"
+
+#: admin/pages/actions/event_copy.php:30 admin/pages/actions/event_save.php:62
+#: admin/pages/events.php:154
+msgid "View"
+msgstr "View"
+
+#: admin/pages/actions/event_copy.php:32 admin/pages/actions/event_save.php:64
+#: admin/pages/events.php:152
+msgid "Preview"
+msgstr "Preview"
 
 #: admin/pages/actions/event_delete.php:25
 msgid "Event successfully deleted"
 msgstr "Event successfully deleted"
 
-#: admin/pages/actions/event_save.php:56
-#: admin/pages/actions/event_toggle.php:30 admin/pages/settings_api.php:17
+#: admin/pages/actions/event_save.php:57 admin/pages/settings_api.php:17
 #: admin/pages/settings_boxes.php:21 admin/pages/settings_calendar.php:20
 #: admin/pages/settings_design.php:36 admin/pages/settings_detail.php:24
 #: admin/pages/settings_list.php:21
 msgid "Saved"
 msgstr "Saved"
+
+#: admin/pages/actions/event_toggle.php:33 admin/pages/event_edit.php:76
+#: admin/pages/events.php:487
+msgid "Published"
+msgstr "Published"
+
+#: admin/pages/actions/event_toggle.php:35
+msgid "Deactivated"
+msgstr "Deactivated"
 
 #: admin/pages/categories.php:119 admin/pages/event_edit.php:77
 #: admin/pages/events.php:144
@@ -98,10 +116,6 @@ msgstr "Publish"
 #: admin/pages/event_edit.php:74
 msgid "Status"
 msgstr "Status"
-
-#: admin/pages/event_edit.php:76 admin/pages/events.php:487
-msgid "Published"
-msgstr "Published"
 
 #: admin/pages/event_edit.php:81
 msgid "Hint Text"
@@ -179,14 +193,6 @@ msgstr "Event ends at"
 #: admin/pages/events.php:147
 msgid "Deactivate"
 msgstr "Deactivate"
-
-#: admin/pages/events.php:152
-msgid "Preview"
-msgstr "Preview"
-
-#: admin/pages/events.php:154
-msgid "View"
-msgstr "View"
 
 #: admin/pages/events.php:161
 msgid "Copy"
@@ -368,7 +374,7 @@ msgstr "Activate List?"
 msgid "No events could be found"
 msgstr "No events could be found"
 
-#: pages/events.php:117 widgets/event_list.php:38
+#: pages/events.php:117 widgets/event_list.php:44
 msgid "Show all events"
 msgstr "Show all events"
 
@@ -424,11 +430,11 @@ msgstr "Search for events"
 msgid "Submit search"
 msgstr "Submit search"
 
-#: partials/_search_header.php:35
+#: partials/_search_header.php:35 widgets/event_calendar.php:30
 msgid "To previous month"
 msgstr "To previous month"
 
-#: partials/_search_header.php:37
+#: partials/_search_header.php:37 widgets/event_calendar.php:32
 msgid "To next month"
 msgstr "To next month"
 
