@@ -477,7 +477,7 @@ function tt_render_list_page(){
                         </a> |
                     </li>
                     <li class="upcoming">
-                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=upcoming'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming")){ ?>class="current"<?php } ?>>
+                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=upcoming'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming"){ ?>class="current"<?php } ?>>
                             <?php echo __('Upcoming', 'ticketmachine'); ?> 
                             <span class="count"></span>
                         </a> |
