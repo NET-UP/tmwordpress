@@ -107,3 +107,12 @@
 .tm-admin-page input[type=checkbox]:checked:before {
     color: #ed7b25;
 }
+
+.tm-admin-page .box {
+    margin: 0 auto;
+    padding: 8% 15px 15px;
+}
+
+.tm-admin-page .box-md {
+    max-width: 500px;
+}
