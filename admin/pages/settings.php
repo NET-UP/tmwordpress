@@ -27,11 +27,14 @@
 		<a href="?page=tm_settings&tab=design" class="nav-tab <?php echo $active_tab == 'design' ? 'nav-tab-active' : ''; ?>">
 			<?php echo __('Design', 'ticketmachine'); ?>
 		</a>
+		<a href="?page=tm_settings&tab=boxes" class="nav-tab <?php echo $active_tab == 'boxes' ? 'nav-tab-active' : ''; ?>">
+			<?php echo __('Box View', 'ticketmachine'); ?>
+		</a>
 		<a href="?page=tm_settings&tab=list" class="nav-tab <?php echo $active_tab == 'list' ? 'nav-tab-active' : ''; ?>">
-			<?php echo __('List', 'ticketmachine'); ?>
+			<?php echo __('List View', 'ticketmachine'); ?>
 		</a>
 		<a href="?page=tm_settings&tab=calendar" class="nav-tab <?php echo $active_tab == 'calendar' ? 'nav-tab-active' : ''; ?>">
-			<?php echo __('Calendar', 'ticketmachine'); ?>
+			<?php echo __('Calendar View', 'ticketmachine'); ?>
 		</a>
 		<a href="?page=tm_settings&tab=detail" class="nav-tab <?php echo $active_tab == 'detail' ? 'nav-tab-active' : ''; ?>">
 			<?php echo __('Details', 'ticketmachine'); ?>

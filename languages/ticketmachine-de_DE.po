@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-28 10:34+0100\n"
-"PO-Revision-Date: 2020-01-28 10:34+0100\n"
+"POT-Creation-Date: 2020-01-28 10:38+0100\n"
+"PO-Revision-Date: 2020-01-28 10:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -36,8 +36,9 @@ msgstr "Einstellungen"
 #: admin/pages/actions/event_delete.php:21
 #: admin/pages/actions/event_save.php:52
 #: admin/pages/actions/event_toggle.php:26 admin/pages/settings_api.php:23
-#: admin/pages/settings_calendar.php:26 admin/pages/settings_design.php:42
-#: admin/pages/settings_detail.php:30 admin/pages/settings_list.php:27
+#: admin/pages/settings_boxes.php:27 admin/pages/settings_calendar.php:26
+#: admin/pages/settings_design.php:42 admin/pages/settings_detail.php:30
+#: admin/pages/settings_list.php:27
 msgid "Something went wrong"
 msgstr "Etwas ist schiefgelaufen"
 
@@ -51,8 +52,9 @@ msgstr "Event erfolgreich gelöscht"
 
 #: admin/pages/actions/event_save.php:56
 #: admin/pages/actions/event_toggle.php:30 admin/pages/settings_api.php:17
-#: admin/pages/settings_calendar.php:20 admin/pages/settings_design.php:36
-#: admin/pages/settings_detail.php:24 admin/pages/settings_list.php:21
+#: admin/pages/settings_boxes.php:21 admin/pages/settings_calendar.php:20
+#: admin/pages/settings_design.php:36 admin/pages/settings_detail.php:24
+#: admin/pages/settings_list.php:21
 msgid "Saved"
 msgstr "Gespeichert"
 
@@ -183,14 +185,18 @@ msgid "Design"
 msgstr "Design"
 
 #: admin/pages/settings.php:31
-msgid "List"
-msgstr "Liste"
+msgid "Box View"
+msgstr "Kachel-Ansicht"
 
 #: admin/pages/settings.php:34
-msgid "Calendar"
-msgstr "Kalender"
+msgid "List View"
+msgstr "Liste-Ansicht"
 
-#: admin/pages/settings.php:37 partials/_event_page_details.php:7
+#: admin/pages/settings.php:37
+msgid "Calendar View"
+msgstr "Kalender-Ansicht"
+
+#: admin/pages/settings.php:40 partials/_event_page_details.php:7
 msgid "Details"
 msgstr "Details"
 
@@ -205,6 +211,22 @@ msgstr "API Client Secret"
 #: admin/pages/settings_api.php:42
 msgid "Organizer"
 msgstr "Organizer"
+
+#: admin/pages/settings_boxes.php:38
+msgid "Activate Boxes?"
+msgstr "Kacheln aktivieren?"
+
+#: admin/pages/settings_boxes.php:42 admin/pages/settings_list.php:42
+msgid "Group events by"
+msgstr "Veranstaltungen gruppieren nach"
+
+#: admin/pages/settings_boxes.php:45 admin/pages/settings_list.php:45
+msgid "Month"
+msgstr "Monat"
+
+#: admin/pages/settings_boxes.php:46 admin/pages/settings_list.php:46
+msgid "Year"
+msgstr "Jahr"
 
 #: admin/pages/settings_calendar.php:37
 msgid "Activate calendar?"
@@ -285,18 +307,6 @@ msgstr "Google Maps aktivieren?"
 #: admin/pages/settings_list.php:38
 msgid "Activate List?"
 msgstr "Liste aktivieren?"
-
-#: admin/pages/settings_list.php:42
-msgid "Group events by"
-msgstr "Veranstaltungen gruppieren nach"
-
-#: admin/pages/settings_list.php:45
-msgid "Month"
-msgstr "Monat"
-
-#: admin/pages/settings_list.php:46
-msgid "Year"
-msgstr "Jahr"
 
 #: pages/event.php:35 pages/events.php:117
 msgid "No events could be found"
