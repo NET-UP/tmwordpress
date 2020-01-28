@@ -52,7 +52,7 @@
 
                         <i class="fas fa-cloud tm-icon-big mt-4 mb-2"></i>
                         <div>
-                           <?php echo __("All events are saved through the TicketMachine Cloud Service.", "ticketmachine"); ?>#
+                           <?php echo __("All events are saved through the TicketMachine Cloud Service.", "ticketmachine"); ?>
                         </div>
 
                         <i class="far fa-user-circle tm-icon-big mt-4 mb-2"></i>
