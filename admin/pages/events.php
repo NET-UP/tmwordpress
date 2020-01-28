@@ -66,7 +66,11 @@ class Event_List_Table extends WP_List_Table {
 		if(isset($_GET['s'])){
 			$params = array_push_assoc($params, "query", $_GET['s']);
 		}
-        $params = array_push_assoc($params, "show_old", 1);
+        if(isset($_GET['status']) && $_GET['status'] == "upcoming"){
+            $params = array_push_assoc($params, "show_old", 0);
+        }else{
+            $params = array_push_assoc($params, "show_old", 1);
+        }
         $params = array_push_assoc($params, "per_page", 100);
         if(isset($_GET['status']) && $_GET['status'] == "published"){
             $params = array_push_assoc($params, "approved", 1);
@@ -467,8 +471,14 @@ function tt_render_list_page(){
                 <!-- Now we can render the completed list table -->
                 <ul class="subsubsub">
                     <li class="all">
-                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" <?php if(!isset($_GET['status'] )){ ?>class="current"<?php } ?>>
+                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
                             <?php echo __('All', 'ticketmachine'); ?> 
+                            <span class="count"></span>
+                        </a> |
+                    </li>
+                    <li class="upcoming">
+                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=upcoming'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming")){ ?>class="current"<?php } ?>>
+                            <?php echo __('Upcoming', 'ticketmachine'); ?> 
                             <span class="count"></span>
                         </a> |
                     </li>
