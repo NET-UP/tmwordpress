@@ -1,6 +1,6 @@
 
 <?php
-    global $globals, $api;
+    global $globals, $api, $wpdb;
 
     if($_GET['code']) {
         echo "Authorization complete!<br>Code: " . $_GET['code'];
@@ -15,7 +15,18 @@
         ));
         $_SESSION['access_token'] = $token['access_token'];
 
-        print_r($token);
+        //print_r($token);
+		$save_array = 
+            array(
+                "activated" => 1,
+            );
+
+        $wpdb->update(
+            $wpdb->prefix . "ticketmachine_config",
+            $save_array,
+            array('id' => $tm_config->id)
+        );
+
     }else{
 ?>
 
