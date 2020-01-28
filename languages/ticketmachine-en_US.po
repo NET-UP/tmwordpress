@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-08 14:46+0100\n"
-"PO-Revision-Date: 2020-01-08 14:46+0100\n"
+"POT-Creation-Date: 2020-01-28 10:30+0100\n"
+"PO-Revision-Date: 2020-01-28 10:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -34,7 +34,7 @@ msgstr "Settings"
 
 #: admin/pages/actions/event_copy.php:20
 #: admin/pages/actions/event_delete.php:21
-#: admin/pages/actions/event_save.php:48
+#: admin/pages/actions/event_save.php:52
 #: admin/pages/actions/event_toggle.php:26 admin/pages/settings_api.php:23
 #: admin/pages/settings_calendar.php:26 admin/pages/settings_design.php:42
 #: admin/pages/settings_detail.php:30 admin/pages/settings_list.php:27
@@ -49,7 +49,7 @@ msgstr "Event successfully copied"
 msgid "Event successfully deleted"
 msgstr "Event successfully deleted"
 
-#: admin/pages/actions/event_save.php:52
+#: admin/pages/actions/event_save.php:56
 #: admin/pages/actions/event_toggle.php:30 admin/pages/settings_api.php:17
 #: admin/pages/settings_calendar.php:20 admin/pages/settings_design.php:36
 #: admin/pages/settings_detail.php:24 admin/pages/settings_list.php:21
@@ -298,13 +298,17 @@ msgstr "Month"
 msgid "Year"
 msgstr "Year"
 
-#: pages/event.php:35 pages/events.php:74
+#: pages/event.php:35 pages/events.php:117
 msgid "No events could be found"
 msgstr "No events could be found"
 
-#: pages/events.php:93
-msgid "List & Calendar are deactivated"
-msgstr "List & Calendar are deactivated"
+#: pages/events.php:105 widgets/event_list.php:38
+msgid "Show all events"
+msgstr "Show all events"
+
+#: pages/events.php:137
+msgid "List, Boxes & Calendar are deactivated"
+msgstr "List, Boxes & Calendar are deactivated"
 
 #: partials/_event_list_item.php:28
 msgid "To ticket selection for"
@@ -362,17 +366,17 @@ msgstr "To previous month"
 msgid "To next month"
 msgstr "To next month"
 
-#: partials/_search_header.php:51
+#: partials/_search_header.php:50
+msgid "Show events as boxes"
+msgstr "Show events as boxes"
+
+#: partials/_search_header.php:60
 msgid "Show events as list"
 msgstr "Show events as list"
 
-#: partials/_search_header.php:61
+#: partials/_search_header.php:70
 msgid "Show events in calendar"
 msgstr "Show events in calendar"
-
-#: widgets/event_list.php:38
-msgid "Show all events"
-msgstr "Show all events"
 
 #~ msgid "None"
 #~ msgstr "None"
