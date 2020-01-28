@@ -21,6 +21,10 @@
 			$event->status_color = "#f8d7da";
 			$event->status_text_color = "#721c24";
 		}
+
+		//Override for free plugin
+		$event->status_color = "#d4edda";
+		$event->status_text_color = "#155724";
 		
 		$start = strtotime($event->ev_date) * 1000;
 		$end = strtotime($event->endtime) * 1000;	
