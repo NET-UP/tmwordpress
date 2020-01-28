@@ -56,7 +56,7 @@
         <p>
             <?php echo __('Saved', 'ticketmachine'); ?>!
             &nbsp;-&nbsp;
-            <a target="_blank" href="/event?id=<?php echo $response->id; ?>">
+            <a target="_blank" href="/<?php echo $globals->event_slug; ?>?id=<?php echo $response->id; ?>">
                 <?php 
                     if($response->approved == 1){
                         echo __('View', 'ticketmachine'); 
