@@ -50,7 +50,8 @@
 					<?php
 						if( $pages = get_pages() ){
 							foreach( $pages as $page ){
-								echo '<option value="' . $page->ID . '" ' . selected( $page->ID, $globals->event_slug_id ) . '>' . $page->post_title . '</option>';
+								$selected = ($page->ID == $globals->event_slug_id) ? 'selected="selected"' : '';
+								echo '<option value="' . $page->ID . '" ' . $selected . '>' . $page->post_title . '</option>';
 							}
 						}
 					?>
