@@ -195,7 +195,7 @@
         $new_page = array(
             'post_type' => 'page',
             'post_title' => $new_page_title,
-            'post_name' => $new_page_slug
+            'post_name' => $new_page_slug,
             'post_content' => $new_page_content,
             'post_status' => 'publish',
             'post_author' => 1,
@@ -217,7 +217,7 @@
         $new_page = array(
             'post_type' => 'page',
             'post_title' => $new_page_title,
-            'post_name' => $new_page_slug
+            'post_name' => $new_page_slug,
             'post_content' => $new_page_content,
             'post_status' => 'publish',
             'post_author' => 1,
