@@ -1,35 +1,6 @@
 
 <?php
-    global $globals, $api, $wpdb;
-    $tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
-    $tm_config = $tm_config[0];
-
-    if($_GET['code']) {
-        echo "Authorization complete!<br>Code: " . $_GET['code'];
-
-        // Exchange the auth code for an access token
-	    $token = apiRequest($api->token, array(
-            'grant_type' => 'authorization_code',
-            'client_id' => $api->client_id,
-            'client_secret' => $api->client_secret,
-            'code' => $_GET['code'],
-            'redirect_uri' => $api->auth->redirect_uri . "?start_uri=" . $api->auth->start_uri
-        ));
-        $_SESSION['access_token'] = $token['access_token'];
-
-        //print_r($token);
-		$save_array = 
-            array(
-                "activated" => 1,
-            );
-
-        $wpdb->update(
-            $wpdb->prefix . "ticketmachine_config",
-            $save_array,
-            array('id' => $tm_config->id)
-        );
-
-    }else{
+    global $globals, $api;
 ?>
 
 
@@ -76,7 +47,3 @@
         </div>
     </div>
 </div>
-
-<?php
-    }
-?>
