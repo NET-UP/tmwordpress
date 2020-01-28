@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-28 21:07+0100\n"
-"PO-Revision-Date: 2020-01-28 21:07+0100\n"
+"POT-Creation-Date: 2020-01-28 21:14+0100\n"
+"PO-Revision-Date: 2020-01-28 21:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: languages\n"
 "X-Poedit-SearchPathExcluded-3: assets\n"
 
-#: admin/menu.php:21 admin/menu.php:22 admin/pages/events.php:460
+#: admin/menu.php:21 admin/menu.php:22 admin/pages/events.php:464
 msgid "Events"
 msgstr "Veranstaltungen"
 
@@ -59,11 +59,11 @@ msgid "Saved"
 msgstr "Gespeichert"
 
 #: admin/pages/categories.php:119 admin/pages/event_edit.php:77
-#: admin/pages/events.php:140
+#: admin/pages/events.php:144
 msgid "Draft"
 msgstr "Entwurf"
 
-#: admin/pages/categories.php:128 admin/pages/events.php:155
+#: admin/pages/categories.php:128 admin/pages/events.php:159
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -91,7 +91,7 @@ msgstr "Name der Veranstaltung"
 msgid "Event Description"
 msgstr "Beschreibung der Veranstaltung"
 
-#: admin/pages/event_edit.php:67 admin/pages/events.php:138
+#: admin/pages/event_edit.php:67 admin/pages/events.php:142
 msgid "Publish"
 msgstr "Veröffentlichen"
 
@@ -99,7 +99,7 @@ msgstr "Veröffentlichen"
 msgid "Status"
 msgstr "Status"
 
-#: admin/pages/event_edit.php:76 admin/pages/events.php:477
+#: admin/pages/event_edit.php:76 admin/pages/events.php:487
 msgid "Published"
 msgstr "Veröffentlicht"
 
@@ -176,35 +176,39 @@ msgstr "Veranstaltungsbeginn"
 msgid "Event ends at"
 msgstr "Veranstaltungsende"
 
-#: admin/pages/events.php:143
+#: admin/pages/events.php:147
 msgid "Deactivate"
 msgstr "Deaktivieren"
 
-#: admin/pages/events.php:148
+#: admin/pages/events.php:152
 msgid "Preview"
 msgstr "Vorschau"
 
-#: admin/pages/events.php:150
+#: admin/pages/events.php:154
 msgid "View"
 msgstr "Anzeigen"
 
-#: admin/pages/events.php:157
+#: admin/pages/events.php:161
 msgid "Copy"
 msgstr "Kopieren"
 
-#: admin/pages/events.php:461
+#: admin/pages/events.php:465
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: admin/pages/events.php:471
+#: admin/pages/events.php:475
 msgid "All"
 msgstr "Alle"
 
-#: admin/pages/events.php:483
+#: admin/pages/events.php:481
+msgid "Upcoming"
+msgstr "Kommende"
+
+#: admin/pages/events.php:493
 msgid "Drafts"
 msgstr "Entwürfe"
 
-#: admin/pages/events.php:488
+#: admin/pages/events.php:498
 msgid "Search"
 msgstr "Suche"
 
