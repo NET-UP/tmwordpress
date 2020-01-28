@@ -90,7 +90,7 @@
 					$tm_output .= '<li class="media mx-0 mt-2">';
 
 					if($atts['show_image'] > 0){
-						$tm_output .= '<div class="mr-3 media-img" style="background-image:url('. $event->event_img_url .')"></div>';
+						$tm_output .= '<a class="mr-3 media-img" href="/event?id=' . $event->id . '" style="background-image:url('. $event->event_img_url .')"></a>';
 					}
 										
 						$tm_output .= '<div class="media-body">';
