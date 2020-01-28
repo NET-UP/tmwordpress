@@ -9,6 +9,8 @@ All notable changes to this project will be documented in this file.
 +   Showing Date & Time can now be activated/deactived for event list widgets
 +   There is now an "upcoming" filter for events in the backend
 +   "Preview" and "View" buttons added to events in the backend
++   Event overview page URL is now configurable
++   Event detail page URL is now configurable
 -   Fixed some translation issues
 -   Fixed bug where CSS styles were leaking into other backend pages
 

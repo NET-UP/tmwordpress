@@ -9,6 +9,8 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 +   Das Anzeigen von Datum und Uhrzeit kann jetzt für Verasnstaltungslisten/Widgets aktiviert/deaktiviert werden
 +   Es gibt jetzt einen "kommende" Filter für Veranstaltungen im Backend
 +   Die Schaltflächen "Vorschau" und "Ansicht" wurden zu Veranstaltungen im Backend hinzugefügt
++   Die URL der Veranstaltungsübersicht Seite ist jetzt konfigurierbar
++   Die URL der Veranstaltungsdetail Seite kann jetzt konfiguriert werden
 -   Einige Übersetzungsprobleme wurden behoben
 -   Fehler behoben, durch den CSS-Stile in andere Backend-Seiten gelangten
 
