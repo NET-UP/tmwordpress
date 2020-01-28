@@ -16,7 +16,7 @@
         $_SESSION['access_token'] = $token['access_token'];
 
         print_r($token);
-    }
+    }else{
 ?>
 
 
@@ -63,3 +63,7 @@
         </div>
     </div>
 </div>
+
+<?php
+    }
+?>
