@@ -47,7 +47,7 @@
                                                     }else{
                                                         $tm_output .= "btn-secondary"; 
                                                     }
-                                                $tm_output .="' aria-label='" . __("Show events as boxes", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params) . "'><i class='fas fa-th'></i></i></a>";
+                                                $tm_output .="' title='" . __("Show events as boxes", "ticketmachine") . "' aria-label='" . __("Show events as boxes", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params) . "'><i class='fas fa-th'></i></i></a>";
                                             }
                                         
                                             if($globals->show_list){
@@ -57,7 +57,7 @@
                                                     }else{
                                                         $tm_output .= "btn-secondary"; 
                                                     }
-                                                $tm_output .="' aria-label='" . __("Show events as list", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=list") . "'><i class='fas fa-list'></i></a>";
+                                                $tm_output .="' title='" . __("Show events as list", "ticketmachine") . "' aria-label='" . __("Show events as list", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=list") . "'><i class='fas fa-list'></i></a>";
                                             }
 
                                             if($globals->show_calendar){
@@ -67,7 +67,7 @@
                                                     }else{
                                                         $tm_output .= "btn-secondary"; 
                                                     }
-                                                $tm_output .="'aria-label='" . __("Show events in calendar", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=calendar") . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
+                                                $tm_output .="' title='" . __("Show events in calendar", "ticketmachine") . "' aria-label='" . __("Show events in calendar", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=calendar") . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
                                             }
 
                                         $tm_output .= "</div>";
