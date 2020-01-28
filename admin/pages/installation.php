@@ -42,15 +42,22 @@
             <div class="px-5 py-4">
                 <div class="row">
                     <div class="col-12 text-center" style="font-size: 16px;line-height: 20px;">
-                        <h1>Vielen Dank, dass Sie mich installiert haben!</h1>
-                        <div>Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
+
+                        <h1>
+                           <?php echo __("Thanks for installing me!", "ticketmachine"); ?>
+                        </h1>
+                        <div>
+                           <?php echo __("Just one more step to start using TicketMachine.", "ticketmachine"); ?>
+                        </div>
+
                         <i class="fas fa-cloud tm-icon-big mt-4 mb-2"></i>
                         <div>
-                            Alle Veranstaltungen werden über den TicketMachine Cloud Service gespeichert.
+                           <?php echo __("All events are saved through the TicketMachine Cloud Service.", "ticketmachine"); ?>#
                         </div>
+
                         <i class="far fa-user-circle tm-icon-big mt-4 mb-2"></i>
                         <div>
-                            Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen), benötigen wir Ihre E-Mail-Adresse.
+                           <?php echo __("In order to create your TicketMachine account (or connect to your current one), we require your email adress.", "ticketmachine"); ?>
                         </div>
 
                         <?php
@@ -71,8 +78,10 @@
                             $authorize_url .= "?";
                             //$authorize_url .= http_build_query($api->auth->data);
                             $authorize_url .= http_build_query($api->auth->testdata);
-                            echo '<a class="button button-primary mt-4 px-3 py-md-1" style="font-size:14px" href="'.$authorize_url.'">mit TicketMachine verbinden</a>';
                         ?>
+                            <a class="button button-primary mt-4 px-3 py-md-1" style="font-size:14px" href="<?php echo $authorize_url; ?>">
+                                <?php echo __("Connect with TicketMachine", "ticketmachine"); ?>
+                            </a>
 
                     </div>
                 </div>
