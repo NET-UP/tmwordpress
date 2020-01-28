@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-01-29 00:37+0100\n"
-"PO-Revision-Date: 2020-01-29 00:38+0100\n"
+"PO-Revision-Date: 2020-01-29 00:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -370,7 +370,7 @@ msgstr "Veranstaltungsübersicht Seite"
 
 #: admin/pages/settings_general.php:48
 msgid "Event detail page"
-msgstr "Veranstaltungsdetails Seite"
+msgstr "Veranstaltungsdetail Seite"
 
 #: admin/pages/settings_list.php:38
 msgid "Activate List?"
