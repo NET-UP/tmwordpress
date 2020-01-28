@@ -75,6 +75,10 @@
 				</div>";
 			
 		}elseif($current_page == "list"){
+
+			//ToDo: Move to setting page
+			$atts['show_image'] == 1;
+			$atts['show_description'] == 1;
 			
 			$tm_output .= '<ul class="list-unstyled">';
 
