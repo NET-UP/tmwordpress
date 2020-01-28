@@ -71,7 +71,7 @@
                             $authorize_url .= "?";
                             //$authorize_url .= http_build_query($api->auth->data);
                             $authorize_url .= http_build_query($api->auth->testdata);
-                            echo '<a class="button button-primary mt-4 px-3 py-md-1" href="'.$authorize_url.'">Mit TicketMachine verbinden</a>';
+                            echo '<a class="button button-primary mt-4 px-3 py-md-1" style="font-size:14px" href="'.$authorize_url.'">mit TicketMachine verbinden</a>';
                         ?>
 
                     </div>
