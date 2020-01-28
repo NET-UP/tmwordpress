@@ -55,8 +55,8 @@
     <div class="notice notice-success is-dismissable">
         <p>
             <?php echo __('Saved', 'ticketmachine'); ?>!
-            &nbsp;
-            <a href="/event?id=<?php echo $response->id; ?>">
+            &nbsp;-&nbsp;
+            <a target="_blank" href="/event?id=<?php echo $response->id; ?>">
                 <?php 
                     if($response->approved == 1){
                         echo __('View', 'ticketmachine'); 
