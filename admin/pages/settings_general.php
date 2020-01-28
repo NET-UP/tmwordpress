@@ -50,7 +50,7 @@
 					<?php
 						if( $pages = get_pages() ){
 							foreach( $pages as $page ){
-								$selected = ($page->ID == $globals->event_slug_id) ? 'selected="selected"' : 'lol';
+								$selected = ($page->ID == $tm_config->event_slug_id) ? 'selected="selected"' : 'lol';
 								echo '<option value="' . $page->ID . '" ' . $selected . '>' . $page->post_title . '</option>';
 							}
 						}
