@@ -26,7 +26,7 @@
 			}
 		$tm_output .= "</div>";
 		
-		if(isset($atts['display']) && $atts['display'] == "calendar" && $globals->show_calendar || $globals->show_calendar && !$globals->show_boxes){
+		if(isset($atts['display']) && $atts['display'] == "calendar" && $globals->show_calendar || $globals->show_calendar && !$globals->show_boxes && !$globals->show_list){
 		
 			//Calendar Packages
 			wp_enqueue_style( 'calendar_CSS_1', plugins_url('../assets/packages/core/main.css', __FILE__ ) );
@@ -64,7 +64,7 @@
 					</div>
 				</div>";
 			
-		}elseif($globals->show_boxes){
+		}elseif($globals->show_boxes && !$globals->show_list){
 		
 			$prev = NULL;
 			$i = 0;
@@ -89,8 +89,41 @@
 					$i++;
 				}
 			}
+		}elseif($globals->show_list){
+			
+			$tm_output .= '<ul class="list-unstyled">';
+
+            foreach($events as $event){
+                $event = (object)$event;
+
+                $tm_output .= '<li class="media">';
+
+                if($atts['show_image'] > 0){
+                    $tm_output .= '<div class="mr-3 media-img" style="background-image:url('. $event->event_img_url .')"></div>';
+                }
+                                    
+                    $tm_output .= '<div class="media-body">';
+                    $tm_output .= '<h5 class="mt-0 mb-1"><a href="/event?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
+
+                    if($atts['show_description'] > 0){
+                        if(!$atts['description_length']){
+                            $atts['description_length'] = 15;
+                        }
+                        $tm_output .= '<div>' . wp_trim_words(wp_strip_all_tags($event->ev_description), $atts['description_length'], "...") . '</div>';
+                    }
+
+                $tm_output .= '</div>
+                            </li>';
+            }
+
+            if($atts['show_more'] > 0){
+                $tm_output .= '<li class="media"><a href="/events">' . __("Show all events", "ticketmachine") . '</a></li>';
+            }
+
+            $tm_output .= '</ul>';
+
 		}else{
-			echo __("List & Calendar are deactivated", "ticketmachine");
+			echo __("List, Boxes & Calendar are deactivated", "ticketmachine");
 		}
 		return $tm_output;
 		
