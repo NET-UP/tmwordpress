@@ -42,7 +42,7 @@
                                         
                                             if($globals->show_boxes){
                                                 $tm_output .= "<a class='btn ";
-                                                    if(!isset($_GET['display'])){ 
+                                                    if(isset($current_page) && $current_page == 'boxes'){ 
                                                         $tm_output .= "btn-primary active"; 
                                                     }else{
                                                         $tm_output .= "btn-secondary"; 
@@ -52,7 +52,7 @@
                                         
                                             if($globals->show_list){
                                                 $tm_output .= "<a class='btn ";
-                                                    if(isset($_GET['display']) && $_GET['display'] == 'list'){ 
+                                                    if(isset($current_page) && $current_page == 'list'){ 
                                                         $tm_output .= "btn-primary active"; 
                                                     }else{
                                                         $tm_output .= "btn-secondary"; 
@@ -62,7 +62,7 @@
 
                                             if($globals->show_calendar){
                                                 $tm_output .= "<a class='btn ";
-                                                    if(isset($_GET['display']) && $_GET['display'] == 'calendar'){ 
+                                                    if(isset($current_page) && $current_page == 'calendar'){ 
                                                         $tm_output .= "btn-primary active"; 
                                                     }else{
                                                         $tm_output .= "btn-secondary"; 
