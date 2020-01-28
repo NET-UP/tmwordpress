@@ -36,7 +36,7 @@
                 }
             ?>!
             &nbsp;-&nbsp;
-            <a target="_blank" href="?page=tm_events&action=deactivate&id=<?php echo $response->id; ?>"><?php echo __('Undo', 'ticketmachine'); ?></a>
+            <a href="?page=tm_events&action=deactivate&id=<?php echo $response->id; ?>"><?php echo __('Undo', 'ticketmachine'); ?></a>
         </p>
     </div>
 <?php } ?>
