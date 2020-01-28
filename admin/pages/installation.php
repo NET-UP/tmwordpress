@@ -41,10 +41,20 @@
                     </div>
 
                     <?php
+	
+                        $api->auth->testdata = array(
+                            'response_type' => 'code',
+                            'client_id' => "4c0bcf69d871fb55362382f436e768b277592f3243e7da9bfef4dff997392fe0",
+                            'redirect_uri' => $api->auth->redirect_uri . "?start_uri=" . $api->auth->start_uri,
+                            'state' => $_SESSION['state'],
+                            'scope' => 'public organizer organizer/event'
+                        );
+    
                       //$authorize_url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/authorize";
                       $authorize_url = "http://localhost:3002/oauth/authorize";
                       $authorize_url .= "?";
-                      $authorize_url .= http_build_query($api->auth->data);
+                      //$authorize_url .= http_build_query($api->auth->data);
+                      $authorize_url .= http_build_query($api->auth->testdata);
                       echo '<p><a class="button button-primary" href="'.$authorize_url.'">Mit TicketMachine verbinden</a></p>';
                     ?>
 
