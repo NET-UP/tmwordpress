@@ -2,7 +2,7 @@
 	if (isset($_POST['submit'])) {
 		$save_array = 
 			array(
-				"events_slug" => $_POST['events_slug']
+				"events_slug" => $_POST['events_slug'],
 				"event_slug" => $_POST['event_slug']
 			);
 		if (!empty($tm_config)) {
