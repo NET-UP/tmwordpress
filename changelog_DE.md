@@ -1,6 +1,15 @@
 # Änderungsprotokoll (Deutsch)
 Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumentiert.
 
+## [0.9.5] - 2020-01-29
++   Installationwizard erstellt, um mit der TicketMachine API zu verbinden
++   Installationwizard in English & Deutsch übersetzt
++   Neue konfigurierbare "Listenansicht" auf der Veranstaltungsübersichtsseite
++   Kalender können jetzt direkt als Widget per Shortcode eingebunden werden
++   Es gibt jetzt einen "kommende" Filter für Veranstaltungen im Backend
++   Die Schaltflächen "Vorschau" und "Ansicht" wurden zu Veranstaltungen im Backend hinzugefügt
+-   Einige Übersetzungsprobleme wurden behoben
+
 ## [0.9.4] - 2020-01-07
 +   Plugin ins Englische übersetzt
 +   Plugin ins Deutsche übersetzt

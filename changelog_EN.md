@@ -1,11 +1,13 @@
 # Change Log (English)
 All notable changes to this project will be documented in this file.
 
-## [0.9.5] - 2020-01-28
-+   Installationwizard created
+## [0.9.5] - 2020-01-29
++   Installationwizard created to connect with TicketMachine API
 +   Installationwizard translated into English & German
 +   New configurable "List View" on the events overview page
-+   Calendars can now be included directly as a widget via shortcode.
++   Calendars can now be included directly as a widget via shortcode
++   There is now an "upcoming" filter for events in the backend
++   "Preview" and "View" buttons added to events in the backend
 -   Fixed some translation issues
 
 ## [0.9.4] - 2020-01-08
