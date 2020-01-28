@@ -52,7 +52,7 @@
                                         
                                             if($globals->show_list){
                                                 $tm_output .= "<a class='btn ";
-                                                    if(!isset($_GET['display'])){ 
+                                                    if(!isset($_GET['display']) && $_GET['display'] == 'boxes'){ 
                                                         $tm_output .= "btn-primary active"; 
                                                     }else{
                                                         $tm_output .= "btn-secondary"; 
