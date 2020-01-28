@@ -16,8 +16,6 @@
 	$post = get_post($globals->event_slug_id); 
 	$globals->event_slug = $post->post_name;
 
-	print_r($post);
-
 	switch ($globals->event_grouping) {
 		case 'Month':
 			$globals->group_by = "m Y";
