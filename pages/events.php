@@ -96,7 +96,9 @@
                     $tm_output .= '<h5 class="mt-0 mb-1"><a href="/event?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
 
                     if($atts['show_date'] > 0){
-                        $tm_output .= '<div>' . $event->ev_date . '</div>';
+						$tm_output .= '
+						<div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date( "d.m.Y", strtotime($event->ev_date) ) .'</div> 
+                        <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date( "H:i", strtotime($event->ev_date) ) .'</div>';
 					}
 					
                     if($atts['show_description'] > 0){
