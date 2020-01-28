@@ -38,10 +38,10 @@
 <div class="wrap tm-admin-page">
     <div class="container">
         <div class="box box-md">
-            <div class="p-5">
+            <img style="width: 75px;margin:0 auto;margin-bottom:2em;display:block;" src=" <?php echo dirname(plugin_dir_url( __FILE__ ), 1) . '/assets/img/logo.png'; ?>" alt="TicketMachine Logo">         
+            <div class="px-5 py-4">
                 <div class="row">
                     <div class="col-12 text-center" style="font-size: 16px;line-height: 20px;">
-                        <img style="width: 75px;" src=" <?php echo dirname(plugin_dir_url( __FILE__ ), 1) . '/assets/img/logo.png'; ?>" alt="TicketMachine Logo">
                         <h1>Vielen Dank, dass Sie mich installiert haben!</h1>
                         <div>Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
                         <i class="fas fa-cloud tm-icon-big mt-4 mb-2"></i>
