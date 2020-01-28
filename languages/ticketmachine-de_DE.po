@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-28 20:57+0100\n"
-"PO-Revision-Date: 2020-01-28 20:57+0100\n"
+"POT-Creation-Date: 2020-01-28 21:07+0100\n"
+"PO-Revision-Date: 2020-01-28 21:07+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: languages\n"
 "X-Poedit-SearchPathExcluded-3: assets\n"
 
-#: admin/menu.php:21 admin/menu.php:22 admin/pages/events.php:453
+#: admin/menu.php:21 admin/menu.php:22 admin/pages/events.php:460
 msgid "Events"
 msgstr "Veranstaltungen"
 
@@ -63,7 +63,7 @@ msgstr "Gespeichert"
 msgid "Draft"
 msgstr "Entwurf"
 
-#: admin/pages/categories.php:128 admin/pages/events.php:149
+#: admin/pages/categories.php:128 admin/pages/events.php:155
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -91,7 +91,7 @@ msgstr "Name der Veranstaltung"
 msgid "Event Description"
 msgstr "Beschreibung der Veranstaltung"
 
-#: admin/pages/event_edit.php:67
+#: admin/pages/event_edit.php:67 admin/pages/events.php:138
 msgid "Publish"
 msgstr "Veröffentlichen"
 
@@ -99,7 +99,7 @@ msgstr "Veröffentlichen"
 msgid "Status"
 msgstr "Status"
 
-#: admin/pages/event_edit.php:76 admin/pages/events.php:470
+#: admin/pages/event_edit.php:76 admin/pages/events.php:477
 msgid "Published"
 msgstr "Veröffentlicht"
 
@@ -176,23 +176,35 @@ msgstr "Veranstaltungsbeginn"
 msgid "Event ends at"
 msgstr "Veranstaltungsende"
 
-#: admin/pages/events.php:151
+#: admin/pages/events.php:143
+msgid "Deactivate"
+msgstr "Deaktivieren"
+
+#: admin/pages/events.php:148
+msgid "Preview"
+msgstr "Vorschau"
+
+#: admin/pages/events.php:150
+msgid "View"
+msgstr "Anzeigen"
+
+#: admin/pages/events.php:157
 msgid "Copy"
 msgstr "Kopieren"
 
-#: admin/pages/events.php:454
+#: admin/pages/events.php:461
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: admin/pages/events.php:464
+#: admin/pages/events.php:471
 msgid "All"
 msgstr "Alle"
 
-#: admin/pages/events.php:476
+#: admin/pages/events.php:483
 msgid "Drafts"
 msgstr "Entwürfe"
 
-#: admin/pages/events.php:481
+#: admin/pages/events.php:488
 msgid "Search"
 msgstr "Suche"
 

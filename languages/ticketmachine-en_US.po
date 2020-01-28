@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-28 20:58+0100\n"
-"PO-Revision-Date: 2020-01-28 20:58+0100\n"
+"POT-Creation-Date: 2020-01-28 21:07+0100\n"
+"PO-Revision-Date: 2020-01-28 21:07+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: languages\n"
 "X-Poedit-SearchPathExcluded-3: assets\n"
 
-#: admin/menu.php:21 admin/menu.php:22 admin/pages/events.php:453
+#: admin/menu.php:21 admin/menu.php:22 admin/pages/events.php:460
 msgid "Events"
 msgstr "Events"
 
@@ -63,7 +63,7 @@ msgstr "Saved"
 msgid "Draft"
 msgstr "Draft"
 
-#: admin/pages/categories.php:128 admin/pages/events.php:149
+#: admin/pages/categories.php:128 admin/pages/events.php:155
 msgid "Edit"
 msgstr "Edit"
 
@@ -91,7 +91,7 @@ msgstr "Event Name"
 msgid "Event Description"
 msgstr "Event Description"
 
-#: admin/pages/event_edit.php:67
+#: admin/pages/event_edit.php:67 admin/pages/events.php:138
 msgid "Publish"
 msgstr "Publish"
 
@@ -99,7 +99,7 @@ msgstr "Publish"
 msgid "Status"
 msgstr "Status"
 
-#: admin/pages/event_edit.php:76 admin/pages/events.php:470
+#: admin/pages/event_edit.php:76 admin/pages/events.php:477
 msgid "Published"
 msgstr "Published"
 
@@ -176,23 +176,35 @@ msgstr "Event begins at"
 msgid "Event ends at"
 msgstr "Event ends at"
 
-#: admin/pages/events.php:151
+#: admin/pages/events.php:143
+msgid "Deactivate"
+msgstr "Deactivate"
+
+#: admin/pages/events.php:148
+msgid "Preview"
+msgstr "Preview"
+
+#: admin/pages/events.php:150
+msgid "View"
+msgstr "View"
+
+#: admin/pages/events.php:157
 msgid "Copy"
 msgstr "Copy"
 
-#: admin/pages/events.php:454
+#: admin/pages/events.php:461
 msgid "Add"
 msgstr "Add"
 
-#: admin/pages/events.php:464
+#: admin/pages/events.php:471
 msgid "All"
 msgstr "All"
 
-#: admin/pages/events.php:476
+#: admin/pages/events.php:483
 msgid "Drafts"
 msgstr "Drafts"
 
-#: admin/pages/events.php:481
+#: admin/pages/events.php:488
 msgid "Search"
 msgstr "Search"
 
