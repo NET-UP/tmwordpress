@@ -17,7 +17,7 @@
                 $tm_output .= '<li class="media">';
 
                 if(isset($atts['show_image']) && $atts['show_image'] > 0){
-                    $tm_output .= '<a class="mr-3 media-img" href="/event?id=' . $event->id . '" style="background-image:url('. $event->event_img_url .')"></div>';
+                    $tm_output .= '<a class="mr-3 media-img" href="/event?id=' . $event->id . '" style="background-image:url('. $event->event_img_url .')"></a>';
                 }
                                     
                     $tm_output .= '<div class="media-body">';
