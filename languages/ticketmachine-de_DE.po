@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-28 20:49+0100\n"
-"PO-Revision-Date: 2020-01-28 20:49+0100\n"
+"POT-Creation-Date: 2020-01-28 20:56+0100\n"
+"PO-Revision-Date: 2020-01-28 20:56+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -179,6 +179,10 @@ msgstr "Veranstaltungsende"
 #: admin/pages/events.php:151
 msgid "Copy"
 msgstr "Kopieren"
+
+#: admin/pages/events.php:454
+msgid "Add"
+msgstr "Hinzufügen"
 
 #: admin/pages/events.php:464
 msgid "All"
