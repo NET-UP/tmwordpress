@@ -26,7 +26,7 @@
         $tm_output .= "<div class='row'>
                             <div class='col-12'>
                                 <div class='input-group'>
-                                    <div class='btn-group ml-0 ml-sm-4'>
+                                    <div class='btn-group mb-3'>
                                         <a href='#' aria-label='" . __("To previous month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
                                         <a href='#' class='btn btn-secondary' id='calendar-title'></a>
                                         <a href='#' aria-label='" . __("To next month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
