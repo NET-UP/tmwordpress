@@ -184,6 +184,51 @@
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         dbDelta( $sql );
         add_option('jal_db_version', $jal_db_version);
+
+        //create events page
+        $new_page_title = 'Events';
+        $new_page_slug = 'events';
+        $new_page_content = '[ticketmachine page="event_list"]';
+        $new_page_template = '';
+    
+        $page_check = get_page_by_path($new_page_slug);
+        $new_page = array(
+            'post_type' => 'page',
+            'post_title' => $new_page_title,
+            'post_name' => $new_page_slug
+            'post_content' => $new_page_content,
+            'post_status' => 'publish',
+            'post_author' => 1,
+        );
+        if(!isset($page_check->ID)){
+            $new_page_id = wp_insert_post($new_page);
+            if(!empty($new_page_template)){
+                update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
+            }
+        }
+
+        //create events page
+        $new_page_title = 'Event';
+        $new_page_slug = 'event';
+        $new_page_content = '[ticketmachine page="event_details"]';
+        $new_page_template = '';
+    
+        $page_check = get_page_by_path($new_page_slug);
+        $new_page = array(
+            'post_type' => 'page',
+            'post_title' => $new_page_title,
+            'post_name' => $new_page_slug
+            'post_content' => $new_page_content,
+            'post_status' => 'publish',
+            'post_author' => 1,
+        );
+        if(!isset($page_check->ID)){
+            $new_page_id = wp_insert_post($new_page);
+            if(!empty($new_page_template)){
+                update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
+            }
+        }
+  
         
         $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
     }
