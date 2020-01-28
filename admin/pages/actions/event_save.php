@@ -59,7 +59,7 @@
             <a href="/event?id=<?php echo $response->id; ?>">
                 <?php 
                     if($response->approved == 1){
-                        echo __('Show', 'ticketmachine'); 
+                        echo __('View', 'ticketmachine'); 
                     }else{
                         echo __('Preview', 'ticketmachine'); 
                     }
