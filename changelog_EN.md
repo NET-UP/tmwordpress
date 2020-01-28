@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 +   Installationwizard translated into English & German
 +   New configurable "List View" on the events overview page
 +   Calendars can now be included directly as a widget via shortcode
++   Showing Date & Time can now be activated/deactived for event list widgets
 +   There is now an "upcoming" filter for events in the backend
 +   "Preview" and "View" buttons added to events in the backend
 -   Fixed some translation issues
