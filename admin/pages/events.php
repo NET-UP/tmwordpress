@@ -23,7 +23,6 @@ if(!class_exists('WP_List_Table')){
     require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
 }
 include_once(str_replace("/admin/pages", "", plugin_dir_path( __FILE__ )) . 'globals.php');
-include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/includes/scriptstyles.php');
 
 
 
@@ -59,6 +58,8 @@ class Event_List_Table extends WP_List_Table {
     }
 
     function get_events(){
+        
+        include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/includes/scriptstyles.php');
         global $globals, $api;
 
 		$params = array();
