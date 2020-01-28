@@ -42,6 +42,13 @@
                         include "pages/events.php";
                         $tm_output .= tm_display_events( $atts );
                         break;
+                    case 'event_boxes':
+                        include "partials/_event_boxes_item.php";
+                        include "partials/_search_header.php";
+                        include "partials/_tag_header.php";
+                        include "pages/events.php";
+                        $tm_output .= tm_display_events( $atts );
+                        break;
                     case 'event_details':
                         include "partials/_event_page_information.php";
                         include "partials/_event_page_tickets.php";
@@ -128,6 +135,7 @@
                     api_last_refresh datetime(6) DEFAULT NULL,
                     api_environment varchar(64) DEFAULT 'shop' NOT NULL,
                     show_list bit(1) DEFAULT 1 NOT NULL,
+                    show_boxes bit(1) DEFAULT 1 NOT NULL,
                     show_calendar bit(1) DEFAULT 1 NOT NULL,
                     show_social_media bit(1) DEFAULT 1 NOT NULL,
                     show_social_media_ical bit(1) DEFAULT 1 NOT NULL,

@@ -26,7 +26,7 @@
 			}
 		$tm_output .= "</div>";
 		
-		if(isset($atts['display']) && $atts['display'] == "calendar" && $globals->show_calendar || $globals->show_calendar && !$globals->show_list){
+		if(isset($atts['display']) && $atts['display'] == "calendar" && $globals->show_calendar || $globals->show_calendar && !$globals->show_boxes){
 		
 			//Calendar Packages
 			wp_enqueue_style( 'calendar_CSS_1', plugins_url('../assets/packages/core/main.css', __FILE__ ) );
@@ -64,7 +64,7 @@
 					</div>
 				</div>";
 			
-		}elseif($globals->show_list){
+		}elseif($globals->show_boxes){
 		
 			$prev = NULL;
 			$i = 0;
