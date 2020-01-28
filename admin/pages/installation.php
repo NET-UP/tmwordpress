@@ -45,15 +45,13 @@
                         <h1>Vielen Dank, dass Sie mich installiert haben!</h1>
                         <div>Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
                         <i class="fas fa-cloud tm-icon-big mt-4 mb-2"></i>
-                        <div>Alle Veranstaltungen werden über den TicketMachine Cloud Service
+                        <div>
+                            Alle Veranstaltungen werden über den TicketMachine Cloud Service gespeichert.
                             <i class="fas fa-info-circle" title="Was soll hier stehen?"></i>
-                            <br>
-                            gespeichert.
                         </div>
                         <i class="far fa-user-circle tm-icon-big mt-4 mb-2"></i>
-                        <div>Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen),
-                        <br>
-                        benötigen wir Ihre E-Mail-Adresse.
+                        <div>
+                            Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen), benötigen wir Ihre E-Mail-Adresse.
                         </div>
 
                         <?php
