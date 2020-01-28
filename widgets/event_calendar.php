@@ -22,6 +22,20 @@
         
         //Calendar Config
         wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ) );
+
+        if(isset($_GET['display']) && $_GET['display'] == "calendar"){
+            $tm_output .= "<div class='form-row'>
+                                <div class='col-12'>
+                                    <div class='input-group'>
+                                        <div class='btn-group ml-0 ml-sm-4'>
+                                            <a href='#' aria-label='" . __("To previous month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
+                                            <a href='#' class='btn btn-secondary' id='calendar-title'></a>
+                                            <a href='#' aria-label='" . __("To next month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>";
+        }
         
         $tm_output .= "
             <div class='col-12 mt-3'>
