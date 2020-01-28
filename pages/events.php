@@ -30,7 +30,7 @@
 		
 		$tm_output = "<div class='row tm_events_container'>";
 		
-		$tm_output .= "<div class='page-header col-12'>" . tm_search_header($globals);
+		$tm_output .= "<div class='page-header col-12'>" . tm_search_header($globals, $current_page);
 			if($globals->tag){
 				$tm_output .= tm_tag_header($globals);
 			}

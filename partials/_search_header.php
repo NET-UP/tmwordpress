@@ -1,6 +1,6 @@
 <?php
 
-    function tm_search_header ( $globals ) {
+    function tm_search_header ( $globals, $current_page ) {
 
         $tm_output = "";
         $params = "?";
