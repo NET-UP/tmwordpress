@@ -82,12 +82,12 @@
 			$atts['show_date'] = 1;
 			
 			$tm_output .= '<div class="col-12">';
-				$tm_output .= '<ul class="list-unstyled m-0">';
+				$tm_output .= '<ul class="list-unstyled mx-0">';
 
 				foreach($events as $event){
 					$event = (object)$event;
 
-					$tm_output .= '<li class="media mx-0 pt-2">';
+					$tm_output .= '<li class="media mx-0">';
 
 					if($atts['show_image'] > 0){
 						$tm_output .= '<div class="mr-3 media-img" style="background-image:url('. $event->event_img_url .')"></div>';
