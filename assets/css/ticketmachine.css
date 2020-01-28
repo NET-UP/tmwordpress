@@ -211,6 +211,10 @@ body .tm_page a.btn {
 	word-break: break-word;
 }
 
+.tm_page .title-height {
+	height:50px;
+}
+
 .tm_page .read-more {
 	min-width:auto !important;
 }
