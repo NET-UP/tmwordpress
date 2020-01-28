@@ -211,10 +211,6 @@ body .tm_page a.btn {
 	word-break: break-word;
 }
 
-.tm_page .title-height {
-	height:50px;
-}
-
 .tm_page .read-more {
 	min-width:auto !important;
 }
@@ -319,7 +315,7 @@ td.fc-today {
 }
 
 @media only screen and (max-width: 991px) {
-	.no-mobile-height {
+	.no-height-mobile {
 	  height: auto !important;
 	}
 }
