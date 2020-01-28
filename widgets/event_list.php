@@ -16,20 +16,20 @@
 
                 $tm_output .= '<li class="media">';
 
-                if($atts['show_image'] > 0){
+                if(isset($atts['show_image']) && $atts['show_image'] > 0){
                     $tm_output .= '<div class="mr-3 media-img" style="background-image:url('. $event->event_img_url .')"></div>';
                 }
                                     
                     $tm_output .= '<div class="media-body">';
                     $tm_output .= '<h5 class="mt-0 mb-1"><a href="/event?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
                     
-                    if($atts['show_date'] > 0){
+                    if(isset($atts['show_date']) && $atts['show_date'] > 0){
                         $tm_output .= '
                         <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date( "d.m.Y", strtotime($event->ev_date) ) .'</div> 
                         <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date( "H:i", strtotime($event->ev_date) ) .'</div>';
                     }
 
-                    if($atts['show_description'] > 0){
+                    if(isset($atts['show_description']) && $atts['show_description'] > 0){
                         if(!$atts['description_length']){
                             $atts['description_length'] = 15;
                         }
@@ -40,7 +40,7 @@
                             </li>';
             }
 
-            if($atts['show_more'] > 0){
+            if(isset($atts['show_more']) && $atts['show_more'] > 0){
                 $tm_output .= '<li class="media"><a href="/events">' . __("Show all events", "ticketmachine") . '</a></li>';
             }
 
