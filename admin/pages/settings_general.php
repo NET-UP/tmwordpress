@@ -40,7 +40,7 @@
 						'sort_column'      => 'post_title',
 						'echo'             => 0
 					);
-					$pages = wp_dropdown_pages( $dropdown_args );
+					wp_dropdown_pages( $dropdown_args );
 				?>
 			</td>
 		</tr>
@@ -55,7 +55,7 @@
 						'sort_column'      => 'post_title',
 						'echo'             => 0
 					);
-					$pages = wp_dropdown_pages( $dropdown_args );
+					wp_dropdown_pages( $dropdown_args );
 				?>
 			</td>
 		</tr>
