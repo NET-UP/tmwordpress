@@ -185,7 +185,7 @@
         dbDelta( $sql );
         add_option('jal_db_version', $jal_db_version);
 
-        //create events page
+        //create events overview page
         $new_page_title = 'Events';
         $new_page_slug = 'events';
         $new_page_content = '[ticketmachine page="event_list"]';
@@ -207,7 +207,7 @@
             }
         }
 
-        //create events page
+        //create event detail page
         $new_page_title = 'Event';
         $new_page_slug = 'event';
         $new_page_content = '[ticketmachine page="event_details"]';
