@@ -55,13 +55,17 @@
                         </div>
 
                         <?php
+                            $current_locale = get_locale();
+                            $parsed_locale = substr($current_locale, 0, strpos($current_locale, '_'));
         
                             $api->auth->testdata = array(
                                 'response_type' => 'code',
                                 'client_id' => "4c0bcf69d871fb55362382f436e768b277592f3243e7da9bfef4dff997392fe0",
                                 'redirect_uri' => $api->auth->redirect_uri . "?start_uri=" . $api->auth->start_uri,
                                 'state' => $_SESSION['state'],
-                                'scope' => 'public organizer organizer/event'
+                                'scope' => 'public organizer organizer/event',
+                                'trusted' => 1,
+                                'locale' => $parsed_locale
                             );
         
                             //$authorize_url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/authorize";
