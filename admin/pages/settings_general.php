@@ -31,22 +31,32 @@
 	<tbody>
 		<tr>
 			<th><label><?php echo __('Events overview page', 'ticketmachine'); ?></label></th>
-			<td><input name="events_slug_id" type="text" value="<?php echo $tm_config->events_slug; ?>" class="regular-text" />
+			<td>
+				<?php
+					$dropdown_args = array(
+						'post_type'        => 'page',
+						'selected'         => $tm_config->events_slug_id,
+						'name'             => 'event_slug_id',
+						'sort_column'      => 'post_title',
+						'echo'             => 0
+					);
+					$pages = wp_dropdown_pages( $dropdown_args );
+				?>
 			</td>
 		</tr>
 		<tr>
 			<th><label><?php echo __('Event detail page', 'ticketmachine'); ?></label></th>
 			<td>
-			<?php
-				$dropdown_args = array(
-					'post_type'        => 'page',
-					'selected'         => $tm_config->event_slug_id,
-					'name'             => 'event_slug_id',
-					'sort_column'      => 'post_title',
-					'echo'             => 0
-				);
-				$pages = wp_dropdown_pages( $dropdown_args );
-			?>
+				<?php
+					$dropdown_args = array(
+						'post_type'        => 'page',
+						'selected'         => $tm_config->event_slug_id,
+						'name'             => 'event_slug_id',
+						'sort_column'      => 'post_title',
+						'echo'             => 0
+					);
+					$pages = wp_dropdown_pages( $dropdown_args );
+				?>
 			</td>
 		</tr>
 
