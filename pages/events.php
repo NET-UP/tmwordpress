@@ -79,6 +79,7 @@
 			//ToDo: Move to setting page
 			$atts['show_image'] = 1;
 			$atts['show_description'] = 1;
+			$atts['show_date'] = 1;
 			
 			$tm_output .= '<ul class="list-unstyled">';
 
@@ -94,6 +95,10 @@
                     $tm_output .= '<div class="media-body">';
                     $tm_output .= '<h5 class="mt-0 mb-1"><a href="/event?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
 
+                    if($atts['show_date'] > 0){
+                        $tm_output .= '<div>' . $event->ev_date . '</div>';
+					}
+					
                     if($atts['show_description'] > 0){
                         if(!$atts['description_length']){
                             $atts['description_length'] = 15;
