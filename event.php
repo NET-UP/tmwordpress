@@ -40,7 +40,7 @@
 		$calendar[] = array(
 			'id' =>$event->id,
 			'title' => $event->ev_name,
-			'url' => "/event/?id=" . $event->id,
+			'url' => "/" . $globals->event_slug . "/?id=" . $event->id,
 			'start' => $start,
 			'end' => $end,
 			'class' => "event-success",
