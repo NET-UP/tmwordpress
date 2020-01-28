@@ -40,8 +40,8 @@
         <div class="box box-md">
             <div class="card p-4">
                 <div class="row">
-                    <div class="col-12 text-center" style="font-size: 16px;">
-                        <img style="width: 90px;" src=" <?php echo dirname(plugin_dir_url( __FILE__ ), 1) . '/assets/img/logo.png'; ?>" alt="TicketMachine Logo">
+                    <div class="col-12 text-center">
+                        <img style="width: 85px;" src=" <?php echo dirname(plugin_dir_url( __FILE__ ), 1) . '/assets/img/logo.png'; ?>" alt="TicketMachine Logo">
                         <h1>Vielen Dank, dass Sie mich installiert haben!</h1>
                         <div>Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können.</div>
                         <i class="fas fa-cloud tm-icon-big mt-4 mb-2"></i>
