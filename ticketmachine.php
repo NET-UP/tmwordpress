@@ -58,6 +58,10 @@
                         include "widgets/event_list.php";
                         $tm_output .= tm_widget_event_list( $atts );
                         break;
+                    case 'event_calendar':
+                        include "widgets/event_calendar.php";
+                        $tm_output .= tm_widget_event_calendar( $atts );
+                        break;
                 }
             }
 
