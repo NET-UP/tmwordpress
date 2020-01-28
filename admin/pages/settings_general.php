@@ -36,7 +36,8 @@
 					<?php
 						if( $pages = get_pages() ){
 							foreach( $pages as $page ){
-								echo '<option value="' . $page->ID . '" ' . selected( $page->ID, $globals->events_slug_id ) . '>' . $page->post_title . '</option>';
+								$selected = ($page->ID == $tm_config->events_slug_id) ? 'selected="selected"' : '';
+								echo '<option value="' . $page->ID . '" ' . $selected . '>' . $page->post_title . '</option>';
 							}
 						}
 					?>
@@ -50,7 +51,7 @@
 					<?php
 						if( $pages = get_pages() ){
 							foreach( $pages as $page ){
-								$selected = ($page->ID == $tm_config->event_slug_id) ? 'selected="selected"' : 'lol';
+								$selected = ($page->ID == $tm_config->event_slug_id) ? 'selected="selected"' : '';
 								echo '<option value="' . $page->ID . '" ' . $selected . '>' . $page->post_title . '</option>';
 							}
 						}
