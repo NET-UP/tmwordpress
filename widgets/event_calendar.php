@@ -23,7 +23,7 @@
         //Calendar Config
         wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ) );
 
-        $tm_output .= "<div class='form-row'>
+        $tm_output .= "<div class='row'>
                             <div class='col-12'>
                                 <div class='input-group'>
                                     <div class='btn-group ml-0 ml-sm-4'>
@@ -36,7 +36,6 @@
                         </div>";
         
         $tm_output .= "
-            <div class='col-12 mt-3'>
                 <div class='row'>
                     <div class='col-12'>
                         <div id='tm_spinner'>
@@ -48,8 +47,7 @@
                         </div>
                     </div>
                     <div id='calendar' class='col-12'></div>
-                </div>
-            </div>";
+                </div>";
 
         return $tm_output;
     }
