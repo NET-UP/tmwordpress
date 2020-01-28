@@ -478,7 +478,7 @@ function tt_render_list_page(){
                         </a>
                     </li>
                 </ul>
-                <?php $EventListTable->search_box('Search', 'search'); ?>
+                <?php $EventListTable->search_box(__('Search', 'ticketmachine'), 'search'); ?>
                 <!--Fetch, prepare, sort, and filter our data... -->
                 <?php $EventListTable->prepare_items(); ?>
                 <?php $EventListTable->display(); ?>

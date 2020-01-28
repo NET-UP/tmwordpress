@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-28 20:56+0100\n"
-"PO-Revision-Date: 2020-01-28 20:56+0100\n"
+"POT-Creation-Date: 2020-01-28 20:57+0100\n"
+"PO-Revision-Date: 2020-01-28 20:57+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -191,6 +191,10 @@ msgstr "Alle"
 #: admin/pages/events.php:476
 msgid "Drafts"
 msgstr "Entwürfe"
+
+#: admin/pages/events.php:481
+msgid "Search"
+msgstr "Suche"
 
 #: admin/pages/installation.php:46
 msgid "Thanks for installing me!"
