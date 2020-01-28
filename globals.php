@@ -11,10 +11,8 @@
 	$api->auth = new stdClass();
 
 	//get page slugs
-	$post = get_post($globals->events_slug_id); 
-	$globals->events_slug = $post->post_name;
-	$post = get_post($globals->event_slug_id); 
-	$globals->event_slug = $post->post_name;
+	$globals->events_slug = get_page_uri($globals->events_slug_id); 
+	$globals->event_slug = get_page_uri($globals->event_slug_id); 
 
 	switch ($globals->event_grouping) {
 		case 'Month':
