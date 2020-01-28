@@ -1,6 +1,8 @@
 
 <?php
     global $globals, $api, $wpdb;
+    $tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
+    $tm_config = $tm_config[0];
 
     if($_GET['code']) {
         echo "Authorization complete!<br>Code: " . $_GET['code'];
