@@ -50,13 +50,13 @@
                            <?php echo __("Just one more step to start using TicketMachine.", "ticketmachine"); ?>
                         </div>
 
-                        <i class="fas fa-cloud tm-icon-big mt-4 mb-2"></i>
+                        <i class="fas fa-cloud tm-icon-big mt-3 mb-2"></i>
                         <div class="mb-3">
                            <?php echo __("All events are saved through the TicketMachine Cloud Service.", "ticketmachine"); ?>
                         </div>
                         <hr>
 
-                        <i class="far fa-user-circle tm-icon-big mt-3 mb-2"></i>
+                        <i class="far fa-user-circle tm-icon-big mt-2 mb-2"></i>
                         <div>
                            <?php echo __("In order to create your TicketMachine account (or connect to your current one), we require your email adress.", "ticketmachine"); ?>
                         </div>
