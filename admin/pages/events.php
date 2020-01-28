@@ -135,27 +135,27 @@ class Event_List_Table extends WP_List_Table {
         $additional_text = "";
         if($item['approved'] == 0){
             $toggle_type = "publish";
-            $toggle_text = "Publish";
+            $toggle_text = __("Publish", 'ticketmachine');
             $toggle_action = "publish";
             $additional_text .= " — <span class='post-state'>" . __('Draft' , 'ticketmachine') . "</span>";
         }else{
             $toggle_type = "delete";
-            $toggle_text = "Deactivate";
+            $toggle_text = __("Deactivate", 'ticketmachine');
             $toggle_action = "deactivate";
         }
 
         if($item['approved'] == 0){
-            $view_text = "Preview";
+            $view_text = __("Preview", 'ticketmachine');
         }else{
-            $view_text = "View";
+            $view_text = __("View", 'ticketmachine');
         }
         
         //Build row actions
         $actions = array(
             'edit'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Edit', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
-            $toggle_type    => sprintf('<a href="?page=%s&action=%s&id=%s">'.__($toggle_text, 'ticketmachine').'</a>',$_REQUEST['page'],$toggle_action,$item['id']),
+            $toggle_type    => sprintf('<a href="?page=%s&action=%s&id=%s">'.$toggle_text.'</a>',$_REQUEST['page'],$toggle_action,$item['id']),
             'copy'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Copy', 'ticketmachine').'</a>',$_REQUEST['page'],'copy',$item['id']),
-            'view'          => sprintf('<a target="_blank" href="/event?id=%s">'.__($view_text, 'ticketmachine').'</a>',$item['id'])
+            'view'          => sprintf('<a target="_blank" href="/event?id=%s">'.$view_text.'</a>',$item['id'])
         );
         
         //Return the title contents
