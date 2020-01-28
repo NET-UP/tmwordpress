@@ -1,5 +1,6 @@
 <?php
     global $globals, $api;
+    include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/includes/scriptstyles.php');
     wp_enqueue_media();
 
     if($_GET['id'] > 0){
