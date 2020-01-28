@@ -2,8 +2,8 @@
 	if (isset($_POST['submit'])) {
 		$save_array = 
 			array(
-				"events_slug" => $_POST['events_slug'],
-				"event_slug" => $_POST['event_slug']
+				"events_slug_id" => $_POST['events_slug_id'],
+				"event_slug_id" => $_POST['event_slug_id']
 			);
 		if (!empty($tm_config)) {
 			$wpdb->update(
@@ -32,31 +32,29 @@
 		<tr>
 			<th><label><?php echo __('Events overview page', 'ticketmachine'); ?></label></th>
 			<td>
-				<?php
-					$dropdown_args = array(
-						'post_type'        => 'page',
-						'selected'         => $tm_config->events_slug_id,
-						'name'             => 'event_slug_id',
-						'sort_column'      => 'post_title',
-						'echo'             => 0
-					);
-					wp_dropdown_pages( $dropdown_args );
-				?>
+				<select name="events_slug_id">
+					<?php
+						if( $pages = get_pages() ){
+							foreach( $pages as $page ){
+								echo '<option value="' . $page->ID . '" ' . selected( $page->ID, $globals->events_slug_id ) . '>' . $page->post_title . '</option>';
+							}
+						}
+					?>
+				</select>
 			</td>
 		</tr>
 		<tr>
 			<th><label><?php echo __('Event detail page', 'ticketmachine'); ?></label></th>
 			<td>
-				<?php
-					$dropdown_args = array(
-						'post_type'        => 'page',
-						'selected'         => $tm_config->event_slug_id,
-						'name'             => 'event_slug_id',
-						'sort_column'      => 'post_title',
-						'echo'             => 0
-					);
-					wp_dropdown_pages( $dropdown_args );
-				?>
+				<select name="event_slug_id">
+					<?php
+						if( $pages = get_pages() ){
+							foreach( $pages as $page ){
+								echo '<option value="' . $page->ID . '" ' . selected( $page->ID, $globals->event_slug_id ) . '>' . $page->post_title . '</option>';
+							}
+						}
+					?>
+				</select>
 			</td>
 		</tr>
 
