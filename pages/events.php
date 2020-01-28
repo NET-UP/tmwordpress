@@ -81,7 +81,7 @@
 			$atts['show_description'] = 1;
 			$atts['show_date'] = 1;
 			
-			$tm_output .= '<ul class="list-unstyled">';
+			$tm_output .= '<ul class="list-unstyled col-12">';
 
             foreach($events as $event){
                 $event = (object)$event;
