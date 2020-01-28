@@ -1,6 +1,13 @@
 # Change Log (English)
 All notable changes to this project will be documented in this file.
 
+## [0.9.5] - 2020-01-28
++   Installationwizard created
++   Installationwizard translated into English & German
++   New configurable "List View" on the events overview page
++   Calendars can now be included directly as a widget via shortcode.
+-   Fixed some translation issues
+
 ## [0.9.4] - 2020-01-08
 +   Plugin translated into English
 +   Plugin translated into German
