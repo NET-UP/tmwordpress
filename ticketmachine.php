@@ -119,6 +119,54 @@
         global $wpdb;
         global $jal_db_version;
 
+        
+
+        //create events overview page
+        $new_page_title = 'Events';
+        $new_page_slug = 'events';
+        $new_page_content = '[ticketmachine page="event_list"]';
+        $new_page_template = '';
+    
+        $page_check = get_page_by_path($new_page_slug);
+        $new_page = array(
+            'post_type' => 'page',
+            'post_title' => $new_page_title,
+            'post_name' => $new_page_slug,
+            'post_content' => $new_page_content,
+            'post_status' => 'publish',
+            'post_author' => 1,
+        );
+        if(!isset($page_check->ID)){
+            $new_page_id = wp_insert_post($new_page);
+            if(!empty($new_page_template)){
+                update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
+            }
+        }
+        $events_slug = get_page_by_path($new_page_slug);
+
+        //create event detail page
+        $new_page_title = 'Event';
+        $new_page_slug = 'event';
+        $new_page_content = '[ticketmachine page="event_details"]';
+        $new_page_template = '';
+    
+        $page_check = get_page_by_path($new_page_slug);
+        $new_page = array(
+            'post_type' => 'page',
+            'post_title' => $new_page_title,
+            'post_name' => $new_page_slug,
+            'post_content' => $new_page_content,
+            'post_status' => 'publish',
+            'post_author' => 1,
+        );
+        if(!isset($page_check->ID)){
+            $new_page_id = wp_insert_post($new_page);
+            if(!empty($new_page_template)){
+                update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
+            }
+        }
+        $event_slug = get_page_by_path($new_page_slug);
+
         $table = $wpdb->prefix . 'ticketmachine_config';
         $charset = $wpdb->get_charset_collate();
         $charset_collate = $wpdb->get_charset_collate();
@@ -149,6 +197,8 @@
                     event_grouping varchar(64) DEFAULT 'Year' NOT NULL,
                     events_slug varchar(128) DEFAULT 'events' NOT NULL,
                     event_slug varchar(128) DEFAULT 'event' NOT NULL,
+                    events_slug_id varchar(128) DEFAULT '" . $events_slug->ID . "' NOT NULL,
+                    event_slug_id varchar(128) DEFAULT '" . $event_slug->ID . "' NOT NULL,
                 PRIMARY KEY  (id)
                 ) $charset_collate;";
 
@@ -186,51 +236,6 @@
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         dbDelta( $sql );
         add_option('jal_db_version', $jal_db_version);
-
-        //create events overview page
-        $new_page_title = 'Events';
-        $new_page_slug = 'events';
-        $new_page_content = '[ticketmachine page="event_list"]';
-        $new_page_template = '';
-    
-        $page_check = get_page_by_path($new_page_slug);
-        $new_page = array(
-            'post_type' => 'page',
-            'post_title' => $new_page_title,
-            'post_name' => $new_page_slug,
-            'post_content' => $new_page_content,
-            'post_status' => 'publish',
-            'post_author' => 1,
-        );
-        if(!isset($page_check->ID)){
-            $new_page_id = wp_insert_post($new_page);
-            if(!empty($new_page_template)){
-                update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
-            }
-        }
-
-        //create event detail page
-        $new_page_title = 'Event';
-        $new_page_slug = 'event';
-        $new_page_content = '[ticketmachine page="event_details"]';
-        $new_page_template = '';
-    
-        $page_check = get_page_by_path($new_page_slug);
-        $new_page = array(
-            'post_type' => 'page',
-            'post_title' => $new_page_title,
-            'post_name' => $new_page_slug,
-            'post_content' => $new_page_content,
-            'post_status' => 'publish',
-            'post_author' => 1,
-        );
-        if(!isset($page_check->ID)){
-            $new_page_id = wp_insert_post($new_page);
-            if(!empty($new_page_template)){
-                update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
-            }
-        }
-  
         
         $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
     }
