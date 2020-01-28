@@ -27,6 +27,14 @@
     </div>
 <?php }else{ ?>
     <div class="notice notice-success is-dismissable">
-        <p><?php echo __('Saved', 'ticketmachine'); ?>!</p>
+        <p>
+            <?php 
+                if($response->approved == 1){
+                    echo __('Published', 'ticketmachine'); 
+                }else{
+                    echo __('Deactivated', 'ticketmachine'); 
+                }
+            ?>
+        </p>
     </div>
 <?php } ?>
