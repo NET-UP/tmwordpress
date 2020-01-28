@@ -1,5 +1,7 @@
 <?php
 	defined("ABSPATH") or die("Permission denied");
+	include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/includes/scriptstyles.php');
+	
 	global $wpdb;
     $tm_design = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_design LIMIT 0,1");
     $tm_design = $tm_design[0];
