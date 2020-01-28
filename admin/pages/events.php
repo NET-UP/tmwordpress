@@ -461,19 +461,19 @@ function tt_render_list_page(){
                 <ul class="subsubsub">
                     <li class="all">
                         <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" <?php if(!isset($_GET['status'] )){ ?>class="current"<?php } ?>>
-                            <?php _e('Alle'); ?> 
+                            <?php __('All', 'ticketmachine'); ?> 
                             <span class="count"></span>
                         </a> |
                     </li>
                     <li class="publish">
                         <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=published'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "published"){ ?>class="current"<?php } ?>>
-                            <?php _e('Veröffentlichte'); ?> 
+                            <?php __('Published', 'ticketmachine'); ?> 
                             <span class="count"></span> <!-- TO DO add logic -->
                         </a> |
                     </li>
                     <li class="draft">
                         <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=drafts'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "drafts"){ ?>class="current"<?php } ?>>
-                            <?php _e('Entwürfe'); ?> 
+                            <?php __('Drafts', 'ticketmachine'); ?> 
                             <span class="count"></span> <!-- TO DO add logic -->
                         </a>
                     </li>

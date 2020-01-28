@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-28 20:29+0100\n"
-"PO-Revision-Date: 2020-01-28 20:29+0100\n"
+"POT-Creation-Date: 2020-01-28 20:49+0100\n"
+"PO-Revision-Date: 2020-01-28 20:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -99,7 +99,7 @@ msgstr "Veröffentlichen"
 msgid "Status"
 msgstr "Status"
 
-#: admin/pages/event_edit.php:76
+#: admin/pages/event_edit.php:76 admin/pages/events.php:470
 msgid "Published"
 msgstr "Veröffentlicht"
 
@@ -180,30 +180,37 @@ msgstr "Veranstaltungsende"
 msgid "Copy"
 msgstr "Kopieren"
 
-#: admin/pages/installation.php:47
+#: admin/pages/events.php:464
+msgid "All"
+msgstr "Alle"
+
+#: admin/pages/events.php:476
+msgid "Drafts"
+msgstr "Entwürfe"
+
+#: admin/pages/installation.php:46
 msgid "Thanks for installing me!"
 msgstr "Vielen Dank, dass Sie mich installiert haben!"
 
-#: admin/pages/installation.php:51
+#: admin/pages/installation.php:49
 msgid "Just one more step to start using TicketMachine."
 msgstr ""
 "Sie sind noch einen Schritt entfernt, um TicketMachine nutzen zu können."
 
-#: admin/pages/installation.php:57
+#: admin/pages/installation.php:54
 msgid "All events are saved through the TicketMachine Cloud Service."
 msgstr ""
-"Alle Veranstaltungen werden über den TicketMachine Cloud Service "
-"gespeichert."
+"Alle Veranstaltungen werden über den TicketMachine Cloud Service gespeichert."
 
-#: admin/pages/installation.php:63
+#: admin/pages/installation.php:60
 msgid ""
 "In order to create your TicketMachine account (or connect to your current "
 "one), we require your email adress."
 msgstr ""
-"Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung "
-"herzustellen), benötigen wir Ihre E-Mail-Adresse."
+"Um Ihr TicketMachine Konto zu erstellen (oder eine Verbindung herzustellen), "
+"benötigen wir Ihre E-Mail-Adresse."
 
-#: admin/pages/installation.php:87
+#: admin/pages/installation.php:84
 msgid "Connect with TicketMachine"
 msgstr "mit TicketMachine verbinden"
 
