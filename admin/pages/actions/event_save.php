@@ -40,6 +40,8 @@
     
     $tm_json = tmapi_event($post_json, "POST");
     $response = (object)$tm_json;
+
+    print_r($response);
 ?>
 
 
@@ -53,6 +55,6 @@
     </div>
 <?php }else{ ?>
     <div class="notice notice-success is-dismissable">
-        <p><?php echo __('Saved', 'ticketmachine'); ?>!</p>
+        <p><?php echo __('Saved', 'ticketmachine'); ?>! &nbsp;<a href="/event?id="></a></p>
     </div>
 <?php } ?>
