@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-01-28 10:40+0100\n"
-"PO-Revision-Date: 2020-01-28 10:40+0100\n"
+"PO-Revision-Date: 2020-01-28 12:17+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -198,7 +198,7 @@ msgstr "Calendar View"
 
 #: admin/pages/settings.php:40 partials/_event_page_details.php:7
 msgid "Details"
-msgstr "Details"
+msgstr "Details Page"
 
 #: admin/pages/settings_api.php:34
 msgid "API Client ID"
