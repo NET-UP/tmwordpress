@@ -87,7 +87,7 @@
 				foreach($events as $event){
 					$event = (object)$event;
 
-					$tm_output .= '<li class="media m-0">';
+					$tm_output .= '<li class="media m-0 pt-2">';
 
 					if($atts['show_image'] > 0){
 						$tm_output .= '<div class="mr-3 media-img" style="background-image:url('. $event->event_img_url .')"></div>';
