@@ -135,6 +135,7 @@ class Event_List_Table extends WP_List_Table {
      * @return string Text to be placed inside the column <td> (movie title only)
      **************************************************************************/
     function column_ev_name($item){
+        global $globals, $api;
 
         $additional_text = "";
         if($item['approved'] == 0){
