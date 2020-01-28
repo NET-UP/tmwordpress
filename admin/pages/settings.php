@@ -29,6 +29,9 @@
 		<a href="?page=tm_settings&tab=design" class="nav-tab <?php echo $active_tab == 'design' ? 'nav-tab-active' : ''; ?>">
 			<?php echo __('Design', 'ticketmachine'); ?>
 		</a>
+		<a href="?page=tm_settings&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>">
+			<?php echo __('General', 'ticketmachine'); ?>
+		</a>
 		<a href="?page=tm_settings&tab=boxes" class="nav-tab <?php echo $active_tab == 'boxes' ? 'nav-tab-active' : ''; ?>">
 			<?php echo __('Box View', 'ticketmachine'); ?>
 		</a>
@@ -41,11 +44,6 @@
 		<a href="?page=tm_settings&tab=detail" class="nav-tab <?php echo $active_tab == 'detail' ? 'nav-tab-active' : ''; ?>">
 			<?php echo __('Details', 'ticketmachine'); ?>
 		</a>
-
-
-		<!-- <a href="?page=tm_settings&tab=api" class="nav-tab <?php #echo $active_tab == 'api' ? 'nav-tab-active' : ''; ?>">
-			<?php #echo __('API', 'ticketmachine'); ?>
-		</a> -->
 	</h2>
 
 	<form method="post" action="#">
@@ -61,8 +59,8 @@
 				include( plugin_dir_path( __FILE__ ) . 'settings_design.php');
 			}elseif( $active_tab == 'detail' ) {
 				include( plugin_dir_path( __FILE__ ) . 'settings_detail.php');
-			}elseif( $active_tab == 'api' ) {
-				include( plugin_dir_path( __FILE__ ) . 'settings_api.php');
+			}elseif( $active_tab == 'general' ) {
+				include( plugin_dir_path( __FILE__ ) . 'settings_general.php');
 			}
 			
 			submit_button(); 
