@@ -57,7 +57,7 @@
                                                     }else{
                                                         $tm_output .= "btn-secondary"; 
                                                     }
-                                                $tm_output .="' aria-label='" . __("Show events as list", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params) . "'><i class='fas fa-list'></i></a>";
+                                                $tm_output .="' aria-label='" . __("Show events as list", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=list") . "'><i class='fas fa-list'></i></a>";
                                             }
 
                                             if($globals->show_calendar){
