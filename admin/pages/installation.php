@@ -47,7 +47,6 @@
                         <i class="fas fa-cloud tm-icon-big mt-4 mb-2"></i>
                         <div>
                             Alle Veranstaltungen werden über den TicketMachine Cloud Service gespeichert.
-                            <i class="fas fa-info-circle" title="Was soll hier stehen?"></i>
                         </div>
                         <i class="far fa-user-circle tm-icon-big mt-4 mb-2"></i>
                         <div>
