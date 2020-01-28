@@ -155,7 +155,7 @@ class Event_List_Table extends WP_List_Table {
             'edit'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Edit', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
             $toggle_type    => sprintf('<a href="?page=%s&action=%s&id=%s">'.__($toggle_text, 'ticketmachine').'</a>',$_REQUEST['page'],$toggle_action,$item['id']),
             'copy'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Copy', 'ticketmachine').'</a>',$_REQUEST['page'],'copy',$item['id']),
-            'view'          => sprintf('<a target="_blank" href="/event?id=%s">'.__($toggle_text, 'ticketmachine').'</a>',$item['id'])
+            'view'          => sprintf('<a target="_blank" href="/event?id=%s">'.__($view_text, 'ticketmachine').'</a>',$item['id'])
         );
         
         //Return the title contents
