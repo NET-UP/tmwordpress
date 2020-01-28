@@ -15,18 +15,7 @@
 			96
 		);
 
-		if(!$globals->activated || !$_GET['code']) {	
-			add_submenu_page(
-				'tm_events',
-				__('Install', 'ticketmachine'),
-				__('Install', 'ticketmachine'),
-				'manage_options',
-				'tm_events',
-				'tm_installation_page',
-				null,
-				100
-			);
-		}else{
+		if($globals->activated || $_GET['code']) {	
 			add_submenu_page(
 				'tm_events',
 				__('Events', 'ticketmachine'),
@@ -59,6 +48,17 @@
 			#	null,
 			#	99
 			#);
+		}else{
+			add_submenu_page(
+				'tm_events',
+				__('Install', 'ticketmachine'),
+				__('Install', 'ticketmachine'),
+				'manage_options',
+				'tm_events',
+				'tm_installation_page',
+				null,
+				100
+			);
 		}
 	}
 
