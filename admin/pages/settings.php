@@ -53,6 +53,8 @@
 		<?php
 			if( $active_tab == 'list' ) {
 				include( plugin_dir_path( __FILE__ ) . 'settings_list.php');
+			}if( $active_tab == 'boxes' ) {
+				include( plugin_dir_path( __FILE__ ) . 'settings_boxes.php');
 			}elseif( $active_tab == 'calendar' ) {
 				include( plugin_dir_path( __FILE__ ) . 'settings_calendar.php');
 			}elseif( $active_tab == 'design' ) {
