@@ -113,10 +113,6 @@
 								</li>';
 				}
 
-				if($atts['show_more'] > 0){
-					$tm_output .= '<li class="media"><a href="/' . $globals->events_slug . '">' . __("Show all events", "ticketmachine") . '</a></li>';
-				}
-
 				$tm_output .= '</ul>';
 			$tm_output .= '</div>';
 
