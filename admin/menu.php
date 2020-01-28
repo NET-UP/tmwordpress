@@ -76,6 +76,7 @@
 		include( plugin_dir_path( __FILE__ ) . 'pages/settings.php');
 	}
 	function tm_installation_page(){
+		include( plugin_dir_path(__FILE__) . 'includes/scriptstyles.php');
 		include( plugin_dir_path( __FILE__) . 'pages/installation.php');
 	}
 ?>
