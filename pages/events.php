@@ -16,6 +16,16 @@
 		$params = array_push_assoc($params, "approved", 1);
 		$events = tmapi_events($params)->result;
 		
+		if(isset($atts['display']) && $atts['display'] == "calendar" && $globals->show_calendar || $globals->show_calendar && !$globals->show_boxes && !$globals->show_list){
+			$current_page = "calendar";
+		}elseif(isset($atts['display']) && $atts['display'] == "list" && $globals->show_list || $globals->show_list && !$globals->show_boxes){
+			$current_page = "list";
+		}elseif($globals->show_boxes){
+			$current_page = "boxes";
+		}else{
+			$current_page = "unknown";
+		}
+		
 		//echo "<pre>" . print_r($tm_json) . "</pre>";
 		
 		$tm_output = "<div class='row tm_events_container'>";
@@ -26,7 +36,7 @@
 			}
 		$tm_output .= "</div>";
 		
-		if(isset($atts['display']) && $atts['display'] == "calendar" && $globals->show_calendar || $globals->show_calendar && !$globals->show_boxes && !$globals->show_list){
+		if($current_page == "calendar"){
 		
 			//Calendar Packages
 			wp_enqueue_style( 'calendar_CSS_1', plugins_url('../assets/packages/core/main.css', __FILE__ ) );
@@ -64,7 +74,7 @@
 					</div>
 				</div>";
 			
-		}elseif($globals->show_list && !$globals->show_boxes){
+		}elseif($current_page == "list"){
 			
 			$tm_output .= '<ul class="list-unstyled">';
 
@@ -97,7 +107,7 @@
 
 			$tm_output .= '</ul>';
 
-		}elseif($globals->show_boxes){
+		}elseif($current_page == "boxes"){
 			
 			$prev = NULL;
 			$i = 0;
