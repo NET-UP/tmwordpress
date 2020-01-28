@@ -110,7 +110,15 @@
 
 .tm-admin-page .box {
     margin: 0 auto;
-    padding: 8% 15px 15px;
+    padding: 7% 15px 15px;
+}
+
+.box > div {
+    background: #FFF;
+    border-radius: 3px;
+    border: 1px solid#DDD;
+    font-size:15px;
+    line-height:20px;
 }
 
 .tm-admin-page .box-md {

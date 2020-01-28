@@ -38,7 +38,7 @@
 <div class="wrap tm-admin-page">
     <div class="container">
         <div class="box box-md">
-            <div class="card p-4">
+            <div class="p-5">
                 <div class="row">
                     <div class="col-12 text-center" style="font-size: 16px;line-height: 20px;">
                         <img style="width: 75px;" src=" <?php echo dirname(plugin_dir_url( __FILE__ ), 1) . '/assets/img/logo.png'; ?>" alt="TicketMachine Logo">
