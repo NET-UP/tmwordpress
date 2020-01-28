@@ -9,6 +9,7 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 +   Es gibt jetzt einen "kommende" Filter für Veranstaltungen im Backend
 +   Die Schaltflächen "Vorschau" und "Ansicht" wurden zu Veranstaltungen im Backend hinzugefügt
 -   Einige Übersetzungsprobleme wurden behoben
+-   Fehler behoben, durch den CSS-Stile in andere Backend-Seiten gelangten
 
 ## [0.9.4] - 2020-01-07
 +   Plugin ins Englische übersetzt

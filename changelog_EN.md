@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 +   There is now an "upcoming" filter for events in the backend
 +   "Preview" and "View" buttons added to events in the backend
 -   Fixed some translation issues
+-   Fixed bug where CSS styles were leaking into other backend pages
 
 ## [0.9.4] - 2020-01-08
 +   Plugin translated into English
