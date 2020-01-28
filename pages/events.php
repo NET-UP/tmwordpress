@@ -64,32 +64,7 @@
 					</div>
 				</div>";
 			
-		}elseif($globals->show_boxes && !$globals->show_list){
-		
-			$prev = NULL;
-			$i = 0;
-			
-			if(empty($events)) {	
-				$tm_output .= "<div class='col-12 text-center mt-1'>";
-					$tm_output .= tm_alert(__("No events could be found", "ticketmachine"), "error");
-				$tm_output .= "</div>";
-				
-			}else{
-				foreach($events as $event) {
-					$event = (object)$event;
-					
-					$curr = $event->ev_date;
-					if ($i == 0 || date( $globals->group_by , strtotime( $curr ) ) != date( $globals->group_by, strtotime( $prev ) ) ) {
-						$tm_output .= "<div class='col-12 mt-2'><h5 class='line-header'><span>" . strftime( $globals->format_date, strtotime($event->ev_date) ) . "</span></h5></div>";
-						$prev = $curr;
-					}
-					
-					$tm_output .= tm_event_list_item ( $event, $globals );
-					
-					$i++;
-				}
-			}
-		}elseif($globals->show_list){
+		}elseif($globals->show_list && !$globals->show_boxes){
 			
 			$tm_output .= '<ul class="list-unstyled">';
 
@@ -120,7 +95,33 @@
                 $tm_output .= '<li class="media"><a href="/events">' . __("Show all events", "ticketmachine") . '</a></li>';
             }
 
-            $tm_output .= '</ul>';
+			$tm_output .= '</ul>';
+
+		}elseif($globals->show_boxes){
+			
+			$prev = NULL;
+			$i = 0;
+			
+			if(empty($events)) {	
+				$tm_output .= "<div class='col-12 text-center mt-1'>";
+					$tm_output .= tm_alert(__("No events could be found", "ticketmachine"), "error");
+				$tm_output .= "</div>";
+				
+			}else{
+				foreach($events as $event) {
+					$event = (object)$event;
+					
+					$curr = $event->ev_date;
+					if ($i == 0 || date( $globals->group_by , strtotime( $curr ) ) != date( $globals->group_by, strtotime( $prev ) ) ) {
+						$tm_output .= "<div class='col-12 mt-2'><h5 class='line-header'><span>" . strftime( $globals->format_date, strtotime($event->ev_date) ) . "</span></h5></div>";
+						$prev = $curr;
+					}
+					
+					$tm_output .= tm_event_list_item ( $event, $globals );
+					
+					$i++;
+				}
+			}
 
 		}else{
 			echo __("List, Boxes & Calendar are deactivated", "ticketmachine");

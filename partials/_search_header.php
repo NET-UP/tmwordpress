@@ -38,31 +38,39 @@
                                             </div>";
                                         }
 
-                                        if($globals->show_list && $globals->show_calendar){
-                                            $tm_output .= "<div class='btn-group ml-sm-4'>";
-                                            
-                                                if($globals->show_list){
-                                                    $tm_output .= "<a class='btn ";
-                                                        if(!isset($_GET['display'])){ 
-                                                            $tm_output .= "btn-primary active"; 
-                                                        }else{
-                                                            $tm_output .= "btn-secondary"; 
-                                                        }
-                                                    $tm_output .="' aria-label='" . __("Show events as list", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params) . "'><i class='fas fa-list'></i></a>";
-                                                }
+                                        $tm_output .= "<div class='btn-group ml-sm-4'>";
+                                        
+                                            if($globals->show_boxes){
+                                                $tm_output .= "<a class='btn ";
+                                                    if(!isset($_GET['display'])){ 
+                                                        $tm_output .= "btn-primary active"; 
+                                                    }else{
+                                                        $tm_output .= "btn-secondary"; 
+                                                    }
+                                                $tm_output .="' aria-label='" . __("Show events as boxes", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params) . "'><i class='fas fa-list'></i></a>";
+                                            }
+                                        
+                                            if($globals->show_list){
+                                                $tm_output .= "<a class='btn ";
+                                                    if(!isset($_GET['display'])){ 
+                                                        $tm_output .= "btn-primary active"; 
+                                                    }else{
+                                                        $tm_output .= "btn-secondary"; 
+                                                    }
+                                                $tm_output .="' aria-label='" . __("Show events as list", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params) . "'><i class='fas fa-list'></i></a>";
+                                            }
 
-                                                if($globals->show_list){
-                                                    $tm_output .= "<a class='btn ";
-                                                        if(isset($_GET['display']) && $_GET['display'] == 'calendar'){ 
-                                                            $tm_output .= "btn-primary active"; 
-                                                        }else{
-                                                            $tm_output .= "btn-secondary"; 
-                                                        }
-                                                    $tm_output .="'aria-label='" . __("Show events in calendar", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=calendar") . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
-                                                }
+                                            if($globals->show_calendar){
+                                                $tm_output .= "<a class='btn ";
+                                                    if(isset($_GET['display']) && $_GET['display'] == 'calendar'){ 
+                                                        $tm_output .= "btn-primary active"; 
+                                                    }else{
+                                                        $tm_output .= "btn-secondary"; 
+                                                    }
+                                                $tm_output .="'aria-label='" . __("Show events in calendar", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=calendar") . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
+                                            }
 
-                                            $tm_output .= "</div>";
-                                        }
+                                        $tm_output .= "</div>";
 
                 $tm_output .= "		</div>
                                 </div>
