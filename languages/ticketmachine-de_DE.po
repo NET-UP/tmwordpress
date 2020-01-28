@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-28 22:39+0100\n"
-"PO-Revision-Date: 2020-01-28 22:39+0100\n"
+"POT-Creation-Date: 2020-01-28 22:42+0100\n"
+"PO-Revision-Date: 2020-01-28 22:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -75,6 +75,10 @@ msgstr "Veröffentlicht"
 #: admin/pages/actions/event_toggle.php:35
 msgid "Deactivated"
 msgstr "Deaktiviert"
+
+#: admin/pages/actions/event_toggle.php:39
+msgid "Undo"
+msgstr "Rückgängig machen"
 
 #: admin/pages/categories.php:119 admin/pages/event_edit.php:77
 #: admin/pages/events.php:144
