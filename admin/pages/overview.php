@@ -29,7 +29,9 @@
         );
 ?>
 
-Welcome to TicketMachine 1!
+<div class="box">
+    Welcome to TicketMachine 1!
+</div>
 
 <?php
     }
