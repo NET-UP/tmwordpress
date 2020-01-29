@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-29 16:49+0100\n"
-"PO-Revision-Date: 2020-01-29 16:50+0100\n"
+"POT-Creation-Date: 2020-01-29 17:10+0100\n"
+"PO-Revision-Date: 2020-01-29 17:10+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: languages\n"
 "X-Poedit-SearchPathExcluded-3: assets\n"
 
-#: admin/menu.php:21 admin/menu.php:22 admin/pages/overview.php:44
+#: admin/menu.php:21 admin/menu.php:22 admin/pages/overview.php:45
 msgid "Overview"
 msgstr "Overview"
 
@@ -254,51 +254,55 @@ msgstr "Connect with TicketMachine"
 msgid "Welcome to"
 msgstr "Welcome to"
 
-#: admin/pages/overview.php:52
+#: admin/pages/overview.php:40
+msgid "You're ready to go! We've assabled some links to help you out."
+msgstr "You're ready to go! We've assabled some links to help you out."
+
+#: admin/pages/overview.php:53
 msgid "Create an event"
 msgstr "Create an event"
 
-#: admin/pages/overview.php:53
+#: admin/pages/overview.php:54
 msgid "Just add a title, description, image, location and dates."
 msgstr "Just add a title, description, image, location and dates."
 
-#: admin/pages/overview.php:54
+#: admin/pages/overview.php:55
 msgid "New event"
 msgstr "New event"
 
-#: admin/pages/overview.php:59
+#: admin/pages/overview.php:60
 msgid "Edit events"
 msgstr "Edit events"
 
-#: admin/pages/overview.php:60
+#: admin/pages/overview.php:61
 msgid "Edit, publish and view your existing events."
 msgstr "Edit, publish and view your existing events."
 
-#: admin/pages/overview.php:61
+#: admin/pages/overview.php:62
 msgid "View all events"
 msgstr "View all events"
 
-#: admin/pages/overview.php:62
+#: admin/pages/overview.php:64
 msgid "Upcoming events"
 msgstr "Upcoming events"
 
-#: admin/pages/overview.php:68
+#: admin/pages/overview.php:69
 msgid "Change settings"
 msgstr "Change settings"
 
-#: admin/pages/overview.php:69
+#: admin/pages/overview.php:70
 msgid "Easily adjust the design, page layouts, URLs and general settings."
 msgstr "Easily adjust the design, page layouts, URLs and general settings."
 
-#: admin/pages/overview.php:70
+#: admin/pages/overview.php:71
 msgid "Edit design"
 msgstr "Edit design"
 
-#: admin/pages/overview.php:71
+#: admin/pages/overview.php:72
 msgid "General settings"
 msgstr "General settings"
 
-#: admin/pages/overview.php:72
+#: admin/pages/overview.php:73
 msgid "Event settings"
 msgstr "Event settings"
 
