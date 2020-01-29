@@ -49,27 +49,27 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
-                        <div class="box-title"><?php __("Create an event", "ticketmachine"); ?></div>
-                        <p><?php __("Just add a title, description, image, location and dates.", "ticketmachine"); ?></p>
-                        <a href="?page=tm_events&action=edit" class="button button-secondary mb-1"><?php __("New event", "ticketmachine"); ?></a>
+                        <div class="box-title"><?php echo __("Create an event", "ticketmachine"); ?></div>
+                        <p><?php echo __("Just add a title, description, image, location and dates.", "ticketmachine"); ?></p>
+                        <a href="?page=tm_events&action=edit" class="button button-secondary mb-1"><?php echo __("New event", "ticketmachine"); ?></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
-                        <div class="box-title"><?php __("Edit events", "ticketmachine"); ?></div>
+                        <div class="box-title"><?php echo __("Edit events", "ticketmachine"); ?></div>
                         <p><?php __("Edit, publish and view your existing events.", "ticketmachine"); ?></p>
-                        <a href="?page=tm_events" class="button button-secondary mb-1"><?php __("View all events", "ticketmachine"); ?></a>
-                        <a href="?page=tm_events&status=upcoming" class="button button-secondary mb-1"><?php __("Upcoming events", "ticketmachine"); ?></a>
-                        <a href="?page=tm_events&status=drafts" class="button button-secondary mb-1"><?php __("Drafts", "ticketmachine"); ?></a>
+                        <a href="?page=tm_events" class="button button-secondary mb-1"><?php echo __("View all events", "ticketmachine"); ?></a>
+                        <a href="?page=tm_events&status=upcoming" class="button button-secondary mb-1"><?php echo __("Upcoming events", "ticketmachine"); ?></a>
+                        <a href="?page=tm_events&status=drafts" class="button button-secondary mb-1"><?php echo __("Drafts", "ticketmachine"); ?></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
-                        <div class="box-title"><?php __("Change settings", "ticketmachine"); ?></div>
-                        <p><?php __("Easily adjust the design, page layouts, URLs and general settings.", "ticketmachine"); ?></p>
-                        <a href="?page=tm_settings&tab=design" class="button button-secondary mb-1"><?php __("Edit design", "ticketmachine"); ?></a>
-                        <a href="?page=tm_settings&tab=general" class="button button-secondary mb-1"><?php __("General settings", "ticketmachine"); ?></a>
-                        <a href="?page=tm_settings&tab=detail" class="button button-secondary mb-1"><?php __("Event settings", "ticketmachine"); ?></a>
+                        <div class="box-title"><?php echo __("Change settings", "ticketmachine"); ?></div>
+                        <p><?php echo __("Easily adjust the design, page layouts, URLs and general settings.", "ticketmachine"); ?></p>
+                        <a href="?page=tm_settings&tab=design" class="button button-secondary mb-1"><?php echo __("Edit design", "ticketmachine"); ?></a>
+                        <a href="?page=tm_settings&tab=general" class="button button-secondary mb-1"><?php echo __("General settings", "ticketmachine"); ?></a>
+                        <a href="?page=tm_settings&tab=detail" class="button button-secondary mb-1"><?php echo __("Event settings", "ticketmachine"); ?></a>
                     </div>
                 </div>
 
