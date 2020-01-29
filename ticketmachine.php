@@ -6,7 +6,7 @@
 	Description:        Easily create and manage events for your wordpress site.
 	Version:            0.9.6
     Requires at least:  5.0
-    Requires PHP:       7.2
+    Requires PHP:       5.6
     Author:             NET-UP
 	Author URI:         https://www.net-up.de
 	*/
