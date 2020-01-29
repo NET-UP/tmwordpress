@@ -27,17 +27,19 @@
             $save_array,
             array('id' => $tm_config->id)
         );
-?>
-
-<div class="box wrap">
-    <div class="close"><i class="fas fa-times"></i></div>
-    <h1 class="text-center"><?php echo __('Welcome to', 'ticketmachine'); ?> <span>TicketMachine</span> <span class="text-primary">1.0!</span></h1>
-</div>
-
-<?php
     }
 ?>
 
 <div class="wrap tm-admin-page">
+
+    <?php if($_GET['code']) { ?>
+
+        <div class="box">
+            <div class="close"><i class="fas fa-times"></i></div>
+            <h1 class="text-center"><?php echo __('Welcome to', 'ticketmachine'); ?> <span>TicketMachine</span> <span class="text-primary">1.0!</span></h1>
+        </div>
+
+    <?php } ?>
+
 	<h1 class="wp-heading-inline mr-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Overview', 'ticketmachine') ?></h1>
 </div>
