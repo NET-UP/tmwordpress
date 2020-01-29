@@ -12,7 +12,7 @@
 	
 			
 	if(empty($events)) {	
-		
+		header('HTTP/1.0 400 Bad error');
 	}else{
 
 		foreach($events->result as $event) {
