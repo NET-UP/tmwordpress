@@ -441,7 +441,7 @@ function copy_event(){
  * so we've instead called those methods explicitly. It keeps things flexible, and
  * it's the way the list tables are used in the WordPress core.
  */
-function tt_render_list_page(){
+function tm_render_list_page(){
 
     if( isset($_GET['action']) && $_GET['action'] == "edit" ) {
         include "event_edit.php";

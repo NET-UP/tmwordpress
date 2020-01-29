@@ -22,7 +22,7 @@
 				__('Overview', 'ticketmachine'),
 				'manage_options',
 				'tm_event_manager',
-				'tt_overview_page',
+				'tm_overview_page',
 				null,
 				97
 			);	
@@ -32,7 +32,7 @@
 				__('Events', 'ticketmachine'),
 				'manage_options',
 				'tm_events',
-				'tt_render_list_page',
+				'tm_render_list_page',
 				null,
 				97
 			);
