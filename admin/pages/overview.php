@@ -43,7 +43,6 @@
                 <a href="?page=tm_settings&tab=design">
                     <?php echo __("Customize your theme", "ticketmachine"); ?>
                 </a>
-                <br></br>
                 <a href="?page=tm_events&action=edit">
                     <?php echo __("Create an event", "ticketmachine"); ?>
                 </a>
