@@ -11,7 +11,7 @@
 
 	
 			
-	if(empty($events)) {	
+	if(empty($events->result)) {	
 		header('HTTP/1.0 400 Bad error');
 	}else{
 
