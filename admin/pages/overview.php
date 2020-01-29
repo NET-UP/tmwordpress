@@ -50,7 +50,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
                         <div class="box-title">Create an event</div>
-                        <p>Just add a title, description, image, and dates.</p>
+                        <p>Just add a title, description, image, location and dates.</p>
                         <a class="button button-secondary mb-1">Create event</a>
                     </div>
                 </div>
