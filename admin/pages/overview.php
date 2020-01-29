@@ -36,5 +36,5 @@ Welcome to TicketMachine 1!
 ?>
 
 <div class="wrap tm-admin-page">
-	<h1>TicketMachine <i class="fas fa-angle-right mx-2"></i> <?php echo __('Overview', 'ticketmachine') ?></h1>
+	<h1>TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Overview', 'ticketmachine') ?></h1>
 </div>
