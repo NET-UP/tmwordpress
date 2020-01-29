@@ -30,6 +30,7 @@
 ?>
 
 <div class="box wrap">
+    <div class="close"><i class="fas fa-times"></i></div>
     <h1 class="text-center"><?php echo __('Welcome to', 'ticketmachine'); ?> <span>TicketMachine</span> <span class="text-primary">1.0!</span></h1>
 </div>
 
