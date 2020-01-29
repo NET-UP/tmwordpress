@@ -65,6 +65,7 @@ jQuery.getJSON('/wp-content/plugins/ticketmachine/event.php' + location.search).
 
 }).fail(function(jqXHR, status, error){
 	jQuery("#tm_spinner").hide();
+	jQuery("#tm_cal_error").show();
 });
   
   

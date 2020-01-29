@@ -71,6 +71,7 @@
 							</div>
 						</div>
 						<div id='calendar' class='col-12'></div>
+						<div id='tm_cal_error' class='col-12 text-center mt-1' style='display:none;'>" . tm_alert(__("No events could be found", "ticketmachine"), "error") . "</div>
 					</div>
 				</div>";
 			
