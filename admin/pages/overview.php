@@ -38,4 +38,3 @@ Welcome to TicketMachine 1!
 <div class="wrap tm-admin-page">
 	<h1>TicketMachine > <?php echo __('Overview', 'ticketmachine') ?></h1>
 </div>
-?>
