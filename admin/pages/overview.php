@@ -32,13 +32,10 @@
 Welcome to TicketMachine 1!
 
 <?php
-    }else{
+    }
 ?>
 
 <div class="wrap tm-admin-page">
 	<h1>TicketMachine > <?php echo __('Overview', 'ticketmachine') ?></h1>
 </div>
-
-<?php
-    }
 ?>
