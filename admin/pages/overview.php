@@ -36,10 +36,10 @@
 
         <div class="box mb-3">
             <a href="#" class="close"><i class="fas fa-times"></i></a>
-            <h1 class="mb-2"><?php echo __('Welcome to', 'ticketmachine'); ?> <span>TicketMachine</span> <span class="text-primary">1.0!</span></h1>
-            <p><?php echo __("You're ready to go!", 'ticketmachine'); ?></p>
+            <h1><?php echo __('Welcome to', 'ticketmachine'); ?> <span>TicketMachine</span> <span class="text-primary">1.0!</span></h1>
+            <div><?php echo __("You're ready to go!", 'ticketmachine'); ?></div>
         
-            <div class=""></div>
+            <p class=""></p>
         
         </div>
 
