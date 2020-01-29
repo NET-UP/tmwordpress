@@ -66,7 +66,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
                         <div class="box-title">Change settings</div>
-                        <p>Easily adjust the design, page layouts and general settings.</p>
+                        <p>Easily adjust the design, page layouts, URLs and general settings.</p>
                         <a class="button button-secondary mb-1">Edit design</a>
                         <a class="button button-secondary mb-1">General settings</a>
                         <a class="button button-secondary mb-1">Event settings</a>
