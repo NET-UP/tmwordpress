@@ -36,7 +36,7 @@
                     <div class="card-meta mt-2">';
 
                     foreach($event->tags as $tag) {
-                        $tm_output .= "<a href='/" . $globals->event_slug . "?tag=" . $tag . "' class='card-meta-tag keyword'>". $tag ."</a>";
+                        $tm_output .= "<a href='/" . $globals->events_slug . "?tag=" . $tag . "' class='card-meta-tag keyword'>". $tag ."</a>";
                     }
         $tm_output .= '
                     </div>
