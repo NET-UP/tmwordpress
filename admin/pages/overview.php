@@ -38,7 +38,7 @@
             <a href="#" class="close"><i class="fas fa-times"></i></a>
             <h1><?php echo __('Welcome to', 'ticketmachine'); ?> <span>TicketMachine</span> <span class="text-primary">1.0!</span></h1>
             <p><?php echo __("You're ready to go! We've assabled some links to help you out.", 'ticketmachine'); ?></p>
-            <a href="?page=tm_events&action=edit" class="button button-secondary mb-1"><?php echo __("Create an event", "ticketmachine"); ?></a>
+            <a href="?page=tm_events&action=edit" class=""><?php echo __("Create an event", "ticketmachine"); ?></a>
         </div>
 
     <?php } ?>
