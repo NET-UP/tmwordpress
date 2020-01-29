@@ -49,7 +49,7 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
-                        <div class="box-title">Your events</div>
+                        <div class="box-title">Edit events</div>
                         <p>Edit, publish and view your existing events.</p>
                         <a class="button button-secondary mb-1">View all events</a>
                         <a class="button button-secondary mb-1">Upcoming events</a>
@@ -58,7 +58,11 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
-                        <div class="box-title">2</div>
+                    <div class="box p-3 mb-3">
+                        <div class="box-title">Create an event</div>
+                        <p>Add a title, description, image, tags and dates.</p>
+                        <a class="button button-secondary mb-1">Create event</a>
+                    </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
