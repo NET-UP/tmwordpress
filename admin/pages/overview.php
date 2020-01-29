@@ -40,7 +40,7 @@
             <div><?php echo __("You're ready to go!", 'ticketmachine'); ?></div>
         
             <p class="">
-                <a class="ml-3" href="?page=tm_settings&tab=design">
+                <a href="?page=tm_settings&tab=design">
                     <?php echo __("Customize your theme", "ticketmachine"); ?>
                 </a>
                 <a class="ml-3" href="?page=tm_events&action=edit">
