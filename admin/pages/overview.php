@@ -61,9 +61,9 @@
                     <div class="box p-3 mb-3">
                         <div class="box-title">Change settings</div>
                         <p>Easily adjust the design, page layouts and general settings.</p>
-                        <a class="button button-secondary">Edit design</a>
-                        <a class="button button-secondary">General settings</a>
-                        <a class="button button-secondary">Event settings</a>
+                        <a class="button button-secondary mb-2">Edit design</a>
+                        <a class="button button-secondary mb-2">General settings</a>
+                        <a class="button button-secondary mb-2">Event settings</a>
                     </div>
                 </div>
 
