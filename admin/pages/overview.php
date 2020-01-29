@@ -59,7 +59,13 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
-                        <div class="box-title">3</div>
+                        <div class="box-title">Change settings</div>
+                        <a class="box-action">Edit design</a>
+                        <a class="box-action">Edit general</a>
+                        <a class="box-action">Edit box view</a>
+                        <a class="box-action">Edit list view</a>
+                        <a class="box-action">Edit calendar view</a>
+                        <a class="box-action">Edit event page</a>
                     </div>
                 </div>
 
