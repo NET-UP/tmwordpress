@@ -40,11 +40,17 @@
             <div><?php echo __("You're ready to go!", 'ticketmachine'); ?></div>
         
             <p class="">
-                <a href="?page=tm_settings&tab=design">
+                <a class="ml-3" href="?page=tm_settings&tab=design">
                     <?php echo __("Customize your theme", "ticketmachine"); ?>
                 </a>
-                <a href="?page=tm_events&action=edit">
+                <a class="ml-3" href="?page=tm_events&action=edit">
                     <?php echo __("Create an event", "ticketmachine"); ?>
+                </a>
+                <a class="ml-3" href="?page=tm_events&action=edit">
+                    <?php echo __("What's new?", "ticketmachine"); ?>
+                </a>
+                <a class="ml-3" href="?page=tm_events&action=edit">
+                    <?php echo __("Learn more", "ticketmachine"); ?>
                 </a>
             </p>
         
