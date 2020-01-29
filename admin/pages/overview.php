@@ -45,17 +45,17 @@
 
     <div class="row">
         <div class="col-sm-6 col-md-4">
-            <div class="box">
+            <div class="box mb-3">
                 1
             </div>
         </div>
         <div class="col-sm-6 col-md-4">
-            <div class="box">
+            <div class="box mb-3">
                 2
             </div>
         </div>
         <div class="col-sm-6 col-md-4">
-            <div class="box">
+            <div class="box mb-3">
                 3
             </div>
         </div>
