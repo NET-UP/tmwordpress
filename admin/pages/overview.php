@@ -44,7 +44,7 @@
 	<h1 class="wp-heading-inline mr-3 mb-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Overview', 'ticketmachine') ?></h1>
 
     <div class="row">
-        <div class="col-lg-9">
+        <div class="col-xl-9">
             <div class="row">
 
                 <div class="col-md-6 col-lg-4">
