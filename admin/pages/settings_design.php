@@ -135,5 +135,4 @@
 
 <?php 
 	// first check that $hook_suffix is appropriate for your admin page
-	wp_enqueue_style( 'wp-color-picker' );
 ?>
