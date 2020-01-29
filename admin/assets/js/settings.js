@@ -3,5 +3,5 @@ jQuery(document).ready(function($){
 
     $('.tm-admin-page').on("click", ".close", function(){
         $(this).parents(".box").remove();
-    })
+    });
 });
