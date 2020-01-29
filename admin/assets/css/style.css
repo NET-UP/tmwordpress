@@ -117,11 +117,18 @@
     padding: 5.5% 0 0;
 }
 
-.box {
+.tm-admin-page .box {
     background: #FFF;
     border-radius: 3px;
     border: 1px solid#DDD;
     font-size:15px;
     line-height:20px;
     padding:2em;
+    position: relative;
+}
+
+.tm-admin-page .box .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
 }
