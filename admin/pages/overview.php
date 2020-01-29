@@ -48,17 +48,17 @@
             <div class="row">
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="box mb-3">
+                    <div class="box p-2 mb-3">
                         1
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="box mb-3">
+                    <div class="box p-2 mb-3">
                         2
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="box mb-3">
+                    <div class="box p-2 mb-3">
                         3
                     </div>
                 </div>
