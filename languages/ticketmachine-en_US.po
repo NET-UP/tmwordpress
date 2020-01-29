@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-29 00:38+0100\n"
-"PO-Revision-Date: 2020-01-29 00:38+0100\n"
+"POT-Creation-Date: 2020-01-29 12:04+0100\n"
+"PO-Revision-Date: 2020-01-29 12:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -20,15 +20,19 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: languages\n"
 "X-Poedit-SearchPathExcluded-3: assets\n"
 
-#: admin/menu.php:21 admin/menu.php:22 admin/pages/events.php:465
+#: admin/menu.php:21 admin/menu.php:22 admin/pages/overview.php:38
+msgid "Overview"
+msgstr "Overview"
+
+#: admin/menu.php:31 admin/menu.php:32 admin/pages/events.php:465
 msgid "Events"
 msgstr "Events"
 
-#: admin/menu.php:32 admin/menu.php:33 admin/pages/settings.php:26
+#: admin/menu.php:42 admin/menu.php:43 admin/pages/settings.php:26
 msgid "Settings"
 msgstr "Settings"
 
-#: admin/menu.php:54 admin/menu.php:55
+#: admin/menu.php:64 admin/menu.php:65
 msgid "Install"
 msgstr "Install"
 
@@ -222,19 +226,19 @@ msgstr "Drafts"
 msgid "Search"
 msgstr "Search"
 
-#: admin/pages/installation.php:46
+#: admin/pages/installation.php:18
 msgid "Thanks for installing me!"
 msgstr "Thanks for installing me!"
 
-#: admin/pages/installation.php:49
+#: admin/pages/installation.php:21
 msgid "Just one more step to start using TicketMachine."
 msgstr "Just one more step to start using TicketMachine."
 
-#: admin/pages/installation.php:54
+#: admin/pages/installation.php:26
 msgid "All events are saved through the TicketMachine Cloud Service."
 msgstr "All events are saved through the TicketMachine Cloud Service."
 
-#: admin/pages/installation.php:60
+#: admin/pages/installation.php:32
 msgid ""
 "In order to create your TicketMachine account (or connect to your current "
 "one), we require your email adress."
@@ -242,7 +246,7 @@ msgstr ""
 "In order to create your TicketMachine account (or connect to your current "
 "one), we require your email adress."
 
-#: admin/pages/installation.php:84
+#: admin/pages/installation.php:56
 msgid "Connect with TicketMachine"
 msgstr "Connect with TicketMachine"
 
@@ -374,11 +378,12 @@ msgstr "Event detail page"
 msgid "Activate List?"
 msgstr "Activate List?"
 
-#: pages/event.php:35 pages/events.php:126
+#: pages/event.php:35 pages/events.php:62 pages/events.php:82
+#: pages/events.php:136 widgets/event_calendar.php:27 widgets/event_list.php:15
 msgid "No events could be found"
 msgstr "No events could be found"
 
-#: pages/events.php:146
+#: pages/events.php:156
 msgid "List, Boxes & Calendar are deactivated"
 msgstr "List, Boxes & Calendar are deactivated"
 
@@ -430,11 +435,11 @@ msgstr "Search for events"
 msgid "Submit search"
 msgstr "Submit search"
 
-#: partials/_search_header.php:35 widgets/event_calendar.php:30
+#: partials/_search_header.php:35 widgets/event_calendar.php:31
 msgid "To previous month"
 msgstr "To previous month"
 
-#: partials/_search_header.php:37 widgets/event_calendar.php:32
+#: partials/_search_header.php:37 widgets/event_calendar.php:33
 msgid "To next month"
 msgstr "To next month"
 
@@ -450,7 +455,7 @@ msgstr "Show events as list"
 msgid "Show events in calendar"
 msgstr "Show events in calendar"
 
-#: widgets/event_list.php:44
+#: widgets/event_list.php:53
 msgid "Show all events"
 msgstr "Show all events"
 
