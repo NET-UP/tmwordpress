@@ -51,25 +51,25 @@
                     <div class="box p-3 mb-3">
                         <div class="box-title">Create an event</div>
                         <p>Just add a title, description, image, location and dates.</p>
-                        <a class="button button-secondary mb-1">Create event</a>
+                        <a href="?page=tm_events&action=edit" class="button button-secondary mb-1">Create event</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
                         <div class="box-title">Edit events</div>
                         <p>Edit, publish and view your existing events.</p>
-                        <a class="button button-secondary mb-1">View all events</a>
-                        <a class="button button-secondary mb-1">Upcoming events</a>
-                        <a class="button button-secondary mb-1">Drafts</a>
+                        <a href="?page=tm_events" class="button button-secondary mb-1">View all events</a>
+                        <a href="?page=tm_events&status=upcoming" class="button button-secondary mb-1">Upcoming events</a>
+                        <a href="?page=tm_events&status=drafts" class="button button-secondary mb-1">Drafts</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
                         <div class="box-title">Change settings</div>
                         <p>Easily adjust the design, page layouts, URLs and general settings.</p>
-                        <a class="button button-secondary mb-1">Edit design</a>
-                        <a class="button button-secondary mb-1">General settings</a>
-                        <a class="button button-secondary mb-1">Event settings</a>
+                        <a href="?page=tm_settings&tab=design" class="button button-secondary mb-1">Edit design</a>
+                        <a href="?page=tm_settings&tab=general" class="button button-secondary mb-1">General settings</a>
+                        <a href="?page=tm_settings&tab=detail" class="button button-secondary mb-1">Event settings</a>
                     </div>
                 </div>
 
