@@ -49,17 +49,17 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
-                        1
+                        <div class="box-title">1</div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
-                        2
+                        <div class="box-title">2</div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
-                        3
+                        <div class="box-title">3</div>
                     </div>
                 </div>
 
