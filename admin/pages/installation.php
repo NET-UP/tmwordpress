@@ -9,10 +9,10 @@
 
 <div class="wrap tm-admin-page">
     <div class="container">
-        <div class="center-center">
+        <div class="center-center container-md">
             
             <img style="width: 75px;margin:0 auto;margin-bottom:2em;display:block;" src=" <?php echo dirname(plugin_dir_url( __FILE__ ), 1) . '/assets/img/logo.png'; ?>" alt="TicketMachine Logo">         
-            <div class="box box-md">
+            <div class="box">
                 <div class="px-5 py-4 text-center">
 
                     <h1>

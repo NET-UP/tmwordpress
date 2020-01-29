@@ -108,6 +108,10 @@
     color: #ed7b25;
 }
 
+.tm-admin-page .container-md {
+    max-width: 395px;
+}
+
 .tm-admin-page .center-center {
     margin: 0 auto;
     padding: 5.5% 0 0;
@@ -119,8 +123,4 @@
     border: 1px solid#DDD;
     font-size:15px;
     line-height:20px;
-}
-
-.tm-admin-page .box-md {
-    max-width: 395px;
 }
