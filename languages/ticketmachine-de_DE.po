@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-29 13:05+0100\n"
-"PO-Revision-Date: 2020-01-29 13:05+0100\n"
+"POT-Creation-Date: 2020-01-29 16:50+0100\n"
+"PO-Revision-Date: 2020-01-29 16:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: languages\n"
 "X-Poedit-SearchPathExcluded-3: assets\n"
 
-#: admin/menu.php:21 admin/menu.php:22 admin/pages/overview.php:41
+#: admin/menu.php:21 admin/menu.php:22 admin/pages/overview.php:44
 msgid "Overview"
 msgstr "Übersicht"
 
@@ -218,7 +218,7 @@ msgstr "Alle"
 msgid "Upcoming"
 msgstr "Kommende"
 
-#: admin/pages/events.php:494
+#: admin/pages/events.php:494 admin/pages/overview.php:63
 msgid "Drafts"
 msgstr "Entwürfe"
 
@@ -252,9 +252,62 @@ msgstr ""
 msgid "Connect with TicketMachine"
 msgstr "mit TicketMachine verbinden"
 
-#: admin/pages/overview.php:33
+#: admin/pages/overview.php:39
 msgid "Welcome to"
 msgstr "Willkommen bei"
+
+#: admin/pages/overview.php:52
+msgid "Create an event"
+msgstr "Veranstaltung erstellen"
+
+#: admin/pages/overview.php:53
+msgid "Just add a title, description, image, location and dates."
+msgstr ""
+"Fügen Sie einfach einen Titel, eine Beschreibung, ein Bild, einen Ort und "
+"Daten hinzu."
+
+#: admin/pages/overview.php:54
+msgid "New event"
+msgstr "Neue Veranstaltung"
+
+#: admin/pages/overview.php:59
+msgid "Edit events"
+msgstr "Veranstaltung bearbeiten"
+
+#: admin/pages/overview.php:60
+msgid "Edit, publish and view your existing events."
+msgstr ""
+"Bearbeiten, veröffentlichen und sehen Sie Ihre bestehenden Veranstaltungen"
+
+#: admin/pages/overview.php:61
+msgid "View all events"
+msgstr "Alle Veranstaltungen anzeigen"
+
+#: admin/pages/overview.php:62
+msgid "Upcoming events"
+msgstr "Kommende Verantaltungen"
+
+#: admin/pages/overview.php:68
+msgid "Change settings"
+msgstr "Einstellungen ändern"
+
+#: admin/pages/overview.php:69
+msgid "Easily adjust the design, page layouts, URLs and general settings."
+msgstr ""
+"Passen Sie einfach das Design, die Seitenlayouts, URLs und allgemeinen "
+"Einstellungen an."
+
+#: admin/pages/overview.php:70
+msgid "Edit design"
+msgstr "Design anpassen"
+
+#: admin/pages/overview.php:71
+msgid "General settings"
+msgstr "Allgemeine Einstellungen"
+
+#: admin/pages/overview.php:72
+msgid "Event settings"
+msgstr "Verantaltungseinstellungen"
 
 #: admin/pages/settings.php:30
 msgid "Design"
