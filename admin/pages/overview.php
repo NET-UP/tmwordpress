@@ -39,13 +39,24 @@
             <h1><?php echo __('Welcome to', 'ticketmachine'); ?> <span>TicketMachine</span> <span class="text-primary">1.0!</span></h1>
             <div><?php echo __("You're ready to go!", 'ticketmachine'); ?></div>
         
-            <p class=""></p>
+            <p class="">
+                <a href="?page=tm_settings&tab=design">
+                    <?php echo __("Customize your theme", "ticketmachine"); ?>
+                </a>
+                <br></br>
+                <a href="?page=tm_events&action=edit">
+                    <?php echo __("Create an event", "ticketmachine"); ?>
+                </a>
+            </p>
         
         </div>
 
     <?php } ?>
 
-	<h1 class="wp-heading-inline mr-3 mb-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Overview', 'ticketmachine') ?></h1>
+	<h1 class="wp-heading-inline mr-3 mb-3">
+        TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Overview', 'ticketmachine') ?>
+        <a target="_blank" href="/<?php echo $globals->events_slug; ?>" class="button button-secondary ml-2"><?php echo __("Go to live webpage", "ticketmachine"); ?></a>
+    </h1>
 
     <div class="row">
         <div class="col-xl-9">
