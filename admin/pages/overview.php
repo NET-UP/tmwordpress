@@ -44,20 +44,27 @@
 	<h1 class="wp-heading-inline mr-3 mb-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Overview', 'ticketmachine') ?></h1>
 
     <div class="row">
-        <div class="col-sm-6 col-md-4">
-            <div class="box mb-3">
-                1
+        <div class="col-sm-8 col-md-9">
+            <div class="row">
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="box mb-3">
+                        1
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="box mb-3">
+                        2
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="box mb-3">
+                        3
+                    </div>
+                </div>
+                
             </div>
         </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="box mb-3">
-                2
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="box mb-3">
-                3
-            </div>
-        </div>
+
     </div>
 </div>
