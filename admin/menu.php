@@ -18,8 +18,8 @@
 		if($globals->activated || $_GET['code']) {
 			add_submenu_page(
 				'tm_event_manager',
-				__('Events', 'ticketmachine'),
-				__('Events', 'ticketmachine'),
+				__('Overview', 'ticketmachine'),
+				__('Overview', 'ticketmachine'),
 				'manage_options',
 				'tm_event_manager',
 				'tt_overview_page',
