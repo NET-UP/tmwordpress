@@ -29,7 +29,7 @@
         );
 ?>
 
-<div class="box">
+<div class="box wrap">
     Welcome to <span>TicketMachine</span>1.0!
 </div>
 
