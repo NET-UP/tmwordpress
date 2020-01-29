@@ -35,7 +35,7 @@
     <?php if($_GET['code']) { ?>
 
         <div class="box mb-3">
-            <div class="close"><i class="fas fa-times"></i></div>
+            <a href="#" class="close"><i class="fas fa-times"></i></a>
             <h1 class="text-center"><?php echo __('Welcome to', 'ticketmachine'); ?> <span>TicketMachine</span> <span class="text-primary">1.0!</span></h1>
         </div>
 
