@@ -57,7 +57,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
                         <div class="box-title"><?php echo __("Edit events", "ticketmachine"); ?></div>
-                        <p><?php __("Edit, publish and view your existing events.", "ticketmachine"); ?></p>
+                        <p><?php echo __("Edit, publish and view your existing events.", "ticketmachine"); ?></p>
                         <a href="?page=tm_events" class="button button-secondary mb-1"><?php echo __("View all events", "ticketmachine"); ?></a>
                         <a href="?page=tm_events&status=drafts" class="button button-secondary mb-1"><?php echo __("Drafts", "ticketmachine"); ?></a>
                         <a href="?page=tm_events&status=upcoming" class="button button-secondary mb-1"><?php echo __("Upcoming events", "ticketmachine"); ?></a>
