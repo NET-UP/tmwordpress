@@ -108,12 +108,12 @@
     color: #ed7b25;
 }
 
-.tm-admin-page .box {
+.tm-admin-page .center-page {
     margin: 0 auto;
     padding: 5.5% 0 0;
 }
 
-.box > div {
+.box {
     background: #FFF;
     border-radius: 3px;
     border: 1px solid#DDD;
