@@ -20,10 +20,10 @@
         $_SESSION['access_token'] = $token['access_token'];
 
         //print_r($token);
-		$save_array = 
-            array(
-                "activated" => 1,
-            );
+		//$save_array = 
+        //    array(
+        //        "activated" => 1,
+        //    );
 
         $wpdb->update(
             $wpdb->prefix . "ticketmachine_config",
