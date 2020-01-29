@@ -131,8 +131,3 @@
 
 	</tbody>
 </table>
-
-
-<?php 
-	// first check that $hook_suffix is appropriate for your admin page
-?>
