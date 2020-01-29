@@ -9,10 +9,6 @@
     wp_enqueue_script( 'datetimepicker_JS', plugins_url('../assets/js/ext/bootstrap-datetimepicker.min.js', __FILE__ ) );
     wp_enqueue_script( 'taginput_JS', plugins_url('../assets/js/ext/bootstrap-tag.min.js', __FILE__ ) );
 
-    add_action( 'admin_enqueue_scripts', 'mw_enqueue_color_picker' );
-    function mw_enqueue_color_picker( $hook_suffix ) {
-        // first check that $hook_suffix is appropriate for your admin page
         wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_script( 'my-script-handle', plugins_url('../assets/js/settings.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
-    }
 ?>
