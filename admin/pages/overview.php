@@ -30,7 +30,7 @@
 ?>
 
 <div class="box">
-    Welcome to TicketMachine 1!
+    Welcome to <span>TicketMachine</span>1.0!
 </div>
 
 <?php
