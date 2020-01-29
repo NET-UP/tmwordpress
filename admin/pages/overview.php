@@ -49,7 +49,11 @@
 
                 <div class="col-md-6 col-lg-4">
                     <div class="box p-3 mb-3">
-                        <div class="box-title">1</div>
+                        <div class="box-title">Your events</div>
+                        <p>Edit, publish and view your existing events.</p>
+                        <a class="button button-secondary mb-1">View all events</a>
+                        <a class="button button-secondary mb-1">Upcoming events</a>
+                        <a class="button button-secondary mb-1">Drafts</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
@@ -61,9 +65,9 @@
                     <div class="box p-3 mb-3">
                         <div class="box-title">Change settings</div>
                         <p>Easily adjust the design, page layouts and general settings.</p>
-                        <a class="button button-secondary mb-2">Edit design</a>
-                        <a class="button button-secondary mb-2">General settings</a>
-                        <a class="button button-secondary mb-2">Event settings</a>
+                        <a class="button button-secondary mb-1">Edit design</a>
+                        <a class="button button-secondary mb-1">General settings</a>
+                        <a class="button button-secondary mb-1">Event settings</a>
                     </div>
                 </div>
 
