@@ -30,7 +30,7 @@
 ?>
 
 <div class="box wrap">
-    <h1>Welcome to <span>TicketMachine</span> <span>1.0!</span></h1>
+    <h1>Welcome to <span>TicketMachine</span> <span class="text-primary">1.0!</span></h1>
 </div>
 
 <?php
