@@ -462,7 +462,7 @@ function tm_render_list_page(){
 
         ?>
         <div class="wrap tm-admin-page">
-            <h1 class="wp-heading-inline">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Events', 'ticketmachine'); ?></h1>
+            <h1 class="wp-heading-inline mr-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Events', 'ticketmachine'); ?></h1>
             <a href="?page=tm_events&action=edit" class="page-title-action"><?php echo __('Add','ticketmachine'); ?></a>
             <hr class="wp-header-end">
             <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
