@@ -19,11 +19,11 @@
                 "refresh_token" => $token['refresh_token'],
             );
 
-        //$wpdb->update(
-        //    $wpdb->prefix . "ticketmachine_config",
-        //    $save_array,
-        //    array('id' => $tm_config->id)
-        //);
+        $wpdb->update(
+            $wpdb->prefix . "ticketmachine_config",
+            $save_array,
+            array('id' => $tm_config->id)
+        );
     }
 ?>
 
