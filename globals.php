@@ -86,7 +86,7 @@
 		'client_id' => $api->client_id,
 		'redirect_uri' => $api->auth->redirect_uri . "?start_uri=" . $api->auth->start_uri,
 		'state' => $_SESSION['state'],
-		'scope' => 'public organizer organizer/event'
+		'scope' => 'public organizer organizer/event',
 		'locale' => $parsed_locale
 	);
 	
