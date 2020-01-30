@@ -13,10 +13,12 @@
             'client_id' => $api->client_id,
             'client_secret' => $api->client_secret,
             'code' => $_GET['code'],
-            'redirect_uri' => "https://www.ticketmachine.de/oauth/start.php"
+            'redirect_uri' => "https://www.ticketmachine.de/oauth/start.php",
+            'scope' => "public organizer organizer/event"
         ));
         //$_SESSION['access_token'] = $token['access_token'];
         print_r($token);
+
 
 		$save_array = 
             array(
