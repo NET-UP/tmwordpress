@@ -23,18 +23,20 @@
         //Calendar Config
         wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ) );
 
-        $tm_output .= "<div class='row'>
-        <div id='tm_cal_error' class='col-12 text-center mt-1' style='display:none;'>" . tm_alert(__("No events could be found", "ticketmachine"), "error") . "</div>
-                            <div class='col-12'>
-                                <div class='input-group'>
-                                    <div class='btn-group mb-3'>
-                                        <a href='#' aria-label='" . __("To previous month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
-                                        <a href='#' class='btn btn-secondary' id='calendar-title'></a>
-                                        <a href='#' aria-label='" . __("To next month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
-                                    </div>
-                                </div>
+        $tm_output .= "
+                <input type='hidden' id='tm_ev_url' value='" . plugins_url('', dirname(__FILE__) ) . "/event.php'></input>
+                <div class='row'>
+                    <div id='tm_cal_error' class='col-12 text-center mt-1' style='display:none;'>" . tm_alert(__("No events could be found", "ticketmachine"), "error") . "</div>
+                    <div class='col-12'>
+                        <div class='input-group'>
+                            <div class='btn-group mb-3'>
+                                <a href='#' aria-label='" . __("To previous month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
+                                <a href='#' class='btn btn-secondary' id='calendar-title'></a>
+                                <a href='#' aria-label='" . __("To next month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
                             </div>
-                        </div>";
+                        </div>
+                    </div>
+                </div>";
         
         $tm_output .= "
                 <div class='row'>
