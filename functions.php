@@ -142,6 +142,7 @@
 			array('id' => $tm_config->id)
 		);
 		}
+		print_r($token);
 	}
 
 	// Get new access token
