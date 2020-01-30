@@ -11,9 +11,7 @@
 	    $token = apiRequest($api->token, $api->auth->code);
         $_SESSION['access_token'] = $token['access_token'];
 
-        $current_organizer = tmapi_organizers()[0];
-
-        print_r(tmapi_organizers());
+        $current_organizer = (object)tmapi_organizers()[0];
 
 		$save_array = 
             array(
