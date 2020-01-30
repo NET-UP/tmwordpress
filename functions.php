@@ -166,11 +166,11 @@
 				'refresh_token' => $refresh_token
 			);
 		}
+
+		$token = apiRequest($api->token, $api->auth->code);
 		
 		print_r($api->auth->code);
 		print_r($token);
-
-		$token = apiRequest($api->token, $api->auth->code);
 
 		return $token;
 	}
