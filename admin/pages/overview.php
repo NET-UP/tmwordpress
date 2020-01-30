@@ -90,7 +90,7 @@
 
         <div class="col-xl-3">
             <h1 class="wp-heading-inline mr-3 mb-3">
-                <?php echo __('', 'ticketmachine') ?>
+                <?php echo __(' ', 'ticketmachine') ?>
             </h1>
             <div class="box p-3 mb-3">
                 <div class="box-title"><?php echo __("TicketMachine Pro", "ticketmachine"); ?></div>
