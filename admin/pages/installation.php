@@ -13,7 +13,7 @@
             
             <img style="width: 75px;margin:0 auto;margin-bottom:2em;display:block;" src=" <?php echo dirname(plugin_dir_url( __FILE__ ), 1) . '/assets/img/logo.png'; ?>" alt="TicketMachine Logo">         
             <div class="box">
-                <div class="text-center box-body">
+                <div class="text-center box-body p-3">
 
                     <h1>
                         <?php echo __("Thanks for installing me!", "ticketmachine"); ?>
