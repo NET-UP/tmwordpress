@@ -84,7 +84,7 @@
 	$api->auth->data = array(
 		'response_type' => 'code',
 		'client_id' => $api->client_id,
-		'redirect_uri' => $api->auth->redirect_uri . "?start_uri=" . $api->auth->start_uri,
+		'redirect_uri' => $api->auth->redirect_uri,
 		'state' => $_SESSION['state'],
 		'scope' => 'public organizer organizer/event'
 	);
