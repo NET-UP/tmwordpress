@@ -7,7 +7,7 @@
 	$tm_config = $tm_config[0];
 
 	$globals = (object)$tm_config;
-	$_SESSION['access_token'] = $globals->access_token;
+	$_SESSION['access_token'] = $globals->api_access_token;
 	$api = new stdClass();
 	$api->auth = new stdClass();
 

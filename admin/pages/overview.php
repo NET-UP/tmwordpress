@@ -15,8 +15,8 @@
 		$save_array = 
             array(
                 "activated" => 1,
-                "access_token" => $token['access_token'],
-                "refresh_token" => $token['refresh_token'],
+                "api_access_token" => $token['access_token'],
+                "api_refresh_token" => $token['refresh_token'],
             );
 
         $wpdb->update(
