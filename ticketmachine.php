@@ -179,7 +179,7 @@
                     api_client_secret varchar(64) DEFAULT '1d3fb26a828f0e09700464997271c5236bb7d3194992299331eaa1c420a7f522' NOT NULL,
                     api_refresh_token varchar(64) DEFAULT '' NOT NULL,
                     api_access_token varchar(64) DEFAULT '' NOT NULL,
-                    api_refresh_last int(11) DEFAULT 0 NOT NULL,
+                    api_refresh_last int(11) DEFAULT " . time() . " NOT NULL,
                     api_refresh_interval int(11) DEFAULT 7200 NOT NULL,
                     api_environment varchar(64) DEFAULT 'staging' NOT NULL,
                     show_list bit(1) DEFAULT 1 NOT NULL,
