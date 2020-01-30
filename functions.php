@@ -115,7 +115,7 @@
 
 		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/organizers/me";
 
-		$organizer = (object)apiRequest($url, $post, $method, $headers);
+		$organizer = apiRequest($url, $post, $method, $headers);
 
 		return $organizer;
 	}
