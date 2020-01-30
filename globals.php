@@ -79,7 +79,7 @@
 	];
 
 	$api->auth->start_uri = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	$api->auth->redirect_uri = $api->scheme . "://www.ticketmachine.de/oauth/start.php";
+	$api->auth->redirect_uri = $api->scheme . "://www.ticketmachine.de/oauth/proxy.php";
 	
 	$api->auth->data = array(
 		'response_type' => 'code',
