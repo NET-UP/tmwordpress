@@ -89,7 +89,6 @@
 		'scope' => 'public organizer organizer/event'
 	);
 	
-	
 	$api->auth->code = array(
 		'grant_type' => 'authorization_code',
 		'client_id' => $api->client_id,
