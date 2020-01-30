@@ -126,6 +126,8 @@
 
 		if(time() > $globals->api_refresh_last + $globals->api_refresh_interval){
 			$token = tmapi_get_access_token($globals->api_refresh_token, "update");
+			
+			print_r($token);
 		
 			$save_array = 
 			array(
@@ -171,7 +173,6 @@
 		$token = apiRequest($api->token, $api->auth->code);
 
 		print_r($api->auth->code);
-		print_r($token);
 
 		return $token;
 	}
