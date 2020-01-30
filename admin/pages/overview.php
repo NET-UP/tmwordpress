@@ -60,28 +60,34 @@
             <div class="row">
 
                 <div class="col-md-6 col-lg-4">
-                    <div class="box p-3 mb-3">
+                    <div class="box mb-3">
                         <div class="box-title"><?php echo __("Create an event", "ticketmachine"); ?></div>
-                        <p><?php echo __("Just add a title, description, image, location and dates.", "ticketmachine"); ?></p>
-                        <a href="?page=tm_events&action=edit" class="button button-secondary mb-1"><?php echo __("New event", "ticketmachine"); ?></a>
+                        <div class="box-body">
+                            <p><?php echo __("Just add a title, description, image, location and dates.", "ticketmachine"); ?></p>
+                            <a href="?page=tm_events&action=edit" class="button button-secondary mb-1"><?php echo __("New event", "ticketmachine"); ?></a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="box p-3 mb-3">
+                    <div class="box mb-3">
                         <div class="box-title"><?php echo __("Edit events", "ticketmachine"); ?></div>
-                        <p><?php echo __("Edit, publish and view your existing events.", "ticketmachine"); ?></p>
-                        <a href="?page=tm_events" class="button button-secondary mb-1"><?php echo __("View all events", "ticketmachine"); ?></a>
-                        <a href="?page=tm_events&status=drafts" class="button button-secondary mb-1"><?php echo __("Drafts", "ticketmachine"); ?></a>
-                        <a href="?page=tm_events&status=upcoming" class="button button-secondary mb-1"><?php echo __("Upcoming events", "ticketmachine"); ?></a>
+                        <div class="box-body">
+                            <p><?php echo __("Edit, publish and view your existing events.", "ticketmachine"); ?></p>
+                            <a href="?page=tm_events" class="button button-secondary mb-1"><?php echo __("View all events", "ticketmachine"); ?></a>
+                            <a href="?page=tm_events&status=drafts" class="button button-secondary mb-1"><?php echo __("Drafts", "ticketmachine"); ?></a>
+                            <a href="?page=tm_events&status=upcoming" class="button button-secondary mb-1"><?php echo __("Upcoming events", "ticketmachine"); ?></a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="box p-3 mb-3">
+                    <div class="box mb-3">
                         <div class="box-title"><?php echo __("Change settings", "ticketmachine"); ?></div>
-                        <p><?php echo __("Easily adjust the design, page layouts, URLs and general settings.", "ticketmachine"); ?></p>
-                        <a href="?page=tm_settings&tab=design" class="button button-secondary mb-1"><?php echo __("Edit design", "ticketmachine"); ?></a>
-                        <a href="?page=tm_settings&tab=general" class="button button-secondary mb-1"><?php echo __("General settings", "ticketmachine"); ?></a>
-                        <a href="?page=tm_settings&tab=detail" class="button button-secondary mb-1"><?php echo __("Event settings", "ticketmachine"); ?></a>
+                        <div class="box-body">
+                            <p><?php echo __("Easily adjust the design, page layouts, URLs and general settings.", "ticketmachine"); ?></p>
+                            <a href="?page=tm_settings&tab=design" class="button button-secondary mb-1"><?php echo __("Edit design", "ticketmachine"); ?></a>
+                            <a href="?page=tm_settings&tab=general" class="button button-secondary mb-1"><?php echo __("General settings", "ticketmachine"); ?></a>
+                            <a href="?page=tm_settings&tab=detail" class="button button-secondary mb-1"><?php echo __("Event settings", "ticketmachine"); ?></a>
+                        </div>
                     </div>
                 </div>
 
@@ -92,9 +98,9 @@
             <h1 class="wp-heading-inline mr-3 mb-3">
                 <?php echo __('', 'ticketmachine') ?>&nbsp;
             </h1>
-            <div class="box p-3 mb-3">
+            <div class="box mb-3">
                 <div class="box-title"><?php echo __("TicketMachine Pro", "ticketmachine"); ?></div>
-                <p><?php echo __("Easily adjust the design, page layouts, URLs and general settings.", "ticketmachine"); ?></p>
+                <div class="box-body"></div>
             </div>
         </div>
 
