@@ -13,6 +13,8 @@
 
         $current_organizer = tmapi_organizers()[0];
 
+        print_r(tmapi_organizers());
+
 		$save_array = 
             array(
                 "activated" => 1,
