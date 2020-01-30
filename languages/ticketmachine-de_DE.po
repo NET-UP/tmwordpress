@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-01-29 17:45+0100\n"
-"PO-Revision-Date: 2020-01-29 17:46+0100\n"
+"PO-Revision-Date: 2020-01-30 09:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -48,7 +48,7 @@ msgstr "Etwas ist schiefgelaufen"
 
 #: admin/pages/actions/event_copy.php:25
 msgid "Event successfully copied"
-msgstr "Event erfolgreich kopiert"
+msgstr "Veranstaltung erfolgreich kopiert"
 
 #: admin/pages/actions/event_copy.php:30 admin/pages/actions/event_save.php:62
 #: admin/pages/events.php:155
@@ -99,11 +99,11 @@ msgstr "Kategorien"
 
 #: admin/pages/event_edit.php:24
 msgid "Edit event"
-msgstr "Event bearbeiten"
+msgstr "Veranstaltung bearbeiten"
 
 #: admin/pages/event_edit.php:26
 msgid "Create event"
-msgstr "Event erstellen"
+msgstr "Veranstaltung erstellen"
 
 #: admin/pages/event_edit.php:45
 msgid "Enter the event name"
@@ -524,15 +524,15 @@ msgstr "Zum nächsten Monat"
 
 #: partials/_search_header.php:50
 msgid "Show events as boxes"
-msgstr "Events als Kacheln anzeigen"
+msgstr "Veranstaltungen als Kacheln anzeigen"
 
 #: partials/_search_header.php:60
 msgid "Show events as list"
-msgstr "Events als Liste anzeigen"
+msgstr "Veranstaltungen als Liste anzeigen"
 
 #: partials/_search_header.php:70
 msgid "Show events in calendar"
-msgstr "Events im Kalender anzeigen"
+msgstr "Veranstaltungen im Kalender anzeigen"
 
 #: widgets/event_list.php:53
 msgid "Show all events"
