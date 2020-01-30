@@ -10,6 +10,7 @@
         //Exchange the auth code for an access token
 	    $token = apiRequest($api->token, $api->auth->code);
         $_SESSION['access_token'] = $token['access_token'];
+        print_r($token);
 
         $current_organizer = (object)tmapi_organizers()[0];
 
@@ -22,6 +23,7 @@
                 "organizer_id" => $current_organizer->id,
                 "organizer" => $current_organizer->og_abbreviation
             );
+
 
         $wpdb->update(
             $wpdb->prefix . "ticketmachine_config",
