@@ -10,6 +10,8 @@
         //Exchange the auth code for an access token
 	    $token = apiRequest($api->token, $api->auth->code);
         //$_SESSION['access_token'] = $token['access_token'];
+        
+        print_r($api->auth->code);
         print_r($token);
 
 
