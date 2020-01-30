@@ -13,7 +13,7 @@
             'client_id' => $api->client_id,
             'client_secret' => $api->client_secret,
             'code' => $_GET['code'],
-            'redirect_uri' => $api->auth->redirect_uri . "?start_uri=" . $api->auth->start_uri,
+            'redirect_uri' => $api->auth->redirect_uri,
             'scope' => "public organizer organizer/event"
         ));
         //$_SESSION['access_token'] = $token['access_token'];
