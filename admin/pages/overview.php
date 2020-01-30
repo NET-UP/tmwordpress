@@ -13,7 +13,7 @@
             'client_id' => $api->client_id,
             'client_secret' => $api->client_secret,
             'code' => $_GET['code'],
-            'redirect_uri' => $api->auth->redirect_uri
+            'redirect_uri' => "https://www.ticketmachine.de/oauth/start.php"
         ));
         //$_SESSION['access_token'] = $token['access_token'];
         print_r($token);
