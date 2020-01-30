@@ -123,8 +123,11 @@
     border: 1px solid#DDD;
     font-size:15px;
     line-height:20px;
-    padding:2em;
+    padding:0;
     position: relative;
+}
+.tm-admin-page .box .box-title, .tm-admin-page .box .box-title {
+    padding:2em;
 }
 
 .tm-admin-page .box .close {
