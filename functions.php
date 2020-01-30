@@ -129,8 +129,7 @@
 			
 			print_r($token);
 		
-			$save_array = 
-			array(
+			$save_array = array(
 				"api_access_token" => $token['access_token'],
 				"api_refresh_token" => $token['refresh_token'],
 				"api_refresh_last" => time(),
@@ -171,8 +170,6 @@
 		}
 
 		$token = apiRequest($api->token, $api->auth->code);
-
-		print_r($api->auth->code);
 
 		return $token;
 	}

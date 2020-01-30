@@ -14,16 +14,15 @@
 
         $current_organizer = (object)tmapi_organizers()[0];
 
-		$save_array = 
-            array(
-                "activated" => 1,
-                "api_access_token" => $token['access_token'],
-                "api_refresh_token" => $token['refresh_token'],
-                "api_refresh_last" => time(),
-                "api_refresh_interval" => $token['expires_in']/2,
-                "organizer_id" => $current_organizer->id,
-                "organizer" => $current_organizer->og_abbreviation
-            );
+		$save_array = array(
+            "activated" => 1,
+            "api_access_token" => $token['access_token'],
+            "api_refresh_token" => $token['refresh_token'],
+            "api_refresh_last" => time(),
+            "api_refresh_interval" => $token['expires_in']/2,
+            "organizer_id" => $current_organizer->id,
+            "organizer" => $current_organizer->og_abbreviation
+        );
 
 
         $wpdb->update(
