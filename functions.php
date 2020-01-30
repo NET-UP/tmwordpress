@@ -125,7 +125,7 @@
 		global $api, $globals, $wpdb;
 
 		if(time() > $globals->api_refresh_last + $globals->api_refresh_interval){
-			$token = tmapi_get_access_token($globals->api_refresh_token);
+			$token = tmapi_get_access_token($globals->api_refresh_token, "update");
 		
 			$save_array = 
 			array(
@@ -145,21 +145,27 @@
 	}
 
 	// Get new access token
-	function tmapi_get_access_token($refresh_token) {
+	function tmapi_get_access_token($refresh_token, $status="update") {
 		global $api, $globals;
 
-		if(!isset($refresh_token)){
-			$refresh_token = $_GET['code'];
+		if($status == "new"){
+			$api->auth->code = array(
+				'grant_type' => 'authorization_code',
+				'client_id' => $api->client_id,
+				'client_secret' => $api->client_secret,
+				'code' => $refresh_token,
+				'redirect_uri' => $api->auth->proxy,
+				'scope' => "public organizer organizer/event"
+			);
 		}
-	
-		$api->auth->code = array(
-			'grant_type' => 'authorization_code',
-			'client_id' => $api->client_id,
-			'client_secret' => $api->client_secret,
-			'code' => $refresh_token,
-			'redirect_uri' => $api->auth->proxy,
-			'scope' => "public organizer organizer/event"
-		);
+		if($status == "update"){
+			$api->auth->code = array(
+				'grant_type' => 'refresh_token',
+				'client_id' => $api->client_id,
+				'client_secret' => $api->client_secret,
+				'refresh_token' => $refresh_token
+			);
+		}
 		
 		print_r($api->auth->code);
 		print_r($token);

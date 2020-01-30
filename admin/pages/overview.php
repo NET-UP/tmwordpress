@@ -8,7 +8,7 @@
 
     if($_GET['code']) {
         //Exchange the auth code for an access token
-	    $token = tmapi_get_access_token($_GET['code']);
+	    $token = tmapi_get_access_token($_GET['code'], "new");
         $_SESSION['access_token'] = $token['access_token'];
         print_r($token);
 
