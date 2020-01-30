@@ -108,7 +108,7 @@
 	}
 
 	/* Get connected organizer */
-	function tmapi_organizer($params=array(), $method="GET", $post=FALSE, $headers=array()){
+	function tmapi_organizers($params=array(), $method="GET", $post=FALSE, $headers=array()){
 		global $api, $globals;
 
 		$params = (object)$params;

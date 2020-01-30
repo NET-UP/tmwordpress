@@ -11,12 +11,15 @@
 	    $token = apiRequest($api->token, $api->auth->code);
         $_SESSION['access_token'] = $token['access_token'];
 
+        $current_organizer = tmapi_organizers($params)[0];
 
 		$save_array = 
             array(
                 "activated" => 1,
                 "api_access_token" => $token['access_token'],
                 "api_refresh_token" => $token['refresh_token'],
+                "organizer_id" => $current_organizer->id,
+                "organizer" => $current_organizer->og_abbreviation
             );
 
         $wpdb->update(
