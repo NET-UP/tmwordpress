@@ -142,7 +142,6 @@
 			array('id' => $tm_config->id)
 		);
 		}
-		print_r($token);
 	}
 
 	// Get new access token
@@ -161,6 +160,9 @@
 			'redirect_uri' => $api->auth->proxy,
 			'scope' => "public organizer organizer/event"
 		);
+		
+		print_r($api->auth->code);
+		print_r($token);
 
 		$token = apiRequest($api->token, $api->auth->code);
 
