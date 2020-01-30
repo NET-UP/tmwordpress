@@ -9,13 +9,14 @@
     if($_GET['code']) {
         //Exchange the auth code for an access token
 	    $token = apiRequest($api->token, $api->auth->code);
-        //$_SESSION['access_token'] = $token['access_token'];
-        print_r($token);
+        $_SESSION['access_token'] = $token['access_token'];
 
 
 		$save_array = 
             array(
                 "activated" => 1,
+                "access_token" => $token['access_token'],
+                "refresh_token" => $token['refresh_token'],
             );
 
         //$wpdb->update(
