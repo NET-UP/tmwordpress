@@ -139,6 +139,7 @@
 				$save_array,
 				array('id' => $globals->id)
 			);
+			$_SESSION['access_token'] = $token['access_token'];
 		}
 	}
 
@@ -168,6 +169,7 @@
 		}
 
 		$token = apiRequest($api->token, $api->auth->code);
+        $_SESSION['access_token'] = $token['access_token'];
 
 		return $token;
 	}
