@@ -407,7 +407,7 @@ function tm_render_categories_page(){
         <h1 class="dont-display"></h1>
 
         <h1 class="wp-heading-inline">TicketMachine > <?php echo __('Categories', 'ticketmachine'); ?></h1>
-        <hr class="wp-header-end">
+        
         <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
         <div id="col-container" class="wp-clearfix">
             <div id="col-left">
