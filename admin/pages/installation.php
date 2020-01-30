@@ -37,19 +37,9 @@
                         $current_locale = get_locale();
                         $parsed_locale = substr($current_locale, 0, strpos($current_locale, '_'));
 
-                        $api->auth->testdata = array(
-                            'response_type' => 'code',
-                            'client_id' => "c16727aa80540e51edcd276641c6f68974bb312ec5b17b75a3bc0ba254236a14",
-                            'redirect_uri' => $api->auth->redirect_uri . "?start_uri=" . $api->auth->start_uri,
-                            'state' => $_SESSION['state'],
-                            'scope' => 'public organizer organizer/event',
-                            'locale' => $parsed_locale
-                        );
-
                         $authorize_url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/oauth/authorize";
                         $authorize_url .= "?";
-                        //$authorize_url .= http_build_query($api->auth->data);
-                        $authorize_url .= http_build_query($api->auth->testdata);
+                        $authorize_url .= http_build_query($api->auth->data);
                     ?>
                     
                     <a class="button button-primary mt-4 px-3 py-md-1" style="font-size:14px" href="<?php echo $authorize_url; ?>">
