@@ -126,8 +126,6 @@
 
 		if(time() > $globals->api_refresh_last + $globals->api_refresh_interval){
 			$token = tmapi_get_access_token($globals->api_refresh_token, "update");
-			
-			print_r($token);
 		
 			$save_array = array(
 				"api_access_token" => $token['access_token'],
@@ -135,6 +133,8 @@
 				"api_refresh_last" => time(),
 				"api_refresh_interval" => $token['expires_in']/2
 			);
+
+			print_r($save_array);
 
 			$wpdb->update(
 				$wpdb->prefix . "ticketmachine_config",
