@@ -49,13 +49,14 @@
 
     <?php } ?>
 
-	<h1 class="wp-heading-inline mr-3 mb-3">
-        TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Overview', 'ticketmachine') ?>
-        <a target="_blank" href="/<?php echo $globals->events_slug; ?>" class="button button-secondary ml-2"><?php echo __("Go to live webpage", "ticketmachine"); ?></a>
-    </h1>
-
     <div class="row">
         <div class="col-xl-9">
+
+            <h1 class="wp-heading-inline mr-3 mb-3">
+                TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Overview', 'ticketmachine') ?>
+                <a target="_blank" href="/<?php echo $globals->events_slug; ?>" class="button button-secondary ml-2"><?php echo __("Go to live webpage", "ticketmachine"); ?></a>
+            </h1>
+
             <div class="row">
 
                 <div class="col-md-6 col-lg-4">
@@ -85,6 +86,10 @@
                 </div>
 
             </div>
+        </div>
+
+        <div class="col-xl-3">
+        Hilfe
         </div>
 
     </div>
