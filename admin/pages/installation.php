@@ -39,7 +39,7 @@
 
                         $api->auth->testdata = array(
                             'response_type' => 'code',
-                            'client_id' => "4c0bcf69d871fb55362382f436e768b277592f3243e7da9bfef4dff997392fe0",
+                            'client_id' => "c16727aa80540e51edcd276641c6f68974bb312ec5b17b75a3bc0ba254236a14",
                             'redirect_uri' => $api->auth->redirect_uri . "?start_uri=" . $api->auth->start_uri,
                             'state' => $_SESSION['state'],
                             'scope' => 'public organizer organizer/event',
