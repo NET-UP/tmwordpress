@@ -37,7 +37,7 @@
                         $current_locale = get_locale();
                         $parsed_locale = substr($current_locale, 0, strpos($current_locale, '_'));
 
-                        $authorize_url = $proxy;
+                        $authorize_url = $api->auth->proxy;
                         $authorize_url .= "?";
                         $authorize_url .= http_build_query($api->auth->data);
                     ?>
