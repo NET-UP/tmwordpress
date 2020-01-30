@@ -8,7 +8,7 @@
 
     if($_GET['code']) {
         //Exchange the auth code for an access token
-	    tmapi_get_access_token($_GET['code'], "new");
+	    $token = tmapi_get_access_token($_GET['code'], "new");
 
         $current_organizer = (object)tmapi_organizers()[0];
 
