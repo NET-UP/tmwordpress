@@ -195,5 +195,8 @@
 			setlocale(LC_TIME, 'de_DE.UTF-8');
 			break;
 	}
+	
+	tmapi_refresh_token_check();
+	$_SESSION['access_token'] = $globals->api_access_token;
       
 ?>
