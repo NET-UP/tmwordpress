@@ -37,7 +37,7 @@
                         $current_locale = get_locale();
                         $parsed_locale = substr($current_locale, 0, strpos($current_locale, '_'));
 
-                        $authorize_url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/oauth/authorize";
+                        $authorize_url = $proxy;
                         $authorize_url .= "?";
                         $authorize_url .= http_build_query($api->auth->data);
                     ?>

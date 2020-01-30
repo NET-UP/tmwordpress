@@ -79,14 +79,14 @@
 	];
 
 	$api->auth->start_uri = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	$api->auth->redirect_uri = $api->scheme . "://www.ticketmachine.de/oauth/proxy.php";
+	$api->auth->proxy = $api->scheme . "://www.ticketmachine.de/oauth/proxy.php";
 	
 	$api->auth->data = array(
 		'response_type' => 'code',
 		'client_id' => $api->client_id,
-		'redirect_uri' => $api->auth->redirect_uri,
-		'start_uri' => $api->auth->start_uri,
+		'redirect_uri' => $api->auth->proxy,
 		'state' => $_SESSION['state'],
+		'environment' => $api->environment,
 		'scope' => 'public organizer organizer/event'
 	);
 	
@@ -95,7 +95,7 @@
 		'client_id' => $api->client_id,
 		'client_secret' => $api->client_secret,
 		'code' => $_GET['code'],
-		'redirect_uri' => $api->auth->redirect_uri,
+		'redirect_uri' => $api->auth->proxy,
 		'scope' => "public organizer organizer/event"
 	);
 	
