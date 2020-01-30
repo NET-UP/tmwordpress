@@ -87,6 +87,7 @@
 		'redirect_uri' => $api->auth->proxy,
 		'state' => $_SESSION['state'],
 		'environment' => $api->environment,
+		'start_uri' => $api->auth->start_uri,
 		'scope' => 'public organizer organizer/event'
 	);
 	
