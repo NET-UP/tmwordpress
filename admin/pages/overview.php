@@ -17,7 +17,6 @@
             'scope' => "public organizer organizer/event"
         ));
         //$_SESSION['access_token'] = $token['access_token'];
-	    print_r($api->auth->data);
         print_r($token);
 
 
