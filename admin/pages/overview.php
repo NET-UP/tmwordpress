@@ -89,7 +89,9 @@
         </div>
 
         <div class="col-xl-3">
-        Hilfe
+            <h1 class="wp-heading-inline mr-3 mb-3">
+                <?php echo __('?', 'ticketmachine') ?>
+            </h1>
         </div>
 
     </div>
