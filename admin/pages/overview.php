@@ -104,7 +104,7 @@
                 <?php echo __('', 'ticketmachine') ?>&nbsp;
             </h1>
             <div class="box mb-3">
-                <div class="box-title"><?php echo __("TicketMachine Pro", "ticketmachine"); ?></div>
+                <div class="box-title bg-primary"><?php echo __("TicketMachine Pro", "ticketmachine"); ?></div>
                 <div class="box-body"></div>
             </div>
         </div>
