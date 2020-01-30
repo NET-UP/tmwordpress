@@ -126,8 +126,19 @@
     padding:0;
     position: relative;
 }
-.tm-admin-page .box .box-title, .tm-admin-page .box .box-body {
+
+.tm-admin-page .box .box-body {
     padding:1.25em;
+}
+
+.tm-admin-page .box .box-body p {
+    margin-top: 0;
+}
+
+.tm-admin-page .box .box-title {
+    background: #f5f5f5;
+    border-bottom: 1px solid #EEE;
+    padding: 1em 1.25em;
 }
 
 .tm-admin-page .box .close {
