@@ -7,6 +7,7 @@
 	$tm_config = $tm_config[0];
 
 	$globals = (object)$tm_config;
+	tmapi_refresh_token_check();
 	$_SESSION['access_token'] = $globals->api_access_token;
 	$api = new stdClass();
 	$api->auth = new stdClass();
@@ -90,15 +91,6 @@
 		'environment' => $api->environment,
 		'start_uri' => $api->auth->start_uri,
 		'scope' => 'public organizer organizer/event'
-	);
-	
-	$api->auth->code = array(
-		'grant_type' => 'authorization_code',
-		'client_id' => $api->client_id,
-		'client_secret' => $api->client_secret,
-		'code' => $_GET['code'],
-		'redirect_uri' => $api->auth->proxy,
-		'scope' => "public organizer organizer/event"
 	);
 
 	$api->auth->access = array(

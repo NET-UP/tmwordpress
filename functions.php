@@ -120,6 +120,37 @@
 		return $organizer;
 	}
 
+	//Check if access token expired
+	function tmapi_refresh_token_check() {
+		global $api, $globals;
+
+		if(time() > $globals->api_refresh_last + $globals->api_refresh_interval){
+			tmapi_get_access_token($globals->api_refresh_interval);
+		}
+	}
+
+	// Get new access token
+	function tmapi_get_access_token($refresh_token) {
+		global $api, $globals;
+
+		if(!isset($refresh_token)){
+			$refresh_token = $_GET['code'];
+		}
+	
+		$api->auth->code = array(
+			'grant_type' => 'authorization_code',
+			'client_id' => $api->client_id,
+			'client_secret' => $api->client_secret,
+			'code' => $refresh_token,
+			'redirect_uri' => $api->auth->proxy,
+			'scope' => "public organizer organizer/event"
+		);
+
+		$token = apiRequest($api->token, $api->auth->code);
+
+		return $token;
+	}
+
 	/* Get all categories */
 	function tmapi_categories($params=array(), $method="GET", $headers=array()){
 		global $api, $globals;
