@@ -163,12 +163,14 @@
 				'grant_type' => 'refresh_token',
 				'client_id' => $api->client_id,
 				'client_secret' => $api->client_secret,
-				'refresh_token' => $refresh_token
+				'refresh_token' => $refresh_token,
+				'redirect_uri' => $api->auth->proxy,
+				'scope' => "public organizer organizer/event"
 			);
 		}
 
 		$token = apiRequest($api->token, $api->auth->code);
-		
+
 		print_r($api->auth->code);
 		print_r($token);
 
