@@ -126,7 +126,7 @@
     padding:0;
     position: relative;
 }
-.tm-admin-page .box .box-title, .tm-admin-page .box .box-title {
+.tm-admin-page .box .box-title, .tm-admin-page .box .box-body {
     padding:2em;
 }
 
