@@ -180,7 +180,7 @@
                     api_refresh_token varchar(64) DEFAULT '' NOT NULL,
                     api_access_token varchar(64) DEFAULT '' NOT NULL,
                     api_refresh_last int(11) DEFAULT " . time() . " NOT NULL,
-                    api_refresh_interval int(11) DEFAULT 7200 NOT NULL,
+                    api_refresh_interval int(11) DEFAULT 3600 NOT NULL,
                     api_environment varchar(64) DEFAULT 'staging' NOT NULL,
                     show_list bit(1) DEFAULT 1 NOT NULL,
                     show_boxes bit(1) DEFAULT 1 NOT NULL,

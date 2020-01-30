@@ -122,7 +122,7 @@
 
 	//Check if access token expired
 	function tmapi_refresh_token_check() {
-		global $api, $globals, $wpdb;
+		global $globals, $api, $wpdb;
 
 		if(time() > $globals->api_refresh_last + $globals->api_refresh_interval){
 			$token = tmapi_get_access_token($globals->api_refresh_token, "update");
@@ -139,7 +139,7 @@
 			$wpdb->update(
 				$wpdb->prefix . "ticketmachine_config",
 				$save_array,
-				array('id' => $tm_config->id)
+				array('id' => $globals->id)
 			);
 		}
 	}
