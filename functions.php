@@ -134,8 +134,6 @@
 				"api_refresh_interval" => $token['expires_in']/2
 			);
 
-			print_r($save_array);
-
 			$wpdb->update(
 				$wpdb->prefix . "ticketmachine_config",
 				$save_array,
