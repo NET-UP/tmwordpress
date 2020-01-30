@@ -99,6 +99,13 @@
 		'redirect_uri' => $api->auth->proxy,
 		'scope' => "public organizer organizer/event"
 	);
+
+	$api->auth->access = array(
+		'grant_type' => 'client_credentials',
+		'client_id' => $api->client_id,
+		'client_secret' => $api->client_secret,
+		'scope' => "public organizer organizer/event"
+	);
 	
 	include('functions.php');
 ?>
