@@ -151,9 +151,5 @@
 			setlocale(LC_TIME, 'de_DE.UTF-8');
 			break;
 	}
-	
-	// Exchange the auth code for an access token
-	$token = apiRequest($api->token, $api->auth->access);
-	$_SESSION['access_token'] = $token['access_token'];
       
 ?>
