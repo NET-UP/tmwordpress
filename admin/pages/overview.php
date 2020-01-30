@@ -8,14 +8,7 @@
 
     if($_GET['code']) {
         //Exchange the auth code for an access token
-	    $token = apiRequest($api->token, array(
-            'grant_type' => 'authorization_code',
-            'client_id' => $api->client_id,
-            'client_secret' => $api->client_secret,
-            'code' => $_GET['code'],
-            'redirect_uri' => $api->auth->redirect_uri,
-            'scope' => "public organizer organizer/event"
-        ));
+	    $token = apiRequest($api->token, $api->auth->code);
         //$_SESSION['access_token'] = $token['access_token'];
         print_r($token);
 
