@@ -221,7 +221,6 @@
 
 	if(isset($globals->activated) && $globals->activated > 0){
 		tmapi_refresh_token_check();
-		$_SESSION['access_token'] = $globals->api_access_token;
 	}
       
 ?>
