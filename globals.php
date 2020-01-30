@@ -5,9 +5,9 @@
 	global $wpdb, $globals, $api;
 	$tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
 	$tm_config = $tm_config[0];
-	$_SESSION['access_token'] = $tm_config['access_token'];
 
 	$globals = (object)$tm_config;
+	$_SESSION['access_token'] = $globals->access_token;
 	$api = new stdClass();
 	$api->auth = new stdClass();
 
