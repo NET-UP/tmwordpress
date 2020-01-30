@@ -20,11 +20,11 @@
                 "activated" => 1,
             );
 
-        $wpdb->update(
-            $wpdb->prefix . "ticketmachine_config",
-            $save_array,
-            array('id' => $tm_config->id)
-        );
+        //$wpdb->update(
+        //    $wpdb->prefix . "ticketmachine_config",
+        //    $save_array,
+        //    array('id' => $tm_config->id)
+        //);
     }
 ?>
 
