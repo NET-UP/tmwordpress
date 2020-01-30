@@ -50,8 +50,6 @@
 	}
 	$globals->organizer = $tm_config->organizer;
 
-	
-
 	$globals->first_event_date = date('Y-m-d');
 	$globals->first_event_date_calendar = date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "-1 month" ) );
 
@@ -62,13 +60,15 @@
 	}else{
 		$api->environment = "";
 	}
+
+	$api->scheme = "https";
 	
 	#TODO: Refactor api request
 	if(!isset($_SESSION['state'])){
 		$_SESSION['state'] = "";
 	}
-	$api->token = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/token";
-	$api->auth->url = "http://apiv2." . $api->environment . "ticketmachine.de/oauth/token";
+	$api->token = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/oauth/token";
+	$api->auth->url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/oauth/token";
 
 	$api->auth->key = $api->client_id.":".$api->client_secret;
 	$api->auth->encoded_key = base64_encode($api->auth->key);
@@ -79,7 +79,7 @@
 	];
 
 	$api->auth->start_uri = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	$api->auth->redirect_uri = "https://www.ticketmachine.de/oauth/start.php";
+	$api->auth->redirect_uri = $api->scheme . "://www.ticketmachine.de/oauth/start.php";
 	
 	$api->auth->data = array(
 		'response_type' => 'code',

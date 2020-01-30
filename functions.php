@@ -46,7 +46,7 @@
 			$params->sort = "ev_date";
 		}
 
-		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
+		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
 		
 		if($globals->organizer && $globals->organizer != "" ){
 			$url .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
@@ -87,7 +87,7 @@
 			$params = (object)$params;
 		}
 
-		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id;
+		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id;
 		if(!empty($params->categories)) {
 			$url .= "?categories=true";
 		}
@@ -101,7 +101,7 @@
 	function tmapi_event_copy($params){
 		global $api, $globals;
 
-		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/copy";
+		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/copy";
 
 		$event = apiRequest($url, $params, "POST");
 		return (object)$event;
@@ -116,7 +116,7 @@
 			$params->sort = "name";
 		}
 
-		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/tags";
+		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/tags";
 
 		$categories = apiRequest($url, $params, $method);
 		return (object)$categories;
@@ -127,7 +127,7 @@
 		global $api, $globals;
 
 		$params = (object)$params;
-		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/add";
+		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/add";
 
 		$category = apiRequest($url, $params, $method);
 		return (object)$category;
@@ -138,7 +138,7 @@
 		global $api, $globals;
 
 		$params = (object)$params;
-		$url = "http://apiv2." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/remove";
+		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/remove";
 		$category = apiRequest($url, $params, $method);
 		return (object)$category;
 	}
