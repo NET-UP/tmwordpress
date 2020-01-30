@@ -107,6 +107,19 @@
 		return (object)$event;
 	}
 
+	/* Get connected organizer */
+	function tmapi_organizer($params=array(), $method="GET", $post=FALSE, $headers=array()){
+		global $api, $globals;
+
+		$params = (object)$params;
+
+		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/organizers/me";
+
+		$organizer = (object)apiRequest($url, $post, $method, $headers);
+
+		return $organizer;
+	}
+
 	/* Get all categories */
 	function tmapi_categories($params=array(), $method="GET", $headers=array()){
 		global $api, $globals;
