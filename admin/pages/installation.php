@@ -8,6 +8,7 @@
 ?>
 
 <div class="wrap tm-admin-page">
+    <h1 class="dont-display"></h1>
     <div class="container">
         <div class="center-center container-md">
             

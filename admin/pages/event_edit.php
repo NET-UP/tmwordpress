@@ -19,6 +19,8 @@
 
 
 <div class="wrap tm-admin-page">
+    <h1 class="dont-display"></h1>
+    
     <?php 
         if($event->id > 0){
             echo "<h1 class='wp-heading-inline'>TicketMachine > " . __('Edit event', 'ticketmachine') . "</h1>";

@@ -32,6 +32,7 @@
 ?>
 
 <div class="wrap tm-admin-page">
+    <h1 class="dont-display"></h1>
 
     <?php if($_GET['code']) { ?>
 

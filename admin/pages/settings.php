@@ -23,6 +23,8 @@
 ?>
 
 <div class="wrap tm-admin-page">
+	<h1 class="dont-display"></h1>
+	
 	<h1 class="wp-heading-inline mr-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Settings', 'ticketmachine') ?></h1>
  
 	<h2 class="nav-tab-wrapper">
