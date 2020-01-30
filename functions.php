@@ -135,12 +135,11 @@
 				"api_refresh_interval" => $token['expires_in']/2
 			);
 
-
-		$wpdb->update(
-			$wpdb->prefix . "ticketmachine_config",
-			$save_array,
-			array('id' => $tm_config->id)
-		);
+			$wpdb->update(
+				$wpdb->prefix . "ticketmachine_config",
+				$save_array,
+				array('id' => $tm_config->id)
+			);
 		}
 	}
 
