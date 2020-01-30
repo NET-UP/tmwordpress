@@ -43,7 +43,6 @@
                 <a href="?page=tm_settings&tab=design"><?php echo __("Customize your theme", "ticketmachine"); ?></a>
                 <a class="ml-3" href="?page=tm_events&action=edit"><?php echo __("Create an event", "ticketmachine"); ?></a>
                 <a class="ml-3" href="?page=tm_events&action=edit"><?php echo __("What's new?", "ticketmachine"); ?></a>
-                <a class="ml-3" href="?page=tm_events&action=edit"><?php echo __("Learn more", "ticketmachine"); ?></a>
             </p>
         
         </div>
