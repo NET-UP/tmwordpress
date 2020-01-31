@@ -37,7 +37,7 @@
     $_POST['vat_id'] = (int)$_POST['vat_id'];
 
     $post = $_POST;
-    $post['description'] = stripslashes($post['description']);
+    $post['description'] = str_replace('\\', '', $post['description']);
 
     $post_json = json_encode($post, JSON_UNESCAPED_SLASHES);
     
