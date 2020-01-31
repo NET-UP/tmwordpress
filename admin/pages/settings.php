@@ -44,7 +44,7 @@
 			<?php echo __('Calendar View', 'ticketmachine'); ?>
 		</a>
 		<a href="?page=tm_settings&tab=detail" class="nav-tab <?php echo $active_tab == 'detail' ? 'nav-tab-active' : ''; ?>">
-			<?php echo __('Details', 'ticketmachine'); ?>
+			<?php echo __('Details Page', 'ticketmachine'); ?>
 		</a>
 	</h2>
 
