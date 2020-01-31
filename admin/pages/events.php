@@ -507,15 +507,14 @@ function tm_render_list_page(){
                         <?php $EventListTable->display(); ?>
                     </form>
                 </div>
+
+                <?php 
+                    include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/partials/sidebar.php');
+                ?>
             </div>
-
-            <?php 
-                include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/partials/sidebar.php');
-            ?>
         </div>
+
         <?php
-
     }
-
 }
 ?>
