@@ -75,6 +75,9 @@
 		}
 
 		$events = (object)apiRequest($url, $post, $method, $headers);
+		$events->ev_date = $events->ev_date . "+2:00";
+		$events->ev_date = $events->entrytime . "+2:00";
+		$events->ev_date = $events->endtime . "+2:00";
 		return $events;
 	}
 
