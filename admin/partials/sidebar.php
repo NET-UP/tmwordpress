@@ -1,5 +1,5 @@
 <div class="col-xl-3">
-    <h1 class="wp-heading-inline mr-3 mb-0 d-none d-xl-block">
+    <h1 class="wp-heading-inline mr-3 mb-3 d-none d-xl-block">
         <?php echo __('', 'ticketmachine') ?>&nbsp;
     </h1>
     <div class="box box-primary mb-3">
