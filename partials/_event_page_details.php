@@ -19,7 +19,7 @@
                                     <label class="d-none">'. __("Entry", "ticketmachine").': </label>
                                     <div class="mb-2 d-none">'. __("free", "ticketmachine") .'</div>
                                 </div>'; 
-            if(!empty($event->ev_location_name) || !empty($event->event_location['city']) || !empty($event->event_location['street']) || !empty($event->event_location['zip']) || !empty($event->event_location['house_number'])){
+            if(isset($event->has_location) && $event->has_location == 1){
                                     
                 $tm_output .=       '<div class="col-sm-6">
                                         <h3 class="d-inline-block">'. __("Event Location", "ticketmachine") .'</h3>

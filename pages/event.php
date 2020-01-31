@@ -11,6 +11,11 @@
 			$event = tmapi_event($params);
 		}
 
+		$event->has_location = 0;
+		if(!empty($event->ev_location_name) || !empty($event->event_location['city']) || !empty($event->event_location['street']) || !empty($event->event_location['zip']) || !empty($event->event_location['house_number'])){
+			$event->has_location = 1;
+		}
+
 		if(isset($event->id)){
 			$tm_output .= '
 					<div class="row">
