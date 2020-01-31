@@ -40,7 +40,7 @@
     
     $tm_json = tmapi_event($post_json, "POST");
     $response = (object)$tm_json;
-    print_r($_POST['description']);
+    print_r($post_json);
 ?>
 
 
