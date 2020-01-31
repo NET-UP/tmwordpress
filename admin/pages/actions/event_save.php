@@ -41,7 +41,7 @@
     $tm_json = tmapi_event($post_json, "POST");
     $response = (object)$tm_json;
     
-    echo "<pre>" . print_r(htmlentities($post_json), true) . "</pre>";
+    echo "<pre>" . htmlentities(print_r($post_json), true) . "</pre>";
 ?>
 
 
