@@ -23,7 +23,7 @@
 ?>
 
 <div class="wrap tm-admin-page">
-	<h1 class="dont-display"></h1>
+	<h1 class="dont-display mb-3"></h1>
 
 	<div class="row">
 		<div class="col-xl-9">
