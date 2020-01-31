@@ -28,7 +28,7 @@
         $tm_output .= '</div>
 
                     <div class="card-text mt-3">
-                        '. wpautop($event->ev_description) .'
+                        '. stripslashes(wpautop($event->ev_description)) .'
                     </div>
 
                     <div class="card-meta text-center pt-1 pb-1 hidden read-more-container">
