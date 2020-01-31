@@ -43,7 +43,7 @@ body .tm_page a.btn {
 	height: 10em;
 	background-size: cover;
 	background-position: center center;
-	background-color: #f6f6f6;
+	background-color: #f7f7f7;
 }
 
 .tm_page .card-img-top.full {
@@ -279,7 +279,7 @@ body .tm_page a.btn {
 }
 
 #calendar .fc-head tr {
-    background: #f6f6f6;
+    background: #f7f7f7;
 }
 
 #calendar .fc-head tr th {
@@ -319,7 +319,7 @@ td.fc-today {
 }
 
 .tm_page iframe {
-	background: #f6f6f6;
+	background: #f7f7f7;
 }
 
 @media only screen and (max-width: 991px) {
