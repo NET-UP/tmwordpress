@@ -37,7 +37,7 @@
     $_POST['vat_id'] = (int)$_POST['vat_id'];
 
     $post_json = json_encode(
-        str_replace("\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", $_POST))), 
+        str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", $_POST))), 
         JSON_UNESCAPED_SLASHES
     );
     
