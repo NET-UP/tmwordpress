@@ -13,7 +13,6 @@
 
 		if(isset($event->id)){
 			$tm_output .= '
-				<div class=	"col-12">
 					<div class="row">
 						<div class="col-12 col-lg-5 col-xl-6 tm_left">';
 			$tm_output .= tm_event_page_information($event, $globals);
@@ -28,9 +27,7 @@
 			}
 			$tm_output .= '
 						</div>
-					</div>
-				</div>
-			';
+					</div>';
 		}else{
 			$error = __("No events could be found", "ticketmachine");
 			$tm_output .= tm_error_page($error);
