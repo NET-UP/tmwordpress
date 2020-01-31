@@ -106,7 +106,7 @@
             <div class="box mb-3">
                 <div class="box-title bg-primary text-white"><?php echo __("TicketMachine Pro", "ticketmachine"); ?></div>
                 <div class="box-body">
-                    <ul class="fa-ul my-0 ml-4">
+                    <ul class="fa-ul mt-0 ml-4">
                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span><?php echo __('Sell event tickets', 'ticketmachine') ?></li>
                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span><?php echo __('Recurring events', 'ticketmachine') ?></li>
                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span><?php echo __('Interactive seated events', 'ticketmachine') ?></li>
