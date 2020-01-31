@@ -2,10 +2,6 @@
 
 	function tm_event_list_item ( $event, $globals ) {
 		
-		$event->has_location = 0;
-		if(!empty($event->ev_location_name) || !empty($event->event_location['city']) || !empty($event->event_location['street']) || !empty($event->event_location['zip']) || !empty($event->event_location['house_number'])){
-			$event->has_location = 1;
-		}
 		$event->event_location = (object) $event->event_location;
 		
 		$tm_output = '<div class="col-12 col-md-6 col-xl-4 card-group">';
@@ -24,7 +20,7 @@
 
 				  $tm_output .= '<div class="row pt-2">';
 					$tm_output .= '<div class="col-sm-8 col-md-7">';
-					if(isset($event->has_location) && $event->has_location == 1){
+					if(!empty($event->ev_location_name)){
 						$tm_output .= '<p class="card-text mt-0 px-2 pt-sm-1 pb-3 pb-sm-2 ellipsis">';
 							$tm_output .= '<i class="fas fa-map-marker-alt tm-icon"></i> &nbsp;';
 							$tm_output .= '<a aria-label="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country ) . '" target="_blank" title="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
