@@ -105,7 +105,15 @@
             </h1>
             <div class="box mb-3">
                 <div class="box-title bg-primary text-white"><?php echo __("TicketMachine Pro", "ticketmachine"); ?></div>
-                <div class="box-body"></div>
+                <div class="box-body">
+                    <ul>
+                        <li><?php echo __('Sell event tickets', 'ticketmachine') ?></li>
+                        <li><?php echo __('Recurring events', 'ticketmachine') ?></li>
+                        <li><?php echo __('Interactive seated events', 'ticketmachine') ?></li>
+                        <li><?php echo __('Create redeemable coupons', 'ticketmachine') ?></li>
+                        <li><?php echo __('Price categories for events', 'ticketmachine') ?></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
