@@ -28,7 +28,7 @@
 	<div class="row">
 		<div class="col-xl-9">
 			
-			<h1 class="wp-heading-inline mr-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Settings', 'ticketmachine') ?></h1>
+			<h1 class="wp-heading-inline mr-3 mb-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Settings', 'ticketmachine') ?></h1>
 		
 			<h2 class="nav-tab-wrapper">
 				<a href="?page=tm_settings&tab=design" class="nav-tab <?php echo $active_tab == 'design' ? 'nav-tab-active' : ''; ?>">
