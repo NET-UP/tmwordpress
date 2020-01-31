@@ -21,7 +21,7 @@
     }
 
     if(isset($_POST['description'])) {
-        $_POST['description'] = stripslashes(strip_shortcodes($_POST['description']));
+        $_POST['description'] = strip_shortcodes($_POST['description']);
     }
 
     if($_POST['id'] > 0) {
@@ -36,7 +36,7 @@
     $_POST['rules']['sale_active'] = (int)$_POST['rules']['sale_active'];
     $_POST['vat_id'] = (int)$_POST['vat_id'];
 
-    $post_json = json_encode($_POST);
+    $post_json = stripslashes(json_encode($_POST));
     
     $tm_json = tmapi_event($post_json, "POST");
     $response = (object)$tm_json;
