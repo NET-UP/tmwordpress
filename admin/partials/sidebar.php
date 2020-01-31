@@ -12,7 +12,7 @@
                 <li><span class="fa-li"><i class="fas fa-percent"></i></span> <?php echo __('Create redeemable coupons', 'ticketmachine') ?></li>
                 <li><span class="fa-li"><i class="fas fa-search-dollar"></i></span> <?php echo __('Price categories for events', 'ticketmachine') ?></li>
             </ul>
-            <a class="button button-primary btn-primary" href="#"><?php echo __("Apply for Pro", "ticketmachine"); ?></a>
+            <a class="button button-primary btn-primary" target="_blank" href="https://www.ticketmachine.de/kontakt/"><?php echo __("Apply for Pro", "ticketmachine"); ?></a>
         </div>
     </div>
 </div>
