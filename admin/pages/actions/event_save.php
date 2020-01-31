@@ -36,7 +36,7 @@
     $_POST['rules']['sale_active'] = (int)$_POST['rules']['sale_active'];
     $_POST['vat_id'] = (int)$_POST['vat_id'];
 
-    $post = stripslashes($post);
+    $post = stripslashes($_POST);
 
     $post_json = json_encode($post, JSON_UNESCAPED_SLASHES);
     
