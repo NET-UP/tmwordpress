@@ -16,8 +16,8 @@
                                         <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%e. %B", strtotime($event->endtime) ) .' 
                                         &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%H:%M", strtotime($event->endtime) ) .'
                                     </div> 
-                                    <label>'. __("Entry", "ticketmachine").': </label>
-                                    <div class="mb-2">'. __("free", "ticketmachine") .'</div>';       
+                                    <label class="d-none">'. __("Entry", "ticketmachine").': </label>
+                                    <div class="mb-2 d-none">'. __("free", "ticketmachine") .'</div>';       
             $tm_output .=       '</div>
                                 <div class="col-sm-6">
                                     <h3 class="d-inline-block">'. __("Event Location", "ticketmachine") .'</h3>
