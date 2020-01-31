@@ -157,3 +157,14 @@
 .tm-admin-page .fa-ul li i {
     color: #ee7c26;
 }
+
+.tm-admin-page .btn-primary {
+    background: #ee7c26;
+    border-color: #ee7c26;
+}
+
+.tm-admin-page .btn-primary:hover, 
+.tm-admin-page .btn-primary:active {
+    background: #dc6f1c;
+    border-color: #dc6f1c;
+}
