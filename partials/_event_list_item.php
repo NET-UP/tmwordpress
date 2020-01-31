@@ -23,7 +23,7 @@
 					if(!empty($event->ev_location_name)){
 						$tm_output .= '<p class="card-text mt-0 px-2 pt-sm-1 pb-3 pb-sm-2 ellipsis">';
 							$tm_output .= '<i class="fas fa-map-marker-alt tm-icon"></i> &nbsp;';
-							$tm_output .= '<a aria-label="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country ) . '" target="_blank" title="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
+							$tm_output .= '<a aria-label="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->ev_location_name . " " . $event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country ) . '" target="_blank" title="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
 						$tm_output .= '</p>';
 					}
 					$tm_output .= '</div>';
