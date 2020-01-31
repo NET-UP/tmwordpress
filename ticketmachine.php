@@ -222,10 +222,10 @@
                     button_primary_background_color_hover varchar(64) DEFAULT '#f58d3e' NOT NULL,
                     button_primary_text_color_hover varchar(64) DEFAULT '#ffffff' NOT NULL,
                     button_primary_border_color_hover varchar(64) DEFAULT '#f58d3e' NOT NULL,
-                    button_secondary_background_color varchar(64) DEFAULT '#f9f9f9' NOT NULL,
+                    button_secondary_background_color varchar(64) DEFAULT '#f6f6f6' NOT NULL,
                     button_secondary_text_color varchar(64) DEFAULT '#666666' NOT NULL,
                     button_secondary_border_color varchar(64) DEFAULT '#dadada' NOT NULL,
-                    button_secondary_background_color_hover varchar(64) DEFAULT '#f9f9f9' NOT NULL,
+                    button_secondary_background_color_hover varchar(64) DEFAULT '#f6f6f6' NOT NULL,
                     button_secondary_text_color_hover varchar(64) DEFAULT '#666666' NOT NULL,
                     button_secondary_border_color_hover varchar(64) DEFAULT '#dadada' NOT NULL,
                 PRIMARY KEY  (id)
