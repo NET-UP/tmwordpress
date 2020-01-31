@@ -318,6 +318,10 @@ td.fc-today {
 	border-color: #c3e6cb;
 }
 
+.tm_page iframe {
+	background: #f9f9f9;
+}
+
 @media only screen and (max-width: 991px) {
 	.no-height-mobile {
 	  height: auto !important;
