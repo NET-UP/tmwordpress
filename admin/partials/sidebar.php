@@ -2,7 +2,7 @@
     <h1 class="wp-heading-inline mr-3 mb-3 d-none d-xl-block">
         <?php echo __('', 'ticketmachine') ?>&nbsp;
     </h1>
-    <div class="box box-primary mb-3">
+    <div class="box box-primary mb-0">
         <div class="box-title bg-primary text-white"><?php echo __("TicketMachine Pro", "ticketmachine"); ?></div>
         <div class="box-body">
             <ul class="fa-ul mt-0 ml-4">
