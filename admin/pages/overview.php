@@ -114,7 +114,7 @@
                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span><?php echo __('Price categories for events', 'ticketmachine') ?></li>
                     </ul>
                 </div>
-                <a href="#"><?php echo __("Apply for Pro", "ticketmachine"); ?></a>
+                <a class="button button-primary" href="#"><?php echo __("Apply for Pro", "ticketmachine"); ?></a>
             </div>
         </div>
 
