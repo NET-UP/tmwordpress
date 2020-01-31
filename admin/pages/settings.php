@@ -24,51 +24,57 @@
 
 <div class="wrap tm-admin-page">
 	<h1 class="dont-display"></h1>
-	
-	<h1 class="wp-heading-inline mr-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Settings', 'ticketmachine') ?></h1>
- 
-	<h2 class="nav-tab-wrapper">
-		<a href="?page=tm_settings&tab=design" class="nav-tab <?php echo $active_tab == 'design' ? 'nav-tab-active' : ''; ?>">
-			<?php echo __('Design', 'ticketmachine'); ?>
-		</a>
-		<a href="?page=tm_settings&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>">
-			<?php echo __('General', 'ticketmachine'); ?>
-		</a>
-		<a href="?page=tm_settings&tab=boxes" class="nav-tab <?php echo $active_tab == 'boxes' ? 'nav-tab-active' : ''; ?>">
-			<?php echo __('Box View', 'ticketmachine'); ?>
-		</a>
-		<a href="?page=tm_settings&tab=list" class="nav-tab <?php echo $active_tab == 'list' ? 'nav-tab-active' : ''; ?>">
-			<?php echo __('List View', 'ticketmachine'); ?>
-		</a>
-		<a href="?page=tm_settings&tab=calendar" class="nav-tab <?php echo $active_tab == 'calendar' ? 'nav-tab-active' : ''; ?>">
-			<?php echo __('Calendar View', 'ticketmachine'); ?>
-		</a>
-		<a href="?page=tm_settings&tab=detail" class="nav-tab <?php echo $active_tab == 'detail' ? 'nav-tab-active' : ''; ?>">
-			<?php echo __('Details Page', 'ticketmachine'); ?>
-		</a>
-	</h2>
 
-	<form method="post" action="#">
-
-		<?php
-			if( $active_tab == 'list' ) {
-				include( plugin_dir_path( __FILE__ ) . 'settings_list.php');
-			}if( $active_tab == 'boxes' ) {
-				include( plugin_dir_path( __FILE__ ) . 'settings_boxes.php');
-			}elseif( $active_tab == 'calendar' ) {
-				include( plugin_dir_path( __FILE__ ) . 'settings_calendar.php');
-			}elseif( $active_tab == 'design' ) {
-				include( plugin_dir_path( __FILE__ ) . 'settings_design.php');
-			}elseif( $active_tab == 'detail' ) {
-				include( plugin_dir_path( __FILE__ ) . 'settings_detail.php');
-			}elseif( $active_tab == 'general' ) {
-				include( plugin_dir_path( __FILE__ ) . 'settings_general.php');
-			}
+	<div class="row">
+		<div class="col-xl-9">
 			
-			submit_button(); 
-		?>
-		 
-	</form>
+			<h1 class="wp-heading-inline mr-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Settings', 'ticketmachine') ?></h1>
+		
+			<h2 class="nav-tab-wrapper">
+				<a href="?page=tm_settings&tab=design" class="nav-tab <?php echo $active_tab == 'design' ? 'nav-tab-active' : ''; ?>">
+					<?php echo __('Design', 'ticketmachine'); ?>
+				</a>
+				<a href="?page=tm_settings&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>">
+					<?php echo __('General', 'ticketmachine'); ?>
+				</a>
+				<a href="?page=tm_settings&tab=boxes" class="nav-tab <?php echo $active_tab == 'boxes' ? 'nav-tab-active' : ''; ?>">
+					<?php echo __('Box View', 'ticketmachine'); ?>
+				</a>
+				<a href="?page=tm_settings&tab=list" class="nav-tab <?php echo $active_tab == 'list' ? 'nav-tab-active' : ''; ?>">
+					<?php echo __('List View', 'ticketmachine'); ?>
+				</a>
+				<a href="?page=tm_settings&tab=calendar" class="nav-tab <?php echo $active_tab == 'calendar' ? 'nav-tab-active' : ''; ?>">
+					<?php echo __('Calendar View', 'ticketmachine'); ?>
+				</a>
+				<a href="?page=tm_settings&tab=detail" class="nav-tab <?php echo $active_tab == 'detail' ? 'nav-tab-active' : ''; ?>">
+					<?php echo __('Details Page', 'ticketmachine'); ?>
+				</a>
+			</h2>
+
+			<form method="post" action="#">
+
+				<?php
+					if( $active_tab == 'list' ) {
+						include( plugin_dir_path( __FILE__ ) . 'settings_list.php');
+					}if( $active_tab == 'boxes' ) {
+						include( plugin_dir_path( __FILE__ ) . 'settings_boxes.php');
+					}elseif( $active_tab == 'calendar' ) {
+						include( plugin_dir_path( __FILE__ ) . 'settings_calendar.php');
+					}elseif( $active_tab == 'design' ) {
+						include( plugin_dir_path( __FILE__ ) . 'settings_design.php');
+					}elseif( $active_tab == 'detail' ) {
+						include( plugin_dir_path( __FILE__ ) . 'settings_detail.php');
+					}elseif( $active_tab == 'general' ) {
+						include( plugin_dir_path( __FILE__ ) . 'settings_general.php');
+					}
+					
+					submit_button(); 
+				?>
+				
+			</form>
+			
+		</div>
+	</div>
 </div>
 
 <?php	
