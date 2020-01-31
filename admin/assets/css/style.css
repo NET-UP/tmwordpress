@@ -178,3 +178,7 @@
 .tm-admin-page .float-none {
     float: none !important;
 }
+
+.tm-admin-page .table-vertical-top th, .tm-admin-page .table-vertical-top td {
+    vertical-align: top !important;
+}

@@ -48,7 +48,7 @@
 	}
 ?>
 
-<table class="form-table">
+<table class="form-table table-vertical-top">
 	<tbody>
 
 		<tr style="border-bottom: 1px solid #ccc;">
