@@ -21,7 +21,7 @@
     }
 
     if(isset($_POST['description'])) {
-        $_POST['description'] = strip_shortcodes($_POST['description']);
+        $_POST['description'] = stripslashes(strip_shortcodes($_POST['description']));
     }
 
     if($_POST['id'] > 0) {
