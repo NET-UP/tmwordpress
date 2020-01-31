@@ -54,7 +54,7 @@
 <?php }else{ ?>
     <div class="notice notice-success is-dismissable">
         <p>
-            <?php echo __('Saved', 'ticketmachine'); ?>!
+            <?php echo __('Event saved', 'ticketmachine'); ?>!
             &nbsp;-&nbsp;
             <a target="_blank" href="/<?php echo $globals->event_slug; ?>?id=<?php echo $response->id; ?>">
                 <?php 

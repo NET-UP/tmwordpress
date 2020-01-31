@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-31 13:28+0100\n"
-"PO-Revision-Date: 2020-01-31 13:30+0100\n"
+"POT-Creation-Date: 2020-01-31 14:59+0100\n"
+"PO-Revision-Date: 2020-01-31 15:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -64,12 +64,9 @@ msgstr "Preview"
 msgid "Event successfully deleted"
 msgstr "Event successfully deleted"
 
-#: admin/pages/actions/event_save.php:57 admin/pages/settings_boxes.php:21
-#: admin/pages/settings_calendar.php:20 admin/pages/settings_design.php:36
-#: admin/pages/settings_detail.php:24 admin/pages/settings_general.php:16
-#: admin/pages/settings_list.php:21
-msgid "Saved"
-msgstr "Saved"
+#: admin/pages/actions/event_save.php:57
+msgid "Event saved"
+msgstr "Event saved"
 
 #: admin/pages/actions/event_toggle.php:33 admin/pages/event_edit.php:78
 #: admin/pages/events.php:490
@@ -157,8 +154,8 @@ msgstr "Seperate tags with comma"
 msgid "Location"
 msgstr "Location"
 
-#: admin/pages/event_edit.php:139 partials/_event_list_item.php:24
-#: partials/_event_page_details.php:23 partials/_event_page_information.php:22
+#: admin/pages/event_edit.php:139 partials/_event_list_item.php:30
+#: partials/_event_page_details.php:26 partials/_event_page_information.php:24
 msgid "Event Location"
 msgstr "Event Location"
 
@@ -348,6 +345,12 @@ msgstr "Calendar View"
 msgid "Details Page"
 msgstr "Details Page"
 
+#: admin/pages/settings_boxes.php:21 admin/pages/settings_calendar.php:20
+#: admin/pages/settings_design.php:36 admin/pages/settings_detail.php:24
+#: admin/pages/settings_general.php:16 admin/pages/settings_list.php:21
+msgid "Saved"
+msgstr "Saved"
+
 #: admin/pages/settings_boxes.php:38
 msgid "Activate Boxes?"
 msgstr "Activate Boxes?"
@@ -452,7 +455,7 @@ msgstr "Event detail page"
 msgid "Activate List?"
 msgstr "Activate List?"
 
-#: pages/event.php:35 pages/events.php:63 pages/events.php:83
+#: pages/event.php:37 pages/events.php:63 pages/events.php:83
 #: pages/events.php:137 widgets/event_calendar.php:29 widgets/event_list.php:15
 msgid "No events could be found"
 msgstr "No events could be found"
@@ -461,15 +464,15 @@ msgstr "No events could be found"
 msgid "List, Boxes & Calendar are deactivated"
 msgstr "List, Boxes & Calendar are deactivated"
 
-#: partials/_event_list_item.php:28
+#: partials/_event_list_item.php:35
 msgid "To ticket selection for"
 msgstr "To ticket selection for"
 
-#: partials/_event_list_item.php:28
+#: partials/_event_list_item.php:35
 msgid "To ticket selection"
 msgstr "To ticket selection"
 
-#: partials/_event_list_item.php:29
+#: partials/_event_list_item.php:36
 msgid "More"
 msgstr "More"
 
@@ -493,15 +496,15 @@ msgstr "Entry"
 msgid "free"
 msgstr "free"
 
-#: partials/_event_page_google_map.php:7
+#: partials/_event_page_google_map.php:8
 msgid "Disallow Google Maps"
 msgstr "Disallow Google Maps"
 
-#: partials/_event_page_google_map.php:9
+#: partials/_event_page_google_map.php:10
 msgid "Allow Google Maps"
 msgstr "Allow Google Maps"
 
-#: partials/_event_page_information.php:31
+#: partials/_event_page_information.php:35
 msgid "Read More"
 msgstr "Read More"
 
