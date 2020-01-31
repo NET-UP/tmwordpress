@@ -467,10 +467,10 @@ function tm_render_list_page(){
             <div class="row">
                 <div class="col-xl-9">
                     
-                    <h1 class="wp-heading-inline mr-3 mb-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Events', 'ticketmachine'); ?></h1>
-                    <a href="?page=tm_events&action=edit" class="page-title-action mb-3"><?php echo __('Add','ticketmachine'); ?></a>
+                    <h1 class="wp-heading-inline mr-3 mb-0">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Events', 'ticketmachine'); ?></h1>
+                    <a href="?page=tm_events&action=edit" class="page-title-action mb-3 mb-xl-0"><?php echo __('Add','ticketmachine'); ?></a>
                         
-                    <ul class="subsubsub float-none">
+                    <ul class="subsubsub float-none mb-3">
                         <li class="all">
                             <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
                                 <?php echo __('All', 'ticketmachine'); ?> 
