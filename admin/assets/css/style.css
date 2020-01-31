@@ -150,3 +150,7 @@
 .tm-admin-page .bg-primary {
     background: #ee7c26 !important;
 }
+
+.tm-admin-page .fa-ul li i {
+    color: #ee7c26;
+}
