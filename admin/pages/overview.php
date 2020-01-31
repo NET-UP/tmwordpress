@@ -100,7 +100,7 @@
         </div>
 
         <?php 
-            include "../partials/sidebar.php";
+            include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/partials/sidebar.php');
         ?>
 
     </div>
