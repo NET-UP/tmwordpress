@@ -1,7 +1,14 @@
 # Change Log (English)
 All notable changes to this project will be documented in this file.
 
-## [0.9.5] - 2020-01-29
+## [0.9.9] - 2020-01-31
++   Added new "overview" dashboard page with shortcuts to functions
++   Google Map & Event location will only be shown if location is available
+-   Improved german translations
+-   Improved mobile styles
+-   Fixed bug with event description HTML styling
+
+## [0.9.8] - 2020-01-28
 +   Installationwizard created to connect with TicketMachine API
 +   Installationwizard translated into English & German
 +   New configurable "List View" on the events overview page
@@ -14,7 +21,7 @@ All notable changes to this project will be documented in this file.
 -   Fixed some translation issues
 -   Fixed bug where CSS styles were leaking into other backend pages
 
-## [0.9.4] - 2020-01-08
+## [0.9.7] - 2020-01-08
 +   Plugin translated into English
 +   Plugin translated into German
 +   Added configurable grouping for events in the event list (By Month or Year)
@@ -22,7 +29,7 @@ All notable changes to this project will be documented in this file.
 +   Date/Time pickers translated into all languages
 -   Fixed Event-Image upload bug in Wordpress 5.3.x
 
-## [0.9.3] - 2019-12-19
+## [0.9.6] - 2019-12-19
 +   Events can now be activated or deactivated from the Event-List in the Wordpress Backend
 +	Event-Lists can now be included via Shortcode
 +   Event-Lists via Shortcode can be completely configurable via parameters
@@ -33,7 +40,7 @@ All notable changes to this project will be documented in this file.
 +   Added "Read More" button when Event-Description is too long
 -   Fixed jQuery conflict bug on Event-Detail page in Wordpress 5.2.x
 
-## [0.9.2] - 2019-12-12
+## [0.9.5] - 2019-12-12
 +   Searching for events is now a Fulltext search
 +   Open-Graph metadata included on event-detail page
 +   Social Media sharing can now be displayed the Event-Detail page
@@ -45,7 +52,7 @@ All notable changes to this project will be documented in this file.
 +   Add Event-Tag(s) to Event in Wordpress backend integrated
 +   Minor Design improvements to Event-List and Event-Detail pages
 
-## [0.9.1] - 2019-12-09
+## [0.9.4] - 2019-12-09
 +   Save Event as iCal (For Outlook etc.) integrated
 +   Save Event to Google Calendar integrated
 +   Google Maps integrated on Event-Detail page
@@ -54,7 +61,7 @@ All notable changes to this project will be documented in this file.
 +   Edit event via Wordpress backend integrated
 +   Upload Event-Image via Wordpress backend added
 
-## [0.9.0] - 2019-12-02
+## [0.9.3] - 2019-12-02
 +   Design settings added to Wordpress backend
 +   Activate/deactivate Event-Calendar added to Wordpress backend
 +   Activate/deactivate Event-List added to Wordpress backend

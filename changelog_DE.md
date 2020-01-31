@@ -1,7 +1,14 @@
 # Änderungsprotokoll (Deutsch)
 Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumentiert.
 
-## [0.9.5] - 2020-01-29
+## [0.9.9] - 2020-01-31
++   Neue Dashboard-Seite "Übersicht" mit Verknüpfungen zu Funktionen hinzugefügt
++   Der Standort von Google Map & Veranstaltungsort wird nur angezeigt, wenn ein Standort verfügbar ist
+-   Verbesserte deutsche Übersetzungen
+-   Verbesserte mobile Stile
+-   Fehler im HTML-Stil der Ereignisbeschreibung behoben
+
+## [0.9.8] - 2020-01-28
 +   Installationwizard erstellt, um mit der TicketMachine API zu verbinden
 +   Installationwizard in English & Deutsch übersetzt
 +   Neue konfigurierbare "Listenansicht" auf der Veranstaltungsübersichtsseite
@@ -14,7 +21,7 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 -   Einige Übersetzungsprobleme wurden behoben
 -   Fehler behoben, durch den CSS-Stile in andere Backend-Seiten gelangten
 
-## [0.9.4] - 2020-01-07
+## [0.9.7] - 2020-01-07
 +   Plugin ins Englische übersetzt
 +   Plugin ins Deutsche übersetzt
 +   Steuerbare Gruppierung für Veranstaltungen in Veranstaltungslisten implementiert (Nach Monat oder Jahr)
@@ -22,7 +29,7 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 +   Datums- / Uhrzeitauswahl (DateTimePicker) wurde in alle verfügbaren Sprachen übersetzt
 -   Fehler beim Hochladen von Verantaltungsbildern in Wordpress 5.3.x behoben
 
-## [0.9.3] - 2019-12-19
+## [0.9.6] - 2019-12-19
 +   Veranstaltungen können nun über die Event-Liste im Wordpress Backend aktiviert oder deaktiviert werden
 +   Veranstaltungslisten können jetzt per Shortcode eingebunden werden
 +   Veranstaltungslisten per Shortcode können vollständig über Parameter konfiguriert werden
@@ -33,7 +40,7 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 +   Schaltfläche "Weiterlesen" hinzugefügt, wenn die Veranstaltungsbeschreibung zu lang wird
 -   Der Fehler mit jQuery-Konflikten auf der Veranstaltungsdetail-Seite in Wordpress 5.2.x wurde behoben
 
-## [0.9.2] - 2019-12-12
+## [0.9.5] - 2019-12-12
 +   Das Suchen nach Veranstaltungen ist jetzt eine Volltextsuche
 +   Open-Graph Metadaten auf der Veranstaltungsdetail-Seite eingefügt
 +   Social-Media teilen wurde auf der Veranstaltungsdetail-Seite integriert
@@ -45,7 +52,7 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 +   Veransltatungs-Schlagwörter im Wordpress Backend hinzugefügt
 +   Kleinere Designverbesserungen an den Veranstaltungslisten- und Veranstaltungsdetail Seiten
 
-## [0.9.1] - 2019-12-09
+## [0.9.4] - 2019-12-09
 +   Veranstaltungen speichern als iCal (für Outlook usw.) integriert
 +   Veranstaltungen in Google-Kalender speichern integriert
 +   Google Maps auf der Veranstaltungsdetail-Seite integriert
@@ -54,7 +61,7 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 +   Veranstaltung über Wordpress Backend bearbeiten Seite hinzugefügt
 +   Veranstaltungsbild über Wordpress-Backend hochladen Funktionalität hinzugefügt
 
-## [0.9.0] - 2019-12-02
+## [0.9.3] - 2019-12-02
 +   Designeinstellungen zum Wordpress-Backend hinzugefügt
 +   Aktivieren / Deaktivieren des Veranstaltungskalenders im Wordpress-Backend
 +   Aktivieren / Deaktivieren der Veranstaltungsliste im Wordpress-Backend
