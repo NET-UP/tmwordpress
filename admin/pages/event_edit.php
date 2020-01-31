@@ -56,7 +56,7 @@
                             $content = __('Event Description', 'ticketmachine');
                         }
                         else{
-                            $content =$event->ev_description;
+                            $content = stripslashes($event->ev_description);
                         }
                         wp_editor( $content, $editor_id, $settings);
                     ?>
