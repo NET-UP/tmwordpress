@@ -113,8 +113,8 @@
                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span><?php echo __('Create redeemable coupons', 'ticketmachine') ?></li>
                         <li><span class="fa-li"><i class="fas fa-check-square"></i></span><?php echo __('Price categories for events', 'ticketmachine') ?></li>
                     </ul>
+                    <a class="button button-primary" href="#"><?php echo __("Apply for Pro", "ticketmachine"); ?></a>
                 </div>
-                <a class="button button-primary" href="#"><?php echo __("Apply for Pro", "ticketmachine"); ?></a>
             </div>
         </div>
 
