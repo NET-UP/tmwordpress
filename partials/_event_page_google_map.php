@@ -7,7 +7,7 @@
                                 </iframe>
                                 <a class='disallow-google-maps float-right' href='#'>" . __('Disallow Google Maps', 'ticketmachine') . "</a>";
             }else{
-                $tm_output = "<div class='allow-google-maps-container'><div class='vertical-center text-center'><button class='allow-google-maps btn btn-primary' data-embed='https://maps.google.com/maps?q=". urlencode($event->event_location['street'] . ' ' . $event->event_location['house_number'] . ' ' . $event->event_location['zip'] . ' ' . $event->event_location['city'] . ' ' . $event->event_location['country'] ) ."&z=10&ie=UTF8&iwloc=&output=embed'>" . __('Allow Google Maps', 'ticketmachine') . "</button></div></div>";
+                $tm_output = "<div class='allow-google-maps-container'><div class='vertical-center text-center'><button class='allow-google-maps btn btn-primary' data-embed='https://maps.google.com/maps?q=". urlencode($event->ev_location_name . ' ' . $event->event_location['street'] . ' ' . $event->event_location['house_number'] . ' ' . $event->event_location['zip'] . ' ' . $event->event_location['city'] . ' ' . $event->event_location['country'] ) ."&z=10&ie=UTF8&iwloc=&output=embed'>" . __('Allow Google Maps', 'ticketmachine') . "</button></div></div>";
             }
         }
 
