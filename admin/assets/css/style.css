@@ -169,6 +169,12 @@
     border-color: #dc6f1c;
 }
 
+.tm-admin-page .float-right {
+    float: right !important;
+}
+.tm-admin-page .float-left {
+    float: left !important;
+}
 .tm-admin-page .float-none {
     float: none !important;
 }

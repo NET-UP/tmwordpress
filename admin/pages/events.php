@@ -472,7 +472,7 @@ function tm_render_list_page(){
                         
                     <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
                     <form method="get">
-                        <ul class="subsubsub float-none">
+                        <ul class="subsubsub">
                             <li class="all">
                                 <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
                                     <?php echo __('All', 'ticketmachine'); ?> 
@@ -501,7 +501,9 @@ function tm_render_list_page(){
                         <!-- For plugins, we also need to ensure that the form posts back to our current page -->
                         <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
                         <!-- Now we can render the completed list table -->
-                        <?php $EventListTable->search_box(__('Search', 'ticketmachine'), 'search'); ?>
+                        <div class="mt-3 float-right">
+                            <?php $EventListTable->search_box(__('Search', 'ticketmachine'), 'search'); ?>
+                        </div>
                         <!--Fetch, prepare, sort, and filter our data... -->
                         <?php $EventListTable->prepare_items(); ?>
                         <?php $EventListTable->display(); ?>
