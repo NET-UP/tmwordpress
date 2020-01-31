@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-31 14:59+0100\n"
-"PO-Revision-Date: 2020-01-31 15:00+0100\n"
+"POT-Creation-Date: 2020-01-31 15:42+0100\n"
+"PO-Revision-Date: 2020-01-31 15:46+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -154,7 +154,7 @@ msgstr "Schlagwörter durch Kommas trennen"
 msgid "Location"
 msgstr "Standort"
 
-#: admin/pages/event_edit.php:139 partials/_event_list_item.php:30
+#: admin/pages/event_edit.php:139 partials/_event_list_item.php:26
 #: partials/_event_page_details.php:26 partials/_event_page_information.php:24
 msgid "Event Location"
 msgstr "Veranstaltungsort"
@@ -326,6 +326,30 @@ msgstr "Veranstaltungseinstellungen"
 msgid "TicketMachine Pro"
 msgstr "TicketMachine Pro"
 
+#: admin/pages/overview.php:110
+msgid "Sell event tickets"
+msgstr "Tickets für Veranstaltungen verkaufen"
+
+#: admin/pages/overview.php:111
+msgid "Recurring events"
+msgstr "Wiederkehrende Veranstaltungen"
+
+#: admin/pages/overview.php:112
+msgid "Interactive seated events"
+msgstr "Bestuhlte Veranstaltungen mit Saalplänen"
+
+#: admin/pages/overview.php:113
+msgid "Create redeemable coupons"
+msgstr "Gutscheine erstellen und einlösen"
+
+#: admin/pages/overview.php:114
+msgid "Price categories for events"
+msgstr "Preiskategorien für Veranstaltungen erstellen"
+
+#: admin/pages/overview.php:116
+msgid "Apply for Pro"
+msgstr "für Pro bewerben"
+
 #: admin/pages/settings.php:32
 msgid "Design"
 msgstr "Design"
@@ -347,8 +371,6 @@ msgid "Calendar View"
 msgstr "Kalender-Ansicht"
 
 #: admin/pages/settings.php:47
-#, fuzzy
-#| msgid "Details"
 msgid "Details Page"
 msgstr "Details-Seite"
 
@@ -471,15 +493,15 @@ msgstr "Es konnte keine Veranstaltung gefunden werden"
 msgid "List, Boxes & Calendar are deactivated"
 msgstr "Liste, Kacheln & Kalender sind deaktiviert"
 
-#: partials/_event_list_item.php:35
+#: partials/_event_list_item.php:31
 msgid "To ticket selection for"
 msgstr "Zur Ticketauswahlseite für"
 
-#: partials/_event_list_item.php:35
+#: partials/_event_list_item.php:31
 msgid "To ticket selection"
 msgstr "Zur Ticketauswahlseite"
 
-#: partials/_event_list_item.php:36
+#: partials/_event_list_item.php:32
 msgid "More"
 msgstr "Weiter"
 

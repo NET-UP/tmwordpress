@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-31 14:59+0100\n"
-"PO-Revision-Date: 2020-01-31 15:00+0100\n"
+"POT-Creation-Date: 2020-01-31 15:42+0100\n"
+"PO-Revision-Date: 2020-01-31 15:43+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -154,7 +154,7 @@ msgstr "Seperate tags with comma"
 msgid "Location"
 msgstr "Location"
 
-#: admin/pages/event_edit.php:139 partials/_event_list_item.php:30
+#: admin/pages/event_edit.php:139 partials/_event_list_item.php:26
 #: partials/_event_page_details.php:26 partials/_event_page_information.php:24
 msgid "Event Location"
 msgstr "Event Location"
@@ -319,6 +319,30 @@ msgstr "Event settings"
 msgid "TicketMachine Pro"
 msgstr "TicketMachine Pro"
 
+#: admin/pages/overview.php:110
+msgid "Sell event tickets"
+msgstr "Sell event tickets"
+
+#: admin/pages/overview.php:111
+msgid "Recurring events"
+msgstr "Recurring events"
+
+#: admin/pages/overview.php:112
+msgid "Interactive seated events"
+msgstr "Interactive seated events"
+
+#: admin/pages/overview.php:113
+msgid "Create redeemable coupons"
+msgstr "Create redeemable coupons"
+
+#: admin/pages/overview.php:114
+msgid "Price categories for events"
+msgstr "Price categories for events"
+
+#: admin/pages/overview.php:116
+msgid "Apply for Pro"
+msgstr "Apply for Pro"
+
 #: admin/pages/settings.php:32
 msgid "Design"
 msgstr "Design"
@@ -340,8 +364,6 @@ msgid "Calendar View"
 msgstr "Calendar View"
 
 #: admin/pages/settings.php:47
-#, fuzzy
-#| msgid "Details"
 msgid "Details Page"
 msgstr "Details Page"
 
@@ -464,15 +486,15 @@ msgstr "No events could be found"
 msgid "List, Boxes & Calendar are deactivated"
 msgstr "List, Boxes & Calendar are deactivated"
 
-#: partials/_event_list_item.php:35
+#: partials/_event_list_item.php:31
 msgid "To ticket selection for"
 msgstr "To ticket selection for"
 
-#: partials/_event_list_item.php:35
+#: partials/_event_list_item.php:31
 msgid "To ticket selection"
 msgstr "To ticket selection"
 
-#: partials/_event_list_item.php:36
+#: partials/_event_list_item.php:32
 msgid "More"
 msgstr "More"
 
