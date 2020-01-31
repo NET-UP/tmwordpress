@@ -36,7 +36,10 @@
     $_POST['rules']['sale_active'] = (int)$_POST['rules']['sale_active'];
     $_POST['vat_id'] = (int)$_POST['vat_id'];
 
-    $post_json = json_encode($_POST, JSON_UNESCAPED_SLASHES);
+    $post_json = json_encode(
+        str_replace('\"', '', $_POST), 
+        JSON_UNESCAPED_SLASHES
+    );
     
     $tm_json = tmapi_event($post_json, "POST");
     $response = (object)$tm_json;
