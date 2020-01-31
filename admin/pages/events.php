@@ -463,46 +463,55 @@ function tm_render_list_page(){
         ?>
         <div class="wrap tm-admin-page">
             <h1 class="dont-display"></h1>
-            
-            <h1 class="wp-heading-inline mr-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Events', 'ticketmachine'); ?></h1>
-            <a href="?page=tm_events&action=edit" class="page-title-action"><?php echo __('Add','ticketmachine'); ?></a>
-            
-            <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
-            <form method="get">
-                <!-- For plugins, we also need to ensure that the form posts back to our current page -->
-                <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
-                <!-- Now we can render the completed list table -->
-                <ul class="subsubsub">
-                    <li class="all">
-                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
-                            <?php echo __('All', 'ticketmachine'); ?> 
-                            <span class="count"></span>
-                        </a> |
-                    </li>
-                    <li class="upcoming">
-                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=upcoming'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming"){ ?>class="current"<?php } ?>>
-                            <?php echo __('Upcoming', 'ticketmachine'); ?> 
-                            <span class="count"></span>
-                        </a> |
-                    </li>
-                    <li class="publish">
-                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=published'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "published"){ ?>class="current"<?php } ?>>
-                            <?php echo __('Published', 'ticketmachine'); ?> 
-                            <span class="count"></span> <!-- TO DO add logic -->
-                        </a> |
-                    </li>
-                    <li class="draft">
-                        <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=drafts'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "drafts"){ ?>class="current"<?php } ?>>
-                            <?php echo __('Drafts', 'ticketmachine'); ?> 
-                            <span class="count"></span> <!-- TO DO add logic -->
-                        </a>
-                    </li>
-                </ul>
-                <?php $EventListTable->search_box(__('Search', 'ticketmachine'), 'search'); ?>
-                <!--Fetch, prepare, sort, and filter our data... -->
-                <?php $EventListTable->prepare_items(); ?>
-                <?php $EventListTable->display(); ?>
-            </form>
+
+            <div class="row">
+                <div class="col-xl-9">
+                    
+                    <h1 class="wp-heading-inline mr-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Events', 'ticketmachine'); ?></h1>
+                    <a href="?page=tm_events&action=edit" class="page-title-action"><?php echo __('Add','ticketmachine'); ?></a>
+                    
+                    <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
+                    <form method="get">
+                        <!-- For plugins, we also need to ensure that the form posts back to our current page -->
+                        <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
+                        <!-- Now we can render the completed list table -->
+                        <ul class="subsubsub">
+                            <li class="all">
+                                <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
+                                    <?php echo __('All', 'ticketmachine'); ?> 
+                                    <span class="count"></span>
+                                </a> |
+                            </li>
+                            <li class="upcoming">
+                                <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=upcoming'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming"){ ?>class="current"<?php } ?>>
+                                    <?php echo __('Upcoming', 'ticketmachine'); ?> 
+                                    <span class="count"></span>
+                                </a> |
+                            </li>
+                            <li class="publish">
+                                <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=published'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "published"){ ?>class="current"<?php } ?>>
+                                    <?php echo __('Published', 'ticketmachine'); ?> 
+                                    <span class="count"></span> <!-- TO DO add logic -->
+                                </a> |
+                            </li>
+                            <li class="draft">
+                                <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=drafts'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "drafts"){ ?>class="current"<?php } ?>>
+                                    <?php echo __('Drafts', 'ticketmachine'); ?> 
+                                    <span class="count"></span> <!-- TO DO add logic -->
+                                </a>
+                            </li>
+                        </ul>
+                        <?php $EventListTable->search_box(__('Search', 'ticketmachine'), 'search'); ?>
+                        <!--Fetch, prepare, sort, and filter our data... -->
+                        <?php $EventListTable->prepare_items(); ?>
+                        <?php $EventListTable->display(); ?>
+                    </form>
+                </div>
+            </div>
+
+            <?php 
+                include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/partials/sidebar.php');
+            ?>
         </div>
         <?php
 
