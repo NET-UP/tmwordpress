@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-01-31 14:59+0100\n"
-"PO-Revision-Date: 2020-01-31 14:59+0100\n"
+"PO-Revision-Date: 2020-01-31 15:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -62,11 +62,11 @@ msgstr "Vorschau"
 
 #: admin/pages/actions/event_delete.php:25
 msgid "Event successfully deleted"
-msgstr "Event erfolgreich gelöscht"
+msgstr "Veranstaltung erfolgreich gelöscht"
 
 #: admin/pages/actions/event_save.php:57
 msgid "Event saved"
-msgstr "Event erfolgreich gespeichert"
+msgstr "Veranstaltung erfolgreich gespeichert"
 
 #: admin/pages/actions/event_toggle.php:33 admin/pages/event_edit.php:78
 #: admin/pages/events.php:490
