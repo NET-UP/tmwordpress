@@ -72,13 +72,11 @@
 				?>
 				
 			</form>
-			
+
 		</div>
+
+		<?php 
+			include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/partials/sidebar.php');
+		?>
 	</div>
 </div>
-
-<?php	
-	#}else{
-	#	include( plugin_dir_path( __FILE__ ) . 'connect.php');
-	#}
-?>
