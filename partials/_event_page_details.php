@@ -17,16 +17,20 @@
                                         &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%H:%M", strtotime($event->endtime) ) .'
                                     </div> 
                                     <label class="d-none">'. __("Entry", "ticketmachine").': </label>
-                                    <div class="mb-2 d-none">'. __("free", "ticketmachine") .'</div>';       
-            $tm_output .=       '</div>
-                                <div class="col-sm-6">
-                                    <h3 class="d-inline-block">'. __("Event Location", "ticketmachine") .'</h3>
-                                    <br>
-                                    <div>'. $event->ev_location_name .'</div>
-                                    <div>'. $event->event_location['city'] .' '. $event->event_location['zip'] .'</div>
-                                    <div>'. $event->event_location['street'] .' '. $event->event_location['house_number'] .'</div>
-                                </div>
-                            </div>
+                                    <div class="mb-2 d-none">'. __("free", "ticketmachine") .'</div>
+                                </div>'; 
+            if(!empty($event->ev_location_name) || !empty($event->event_location['city']) || !empty($event->event_location['street']) || !empty($event->event_location['zip']) || !empty($event->event_location['house_number'])){
+                                    
+                $tm_output .=       '<div class="col-sm-6">
+                                        <h3 class="d-inline-block">'. __("Event Location", "ticketmachine") .'</h3>
+                                        <br>
+                                        <div>'. $event->ev_location_name .'</div>
+                                        <div>'. $event->event_location['city'] .' '. $event->event_location['zip'] .'</div>
+                                        <div>'. $event->event_location['street'] .' '. $event->event_location['house_number'] .'</div>
+                                    </div>';
+            }      
+
+            $tm_output .=   '</div>
                        </div>';
         return $tm_output;
     }
