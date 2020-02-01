@@ -76,12 +76,6 @@
 
 		$events = (object)apiRequest($url, $post, $method, $headers);
 
-		foreach($events->result as $event){
-			$events->result[$event]['ev_date'] = substr($event->ev_date, 0, -1) . $globals->timezone;
-			$events->result[$event]['entrytime'] = substr($event->entrytime, 0, -1) . $globals->timezone;
-			$events->result[$event]['endtime'] = substr($event->endtime, 0, -1) . $globals->timezone;
-		}
-
 		print_r($events);
 
 		return $events;
@@ -102,9 +96,6 @@
 		}
 
 		$event = (object)apiRequest($url, $post, $method, $headers);
-		$event->ev_date = substr($event->ev_date, 0, -1) . $globals->timezone;
-		$event->entrytime = substr($event->entrytime, 0, -1) . $globals->timezone;
-		$event->endtime = substr($event->endtime, 0, -1) . $globals->timezone;
 
 		return $event;
 	}

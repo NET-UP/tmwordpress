@@ -41,8 +41,6 @@
 	$api->client_id = $tm_config->api_client_id;
 	$api->client_secret = $tm_config->api_client_secret;
 	$globals->environment = $tm_config->api_environment;
-	$globals->timezone = "-2:00";
-	$globals->inverted_timezone = "+2:00";
 	
 	$globals->search_query = "";
 	if(isset($_GET['q'])){
