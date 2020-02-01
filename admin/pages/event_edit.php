@@ -4,11 +4,12 @@
     wp_enqueue_media();
 
     //defaults
+    $timestamp = new DateTime();
     $event = new stdClass();
     $event->state['shown'] = 1;
 
-    $event->name = "";
-    $event->description = __('Event Description', 'ticketmachine');
+    $event->ev_name = "";
+    $event->ev_description = __('Event Description', 'ticketmachine');
     
     $event->ev_location_name = "";
     $event->event_location = array(
@@ -19,7 +20,6 @@
         "country" => ""
     );
 
-    $timestamp = new DateTime();
     $event->entrytime = date_i18n(DATE_ISO8601, strtotime("today 10:00"));
     $event->ev_date =  date_i18n(DATE_ISO8601, strtotime("today 11:00"));
     $event->endtime =  date_i18n(DATE_ISO8601, strtotime("today 23:59"));
