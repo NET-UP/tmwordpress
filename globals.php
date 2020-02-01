@@ -30,11 +30,11 @@
 	switch ($globals->event_grouping) {
 		case 'Month':
 			$globals->group_by = "m Y";
-			$globals->format_date = "%b %Y";
+			$globals->format_date = "m Y";
 			break;
 		case 'Year':
 			$globals->group_by = "Y";
-			$globals->format_date = "%Y";
+			$globals->format_date = "Y";
 			break;
 		case 'None':
 			$globals->group_by = "";
@@ -42,7 +42,7 @@
 			break;
 		default:
 			$globals->group_by = "Y";
-			$globals->format_date = "%Y";
+			$globals->format_date = "Y";
 			break;
 	}
 	
