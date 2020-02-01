@@ -3,7 +3,7 @@
     include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/includes/scriptstyles.php');
     wp_enqueue_media();
 
-    if($_GET['id'] > 0){
+    if(!empty($_GET['id'])){
         $params = [ "id" => $_GET['id'] ];
         $event = (object)tmapi_event($params);
     }else{
