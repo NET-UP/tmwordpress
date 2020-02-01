@@ -109,7 +109,7 @@
                                     <div id="major-publishing-actions">
                                         <div id="publishing-action">
                                             <span class="spinner"></span>
-                                            <input type="submit" class="button button-primary button-large" id="publish" value="<?php echo isset($event->id) ? __('Create', 'ticketmachine') : __('Update', 'ticketmachine') ?>">
+                                            <input type="submit" class="button button-primary button-large" id="publish" value="<?php echo isset($event->id) ? __('Save', 'ticketmachine') : __('Update', 'ticketmachine') ?>">
                                         </div>
                                         <div class="clear"></div>
                                     </div>
