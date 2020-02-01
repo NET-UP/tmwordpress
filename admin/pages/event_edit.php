@@ -153,17 +153,17 @@
                             <div class="row">
                                 <div class="col-sm-4 form-group">
                                     <label for="event_edit_plz"><?php echo __('Zipcode', 'ticketmachine') ?></label>
-                                    <input id="event_edit_plz" name="event_location[zip]" type="text" class="form-control" value="<?php echo $event->event_location['zip']; ?>">
+                                    <input id="event_edit_plz" name="event_location[zip]" type="text" class="form-control" value="<?php echo isset($event->event_location['zip']) ? $$event->event_location['zip']: ''; ?>">
                                 </div>
                                 <div class="col-sm-8 form-group">
                                     <label for="event_edit_ort"><?php echo __('City', 'ticketmachine') ?></label>
-                                    <input id="event_edit_ort" name="event_location[city]" type="text" class="form-control" value="<?php echo $event->event_location['city']; ?>">
+                                    <input id="event_edit_ort" name="event_location[city]" type="text" class="form-control" value="<?php echo isset($event->event_location['city']) ? $$event->event_location['city']: ''; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="event_edit_land"><?php echo __('Country', 'ticketmachine') ?></label>
-                                    <input id="event_edit_land" name="event_location[country]" type="text" class="form-control" value="<?php echo $event->event_location['country']; ?>">
+                                    <input id="event_edit_land" name="event_location[country]" type="text" class="form-control" value="<?php echo isset($event->event_location['country']) ? $$event->event_location['country']: ''; ?>">
                                 </div>
                             </div>
                         </div>
