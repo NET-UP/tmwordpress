@@ -1,7 +1,7 @@
 # Change Log (English)
 All notable changes to this project will be documented in this file.
 
-## [0.9.9] - 2020-01-31
+## [0.9.9] - 2020-02-01
 +   Added new "overview" dashboard page with shortcuts to functions
 +   Google Map & Event location will only be shown if location is available
 +   Improved german translations
