@@ -18,7 +18,7 @@
 	
 	// load dynamic form for calculator from template
 	function tm_initialize( $atts ) {
-        add_action( 'wp_enqueue_scripts', 'add_core_files' );
+        add_action( 'tm_initialize', 'add_core_files' );
 
 		include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
