@@ -112,7 +112,7 @@
 							}
 							
 							if(isset($atts['show_description']) && $atts['show_description'] > 0){
-								if(!$atts['description_length']){
+								if(empty($atts['description_length'])){
 									$atts['description_length'] = 15;
 								}
 								if(isset($atts['description_length'])){
