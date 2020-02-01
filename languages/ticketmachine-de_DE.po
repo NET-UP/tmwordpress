@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-01 05:33+0100\n"
-"PO-Revision-Date: 2020-02-01 05:33+0100\n"
+"POT-Creation-Date: 2020-02-01 05:34+0100\n"
+"PO-Revision-Date: 2020-02-01 05:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -509,6 +509,10 @@ msgstr "Es konnte keine Veranstaltung gefunden werden"
 #: pages/event.php:39
 msgid "Back to events"
 msgstr "Zurück zu den Veranstaltungen"
+
+#: pages/event.php:40
+msgid "Oops!"
+msgstr "Ups!"
 
 #: pages/events.php:157
 msgid "List, Boxes & Calendar are deactivated"
