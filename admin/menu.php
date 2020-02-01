@@ -10,7 +10,7 @@
 			"TicketMachine",
 			'manage_options',
 			'tm_event_manager',
-			'tm_plugin_menu',
+			'tm_overview_page',
 			null,
 			96
 		);
