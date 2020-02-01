@@ -28,6 +28,10 @@
 			$globals->group_by = "Y";
 			$globals->format_date = "%Y";
 			break;
+		case 'None':
+			$globals->group_by = "";
+			$globals->format_date = "";
+			break;
 		default:
 			$globals->group_by = "Y";
 			$globals->format_date = "%Y";
