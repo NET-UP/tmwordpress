@@ -147,7 +147,7 @@
                                 </div>
                                 <div class="col-sm-4 form-group">
                                     <label for="house_number"><?php echo __('House No.', 'ticketmachine') ?></label>
-                                    <input id="event_edit_hausnr" name="event_location[house_number]" type="text" class="form-control" value="<?php echo isset($event->event_location['house_number']) ? $$event->event_location['house_number']: ''; ?>">
+                                    <input id="event_edit_hausnr" name="event_location[house_number]" type="text" class="form-control" value="<?php echo isset($event->event_location['house_number']) ? $event->event_location['house_number']: ''; ?>">
                                 </div>
                             </div>
                             <div class="row">
