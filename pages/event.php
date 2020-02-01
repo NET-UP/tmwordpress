@@ -6,10 +6,8 @@
 		$params = array();
 		$tm_output = "";
 
-
 		if(!empty($_GET['id'])){
-			$id = tm_encrypt($_GET['id']);
-			$params = array_push_assoc($params, "id", $id);
+			$params = array_push_assoc($params, "id", $_GET['id']);
 			$event = tmapi_event($params);
 		}
 
