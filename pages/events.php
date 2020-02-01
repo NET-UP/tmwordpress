@@ -107,8 +107,8 @@
 
 							if($atts['show_date'] > 0){
 								$tm_output .= '
-								<div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d.m.Y", strtotime($event->ev_date) ) .'</div> 
-								<div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime($event->ev_date) ) .'</div>';
+								<div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d.m.Y", strtotime(iso8601_to_datetime($event->ev_date)) ) .'</div> 
+								<div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime(iso8601_to_datetime($event->ev_date)) ) .'</div>';
 							}
 							
 							if($atts['show_description'] > 0){
@@ -141,9 +141,9 @@
 				foreach($events as $event) {
 					$event = (object)$event;
 					
-					$curr = $event->ev_date;
+					$curr = iso8601_to_datetime($event->ev_date);
 					if ($i == 0 || date_i18n( $globals->group_by , strtotime( $curr ) ) != date_i18n( $globals->group_by, strtotime( $prev ) ) ) {
-						$tm_output .= "<div class='col-12 mt-2'><h5 class='line-header'><span>" . date_i18n( $globals->format_date, strtotime($event->ev_date) ) . "</span></h5></div>";
+						$tm_output .= "<div class='col-12 mt-2'><h5 class='line-header'><span>" . date_i18n( $globals->format_date, strtotime(iso8601_to_datetime($event->ev_date)) ) . "</span></h5></div>";
 						$prev = $curr;
 					}
 					
