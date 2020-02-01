@@ -3,7 +3,6 @@
 		session_start(); 
 		
 	global $wpdb, $globals, $api;
-	date_default_timezone_set ("Europe/Berlin");
 	
 	$tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
 	$tm_config = $tm_config[0];
@@ -17,6 +16,9 @@
 		$globals->locale = get_locale();
 	}
 	$globals->locale_short = strtok($globals->locale, '_');
+
+	setlocale(LC_TIME, $globals->locale . ".UTF-8");
+	date_default_timezone_set ("Europe/Berlin");
 	
 	$api = new stdClass();
 	$api->auth = new stdClass();
