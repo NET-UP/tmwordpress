@@ -16,8 +16,6 @@
 		$globals->locale = get_locale();
 	}
 	$globals->locale_short = strtok($globals->locale, '_');
-
-	setlocale(LC_ALL, $globals->locale . ".utf8");
 	date_default_timezone_set ("Europe/Berlin");
 	
 	$api = new stdClass();
