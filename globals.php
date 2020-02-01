@@ -4,19 +4,19 @@
 		
 	global $wpdb, $globals, $api;
 	date_default_timezone_set ("Europe/Berlin");
-	if ( defined( 'ICL_LANGUAGE_CODE' ) ) {
-		$globals->locale = ICL_LANGUAGE_CODE;
-	}else{
-		$globals->locale = get_locale();
-	}
-	$globals->locale_short = strtok($globals->locale, '_');
-	echo $globals->locale;
 	
 	$tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
 	$tm_config = $tm_config[0];
 
 	$globals = (object)$tm_config;
 	$_SESSION['access_token'] = $globals->api_access_token;
+	
+	if ( defined( 'ICL_LANGUAGE_CODE' ) ) {
+		$globals->locale = ICL_LANGUAGE_CODE;
+	}else{
+		$globals->locale = get_locale();
+	}
+	$globals->locale_short = strtok($globals->locale, '_');
 	
 	$api = new stdClass();
 	$api->auth = new stdClass();
