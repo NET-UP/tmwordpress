@@ -34,7 +34,7 @@
 <div class="wrap tm-admin-page">
     <h1 class="dont-display"></h1>
 
-    <?php if($_GET['code']) { ?>
+    <?php if(!empty($_GET['code'])) { ?>
 
         <div class="box mb-3">
             <a href="#" class="close"><i class="fas fa-times"></i></a>
