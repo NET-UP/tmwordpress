@@ -35,7 +35,9 @@
 					</div>';
 		}else{
 			$error = __("No events could be found", "ticketmachine");
-			$tm_output .= tm_error_page($error);
+			$tm_output .= tm_error_page($error, array(
+														__("Back to events", "ticketmachine") => "/" . $globals->events_slug
+													));
 		}
 		
 		return $tm_output;
