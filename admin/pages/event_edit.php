@@ -9,6 +9,7 @@
         "state" => array(
             "shown" => 1
         ),
+        "approved" => 0,
         "ev_name" => "", 
         "ev_description" => __('Event Description', 'ticketmachine'),
         
