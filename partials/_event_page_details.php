@@ -13,8 +13,8 @@
                                     </div>
                                     <label>'. __("End", "ticketmachine").':</label>
                                     <div class="mb-2">
-                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d. F", $event->endtime ) .' 
-                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", $event->endtime ) .'
+                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d. F", strtotime($event->endtime) ) .' 
+                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime($event->endtime) ) .'
                                     </div> 
                                     <label class="d-none">'. __("Entry", "ticketmachine").': </label>
                                     <div class="mb-2 d-none">'. __("free", "ticketmachine") .'</div>
