@@ -55,7 +55,7 @@
 	$api->client_id = $tm_config->api_client_id;
 	$api->client_secret = $tm_config->api_client_secret;
 	$globals->environment = $tm_config->api_environment;
-	$globals->timezone = "";
+	$globals->timezone = "+2";
 	$globals->inverted_timezone = "";
 	
 	$globals->search_query = "";
