@@ -11,9 +11,9 @@
         $event->state['shown'] = 1;
 
         $timestamp = new DateTime();
-        $event->entrytime = date(DATE_ISO8601, strtotime("today 10:00"));
-        $event->ev_date =  date(DATE_ISO8601, strtotime("today 11:00"));
-        $event->endtime =  date(DATE_ISO8601, strtotime("today 23:59"));
+        $event->entrytime = date_i18n(DATE_ISO8601, strtotime("today 10:00"));
+        $event->ev_date =  date_i18n(DATE_ISO8601, strtotime("today 11:00"));
+        $event->endtime =  date_i18n(DATE_ISO8601, strtotime("today 23:59"));
     }
 ?>
 
@@ -180,10 +180,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="entrytime[date]" class="form-control date entrytime" value="<?php echo date("d.m.Y", strtotime($event->entrytime)); ?>">
+                                    <input type="text" name="entrytime[date]" class="form-control date entrytime" value="<?php echo date_i18n("d.m.Y", strtotime($event->entrytime)); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="entrytime[time]" class="form-control time" value="<?php echo date("H:i", strtotime($event->entrytime)); ?>">
+                                    <input type="text" name="entrytime[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime($event->entrytime)); ?>">
                                 </div>
                             </div>
                             <div>
@@ -191,10 +191,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo date("d.m.Y", strtotime($event->ev_date)); ?>">
+                                    <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo date_i18n("d.m.Y", strtotime($event->ev_date)); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo date("H:i", strtotime($event->ev_date)); ?>">
+                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime($event->ev_date)); ?>">
                                 </div>
                             </div>
                             <div>
@@ -202,10 +202,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="endtime[date]" class="form-control date endtime" value="<?php echo date("d.m.Y", strtotime($event->endtime)); ?>">
+                                    <input type="text" name="endtime[date]" class="form-control date endtime" value="<?php echo date_i18n("d.m.Y", strtotime($event->endtime)); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="endtime[time]" class="form-control time" value="<?php echo date("H:i", strtotime($event->endtime)); ?>">
+                                    <input type="text" name="endtime[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime($event->endtime)); ?>">
                                 </div>
                             </div>
                         </div>
