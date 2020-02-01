@@ -12,7 +12,7 @@
         "approved" => 0,
         "ev_name" => "", 
         "ev_description" => __('Event Description', 'ticketmachine'),
-        "event_img_url" => str_replace("/admin/pages", "", plugin_dir_url(__FILE__)) . 'assets/img/empty.png',
+        "event_img_url" => str_replace("/admin/pages", "", plugin_dir_url(__FILE__)) . 'assets/img/none.png',
         
         "ev_location_name" => "",
         "event_location" => array(
