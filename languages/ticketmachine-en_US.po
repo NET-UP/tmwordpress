@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-01 13:33+0100\n"
-"PO-Revision-Date: 2020-02-01 13:33+0100\n"
+"POT-Creation-Date: 2020-02-01 13:34+0100\n"
+"PO-Revision-Date: 2020-02-01 13:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -526,6 +526,38 @@ msgstr "To ticket selection"
 #: partials/_event_list_item.php:32
 msgid "More"
 msgstr "More"
+
+#: partials/_event_page_actions.php:19
+msgid "Go back"
+msgstr "Back"
+
+#: partials/_event_page_actions.php:22
+msgid "Save as iCal"
+msgstr "Save as iCal"
+
+#: partials/_event_page_actions.php:27
+msgid "Save to Google Calendar"
+msgstr "Save to Google Calendar"
+
+#: partials/_event_page_actions.php:32
+msgid "Share to Facebook"
+msgstr "Share to Facebook"
+
+#: partials/_event_page_actions.php:37
+msgid "Share to Twitter"
+msgstr "Share to Twitter"
+
+#: partials/_event_page_actions.php:42
+msgid "Share via Email"
+msgstr "Share via Email"
+
+#: partials/_event_page_actions.php:47
+msgid "Share with Messenger"
+msgstr "Share with Messenger"
+
+#: partials/_event_page_actions.php:52
+msgid "Share with WhatsApp"
+msgstr "Share with WhatsApp"
 
 #: partials/_event_page_details.php:7
 msgid "Details"
