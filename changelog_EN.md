@@ -2,7 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## [0.9.9] - 2020-02-04
-+ License attribution added for softwares used
++   License attribution added for softwares used
+-   All WP_DEBUG notices fixed
 
 ## [0.9.9] - 2020-02-01
 +   Added new "overview" dashboard page with shortcuts to functions

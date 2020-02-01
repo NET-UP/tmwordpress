@@ -3,6 +3,7 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 
 ## [1.0.0] - 2020-02-04
 +   Lizenzzuweisung für verwendete Software hinzugefügt
+-   Alle WP_DEBUG-Warnungen behoben
 
 ## [0.9.9] - 2020-02-01
 +   Neue Dashboard-Seite "Übersicht" mit Verknüpfungen zu Funktionen hinzugefügt
