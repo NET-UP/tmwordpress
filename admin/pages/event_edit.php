@@ -3,17 +3,32 @@
     include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/includes/scriptstyles.php');
     wp_enqueue_media();
 
+    //defaults
+    $event = new stdClass();
+    $event->state['shown'] = 1;
+
+    $event->name = "";
+    $event->description = __('Event Description', 'ticketmachine');
+    
+    $event->ev_location_name = "";
+    $event->event_location = array(
+        "street" => "",
+        "house_number" => "",
+        "zip" => "",
+        "city" => "",
+        "country" => ""
+    );
+
+    $timestamp = new DateTime();
+    $event->entrytime = date_i18n(DATE_ISO8601, strtotime("today 10:00"));
+    $event->ev_date =  date_i18n(DATE_ISO8601, strtotime("today 11:00"));
+    $event->endtime =  date_i18n(DATE_ISO8601, strtotime("today 23:59"));
+
+    $defaults = $event;
+
     if(!empty($_GET['id'])){
         $params = [ "id" => $_GET['id'] ];
         $event = (object)tmapi_event($params);
-    }else{
-        $event = new stdClass();
-        $event->state['shown'] = 1;
-
-        $timestamp = new DateTime();
-        $event->entrytime = date_i18n(DATE_ISO8601, strtotime("today 10:00"));
-        $event->ev_date =  date_i18n(DATE_ISO8601, strtotime("today 11:00"));
-        $event->endtime =  date_i18n(DATE_ISO8601, strtotime("today 23:59"));
     }
 ?>
 
@@ -52,12 +67,7 @@
                     <?php 
                         $editor_id = 'ev_description';
                         $settings = array( 'media_buttons' => false );
-                        if (empty($event->ev_description)){
-                            $content = __('Event Description', 'ticketmachine');
-                        }
-                        else{
-                            $content = $event->ev_description;
-                        }
+                        $content = $event->ev_description;
                         wp_editor( $content, $editor_id, $settings);
                     ?>
                 </div>
@@ -137,33 +147,33 @@
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="event_edit_locationname"><?php echo __('Event Location', 'ticketmachine') ?></label>
-                                    <input id="event_location_name" name="ev_location_name" type="text" class="form-control" value="<?php echo isset($event->ev_location_name) ? $$event->ev_location_name: ''; ?>">
+                                    <input id="event_location_name" name="ev_location_name" type="text" class="form-control" value="<?php echo $event->ev_location_name; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-8 form-group">
                                     <label for="event_edit_strasse"><?php echo __('Street', 'ticketmachine') ?></label>
-                                    <input id="event_edit_strasse" name="event_location[street]" type="text" class="form-control" value="<?php echo isset($event->event_location['street']) ? $$event->event_location['street']: ''; ?>">
+                                    <input id="event_edit_strasse" name="event_location[street]" type="text" class="form-control" value="<?php echo $event->event_location['street']; ?>">
                                 </div>
                                 <div class="col-sm-4 form-group">
                                     <label for="house_number"><?php echo __('House No.', 'ticketmachine') ?></label>
-                                    <input id="event_edit_hausnr" name="event_location[house_number]" type="text" class="form-control" value="<?php echo isset($event->event_location['house_number']) ? $event->event_location['house_number']: ''; ?>">
+                                    <input id="event_edit_hausnr" name="event_location[house_number]" type="text" class="form-control" value="<?php echo $event->event_location['house_number']; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-4 form-group">
                                     <label for="event_edit_plz"><?php echo __('Zipcode', 'ticketmachine') ?></label>
-                                    <input id="event_edit_plz" name="event_location[zip]" type="text" class="form-control" value="<?php echo isset($event->event_location['zip']) ? $$event->event_location['zip']: ''; ?>">
+                                    <input id="event_edit_plz" name="event_location[zip]" type="text" class="form-control" value="<?php echo $event->event_location['zip']; ?>">
                                 </div>
                                 <div class="col-sm-8 form-group">
                                     <label for="event_edit_ort"><?php echo __('City', 'ticketmachine') ?></label>
-                                    <input id="event_edit_ort" name="event_location[city]" type="text" class="form-control" value="<?php echo isset($event->event_location['city']) ? $$event->event_location['city']: ''; ?>">
+                                    <input id="event_edit_ort" name="event_location[city]" type="text" class="form-control" value="<?php echo $event->event_location['city']; ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="event_edit_land"><?php echo __('Country', 'ticketmachine') ?></label>
-                                    <input id="event_edit_land" name="event_location[country]" type="text" class="form-control" value="<?php echo isset($event->event_location['country']) ? $$event->event_location['country']: ''; ?>">
+                                    <input id="event_edit_land" name="event_location[country]" type="text" class="form-control" value="<?php echo $event->event_location['country']; ?>">
                                 </div>
                             </div>
                         </div>
