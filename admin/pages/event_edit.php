@@ -5,25 +5,28 @@
 
     //defaults
     $timestamp = new DateTime();
-    $event = new stdClass();
-    $event->state['shown'] = 1;
+    $event = array(
+        "state" => array(
+            "shown" => 1
+        ),
+        "ev_name" => "", 
+        "ev_description" => __('Event Description', 'ticketmachine'),
+        
+        "ev_location_name" => "",
+        "event_location" => array(
+            "street" => "",
+            "house_number" => "",
+            "zip" => "",
+            "city" => "",
+            "country" => ""
+        ),
 
-    $event->ev_name = "";
-    $event->ev_description = __('Event Description', 'ticketmachine');
-    
-    $event->ev_location_name = "";
-    $event->event_location = array(
-        "street" => "",
-        "house_number" => "",
-        "zip" => "",
-        "city" => "",
-        "country" => ""
+        "entrytime" => date_i18n(DATE_ISO8601, strtotime("today 10:00")),
+        "ev_date" =>  date_i18n(DATE_ISO8601, strtotime("today 11:00")),
+        "endtime" =>  date_i18n(DATE_ISO8601, strtotime("today 23:59"))
     );
 
-    $event->entrytime = date_i18n(DATE_ISO8601, strtotime("today 10:00"));
-    $event->ev_date =  date_i18n(DATE_ISO8601, strtotime("today 11:00"));
-    $event->endtime =  date_i18n(DATE_ISO8601, strtotime("today 23:59"));
-
+    $event = (object)$event;
     $defaults = $event;
 
     if(!empty($_GET['id'])){
