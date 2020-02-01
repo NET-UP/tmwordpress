@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-01 05:16+0100\n"
-"PO-Revision-Date: 2020-02-01 05:16+0100\n"
+"POT-Creation-Date: 2020-02-01 05:33+0100\n"
+"PO-Revision-Date: 2020-02-01 05:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -502,9 +502,13 @@ msgid "Apply for Pro"
 msgstr "TicketMachine Pro besorgen"
 
 #: pages/event.php:37 pages/events.php:63 pages/events.php:83
-#: pages/events.php:137 widgets/event_calendar.php:30 widgets/event_list.php:15
+#: pages/events.php:137 widgets/event_calendar.php:31 widgets/event_list.php:15
 msgid "No events could be found"
 msgstr "Es konnte keine Veranstaltung gefunden werden"
+
+#: pages/event.php:39
+msgid "Back to events"
+msgstr "Zurück zu den Veranstaltungen"
 
 #: pages/events.php:157
 msgid "List, Boxes & Calendar are deactivated"
@@ -562,11 +566,11 @@ msgstr "Suche nach Veranstaltungen"
 msgid "Submit search"
 msgstr "Suche absenden"
 
-#: partials/_search_header.php:35 widgets/event_calendar.php:34
+#: partials/_search_header.php:35 widgets/event_calendar.php:36
 msgid "To previous month"
 msgstr "Zum vorherigen Monat"
 
-#: partials/_search_header.php:37 widgets/event_calendar.php:36
+#: partials/_search_header.php:37 widgets/event_calendar.php:38
 msgid "To next month"
 msgstr "Zum nächsten Monat"
 
