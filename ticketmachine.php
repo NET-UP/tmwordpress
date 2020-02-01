@@ -9,14 +9,13 @@
     Requires PHP:       5.6
     Author:             NET-UP
 	Author URI:         https://www.net-up.de
-    */
+	*/
+    add_action( 'wp_enqueue_scripts', 'add_core_files' );
     
     add_action( 'init', 'wpdocs_load_textdomain' );
     function wpdocs_load_textdomain() {
         load_plugin_textdomain( 'ticketmachine', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
     }
-    
-    add_action( 'wp_enqueue_scripts', 'add_core_files' );
 	
 	// load dynamic form for calculator from template
 	function tm_initialize( $atts ) {
@@ -24,30 +23,6 @@
 		include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
         include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
-
-        //jQuery
-		wp_enqueue_script( 'jquery-ui_JS' );
-		wp_enqueue_style( 'jquery-ui_CSS' );
-		
-		//Cookies
-		wp_enqueue_script( 'cookies_JS' );
-
-		//Popper
-		wp_enqueue_script( 'popper_JS' );
-		
-		//Bootstrap
-		wp_enqueue_script( 'bootstrap-4_JS' );
-		wp_enqueue_style( 'boostrap-4_CSS' );
-		
-		//Icons
-		wp_enqueue_style( 'fontawesome-5_CSS' );
-		
-		//Core
-		wp_enqueue_style( 'core_CSS' );
-		wp_enqueue_script( 'core_JS' );
-
-		//Custom Styles
-		wp_enqueue_style( 'custom_CSS' );
 		
 		if( $atts ) {
 			
@@ -108,28 +83,28 @@
 	
 	function add_core_files () {
 		//jQuery
-		wp_register_script( 'jquery-ui_JS', plugins_url( "assets/js/ext/jquery_ui.js", __FILE__ ), array("jquery") );
-		wp_register_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
+		wp_enqueue_script( 'jquery-ui_JS', plugins_url( "assets/js/ext/jquery_ui.js", __FILE__ ), array("jquery") );
+		wp_enqueue_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
 		
 		//Cookies
-		wp_register_script( 'cookies_JS', plugins_url( "assets/js/cookies.js", __FILE__ ) );
+		wp_enqueue_script( 'cookies_JS', plugins_url( "assets/js/cookies.js", __FILE__ ) );
 
 		//Popper
-		wp_register_script( 'popper_JS', plugins_url('assets/js/ext/popper.js', __FILE__ ) );
+		wp_enqueue_script( 'popper_JS', plugins_url('assets/js/ext/popper.js', __FILE__ ) );
 		
 		//Bootstrap
-		wp_register_script( 'bootstrap-4_JS', plugins_url( "assets/js/ext/bootstrap.min.js", __FILE__ ), array("jquery") );
-		wp_register_style( 'boostrap-4_CSS', plugins_url('assets/css/ext/bootstrap.min.css', __FILE__ ) );
+		wp_enqueue_script( 'bootstrap-4_JS', plugins_url( "assets/js/ext/bootstrap.min.js", __FILE__ ), array("jquery") );
+		wp_enqueue_style( 'boostrap-4_CSS', plugins_url('assets/css/ext/bootstrap.min.css', __FILE__ ) );
 		
 		//Icons
-		wp_register_style( 'fontawesome-5_CSS', plugins_url('assets/css/ext/fontawesome.min.css', __FILE__ ) );
+		wp_enqueue_style( 'fontawesome-5_CSS', plugins_url('assets/css/ext/fontawesome.min.css', __FILE__ ) );
 		
 		//Core
-		wp_register_style( 'core_CSS', plugins_url('assets/css/ticketmachine.css', __FILE__ ) );
-		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
+		wp_enqueue_style( 'core_CSS', plugins_url('assets/css/ticketmachine.css', __FILE__ ) );
+		wp_enqueue_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
 
 		//Custom Styles
-		wp_register_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
+		wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
 	}
 	
     if(is_admin()){
