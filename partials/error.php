@@ -10,7 +10,7 @@
 
         if(!empty($actions)){
             foreach($actions as $text => $url){
-                $tm_output .= "<a href='" . $url . "' class='btn'>" . $text . "</a>";
+                $tm_output .= "<a href='" . $url . "' class='btn btn-secondary'>" . $text . "</a>";
             }
         }
 
