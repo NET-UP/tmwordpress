@@ -98,24 +98,26 @@
 
 						$tm_output .= '<li class="media mx-0 mt-2">';
 
-						if($atts['show_image'] > 0){
+						if(isset($atts['show_image']) && $atts['show_image'] > 0){
 							$tm_output .= '<a class="mr-3 media-img" href="/' . $globals->event_slug . '?id=' . $event->id . '" style="background-image:url('. $event->event_img_url .')"></a>';
 						}
 											
 							$tm_output .= '<div class="media-body">';
 							$tm_output .= '<h5 class="mt-0 mb-1"><a href="/' . $globals->event_slug . '?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
 
-							if($atts['show_date'] > 0){
+							if(isset($atts['show_date']) && $atts['show_date'] > 0){
 								$tm_output .= '
 								<div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d.m.Y", strtotime(iso8601_to_datetime($event->ev_date)) ) .'</div> 
 								<div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime(iso8601_to_datetime($event->ev_date)) ) .'</div>';
 							}
 							
-							if($atts['show_description'] > 0){
+							if(isset($atts['show_description']) && $atts['show_description'] > 0){
 								if(!$atts['description_length']){
 									$atts['description_length'] = 15;
 								}
-								$tm_output .= '<div>' . wp_trim_words(wp_strip_all_tags($event->ev_description), $atts['description_length'], "...") . '</div>';
+								if(isset($atts['description_length'])){
+									$tm_output .= '<div>' . wp_trim_words(wp_strip_all_tags($event->ev_description), $atts['description_length'], "...") . '</div>';
+								}
 							}
 
 						$tm_output .= '</div>
