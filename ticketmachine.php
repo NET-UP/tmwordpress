@@ -5,7 +5,7 @@
     Plugin URI:         https://www.ticketmachine.de/plugins/ticketmachine/
 	Description:        Easily create and manage events for your wordpress site.
 	Version:            1.0.0
-    Requires at least:  5.0
+    Requires at least:  5.1
     Requires PHP:       5.6
     Author:             NET-UP
 	Author URI:         https://www.net-up.de
