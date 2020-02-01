@@ -212,12 +212,12 @@
 	}
 
 	function tm_encrypt($id){
-		$key = base_convert($id, 10, 36);
+		$key = base_convert($id, 10, 62);
 		return $key;
 	}
 
 	function tm_decrypt($key){
-		$id = intval($str, 36);
+		$id = intval($str, 62);
 		return $id;
 	}
 
