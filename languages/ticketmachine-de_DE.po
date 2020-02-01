@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-01 03:04+0100\n"
-"PO-Revision-Date: 2020-02-01 03:07+0100\n"
+"POT-Creation-Date: 2020-02-01 05:16+0100\n"
+"PO-Revision-Date: 2020-02-01 05:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -138,7 +138,8 @@ msgstr "Veranstaltungsbild"
 msgid "Add Image"
 msgstr "Bild festlegen"
 
-#: admin/pages/event_edit.php:112 partials/_tag_header.php:9
+#: admin/pages/event_edit.php:112 admin/pages/events.php:209
+#: partials/_tag_header.php:9
 msgid "Tags"
 msgstr "Schlagwörter"
 
@@ -202,6 +203,18 @@ msgstr "Deaktivieren"
 #: admin/pages/events.php:162
 msgid "Copy"
 msgstr "Kopieren"
+
+#: admin/pages/events.php:208
+msgid "Name"
+msgstr "Name"
+
+#: admin/pages/events.php:210
+msgid "Start date"
+msgstr "Anfangsdatum"
+
+#: admin/pages/events.php:211
+msgid "End date"
+msgstr "Enddatum"
 
 #: admin/pages/events.php:471
 msgid "Add"
@@ -489,7 +502,7 @@ msgid "Apply for Pro"
 msgstr "TicketMachine Pro besorgen"
 
 #: pages/event.php:37 pages/events.php:63 pages/events.php:83
-#: pages/events.php:137 widgets/event_calendar.php:29 widgets/event_list.php:15
+#: pages/events.php:137 widgets/event_calendar.php:30 widgets/event_list.php:15
 msgid "No events could be found"
 msgstr "Es konnte keine Veranstaltung gefunden werden"
 
@@ -549,11 +562,11 @@ msgstr "Suche nach Veranstaltungen"
 msgid "Submit search"
 msgstr "Suche absenden"
 
-#: partials/_search_header.php:35 widgets/event_calendar.php:33
+#: partials/_search_header.php:35 widgets/event_calendar.php:34
 msgid "To previous month"
 msgstr "Zum vorherigen Monat"
 
-#: partials/_search_header.php:37 widgets/event_calendar.php:35
+#: partials/_search_header.php:37 widgets/event_calendar.php:36
 msgid "To next month"
 msgstr "Zum nächsten Monat"
 
