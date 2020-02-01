@@ -23,7 +23,7 @@
         //Calendar Config
         wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ) );
 
-        $tm_output .= "
+        $tm_output = "
                 <input type='hidden' id='tm_ev_url' value='" . plugins_url('', dirname(__FILE__) ) . "/event.php'></input>
                 <div class='row'>
                     <div id='tm_cal_error' class='col-12 text-center mt-1' style='display:none;'>"
