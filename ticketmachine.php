@@ -32,7 +32,7 @@
 			
             $tm_output = "<div class='tm_page' data-locale=" . $globals->locale_short . ">";
             
-            if($atts['page']){
+            if(isset($atts['page'])){
                 switch ($atts['page']) {
                     case 'event_list':
                         include "partials/_event_list_item.php";
