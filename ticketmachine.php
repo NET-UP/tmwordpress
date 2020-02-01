@@ -30,7 +30,7 @@
 				$atts[$key] = $value;
 			}
 			
-            $tm_output = "<div class='tm_page'>";
+            $tm_output = "<div class='tm_page' data-locale=" . $globals->locale_short . ">";
             
             if($atts['page']){
                 switch ($atts['page']) {
