@@ -212,7 +212,13 @@
 	}
 
 	function tm_encrypt($id){
-		base_convert($id, 10, 64);
+		$key = base_convert($id, 10, 64);
+		return $key;
+	}
+
+	function tm_decrypt($key){
+		$id = intval($str, 64);
+		return $id;
 	}
 
 	switch ($globals->lang) {

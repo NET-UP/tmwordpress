@@ -8,7 +8,7 @@
 
 
 		if(!empty($_GET['id'])){
-			$id = intval($_GET['id'], 64);
+			$id = tm_encrypt($_GET['id']);
 			$params = array_push_assoc($params, "id", $id);
 			$event = tmapi_event($params);
 		}
