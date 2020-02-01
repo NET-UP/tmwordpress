@@ -9,11 +9,11 @@
                                     <label>'. __("Start", "ticketmachine") .':</label>
                                     <div class="mb-2">
                                         <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d. F", strtotime(iso8601_to_datetime($event->ev_date)) ) .' 
-                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime($event->ev_date) ) .'
+                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime(iso8601_to_datetime($event->ev_date)) ) .'
                                     </div>
                                     <label>'. __("End", "ticketmachine").':</label>
                                     <div class="mb-2">
-                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d. F", strtotime($event->endtime) ) .' 
+                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d. F", strtotime(iso8601_to_datetime($event->endtime)) ) .' 
                                         &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime(iso8601_to_datetime($event->endtime)) ) .'
                                     </div> 
                                     <label class="d-none">'. __("Entry", "ticketmachine").': </label>
