@@ -143,7 +143,7 @@
 					
 					$curr = $event->ev_date;
 					if ($i == 0 || date_i18n( $globals->group_by , strtotime( $curr ) ) != date_i18n( $globals->group_by, strtotime( $prev ) ) ) {
-						$tm_output .= "<div class='col-12 mt-2'><h5 class='line-header'><span>" . strftime( $globals->format_date, strtotime($event->ev_date) ) . "</span></h5></div>";
+						$tm_output .= "<div class='col-12 mt-2'><h5 class='line-header'><span>" . date_i18n( $globals->format_date, strtotime($event->ev_date) ) . "</span></h5></div>";
 						$prev = $curr;
 					}
 					
