@@ -35,7 +35,6 @@
     );
 
     $event = (object)$event;
-    $defaults = $event;
 
     if(!empty($_GET['id'])){
         $params = [ "id" => $_GET['id'] ];
