@@ -89,6 +89,8 @@ body .tm_page a.btn {
 	border: 1px solid #eee;
 	border-radius: 100%;
 	text-align: center;
+	margin-top: -3px;
+	margin-left: -3px;
 }
 
 .tm_page .card-day {
