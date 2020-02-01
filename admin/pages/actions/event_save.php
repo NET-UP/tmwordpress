@@ -24,7 +24,7 @@
         $_POST['description'] = strip_shortcodes($_POST['description']);
     }
 
-    if($_POST['id'] > 0) {
+    if(!empty($_POST['id']) {
         $_POST['id'] = (int)$_POST['id'];
     }
     if(isset($_POST['vat_id'])){
