@@ -17,7 +17,7 @@
         $tm_output = '
                 <div class="title-height tm_actions text-right no-height-mobile mb-3 mb-lg-0">
                     <a class="btn btn-secondary px-3 mb-1 mb-lg-0 ml-1" href="/' . $globals->events_slug . '">
-                        <i class="fas fa-chevron-left"></i> &nbsp; ' . __('Back', 'ticketmachine') . '
+                        <i class="fas fa-chevron-left"></i> &nbsp; ' . __('Go back', 'ticketmachine') . '
                     </a>';
                     if ($globals->show_social_media_ical && $globals->show_social_media) {
                         $tm_output .= '<a class="btn btn-secondary mb-1 mb-lg-0 ml-1" target="_blank" href="/wp-content/plugins/ticketmachine/includes/ical.php?id=' . $event->id . '&url=' . $url .'" title="' . __('Save as iCal', 'ticketmachine') . '">
