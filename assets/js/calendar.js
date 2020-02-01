@@ -4,7 +4,7 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
 jQuery("#tm_spinner").show();
-var locale= jQuery("#tm_locale").val();
+var locale= jQuery(".tm_page").data("locale");
 var ev_url= jQuery("#tm_ev_url").val();
 jQuery.getJSON(ev_url + location.search).success(function(data) {
 
