@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 +   Google Map & Event location will only be shown if location is available
 +   Improved german translations
 +   Improved mobile styles
++   Added "Group By: None" option
 -   Fixed bug with event description HTML styling
 -   Fixed bug with timezones displaying incorrectly
 

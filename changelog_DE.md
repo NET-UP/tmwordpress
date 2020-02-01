@@ -6,6 +6,7 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 +   Der Standort von Google Map & Veranstaltungsort wird nur angezeigt, wenn ein Standort verfügbar ist
 +   Verbesserte deutsche Übersetzungen
 +   Verbesserte mobile Stile
++   Option "Gruppieren nach: Keine" hinzugefügt
 -   Fehler im HTML-Stil der Ereignisbeschreibung behoben
 -   Fehler behoben, bei dem Zeitzonen falsch angezeigt wurden
 
