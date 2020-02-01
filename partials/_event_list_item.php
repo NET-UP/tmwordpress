@@ -11,7 +11,7 @@
 				$tm_output .= '</a>';
 				$tm_output .= '<div class="card-body position-relative">';
 
-				  $tm_output .= '<div class="card-date" title="' . date_i18n( "d. F Y", strtotime(iso8601_to_datetime($event->ev_date) ) . '">';
+				  $tm_output .= '<div class="card-date" title="' . date_i18n( "d. F Y", strtotime(iso8601_to_datetime($event->ev_date)) ) . '">';
 					$tm_output .= '<div class="card-day">' . date_i18n( "d", strtotime(iso8601_to_datetime($event->ev_date)) ) . '</div>';
 					$tm_output .= '<div class="card-month">' . date_i18n( "M", strtotime(iso8601_to_datetime($event->ev_date)) ) . '</div>';
 				  $tm_output .= '</div>';
