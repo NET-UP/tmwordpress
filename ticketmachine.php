@@ -2,7 +2,7 @@
 
 	/*
 	Plugin Name:        TicketMachine Event Manager
-    Plugin URI:         https://example.com/plugins/the-basics/
+    Plugin URI:         https://www.ticketmachine.de/plugins/ticketmachine/
 	Description:        Easily create and manage events for your wordpress site.
 	Version:            1.0.0
     Requires at least:  5.0
