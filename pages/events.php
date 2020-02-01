@@ -99,11 +99,11 @@
 						$tm_output .= '<li class="media mx-0 mt-2">';
 
 						if($atts['show_image'] > 0){
-							$tm_output .= '<a class="mr-3 media-img" href="/' . $globals->event_slug . '?id=' . $event->id . '" style="background-image:url('. $event->event_img_url .')"></a>';
+							$tm_output .= '<a class="mr-3 media-img" href="/' . $globals->event_slug . '?id=' . tm_id_encrypt($event->id) . '" style="background-image:url('. $event->event_img_url .')"></a>';
 						}
 											
 							$tm_output .= '<div class="media-body">';
-							$tm_output .= '<h5 class="mt-0 mb-1"><a href="/' . $globals->event_slug . '?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
+							$tm_output .= '<h5 class="mt-0 mb-1"><a href="/' . $globals->event_slug . '?id=' . tm_id_encrypt($event->id) . '">' . $event->ev_name . '</a></h5>';
 
 							if($atts['show_date'] > 0){
 								$tm_output .= '

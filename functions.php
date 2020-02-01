@@ -211,6 +211,10 @@
 		return (object)$category;
 	}
 
+	function tm_encrypt($id){
+		base_convert($id, 10, 64);
+	}
+
 	switch ($globals->lang) {
 		case 'en':
 			setlocale(LC_TIME, 'en_US.UTF-8');
