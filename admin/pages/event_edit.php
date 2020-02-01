@@ -35,7 +35,7 @@
         <input type="hidden" name="vat_id" value="1">
         <input type="hidden" name="rules[shown]" value="1">
         
-        <?php if($event->id > 0){ ?>
+        <?php if(!empty($event->id)){ ?>
             <input type="hidden" name="id" value="<?php echo $event->id; ?>">
         <?php } ?>
 
