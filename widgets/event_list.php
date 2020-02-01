@@ -8,6 +8,7 @@
             $params = array_push_assoc($params, "approved", 1);
         }
         $events = tmapi_events($params)->result;
+        $tm_output = "";
         
 			
         if(empty($events)) {	
