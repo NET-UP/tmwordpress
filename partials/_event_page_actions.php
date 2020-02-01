@@ -1,7 +1,6 @@
-<?php #TO DO Add categroies
+<?php 
     function tm_event_page_actions ( $event, $globals ) {
-#<% unless @event.categories.select{|ec| ec.ec_price >= 0}.empty? %>
-#<% end %>
+
         if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
         $url = "https://";   
         else  
