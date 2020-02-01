@@ -4,9 +4,10 @@ Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumenti
 ## [0.9.9] - 2020-01-31
 +   Neue Dashboard-Seite "Übersicht" mit Verknüpfungen zu Funktionen hinzugefügt
 +   Der Standort von Google Map & Veranstaltungsort wird nur angezeigt, wenn ein Standort verfügbar ist
--   Verbesserte deutsche Übersetzungen
--   Verbesserte mobile Stile
++   Verbesserte deutsche Übersetzungen
++   Verbesserte mobile Stile
 -   Fehler im HTML-Stil der Ereignisbeschreibung behoben
+-   Fehler behoben, bei dem Zeitzonen falsch angezeigt wurden
 
 ## [0.9.8] - 2020-01-28
 +   Installationwizard erstellt, um mit der TicketMachine API zu verbinden

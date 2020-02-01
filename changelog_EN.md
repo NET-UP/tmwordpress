@@ -4,9 +4,10 @@ All notable changes to this project will be documented in this file.
 ## [0.9.9] - 2020-01-31
 +   Added new "overview" dashboard page with shortcuts to functions
 +   Google Map & Event location will only be shown if location is available
--   Improved german translations
--   Improved mobile styles
++   Improved german translations
++   Improved mobile styles
 -   Fixed bug with event description HTML styling
+-   Fixed bug with timezones displaying incorrectly
 
 ## [0.9.8] - 2020-01-28
 +   Installationwizard created to connect with TicketMachine API
