@@ -1,6 +1,9 @@
 # Änderungsprotokoll (Deutsch)
 Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumentiert.
 
+## [1.0.0] - 2020-02-04
++   Lizenzzuweisung für verwendete Software hinzugefügt
+
 ## [0.9.9] - 2020-02-01
 +   Neue Dashboard-Seite "Übersicht" mit Verknüpfungen zu Funktionen hinzugefügt
 +   Der Standort von Google Map & Veranstaltungsort wird nur angezeigt, wenn ein Standort verfügbar ist
