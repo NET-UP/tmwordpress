@@ -9,7 +9,7 @@
         "state" => array(
             "shown" => 1
         ),
-        "approved" => 0,
+        "approved" => 1,
         "ev_name" => "", 
         "ev_description" => __('Event Description', 'ticketmachine'),
         "event_img_url" => str_replace("/admin/pages", "", plugin_dir_url(__FILE__)) . 'assets/img/none.png',
