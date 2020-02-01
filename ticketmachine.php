@@ -10,7 +10,6 @@
     Author:             NET-UP
 	Author URI:         https://www.net-up.de
 	*/
-    date_default_timezone_set("Europe/Berlin");
     add_action( 'wp_enqueue_scripts', 'add_core_files' );
     
     add_action( 'init', 'wpdocs_load_textdomain' );
