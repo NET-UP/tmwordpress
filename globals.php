@@ -33,8 +33,8 @@
 			$globals->format_date = "";
 			break;
 		default:
-			$globals->group_by = "Y";
-			$globals->format_date = "%Y";
+			$globals->group_by = "";
+			$globals->format_date = "";
 			break;
 	}
 	
