@@ -4,6 +4,12 @@
 		
 	global $wpdb, $globals, $api;
 	date_default_timezone_set ("Europe/Berlin");
+	if ( defined( 'ICL_LANGUAGE_CODE' ) ) {
+		$globals->locale = ICL_LANGUAGE_CODE;
+	}else{
+		$globals->locale = get_locale();
+	}
+	setlocale(LC_TIME, $globals->locale);
 	$tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
 	$tm_config = $tm_config[0];
 
