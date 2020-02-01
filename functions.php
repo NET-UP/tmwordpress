@@ -82,6 +82,8 @@
 			$events->result[$event]->endtime = substr($event->endtime, 0, -1) . $globals->timezone;
 		}
 
+		print_r($events);
+
 		return $events;
 	}
 
