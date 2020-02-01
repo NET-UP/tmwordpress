@@ -205,10 +205,10 @@ class Event_List_Table extends WP_List_Table {
     function get_columns(){
         $columns = array(
             //'cb'       => '<input type="checkbox" />',
-            'ev_name'  => 'Name',
-            'tags'     => 'Schlagwörter',
-            'ev_date'  => 'Anfangsdatum',
-            'endtime'  => 'Enddatum'
+            'ev_name'  => __('Name', 'ticketmachine'),
+            'tags'     => __('Tags', 'ticketmachine'),
+            'ev_date'  => __('Start date', 'ticketmachine'),
+            'endtime'  => __('End date', 'ticketmachine')
         );
         return $columns;
     }
