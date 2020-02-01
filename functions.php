@@ -76,8 +76,6 @@
 
 		$events = (object)apiRequest($url, $post, $method, $headers);
 
-		print_r($events);
-
 		return $events;
 	}
 
