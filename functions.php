@@ -94,8 +94,8 @@
 
 		$event = (object)apiRequest($url, $post, $method, $headers);
 		$event->ev_date = substr($event->ev_date, 0, -1) . $globals->timezone;
-		$event->ev_entrytime = substr($event->entrytime, 0, -1) . $globals->timezone;
-		$event->ev_endtime = substr($event->endtime, 0, -1) . $globals->timezone;
+		$event->entrytime = substr($event->entrytime, 0, -1) . $globals->timezone;
+		$event->endtime = substr($event->endtime, 0, -1) . $globals->timezone;
 
 		return $event;
 	}
