@@ -12,6 +12,7 @@
         "approved" => 0,
         "ev_name" => "", 
         "ev_description" => __('Event Description', 'ticketmachine'),
+        "event_img_url" => "",
         
         "ev_location_name" => "",
         "event_location" => array(
@@ -27,7 +28,7 @@
         ),
 
         "tags" => array(),
-        
+
         "entrytime" => date_i18n(DATE_ISO8601, strtotime("today 10:00")),
         "ev_date" =>  date_i18n(DATE_ISO8601, strtotime("today 11:00")),
         "endtime" =>  date_i18n(DATE_ISO8601, strtotime("today 23:59"))
