@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-01-31 15:42+0100\n"
-"PO-Revision-Date: 2020-01-31 15:47+0100\n"
+"POT-Creation-Date: 2020-02-01 03:03+0100\n"
+"PO-Revision-Date: 2020-02-01 03:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -24,11 +24,11 @@ msgstr ""
 msgid "Overview"
 msgstr "Overview"
 
-#: admin/menu.php:31 admin/menu.php:32 admin/pages/events.php:467
+#: admin/menu.php:31 admin/menu.php:32 admin/pages/events.php:470
 msgid "Events"
 msgstr "Events"
 
-#: admin/menu.php:42 admin/menu.php:43 admin/pages/settings.php:28
+#: admin/menu.php:42 admin/menu.php:43 admin/pages/settings.php:31
 msgid "Settings"
 msgstr "Settings"
 
@@ -38,7 +38,7 @@ msgstr "Install"
 
 #: admin/pages/actions/event_copy.php:20
 #: admin/pages/actions/event_delete.php:21
-#: admin/pages/actions/event_save.php:52
+#: admin/pages/actions/event_save.php:56
 #: admin/pages/actions/event_toggle.php:26 admin/pages/settings_boxes.php:27
 #: admin/pages/settings_calendar.php:26 admin/pages/settings_design.php:42
 #: admin/pages/settings_detail.php:30 admin/pages/settings_general.php:22
@@ -50,12 +50,12 @@ msgstr "Something went wrong"
 msgid "Event successfully copied"
 msgstr "Event successfully copied"
 
-#: admin/pages/actions/event_copy.php:30 admin/pages/actions/event_save.php:62
+#: admin/pages/actions/event_copy.php:30 admin/pages/actions/event_save.php:66
 #: admin/pages/events.php:155
 msgid "View"
 msgstr "View"
 
-#: admin/pages/actions/event_copy.php:32 admin/pages/actions/event_save.php:64
+#: admin/pages/actions/event_copy.php:32 admin/pages/actions/event_save.php:68
 #: admin/pages/events.php:153
 msgid "Preview"
 msgstr "Preview"
@@ -64,9 +64,9 @@ msgstr "Preview"
 msgid "Event successfully deleted"
 msgstr "Event successfully deleted"
 
-#: admin/pages/actions/event_save.php:57
+#: admin/pages/actions/event_save.php:61
 msgid "Event saved"
-msgstr "Event saved"
+msgstr "Event successfully saved"
 
 #: admin/pages/actions/event_toggle.php:33 admin/pages/event_edit.php:78
 #: admin/pages/events.php:490
@@ -203,7 +203,7 @@ msgstr "Deactivate"
 msgid "Copy"
 msgstr "Copy"
 
-#: admin/pages/events.php:468
+#: admin/pages/events.php:471
 msgid "Add"
 msgstr "Add"
 
@@ -219,7 +219,7 @@ msgstr "Upcoming"
 msgid "Drafts"
 msgstr "Drafts"
 
-#: admin/pages/events.php:501
+#: admin/pages/events.php:505
 msgid "Search"
 msgstr "Search"
 
@@ -315,55 +315,27 @@ msgstr "General settings"
 msgid "Event settings"
 msgstr "Event settings"
 
-#: admin/pages/overview.php:107
-msgid "TicketMachine Pro"
-msgstr "TicketMachine Pro"
-
-#: admin/pages/overview.php:110
-msgid "Sell event tickets"
-msgstr "Sell event tickets"
-
-#: admin/pages/overview.php:111
-msgid "Recurring events"
-msgstr "Recurring events"
-
-#: admin/pages/overview.php:112
-msgid "Interactive seated events"
-msgstr "Interactive seated events"
-
-#: admin/pages/overview.php:113
-msgid "Create redeemable coupons"
-msgstr "Create redeemable coupons"
-
-#: admin/pages/overview.php:114
-msgid "Price categories for events"
-msgstr "Price categories for events"
-
-#: admin/pages/overview.php:116
-msgid "Apply for Pro"
-msgstr "Get TicketMachine Pro"
-
-#: admin/pages/settings.php:32
+#: admin/pages/settings.php:35
 msgid "Design"
 msgstr "Design"
 
-#: admin/pages/settings.php:35
+#: admin/pages/settings.php:38
 msgid "General"
 msgstr "General"
 
-#: admin/pages/settings.php:38
+#: admin/pages/settings.php:41
 msgid "Box View"
 msgstr "Box View"
 
-#: admin/pages/settings.php:41
+#: admin/pages/settings.php:44
 msgid "List View"
 msgstr "List View"
 
-#: admin/pages/settings.php:44
+#: admin/pages/settings.php:47
 msgid "Calendar View"
 msgstr "Calendar View"
 
-#: admin/pages/settings.php:47
+#: admin/pages/settings.php:50
 msgid "Details Page"
 msgstr "Details Page"
 
@@ -388,6 +360,10 @@ msgstr "Month"
 #: admin/pages/settings_boxes.php:46
 msgid "Year"
 msgstr "Year"
+
+#: admin/pages/settings_boxes.php:47
+msgid "None"
+msgstr "None"
 
 #: admin/pages/settings_calendar.php:37
 msgid "Activate calendar?"
@@ -476,6 +452,34 @@ msgstr "Event detail page"
 #: admin/pages/settings_list.php:38
 msgid "Activate List?"
 msgstr "Activate List?"
+
+#: admin/partials/sidebar.php:6
+msgid "TicketMachine Pro"
+msgstr "TicketMachine Pro"
+
+#: admin/partials/sidebar.php:9
+msgid "Sell event tickets"
+msgstr "Sell event tickets"
+
+#: admin/partials/sidebar.php:10
+msgid "Recurring events"
+msgstr "Recurring events"
+
+#: admin/partials/sidebar.php:11
+msgid "Interactive seated events"
+msgstr "Interactive seated events"
+
+#: admin/partials/sidebar.php:12
+msgid "Create redeemable coupons"
+msgstr "Create redeemable coupons"
+
+#: admin/partials/sidebar.php:13
+msgid "Price categories for events"
+msgstr "Price categories for events"
+
+#: admin/partials/sidebar.php:15
+msgid "Apply for Pro"
+msgstr "Get TicketMachine Pro"
 
 #: pages/event.php:37 pages/events.php:63 pages/events.php:83
 #: pages/events.php:137 widgets/event_calendar.php:29 widgets/event_list.php:15
@@ -576,9 +580,6 @@ msgstr "Show all events"
 
 #~ msgid "Organizer"
 #~ msgstr "Organizer"
-
-#~ msgid "None"
-#~ msgstr "None"
 
 #~ msgid "Event Name hier eingeben"
 #~ msgstr "Event Name hier eingeben"
