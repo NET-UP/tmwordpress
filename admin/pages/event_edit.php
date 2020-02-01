@@ -52,7 +52,7 @@
                     <?php 
                         $editor_id = 'ev_description';
                         $settings = array( 'media_buttons' => false );
-                        if (empty($event->ev_description){
+                        if (empty($event->ev_description)){
                             $content = __('Event Description', 'ticketmachine');
                         }
                         else{
