@@ -3,8 +3,6 @@
 		session_start(); 
 		
 	global $wpdb, $globals, $api;
-
-	date_default_timezone_set("Europe/Berlin");
 	
 	$tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
 	$tm_config = $tm_config[0];
