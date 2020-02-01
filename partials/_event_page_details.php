@@ -8,13 +8,13 @@
                                     <br>
                                     <label>'. __("Start", "ticketmachine") .':</label>
                                     <div class="mb-2">
-                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%e. %B", strtotime($event->ev_date) ) .' 
-                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%H:%M", strtotime($event->ev_date) ) .'
+                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%e. %B", strtotime($event->ev_date . ' ' . $globals->timezone) ) .' 
+                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%H:%M", strtotime($event->ev_date . ' ' . $globals->timezone) ) .'
                                     </div>
                                     <label>'. __("End", "ticketmachine").':</label>
                                     <div class="mb-2">
-                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%e. %B", strtotime($event->endtime) ) .' 
-                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%H:%M", strtotime($event->endtime) ) .'
+                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%e. %B", strtotime($event->endtime . ' ' . $globals->timezone) ) .' 
+                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. strftime( "%H:%M", strtotime($event->endtime . ' ' . $globals->timezone) ) .'
                                     </div> 
                                     <label class="d-none">'. __("Entry", "ticketmachine").': </label>
                                     <div class="mb-2 d-none">'. __("free", "ticketmachine") .'</div>
