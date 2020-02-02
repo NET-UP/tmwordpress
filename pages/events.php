@@ -144,7 +144,7 @@
 					$event = (object)$event;
 					
 					$curr = iso8601_to_datetime($event->ev_date);
-					if(isset($globals->group_by) && $globals->group_by != "none") {
+					if(isset($globals->group_by) && $globals->group_by != "None") {
 						if ($i == 0 || date_i18n( $globals->group_by , strtotime( $curr ) ) != date_i18n( $globals->group_by, strtotime( $prev ) ) ) {
 							$tm_output .= "<div class='col-12 my-2'>
 												<div class'd-flex'>
