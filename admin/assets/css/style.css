@@ -157,6 +157,8 @@
 .tm-admin-page .btn-primary {
     background: #ee7c26;
     border-color: #ee7c26;
+    box-shadow: none !important;
+    text-shadow: none !important;
 }
 
 .tm-admin-page .btn-primary:hover, 
