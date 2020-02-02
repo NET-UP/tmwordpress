@@ -149,7 +149,7 @@
 					if(isset($globals->event_grouping) && $globals->event_grouping != "None") {
 						if ($i == 0 || date_i18n( $globals->group_by , strtotime( $curr ) ) != date_i18n( $globals->group_by, strtotime( $prev ) ) ) {
 							$tm_output .= "<div class='col-12 my-2'>
-												<div class'd-flex'>
+												<div class='d-flex'>
 													<hr class='my-auto flex-grow-1'>
 													<h3 class='px-4'>" . date_i18n( $globals->format_date, strtotime(iso8601_to_datetime($event->ev_date)) ) . "</h3>
 													<hr class='my-auto flex-grow-1'>
