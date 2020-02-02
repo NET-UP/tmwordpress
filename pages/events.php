@@ -140,6 +140,8 @@
 				$tm_output .= "</div>";
 				
 			}else{
+				$tm_output .= "<div class='mt-1'>";
+
 				foreach($events as $event) {
 					$event = (object)$event;
 					
@@ -161,6 +163,8 @@
 					
 					$i++;
 				}
+				
+				$tm_output .= "</div>";
 			}
 
 		}else{
