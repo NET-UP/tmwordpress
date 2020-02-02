@@ -144,15 +144,17 @@
 					$event = (object)$event;
 					
 					$curr = iso8601_to_datetime($event->ev_date);
-					if ($i == 0 && isset($globals->group_by) && $globals->group_by != "None" ||  isset($globals->group_by) && $globals->group_by != "None" && date_i18n( $globals->group_by , strtotime( $curr ) ) != date_i18n( $globals->group_by, strtotime( $prev ) ) ) {
-						$tm_output .= "<div class='col-12 my-2'>
-											<div class'd-flex'>
-												<hr class='my-auto flex-grow-1'>
-												<h3 class='px-4'>" . date_i18n( $globals->format_date, strtotime(iso8601_to_datetime($event->ev_date)) ) . "</h3>
-												<hr class='my-auto flex-grow-1'>
-											</div>
-										</div>";
-						$prev = $curr;
+					if(isset($globals->group_by) && $globals->group_by != "None") {
+						if ($i == 0 || date_i18n( $globals->group_by , strtotime( $curr ) ) != date_i18n( $globals->group_by, strtotime( $prev ) ) ) {
+							$tm_output .= "<div class='col-12 my-2'>
+												<div class'd-flex'>
+													<hr class='my-auto flex-grow-1'>
+													<h3 class='px-4'>" . date_i18n( $globals->format_date, strtotime(iso8601_to_datetime($event->ev_date)) ) . "</h3>
+													<hr class='my-auto flex-grow-1'>
+												</div>
+											</div>";
+							$prev = $curr;
+						}
 					}
 					
 					$tm_output .= tm_event_list_item ( $event, $globals );
