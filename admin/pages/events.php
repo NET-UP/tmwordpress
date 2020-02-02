@@ -467,8 +467,10 @@ function tm_render_list_page(){
             <div class="row">
                 <div class="col-xl-9">
                     
-                    <h1 class="wp-heading-inline mr-3 mb-3 mb-md-0">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Events', 'ticketmachine'); ?></h1>
-                    <a href="?page=tm_events&action=edit" class="page-title-action mb-3 mb-md-0"><?php echo __('Add','ticketmachine'); ?></a>
+                    <h1 class="wp-heading-inline mr-3 mb-3 mb-md-0">
+                        TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Events', 'ticketmachine'); ?>
+                        <a href="?page=tm_events&action=edit" class="button button-secondary ml-2 mb-3 mb-md-0"><?php echo __('Add','ticketmachine'); ?></a>
+                    </h1>
                         
                     <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
                     <form method="get">
