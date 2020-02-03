@@ -1,5 +1,5 @@
-=== Really Simple CAPTCHA ===
-Contributors: NET-UP
+=== TicketMachine Event Manager ===
+Contributors: TicketMachine, NET-UP
 Donate link: 
 Tags: events
 Requires at least: 4.0

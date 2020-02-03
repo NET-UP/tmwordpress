@@ -6,8 +6,8 @@
 	Description:        Easily create and manage cloud-based events for your wordpress site.
 	Version:            1.0.0
     Requires at least:  4.0
-    Author:             NET-UP
-	Author URI:         https://www.net-up.de
+    Author:             TicketMachine
+	Author URI:         https://www.ticketmachine.de
 	*/
     add_action( 'wp_enqueue_scripts', 'add_core_files' );
     
