@@ -11,13 +11,13 @@
         $_POST['tags'] = explode(",", $_POST['tags']);
     }
     if(isset($_POST['entrytime'])) {
-        $_POST['entrytime'] = date_i18n(DATE_ISO8601, strtotime($_POST['entrytime']['date'] . $_POST['entrytime']['time']), true);
+        $_POST['entrytime'] = date_i18n(DATE_ISO8601, strtotime($_POST['entrytime']['date'] . $_POST['entrytime']['time']), false);
     }
     if(isset($_POST['ev_date'])) {
-        $_POST['ev_date'] = date_i18n(DATE_ISO8601, strtotime($_POST['ev_date']['date'] . $_POST['ev_date']['time']), true);
+        $_POST['ev_date'] = date_i18n(DATE_ISO8601, strtotime($_POST['ev_date']['date'] . $_POST['ev_date']['time']), false);
     }
     if(isset($_POST['endtime'])) {
-        $_POST['endtime'] = date_i18n(DATE_ISO8601, strtotime($_POST['endtime']['date'] . $_POST['endtime']['time']), true);
+        $_POST['endtime'] = date_i18n(DATE_ISO8601, strtotime($_POST['endtime']['date'] . $_POST['endtime']['time']), false);
     }
 
     if(isset($_POST['description'])) {
