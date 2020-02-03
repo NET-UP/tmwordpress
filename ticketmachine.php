@@ -261,14 +261,17 @@
             include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
             $params = [ "id" => $_GET['id'] ];
             $event = tmapi_event($params);
-            if(isset($event->id)){      
-                echo '<title>' . $event->ev_name . ' - ' . esc_html( get_bloginfo( 'name' ) ) . '</title>';      
+            if(isset($event->id)){            
                 echo '<meta property="og:title" content="' . $event->ev_name . '" />';
                 echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
                 echo '<meta property="og:type" content="website" />';
                 echo '<meta property="og:description" content="'. tm_i18n_date("d.m.Y", $event->ev_date) .' @ '. tm_i18n_date("H:i", $event->ev_date) .'" />';
             }
        }
+    }
+
+    function tm_wp_title( $title ) {
+        return '<title>' . $event->ev_name . ' - ' . esc_html( get_bloginfo( 'name' ) ) . '</title>';
     }
     
     add_filter( 'oembed_response_data', 'disable_embeds_filter_oembed_response_data_' );
@@ -282,5 +285,7 @@
     if(isset($_GET['id']) && $_GET['id'] > 0){
         add_action('wp_head','tm_event_metadata_event');
     }
+
+    add_filter( 'the_title', 'tm_wp_title' );
 
 ?>
