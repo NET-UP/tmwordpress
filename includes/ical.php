@@ -18,8 +18,8 @@ PRODID:-//TicketMachine WP-Plugin//DE
 BEGIN:VEVENT
 UID:" . md5(uniqid(mt_rand(), true)) . "@ticketmachine.de
 DTSTAMP:" . gmdate('Ymd').'T'. gmdate('His') . "Z
-DTSTART:". date("Ymd", strtotime(get_date_from_gmt($event->ev_date)))."T". date("His", strtotime(get_date_from_gmt($event->ev_date))) . "Z" . "
-DTEND:". date("Ymd", strtotime(get_date_from_gmt($event->endtime)))."T". date("His", strtotime(get_date_from_gmt($event->endtime))) . "Z" . "
+DTSTART:". date("Ymd", strtotime($event->ev_date))."T". date("His", strtotime($event->ev_date)) . "Z" . "
+DTEND:". date("Ymd", strtotime($event->endtime))."T". date("His", strtotime($event->endtime)) . "Z" . "
 SUMMARY:". $event->ev_name ."
 LOCATION:". $event->ev_location_name ."
 DESCRIPTION:". $_GET['url'] ."
