@@ -29,9 +29,9 @@
 
         "tags" => array(),
 
-        "entrytime" => date(DATE_ISO8601, strtotime("today 10:00")),
-        "ev_date" =>  date(DATE_ISO8601, strtotime("today 11:00")),
-        "endtime" =>  date(DATE_ISO8601, strtotime("today 23:59"))
+        "entrytime" => date_i18n(DATE_ISO8601, strtotime("today 10:00")),
+        "ev_date" =>  date_i18n(DATE_ISO8601, strtotime("today 11:00")),
+        "endtime" =>  date_i18n(DATE_ISO8601, strtotime("today 23:59"))
     );
 
     $event = (object)$event;
@@ -214,7 +214,7 @@
                                     <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo date_i18n("d.m.Y", strtotime(iso8601_to_datetime($event->ev_date)), true); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime(iso8601_to_datetime($event->ev_date)), true); ?>">
+                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime(iso8601_to_datetime($event->ev_date), true); ?>">
                                 </div>
                             </div>
                             <div>
@@ -222,10 +222,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="endtime[date]" class="form-control date endtime" value="<?php echo date_i18n("d.m.Y", strtotime(iso8601_to_datetime($event->endtime)), true); ?>">
+                                    <input type="text" name="endtime[date]" class="form-control date endtime" value="<?php echo date_i18n("d.m.Y", strtotime($event->endtime), true); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="endtime[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime(iso8601_to_datetime($event->endtime)), true); ?>">
+                                    <input type="text" name="endtime[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime($event->endtime), true); ?>">
                                 </div>
                             </div>
                         </div>
