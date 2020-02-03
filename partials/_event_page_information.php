@@ -23,7 +23,6 @@
                         if(isset($event->has_location) && $event->has_location == 1){                       
                              $tm_output .= '<div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; <a aria-label="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location['street'] . " " . $event->event_location["house_number"] . " " . $event->event_location["zip"] . " " . $event->event_location["city"] . " " . $event->event_location["country"] ) . '" target="_blank" title="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a> </div>';
                         }
-                        echo date_i18n( DATE_ISO8601, strtotime($event->ev_date),true );
                        
 
         $tm_output .= '</div>
