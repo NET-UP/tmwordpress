@@ -271,7 +271,7 @@
     }
 
     function tm_wp_title( $title ) {
-        return '<title>' . $event->ev_name . ' - ' . esc_html( get_bloginfo( 'name' ) ) . '</title>';
+        return $event->ev_name . ' - ' . esc_html( get_bloginfo( 'name' ) );
     }
     
     add_filter( 'oembed_response_data', 'disable_embeds_filter_oembed_response_data_' );
