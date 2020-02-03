@@ -11,7 +11,7 @@
         $_POST['tags'] = explode(",", $_POST['tags']);
     }
     if(isset($_POST['entrytime'])) {
-        $_POST['entrytime'] = gmdate(DATE_ISO8601, strtotime($_POST['entrytime']['date'] . $_POST['entrytime']['time']));
+        $_POST['entrytime'] = gmdate(DATE_ISO8601, strtotime(date_i18n(DATE_ISO8601, strtotime($_POST['entrytime']['date'] . $_POST['entrytime']['time']))));
     }
     if(isset($_POST['ev_date'])) {
         $_POST['ev_date'] = gmdate(DATE_ISO8601, strtotime($_POST['ev_date']['date'] . $_POST['ev_date']['time']));
