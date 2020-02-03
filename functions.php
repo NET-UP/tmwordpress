@@ -212,7 +212,8 @@
 	}
 
 	function tm_i18n_date($format, $datetime){
-
+		date_i18n($format, strtotime(get_date_from_gmt($datetime)) );
+		return $formatted_date
 	}
 
 	switch ($globals->lang) {
