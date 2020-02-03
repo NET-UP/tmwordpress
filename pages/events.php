@@ -26,8 +26,6 @@
 			$current_page = "unknown";
 		}
 		
-		//echo "<pre>" . print_r($tm_json) . "</pre>";
-		
 		$tm_output = "<div class='row tm_events_container'>";
 		
 		$tm_output .= "<div class='page-header col-12'>" . tm_search_header($globals, $current_page);

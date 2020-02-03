@@ -40,8 +40,6 @@
         str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", $_POST))), 
         JSON_UNESCAPED_SLASHES
     );
-
-    print_r($post_json);
     
     $tm_json = tmapi_event($post_json, "POST");
     $response = (object)$tm_json;
