@@ -214,7 +214,7 @@
                                     <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo date_i18n("d.m.Y", strtotime(iso8601_to_datetime($event->ev_date)), true); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime(iso8601_to_datetime($event->ev_date), true); ?>">
+                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime(iso8601_to_datetime($event->ev_date)), true); ?>">
                                 </div>
                             </div>
                             <div>
