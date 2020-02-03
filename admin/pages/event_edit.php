@@ -29,9 +29,9 @@
 
         "tags" => array(),
 
-        "entrytime" => date_i18n(DATE_ISO8601, strtotime("today 10:00")),
-        "ev_date" =>  date_i18n(DATE_ISO8601, strtotime("today 11:00")),
-        "endtime" =>  date_i18n(DATE_ISO8601, strtotime("today 23:59"))
+        "entrytime" => date_i18n(DATE_ISO8601, strtotime("today 10:00"), true),
+        "ev_date" =>  date_i18n(DATE_ISO8601, strtotime("today 11:00"), true),
+        "endtime" =>  date_i18n(DATE_ISO8601, strtotime("today 23:59"), true)
     );
 
     $event = (object)$event;
