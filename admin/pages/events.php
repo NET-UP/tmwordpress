@@ -109,9 +109,9 @@ class Event_List_Table extends WP_List_Table {
             case 'tags':
                 return implode(", ", $item[$column_name]);
             case 'ev_date':
-                return date_i18n( "d.m.Y", strtotime(iso8601_to_datetime($item[$column_name])) );
+                return date_i18n( "d.m.Y", strtotime($item[$column_name]), true );
             case 'endtime':
-                return date_i18n( "d.m.Y", strtotime(iso8601_to_datetime($item[$column_name])) );
+                return date_i18n( "d.m.Y", strtotime($item[$column_name]), true );
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
         }
