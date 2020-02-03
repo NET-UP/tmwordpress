@@ -269,10 +269,6 @@
             }
        }
     }
-
-    function tm_wp_title( $title ) {
-        return $event->ev_name . ' - ' . esc_html( get_bloginfo( 'name' ) );
-    }
     
     add_filter( 'oembed_response_data', 'disable_embeds_filter_oembed_response_data_' );
     function disable_embeds_filter_oembed_response_data_( $data ) {
@@ -285,7 +281,5 @@
     if(isset($_GET['id']) && $_GET['id'] > 0){
         add_action('wp_head','tm_event_metadata_event');
     }
-
-    add_filter( 'the_title', 'tm_wp_title' );
 
 ?>
