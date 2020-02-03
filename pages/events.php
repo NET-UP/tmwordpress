@@ -107,8 +107,8 @@
 
 							if(isset($atts['show_date']) && $atts['show_date'] > 0){
 								$tm_output .= '
-								<div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d.m.Y", strtotime(get_date_from_gmt($event->ev_date)), true ) .'</div> 
-								<div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime(get_date_from_gmt($event->ev_date)), true ) .'</div>';
+								<div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. tm_i18n_date("d.m.Y", $event->ev_date) .'</div> 
+								<div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. tm_i18n_date("H:i", $event->ev_date) .'</div>';
 							}
 							
 							if(isset($atts['show_description']) && $atts['show_description'] > 0){
@@ -151,7 +151,7 @@
 							$tm_output .= "<div class='col-12 my-2'>
 												<div class='d-flex'>
 													<hr class='my-auto flex-grow-1'>
-													<h3 class='px-4'>" . date_i18n( $globals->format_date, strtotime(get_date_from_gmt($event->ev_date)) ) . "</h3>
+													<h3 class='px-4'>" . tm_i18n_date($globals->format_date, strtotime(get_date_from_gmt($event->ev_date) . "</h3>
 													<hr class='my-auto flex-grow-1'>
 												</div>
 											</div>";

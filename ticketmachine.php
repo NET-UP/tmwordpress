@@ -265,7 +265,7 @@
                 echo '<meta property="og:title" content="' . $event->ev_name . '" />';
                 echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
                 echo '<meta property="og:type" content="website" />';
-                echo '<meta property="og:description" content="'. date_i18n( "d.m.Y", strtotime(get_date_from_gmt($event->ev_date)) , true) .' @ '. date_i18n( "H:i", strtotime(get_date_from_gmt($event->ev_date)), true ) .'" />';
+                echo '<meta property="og:description" content="'. tm_i18n_date("d.m.Y", $event->ev_date) .' @ '. tm_i18n_date("H:i", $event->ev_date) .'" />';
             }
        }
     }
