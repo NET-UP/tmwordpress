@@ -3,9 +3,9 @@
 	/*
 	Plugin Name:        TicketMachine Event Manager
     Plugin URI:         https://www.ticketmachine.de/plugins/ticketmachine/
-	Description:        Easily create and manage events for your wordpress site.
+	Description:        Easily create and manage cloud-based events for your wordpress site.
 	Version:            1.0.0
-    Requires at least:  4.5
+    Requires at least:  4.0
     Requires PHP:       5.6
     Author:             NET-UP
 	Author URI:         https://www.net-up.de
