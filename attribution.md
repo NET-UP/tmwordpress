@@ -22,3 +22,7 @@
 * fullcalendar/core v4.0.1
 * (c) 2019 Adam Shaw
 * Licensed under MIT (https://github.com/fullcalendar/fullcalendar/blob/master/LICENSE.txt)
+
+# Popper.js
+* Copyright (C) Federico Zivolo 2017
+* Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
