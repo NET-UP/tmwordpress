@@ -94,6 +94,10 @@
     padding: 0px 2px;
 }
 
+.tm-admin-page .hndle {
+    cursor:default !important;
+}
+
 .tm-admin-page .fullw-input {
     width: 100%;
     display: block;
