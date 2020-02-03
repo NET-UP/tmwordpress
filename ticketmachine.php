@@ -261,7 +261,8 @@
             include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
             $params = [ "id" => $_GET['id'] ];
             $event = tmapi_event($params);
-            if(isset($event->id)){            
+            if(isset($event->id)){      
+                echo '<title>' . $event->ev_name . ' - ' . esc_html( get_bloginfo( 'name' ) ) . '</title>';      
                 echo '<meta property="og:title" content="' . $event->ev_name . '" />';
                 echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
                 echo '<meta property="og:type" content="website" />';
