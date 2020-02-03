@@ -85,7 +85,7 @@
                 <div id="postbox-container-1" class="postbox-container">
                     <div id="side-sortables" class="meta-box-sortables ui-sortable">
                         <div id="submitdiv" class="postbox">
-                            <h2 class="hndle">
+                            <h2 class="hndle p-3 mt-0">
                                 <span><?php echo __('Publish', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                         <div id="postimagediv" class="postbox">
-                            <h2 class="hndle">
+                            <h2 class="hndle p-3 mt-0">
                                 <span><?php echo __('Event Image', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
@@ -128,7 +128,7 @@
                             </div>
                         </div>
                         <div id="tagsdiv-post_tag" class="postbox">
-                            <h2 class="hndle">
+                            <h2 class="hndle p-3 mt-0">
                                 <span><?php echo __('Tags', 'ticketmachine') ?></span>
                             </h2>
                             <div class="inside">
@@ -150,7 +150,7 @@
 
                 <div id="postbox-container-2" class="postbox-container">
                     <div class="postbox">
-                        <h2 class="hndle">
+                        <h2 class="hndle p-3 mt-0">
                             <span><?php echo __('Location', 'ticketmachine') ?></span>
                         </h2>
                         <div class="inside inside-pad">
@@ -191,7 +191,7 @@
                 
 
                     <div class="postbox">
-                        <h2 class="hndle">
+                        <h2 class="hndle p-3 mt-0">
                             <span><?php echo __('Dates & Times', 'ticketmachine') ?></span>
                         </h2>
                         <div class="inside inside-pad">
