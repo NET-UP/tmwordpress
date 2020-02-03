@@ -35,8 +35,8 @@
                         
                         if(isset($atts['show_date']) && $atts['show_date'] > 0){
                             $tm_output .= '
-                            <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d.m.Y", strtotime($event->ev_date), true ) .'</div> 
-                            <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime($event->ev_date), true ) .'</div>';
+                            <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d.m.Y", strtotime(get_date_from_gmt($event->ev_date)) ) .'</div> 
+                            <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime(get_date_from_gmt($event->ev_date)) ) .'</div>';
                         }
 
                         if(isset($atts['show_description']) && $atts['show_description'] > 0){
