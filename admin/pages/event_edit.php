@@ -211,10 +211,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo date_i18n("d.m.Y", strtotime($event->ev_date)); ?>">
+                                    <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo date_i18n("d.m.Y", strtotime(get_date_from_gmt($event->ev_date))); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime($event->ev_date)); ?>">
+                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime(get_date_from_gmt($event->ev_date))); ?>">
                                 </div>
                             </div>
                             <div>
