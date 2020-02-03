@@ -211,6 +211,10 @@
 		return (object)$category;
 	}
 
+	function tm_i18n_date($format, $datetime){
+
+	}
+
 	switch ($globals->lang) {
 		case 'en':
 			setlocale(LC_TIME, 'en_US.UTF-8');

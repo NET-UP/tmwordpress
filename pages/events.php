@@ -151,7 +151,7 @@
 							$tm_output .= "<div class='col-12 my-2'>
 												<div class='d-flex'>
 													<hr class='my-auto flex-grow-1'>
-													<h3 class='px-4'>" . date_i18n( $globals->format_date, strtotime(get_date_from_gmt($event->ev_date)), true ) . "</h3>
+													<h3 class='px-4'>" . date_i18n( $globals->format_date, strtotime(get_date_from_gmt($event->ev_date)) ) . "</h3>
 													<hr class='my-auto flex-grow-1'>
 												</div>
 											</div>";
