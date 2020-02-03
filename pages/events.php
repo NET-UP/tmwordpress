@@ -107,8 +107,8 @@
 
 							if(isset($atts['show_date']) && $atts['show_date'] > 0){
 								$tm_output .= '
-								<div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d.m.Y", strtotime(iso8601_to_datetime($event->ev_date)) ) .'</div> 
-								<div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime(iso8601_to_datetime($event->ev_date)) ) .'</div>';
+								<div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "d.m.Y", strtotime($event->ev_date), true ) .'</div> 
+								<div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. date_i18n( "H:i", strtotime($event->ev_date), true ) .'</div>';
 							}
 							
 							if(isset($atts['show_description']) && $atts['show_description'] > 0){
@@ -145,13 +145,13 @@
 				foreach($events as $event) {
 					$event = (object)$event;
 					
-					$curr = iso8601_to_datetime($event->ev_date);
+					$curr = $event->ev_date;
 					if(isset($globals->event_grouping) && $globals->event_grouping != "None") {
-						if ($i == 0 || date_i18n( $globals->group_by , strtotime( $curr ) ) != date_i18n( $globals->group_by, strtotime( $prev ) ) ) {
+						if ($i == 0 || date( $globals->group_by , strtotime( $curr ) ) != date( $globals->group_by, strtotime( $prev ) ) ) {
 							$tm_output .= "<div class='col-12 my-2'>
 												<div class='d-flex'>
 													<hr class='my-auto flex-grow-1'>
-													<h3 class='px-4'>" . date_i18n( $globals->format_date, strtotime(iso8601_to_datetime($event->ev_date)) ) . "</h3>
+													<h3 class='px-4'>" . date_i18n( $globals->format_date, strtotime($event->ev_date), true ) . "</h3>
 													<hr class='my-auto flex-grow-1'>
 												</div>
 											</div>";
