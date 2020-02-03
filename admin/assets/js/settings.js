@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
-    $('.color-field').wpColorPicker();
+    jQuery('.color-field').wpColorPicker();
 
-    $('.tm-admin-page').on("click", ".close", function(){
-        $(this).parents(".box").remove();
+    jQuery('.tm-admin-page').on("click", ".close", function(){
+        jQuery(this).parents(".box").remove();
     });
 });

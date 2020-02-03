@@ -248,7 +248,7 @@
             stepping: 15
         });
         
-        $('.bootstrap-tagsinput').on('keypress', function(e){
+        jQuery('.bootstrap-tagsinput').on('keypress', function(e){
             if (e.keyCode == 13){
                 e.keyCode = 188;
                 e.preventDefault();
@@ -292,8 +292,8 @@
                 // We set multiple to false so only get one image from the uploader
                 attachment = file_frame.state().get('selection').first().toJSON();
                 // Do something with attachment.id and/or attachment.url here
-                $( '#image-preview' ).attr( 'src', attachment.url ).css( 'width', 'auto' );
-                $( '#image_attachment_id' ).val( attachment.url );
+                jQuery( '#image-preview' ).attr( 'src', attachment.url ).css( 'width', 'auto' );
+                jQuery( '#image_attachment_id' ).val( attachment.url );
                 // Restore the main post ID
                 wp.media.model.settings.post.id = wp_media_post_id;
             });

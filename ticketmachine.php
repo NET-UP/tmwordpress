@@ -84,7 +84,7 @@
 	
 	function add_core_files () {
 		//jQuery
-		wp_enqueue_script( 'jquery-ui_JS', plugins_url( "assets/js/ext/jquery_ui.js", __FILE__ ), array("jquery") );
+		wp_enqueue_script( 'jquery-ui-datepicker', array("jquery") );
 		wp_enqueue_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
 		
 		//Cookies
