@@ -222,10 +222,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="endtime[date]" class="form-control date endtime" value="<?php echo date_i18n(ISO8601, strtotime($event->endtime)); ?>">
+                                    <input type="text" name="endtime[date]" class="form-control date endtime" value="<?php echo $event->endtime; ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="endtime[time]" class="form-control time" value="<?php echo date_i18n(ISO8601, strtotime($event->endtime)); ?>">
+                                    <input type="text" name="endtime[time]" class="form-control time" value="<?php echo $event->endtime; ?>">
                                 </div>
                             </div>
                         </div>
