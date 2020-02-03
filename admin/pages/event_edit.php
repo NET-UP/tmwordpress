@@ -200,10 +200,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="entrytime[date]" class="form-control date entrytime" value="<?php echo date_i18n("d.m.Y", strtotime(iso8601_to_datetime($event->entrytime)), true); ?>">
+                                    <input type="text" name="entrytime[date]" class="form-control date entrytime" value="<?php echo date_i18n("d.m.Y", strtotime($event->entrytime), true); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="entrytime[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime(iso8601_to_datetime($event->entrytime)), true); ?>">
+                                    <input type="text" name="entrytime[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime($event->entrytime), true); ?>">
                                 </div>
                             </div>
                             <div>
@@ -211,10 +211,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo date_i18n("d.m.Y", strtotime(iso8601_to_datetime($event->ev_date)), true); ?>">
+                                    <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo date_i18n("d.m.Y", strtotime($event->ev_date), true); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime(iso8601_to_datetime($event->ev_date)), true); ?>">
+                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo date_i18n("H:i", strtotime($event->ev_date), true); ?>">
                                 </div>
                             </div>
                             <div>
