@@ -46,7 +46,7 @@
 			$params->sort = "ev_date";
 		}
 
-		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/events?";
+		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
 		
 		if($globals->organizer && $globals->organizer != "" ){
 			$url .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
@@ -88,7 +88,7 @@
 			$params = (object)$params;
 		}
 
-		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id;
+		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id;
 		if(!empty($params->categories)) {
 			$url .= "?categories=true";
 		}
@@ -102,7 +102,7 @@
 	function tmapi_event_copy($params){
 		global $api, $globals;
 
-		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/copy";
+		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/copy";
 
 		$event = apiRequest($url, $params, "POST");
 		return (object)$event;
@@ -114,7 +114,7 @@
 
 		$params = (object)$params;
 
-		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/organizers/me";
+		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/organizers/me";
 
 		$organizer = apiRequest($url, $post, $method, $headers);
 
@@ -184,7 +184,7 @@
 			$params->sort = "name";
 		}
 
-		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/events/tags";
+		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/tags";
 
 		$categories = apiRequest($url, $params, $method);
 		return (object)$categories;
@@ -195,7 +195,7 @@
 		global $api, $globals;
 
 		$params = (object)$params;
-		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/add";
+		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/add";
 
 		$category = apiRequest($url, $params, $method);
 		return (object)$category;
@@ -206,7 +206,7 @@
 		global $api, $globals;
 
 		$params = (object)$params;
-		$url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/remove";
+		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/remove";
 		$category = apiRequest($url, $params, $method);
 		return (object)$category;
 	}

@@ -83,8 +83,8 @@
 	if(!isset($_SESSION['state'])){
 		$_SESSION['state'] = "";
 	}
-	$api->token = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/oauth/token";
-	$api->auth->url = $api->scheme . "://apiv2." . $api->environment . "ticketmachine.de/oauth/token";
+	$api->token = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/oauth/token";
+	$api->auth->url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/oauth/token";
 
 	$api->auth->key = $api->client_id.":".$api->client_secret;
 	$api->auth->encoded_key = base64_encode($api->auth->key);
