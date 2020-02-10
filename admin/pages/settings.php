@@ -49,6 +49,9 @@
 				<a href="?page=tm_settings&tab=detail" class="nav-tab <?php echo $active_tab == 'detail' ? 'nav-tab-active' : ''; ?>">
 					<?php echo __('Details Page', 'ticketmachine'); ?>
 				</a>
+				<a href="?page=tm_settings&tab=cloud" class="nav-tab <?php echo $active_tab == 'cloud' ? 'nav-tab-active' : ''; ?>">
+					<?php echo __('Cloud', 'ticketmachine'); ?>
+				</a>
 			</h2>
 
 			<form method="post" action="#">
@@ -66,6 +69,8 @@
 						include( plugin_dir_path( __FILE__ ) . 'settings_detail.php');
 					}elseif( $active_tab == 'general' ) {
 						include( plugin_dir_path( __FILE__ ) . 'settings_general.php');
+					}elseif( $active_tab == 'cloud' ) {
+						include( plugin_dir_path( __FILE__ ) . 'settings_cloud.php');
 					}
 					
 					submit_button(); 
