@@ -10,16 +10,6 @@
 	
 	$active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'design';
 	
-
-	if(isset($_GET['code'])){
-		echo "success";
-		$tm_config->api_access_token = "test";
-		#TODO: Send auth code to /oauth/token to retrieve access & refresh tokens.
-		# Save access & refresh tokens
-		# Save last_refresh (datetime)
-	  }
-
-	#if($tm_config->api_access_token){
 ?>
 
 <div class="wrap tm-admin-page">
@@ -72,7 +62,7 @@
 					}elseif( $active_tab == 'cloud' ) {
 						include( plugin_dir_path( __FILE__ ) . 'settings_cloud.php');
 					}
-					
+
 					if( $active_tab != 'cloud' ) {
 						submit_button(); 
 					}
