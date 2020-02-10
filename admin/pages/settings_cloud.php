@@ -4,7 +4,7 @@
     $tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
     $tm_config = $tm_config[0];
 
-    if(!empty($_GET['code']) && empty($globals->api_refresh_token)) {
+    if(!empty($_GET['code'])) {
         //Exchange the auth code for an access token
         $token = tmapi_get_access_token($_GET['code'], "new");
 
