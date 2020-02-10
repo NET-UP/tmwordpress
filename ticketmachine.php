@@ -171,7 +171,6 @@
         $charset_collate = $wpdb->get_charset_collate();
         $sql = "CREATE TABLE $table (
                     id mediumint(9) NOT NULL AUTO_INCREMENT,
-                    activated bit(1) DEFAULT 0 NOT NULL,
                     organizer_id int(11) DEFAULT 0 NOT NULL,
                     organizer varchar(64) DEFAULT '' NOT NULL,
                     api_client_id varchar(64) DEFAULT 'c16727aa80540e51edcd276641c6f68974bb312ec5b17b75a3bc0ba254236a14' NOT NULL,
