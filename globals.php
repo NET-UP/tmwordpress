@@ -8,7 +8,10 @@
 	$tm_config = $tm_config[0];
 
 	$globals = (object)$tm_config;
-	$_SESSION['access_token'] = $globals->api_access_token;
+	if(!empty($globals->api_refresh_token) && !empty($globals->api_access_token)) {
+		$globals->activated = 1;
+		$_SESSION['access_token'] = $globals->api_access_token;
+	}
 	
 	if ( defined( 'ICL_LANGUAGE_CODE' ) ) {
 		$globals->locale = ICL_LANGUAGE_CODE;
