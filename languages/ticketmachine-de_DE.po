@@ -408,7 +408,7 @@ msgstr ""
 
 #: admin/pages/settings_cloud.php:45
 msgid "Sync events"
-msgstr "Veranstaltung synchronizieren"
+msgstr "Veranstaltungen synchronisieren"
 
 #: admin/pages/settings_design.php:55
 msgid "Primary Button"
