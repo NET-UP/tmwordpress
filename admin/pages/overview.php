@@ -27,6 +27,7 @@
                 $save_array,
                 array('id' => $tm_config->id)
             );
+            $globals->activated = 1;
         }
     }
     
