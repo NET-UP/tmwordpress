@@ -1,6 +1,9 @@
 # Änderungsprotokoll (Deutsch)
 Alle wesentlichen Änderungen an diesem Projekt werden in dieser Datei dokumentiert.
 
+## [1.0.0] - 2020-02-10
++   Neuer Reiter "Cloud" auf der Einstellungsseite hinzugefügt, um die Synchronisierung von Veranstaltungen zu erzwingen
+
 ## [1.0.0] - 2020-02-04
 +   Lizenzzuweisung für verwendete Software hinzugefügt
 -   Alle WP_DEBUG-Warnungen behoben

@@ -1,6 +1,9 @@
 # Change Log (English)
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2020-02-04
++   Added new tab "Cloud" in settings page to force synchronise events
+
 ## [0.9.9] - 2020-02-04
 +   License attribution added for softwares used
 -   All WP_DEBUG notices fixed
