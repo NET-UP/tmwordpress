@@ -27,6 +27,13 @@
             array('id' => $tm_config->id)
         );
         $globals->activated = 1;
+    ?>
+
+    <div class="notice notice-success is-dismissable">
+        <p><?php echo __('Saved', 'ticketmachine'); ?>!</p>
+    </div>
+
+    <?php
     }
 
     $current_locale = get_locale();
@@ -36,6 +43,10 @@
     $authorize_url .= "?";
     $authorize_url .= http_build_query($api->auth->data);
 ?>
+
+<p>
+    <?php echo __("If your events are not showing - or you would like to change to a different account, you can synchronize your events here.", "ticketmachine"); ?>
+</p>
 
 <a class="button button-primary mt-4" style="font-size:14px" href="<?php echo $authorize_url; ?>">
     <i class="fas fa-sync-alt"></i> &nbsp;<?php echo __("Sync events", "ticketmachine"); ?>

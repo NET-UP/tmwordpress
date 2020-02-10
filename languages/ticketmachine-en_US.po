@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-02-01 16:15+0100\n"
-"PO-Revision-Date: 2020-02-01 16:15+0100\n"
+"POT-Creation-Date: 2020-02-10 11:06+0100\n"
+"PO-Revision-Date: 2020-02-10 11:07+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -20,15 +20,15 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-2: languages\n"
 "X-Poedit-SearchPathExcluded-3: assets\n"
 
-#: admin/menu.php:21 admin/menu.php:22 admin/pages/overview.php:61
+#: admin/menu.php:21 admin/menu.php:22 admin/pages/overview.php:64
 msgid "Overview"
 msgstr "Overview"
 
-#: admin/menu.php:31 admin/menu.php:32 admin/pages/events.php:470
+#: admin/menu.php:31 admin/menu.php:32 admin/pages/events.php:471
 msgid "Events"
 msgstr "Events"
 
-#: admin/menu.php:42 admin/menu.php:43 admin/pages/settings.php:31
+#: admin/menu.php:42 admin/menu.php:43 admin/pages/settings.php:21
 msgid "Settings"
 msgstr "Settings"
 
@@ -68,8 +68,8 @@ msgstr "Event successfully deleted"
 msgid "Event saved"
 msgstr "Event successfully saved"
 
-#: admin/pages/actions/event_toggle.php:33 admin/pages/event_edit.php:99
-#: admin/pages/events.php:490
+#: admin/pages/actions/event_toggle.php:33 admin/pages/event_edit.php:98
+#: admin/pages/events.php:492
 msgid "Published"
 msgstr "Published"
 
@@ -81,7 +81,7 @@ msgstr "Deactivated"
 msgid "Undo"
 msgstr "Undo"
 
-#: admin/pages/categories.php:119 admin/pages/event_edit.php:100
+#: admin/pages/categories.php:119 admin/pages/event_edit.php:99
 #: admin/pages/events.php:145
 msgid "Draft"
 msgstr "Draft"
@@ -98,105 +98,105 @@ msgstr "Categories"
 msgid "Event Description"
 msgstr "Event Description"
 
-#: admin/pages/event_edit.php:52
+#: admin/pages/event_edit.php:51
 msgid "Edit event"
 msgstr "Edit event"
 
-#: admin/pages/event_edit.php:54
+#: admin/pages/event_edit.php:53
 msgid "Create event"
 msgstr "Create event"
 
-#: admin/pages/event_edit.php:73
+#: admin/pages/event_edit.php:72
 msgid "Enter the event name"
 msgstr "Enter the event name"
 
-#: admin/pages/event_edit.php:74
+#: admin/pages/event_edit.php:73
 msgid "Event Name"
 msgstr "Event Name"
 
-#: admin/pages/event_edit.php:90 admin/pages/events.php:143
+#: admin/pages/event_edit.php:89 admin/pages/events.php:143
 msgid "Publish"
 msgstr "Publish"
 
-#: admin/pages/event_edit.php:97
+#: admin/pages/event_edit.php:96
 msgid "Status"
 msgstr "Status"
 
-#: admin/pages/event_edit.php:104
+#: admin/pages/event_edit.php:103
 msgid "Hint Text"
 msgstr "Hint Text"
 
-#: admin/pages/event_edit.php:112
+#: admin/pages/event_edit.php:111
 msgid "Save"
 msgstr "Save"
 
-#: admin/pages/event_edit.php:112
+#: admin/pages/event_edit.php:111
 msgid "Update"
 msgstr "Update"
 
-#: admin/pages/event_edit.php:121
+#: admin/pages/event_edit.php:120
 msgid "Event Image"
 msgstr "Event Image"
 
-#: admin/pages/event_edit.php:127
+#: admin/pages/event_edit.php:126
 msgid "Add Image"
 msgstr "Add Image"
 
-#: admin/pages/event_edit.php:133 admin/pages/events.php:209
+#: admin/pages/event_edit.php:132 admin/pages/events.php:209
 #: partials/_tag_header.php:9
 msgid "Tags"
 msgstr "Tags"
 
-#: admin/pages/event_edit.php:139
+#: admin/pages/event_edit.php:138
 msgid "Create new tag"
 msgstr "Create new tag"
 
-#: admin/pages/event_edit.php:144
+#: admin/pages/event_edit.php:143
 msgid "Seperate tags with comma"
 msgstr "Seperate tags with comma"
 
-#: admin/pages/event_edit.php:155
+#: admin/pages/event_edit.php:154
 msgid "Location"
 msgstr "Location"
 
-#: admin/pages/event_edit.php:160 partials/_event_list_item.php:26
+#: admin/pages/event_edit.php:159 partials/_event_list_item.php:26
 #: partials/_event_page_details.php:26 partials/_event_page_information.php:24
 msgid "Event Location"
 msgstr "Event Location"
 
-#: admin/pages/event_edit.php:166
+#: admin/pages/event_edit.php:165
 msgid "Street"
 msgstr "Street"
 
-#: admin/pages/event_edit.php:170
+#: admin/pages/event_edit.php:169
 msgid "House No."
 msgstr "House No."
 
-#: admin/pages/event_edit.php:176
+#: admin/pages/event_edit.php:175
 msgid "Zipcode"
 msgstr "Zipcode"
 
-#: admin/pages/event_edit.php:180
+#: admin/pages/event_edit.php:179
 msgid "City"
 msgstr "City"
 
-#: admin/pages/event_edit.php:186
+#: admin/pages/event_edit.php:185
 msgid "Country"
 msgstr "Country"
 
-#: admin/pages/event_edit.php:196
+#: admin/pages/event_edit.php:195
 msgid "Dates & Times"
 msgstr "Dates & Times"
 
-#: admin/pages/event_edit.php:200
+#: admin/pages/event_edit.php:199
 msgid "Entry Time"
 msgstr "Entry Time"
 
-#: admin/pages/event_edit.php:211
+#: admin/pages/event_edit.php:210
 msgid "Event begins at"
 msgstr "Event begins at"
 
-#: admin/pages/event_edit.php:222
+#: admin/pages/event_edit.php:221
 msgid "Event ends at"
 msgstr "Event ends at"
 
@@ -220,23 +220,23 @@ msgstr "Start date"
 msgid "End date"
 msgstr "End date"
 
-#: admin/pages/events.php:471
+#: admin/pages/events.php:472
 msgid "Add"
 msgstr "Add"
 
-#: admin/pages/events.php:478
+#: admin/pages/events.php:480
 msgid "All"
 msgstr "All"
 
-#: admin/pages/events.php:484
+#: admin/pages/events.php:486
 msgid "Upcoming"
 msgstr "Upcoming"
 
-#: admin/pages/events.php:496 admin/pages/overview.php:82
+#: admin/pages/events.php:498 admin/pages/overview.php:85
 msgid "Drafts"
 msgstr "Drafts"
 
-#: admin/pages/events.php:505
+#: admin/pages/events.php:507
 msgid "Search"
 msgstr "Search"
 
@@ -258,103 +258,107 @@ msgid ""
 "one), we require your email adress."
 msgstr ""
 "In order to create your TicketMachine account (or connect to your current "
-"one), we require your email adress."
+"one), we require your email address."
 
 #: admin/pages/installation.php:48
 msgid "Connect with TicketMachine"
 msgstr "Connect with TicketMachine"
 
-#: admin/pages/overview.php:42
+#: admin/pages/overview.php:45
 msgid "Welcome to"
 msgstr "Welcome to"
 
-#: admin/pages/overview.php:43
+#: admin/pages/overview.php:46
 msgid "You're ready to go!"
 msgstr "You're ready to go!"
 
-#: admin/pages/overview.php:47
+#: admin/pages/overview.php:50
 msgid "Customize your theme"
 msgstr "Customize your theme"
 
-#: admin/pages/overview.php:48 admin/pages/overview.php:69
+#: admin/pages/overview.php:51 admin/pages/overview.php:72
 msgid "Create an event"
 msgstr "Create an event"
 
-#: admin/pages/overview.php:49
+#: admin/pages/overview.php:52
 msgid "What's new?"
 msgstr "What's new?"
 
-#: admin/pages/overview.php:62
+#: admin/pages/overview.php:65
 msgid "Go to live webpage"
 msgstr "Go to live webpage"
 
-#: admin/pages/overview.php:71
+#: admin/pages/overview.php:74
 msgid "Just add a title, description, image, location and dates."
 msgstr "Just add a title, description, image, location and dates."
 
-#: admin/pages/overview.php:72
+#: admin/pages/overview.php:75
 msgid "New event"
 msgstr "New event"
 
-#: admin/pages/overview.php:78
+#: admin/pages/overview.php:81
 msgid "Edit events"
 msgstr "Edit events"
 
-#: admin/pages/overview.php:80
+#: admin/pages/overview.php:83
 msgid "Edit, publish and view your existing events."
 msgstr "Edit, publish and view your existing events."
 
-#: admin/pages/overview.php:81
+#: admin/pages/overview.php:84
 msgid "View all events"
 msgstr "View all events"
 
-#: admin/pages/overview.php:83
+#: admin/pages/overview.php:86
 msgid "Upcoming events"
 msgstr "Upcoming events"
 
-#: admin/pages/overview.php:89
+#: admin/pages/overview.php:92
 msgid "Change settings"
 msgstr "Change settings"
 
-#: admin/pages/overview.php:91
+#: admin/pages/overview.php:94
 msgid "Easily adjust the design, page layouts, URLs and general settings."
 msgstr "Easily adjust the design, page layouts, URLs and general settings."
 
-#: admin/pages/overview.php:92
+#: admin/pages/overview.php:95
 msgid "Edit design"
 msgstr "Edit design"
 
-#: admin/pages/overview.php:93
+#: admin/pages/overview.php:96
 msgid "General settings"
 msgstr "General settings"
 
-#: admin/pages/overview.php:94
+#: admin/pages/overview.php:97
 msgid "Event settings"
 msgstr "Event settings"
 
-#: admin/pages/settings.php:35
+#: admin/pages/settings.php:25
 msgid "Design"
 msgstr "Design"
 
-#: admin/pages/settings.php:38
+#: admin/pages/settings.php:28
 msgid "General"
 msgstr "General"
 
-#: admin/pages/settings.php:41
+#: admin/pages/settings.php:31
 msgid "Box View"
 msgstr "Box View"
 
-#: admin/pages/settings.php:44
+#: admin/pages/settings.php:34
 msgid "List View"
 msgstr "List View"
 
-#: admin/pages/settings.php:47
+#: admin/pages/settings.php:37
 msgid "Calendar View"
 msgstr "Calendar View"
 
-#: admin/pages/settings.php:50
+#: admin/pages/settings.php:40
 msgid "Details Page"
 msgstr "Details Page"
+
+#: admin/pages/settings.php:43
+msgid "Cloud"
+msgstr "Cloud"
 
 #: admin/pages/settings_boxes.php:21 admin/pages/settings_calendar.php:20
 #: admin/pages/settings_design.php:36 admin/pages/settings_detail.php:24
@@ -385,6 +389,18 @@ msgstr "None"
 #: admin/pages/settings_calendar.php:37
 msgid "Activate calendar?"
 msgstr "Activate calendar?"
+
+#: admin/pages/settings_cloud.php:41
+msgid ""
+"If your events are not showing - or you would like to change to a different "
+"account, you can synchronize your events here."
+msgstr ""
+"If your events are not showing - or you would like to change to a different "
+"account, you can synchronize your events here."
+
+#: admin/pages/settings_cloud.php:45
+msgid "Sync events"
+msgstr "Sync events"
 
 #: admin/pages/settings_design.php:55
 msgid "Primary Button"
@@ -502,8 +518,8 @@ msgstr "Price categories for events"
 msgid "Apply for Pro"
 msgstr "Get TicketMachine Pro"
 
-#: pages/event.php:37 pages/events.php:63 pages/events.php:83
-#: pages/events.php:139 widgets/event_calendar.php:30 widgets/event_list.php:16
+#: pages/event.php:37 pages/events.php:61 pages/events.php:81
+#: pages/events.php:137 widgets/event_calendar.php:30 widgets/event_list.php:16
 msgid "No events could be found"
 msgstr "No events could be found"
 
@@ -515,7 +531,7 @@ msgstr "Back to events"
 msgid "Oops!"
 msgstr "Oops!"
 
-#: pages/events.php:159
+#: pages/events.php:167
 msgid "List, Boxes & Calendar are deactivated"
 msgstr "List, Boxes & Calendar are deactivated"
 
