@@ -20,20 +20,22 @@
             "organizer" => $current_organizer->og_abbreviation
         );
 
+        if(!empty($token['access_token']) && !empty($token['refresh_token'])){
+            $wpdb->update(
+                $wpdb->prefix . "ticketmachine_config",
+                $save_array,
+                array('id' => $tm_config->id)
+            );
 
-        $wpdb->update(
-            $wpdb->prefix . "ticketmachine_config",
-            $save_array,
-            array('id' => $tm_config->id)
-        );
-        $globals->activated = 1;
-    ?>
+            $globals->activated = 1;
+        ?>
 
-    <div class="notice notice-success is-dismissable">
-        <p><?php echo __('Saved', 'ticketmachine'); ?>!</p>
-    </div>
+        <div class="notice notice-success is-dismissable">
+            <p><?php echo __('Saved', 'ticketmachine'); ?>!</p>
+        </div>
 
-    <?php
+        <?php
+        }
     }
 
     $current_locale = get_locale();

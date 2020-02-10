@@ -22,13 +22,14 @@
             "organizer" => $current_organizer->og_abbreviation
         );
 
-
-        $wpdb->update(
-            $wpdb->prefix . "ticketmachine_config",
-            $save_array,
-            array('id' => $tm_config->id)
-        );
-        $globals->activated = 1;
+        if(!empty($token['access_token']) && !empty($token['refresh_token'])){
+            $wpdb->update(
+                $wpdb->prefix . "ticketmachine_config",
+                $save_array,
+                array('id' => $tm_config->id)
+            );
+            $globals->activated = 1;
+        }
     }
     
     if($globals->activated == 1) {
