@@ -1,4 +1,5 @@
 <?php
+    global $globals, $api;
     $current_locale = get_locale();
     $parsed_locale = substr($current_locale, 0, strpos($current_locale, '_'));
 
