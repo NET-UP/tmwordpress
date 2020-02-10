@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-02-10 11:07+0100\n"
-"PO-Revision-Date: 2020-02-10 11:08+0100\n"
+"PO-Revision-Date: 2020-02-10 11:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -407,10 +407,8 @@ msgstr ""
 "synchronisieren."
 
 #: admin/pages/settings_cloud.php:45
-#, fuzzy
-#| msgid "Search for events"
 msgid "Sync events"
-msgstr "Suche nach Veranstaltungen"
+msgstr "Veranstaltung synchronizieren"
 
 #: admin/pages/settings_design.php:55
 msgid "Primary Button"
