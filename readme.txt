@@ -1,8 +1,8 @@
 === TicketMachine Event Manager ===
-Contributors: TicketMachine
+Contributors: NET-UP AG, TicketMachine
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
-Tags: Event, Events, Veranstaltung, Veranstaltungen, Kalender, Veranstalter, DSGVO
+Tags: Event, Veranstaltung, Events, Veranstaltungen, Calendar, Kalender, Organizer, Veranstalter, GDPR, DSGVO
 Requires at least: 4.0.1
 Tested up to: 5.3.2
 Stable tag: 1.0.0
@@ -19,19 +19,19 @@ Alle Veranstaltungen können mit Freunden geteilt werden, so werden Ihre Veranst
 
 Sind Sie neu beim TicketMachine Event Manager Plugin? Lesen Sie sich die [Benutzerdokumentation] (Link zu Helpdesk) durch um durchstarten zu können.
 
-= Fuktionen =
+= Funktionen =
 
 Hier ist eine Liste der Funktionen des TicketMachine Event Manager Plugins:
 
+### TicketMachine Event Manager Free:
 * Veranstaltungen erstellen und verwalten
-* Das Plugin ist zu 100% DSGVO konform
-* DSGVO konforme Google Maps integration
 * Kalender Ansicht können leicht als Widgets via Shortcode eingebunden werden
 * Kachel Ansicht kann leicht als Widgets via Shortcode eingebunden werden
 * Eventlisten Ansicht können leicht als Widgets via Shortcode eingebunden werden
 * Veranstaltungsbilder
 * Das Plugin ist SEO-optimiert, ihre Veranstaltungen haben dadurch ein höheres ranking bei Google
 * Mehrtagesveranstaltungen
+* DSGVO konforme Google Maps integration
 * DSGVO konforme Social-Media teilen funktionalität
 * individuell Anpassbares Design auf Ihre Webseite
 * Übersetzbar mit WPML
@@ -41,13 +41,15 @@ Hier ist eine Liste der Funktionen des TicketMachine Event Manager Plugins:
 * Google Kalender Integration (Gcal)
 * BiTV / WCAG konform für uneingeschränkte Benutzung der Veranstaltungen für alle
 * W3C valide
+
+### TicketMachine Event Manager Pro:
 * **[Premium]** Verkauf von Tickets für Ihre Veranstaltungen
 * **[Premium]** Wiederkehrende Veranstaltungen
 * **[Premium]** Bestuhle Veranstaltungen mit Saalplänen
 * **[Premium]** Community Veranstaltungen
 * **[Premium]** Verwaltung von Kontingenten
 * **[Premium]** Gutscheine erstellen und einlösen
-* **[Premium]** Verschidene Preiskategorien erstellen und einlösen
+* **[Premium]** Verschiedene Preiskategorien erstellen und einlösen
 * **[Premium]** Google Map Ansicht aller Veranstaltungen
 * **[Premium]** Einrichten von Bundels
 
