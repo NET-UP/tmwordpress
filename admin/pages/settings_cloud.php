@@ -1,10 +1,12 @@
-<?php ?>
+<?php
+    $current_locale = get_locale();
+    $parsed_locale = substr($current_locale, 0, strpos($current_locale, '_'));
 
-<table class="form-table">
-	<tbody>
-		<tr>
-			<th><label><?php echo __('Activate Boxes?', 'ticketmachine'); ?></label></th>
-            <td><input name="show_boxes" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_boxes){ ?>checked<?php } ?>/></td>
-		</tr>
-	</tbody>
-</table>
+    $authorize_url = $api->auth->proxy;
+    $authorize_url .= "?";
+    $authorize_url .= http_build_query($api->auth->data);
+?>
+
+<a class="button button-primary mt-4 px-3 py-md-1" style="font-size:14px" href="<?php echo $authorize_url; ?>">
+    <?php echo __("Sync events", "ticketmachine"); ?>
+</a>
