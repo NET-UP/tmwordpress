@@ -11,7 +11,6 @@
         $current_organizer = (object)tmapi_organizers()[0];
 
         $save_array = array(
-            "activated" => 1,
             "api_access_token" => $token['access_token'],
             "api_refresh_token" => $token['refresh_token'],
             "api_refresh_last" => time(),
