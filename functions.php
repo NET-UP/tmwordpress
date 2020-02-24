@@ -42,6 +42,7 @@
 
 	  print_r($url);
 	  print_r($headers);
+	  print_r($post);
 	  print_r($response);
 	 
 	  return json_decode($response, true);
