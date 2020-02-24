@@ -1,7 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-	if (current_user_can('edit_posts')) {
+	if ( current_user_can('edit_posts') ) {
 		include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 		include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 
@@ -40,7 +40,7 @@
 					null,
 					97
 				);
-				if (current_user_can('administrator')) {
+				if ( current_user_can('administrator') ) {
 					add_submenu_page(
 						'ticketmachine_event_manager',
 						esc_html__('Settings', 'ticketmachine'),
