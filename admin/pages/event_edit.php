@@ -71,7 +71,7 @@
                     <div id="titlediv">
                         <div id="titlewrap">
                             <label class="screen-reader-text" id="post-name-prompt-text" for="ev_name"><?php esc_html_e('Enter the event name', 'ticketmachine') ?></label>
-                            <input type="text" placeholder="<?php esc_attr_e('Event Name', 'ticketmachine') ?>" name="ev_name" size="30" id="title" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
+                            <input type="text" placeholder="<?php esc_attr('Event Name', 'ticketmachine') ?>" name="ev_name" size="30" id="title" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
                         </div>
                     </div>
 
@@ -109,7 +109,7 @@
                                     <div id="major-publishing-actions">
                                         <div id="publishing-action">
                                             <span class="spinner"></span>
-                                            <input type="submit" class="button button-primary button-large" id="publish" value="<?php empty($event->id) ? esc_attr_e('Save', 'ticketmachine') : esc_attr_e('Update', 'ticketmachine') ?>">
+                                            <input type="submit" class="button button-primary button-large" id="publish" value="<?php empty($event->id) ? esc_attr('Save', 'ticketmachine') : esc_attr('Update', 'ticketmachine') ?>">
                                         </div>
                                         <div class="clear"></div>
                                     </div>
@@ -124,7 +124,7 @@
                                 <div class='image-preview-wrapper'>
                                     <img id='image-preview' src='<?php echo $event->event_img_url; ?>' width='100' height='100' style='max-height: 500px; width: 100%;'>
                                 </div>
-                                <input id="upload_image_button" type="button" class="button" style="display:block;width:100%;" value="<?php esc_attr_e( 'Add Image', 'ticketmachine' ); ?>" />
+                                <input id="upload_image_button" type="button" class="button" style="display:block;width:100%;" value="<?php esc_attr( 'Add Image', 'ticketmachine' ); ?>" />
                                 <input type='hidden' name='event_img_url' id='image_attachment_id' value='<?php echo $event->event_img_url; ?>'>
                             </div>
                         </div>

@@ -23,12 +23,12 @@
 					if(!empty($event->ev_location_name)){
 						$ticketmachine_output .= '<p class="card-text mt-0 px-2 pt-sm-1 pb-3 pb-sm-2 ellipsis">';
 							$ticketmachine_output .= '<i class="fas fa-map-marker-alt tm-icon"></i> &nbsp;';
-							$ticketmachine_output .= '<a aria-label="' . esc_attr_e("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->ev_location_name . " " . $event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country ) . '" target="_blank" title="' . esc_html__("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
+							$ticketmachine_output .= '<a aria-label="' . esc_attr("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->ev_location_name . " " . $event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country ) . '" target="_blank" title="' . esc_html__("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
 						$ticketmachine_output .= '</p>';
 					}
 					$ticketmachine_output .= '</div>';
 					$ticketmachine_output .= '<div class="col-sm-4 col-md-5">';
-					  $ticketmachine_output .= '<a aria-label="' . esc_attr_e("To ticket selection for", 'ticketmachine') . ' ' . $event->ev_name  . '" href="/' . $globals->event_slug .'/?id=' . $event->id . '" class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . esc_html__("To ticket selection", 'ticketmachine') . '">';
+					  $ticketmachine_output .= '<a aria-label="' . esc_attr("To ticket selection for", 'ticketmachine') . ' ' . $event->ev_name  . '" href="/' . $globals->event_slug .'/?id=' . $event->id . '" class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . esc_html__("To ticket selection", 'ticketmachine') . '">';
 						$ticketmachine_output .= esc_html__("More", 'ticketmachine') . ' &nbsp;<i class="fas fa-angle-right"></i>';
 					  $ticketmachine_output .= '</a>';
 					$ticketmachine_output .= '</div>';
