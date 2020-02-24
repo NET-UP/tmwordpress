@@ -62,11 +62,11 @@
 	
 	$globals->search_query = "";
 	if(isset($_GET['q'])){
-		$globals->search_query = htmlentities($_GET['q']);
+		$globals->search_query = htmlentities(sanitize_text_field($_GET['q']));
 	}
 	$globals->tag = "";
 	if(isset($_GET['tag'])){
-		$globals->tag = htmlentities($_GET['tag']);
+		$globals->tag = htmlentities(sanitize_text_field($_GET['tag']));
 	}
 	$globals->organizer = $ticketmachine_config->organizer;
 

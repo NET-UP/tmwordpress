@@ -65,17 +65,17 @@ class Event_List_Table extends WP_List_Table {
 
 		$params = array();
 		if(isset($_GET['s'])){
-			$params = ticketmachine_array_push_assoc($params, "query", $_GET['s']);
+			$params = ticketmachine_array_push_assoc($params, "query",sanitize_text_field( $_GET['s']));
 		}
-        if(isset($_GET['status']) && $_GET['status'] == "upcoming"){
+        if(isset($_GET['status']) && sanitize_text_field($_GET['status']) == "upcoming"){
             $params = ticketmachine_array_push_assoc($params, "show_old", 0);
         }else{
             $params = ticketmachine_array_push_assoc($params, "show_old", 1);
         }
         $params = ticketmachine_array_push_assoc($params, "per_page", 100);
-        if(isset($_GET['status']) && $_GET['status'] == "published"){
+        if(isset($_GET['status']) && sanitize_text_field($_GET['status']) == "published"){
             $params = ticketmachine_array_push_assoc($params, "approved", 1);
-        }elseif(isset($_GET['status']) && $_GET['status'] == "drafts") {
+        }elseif(isset($_GET['status']) && sanitize_text_field($_GET['status']) == "drafts") {
             $params = ticketmachine_array_push_assoc($params, "approved", 0);
         }
         $params = ticketmachine_array_push_assoc($params, "per_page", 100);
@@ -444,17 +444,17 @@ function copy_event(){
  */
 function ticketmachine_render_list_page(){
 
-    if( isset($_GET['action']) && $_GET['action'] == "edit" ) {
+    if( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "edit" ) {
         include "event_edit.php";
     } else {
 
-        if ( isset($_GET['action']) && $_GET['action'] == "save" && isset($_GET['id']) && $_POST ) {
+        if ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "save" && isset($_GET['id']) && $_POST ) {
             include "actions/event_save.php";
-        } elseif ( isset($_GET['action']) && $_GET['action'] == "publish" && isset($_GET['id']) || isset($_GET['action']) && $_GET['action'] == "deactivate" && isset($_GET['id']) ) {
+        } elseif ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "publish" && isset($_GET['id']) || isset($_GET['action']) && sanitize_text_field($_GET['action']) == "deactivate" && isset($_GET['id']) ) {
             include "actions/event_toggle.php";
-        } elseif ( isset($_GET['action']) && $_GET['action'] == "delete" && isset($_GET['id']) ) {
+        } elseif ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "delete" && isset($_GET['id']) ) {
             include "actions/event_remove.php";
-        } elseif ( isset($_GET['action']) && $_GET['action'] == "copy" && isset($_GET['id']) ){
+        } elseif ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "copy" && isset($_GET['id']) ){
             include "actions/event_copy.php";
         }
 

@@ -3,8 +3,8 @@
 	if (isset($_POST['submit'])) {
 		$save_array = 
 			array(
-				"events_slug_id" => $_POST['events_slug_id'],
-				"event_slug_id" => $_POST['event_slug_id']
+				"events_slug_id" => absint($_POST['events_slug_id']),
+				"event_slug_id" => absint($_POST['event_slug_id'])
 			);
 		if (!empty($ticketmachine_config)) {
 			$wpdb->update(

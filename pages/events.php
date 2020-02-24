@@ -5,13 +5,13 @@
 
 		$params = array();
 		if(isset($_GET['q'])){
-			$params = ticketmachine_array_push_assoc($params, "query", $_GET['q']);
+			$params = ticketmachine_array_push_assoc($params, "query", sanitize_text_field($_GET['q']));
 		}
 		if(isset($_GET['sort'])){
-			$params = ticketmachine_array_push_assoc($params, "sort", $_GET['sort']);
+			$params = ticketmachine_array_push_assoc($params, "sort", sanitize_text_field($_GET['sort']));
 		}
 		if(isset($_GET['tag'])){
-			$params = ticketmachine_array_push_assoc($params, "tag", $_GET['tag']);
+			$params = ticketmachine_array_push_assoc($params, "tag", sanitize_text_field($_GET['tag']));
 		}
 		$params = ticketmachine_array_push_assoc($params, "approved", 1);
 		$events = ticketmachine_ticketmachine_tmapi_events($params)->result;

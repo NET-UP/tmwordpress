@@ -3,25 +3,25 @@
 	if (isset($_POST['submit'])) {
 		$save_array = 
 			array(
-				"button_primary_background_color" => $_POST['button_primary_background_color'],
-				"button_primary_text_color" => $_POST['button_primary_text_color'],
-				"button_primary_border_color" => $_POST['button_primary_border_color'],
-				"button_primary_background_color_hover" => $_POST['button_primary_background_color_hover'],
-				"button_primary_text_color_hover" => $_POST['button_primary_text_color_hover'],
-				"button_primary_border_color_hover" => $_POST['button_primary_border_color_hover'],
+				"button_primary_background_color" => sanitize_hex_color($_POST['button_primary_background_color']),
+				"button_primary_text_color" => sanitize_hex_color($_POST['button_primary_text_color']),
+				"button_primary_border_color" => sanitize_hex_color($_POST['button_primary_border_color']),
+				"button_primary_background_color_hover" => sanitize_hex_color($_POST['button_primary_background_color_hover']),
+				"button_primary_text_color_hover" => sanitize_hex_color($_POST['button_primary_text_color_hover']),
+				"button_primary_border_color_hover" => sanitize_hex_color($_POST['button_primary_border_color_hover']),
 
-				"button_secondary_border_color_hover" => $_POST['button_secondary_border_color_hover'],
-				"button_secondary_background_color" => $_POST['button_secondary_background_color'],
-				"button_secondary_text_color" => $_POST['button_secondary_text_color'],
-				"button_secondary_border_color" => $_POST['button_secondary_border_color'],
-				"button_secondary_background_color_hover" => $_POST['button_secondary_background_color_hover'],
-				"button_secondary_text_color_hover" => $_POST['button_secondary_text_color_hover'],
-				"button_secondary_border_color_hover" => $_POST['button_secondary_border_color_hover'],
+				"button_secondary_border_color_hover" => sanitize_hex_color($_POST['button_secondary_border_color_hover']),
+				"button_secondary_background_color" => sanitize_hex_color($_POST['button_secondary_background_color']),
+				"button_secondary_text_color" => sanitize_hex_color($_POST['button_secondary_text_color']),
+				"button_secondary_border_color" => sanitize_hex_color($_POST['button_secondary_border_color']),
+				"button_secondary_background_color_hover" => sanitize_hex_color($_POST['button_secondary_background_color_hover']),
+				"button_secondary_text_color_hover" => sanitize_hex_color($_POST['button_secondary_text_color_hover']),
+				"button_secondary_border_color_hover" => sanitize_hex_color($_POST['button_secondary_border_color_hover']),
 
-				"link_text_color" => $_POST['link_text_color'],
-				"link_text_color_hover" => $_POST['link_text_color_hover'],
+				"link_text_color" => sanitize_hex_color($_POST['link_text_color']),
+				"link_text_color_hover" => sanitize_hex_color($_POST['link_text_color_hover']),
 
-				"date_text_color" => $_POST['date_text_color']
+				"date_text_color" => sanitize_hex_color($_POST['date_text_color'])
 			);
 		if (!empty($ticketmachine_design)) {
 			$wpdb->update(

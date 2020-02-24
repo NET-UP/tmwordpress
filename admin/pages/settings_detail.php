@@ -4,15 +4,15 @@
 
 		$save_array = 
 			array(
-				"show_social_media" => $_POST['show_social_media'],
-				"show_social_media_ical" => $_POST['show_social_media_ical'],
-				"show_social_media_google_cal" => $_POST['show_social_media_google_cal'],
-				"show_social_media_facebook" => $_POST['show_social_media_facebook'],
-				"show_social_media_twitter" => $_POST['show_social_media_twitter'],
-				"show_social_media_email" => $_POST['show_social_media_email'],
-				"show_social_media_messenger" => $_POST['show_social_media_messenger'],
-				"show_social_media_whatsapp" => $_POST['show_social_media_whatsapp'],
-				"show_google_map" => $_POST['show_google_map']
+				"show_social_media" => absint($_POST['show_social_media']),
+				"show_social_media_ical" => absint($_POST['show_social_media_ical']),
+				"show_social_media_google_cal" => absint($_POST['show_social_media_google_cal']),
+				"show_social_media_facebook" => absint($_POST['show_social_media_facebook']),
+				"show_social_media_twitter" => absint($_POST['show_social_media_twitter']),
+				"show_social_media_email" => absint($_POST['show_social_media_email']),
+				"show_social_media_messenger" => absint($_POST['show_social_media_messenger']),
+				"show_social_media_whatsapp" => absint($_POST['show_social_media_whatsapp']),
+				"show_google_map" => absint($_POST['show_google_map'])
 			);
 		if (!empty($ticketmachine_config)) {
 			$wpdb->update(

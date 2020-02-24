@@ -2,8 +2,8 @@
     global $globals, $api;
     
     if(isset($_GET['id'])){
-        $_POST['id'] = $_GET['id'];
-        $_POST['organizer_id'] = $globals->organizer_id;
+        absint($_POST['id']) = absint($_GET['id']);
+        absint($_POST['organizer_id']) = $globals->organizer_id;
         
         $post_json = json_encode($_POST);
         $ticketmachine_json = ticketmachine_tmapi_event_copy($post_json);
