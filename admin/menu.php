@@ -6,7 +6,7 @@
 
 		echo "Can i?" . current_user_can('administrator');
 
-		if (current_user_can('administrator')){
+		if ( 1 == 1 ){
 
 			include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 			include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
