@@ -94,4 +94,7 @@
 			include( plugin_dir_path( __FILE__) . 'pages/installation.php');
 		}
 			
+	
+		
+		echo "Can i?" . current_user_can('administrator');
 ?>
