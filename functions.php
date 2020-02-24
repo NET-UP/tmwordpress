@@ -41,9 +41,8 @@
 
 	  print_r($url);
 	  print_r($headers);
-	  print_r($resource['body']);
 	 
-	  $response = wp_remote_retrieve_body( $resource );
+	  $response = $resource['body'];
 	  return json_decode($response, true);
 	  
 	}
