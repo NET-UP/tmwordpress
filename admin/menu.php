@@ -3,73 +3,76 @@
 	include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 	include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 
-	function ticketmachine_admin_menu () {
-		global $globals, $api;
-		
-		add_menu_page(
-			'TicketMachine',
-			"TicketMachine",
-			'manage_options',
-			'ticketmachine_event_manager',
-			'ticketmachine_overview_page',
-			null,
-			96
-		);
-
-		if($globals->activated || absint($_GET['code'])) {
-			add_submenu_page(
-				'ticketmachine_event_manager',
-				esc_html__('Overview', 'ticketmachine'),
-				esc_html__('Overview', 'ticketmachine'),
+	if (current_user_can('edit_posts')) {
+		function ticketmachine_admin_menu () {
+			global $globals, $api;
+			
+			add_menu_page(
+				'TicketMachine',
+				"TicketMachine",
 				'manage_options',
 				'ticketmachine_event_manager',
 				'ticketmachine_overview_page',
 				null,
-				97
-			);	
-			add_submenu_page(
-				'ticketmachine_event_manager',
-				esc_html__('Events', 'ticketmachine'),
-				esc_html__('Events', 'ticketmachine'),
-				'manage_options',
-				'ticketmachine_events',
-				'ticketmachine_render_list_page',
-				null,
-				97
+				96
 			);
 
-			add_submenu_page(
-				'ticketmachine_event_manager',
-				esc_html__('Settings', 'ticketmachine'),
-				esc_html__('Settings', 'ticketmachine'),
-				'manage_options',
-				'ticketmachine_settings',
-				'ticketmachine_settings_page',
-				null,
-				98
-			);
+			if($globals->activated || absint($_GET['code'])) {
+				add_submenu_page(
+					'ticketmachine_event_manager',
+					esc_html__('Overview', 'ticketmachine'),
+					esc_html__('Overview', 'ticketmachine'),
+					'manage_options',
+					'ticketmachine_event_manager',
+					'ticketmachine_overview_page',
+					null,
+					97
+				);	
 
-			#add_submenu_page(
-			#	'ticketmachine_events',
-			#	esc_html__('Categories', 'ticketmachine'),
-			#	esc_html__('Categories', 'ticketmachine'),
-			#	'manage_options',
-			#	'ticketmachine_categories',
-			#	'ticketmachine_render_categories_page',
-			#	null,
-			#	99
-			#);
-		}else{
-			add_submenu_page(
-				'ticketmachine_event_manager',
-				esc_html__('Install', 'ticketmachine'),
-				esc_html__('Install', 'ticketmachine'),
-				'manage_options',
-				'ticketmachine_event_manager',
-				'ticketmachine_installation_page',
-				null,
-				100
-			);
+				add_submenu_page(
+					'ticketmachine_event_manager',
+					esc_html__('Events', 'ticketmachine'),
+					esc_html__('Events', 'ticketmachine'),
+					'manage_options',
+					'ticketmachine_events',
+					'ticketmachine_render_list_page',
+					null,
+					97
+				);
+				if (current_user_can('administrator')) {
+					add_submenu_page(
+						'ticketmachine_event_manager',
+						esc_html__('Settings', 'ticketmachine'),
+						esc_html__('Settings', 'ticketmachine'),
+						'manage_options',
+						'ticketmachine_settings',
+						'ticketmachine_settings_page',
+						null,
+						98
+					);
+				}
+				#add_submenu_page(
+				#	'ticketmachine_events',
+				#	esc_html__('Categories', 'ticketmachine'),
+				#	esc_html__('Categories', 'ticketmachine'),
+				#	'manage_options',
+				#	'ticketmachine_categories',
+				#	'ticketmachine_render_categories_page',
+				#	null,
+				#	99
+				#);
+			}else{
+				add_submenu_page(
+					'ticketmachine_event_manager',
+					esc_html__('Install', 'ticketmachine'),
+					esc_html__('Install', 'ticketmachine'),
+					'manage_options',
+					'ticketmachine_event_manager',
+					'ticketmachine_installation_page',
+					null,
+					100
+				);
+			}
 		}
 	}
 
