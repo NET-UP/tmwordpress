@@ -22,7 +22,7 @@
             "organizer" => $current_organizer->og_abbreviation
         );
 
-        print_r( $save_array);
+        print_r( $token);
 
         if(!empty($token['access_token']) && !empty($token['refresh_token'])){
             $wpdb->update(
