@@ -17,13 +17,14 @@
 
 		if($post) {
 			$headers = ticketmachine_array_push_assoc($headers, 'Content-Type', 'application/json');
-		}
 
-		$resource = wp_remote_post($url, array(
-			'method'  => 'POST',
-			'timeout' => 45,
-			'headers' => $headers
-		));
+			$resource = wp_remote_post($url, array(
+				'method'  => 'POST',
+				'timeout' => 45,
+				'headers' => $headers,
+				'body' => $post
+			));
+		}
 
 	  }else{
 
