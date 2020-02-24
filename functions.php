@@ -38,6 +38,9 @@
 		));
 
 	  }
+
+	  print_r($url);
+	  print_r($headers);
 	 
 	  $response = wp_remote_retrieve_body( $resource );
 	  return json_decode($response, true);
