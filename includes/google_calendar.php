@@ -1,5 +1,5 @@
 <?php
-    //if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+    if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 //dont move this!
 $google_calendar_url ='https://calendar.google.com/calendar/r/eventedit?
 &text='. urlencode($event->ev_name) .'
@@ -9,4 +9,6 @@ $google_calendar_url ='https://calendar.google.com/calendar/r/eventedit?
 &sf=true
 &output=xml';
 
+echo $google_calendar_url;
+echo "HELLLLLSLSLSLS";
 ?>
