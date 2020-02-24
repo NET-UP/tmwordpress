@@ -8,15 +8,15 @@
 	function ticketmachine_apiRequest($url, $post=FALSE, $method="GET", $headers=array()) {
 
 	  $headers = array();
-	  ticketmachine_array_push_assoc($headers, 'User-Agent', 'https://www.ticketmachine.de/');
+	  $headers = ticketmachine_array_push_assoc($headers, 'User-Agent', 'https://www.ticketmachine.de/');
 
 	  if(isset($_SESSION['access_token']))
-	  	ticketmachine_array_push_assoc($headers, 'Authorization', 'Bearer ' . $_SESSION['access_token']);
+	  	$headers = ticketmachine_array_push_assoc($headers, 'Authorization', 'Bearer ' . $_SESSION['access_token']);
 
 	  if($method == "POST") {
 
 		if($post) {
-			ticketmachine_array_push_assoc($headers, 'Content-Type', 'application/json');
+			$headers = ticketmachine_array_push_assoc($headers, 'Content-Type', 'application/json');
 		}
 
 		$resource = wp_remote_post($url, array(
@@ -28,7 +28,7 @@
 	  }else{
 
 		if($post) {
-			ticketmachine_array_push_assoc($headers, 'Accept', 'application/json');
+			$headers = ticketmachine_array_push_assoc($headers, 'Accept', 'application/json');
 		}
 
 		$resource = wp_remote_get($url, array(
