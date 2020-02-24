@@ -109,7 +109,7 @@
                                     <div id="major-publishing-actions">
                                         <div id="publishing-action">
                                             <span class="spinner"></span>
-                                            <input type="submit" class="button button-primary button-large" id="publish" value="<?php empty($event->id) ? esc_attr('Save', 'ticketmachine') : esc_attr('Update', 'ticketmachine') ?>">
+                                            <input type="submit" class="button button-primary button-large" id="publish" value="<?php empty($event->id) ? esc_attr_e('Save', 'ticketmachine') : esc_attr_e('Update', 'ticketmachine') ?>">
                                         </div>
                                         <div class="clear"></div>
                                     </div>
