@@ -2,39 +2,42 @@
     global $globals, $api;
 
     if(!isset($_POST['rules']['shown'])) {
-        absint($_POST['rules']['shown']) = 1;
+        $_POST['rules']['shown'] = 1;
     }
     if(!isset($_POST['approved'])) {
-        absint($_POST['approved']) = 0;
+        $_POST['approved'] = 0;
     }
     if(isset($_POST['tags'])) {
-        sanitize_text_field($_POST['tags']) = explode(",", $_POST['tags']);
+        $_POST['tags'] = explode(",", $_POST['tags']);
+        array_walk($arr, function(&$value) {
+            $value = sanitize_text_field($value);
+        });
     }
     if(isset($_POST['entrytime'])) {
-        sanitize_text_field($_POST['entrytime']) = ticketmachine_i18n_reverse_date($_POST['entrytime']['date'] . $_POST['entrytime']['time']);
+        $_POST['entrytime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($_POST['entrytime']['date'] . $_POST['entrytime']['time']));
     }
     if(isset($_POST['ev_date'])) {
-        sanitize_text_field($_POST['ev_date']) = ticketmachine_i18n_reverse_date($_POST['ev_date']['date'] . $_POST['ev_date']['time']);
+        $_POST['ev_date'] = sanitize_text_field(ticketmachine_i18n_reverse_date($_POST['ev_date']['date'] . $_POST['ev_date']['time']));
     }
     if(isset($_POST['endtime'])) {
-        sanitize_text_field($_POST['endtime']) = ticketmachine_i18n_reverse_date($_POST['endtime']['date'] . $_POST['endtime']['time']);
+        $_POST['endtime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($_POST['endtime']['date'] . $_POST['endtime']['time']));
     }
 
     if(isset($_POST['description'])) {
-        sanitize_text_field($_POST['description']) = strip_shortcodes($_POST['description']);
+        $_POST['description'] = sanitize_text_field(strip_shortcodes($_POST['description']));
     }
 
     if(!empty($_POST['id'])) {
-        absint($_POST['id']) = (int)absint($_POST['id']);
+        $_POST['id'] = absint($_POST['id']);
     }
     if(isset($_POST['vat_id'])){
-        absint($_POST['vat_id']) = 1;
+        $_POST['vat_id'] = 1;
     }
-    absint($_POST['organizer_id']) = (int)absint($_POST['organizer_id']);
-    absint($_POST['approved']) = (int)absint($_POST['approved']);
-    absint($_POST['rules']['shown']) = (int)absint($_POST['rules']['shown']);
-    absint($_POST['rules']['sale_active']) = (int)absint($_POST['rules']['sale_active']);
-    absint($_POST['vat_id']) = (int)absint($_POST['vat_id']);
+    $_POST['organizer_id'] = absint($_POST['organizer_id']);
+    $_POST['approved'] = absint($_POST['approved']);
+    $_POST['rules']['shown'] = absint($_POST['rules']['shown']);
+    $_POST['rules']['sale_active'] = absint($_POST['rules']['sale_active']);
+    $_POST['vat_id'] = absint($_POST['vat_id']);
 
     $post_json = json_encode(
         str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", $_POST))), 

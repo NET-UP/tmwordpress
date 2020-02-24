@@ -7,28 +7,29 @@
 
 	function ticketmachine_apiRequest($url, $post=FALSE, $method="GET", $headers=array()) {
 
-	  $headers = [];
-	  $headers[] = 'User-Agent: https://www.ticketmachine.de/';
+	  $headers = array();
+	  $headers = ticketmachine_array_push_assoc($headers, 'User-Agent', 'https://www.ticketmachine.de/');
 
 	  if(isset($_SESSION['access_token']))
-		$headers[] = 'Authorization: Bearer '.$_SESSION['access_token'];
+	  	$headers = ticketmachine_array_push_assoc($headers, 'Authorization', 'Bearer ' . $_SESSION['access_token']);
 
 	  if($method == "POST") {
 
 		if($post) {
-			$headers[] = 'Content-Type: application/json';
-		}
+			$headers = ticketmachine_array_push_assoc($headers, 'Content-Type', 'application/json');
 
-		$resource = wp_remote_post($url, array(
-			'method'  => 'POST',
-			'timeout' => 45,
-			'headers' => $headers
-		));
+			$resource = wp_remote_post($url, array(
+				'method'  => 'POST',
+				'timeout' => 45,
+				'headers' => $headers,
+				'body' => $post
+			));
+		}
 
 	  }else{
 
 		if($post) {
-			$headers[] = 'Accept: application/json';
+			$headers = ticketmachine_array_push_assoc($headers, 'Accept', 'application/json');
 		}
 
 		$resource = wp_remote_get($url, array(
@@ -39,11 +40,6 @@
 
 	  }
 	  $response = $resource['body'];
-
-	  print_r($url);
-	  print_r($headers);
-	  print_r($post);
-	  print_r($response);
 	 
 	  return json_decode($response, true);
 	  

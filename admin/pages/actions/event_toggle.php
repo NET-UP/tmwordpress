@@ -6,10 +6,10 @@
         $ticketmachine_json_a = ticketmachine_tmapi_event($params);
         $_POST = (array)$ticketmachine_json_a;
 
-        absint($_POST['id']) = absint($_GET['id']);
-        absint($_POST['organizer_id']) = $globals->organizer_id;
-        absint($_POST['approved']) = 1 - absint($_POST['approved']);
-        absint($_POST['rules']['shown']) = absint($_POST['approved']);
+        $_POST['id'] = absint($_GET['id']);
+        $_POST['organizer_id'] = absint($globals->organizer_id);
+        $_POST['approved'] = 1 - absint($_POST['approved']);
+        $_POST['rules']['shown'] = absint($_POST['approved']);
         
         $post_json = json_encode($_POST);
         $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
