@@ -12,7 +12,7 @@
         // Append the requested resource location to the URL   
         $url.= $_SERVER['REQUEST_URI'];    
 
-        $bum = WP_PLUGIN_DIR . "/ticketmachine/includes/google_calendar.php":
+        $bum = WP_PLUGIN_DIR . "/ticketmachine/includes/google_calendar.php";
         echo $bum;
 
         include($bum);
