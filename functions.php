@@ -15,12 +15,12 @@
 		if($method == "POST") {
 			if($post) {
 				$headers[] = 'Content-Type: application/json';
-				$resource = wp_remote_post($url, $headers);
+				$resource = wp_remote_post($url, array('timeout' => 10, $headers));
 			}
 		}else{
 			if($post) {  
 				$headers[] = 'Accept: application/json';
-				$resource = wp_remote_get($url, $headers);	
+				$resource = wp_remote_get($url, array('timeout' => 10, $headers));	
 			}
 		}
 		
