@@ -22,7 +22,10 @@
 				'method'  => 'POST',
 				'timeout' => 45,
 				'headers' => $headers,
-				'body' => json_encode($post)
+				'body' 	  => json_encode(
+							str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", $post))), 
+							JSON_UNESCAPED_SLASHES
+						  )
 			));
 		}
 

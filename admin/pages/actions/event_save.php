@@ -39,10 +39,7 @@
     $_POST['rules']['sale_active'] = absint($_POST['rules']['sale_active']);
     $_POST['vat_id'] = absint($_POST['vat_id']);
 
-    $post_json = json_encode(
-        str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", $_POST))), 
-        JSON_UNESCAPED_SLASHES
-    );
+    $post_json = $_POST;
     
     $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
     $response = (object)$ticketmachine_json;
