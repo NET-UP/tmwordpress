@@ -1,11 +1,6 @@
 <?php
     if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	if ( !defined('ABSPATH') ) {
-        //If wordpress isn't loaded load it up.
-        $path = $_SERVER['DOCUMENT_ROOT'];
-        include_once $path . '/wp-load.php';
-    }
-
+    
     include(WP_PLUGIN_DIR . "/ticketmachine/globals.php");
 
     $params = [ "id" => absint($_GET['id']) ];
