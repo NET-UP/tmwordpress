@@ -5,7 +5,7 @@
         $_POST['id'] = absint($_GET['id']);
         $_POST['organizer_id'] = absint($globals->organizer_id);
         
-        $post_json = json_encode($_POST);
+        $post_json = $_POST;
         $ticketmachine_json = ticketmachine_tmapi_event_copy($post_json);
         $response = (object)$ticketmachine_json;
     }
