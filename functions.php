@@ -7,7 +7,7 @@
 
 	function ticketmachine_apiRequest($url, $post=FALSE, $method="GET", $headers=array()) {
 
-	  $headers = [];
+	  $headers = array();
 	  ticketmachine_array_push_assoc($headers, 'User-Agent', 'https://www.ticketmachine.de/');
 
 	  if(isset($_SESSION['access_token']))
