@@ -7,7 +7,7 @@
 		include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 		include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 		
-		if( current_user_can('edit_posts') ) {
+		if( current_user_can('read') ) {
 			add_menu_page(
 				'TicketMachine',
 				"TicketMachine",
