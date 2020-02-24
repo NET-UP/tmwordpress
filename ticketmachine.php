@@ -118,8 +118,6 @@
         global $wpdb;
         global $jal_db_version;
 
-        
-
         //create events overview page
         $new_page_title = 'Events';
         $new_page_slug = 'events';

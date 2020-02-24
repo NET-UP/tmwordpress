@@ -4,7 +4,7 @@
 	function ticketmachine_admin_menu () {
 		global $globals, $api;
 
-		echo current_user_can('administrator');
+		echo "Can i? " current_user_can('administrator');
 
 		if (current_user_can('administrator')){
 
