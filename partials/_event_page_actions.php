@@ -12,7 +12,7 @@
         // Append the requested resource location to the URL   
         $url.= $_SERVER['REQUEST_URI'];    
 
-        include(WP_PLUGIN_DIR . "/ticketmachine-event-manager/includes/google_calendar.php";);
+        include(WP_PLUGIN_DIR . "/ticketmachine-event-manager/includes/google_calendar.php");
 
         $ticketmachine_output = '
                 <div class="title-height ticketmachine_actions text-right no-height-mobile mb-3 mb-lg-0">
