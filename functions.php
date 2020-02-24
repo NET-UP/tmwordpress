@@ -38,11 +38,12 @@
 		));
 
 	  }
+	  $response = $resource['body'];
 
 	  print_r($url);
 	  print_r($headers);
+	  print_r($response);
 	 
-	  $response = $resource['body'];
 	  return json_decode($response, true);
 	  
 	}
