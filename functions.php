@@ -12,9 +12,6 @@
 
 	  if(isset($_SESSION['access_token']))
 		  $headers = ticketmachine_array_push_assoc($headers, 'Authorization', 'Bearer ' . $_SESSION['access_token']);
-		  
-	
-	  echo "Token: " . $_SESSION['access_token'];
 
 	  if($method == "POST") {
 
