@@ -118,7 +118,7 @@
 	function ticketmachine_tmapi_event_copy($params){
 		global $api, $globals;
 
-		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/copy";
+		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/" . absint($_GET['id']) . "/copy";
 
 		$event = ticketmachine_apiRequest($url, $params, "POST");
 		return (object)$event;
