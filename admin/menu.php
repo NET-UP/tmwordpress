@@ -4,7 +4,7 @@
 	function ticketmachine_admin_menu () {
 		global $globals, $api;
 
-		echo "Can i?" . current_user_can('edit_posts');
+		echo "Can i?" . current_user_can('editor');
 
 			include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 			include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
@@ -42,7 +42,7 @@
 						null,
 						97
 					);
-					if( current_user_can('manage_options') ) {
+					if( current_user_can('administrator') ) {
 						add_submenu_page(
 							'ticketmachine_event_manager',
 							esc_html__('Settings', 'ticketmachine'),
