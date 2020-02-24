@@ -40,7 +40,6 @@
 					null,
 					97
 				);
-				if ( current_user_can('administrator') ) {
 					add_submenu_page(
 						'ticketmachine_event_manager',
 						esc_html__('Settings', 'ticketmachine'),
@@ -51,7 +50,6 @@
 						null,
 						98
 					);
-				}
 				#add_submenu_page(
 				#	'ticketmachine_events',
 				#	esc_html__('Categories', 'ticketmachine'),
