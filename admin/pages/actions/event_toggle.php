@@ -11,7 +11,7 @@
         $_POST['approved'] = 1 - absint($_POST['approved']);
         $_POST['rules']['shown'] = absint($_POST['approved']);
         
-        $post_json = json_encode($_POST);
+        $post_json = $_POST;
         $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
         $response = (object)$ticketmachine_json;
     }
