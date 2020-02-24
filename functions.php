@@ -24,6 +24,8 @@
 			}
 		}
 		
+		print_r($resource);
+
 		$response = wp_remote_retrieve_body( $resource );
 		return json_decode($response, true);
 		
