@@ -22,7 +22,7 @@
 				'method'  => 'POST',
 				'timeout' => 45,
 				'headers' => $headers,
-				'body' => $post
+				'body' => json_encode($post)
 			));
 		}
 
