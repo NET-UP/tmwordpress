@@ -255,7 +255,6 @@
 	}
 
     function ticketmachine_export_ics(){
-        if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
         $params = [ "id" => absint($_GET['id']) ];
         $event = ticketmachine_tmapi_event($params);
