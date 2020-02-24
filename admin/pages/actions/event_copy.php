@@ -6,7 +6,7 @@
         $_POST['organizer_id'] = $globals->organizer_id;
         
         $post_json = json_encode($_POST);
-        $ticketmachine_json = tmapi_event_copy($post_json);
+        $ticketmachine_json = ticketmachine_tmapi_event_copy($post_json);
         $response = (object)$ticketmachine_json;
     }
 ?>

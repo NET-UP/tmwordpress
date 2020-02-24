@@ -8,9 +8,9 @@
 
     if(!empty($_GET['code']) && empty($globals->activated)) {
         //Exchange the auth code for an access token
-        $token = tmapi_get_access_token($_GET['code'], "new");
+        $token = ticketmachine_tmapi_get_access_token($_GET['code'], "new");
 
-        $current_organizer = (object)tmapi_organizers()[0];
+        $current_organizer = (object)ticketmachine_tmapi_organizers()[0];
 
         $save_array = array(
             "api_access_token" => $token['access_token'],

@@ -1,11 +1,11 @@
 <?php
 
-	function array_push_assoc($array, $key, $value){
+	function ticketmachine_array_push_assoc($array, $key, $value){
 		$array[$key] = $value;
 		return $array;
 	}
 
-	function apiRequest($url, $post=FALSE, $method="GET", $headers=array()) {
+	function ticketmachine_apiRequest($url, $post=FALSE, $method="GET", $headers=array()) {
 	  $ch = curl_init($url);
 	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 	  $headers = [];
@@ -38,7 +38,7 @@
 
 	/* API Requests */
 	/* Get event list */
-	function tmapi_events($params=array(), $method="GET", $post=FALSE,  $headers=array()){
+	function ticketmachine_ticketmachine_tmapi_events($params=array(), $method="GET", $post=FALSE,  $headers=array()){
 		global $api, $globals;
 
 		$params = (object)$params;
@@ -74,13 +74,13 @@
 			$url .= "&approved[eq]=" . (int)$params->approved;
 		}
 
-		$events = (object)apiRequest($url, $post, $method, $headers);
+		$events = (object)ticketmachine_apiRequest($url, $post, $method, $headers);
 
 		return $events;
 	}
 
 	/* Get event */
-	function tmapi_event($params=array(), $method="GET", $post=FALSE, $headers=array()){
+	function ticketmachine_tmapi_event($params=array(), $method="GET", $post=FALSE, $headers=array()){
 		global $api, $globals;
 		if($method == "POST"){
 			$post = $params;
@@ -93,40 +93,40 @@
 			$url .= "?categories=true";
 		}
 
-		$event = (object)apiRequest($url, $post, $method, $headers);
+		$event = (object)ticketmachine_apiRequest($url, $post, $method, $headers);
 
 		return $event;
 	}
 
 	/* Copy event */
-	function tmapi_event_copy($params){
+	function ticketmachine_tmapi_event_copy($params){
 		global $api, $globals;
 
 		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/" . $_GET['id'] . "/copy";
 
-		$event = apiRequest($url, $params, "POST");
+		$event = ticketmachine_apiRequest($url, $params, "POST");
 		return (object)$event;
 	}
 
 	/* Get connected organizer */
-	function tmapi_organizers($params=array(), $method="GET", $post=FALSE, $headers=array()){
+	function ticketmachine_tmapi_organizers($params=array(), $method="GET", $post=FALSE, $headers=array()){
 		global $api, $globals;
 
 		$params = (object)$params;
 
 		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/organizers/me";
 
-		$organizer = apiRequest($url, $post, $method, $headers);
+		$organizer = ticketmachine_apiRequest($url, $post, $method, $headers);
 
 		return $organizer;
 	}
 
 	//Check if access token expired
-	function tmapi_refresh_token_check() {
+	function ticketmachine_tmapi_refresh_token_check() {
 		global $globals, $api, $wpdb;
 
 		if(time() > $globals->api_refresh_last + $globals->api_refresh_interval){
-			$token = tmapi_get_access_token($globals->api_refresh_token, "update");
+			$token = ticketmachine_tmapi_get_access_token($globals->api_refresh_token, "update");
 		
 			$save_array = array(
 				"api_access_token" => $token['access_token'],
@@ -145,7 +145,7 @@
 	}
 
 	// Get new access token
-	function tmapi_get_access_token($refresh_token, $status="update") {
+	function ticketmachine_tmapi_get_access_token($refresh_token, $status="update") {
 		global $api, $globals;
 
 		if($status == "new"){
@@ -169,14 +169,14 @@
 			);
 		}
 
-		$token = apiRequest($api->token, $api->auth->code);
+		$token = ticketmachine_apiRequest($api->token, $api->auth->code);
         $_SESSION['access_token'] = $token['access_token'];
 
 		return $token;
 	}
 
 	/* Get all categories */
-	function tmapi_categories($params=array(), $method="GET", $headers=array()){
+	function ticketmachine_tmapi_categories($params=array(), $method="GET", $headers=array()){
 		global $api, $globals;
 
 		$params = (object)$params;
@@ -186,28 +186,28 @@
 
 		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/tags";
 
-		$categories = apiRequest($url, $params, $method);
+		$categories = ticketmachine_apiRequest($url, $params, $method);
 		return (object)$categories;
 	}
 
 	/* Add to category */
-	function tmapi_category_add($params=array(), $method="POST", $headers=array()){
+	function ticketmachine_tmapi_category_add($params=array(), $method="POST", $headers=array()){
 		global $api, $globals;
 
 		$params = (object)$params;
 		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/add";
 
-		$category = apiRequest($url, $params, $method);
+		$category = ticketmachine_apiRequest($url, $params, $method);
 		return (object)$category;
 	}
 
 	/* Remove from category */
-	function tmapi_category_remove($params=array(), $method="POST", $headers=array()){
+	function ticketmachine_tmapi_category_remove($params=array(), $method="POST", $headers=array()){
 		global $api, $globals;
 
 		$params = (object)$params;
 		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/event/tags/types/category/remove";
-		$category = apiRequest($url, $params, $method);
+		$category = ticketmachine_apiRequest($url, $params, $method);
 		return (object)$category;
 	}
 
@@ -232,7 +232,7 @@
 	}
 
 	if(isset($globals->activated) && $globals->activated > 0){
-		tmapi_refresh_token_check();
+		ticketmachine_tmapi_refresh_token_check();
 	}
       
 ?>

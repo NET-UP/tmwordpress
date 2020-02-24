@@ -7,7 +7,7 @@
         
         $post_json = json_encode($_POST);
         
-        $ticketmachine_json = tmapi_event($post_json, "POST");
+        $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
         $response = (object)$ticketmachine_json;
     }
 ?>

@@ -5,16 +5,16 @@
 
 		$params = array();
 		if(isset($_GET['q'])){
-			$params = array_push_assoc($params, "query", $_GET['q']);
+			$params = ticketmachine_array_push_assoc($params, "query", $_GET['q']);
 		}
 		if(isset($_GET['sort'])){
-			$params = array_push_assoc($params, "sort", $_GET['sort']);
+			$params = ticketmachine_array_push_assoc($params, "sort", $_GET['sort']);
 		}
 		if(isset($_GET['tag'])){
-			$params = array_push_assoc($params, "tag", $_GET['tag']);
+			$params = ticketmachine_array_push_assoc($params, "tag", $_GET['tag']);
 		}
-		$params = array_push_assoc($params, "approved", 1);
-		$events = tmapi_events($params)->result;
+		$params = ticketmachine_array_push_assoc($params, "approved", 1);
+		$events = ticketmachine_ticketmachine_tmapi_events($params)->result;
 		
 		if(isset($atts['display']) && $atts['display'] == "calendar" && $globals->show_calendar || $globals->show_calendar && !$globals->show_boxes && !$globals->show_list){
 			$current_page = "calendar";

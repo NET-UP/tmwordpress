@@ -9,10 +9,10 @@
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
 	*/
-    add_action( 'wp_enqueue_scripts', 'add_core_files' );
+    add_action( 'wp_enqueue_scripts', 'ticketmachine_add_core_files' );
     
-    add_action( 'init', 'wpdocs_load_textdomain' );
-    function wpdocs_load_textdomain() {
+    add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
+    function ticketmachine_wpdocs_load_textdomain() {
         load_plugin_textdomain( 'ticketmachine', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
     }
 	
@@ -81,7 +81,7 @@
 
 	add_shortcode( 'ticketmachine', 'ticketmachine_initialize' );
 	
-	function add_core_files () {
+	function ticketmachine_add_core_files () {
 		//jQuery
 		wp_enqueue_script( 'jquery-ui-datepicker', array("jquery") );
 		wp_enqueue_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
@@ -258,7 +258,7 @@
         if(isset($_GET['id']) && $_GET['id'] > 0){
             include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
             $params = [ "id" => $_GET['id'] ];
-            $event = tmapi_event($params);
+            $event = ticketmachine_tmapi_event($params);
             if(isset($event->id)){            
                 echo '<meta property="og:title" content="' . $event->ev_name . '" />';
                 echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
@@ -268,8 +268,8 @@
        }
     }
     
-    add_filter( 'oembed_response_data', 'disable_embeds_filter_oembed_response_data_' );
-    function disable_embeds_filter_oembed_response_data_( $data ) {
+    add_filter( 'oembed_response_data', 'ticketmachine_disable_embeds_filter_oembed_response_data_' );
+    function ticketmachine_disable_embeds_filter_oembed_response_data_( $data ) {
         unset($data['author_url']);
         unset($data['author_name']);
         return $data;

@@ -38,7 +38,7 @@
 
     if(!empty($_GET['id'])){
         $params = [ "id" => $_GET['id'] ];
-        $event = (object)tmapi_event($params);
+        $event = (object)ticketmachine_tmapi_event($params);
     }
 ?>
 

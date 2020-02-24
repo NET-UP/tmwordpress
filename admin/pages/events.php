@@ -34,7 +34,7 @@ include_once(str_replace("/admin/pages", "", plugin_dir_path( __FILE__ )) . 'glo
  * exactly the way we need it to be.
  * 
  * To display this example on a page, you will first need to instantiate the class,
- * then call $yourInstance->prepare_items() to handle any data manipulation, then
+ * then call $yourInstance->ticketmachine_prepare_items() to handle any data manipulation, then
  * finally call $yourInstance->display() to render the table to the page.
  * 
  * Our theme for this list table is going to be movies.
@@ -57,28 +57,28 @@ class Event_List_Table extends WP_List_Table {
         
     }
 
-    function get_events(){
+    function ticketmachine_get_events(){
         
         include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/includes/scriptstyles.php');
         global $globals, $api;
 
 		$params = array();
 		if(isset($_GET['s'])){
-			$params = array_push_assoc($params, "query", $_GET['s']);
+			$params = ticketmachine_array_push_assoc($params, "query", $_GET['s']);
 		}
         if(isset($_GET['status']) && $_GET['status'] == "upcoming"){
-            $params = array_push_assoc($params, "show_old", 0);
+            $params = ticketmachine_array_push_assoc($params, "show_old", 0);
         }else{
-            $params = array_push_assoc($params, "show_old", 1);
+            $params = ticketmachine_array_push_assoc($params, "show_old", 1);
         }
-        $params = array_push_assoc($params, "per_page", 100);
+        $params = ticketmachine_array_push_assoc($params, "per_page", 100);
         if(isset($_GET['status']) && $_GET['status'] == "published"){
-            $params = array_push_assoc($params, "approved", 1);
+            $params = ticketmachine_array_push_assoc($params, "approved", 1);
         }elseif(isset($_GET['status']) && $_GET['status'] == "drafts") {
-            $params = array_push_assoc($params, "approved", 0);
+            $params = ticketmachine_array_push_assoc($params, "approved", 0);
         }
-        $params = array_push_assoc($params, "per_page", 100);
-        $events = tmapi_events($params)->result;
+        $params = ticketmachine_array_push_assoc($params, "per_page", 100);
+        $events = ticketmachine_ticketmachine_tmapi_events($params)->result;
         return $events;
     }
 
@@ -104,7 +104,7 @@ class Event_List_Table extends WP_List_Table {
      * @param array $column_name The name/slug of the column to be processed
      * @return string Text or HTML to be placed inside the column <td>
      **************************************************************************/
-    function column_default($item, $column_name){
+    function ticketmachine_column_default($item, $column_name){
         switch($column_name){
             case 'tags':
                 return implode(", ", $item[$column_name]);
@@ -123,7 +123,7 @@ class Event_List_Table extends WP_List_Table {
      * is rendered in any column with a name/slug of 'title'. Every time the class
      * needs to render a column, it first looks for a method named 
      * column_{$column_title} - if it exists, that method is run. If it doesn't
-     * exist, column_default() is called instead.
+     * exist, ticketmachine_column_default() is called instead.
      * 
      * This example also illustrates how to implement rollover actions. Actions
      * should be an associative array formatted as 'slug'=>'link html' - and you
@@ -134,7 +134,7 @@ class Event_List_Table extends WP_List_Table {
      * @param array $item A singular item (one full row's worth of data)
      * @return string Text to be placed inside the column <td> (movie title only)
      **************************************************************************/
-    function column_ev_name($item){
+    function ticketmachine_column_ev_name($item){
         global $globals, $api;
 
         $additional_text = "";
@@ -180,7 +180,7 @@ class Event_List_Table extends WP_List_Table {
      * @param array $item A singular item (one full row's worth of data)
      * @return string Text to be placed inside the column <td> (movie title only)
      **************************************************************************/
-    function column_cb($item){
+    function ticketmachine_column_cb($item){
         return sprintf(
             '<input type="checkbox" name="%1$s[]" value="%2$s" />',
             /*$1%s*/ $this->_args['singular'],  //Let's simply repurpose the table's singular label ("movie")
@@ -196,13 +196,13 @@ class Event_List_Table extends WP_List_Table {
      * to the $columns array below.
      * 
      * The 'cb' column is treated differently than the rest. If including a checkbox
-     * column in your table you must create a column_cb() method. If you don't need
+     * column in your table you must create a ticketmachine_column_cb() method. If you don't need
      * bulk actions or checkboxes, simply leave the 'cb' entry out of your array.
      * 
      * @see WP_List_Table::::single_row_columns()
      * @return array An associative array containing column information: 'slugs'=>'Visible Titles'
      **************************************************************************/
-    function get_columns(){
+    function ticketmachine_get_columns(){
         $columns = array(
             //'cb'       => '<input type="checkbox" />',
             'ev_name'  => __('Name', 'ticketmachine'),
@@ -223,12 +223,12 @@ class Event_List_Table extends WP_List_Table {
      * 
      * This method merely defines which columns should be sortable and makes them
      * clickable - it does not handle the actual sorting. You still need to detect
-     * the ORDERBY and ORDER querystring variables within prepare_items() and sort
+     * the ORDERBY and ORDER querystring variables within ticketmachine_prepare_items() and sort
      * your data accordingly (usually by modifying your query).
      * 
      * @return array An associative array containing all the columns that should be sortable: 'slugs'=>array('data_values',bool)
      **************************************************************************/
-    function get_sortable_columns() {
+    function ticketmachine_get_sortable_columns() {
         $sortable_columns = array(
             'ev_name'   => array('ev_name',false), //true means it's already sorted
             'tags'      => array('tags',false),
@@ -253,7 +253,7 @@ class Event_List_Table extends WP_List_Table {
      * 
      * @return array An associative array containing all the bulk actions: 'slugs'=>'Visible Titles'
      **************************************************************************/
-    function get_bulk_actions() {
+    function ticketmachine_get_bulk_actions() {
         $actions = array(
             'delete'    => 'Löschen'
         );
@@ -266,9 +266,9 @@ class Event_List_Table extends WP_List_Table {
      * For this example package, we will handle it in the class to keep things
      * clean and organized.
      * 
-     * @see $this->prepare_items()
+     * @see $this->ticketmachine_prepare_items()
      **************************************************************************/
-    function process_bulk_action() {
+    function ticketmachine_process_bulk_action() {
         
         //Detect when a bulk action is being triggered...
         if( 'delete'===$this->current_action() ) {
@@ -277,7 +277,7 @@ class Event_List_Table extends WP_List_Table {
         
     }
 
-    function search_box( $text, $input_id ) { ?>
+    function ticketmachine_search_box( $text, $input_id ) { ?>
         <p class="search-box">
             <label class="screen-reader-text" for="<?php echo $input_id ?>"><?php echo $text; ?>:</label>
             <input type="search" id="<?php echo $input_id ?>" name="s" value="<?php _admin_search_query(); ?>" />
@@ -295,12 +295,12 @@ class Event_List_Table extends WP_List_Table {
      * @global WPDB $wpdb
      * @uses $this->_column_headers
      * @uses $this->items
-     * @uses $this->get_columns()
-     * @uses $this->get_sortable_columns()
+     * @uses $this->ticketmachine_get_columns()
+     * @uses $this->ticketmachine_get_sortable_columns()
      * @uses $this->get_pagenum()
      * @uses $this->set_pagination_args()
      **************************************************************************/
-    function prepare_items() {
+    function ticketmachine_prepare_items() {
         global $wpdb; //This is used only if making any database queries
 
         /**
@@ -316,9 +316,9 @@ class Event_List_Table extends WP_List_Table {
          * can be defined in another method (as we've done here) before being
          * used to build the value for our _column_headers property.
          */
-        $columns = $this->get_columns();
+        $columns = $this->ticketmachine_get_columns();
         $hidden = array();
-        $sortable = $this->get_sortable_columns();
+        $sortable = $this->ticketmachine_get_sortable_columns();
         
         
         /**
@@ -334,7 +334,7 @@ class Event_List_Table extends WP_List_Table {
          * Optional. You can handle your bulk actions however you see fit. In this
          * case, we'll handle them within our package just to keep things clean.
          */
-        $this->process_bulk_action();
+        $this->ticketmachine_process_bulk_action();
         
         
         /**
@@ -346,7 +346,7 @@ class Event_List_Table extends WP_List_Table {
          * use sort and pagination data to build a custom query instead, as you'll
          * be able to use your precisely-queried data immediately.
          */
-        $data = $this->get_events();
+        $data = $this->ticketmachine_get_events();
                 
         
         /**
@@ -357,13 +357,13 @@ class Event_List_Table extends WP_List_Table {
          * to a custom query. The returned data will be pre-sorted, and this array
          * sorting technique would be unnecessary.
          */
-        function usort_reorder($a,$b){
+        function ticketmachine_usort_reorder($a,$b){
             $orderby = (!empty($_REQUEST['orderby'])) ? $_REQUEST['orderby'] : 'ev_name'; //If no sort, default to title
             $order = (!empty($_REQUEST['order'])) ? $_REQUEST['order'] : 'asc'; //If no order, default to asc
             $result = strcmp($a[$orderby], $b[$orderby]); //Determine sort order
             return ($order==='asc') ? $result : -$result; //Send final sort direction to usort
         }
-        usort($data, 'usort_reorder');
+        usort($data, 'ticketmachine_usort_reorder');
         
         
         /***********************************************************************
@@ -425,18 +425,18 @@ class Event_List_Table extends WP_List_Table {
 
 }
 
-function remove_event(){
+function ticketmachine_remove_event(){
     // make api call to delete the event
 }
 
-function copy_event(){
+function ticketmachine_copy_event(){
     // make api call to copy event
 }
 
 /** *************************** RENDER TEST PAGE ********************************
  *******************************************************************************
  * This function renders the admin page and the example list table. Although it's
- * possible to call prepare_items() and display() from the constructor, there
+ * possible to call ticketmachine_prepare_items() and display() from the constructor, there
  * are often times where you may need to include logic here between those steps,
  * so we've instead called those methods explicitly. It keeps things flexible, and
  * it's the way the list tables are used in the WordPress core.
@@ -504,10 +504,10 @@ function ticketmachine_render_list_page(){
                         <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
                         <!-- Now we can render the completed list table -->
                         <div class="mt-3 float-right">
-                            <?php $EventListTable->search_box(__('Search', 'ticketmachine'), 'search'); ?>
+                            <?php $EventListTable->ticketmachine_search_box(__('Search', 'ticketmachine'), 'search'); ?>
                         </div>
                         <!--Fetch, prepare, sort, and filter our data... -->
-                        <?php $EventListTable->prepare_items(); ?>
+                        <?php $EventListTable->ticketmachine_prepare_items(); ?>
                         <?php $EventListTable->display(); ?>
                     </form>
                 </div>

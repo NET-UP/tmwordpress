@@ -41,7 +41,7 @@
         JSON_UNESCAPED_SLASHES
     );
     
-    $ticketmachine_json = tmapi_event($post_json, "POST");
+    $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
     $response = (object)$ticketmachine_json;
     
 ?>

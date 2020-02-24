@@ -3,7 +3,7 @@
     
     if(isset($_GET['id'])){
         $params = [ "id" => $_GET['id'] ];
-        $ticketmachine_json_a = tmapi_event($params);
+        $ticketmachine_json_a = ticketmachine_tmapi_event($params);
         $_POST = (array)$ticketmachine_json_a;
 
         $_POST['id'] = $_GET['id'];
@@ -12,7 +12,7 @@
         $_POST['rules']['shown'] = $_POST['approved'];
         
         $post_json = json_encode($_POST);
-        $ticketmachine_json = tmapi_event($post_json, "POST");
+        $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
         $response = (object)$ticketmachine_json;
     }
 ?>

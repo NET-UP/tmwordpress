@@ -7,8 +7,8 @@
 		$ticketmachine_output = "";
 
 		if(!empty($_GET['id'])){
-			$params = array_push_assoc($params, "id", $_GET['id']);
-			$event = tmapi_event($params);
+			$params = ticketmachine_array_push_assoc($params, "id", $_GET['id']);
+			$event = ticketmachine_tmapi_event($params);
 		}
 
 		$event->has_location = 0;

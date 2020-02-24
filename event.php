@@ -4,7 +4,7 @@
 	include "globals.php";
 
 	$params = [ "query" => $_GET['q'], "sort" => $_GET['sort'], "tag" => $_GET['tag'], "approved" => 1 ];
-	$events = tmapi_events($params);
+	$events = ticketmachine_ticketmachine_tmapi_events($params);
 
 	$calendar = array();
 	$i = 0;
