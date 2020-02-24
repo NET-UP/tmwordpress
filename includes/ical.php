@@ -1,7 +1,5 @@
 <?php
-    if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    
-    include(WP_PLUGIN_DIR . "/ticketmachine/globals.php");
+   include(WP_PLUGIN_DIR . "/ticketmachine/globals.php");
 
     $params = [ "id" => absint($_GET['id']) ];
     $event = ticketmachine_tmapi_event($params);
