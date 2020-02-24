@@ -4,6 +4,7 @@
 	function ticketmachine_admin_menu () {
 		global $globals, $api;
 
+		echo "Can i?" . current_user_can('administrator');
 
 			include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 			include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
@@ -96,5 +97,4 @@
 			
 	
 		
-		echo "Can i?" . current_user_can('administrator');
 ?>
