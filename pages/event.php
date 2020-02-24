@@ -7,7 +7,7 @@
 		$ticketmachine_output = "";
 
 		if(!empty($_GET['id'])){
-			$params = ticketmachine_array_push_assoc($params, "id", $_GET['id']);
+			$params = ticketmachine_array_push_assoc($params, "id", absint($_GET['id']));
 			$event = ticketmachine_tmapi_event($params);
 		}
 

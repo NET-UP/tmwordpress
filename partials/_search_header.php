@@ -16,7 +16,7 @@
         $ticketmachine_output .= "<form class='mb-3'>";
 
             if(isset($_GET['display'])){
-                $ticketmachine_output .= "<input type='hidden' name='display' value='" . $_GET['display'] . "'/>";
+                $ticketmachine_output .= "<input type='hidden' name='display' value='" . sanitize_text_field($_GET['display']) . "'/>";
             }
 
             $ticketmachine_output .= "<div class='form-row'>
@@ -30,7 +30,7 @@
                                         <div class='col-12 d-sm-none mb-3'></div>";
 
 
-                                        if(isset($_GET['display']) && $_GET['display'] == "calendar"){
+                                        if(isset($_GET['display']) && sanitize_text_field($_GET['display']) == "calendar"){
                             $ticketmachine_output .= "<div class='btn-group ml-0 ml-sm-4'>
                                                 <a href='#' aria-label='" . __("To previous month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
                                                 <a href='#' class='btn btn-secondary' id='calendar-title'></a>

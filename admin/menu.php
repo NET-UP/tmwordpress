@@ -16,7 +16,7 @@
 			96
 		);
 
-		if($globals->activated || $_GET['code']) {
+		if($globals->activated || absint($_GET['code'])) {
 			add_submenu_page(
 				'ticketmachine_event_manager',
 				__('Overview', 'ticketmachine'),

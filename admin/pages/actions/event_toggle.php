@@ -2,14 +2,14 @@
     global $globals, $api;
     
     if(isset($_GET['id'])){
-        $params = [ "id" => $_GET['id'] ];
+        $params = [ "id" => absint($_GET['id']) ];
         $ticketmachine_json_a = ticketmachine_tmapi_event($params);
         $_POST = (array)$ticketmachine_json_a;
 
-        $_POST['id'] = $_GET['id'];
-        $_POST['organizer_id'] = $globals->organizer_id;
-        $_POST['approved'] = 1 - $_POST['approved'];
-        $_POST['rules']['shown'] = $_POST['approved'];
+        absint($_POST['id']) = absint($_GET['id']);
+        absint($_POST['organizer_id']) = $globals->organizer_id;
+        absint($_POST['approved']) = 1 - absint($_POST['approved']);
+        absint($_POST['rules']['shown']) = absint($_POST['approved']);
         
         $post_json = json_encode($_POST);
         $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");

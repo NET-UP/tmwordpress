@@ -60,7 +60,7 @@ class Categorie_List_Table extends WP_List_Table {
 
     function get_categories(){
         global $globals, $api;
-        $params = [ "query" => $_GET['s'], "show_old" => 1, "per_page" => 100 ];
+        $params = [ "query" => sanitize_text_field($_GET['s']), "show_old" => 1, "per_page" => 100 ];
         $categories = ticketmachine_tmapi_categories($params)->result;
         return $categories;
     }
@@ -414,7 +414,7 @@ function ticketmachine_render_categories_page(){
             <div id="col-left">
                 <div class="col-wrap">
                     <div class="form-warp">
-                        <?php if ( $_GET['action'] == "add" && isset($_GET['id']) && $_POST ) {
+                        <?php if ( sanitize_text_field($_GET['action']) == "add" && isset($_GET['id']) && $_POST ) {
                             include "actions/category_add.php";
                         } else {
                             include "action/category_rename.php";

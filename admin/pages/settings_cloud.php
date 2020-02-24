@@ -7,7 +7,7 @@
 
     if(!empty($_GET['code'])) {
         //Exchange the auth code for an access token
-        $token = ticketmachine_tmapi_get_access_token($_GET['code'], "new");
+        $token = ticketmachine_tmapi_get_access_token(sanitize_text_field($_GET['code']), "new");
 
         $current_organizer = (object)ticketmachine_tmapi_organizers()[0];
 

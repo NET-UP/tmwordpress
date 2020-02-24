@@ -8,8 +8,8 @@
 
 		$save_array = 
 			array(
-				"show_list" => $_POST['show_list'],
-				"event_grouping" => $_POST['event_grouping'],
+				"show_list" => absint($_POST['show_list']),
+				"event_grouping" => absint($_POST['event_grouping']),
 			);
 		if (!empty($ticketmachine_config)) {
 			$wpdb->update(

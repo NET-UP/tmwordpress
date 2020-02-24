@@ -8,8 +8,8 @@
 
 		$save_array = 
 			array(
-				"show_boxes" => $_POST['show_boxes'],
-				"event_grouping" => $_POST['event_grouping'],
+				"show_boxes" => absint($_POST['show_boxes']),
+				"event_grouping" => sanitize_text_field($_POST['event_grouping']),
 			);
 		if (!empty($ticketmachine_config)) {
 			$wpdb->update(

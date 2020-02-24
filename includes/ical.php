@@ -8,7 +8,7 @@
 
     include(WP_PLUGIN_DIR . "/ticketmachine/globals.php");
 
-    $params = [ "id" => $_GET['id'] ];
+    $params = [ "id" => absint($_GET['id']) ];
     $event = ticketmachine_tmapi_event($params);
 
     if($event->id) {
