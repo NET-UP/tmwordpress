@@ -4,7 +4,6 @@
 	function ticketmachine_admin_menu () {
 		global $globals, $api;
 
-		echo "Can i?" . current_user_can('administrator');
 
 		if ( 1 == 1 ){
 
