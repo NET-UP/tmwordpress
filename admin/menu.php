@@ -39,16 +39,16 @@
 				null,
 				97
 			);
-				add_submenu_page(
-					'ticketmachine_event_manager',
-					esc_html__('Settings', 'ticketmachine'),
-					esc_html__('Settings', 'ticketmachine'),
-					'manage_options',
-					'ticketmachine_settings',
-					'ticketmachine_settings_page',
-					null,
-					98
-				);
+			add_submenu_page(
+				'ticketmachine_event_manager',
+				esc_html__('Settings', 'ticketmachine'),
+				esc_html__('Settings', 'ticketmachine'),
+				'manage_options',
+				'ticketmachine_settings',
+				'ticketmachine_settings_page',
+				null,
+				98
+			);
 			#add_submenu_page(
 			#	'ticketmachine_events',
 			#	esc_html__('Categories', 'ticketmachine'),

@@ -108,7 +108,7 @@
 		wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
 	}
 	
-    if(is_admin() && current_user_can('edit_posts') ) {
+    if(is_admin()){
         include_once( plugin_dir_path( __FILE__ ) . 'admin/admin.php');
     }
 	
