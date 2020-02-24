@@ -9,6 +9,9 @@
     }
     if(isset($_POST['tags'])) {
         $_POST['tags'] = sanitize_text_field(explode(",", $_POST['tags']));
+        array_walk($arr, function(&$value) {
+            $value = sanitize_text_field($value);
+        });
     }
     if(isset($_POST['entrytime'])) {
         $_POST['entrytime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($_POST['entrytime']['date'] . $_POST['entrytime']['time']));
