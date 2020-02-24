@@ -46,7 +46,7 @@
 	  print_r($headers);
 	  print_r($post);
 	  print_r($response);
-	  echo "</br>";
+	  echo "</pre>";
 
 	  return json_decode($response, true);
 	  
