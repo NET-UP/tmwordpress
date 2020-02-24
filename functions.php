@@ -17,25 +17,25 @@
 
 		if($post) {
 			$headers[] = 'Content-Type: application/json';
-
-			$resource = wp_remote_post($url, array(
-				'method'  => 'POST',
-				'timeout' => 45,
-				'headers' => $headers
-			));
 		}
+
+		$resource = wp_remote_post($url, array(
+			'method'  => 'POST',
+			'timeout' => 45,
+			'headers' => $headers
+		));
 
 	  }else{
 
 		if($post) {
 			$headers[] = 'Accept: application/json';
-
-			$resource = wp_remote_get($url, array(
-				'method'  => 'GET',
-				'timeout' => 45,
-				'headers' => $headers
-			));
 		}
+
+		$resource = wp_remote_get($url, array(
+			'method'  => 'GET',
+			'timeout' => 45,
+			'headers' => $headers
+		));
 
 	  }
 	  $response = $resource['body'];
