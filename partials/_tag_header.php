@@ -1,5 +1,5 @@
 <?php
-
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_tag_header ( $globals ) {
         
 

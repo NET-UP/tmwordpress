@@ -1,5 +1,5 @@
 <?php
-
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_error_page( $message, $actions = [], $title= "Oops!") {
 
         $ticketmachine_output = "<h1>" . __($title, "ticketmachine") . "</h1>";

@@ -1,5 +1,5 @@
 <?php
-
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_widget_event_list ( $atts ) {
 		global $globals, $api;
 

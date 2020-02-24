@@ -1,5 +1,5 @@
 <?php
-
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	/*
 	Plugin Name:        TicketMachine Event Manager
     Plugin URI:         https://www.ticketmachine.de/event-manager/wordpress

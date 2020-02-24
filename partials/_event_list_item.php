@@ -1,5 +1,5 @@
 <?php 
-
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	function ticketmachine_event_list_item ( $event, $globals ) {
 		
 		$event->event_location = (object) $event->event_location;

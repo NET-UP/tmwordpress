@@ -1,3 +1,7 @@
+<?php
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+?>
+
 <h2>Neue Kategorie erstellen</h2>
 <form id="addCategory" method="post" action="/action/cateory_add.php" class="validate">
     <div class="form-field form-required term-name-wrap">

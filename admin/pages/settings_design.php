@@ -1,7 +1,5 @@
-
-
 <?php
-
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	if (isset($_POST['submit'])) {
 		$save_array = 
 			array(

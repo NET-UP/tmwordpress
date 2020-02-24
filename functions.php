@@ -1,5 +1,5 @@
 <?php
-
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	function ticketmachine_array_push_assoc($array, $key, $value){
 		$array[$key] = $value;
 		return $array;

@@ -1,3 +1,6 @@
+<?php
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+?>
 <h2>Namen der Kategorie ändern</h2>
 <form id="renameCategory" method="post" action="/action/cateory_rename.php" class="validate">
     <div class="form-field form-required term-name-wrap">

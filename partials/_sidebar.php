@@ -1,3 +1,7 @@
+<?php
+    if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+?>
+
 <div class="col-12 col-lg-3 mb-4"><div class="row"><div class=" col-12">
     <div class="card">
         <div class="card-body">

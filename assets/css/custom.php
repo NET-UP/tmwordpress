@@ -1,4 +1,5 @@
 <?php
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     include_once("{$_SERVER['DOCUMENT_ROOT']}/wp-load.php"); 
     header("Content-type: text/css; charset: UTF-8");
     global $wpdb;

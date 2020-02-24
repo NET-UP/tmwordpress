@@ -1,4 +1,5 @@
 <?php 
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_event_page_actions ( $event, $globals ) {
 
         if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   

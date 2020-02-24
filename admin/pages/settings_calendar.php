@@ -1,4 +1,5 @@
 <?php
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	if (isset($_POST['submit'])) {
 
         if (isset($_POST['show_calendar'])){

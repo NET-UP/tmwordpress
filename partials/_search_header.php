@@ -1,5 +1,5 @@
 <?php
-
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_search_header ( $globals, $current_page ) {
 
         $ticketmachine_output = "";

@@ -1,4 +1,5 @@
 <?php
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_event_page_information ( $event, $globals ) {
 
         $ticketmachine_output = '
