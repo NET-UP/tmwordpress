@@ -49,23 +49,23 @@
 
 <?php if(isset($response->model_error[0]['error_code']) && strlen($response->model_error[0]['error_code']) > 0){ ?>
     <div class="notice notice-error is-dismissable">
-        <p><?php echo __($response->model_error[0]['error_message']); ?></p>
+        <p><?php esc_html_e($response->model_error[0]['error_message']); ?></p>
     </div>
 <?php }elseif(empty($ticketmachine_json)){ ?>
     <div class="notice notice-error is-dismissable">
-        <p><?php echo __('Something went wrong', 'ticketmachine'); ?>!</p>
+        <p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
     </div>
 <?php }else{ ?>
     <div class="notice notice-success is-dismissable">
         <p>
-            <?php echo __('Event saved', 'ticketmachine'); ?>!
+            <?php esc_html_e('Event saved', 'ticketmachine'); ?>!
             &nbsp;-&nbsp;
             <a target="_blank" href="/<?php echo $globals->event_slug; ?>?id=<?php echo $response->id; ?>">
                 <?php 
                     if($response->approved == 1){
-                        echo __('View', 'ticketmachine'); 
+                        esc_html_e('View', 'ticketmachine'); 
                     }else{
-                        echo __('Preview', 'ticketmachine'); 
+                        esc_html_e('Preview', 'ticketmachine'); 
                     }
                 ?>
             </a>

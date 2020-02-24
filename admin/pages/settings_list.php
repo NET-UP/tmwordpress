@@ -19,13 +19,13 @@
 			);
 			?>
 			<div class="notice notice-success is-dismissable">
-				<p><?php echo __('Saved', 'ticketmachine'); ?>!</p>
+				<p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
 			</div>
 			<?php
 		}else{
 			?>
 			<div class="notice notice-error is-dismissable">
-				<p><?php echo __('Something went wrong', 'ticketmachine'); ?>!</p>
+				<p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
 			</div>
 			<?php
 		}
@@ -36,7 +36,7 @@
 <table class="form-table">
 	<tbody>
 		<tr>
-			<th><label><?php echo __('Activate List?', 'ticketmachine'); ?></label></th>
+			<th><label><?php esc_html_e('Activate List?', 'ticketmachine'); ?></label></th>
             <td><input name="show_list" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_list){ ?>checked<?php } ?>/></td>
 		</tr>
 

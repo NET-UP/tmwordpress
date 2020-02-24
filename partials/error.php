@@ -6,11 +6,11 @@
             $type = "danger";
         }
 
-        $ticketmachine_output = "<div class='alert alert-" . $type . "'>" . __($message, "ticketmachine") . "</div>";
+        $ticketmachine_output = "<div class='alert alert-" . $type . "'>" . esc_html__($message, "ticketmachine") . "</div>";
 
         if(!empty($actions)){
             foreach($actions as $text => $url){
-                $ticketmachine_output .= "<a href='" . $url . "' class='btn btn-secondary'>" . __($text, "ticketmachine") . "</a>";
+                $ticketmachine_output .= "<a href='" . $url . "' class='btn btn-secondary'>" . esc_html__($text, "ticketmachine") . "</a>";
             }
         }
 

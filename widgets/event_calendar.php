@@ -27,14 +27,14 @@
                 <input type='hidden' id='ticketmachine_ev_url' value='" . plugins_url('', dirname(__FILE__) ) . "/event.php'></input>
                 <div class='row'>
                     <div id='ticketmachine_cal_error' class='col-12 text-center mt-1' style='display:none;'>"
-                        . ticketmachine_alert(__("No events could be found", "ticketmachine"), "error") . "
+                        . ticketmachine_alert(esc_html__("No events could be found", "ticketmachine"), "error") . "
                     </div>
                     <div class='col-12'>
                         <div class='input-group'>
                             <div class='btn-group mb-3'>
-                                <a href='#' aria-label='" . __("To previous month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
+                                <a href='#' aria-label='" . esc_attr_e("To previous month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
                                 <a href='#' class='btn btn-secondary' id='calendar-title'></a>
-                                <a href='#' aria-label='" . __("To next month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
+                                <a href='#' aria-label='" . esc_attr_e("To next month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
                             </div>
                         </div>
                     </div>

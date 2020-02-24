@@ -22,19 +22,19 @@
             $ticketmachine_output .= "<div class='form-row'>
                                 <div class='col-12'>
                                     <div class='input-group'>
-                                        <input name='q' class='form-control' placeholder='" . __("Search for events", "ticketmachine") . "' value='" . $globals->search_query . "'/>
+                                        <input name='q' class='form-control' placeholder='" . esc_attr_e("Search for events", "ticketmachine") . "' value='" . $globals->search_query . "'/>
                                         <input type='hidden' name='tag' value='" . $globals->tag . "'/>
                                         <div class='input-group-append'>
-                                            <button type='submit' alt='" . __("Submit search", "ticketmachine") . "' class='btn btn-secondary form-control'><i class='fas fa-search'></i></button>
+                                            <button type='submit' alt='" . esc_attr_e("Submit search", "ticketmachine") . "' class='btn btn-secondary form-control'><i class='fas fa-search'></i></button>
                                         </div>
                                         <div class='col-12 d-sm-none mb-3'></div>";
 
 
                                         if(isset($_GET['display']) && sanitize_text_field($_GET['display']) == "calendar"){
                             $ticketmachine_output .= "<div class='btn-group ml-0 ml-sm-4'>
-                                                <a href='#' aria-label='" . __("To previous month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
+                                                <a href='#' aria-label='" . esc_attr_e("To previous month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
                                                 <a href='#' class='btn btn-secondary' id='calendar-title'></a>
-                                                <a href='#' aria-label='" . __("To next month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
+                                                <a href='#' aria-label='" . esc_attr_e("To next month", "ticketmachine") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
                                             </div>";
                                         }
 
@@ -47,7 +47,7 @@
                                                     }else{
                                                         $ticketmachine_output .= "btn-secondary"; 
                                                     }
-                                                $ticketmachine_output .="' title='" . __("Show events as boxes", "ticketmachine") . "' aria-label='" . __("Show events as boxes", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params) . "'><i class='fas fa-th'></i></i></a>";
+                                                $ticketmachine_output .="' title='" . esc_attr_e("Show events as boxes", "ticketmachine") . "' aria-label='" . esc_attr_e("Show events as boxes", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params) . "'><i class='fas fa-th'></i></i></a>";
                                             }
                                         
                                             if($globals->show_list){
@@ -57,7 +57,7 @@
                                                     }else{
                                                         $ticketmachine_output .= "btn-secondary"; 
                                                     }
-                                                $ticketmachine_output .="' title='" . __("Show events as list", "ticketmachine") . "' aria-label='" . __("Show events as list", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=list") . "'><i class='fas fa-list'></i></a>";
+                                                $ticketmachine_output .="' title='" . esc_attr_e("Show events as list", "ticketmachine") . "' aria-label='" . esc_attr_e("Show events as list", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=list") . "'><i class='fas fa-list'></i></a>";
                                             }
 
                                             if($globals->show_calendar){
@@ -67,7 +67,7 @@
                                                     }else{
                                                         $ticketmachine_output .= "btn-secondary"; 
                                                     }
-                                                $ticketmachine_output .="' title='" . __("Show events in calendar", "ticketmachine") . "' aria-label='" . __("Show events in calendar", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=calendar") . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
+                                                $ticketmachine_output .="' title='" . esc_attr_e("Show events in calendar", "ticketmachine") . "' aria-label='" . esc_attr_e("Show events in calendar", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=calendar") . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
                                             }
 
                                         $ticketmachine_output .= "</div>";

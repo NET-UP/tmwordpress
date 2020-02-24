@@ -117,7 +117,7 @@ class Categorie_List_Table extends WP_List_Table {
             $toggle_type = "publish";
             $toggle_text = "Publish";
             $toggle_action = "publish";
-            $additional_text .= " — <span class='post-state'>" . __('Draft' , 'ticketmachine') . "</span>";
+            $additional_text .= " — <span class='post-state'>" . esc_html__('Draft' , 'ticketmachine') . "</span>";
         }else{
             $toggle_type = "delete";
             $toggle_text = "Deactivate";
@@ -126,8 +126,8 @@ class Categorie_List_Table extends WP_List_Table {
         
         //Build row actions
         $actions = array(
-            'edit'       => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Edit', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
-            $toggle_type => sprintf('<a href="?page=%s&action=%s&id=%s">'.__($toggle_text, 'ticketmachine').'</a>',$_REQUEST['page'],$toggle_action,$item['id'])
+            'edit'       => sprintf('<a href="?page=%s&action=%s&id=%s">'.esc_html__('Edit', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
+            $toggle_type => sprintf('<a href="?page=%s&action=%s&id=%s">'.esc_html__($toggle_text, 'ticketmachine').'</a>',$_REQUEST['page'],$toggle_action,$item['id'])
         );
         
         //Return the title contents
@@ -407,7 +407,7 @@ function ticketmachine_render_categories_page(){
     <div class="wrap tm-admin-page">
         <h1 class="dont-display"></h1>
 
-        <h1 class="wp-heading-inline">TicketMachine > <?php echo __('Categories', 'ticketmachine'); ?></h1>
+        <h1 class="wp-heading-inline">TicketMachine > <?php esc_html_e('Categories', 'ticketmachine'); ?></h1>
         
         <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
         <div id="col-container" class="wp-clearfix">

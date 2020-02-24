@@ -141,26 +141,26 @@ class Event_List_Table extends WP_List_Table {
         $additional_text = "";
         if($item['approved'] == 0){
             $toggle_type = "publish";
-            $toggle_text = __("Publish", 'ticketmachine');
+            $toggle_text = esc_html__("Publish", 'ticketmachine');
             $toggle_action = "publish";
-            $additional_text .= " — <span class='post-state'>" . __('Draft' , 'ticketmachine') . "</span>";
+            $additional_text .= " — <span class='post-state'>" . esc_html__('Draft' , 'ticketmachine') . "</span>";
         }else{
             $toggle_type = "delete";
-            $toggle_text = __("Deactivate", 'ticketmachine');
+            $toggle_text = esc_html__("Deactivate", 'ticketmachine');
             $toggle_action = "deactivate";
         }
 
         if($item['approved'] == 0){
-            $view_text = __("Preview", 'ticketmachine');
+            $view_text = esc_html__("Preview", 'ticketmachine');
         }else{
-            $view_text = __("View", 'ticketmachine');
+            $view_text = esc_html__("View", 'ticketmachine');
         }
         
         //Build row actions
         $actions = array(
-            'edit'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Edit', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
+            'edit'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.esc_html__('Edit', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
             $toggle_type    => sprintf('<a href="?page=%s&action=%s&id=%s">'.$toggle_text.'</a>',$_REQUEST['page'],$toggle_action,$item['id']),
-            'copy'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.__('Copy', 'ticketmachine').'</a>',$_REQUEST['page'],'copy',$item['id']),
+            'copy'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.esc_html__('Copy', 'ticketmachine').'</a>',$_REQUEST['page'],'copy',$item['id']),
             'view'          => sprintf('<a target="_blank" href="/'. $globals->event_slug .'?id=%s">'.$view_text.'</a>',$item['id'])
         );
         
@@ -206,10 +206,10 @@ class Event_List_Table extends WP_List_Table {
     function get_columns(){
         $columns = array(
             //'cb'       => '<input type="checkbox" />',
-            'ev_name'  => __('Name', 'ticketmachine'),
-            'tags'     => __('Tags', 'ticketmachine'),
-            'ev_date'  => __('Start date', 'ticketmachine'),
-            'endtime'  => __('End date', 'ticketmachine')
+            'ev_name'  => esc_html__('Name', 'ticketmachine'),
+            'tags'     => esc_html__('Tags', 'ticketmachine'),
+            'ev_date'  => esc_html__('Start date', 'ticketmachine'),
+            'endtime'  => esc_html__('End date', 'ticketmachine')
         );
         return $columns;
     }
@@ -469,8 +469,8 @@ function ticketmachine_render_list_page(){
                 <div class="col-xl-9">
                     
                     <h1 class="wp-heading-inline mr-3 mb-3 mb-md-0">
-                        TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Events', 'ticketmachine'); ?>
-                        <a href="?page=ticketmachine_events&action=edit" class="button button-secondary ml-2 mb-3 mb-md-0"><?php echo __('Add','ticketmachine'); ?></a>
+                        TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php esc_html_e('Events', 'ticketmachine'); ?>
+                        <a href="?page=ticketmachine_events&action=edit" class="button button-secondary ml-2 mb-3 mb-md-0"><?php esc_html_e('Add','ticketmachine'); ?></a>
                     </h1>
                         
                     <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
@@ -478,25 +478,25 @@ function ticketmachine_render_list_page(){
                         <ul class="subsubsub">
                             <li class="all">
                                 <a href="<?php echo admin_url() . 'admin.php?page=ticketmachine_events'; ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
-                                    <?php echo __('All', 'ticketmachine'); ?> 
+                                    <?php esc_html_e('All', 'ticketmachine'); ?> 
                                     <span class="count"></span>
                                 </a> |
                             </li>
                             <li class="upcoming">
                                 <a href="<?php echo admin_url() . 'admin.php?page=ticketmachine_events&status=upcoming'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming"){ ?>class="current"<?php } ?>>
-                                    <?php echo __('Upcoming', 'ticketmachine'); ?> 
+                                    <?php esc_html_e('Upcoming', 'ticketmachine'); ?> 
                                     <span class="count"></span>
                                 </a> |
                             </li>
                             <li class="publish">
                                 <a href="<?php echo admin_url() . 'admin.php?page=ticketmachine_events&status=published'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "published"){ ?>class="current"<?php } ?>>
-                                    <?php echo __('Published', 'ticketmachine'); ?> 
+                                    <?php esc_html_e('Published', 'ticketmachine'); ?> 
                                     <span class="count"></span> <!-- TO DO add logic -->
                                 </a> |
                             </li>
                             <li class="draft">
                                 <a href="<?php echo admin_url() . 'admin.php?page=ticketmachine_events&status=drafts'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "drafts"){ ?>class="current"<?php } ?>>
-                                    <?php echo __('Drafts', 'ticketmachine'); ?> 
+                                    <?php esc_html_e('Drafts', 'ticketmachine'); ?> 
                                     <span class="count"></span> <!-- TO DO add logic -->
                                 </a>
                             </li>
@@ -505,7 +505,7 @@ function ticketmachine_render_list_page(){
                         <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
                         <!-- Now we can render the completed list table -->
                         <div class="mt-3 float-right">
-                            <?php $EventListTable->search_box(__('Search', 'ticketmachine'), 'search'); ?>
+                            <?php $EventListTable->search_box(esc_html__('Search', 'ticketmachine'), 'search'); ?>
                         </div>
                         <!--Fetch, prepare, sort, and filter our data... -->
                         <?php $EventListTable->prepare_items(); ?>

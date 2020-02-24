@@ -31,13 +31,13 @@
 			);
 			?>
 			<div class="notice notice-success is-dismissable">
-				<p><?php echo __('Saved', 'ticketmachine'); ?>!</p>
+				<p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
 			</div>
 			<?php
 		}else{
 			?>
 			<div class="notice notice-error is-dismissable">
-				<p><?php echo __('Something went wrong', 'ticketmachine'); ?>!</p>
+				<p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
 			</div>
 			<?php
 		}
@@ -50,25 +50,25 @@
 	<tbody>
 
 		<tr style="border-bottom: 1px solid #ccc;">
-			<th><h2><?php echo __('Primary Button', 'ticketmachine'); ?></h2></th>
+			<th><h2><?php esc_html_e('Primary Button', 'ticketmachine'); ?></h2></th>
 			<td>
 				<table class="form-table">
 					<tr>
-						<th><label><?php echo __('Background color', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('Background color', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_primary_background_color; ?>" data-default-color="#ffffff" name="button_primary_background_color" /></td>
-						<th><label><?php echo __('On hover', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('On hover', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_primary_background_color_hover; ?>" data-default-color="#ffffff" name="button_primary_background_color_hover" /></td>
 					</tr>		
 					<tr>
-						<th><label><?php echo __('Text color', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('Text color', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_primary_text_color; ?>" data-default-color="#ffffff" name="button_primary_text_color" /></td>
-						<th><label><?php echo __('On hover', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('On hover', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_primary_text_color_hover; ?>" data-default-color="#ffffff" name="button_primary_text_color_hover" /></td>
 					</tr>	
 					<tr>
-						<th><label><?php echo __('Border color', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('Border color', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_primary_border_color; ?>" data-default-color="#ffffff" name="button_primary_border_color" /></td>
-						<th><label><?php echo __('On hover', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('On hover', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_primary_border_color_hover; ?>" data-default-color="#ffffff" name="button_primary_border_color_hover" /></td>
 					</tr>
 				</table>
@@ -76,25 +76,25 @@
 		</tr>
 	
 		<tr style="border-bottom: 1px solid #ccc;">
-			<th><h2><?php echo __('Secondary Button', 'ticketmachine'); ?></h2></th>
+			<th><h2><?php esc_html_e('Secondary Button', 'ticketmachine'); ?></h2></th>
 			<td>
 				<table class="form-table">
 					<tr>
-						<th><label><?php echo __('Background color', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('Background color', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_secondary_background_color; ?>" data-default-color="#ffffff" name="button_secondary_background_color" /></td>
-						<th><label><?php echo __('On hover', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('On hover', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_secondary_background_color_hover; ?>" data-default-color="#ffffff" name="button_secondary_background_color_hover" /></td>
 					</tr>		
 					<tr>
-						<th><label><?php echo __('Text color', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('Text color', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_secondary_text_color; ?>" data-default-color="#ffffff" name="button_secondary_text_color" /></td>
-						<th><label><?php echo __('On hover', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('On hover', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_secondary_text_color_hover; ?>" data-default-color="#ffffff" name="button_secondary_text_color_hover" /></td>
 					</tr>	
 					<tr>
-						<th><label><?php echo __('Border color', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('Border color', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_secondary_border_color; ?>" data-default-color="#ffffff" name="button_secondary_border_color" /></td>
-						<th><label><?php echo __('On hover', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('On hover', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->button_secondary_border_color_hover; ?>" data-default-color="#ffffff" name="button_secondary_border_color_hover" /></td>
 					</tr>
 				</table>
@@ -102,13 +102,13 @@
 		</tr>
 	
 		<tr style="border-bottom: 1px solid #ccc;">
-			<th><h2><?php echo __('Links', 'ticketmachine'); ?></h2></th>
+			<th><h2><?php esc_html_e('Links', 'ticketmachine'); ?></h2></th>
 			<td>
 				<table class="form-table">	
 					<tr>
-						<th><label><?php echo __('Text color', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('Text color', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->link_text_color; ?>" data-default-color="#ffffff" name="link_text_color" /></td>
-						<th><label><?php echo __('On hover', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('On hover', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->link_text_color_hover; ?>" data-default-color="#ffffff" name="link_text_color_hover" /></td>
 					</tr>	
 				</table>
@@ -116,11 +116,11 @@
 		</tr>
 	
 		<tr>
-			<th><h2><?php echo __('Date', 'ticketmachine'); ?></h2></th>
+			<th><h2><?php esc_html_e('Date', 'ticketmachine'); ?></h2></th>
 			<td>
 				<table class="form-table">	
 					<tr>
-						<th><label><?php echo __('Text color', 'ticketmachine'); ?> </label></th>
+						<th><label><?php esc_html_e('Text color', 'ticketmachine'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo $ticketmachine_design->date_text_color; ?>" data-default-color="#ffffff" name="date_text_color" /></td>
 					</tr>	
 				</table>

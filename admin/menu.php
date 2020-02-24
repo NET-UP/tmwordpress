@@ -19,8 +19,8 @@
 		if($globals->activated || absint($_GET['code'])) {
 			add_submenu_page(
 				'ticketmachine_event_manager',
-				__('Overview', 'ticketmachine'),
-				__('Overview', 'ticketmachine'),
+				esc_html__('Overview', 'ticketmachine'),
+				esc_html__('Overview', 'ticketmachine'),
 				'manage_options',
 				'ticketmachine_event_manager',
 				'ticketmachine_overview_page',
@@ -29,8 +29,8 @@
 			);	
 			add_submenu_page(
 				'ticketmachine_event_manager',
-				__('Events', 'ticketmachine'),
-				__('Events', 'ticketmachine'),
+				esc_html__('Events', 'ticketmachine'),
+				esc_html__('Events', 'ticketmachine'),
 				'manage_options',
 				'ticketmachine_events',
 				'ticketmachine_render_list_page',
@@ -40,8 +40,8 @@
 
 			add_submenu_page(
 				'ticketmachine_event_manager',
-				__('Settings', 'ticketmachine'),
-				__('Settings', 'ticketmachine'),
+				esc_html__('Settings', 'ticketmachine'),
+				esc_html__('Settings', 'ticketmachine'),
 				'manage_options',
 				'ticketmachine_settings',
 				'ticketmachine_settings_page',
@@ -51,8 +51,8 @@
 
 			#add_submenu_page(
 			#	'ticketmachine_events',
-			#	__('Categories', 'ticketmachine'),
-			#	__('Categories', 'ticketmachine'),
+			#	esc_html__('Categories', 'ticketmachine'),
+			#	esc_html__('Categories', 'ticketmachine'),
 			#	'manage_options',
 			#	'ticketmachine_categories',
 			#	'ticketmachine_render_categories_page',
@@ -62,8 +62,8 @@
 		}else{
 			add_submenu_page(
 				'ticketmachine_event_manager',
-				__('Install', 'ticketmachine'),
-				__('Install', 'ticketmachine'),
+				esc_html__('Install', 'ticketmachine'),
+				esc_html__('Install', 'ticketmachine'),
 				'manage_options',
 				'ticketmachine_event_manager',
 				'ticketmachine_installation_page',

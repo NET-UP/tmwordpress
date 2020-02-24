@@ -34,8 +34,8 @@ Docs & License: https://fullcalendar.io/
 
     function __extends(d, b) {
         extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+        function esc_html__() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new esc_html__());
     }
 
     var BootstrapTheme = /** @class */ (function (_super) {

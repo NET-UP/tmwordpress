@@ -34,10 +34,10 @@
 						</div>
 					</div>';
 		}else{
-			$error = __("No events could be found", "ticketmachine");
+			$error = esc_html__("No events could be found", "ticketmachine");
 			$ticketmachine_output .= ticketmachine_error_page($error, array(
-														__("Back to events", "ticketmachine") => "/" . $globals->events_slug
-													), __("Oops!", "ticketmachine"));
+														esc_html__("Back to events", "ticketmachine") => "/" . $globals->events_slug
+													), esc_html__("Oops!", "ticketmachine"));
 		}
 		
 		return $ticketmachine_output;
