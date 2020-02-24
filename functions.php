@@ -6,34 +6,44 @@
 	}
 
 	function ticketmachine_apiRequest($url, $post=FALSE, $method="GET", $headers=array()) {
-	  $ch = curl_init($url);
-	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+
 	  $headers = [];
-
-	  if($method == "POST") {
-		if($post) {
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-			curl_setopt($ch, CURLOPT_POST, 1);
-			$headers[] = 'Content-Type: application/json';
-		}
-	  }else{
-		if($post) {
-			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
-			$headers[] = 'Accept: application/json';
-		}
-	  }
-
 	  $headers[] = 'User-Agent: https://www.ticketmachine.de/';
-	 
+
 	  if(isset($_SESSION['access_token']))
 		$headers[] = 'Authorization: Bearer '.$_SESSION['access_token'];
+
+	  if($method == "POST") {
+
+		if($post) {
+			$headers[] = 'Content-Type: application/json';
+		}
+
+		$response = wp_remote_post($url, array(
+			'method'  => 'POST',
+			'timeout' => 45,
+			'headers' => $headers
+		));
+
+	  }else{
+
+		if($post) {
+			$headers[] = 'Accept: application/json';
+		}
+
+		$response = wp_remote_get($url, array(
+			'method'  => 'GET',
+			'timeout' => 45,
+			'headers' => $headers
+		));
+
+	  }
+
+	 
 	 
 	  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	  curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 	 
-	  print_r($url);
-	  print_r($headers);
-	  
 	  $response = curl_exec($ch);
 	  return json_decode($response, true);
 	  
