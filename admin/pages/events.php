@@ -203,7 +203,7 @@ class Event_List_Table extends WP_List_Table {
      * @see WP_List_Table::::single_row_columns()
      * @return array An associative array containing column information: 'slugs'=>'Visible Titles'
      **************************************************************************/
-    function ticketmachine_get_columns(){
+    function get_columns(){
         $columns = array(
             //'cb'       => '<input type="checkbox" />',
             'ev_name'  => __('Name', 'ticketmachine'),
@@ -296,7 +296,7 @@ class Event_List_Table extends WP_List_Table {
      * @global WPDB $wpdb
      * @uses $this->_column_headers
      * @uses $this->items
-     * @uses $this->ticketmachine_get_columns()
+     * @uses $this->get_columns()
      * @uses $this->ticketmachine_get_sortable_columns()
      * @uses $this->get_pagenum()
      * @uses $this->set_pagination_args()
@@ -317,7 +317,7 @@ class Event_List_Table extends WP_List_Table {
          * can be defined in another method (as we've done here) before being
          * used to build the value for our _column_headers property.
          */
-        $columns = $this->ticketmachine_get_columns();
+        $columns = $this->get_columns();
         $hidden = array();
         $sortable = $this->ticketmachine_get_sortable_columns();
         
