@@ -11,7 +11,7 @@
 	  ticketmachine_array_push_assoc($headers, 'User-Agent', 'https://www.ticketmachine.de/');
 
 	  if(isset($_SESSION['access_token']))
-	  	ticketmachine_array_push_assoc($headers, 'Authorization', 'Bearer' . $_SESSION['access_token']);
+	  	ticketmachine_array_push_assoc($headers, 'Authorization', 'Bearer ' . $_SESSION['access_token']);
 
 	  if($method == "POST") {
 
