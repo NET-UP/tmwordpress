@@ -5,8 +5,6 @@
 		global $globals, $api;
 
 
-		if ( 1 == 1 ){
-
 			include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 			include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 			
@@ -96,5 +94,4 @@
 			include( plugin_dir_path( __FILE__) . 'pages/installation.php');
 		}
 			
-	}
 ?>
