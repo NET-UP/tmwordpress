@@ -8,7 +8,7 @@
         $_POST['approved'] = 0;
     }
     if(isset($_POST['tags'])) {
-        $_POST['tags'] = sanitize_text_field(explode(",", $_POST['tags']));
+        $_POST['tags'] = explode(",", $_POST['tags']);
         array_walk($arr, function(&$value) {
             $value = sanitize_text_field($value);
         });
