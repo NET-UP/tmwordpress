@@ -4,6 +4,8 @@
 	function ticketmachine_admin_menu () {
 		global $globals, $api;
 
+		echo current_user_can('administrator');
+
 		if (current_user_can('administrator')){
 
 			include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
