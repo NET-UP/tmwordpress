@@ -185,7 +185,7 @@
 			);
 		}
 
-		$token = ticketmachine_apiRequest($api->token, $api->auth->code, "GET");
+		$token = ticketmachine_apiRequest($api->token, $api->auth->code, "POST");
         $_SESSION['access_token'] = $token['access_token'];
 
 		return $token;
