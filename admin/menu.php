@@ -4,12 +4,12 @@
 	function ticketmachine_admin_menu () {
 		global $globals, $api;
 
-		echo "Can i?" . current_user_can('administrator');
+		echo "Can i?" . current_user_can('edit_posts');
 
 			include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 			include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 			
-			if( current_user_can('administrator') ) {
+			if( current_user_can('editor') ) {
 				add_menu_page(
 					'TicketMachine',
 					"TicketMachine",
@@ -42,16 +42,18 @@
 						null,
 						97
 					);
-					add_submenu_page(
-						'ticketmachine_event_manager',
-						esc_html__('Settings', 'ticketmachine'),
-						esc_html__('Settings', 'ticketmachine'),
-						'manage_options',
-						'ticketmachine_settings',
-						'ticketmachine_settings_page',
-						null,
-						98
-					);
+					if( current_user_can('manage_options') ) {
+						add_submenu_page(
+							'ticketmachine_event_manager',
+							esc_html__('Settings', 'ticketmachine'),
+							esc_html__('Settings', 'ticketmachine'),
+							'manage_options',
+							'ticketmachine_settings',
+							'ticketmachine_settings_page',
+							null,
+							98
+						);
+					}
 					#add_submenu_page(
 					#	'ticketmachine_events',
 					#	esc_html__('Categories', 'ticketmachine'),
