@@ -29,13 +29,13 @@
 
 		if($post) {
 			$headers[] = 'Accept: application/json';
-		}
 
-		$resource = wp_remote_get($url, array(
-			'method'  => 'GET',
-			'timeout' => 45,
-			'headers' => $headers
-		));
+			$resource = wp_remote_get($url, array(
+				'method'  => 'GET',
+				'timeout' => 45,
+				'headers' => $headers
+			));
+		}
 
 	  }
 	  $response = $resource['body'];
