@@ -42,11 +42,12 @@
 	  $response = $resource['body'];
 	  echo "<pre>"; 
 	  print_r($url);
+	  echo "<br/>"; 
 	  print_r($headers);
 	  print_r($post);
 	  print_r($response);
-	  echo "</pre>";
-	  
+	  echo "</br>";
+
 	  return json_decode($response, true);
 	  
 	}
