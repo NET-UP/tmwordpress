@@ -7,7 +7,7 @@
 		include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 		include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 		
-		if( current_user_can('read') ) {
+		if( current_user_can('manage_links') ) {
 			add_menu_page(
 				'TicketMachine',
 				"TicketMachine",
