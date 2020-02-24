@@ -3,12 +3,12 @@ var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
-jQuery("#tm_spinner").show();
-var locale= jQuery(".tm_page").data("locale");
-var ev_url= jQuery("#tm_ev_url").val();
+jQuery("#ticketmachine_spinner").show();
+var locale= jQuery(".ticketmachine_page").data("locale");
+var ev_url= jQuery("#ticketmachine_ev_url").val();
 jQuery.getJSON(ev_url + location.search).success(function(data) {
 
-	jQuery("#tm_spinner").hide();
+	jQuery("#ticketmachine_spinner").hide();
 	var events_array = data;
 
 	var calendarEl = document.getElementById('calendar');
@@ -66,8 +66,8 @@ jQuery.getJSON(ev_url + location.search).success(function(data) {
 	});
 
 }).fail(function(jqXHR, status, error){
-	jQuery("#tm_spinner").hide();
-	jQuery("#tm_cal_error").show();
+	jQuery("#ticketmachine_spinner").hide();
+	jQuery("#ticketmachine_cal_error").show();
 });
   
   

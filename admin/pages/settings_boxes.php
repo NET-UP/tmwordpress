@@ -10,11 +10,11 @@
 				"show_boxes" => $_POST['show_boxes'],
 				"event_grouping" => $_POST['event_grouping'],
 			);
-		if (!empty($tm_config)) {
+		if (!empty($ticketmachine_config)) {
 			$wpdb->update(
 				$wpdb->prefix . "ticketmachine_config",
 				$save_array,
-				array('id' => $tm_config->id)
+				array('id' => $ticketmachine_config->id)
 			);
 			?>
 			<div class="notice notice-success is-dismissable">
@@ -28,7 +28,7 @@
 			</div>
 			<?php
 		}
-		$tm_config = (object)$_POST;
+		$ticketmachine_config = (object)$_POST;
 	}
 ?>
 
@@ -36,15 +36,15 @@
 	<tbody>
 		<tr>
 			<th><label><?php echo __('Activate Boxes?', 'ticketmachine'); ?></label></th>
-            <td><input name="show_boxes" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_boxes){ ?>checked<?php } ?>/></td>
+            <td><input name="show_boxes" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_boxes){ ?>checked<?php } ?>/></td>
 		</tr>
 		<tr>
 			<th><label><?php echo __('Group events by', 'ticketmachine'); ?></label></th>
             <td>
 				<select name="event_grouping">
-					<option value="Month" <?php if($tm_config->event_grouping == "Month"){ ?>selected<?php } ?>><?php echo __('Month', 'ticketmachine'); ?></option>
-					<option value="Year" <?php if($tm_config->event_grouping == "Year" || !isset($tm_config->event_grouping)){ ?>selected<?php } ?>><?php echo __('Year', 'ticketmachine'); ?></option>
-					<option value="None" <?php if($tm_config->event_grouping == "None"){ ?>selected<?php } ?>><?php echo __('None', 'ticketmachine'); ?></option>
+					<option value="Month" <?php if($ticketmachine_config->event_grouping == "Month"){ ?>selected<?php } ?>><?php echo __('Month', 'ticketmachine'); ?></option>
+					<option value="Year" <?php if($ticketmachine_config->event_grouping == "Year" || !isset($ticketmachine_config->event_grouping)){ ?>selected<?php } ?>><?php echo __('Year', 'ticketmachine'); ?></option>
+					<option value="None" <?php if($ticketmachine_config->event_grouping == "None"){ ?>selected<?php } ?>><?php echo __('None', 'ticketmachine'); ?></option>
 				</select>
 			</td>
 		</tr>

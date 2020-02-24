@@ -4,10 +4,10 @@
 		
 	global $wpdb, $globals, $api;
 	
-	$tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
-	$tm_config = $tm_config[0];
+	$ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
+	$ticketmachine_config = $ticketmachine_config[0];
 
-	$globals = (object)$tm_config;
+	$globals = (object)$ticketmachine_config;
 	if(!empty($globals->api_refresh_token) && !empty($globals->api_access_token)) {
 		$globals->activated = 1;
 		$_SESSION['access_token'] = $globals->api_access_token;
@@ -53,9 +53,9 @@
 	$globals->current_url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 	
 	/* Backend Settings */
-	$api->client_id = $tm_config->api_client_id;
-	$api->client_secret = $tm_config->api_client_secret;
-	$globals->environment = $tm_config->api_environment;
+	$api->client_id = $ticketmachine_config->api_client_id;
+	$api->client_secret = $ticketmachine_config->api_client_secret;
+	$globals->environment = $ticketmachine_config->api_environment;
 	$globals->timezone = "";
 	$globals->inverted_timezone = "";
 	
@@ -67,7 +67,7 @@
 	if(isset($_GET['tag'])){
 		$globals->tag = htmlentities($_GET['tag']);
 	}
-	$globals->organizer = $tm_config->organizer;
+	$globals->organizer = $ticketmachine_config->organizer;
 
 	$globals->first_event_date = date('Y-m-d');
 	$globals->first_event_date_calendar = date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "-1 month" ) );

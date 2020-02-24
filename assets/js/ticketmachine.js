@@ -1,14 +1,14 @@
 jQuery(document).ready(function(){
 
     jQuery(document).on('click', '.allow-google-maps', function(e){
-        tm_createCookie('allow_google_maps', 1);
+        ticketmachine_createCookie('allow_google_maps', 1);
         var url = jQuery(this).data("embed");
         jQuery('.allow-google-maps-container').html("<iframe width='100%' height='300' id='mapcanvas' src='" + url + "' frameborder='0' scrolling='no' marginheight='0' marginwidth='0'></iframe><a class='disallow-google-maps float-right' href='#'>Google Maps nicht erlauben</a>");
         e.preventDefault();
     });
 
     jQuery(document).on('click', '.disallow-google-maps', function(){
-        tm_eraseCookie('allow_google_maps');
+        ticketmachine_eraseCookie('allow_google_maps');
         location.reload();
     });
 
@@ -22,7 +22,7 @@ jQuery(document).ready(function(){
         jQuery(this).html('<i class="fas fa-chevron-up"></i>').addClass('open');
         t.parent().find('.card-text').removeClass('closed');
         if (jQuery('.card-text').height() > 720 && jQuery(window).width() > 991) {
-            jQuery('.tm_actions').clone().appendTo('.tm_left');
+            jQuery('.ticketmachine_actions').clone().appendTo('.ticketmachine_left');
         }
         e.preventDefault();
     });
@@ -30,8 +30,8 @@ jQuery(document).ready(function(){
     jQuery(document).on('click', '.read-more.open', function(e){
         jQuery(this).html('<i class="fas fa-chevron-down"></i>').removeClass('open');
         t.parent().find('.card-text').addClass('closed');
-        if (jQuery('.tm_actions').length === 2) {
-            jQuery('.tm_left').find(".tm_actions").remove();
+        if (jQuery('.ticketmachine_actions').length === 2) {
+            jQuery('.ticketmachine_left').find(".ticketmachine_actions").remove();
         }
         e.preventDefault();
     });

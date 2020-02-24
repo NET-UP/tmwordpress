@@ -53,7 +53,7 @@
             echo "<h1 class='wp-heading-inline'>TicketMachine > " . __('Create event', 'ticketmachine') . "</h1>";
         }
     ?>
-    <form name="event" action="?page=tm_events&action=save&id=<?php echo $_GET['id']; ?>" method="post" id="event">
+    <form name="event" action="?page=ticketmachine_events&action=save&id=<?php echo $_GET['id']; ?>" method="post" id="event">
         <input type="hidden" name="organizer_id" value="<?php echo $globals->organizer_id; ?>">
         <input type="hidden" name="rules[sale_active]" value="0">
         <input type="hidden" name="rules[prices_shown]" value="0">
@@ -200,10 +200,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="entrytime[date]" class="form-control date entrytime" value="<?php echo tm_i18n_date("d.m.Y", $event->entrytime); ?>">
+                                    <input type="text" name="entrytime[date]" class="form-control date entrytime" value="<?php echo ticketmachine_i18n_date("d.m.Y", $event->entrytime); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="entrytime[time]" class="form-control time" value="<?php echo tm_i18n_date("H:i", $event->entrytime); ?>">
+                                    <input type="text" name="entrytime[time]" class="form-control time" value="<?php echo ticketmachine_i18n_date("H:i", $event->entrytime); ?>">
                                 </div>
                             </div>
                             <div>
@@ -211,10 +211,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo tm_i18n_date("d.m.Y", $event->ev_date); ?>">
+                                    <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo ticketmachine_i18n_date("d.m.Y", $event->ev_date); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo tm_i18n_date("H:i", $event->ev_date); ?>">
+                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo ticketmachine_i18n_date("H:i", $event->ev_date); ?>">
                                 </div>
                             </div>
                             <div>
@@ -222,10 +222,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="endtime[date]" class="form-control date endtime" value="<?php echo tm_i18n_date("d.m.Y", $event->endtime); ?>">
+                                    <input type="text" name="endtime[date]" class="form-control date endtime" value="<?php echo ticketmachine_i18n_date("d.m.Y", $event->endtime); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="endtime[time]" class="form-control time" value="<?php echo tm_i18n_date("H:i", $event->endtime); ?>">
+                                    <input type="text" name="endtime[time]" class="form-control time" value="<?php echo ticketmachine_i18n_date("H:i", $event->endtime); ?>">
                                 </div>
                             </div>
                         </div>

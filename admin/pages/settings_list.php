@@ -10,11 +10,11 @@
 				"show_list" => $_POST['show_list'],
 				"event_grouping" => $_POST['event_grouping'],
 			);
-		if (!empty($tm_config)) {
+		if (!empty($ticketmachine_config)) {
 			$wpdb->update(
 				$wpdb->prefix . "ticketmachine_config",
 				$save_array,
-				array('id' => $tm_config->id)
+				array('id' => $ticketmachine_config->id)
 			);
 			?>
 			<div class="notice notice-success is-dismissable">
@@ -28,7 +28,7 @@
 			</div>
 			<?php
 		}
-		$tm_config = (object)$_POST;
+		$ticketmachine_config = (object)$_POST;
 	}
 ?>
 
@@ -36,7 +36,7 @@
 	<tbody>
 		<tr>
 			<th><label><?php echo __('Activate List?', 'ticketmachine'); ?></label></th>
-            <td><input name="show_list" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_list){ ?>checked<?php } ?>/></td>
+            <td><input name="show_list" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_list){ ?>checked<?php } ?>/></td>
 		</tr>
 
 	</tbody>

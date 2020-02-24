@@ -17,7 +17,7 @@
     }
 	
 	// load dynamic form for calculator from template
-	function tm_initialize( $atts ) {
+	function ticketmachine_initialize( $atts ) {
         global $globals, $api, $wpdb;
 
 		include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
@@ -30,7 +30,7 @@
 				$atts[$key] = $value;
 			}
 			
-            $tm_output = "<div class='tm_page' data-locale=" . $globals->locale_short . ">";
+            $ticketmachine_output = "<div class='ticketmachine_page' data-locale=" . $globals->locale_short . ">";
             
             if(isset($atts['page'])){
                 switch ($atts['page']) {
@@ -39,14 +39,14 @@
                         include "partials/_search_header.php";
                         include "partials/_tag_header.php";
                         include "pages/events.php";
-                        $tm_output .= tm_display_events( $atts );
+                        $ticketmachine_output .= ticketmachine_display_events( $atts );
                         break;
                     case 'event_boxes':
                         include "partials/_event_boxes_item.php";
                         include "partials/_search_header.php";
                         include "partials/_tag_header.php";
                         include "pages/events.php";
-                        $tm_output .= tm_display_events( $atts );
+                        $ticketmachine_output .= ticketmachine_display_events( $atts );
                         break;
                     case 'event_details':
                         include "partials/_event_page_information.php";
@@ -55,31 +55,31 @@
                         include "partials/_event_page_google_map.php";
                         include "partials/_event_page_actions.php";
                         include "pages/event.php";
-                        $tm_output .= tm_display_event( $atts );
+                        $ticketmachine_output .= ticketmachine_display_event( $atts );
                         break;
                 }
             }elseif($atts['widget']){
                 switch ($atts['widget']) {
                     case 'event_list':
                         include "widgets/event_list.php";
-                        $tm_output .= tm_widget_event_list( $atts );
+                        $ticketmachine_output .= ticketmachine_widget_event_list( $atts );
                         break;
                     case 'event_calendar':
                         include "widgets/event_calendar.php";
-                        $tm_output .= tm_widget_event_calendar( $atts );
+                        $ticketmachine_output .= ticketmachine_widget_event_calendar( $atts );
                         break;
                 }
             }
 
-			$tm_output .= "</div>";
+			$ticketmachine_output .= "</div>";
 			
-			$tm_output = shortcode_unautop($tm_output);
-			return $tm_output;
+			$ticketmachine_output = shortcode_unautop($ticketmachine_output);
+			return $ticketmachine_output;
 			
 		}
 	}
 
-	add_shortcode( 'ticketmachine', 'tm_initialize' );
+	add_shortcode( 'ticketmachine', 'ticketmachine_initialize' );
 	
 	function add_core_files () {
 		//jQuery
@@ -111,10 +111,10 @@
         include_once( plugin_dir_path( __FILE__ ) . 'admin/admin.php');
     }
 	
-    register_activation_hook(__FILE__, 'tm_activate');
-    register_deactivation_hook(__FILE__, 'tm_deactivate');
+    register_activation_hook(__FILE__, 'ticketmachine_activate');
+    register_deactivation_hook(__FILE__, 'ticketmachine_deactivate');
 
-    function tm_activate( ) {
+    function ticketmachine_activate( ) {
         global $wpdb;
         global $jal_db_version;
 
@@ -236,7 +236,7 @@
         $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
     }
 
-    function tm_deactivate( ) {
+    function ticketmachine_deactivate( ) {
         global $wpdb;
         $table_name = $wpdb->prefix . 'ticketmachine_config';
         $wpdb->query("DROP TABLE IF EXISTS $table_name");
@@ -245,7 +245,7 @@
     }
 	
 
-	function tm_event_metadata() {
+	function ticketmachine_event_metadata() {
         if(isset($_GET['id']) && $_GET['id'] > 0){
             $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             echo '<meta property="og:url" content="' . $actual_link . '" />';
@@ -254,7 +254,7 @@
 	}
 	
 
-	function tm_event_metadata_event() {
+	function ticketmachine_event_metadata_event() {
         if(isset($_GET['id']) && $_GET['id'] > 0){
             include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
             $params = [ "id" => $_GET['id'] ];
@@ -263,7 +263,7 @@
                 echo '<meta property="og:title" content="' . $event->ev_name . '" />';
                 echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
                 echo '<meta property="og:type" content="website" />';
-                echo '<meta property="og:description" content="'. tm_i18n_date("d.m.Y", $event->ev_date) .' @ '. tm_i18n_date("H:i", $event->ev_date) .'" />';
+                echo '<meta property="og:description" content="'. ticketmachine_i18n_date("d.m.Y", $event->ev_date) .' @ '. ticketmachine_i18n_date("H:i", $event->ev_date) .'" />';
             }
        }
     }
@@ -275,9 +275,9 @@
         return $data;
     }
 
-	add_action('wp_head','tm_event_metadata');
+	add_action('wp_head','ticketmachine_event_metadata');
     if(isset($_GET['id']) && $_GET['id'] > 0){
-        add_action('wp_head','tm_event_metadata_event');
+        add_action('wp_head','ticketmachine_event_metadata_event');
     }
 
 ?>

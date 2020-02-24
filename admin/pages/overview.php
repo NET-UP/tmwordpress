@@ -3,8 +3,8 @@
 	include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/includes/scriptstyles.php');
 	
     global $globals, $api, $wpdb;
-    $tm_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
-    $tm_config = $tm_config[0];
+    $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
+    $ticketmachine_config = $ticketmachine_config[0];
 
     if(!empty($_GET['code']) && empty($globals->activated)) {
         //Exchange the auth code for an access token
@@ -25,7 +25,7 @@
             $wpdb->update(
                 $wpdb->prefix . "ticketmachine_config",
                 $save_array,
-                array('id' => $tm_config->id)
+                array('id' => $ticketmachine_config->id)
             );
             $globals->activated = 1;
         }
@@ -47,9 +47,9 @@
             
                 <br>
                 <p class="">
-                    <a href="?page=tm_settings&tab=design"><?php echo __("Customize your theme", "ticketmachine"); ?></a>
-                    <a class="ml-3" href="?page=tm_events&action=edit"><?php echo __("Create an event", "ticketmachine"); ?></a>
-                    <a class="ml-3 d-none" href="?page=tm_events&action=edit"><?php echo __("What's new?", "ticketmachine"); ?></a>
+                    <a href="?page=ticketmachine_settings&tab=design"><?php echo __("Customize your theme", "ticketmachine"); ?></a>
+                    <a class="ml-3" href="?page=ticketmachine_events&action=edit"><?php echo __("Create an event", "ticketmachine"); ?></a>
+                    <a class="ml-3 d-none" href="?page=ticketmachine_events&action=edit"><?php echo __("What's new?", "ticketmachine"); ?></a>
                 </p>
             </div>
         
@@ -72,7 +72,7 @@
                         <div class="box-title"><?php echo __("Create an event", "ticketmachine"); ?></div>
                         <div class="box-body">
                             <p><?php echo __("Just add a title, description, image, location and dates.", "ticketmachine"); ?></p>
-                            <a href="?page=tm_events&action=edit" class="button button-secondary mb-1"><?php echo __("New event", "ticketmachine"); ?></a>
+                            <a href="?page=ticketmachine_events&action=edit" class="button button-secondary mb-1"><?php echo __("New event", "ticketmachine"); ?></a>
                         </div>
                     </div>
                 </div>
@@ -81,9 +81,9 @@
                         <div class="box-title"><?php echo __("Edit events", "ticketmachine"); ?></div>
                         <div class="box-body">
                             <p><?php echo __("Edit, publish and view your existing events.", "ticketmachine"); ?></p>
-                            <a href="?page=tm_events" class="button button-secondary mb-1"><?php echo __("View all events", "ticketmachine"); ?></a>
-                            <a href="?page=tm_events&status=drafts" class="button button-secondary mb-1"><?php echo __("Drafts", "ticketmachine"); ?></a>
-                            <a href="?page=tm_events&status=upcoming" class="button button-secondary mb-1"><?php echo __("Upcoming events", "ticketmachine"); ?></a>
+                            <a href="?page=ticketmachine_events" class="button button-secondary mb-1"><?php echo __("View all events", "ticketmachine"); ?></a>
+                            <a href="?page=ticketmachine_events&status=drafts" class="button button-secondary mb-1"><?php echo __("Drafts", "ticketmachine"); ?></a>
+                            <a href="?page=ticketmachine_events&status=upcoming" class="button button-secondary mb-1"><?php echo __("Upcoming events", "ticketmachine"); ?></a>
                         </div>
                     </div>
                 </div>
@@ -92,9 +92,9 @@
                         <div class="box-title"><?php echo __("Change settings", "ticketmachine"); ?></div>
                         <div class="box-body">
                             <p><?php echo __("Easily adjust the design, page layouts, URLs and general settings.", "ticketmachine"); ?></p>
-                            <a href="?page=tm_settings&tab=design" class="button button-secondary mb-1"><?php echo __("Edit design", "ticketmachine"); ?></a>
-                            <a href="?page=tm_settings&tab=general" class="button button-secondary mb-1"><?php echo __("General settings", "ticketmachine"); ?></a>
-                            <a href="?page=tm_settings&tab=detail" class="button button-secondary mb-1"><?php echo __("Event settings", "ticketmachine"); ?></a>
+                            <a href="?page=ticketmachine_settings&tab=design" class="button button-secondary mb-1"><?php echo __("Edit design", "ticketmachine"); ?></a>
+                            <a href="?page=ticketmachine_settings&tab=general" class="button button-secondary mb-1"><?php echo __("General settings", "ticketmachine"); ?></a>
+                            <a href="?page=ticketmachine_settings&tab=detail" class="button button-secondary mb-1"><?php echo __("Event settings", "ticketmachine"); ?></a>
                         </div>
                     </div>
                 </div>

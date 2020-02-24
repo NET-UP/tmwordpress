@@ -1,4 +1,4 @@
-function tm_createCookie(name,value,days) {
+function ticketmachine_createCookie(name,value,days) {
 	if (days) {
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
@@ -8,7 +8,7 @@ function tm_createCookie(name,value,days) {
 	document.cookie = name+"="+value+expires+"; path=/";
 }
 
-function tm_readCookie(name) {
+function ticketmachine_readCookie(name) {
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(';');
 	for(var i=0;i < ca.length;i++) {
@@ -19,6 +19,6 @@ function tm_readCookie(name) {
 	return null;
 }
 
-function tm_eraseCookie(name) {
-	tm_createCookie(name,"",-10);
+function ticketmachine_eraseCookie(name) {
+	ticketmachine_createCookie(name,"",-10);
 }

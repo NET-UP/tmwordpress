@@ -11,13 +11,13 @@
         $_POST['tags'] = explode(",", $_POST['tags']);
     }
     if(isset($_POST['entrytime'])) {
-        $_POST['entrytime'] = tm_i18n_reverse_date($_POST['entrytime']['date'] . $_POST['entrytime']['time']);
+        $_POST['entrytime'] = ticketmachine_i18n_reverse_date($_POST['entrytime']['date'] . $_POST['entrytime']['time']);
     }
     if(isset($_POST['ev_date'])) {
-        $_POST['ev_date'] = tm_i18n_reverse_date($_POST['ev_date']['date'] . $_POST['ev_date']['time']);
+        $_POST['ev_date'] = ticketmachine_i18n_reverse_date($_POST['ev_date']['date'] . $_POST['ev_date']['time']);
     }
     if(isset($_POST['endtime'])) {
-        $_POST['endtime'] = tm_i18n_reverse_date($_POST['endtime']['date'] . $_POST['endtime']['time']);
+        $_POST['endtime'] = ticketmachine_i18n_reverse_date($_POST['endtime']['date'] . $_POST['endtime']['time']);
     }
 
     if(isset($_POST['description'])) {
@@ -41,8 +41,8 @@
         JSON_UNESCAPED_SLASHES
     );
     
-    $tm_json = tmapi_event($post_json, "POST");
-    $response = (object)$tm_json;
+    $ticketmachine_json = tmapi_event($post_json, "POST");
+    $response = (object)$ticketmachine_json;
     
 ?>
 
@@ -51,7 +51,7 @@
     <div class="notice notice-error is-dismissable">
         <p><?php echo __($response->model_error[0]['error_message']); ?></p>
     </div>
-<?php }elseif(empty($tm_json)){ ?>
+<?php }elseif(empty($ticketmachine_json)){ ?>
     <div class="notice notice-error is-dismissable">
         <p><?php echo __('Something went wrong', 'ticketmachine'); ?>!</p>
     </div>

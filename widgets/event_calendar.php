@@ -1,6 +1,6 @@
 <?php
 
-    function tm_widget_event_calendar ( $atts ) {
+    function ticketmachine_widget_event_calendar ( $atts ) {
 		global $globals, $api;
 
        //Calendar Packages
@@ -23,11 +23,11 @@
         //Calendar Config
         wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ) );
 
-        $tm_output = "
-                <input type='hidden' id='tm_ev_url' value='" . plugins_url('', dirname(__FILE__) ) . "/event.php'></input>
+        $ticketmachine_output = "
+                <input type='hidden' id='ticketmachine_ev_url' value='" . plugins_url('', dirname(__FILE__) ) . "/event.php'></input>
                 <div class='row'>
-                    <div id='tm_cal_error' class='col-12 text-center mt-1' style='display:none;'>"
-                        . tm_alert(__("No events could be found", "ticketmachine"), "error") . "
+                    <div id='ticketmachine_cal_error' class='col-12 text-center mt-1' style='display:none;'>"
+                        . ticketmachine_alert(__("No events could be found", "ticketmachine"), "error") . "
                     </div>
                     <div class='col-12'>
                         <div class='input-group'>
@@ -40,10 +40,10 @@
                     </div>
                 </div>";
         
-        $tm_output .= "
+        $ticketmachine_output .= "
                 <div class='row'>
                     <div class='col-12'>
-                        <div id='tm_spinner'>
+                        <div id='ticketmachine_spinner'>
                             <div class='text-center'>
                                 <div class='spinner-border text-primary' role='status'>
                                     <span class='sr-only'>Laden...</span>
@@ -54,7 +54,7 @@
                     <div id='calendar' class='col-12'></div>
                 </div>";
 
-        return $tm_output;
+        return $ticketmachine_output;
     }
 
 ?>

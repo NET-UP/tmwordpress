@@ -9,11 +9,11 @@
 			array(
 				"show_calendar" => $_POST['show_calendar'],
 			);
-		if (!empty($tm_config)) {
+		if (!empty($ticketmachine_config)) {
 			$wpdb->update(
 				$wpdb->prefix . "ticketmachine_config",
 				$save_array,
-				array('id' => $tm_config->id)
+				array('id' => $ticketmachine_config->id)
 			);
 			?>
 			<div class="notice notice-success is-dismissable">
@@ -27,7 +27,7 @@
 			</div>
 			<?php
 		}
-		$tm_config = (object)$_POST;
+		$ticketmachine_config = (object)$_POST;
 	}
 ?>
 
@@ -35,7 +35,7 @@
 	<tbody>
 		<tr>
 			<th><label><?php echo __('Activate calendar?', 'ticketmachine'); ?></label></th>
-            <td><input name="show_calendar" type="checkbox" value=1 class="regular-text" <?php if($tm_config->show_calendar){ ?>checked <?php } ?>/></td>
+            <td><input name="show_calendar" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_calendar){ ?>checked <?php } ?>/></td>
 		</tr>
 
 	</tbody>

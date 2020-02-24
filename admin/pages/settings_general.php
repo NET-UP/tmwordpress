@@ -5,11 +5,11 @@
 				"events_slug_id" => $_POST['events_slug_id'],
 				"event_slug_id" => $_POST['event_slug_id']
 			);
-		if (!empty($tm_config)) {
+		if (!empty($ticketmachine_config)) {
 			$wpdb->update(
 				$wpdb->prefix . "ticketmachine_config",
 				$save_array,
-				array('id' => $tm_config->id)
+				array('id' => $ticketmachine_config->id)
 			);
 			?>
 			<div class="notice notice-success is-dismissable">
@@ -23,7 +23,7 @@
 			</div>
 			<?php
 		}
-		$tm_config = (object)$_POST;
+		$ticketmachine_config = (object)$_POST;
 	}
 ?>
 
@@ -36,7 +36,7 @@
 					<?php
 						if( $pages = get_pages() ){
 							foreach( $pages as $page ){
-								$selected = ($page->ID == $tm_config->events_slug_id) ? 'selected="selected"' : '';
+								$selected = ($page->ID == $ticketmachine_config->events_slug_id) ? 'selected="selected"' : '';
 								echo '<option value="' . $page->ID . '" ' . $selected . '>' . $page->post_title . '</option>';
 							}
 						}
@@ -51,7 +51,7 @@
 					<?php
 						if( $pages = get_pages() ){
 							foreach( $pages as $page ){
-								$selected = ($page->ID == $tm_config->event_slug_id) ? 'selected="selected"' : '';
+								$selected = ($page->ID == $ticketmachine_config->event_slug_id) ? 'selected="selected"' : '';
 								echo '<option value="' . $page->ID . '" ' . $selected . '>' . $page->post_title . '</option>';
 							}
 						}

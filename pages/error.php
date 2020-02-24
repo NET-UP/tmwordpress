@@ -1,12 +1,12 @@
 <?php
 
-    function tm_error_page( $message, $actions = [], $title= "Oops!") {
+    function ticketmachine_error_page( $message, $actions = [], $title= "Oops!") {
 
-        $tm_output = "<h1>" . __($title, "ticketmachine") . "</h1>";
+        $ticketmachine_output = "<h1>" . __($title, "ticketmachine") . "</h1>";
 
-        $tm_output .= tm_alert($message, "error", $actions);
+        $ticketmachine_output .= ticketmachine_alert($message, "error", $actions);
 
-        return $tm_output;
+        return $ticketmachine_output;
     }
 
 ?>

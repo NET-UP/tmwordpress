@@ -397,7 +397,7 @@ function remove_categorie(){
  * so we've instead called those methods explicitly. It keeps things flexible, and
  * it's the way the list tables are used in the WordPress core.
  */
-function tm_render_categories_page(){
+function ticketmachine_render_categories_page(){
 
     //Create an instance of our package class...
     $CategorieListTable = new Categorie_List_Table();

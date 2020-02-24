@@ -109,9 +109,9 @@ class Event_List_Table extends WP_List_Table {
             case 'tags':
                 return implode(", ", $item[$column_name]);
             case 'ev_date':
-                return tm_i18n_date("d.m.Y", $item[$column_name]);
+                return ticketmachine_i18n_date("d.m.Y", $item[$column_name]);
             case 'endtime':
-                return tm_i18n_date("d.m.Y", $item[$column_name]);
+                return ticketmachine_i18n_date("d.m.Y", $item[$column_name]);
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
         }
@@ -441,7 +441,7 @@ function copy_event(){
  * so we've instead called those methods explicitly. It keeps things flexible, and
  * it's the way the list tables are used in the WordPress core.
  */
-function tm_render_list_page(){
+function ticketmachine_render_list_page(){
 
     if( isset($_GET['action']) && $_GET['action'] == "edit" ) {
         include "event_edit.php";
@@ -469,32 +469,32 @@ function tm_render_list_page(){
                     
                     <h1 class="wp-heading-inline mr-3 mb-3 mb-md-0">
                         TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php echo __('Events', 'ticketmachine'); ?>
-                        <a href="?page=tm_events&action=edit" class="button button-secondary ml-2 mb-3 mb-md-0"><?php echo __('Add','ticketmachine'); ?></a>
+                        <a href="?page=ticketmachine_events&action=edit" class="button button-secondary ml-2 mb-3 mb-md-0"><?php echo __('Add','ticketmachine'); ?></a>
                     </h1>
                         
                     <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
                     <form method="get">
                         <ul class="subsubsub">
                             <li class="all">
-                                <a href="<?php echo admin_url() . 'admin.php?page=tm_events'; ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
+                                <a href="<?php echo admin_url() . 'admin.php?page=ticketmachine_events'; ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
                                     <?php echo __('All', 'ticketmachine'); ?> 
                                     <span class="count"></span>
                                 </a> |
                             </li>
                             <li class="upcoming">
-                                <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=upcoming'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming"){ ?>class="current"<?php } ?>>
+                                <a href="<?php echo admin_url() . 'admin.php?page=ticketmachine_events&status=upcoming'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming"){ ?>class="current"<?php } ?>>
                                     <?php echo __('Upcoming', 'ticketmachine'); ?> 
                                     <span class="count"></span>
                                 </a> |
                             </li>
                             <li class="publish">
-                                <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=published'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "published"){ ?>class="current"<?php } ?>>
+                                <a href="<?php echo admin_url() . 'admin.php?page=ticketmachine_events&status=published'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "published"){ ?>class="current"<?php } ?>>
                                     <?php echo __('Published', 'ticketmachine'); ?> 
                                     <span class="count"></span> <!-- TO DO add logic -->
                                 </a> |
                             </li>
                             <li class="draft">
-                                <a href="<?php echo admin_url() . 'admin.php?page=tm_events&status=drafts'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "drafts"){ ?>class="current"<?php } ?>>
+                                <a href="<?php echo admin_url() . 'admin.php?page=ticketmachine_events&status=drafts'; ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "drafts"){ ?>class="current"<?php } ?>>
                                     <?php echo __('Drafts', 'ticketmachine'); ?> 
                                     <span class="count"></span> <!-- TO DO add logic -->
                                 </a>

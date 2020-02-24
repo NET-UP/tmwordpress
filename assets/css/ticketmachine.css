@@ -4,42 +4,42 @@
     text-overflow: ellipsis;
 }
 
-body .tm_page {
+body .ticketmachine_page {
 	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 	line-height: 1.5;
 }
 
-body .tm_page .row {
+body .ticketmachine_page .row {
 	margin-bottom:0;
 }
 
-body .tm_page a {
+body .ticketmachine_page a {
 	letter-spacing: normal;
 }
 
-body .tm_page a:not(.btn) {
+body .ticketmachine_page a:not(.btn) {
 	text-decoration:none;
 	font-weight:500;
 }
 
-body .tm_page a:not(.btn):hover {
+body .ticketmachine_page a:not(.btn):hover {
     text-decoration: underline;
 }
 
-body .tm_page a.btn {
+body .ticketmachine_page a.btn {
 	text-decoration:none;
 }
 
-.tm_page .badge {
+.ticketmachine_page .badge {
 	padding: 4px 7px!important;
     font-size: 0.8em;
 }
 
-.tm_page .card {
+.ticketmachine_page .card {
 	overflow: hidden;
 }
 
-.tm_page .card-img-top {
+.ticketmachine_page .card-img-top {
 	height: 10em;
 	background-size: cover;
 	background-position: center center;
@@ -47,11 +47,11 @@ body .tm_page a.btn {
 	border-bottom: 1px solid rgba(0,0,0,.025);
 }
 
-.tm_page .card-img-top.full {
+.ticketmachine_page .card-img-top.full {
 	height: 15em;
 }
 
-.tm_page .card-meta-tag.keyword {
+.ticketmachine_page .card-meta-tag.keyword {
     display: inline-block;
     background: #eee;
     padding: .2em 1em;
@@ -60,27 +60,27 @@ body .tm_page a.btn {
 	margin-right: 2px;
 }
 
-.tm_page .fc-event {
+.ticketmachine_page .fc-event {
 	margin-bottom:2px;
 }
 
 
-.tm_page .card-meta {
+.ticketmachine_page .card-meta {
 	font-weight: 500;
 }
 
-.tm_page .card-meta-tag {
+.ticketmachine_page .card-meta-tag {
 	display: inline-block;
 	padding-right: 1em;
 }
 
-.tm_page .card-meta-tag.keyword {
+.ticketmachine_page .card-meta-tag.keyword {
 	display: inline-block;
 	padding: 0.2em 1em;
 	border-radius: 1em;
 }
 
-.tm_page .card-date {
+.ticketmachine_page .card-date {
 	display: inline-block;
 	position: absolute;
 	width: 3em;
@@ -93,20 +93,20 @@ body .tm_page a.btn {
 	margin-left: -3px;
 }
 
-.tm_page .card-day {
+.ticketmachine_page .card-day {
 	font-weight: 700;
 	font-size: 1.1rem;
 	line-height: 1rem;
 	padding-top: 0.325em;
 }
 
-.tm_page .card-month {
+.ticketmachine_page .card-month {
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 0.7rem;
 }
 
-.tm_page h5.card-title {
+.ticketmachine_page h5.card-title {
 	height: 2.2em;
 	margin-left: 3.6em;
 	margin-right: 3.6em;
@@ -114,22 +114,22 @@ body .tm_page a.btn {
 	font-size: 1.0675rem;
 }
 
-.tm_page .card-price {
+.ticketmachine_page .card-price {
 	right: 1.1em;
 	position: absolute;
 	top: 1.3em;
 	font-weight: 500;
 }
 
-.tm_page .card-group .card:hover {
+.ticketmachine_page .card-group .card:hover {
 	box-shadow: 0 1px 5px rgba(124, 124, 124, 0.1);
 }
 
-.tm_page .card-group .card:hover>.card-img-top {
+.ticketmachine_page .card-group .card:hover>.card-img-top {
 	opacity: 0.95;
 }
 
-.tm_page .card-state {
+.ticketmachine_page .card-state {
 	background: #ffffff57;
 	font-weight: 500;
 	height: 100%;
@@ -138,43 +138,43 @@ body .tm_page a.btn {
 	justify-content: center;
 }
 
-.tm_page .card-state>div {
+.ticketmachine_page .card-state>div {
 	background: #ffffff;
 	padding: 0.5em 20em;
 	border: 1px solid #00000021;
 	transform: rotate(342deg);
 }
 
-.tm_page .btn-primary:hover,
-.tm_page .btn-primary:active,
-.tm_page .btn-primary:focus {
+.ticketmachine_page .btn-primary:hover,
+.ticketmachine_page .btn-primary:active,
+.ticketmachine_page .btn-primary:focus {
 	text-decoration:none !important;
 }
 
-.tm_page .btn {
+.ticketmachine_page .btn {
 	min-width: 44px;
 }
 
-.tm_page .btn-primary.disabled,
-.tm_page .btn-primary:disabled {
+.ticketmachine_page .btn-primary.disabled,
+.ticketmachine_page .btn-primary:disabled {
 	opacity: 0.3;
 }
 
-.tm_page .line-header {
+.ticketmachine_page .line-header {
 	position: relative;
     text-align: center;    
     margin-bottom: 1rem;
     margin-top: 0.5rem;
 }
 
-.tm_page .line-header span {
+.ticketmachine_page .line-header span {
     background: #FFF;
     padding: 0 10px;
     position: relative;    
 	font-size: 16pt;
 }
 
-.tm_page .line-header:before {
+.ticketmachine_page .line-header:before {
     content: '';
     display: block;
     border-top: solid 1px rgba(0,0,0,0.05);
@@ -185,17 +185,17 @@ body .tm_page a.btn {
     z-index: 0;
 }
 
-.tm_page li.media {
+.ticketmachine_page li.media {
     border-bottom: 1px solid #EEE;
     margin-bottom: 7px;
     padding-bottom: 9px;
 }
 
-.tm_page ul > li.media:last-child {
+.ticketmachine_page ul > li.media:last-child {
     border-bottom: none;
 }
 
-.tm_page .media-img {
+.ticketmachine_page .media-img {
 	width:64px;
 	height:64px;
 	background-color: #EEE;
@@ -204,23 +204,23 @@ body .tm_page a.btn {
     border-radius: 3px;
 }
 
-.tm_page .tm_widget_event_list ul {
+.ticketmachine_page .ticketmachine_widget_event_list ul {
 	margin-left:0;
 }
 
-.tm_page .media-body {
+.ticketmachine_page .media-body {
 	word-break: break-word;
 }
 
-.tm_page .title-height {
+.ticketmachine_page .title-height {
 	height:50px;
 }
 
-.tm_page .read-more {
+.ticketmachine_page .read-more {
 	min-width:auto !important;
 }
 
-.tm_page .allow-google-maps-container {
+.ticketmachine_page .allow-google-maps-container {
 	width: 100%;
     height: 300px;
     background: #EEE;
@@ -233,7 +233,7 @@ body .tm_page a.btn {
 	display:none;
 }
 
-.tm_page .vertical-center {
+.ticketmachine_page .vertical-center {
   margin: 0;
   position: absolute;
   top: 50%;
@@ -242,12 +242,12 @@ body .tm_page a.btn {
   width:100%;
 }
 
-.tm_page .card-text {
+.ticketmachine_page .card-text {
 	overflow: hidden;
 	position:relative;
 }  
 
-.tm_page .card-text.closed {
+.ticketmachine_page .card-text.closed {
 	max-height: 170px;
 }  
 
@@ -303,23 +303,23 @@ td.fc-today {
     background: #f2f2f2;
 }
 
-.tm_page .alert-danger {
+.ticketmachine_page .alert-danger {
 	border-color: #f5c6cb;
 }
 
-.tm_page .alert-warning {
+.ticketmachine_page .alert-warning {
 	border-color: #ffeeba;
 }
 
-.tm_page .title-height h3 {
+.ticketmachine_page .title-height h3 {
 	font-size: 19px !important;
 }
 
-.tm_page .alert-success {
+.ticketmachine_page .alert-success {
 	border-color: #c3e6cb;
 }
 
-.tm_page iframe {
+.ticketmachine_page iframe {
 	background: #f1f1f1;
 	border: 1px solid rgba(0,0,0,.025);
 	border-radius: 3px;

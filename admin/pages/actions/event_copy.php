@@ -6,8 +6,8 @@
         $_POST['organizer_id'] = $globals->organizer_id;
         
         $post_json = json_encode($_POST);
-        $tm_json = tmapi_event_copy($post_json);
-        $response = (object)$tm_json;
+        $ticketmachine_json = tmapi_event_copy($post_json);
+        $response = (object)$ticketmachine_json;
     }
 ?>
 
@@ -15,7 +15,7 @@
     <div class="notice notice-error is-dismissable">
         <p><?php echo __($response->model_error[0]['error_message']); ?></p>
     </div>
-<?php }elseif(empty($tm_json)){ ?>
+<?php }elseif(empty($ticketmachine_json)){ ?>
     <div class="notice notice-error is-dismissable">
         <p><?php echo __('Something went wrong', 'ticketmachine'); ?>!</p>
     </div>

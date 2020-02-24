@@ -1,7 +1,7 @@
 <?php
-    function tm_event_page_information ( $event, $globals ) {
+    function ticketmachine_event_page_information ( $event, $globals ) {
 
-        $tm_output = '
+        $ticketmachine_output = '
         
             <div class="title-height no-height-mobile">
                 <h5>
@@ -17,15 +17,15 @@
                 <div class="card-body position-relative">
 
                     <div class="card-meta">
-                        <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. tm_i18n_date("d.m.Y", $event->ev_date) .'</div> 
-                        <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. tm_i18n_date("H:i", $event->ev_date) .'</div>';
+                        <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("d.m.Y", $event->ev_date) .'</div> 
+                        <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("H:i", $event->ev_date) .'</div>';
 
                         if(isset($event->has_location) && $event->has_location == 1){                       
-                             $tm_output .= '<div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; <a aria-label="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location['street'] . " " . $event->event_location["house_number"] . " " . $event->event_location["zip"] . " " . $event->event_location["city"] . " " . $event->event_location["country"] ) . '" target="_blank" title="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a> </div>';
+                             $ticketmachine_output .= '<div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; <a aria-label="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location['street'] . " " . $event->event_location["house_number"] . " " . $event->event_location["zip"] . " " . $event->event_location["city"] . " " . $event->event_location["country"] ) . '" target="_blank" title="' . __("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a> </div>';
                         }
                        
 
-        $tm_output .= '</div>
+        $ticketmachine_output .= '</div>
 
                     <div class="card-text mt-3">
                         '. wpautop($event->ev_description) .'
@@ -40,15 +40,15 @@
                     <div class="card-meta mt-2">';
 
                     foreach($event->tags as $tag) {
-                        $tm_output .= "<a href='/" . $globals->events_slug . "?tag=" . $tag . "' class='card-meta-tag keyword'>". $tag ."</a>";
+                        $ticketmachine_output .= "<a href='/" . $globals->events_slug . "?tag=" . $tag . "' class='card-meta-tag keyword'>". $tag ."</a>";
                     }
-        $tm_output .= '
+        $ticketmachine_output .= '
                     </div>
 
                 </div>
             </card>
         ';
 
-        return $tm_output;
+        return $ticketmachine_output;
 	}
 ?>

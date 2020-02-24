@@ -1,6 +1,6 @@
 <?php
 
-	function tm_display_events ( $atts ) {
+	function ticketmachine_display_events ( $atts ) {
 		global $globals, $api;
 
 		$params = array();
@@ -26,13 +26,13 @@
 			$current_page = "unknown";
 		}
 		
-		$tm_output = "<div class='row tm_events_container'>";
+		$ticketmachine_output = "<div class='row ticketmachine_events_container'>";
 		
-		$tm_output .= "<div class='page-header col-12'>" . tm_search_header($globals, $current_page);
+		$ticketmachine_output .= "<div class='page-header col-12'>" . ticketmachine_search_header($globals, $current_page);
 			if($globals->tag){
-				$tm_output .= tm_tag_header($globals);
+				$ticketmachine_output .= ticketmachine_tag_header($globals);
 			}
-		$tm_output .= "</div>";
+		$ticketmachine_output .= "</div>";
 		
 		if($current_page == "calendar"){
 		
@@ -56,13 +56,13 @@
 			//Calendar Config
 			wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ) );
 			
-			$tm_output .= "
-			<input type='hidden' id='tm_ev_url' value='" . plugins_url('', dirname(__FILE__) ) . "/event.php'></input>
-			<div id='tm_cal_error' class='col-12 text-center mt-1' style='display:none;'>" . tm_alert(__("No events could be found", "ticketmachine"), "error") . "</div>
+			$ticketmachine_output .= "
+			<input type='hidden' id='ticketmachine_ev_url' value='" . plugins_url('', dirname(__FILE__) ) . "/event.php'></input>
+			<div id='ticketmachine_cal_error' class='col-12 text-center mt-1' style='display:none;'>" . ticketmachine_alert(__("No events could be found", "ticketmachine"), "error") . "</div>
 				<div class='col-12 mt-3'>
 					<div class='row'>
 						<div class='col-12'>
-							<div id='tm_spinner'>
+							<div id='ticketmachine_spinner'>
 								<div class='text-center'>
 									<div class='spinner-border text-primary' role='status'>
 										<span class='sr-only'>Laden...</span>
@@ -77,9 +77,9 @@
 		}elseif($current_page == "list"){
 			
 			if(empty($events)) {	
-				$tm_output .= "<div class='col-12 text-center mt-1'>";
-					$tm_output .= tm_alert(__("No events could be found", "ticketmachine"), "error");
-				$tm_output .= "</div>";
+				$ticketmachine_output .= "<div class='col-12 text-center mt-1'>";
+					$ticketmachine_output .= ticketmachine_alert(__("No events could be found", "ticketmachine"), "error");
+				$ticketmachine_output .= "</div>";
 				
 			}else{
 
@@ -88,25 +88,25 @@
 				$atts['show_description'] = 1;
 				$atts['show_date'] = 1;
 				
-				$tm_output .= '<div class="col-12">';
-					$tm_output .= '<ul class="list-unstyled mx-0">';
+				$ticketmachine_output .= '<div class="col-12">';
+					$ticketmachine_output .= '<ul class="list-unstyled mx-0">';
 
 					foreach($events as $event){
 						$event = (object)$event;
 
-						$tm_output .= '<li class="media mx-0 mt-2">';
+						$ticketmachine_output .= '<li class="media mx-0 mt-2">';
 
 						if(isset($atts['show_image']) && $atts['show_image'] > 0){
-							$tm_output .= '<a class="mr-3 media-img" href="/' . $globals->event_slug . '?id=' . $event->id . '" style="background-image:url('. $event->event_img_url .')"></a>';
+							$ticketmachine_output .= '<a class="mr-3 media-img" href="/' . $globals->event_slug . '?id=' . $event->id . '" style="background-image:url('. $event->event_img_url .')"></a>';
 						}
 											
-							$tm_output .= '<div class="media-body">';
-							$tm_output .= '<h5 class="mt-0 mb-1"><a href="/' . $globals->event_slug . '?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
+							$ticketmachine_output .= '<div class="media-body">';
+							$ticketmachine_output .= '<h5 class="mt-0 mb-1"><a href="/' . $globals->event_slug . '?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
 
 							if(isset($atts['show_date']) && $atts['show_date'] > 0){
-								$tm_output .= '
-								<div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. tm_i18n_date("d.m.Y", $event->ev_date) .'</div> 
-								<div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. tm_i18n_date("H:i", $event->ev_date) .'</div>';
+								$ticketmachine_output .= '
+								<div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("d.m.Y", $event->ev_date) .'</div> 
+								<div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("H:i", $event->ev_date) .'</div>';
 							}
 							
 							if(isset($atts['show_description']) && $atts['show_description'] > 0){
@@ -114,16 +114,16 @@
 									$atts['description_length'] = 15;
 								}
 								if(isset($atts['description_length'])){
-									$tm_output .= '<div>' . wp_trim_words(wp_strip_all_tags($event->ev_description), $atts['description_length'], "...") . '</div>';
+									$ticketmachine_output .= '<div>' . wp_trim_words(wp_strip_all_tags($event->ev_description), $atts['description_length'], "...") . '</div>';
 								}
 							}
 
-						$tm_output .= '</div>
+						$ticketmachine_output .= '</div>
 									</li>';
 					}
 
-					$tm_output .= '</ul>';
-				$tm_output .= '</div>';
+					$ticketmachine_output .= '</ul>';
+				$ticketmachine_output .= '</div>';
 
 			}
 
@@ -133,12 +133,12 @@
 			$i = 0;
 			
 			if(empty($events)) {	
-				$tm_output .= "<div class='col-12 text-center mt-1'>";
-					$tm_output .= tm_alert(__("No events could be found", "ticketmachine"), "error");
-				$tm_output .= "</div>";
+				$ticketmachine_output .= "<div class='col-12 text-center mt-1'>";
+					$ticketmachine_output .= ticketmachine_alert(__("No events could be found", "ticketmachine"), "error");
+				$ticketmachine_output .= "</div>";
 				
 			}else{
-				$tm_output .= "<div class='col-12 mt-2'></div>";
+				$ticketmachine_output .= "<div class='col-12 mt-2'></div>";
 
 				foreach($events as $event) {
 					$event = (object)$event;
@@ -146,10 +146,10 @@
 					$curr = $event->ev_date;
 					if(isset($globals->event_grouping) && $globals->event_grouping != "None") {
 						if ($i == 0 || date( $globals->group_by , strtotime( $curr ) ) != date( $globals->group_by, strtotime( $prev ) ) ) {
-							$tm_output .= "<div class='col-12 my-2'>
+							$ticketmachine_output .= "<div class='col-12 my-2'>
 												<div class='d-flex'>
 													<hr class='my-auto flex-grow-1'>
-													<h3 class='px-4'>" . tm_i18n_date($globals->format_date, $event->ev_date) . "</h3>
+													<h3 class='px-4'>" . ticketmachine_i18n_date($globals->format_date, $event->ev_date) . "</h3>
 													<hr class='my-auto flex-grow-1'>
 												</div>
 											</div>";
@@ -157,7 +157,7 @@
 						}
 					}
 					
-					$tm_output .= tm_event_list_item ( $event, $globals );
+					$ticketmachine_output .= ticketmachine_event_list_item ( $event, $globals );
 					
 					$i++;
 				}
@@ -166,7 +166,7 @@
 		}else{
 			echo __("List, Boxes & Calendar are deactivated", "ticketmachine");
 		}
-		return $tm_output;
+		return $ticketmachine_output;
 		
 	}
 

@@ -1,20 +1,20 @@
 <?php
 
-    function tm_event_page_details ( $event, $globals ) {
-        $tm_output = '<div class="card mb-3">
+    function ticketmachine_event_page_details ( $event, $globals ) {
+        $ticketmachine_output = '<div class="card mb-3">
                             <div class="row card-body position-relative">
                                 <div class="col-sm-6">
                                     <h3 class="d-inline-block">'. __("Details", "ticketmachine") .'</h3>
                                     <br>
                                     <label>'. __("Start", "ticketmachine") .':</label>
                                     <div class="mb-2">
-                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. tm_i18n_date("d. F", $event->ev_date) .' 
-                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. tm_i18n_date("H:i", $event->ev_date) .'
+                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("d. F", $event->ev_date) .' 
+                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("H:i", $event->ev_date) .'
                                     </div>
                                     <label>'. __("End", "ticketmachine").':</label>
                                     <div class="mb-2">
-                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. tm_i18n_date("d. F", $event->endtime) .' 
-                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. tm_i18n_date("H:i", $event->endtime) .'
+                                        <i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("d. F", $event->endtime) .' 
+                                        &nbsp; <i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("H:i", $event->endtime) .'
                                     </div> 
                                     <label class="d-none">'. __("Entry", "ticketmachine").': </label>
                                     <div class="mb-2 d-none">'. __("free", "ticketmachine") .'</div>
@@ -22,7 +22,7 @@
                                 
             if(isset($event->has_location) && $event->has_location == 1){
                                     
-                $tm_output .=       '<div class="col-sm-6">
+                $ticketmachine_output .=       '<div class="col-sm-6">
                                         <h3 class="d-inline-block">'. __("Event Location", "ticketmachine") .'</h3>
                                         <br>
                                         <div>'. $event->ev_location_name .'</div>
@@ -31,9 +31,9 @@
                                     </div>';
             }      
 
-            $tm_output .=   '</div>
+            $ticketmachine_output .=   '</div>
                        </div>';
-        return $tm_output;
+        return $ticketmachine_output;
     }
 
 ?>
