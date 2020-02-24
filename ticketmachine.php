@@ -10,7 +10,6 @@
 	Author URI:         https://www.net-up.de
 	*/
     add_action( 'wp_enqueue_scripts', 'ticketmachine_add_core_files' );
-    add_action('admin_menu', 'ticketmachine_load_admin_pages');
     
     add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
     function ticketmachine_wpdocs_load_textdomain() {
@@ -112,10 +111,9 @@
     register_activation_hook(__FILE__, 'ticketmachine_activate');
     register_deactivation_hook(__FILE__, 'ticketmachine_deactivate');
     
-    function ticketmachine_load_admin_pages() {
-        if(is_admin()){
-            include_once( plugin_dir_path( __FILE__ ) . 'admin/admin.php');
-        }
+    if(is_admin()){
+        include_once( plugin_dir_path( __FILE__ ) . 'admin/admin.php');
+    }
 
     function ticketmachine_activate( ) {
         global $wpdb;
