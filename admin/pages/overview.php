@@ -1,6 +1,5 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	defined("ABSPATH") or die("Permission denied");
 	include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/includes/scriptstyles.php');
 	
     global $globals, $api, $wpdb;
