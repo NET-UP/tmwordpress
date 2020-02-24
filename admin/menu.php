@@ -1,10 +1,10 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	echo "Can i?" . current_user_can('administrator');
 
 	function ticketmachine_admin_menu () {
 		global $globals, $api;
 
+		echo "Can i?" . current_user_can('administrator');
 
 		if (current_user_can('administrator')){
 
