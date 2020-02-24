@@ -40,11 +40,13 @@
 
 	  }
 	  $response = $resource['body'];
+	  echo "<pre>"; 
 	  print_r($url);
 	  print_r($headers);
 	  print_r($post);
 	  print_r($response);
-	 
+	  echo "</pre>";
+	  
 	  return json_decode($response, true);
 	  
 	}
@@ -182,7 +184,6 @@
 			);
 		}
 
-		print_r($api->auth->code);
 		$token = ticketmachine_apiRequest($api->token, $api->auth->code, "GET");
         $_SESSION['access_token'] = $token['access_token'];
 
