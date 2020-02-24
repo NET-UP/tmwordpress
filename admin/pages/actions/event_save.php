@@ -25,16 +25,16 @@
     }
 
     if(!empty($_POST['id'])) {
-        $_POST['id'] = (int)absint($_POST['id']);
+        $_POST['id'] = absint($_POST['id']);
     }
     if(isset($_POST['vat_id'])){
         $_POST['vat_id'] = 1;
     }
-    $_POST['organizer_id'] = (int)absint($_POST['organizer_id']);
-    $_POST['approved'] = (int)absint($_POST['approved']);
-    $_POST['rules']['shown'] = (int)absint($_POST['rules']['shown']);
-    $_POST['rules']['sale_active'] = (int)absint($_POST['rules']['sale_active']);
-    $_POST['vat_id'] = (int)absint($_POST['vat_id']);
+    $_POST['organizer_id'] = absint($_POST['organizer_id']);
+    $_POST['approved'] = absint($_POST['approved']);
+    $_POST['rules']['shown'] = absint($_POST['rules']['shown']);
+    $_POST['rules']['sale_active'] = absint($_POST['rules']['sale_active']);
+    $_POST['vat_id'] = absint($_POST['vat_id']);
 
     $post_json = json_encode(
         str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", $_POST))), 
