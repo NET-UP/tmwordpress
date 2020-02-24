@@ -254,11 +254,6 @@
 		ticketmachine_tmapi_refresh_token_check();
 	}
 
-	
-	function ticketmachine_add_calendar_feed(){
-		add_feed('init', 'ticketmachine_export_ics');
-	}
-
     function ticketmachine_export_ics(){
         if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
