@@ -4,6 +4,7 @@
 	if (current_user_can('edit_posts')) {
 		include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 		include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
+
 		function ticketmachine_admin_menu () {
 			global $globals, $api;
 			
@@ -74,25 +75,26 @@
 				);
 			}
 		}
-	}
 
-	add_filter( 'submenu_file', function($submenu_file){
-		$screen = get_current_screen();
-		if($screen->id === 'ticketmachine_event_manager'){
-			$submenu_file = 'ticketmachine_event_manager';
+		add_filter( 'submenu_file', function($submenu_file){
+			$screen = get_current_screen();
+			if($screen->id === 'ticketmachine_event_manager'){
+				$submenu_file = 'ticketmachine_event_manager';
+			}
+			return $submenu_file;
+		});
+		
+		add_action('admin_menu', 'ticketmachine_admin_menu');
+
+		function ticketmachine_overview_page(){
+			include( plugin_dir_path( __FILE__) . 'pages/overview.php');
 		}
-		return $submenu_file;
-	});
-	
-	add_action('admin_menu', 'ticketmachine_admin_menu');
+		function ticketmachine_settings_page(){
+			include( plugin_dir_path( __FILE__ ) . 'pages/settings.php');
+		}
+		function ticketmachine_installation_page(){
+			include( plugin_dir_path( __FILE__) . 'pages/installation.php');
+		}
 
-	function ticketmachine_overview_page(){
-		include( plugin_dir_path( __FILE__) . 'pages/overview.php');
-	}
-	function ticketmachine_settings_page(){
-		include( plugin_dir_path( __FILE__ ) . 'pages/settings.php');
-	}
-	function ticketmachine_installation_page(){
-		include( plugin_dir_path( __FILE__) . 'pages/installation.php');
 	}
 ?>
