@@ -1,9 +1,9 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
-	include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 
 	if (current_user_can('edit_posts')) {
+		include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
+		include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 		function ticketmachine_admin_menu () {
 			global $globals, $api;
 			
