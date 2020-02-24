@@ -19,7 +19,7 @@
 			$headers[] = 'Content-Type: application/json';
 		}
 
-		$response = wp_remote_post($url, array(
+		$resource = wp_remote_post($url, array(
 			'method'  => 'POST',
 			'timeout' => 45,
 			'headers' => $headers
@@ -31,20 +31,15 @@
 			$headers[] = 'Accept: application/json';
 		}
 
-		$response = wp_remote_get($url, array(
+		$resource = wp_remote_get($url, array(
 			'method'  => 'GET',
 			'timeout' => 45,
 			'headers' => $headers
 		));
 
 	  }
-
 	 
-	 
-	  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-	  curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-	 
-	  $response = curl_exec($ch);
+	  $response = wp_remote_retrieve_body( $resource );
 	  return json_decode($response, true);
 	  
 	}
