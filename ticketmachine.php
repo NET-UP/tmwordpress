@@ -286,9 +286,8 @@
     add_action( 'wp_ajax_my_action', 'my_action_callback' );
     add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
 
-    
-	
 	function my_action_callback() {
+        require "functions.php";
         global $wpdb, $globals, $api;
         $params = [ 
             "query" => sanitize_text_field($_REQUEST['q']), 
