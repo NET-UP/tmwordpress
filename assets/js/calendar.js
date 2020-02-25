@@ -7,13 +7,13 @@ jQuery("#ticketmachine_spinner").show();
 var locale= jQuery(".ticketmachine_page").data("locale");
 var ev_url= jQuery("#ticketmachine_ev_url").val();
 var data = {
-	action: 'my_action',
+	action: 'ticketmachine_calendar',
 	q: '',
 	sort: 'ev_date',
 	tag: '',
 	approved: 1,
 };
-jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
+jQuery.getJSON(ticketmachine_calendar_data.ajaxurl, data).success(function(data) {
 
 	jQuery("#ticketmachine_spinner").hide();
 	var events_array = data['data'];
