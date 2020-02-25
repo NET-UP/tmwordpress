@@ -13,7 +13,7 @@ var data = {
 	tag: '',
 	approved: 1,
 };
-jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
+jQuery.getJSON(ticketmachine_calendar_data.ajaxurl, data).success(function(data) {
 
 	jQuery("#ticketmachine_spinner").hide();
 	var events_array = data['data'];
