@@ -37,7 +37,7 @@
 		if($current_page == "calendar"){
 			
 			$ticketmachine_output .= "
-			<input type='hidden' id='ticketmachine_ev_url' value='" . plugins_url('', dirname(__FILE__) ) . "/event.php'></input>
+			<input type='hidden' id='ticketmachine_ev_url' value='" . ticketmachine_tmapi_events($params, "GET", FALSE, array(), 1) . "'></input>
 			<div id='ticketmachine_cal_error' class='col-12 text-center mt-1' style='display:none;'>" . ticketmachine_alert(esc_html__("No events could be found", "ticketmachine"), "error") . "</div>
 				<div class='col-12 mt-3'>
 					<div class='row'>

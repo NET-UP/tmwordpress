@@ -57,7 +57,7 @@
 
 	/* API Requests */
 	/* Get event list */
-	function ticketmachine_tmapi_events($params=array(), $method="GET", $post=FALSE,  $headers=array()){
+	function ticketmachine_tmapi_events($params=array(), $method="GET", $post=FALSE,  $headers=array(), $url_only=0){
 		global $api, $globals;
 
 		$params = (object)$params;
@@ -93,9 +93,12 @@
 			$url .= "&approved[eq]=" . (int)$params->approved;
 		}
 
-		$events = (object)ticketmachine_apiRequest($url, $post, $method, $headers);
-
-		return $events;
+		if(isset($params->approved) && $url_only == 1) {
+			return $url;
+		}else{
+			$events = (object)ticketmachine_apiRequest($url, $post, $method, $headers);
+			return $events;
+		}
 	}
 
 	/* Get event */
