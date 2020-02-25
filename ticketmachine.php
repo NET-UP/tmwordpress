@@ -335,8 +335,9 @@
 			'timeout' => 45,
 			'headers' => $headers
         ));
-        
+        echo "<pre>"; 
         print_r($resource);
+        echo "</pre>";
             
         wp_send_json_success($resource);
 
