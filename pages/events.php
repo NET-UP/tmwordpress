@@ -64,7 +64,7 @@
 				)
 			);
 
-			add_action( 'wp_ajax_nopriv_ajax_validate_email', 'ticketmachine_calendar_ajax_events' );
+			add_action( 'wp_ticketmachine_calendar_ajax_events', 'ticketmachine_calendar_ajax_events' );
 
 			function ticketmachine_calendar_ajax_events() {
 				$params = [ 
