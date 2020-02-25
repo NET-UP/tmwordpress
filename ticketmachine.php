@@ -181,6 +181,9 @@
             'ajaxurl' => admin_url( 'admin-ajax.php' ),
         ) );
 
+        add_action( 'wp_ajax_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
+        add_action( 'wp_ajax_nopriv_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
+
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
         include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
 		
@@ -763,8 +766,6 @@
         wp_send_json_success($calendarData);
         die();
     }
-
-    
 
     function ticketmachine_enqueue_calendar_files() {
     }
