@@ -59,7 +59,6 @@ class Event_List_Table extends WP_List_Table {
 
     function get_events(){
         
-        include_once( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/includes/scriptstyles.php');
         global $globals, $api;
 
 		$params = array();
