@@ -370,7 +370,6 @@
 
 	function ticketmachine_event_metadata_event() {
         if(isset($_GET['id']) && $_GET['id'] > 0){
-            include_once( plugin_dir_path( __FILE__ ) . 'globals.php');
             $params = [ "id" => absint($_GET['id']) ];
             $event = ticketmachine_tmapi_event($params);
             if(isset($event->id)){            
