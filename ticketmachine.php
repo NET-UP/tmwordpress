@@ -657,9 +657,59 @@
 	function my_action_callback() {
         global $api, $globals, $wpdb;
 
-        $resource = ticketmachine_tmapi_events($_REQUEST);
+        $events = ticketmachine_tmapi_events($_REQUEST);
             
-        wp_send_json_success($resource);
+        $calendar = array();
+        $i = 0;
+                
+        if(empty($events->result)) {	
+            header('HTTP/1.0 400 Bad Request');
+        }else{
+
+            foreach($events->result as $event) {
+                $event = (object) $event;
+                
+                $params = [ "id" => $event->id ];
+                
+                if($event->state['sale_active'] > 0){
+                    $event->status_color = "#d4edda";
+                    $event->status_text_color = "#155724";
+                }else{
+                    $event->status_color = "#f8d7da";
+                    $event->status_text_color = "#721c24";
+                }
+
+                //Override for free plugin
+                $event->status_color = "#d4edda";
+                $event->status_text_color = "#155724";
+                
+                $start = strtotime(get_date_from_gmt($event->ev_date)) * 1000;
+                $end = strtotime(get_date_from_gmt($event->endtime)) * 1000;	
+
+                if ($end < (strtotime("midnight", time())*1000)){
+                    $event->status_color = "#eeeeee";
+                    $event->status_text_color = "#999999";
+                }elseif($i == 0) {
+                    $i = 1;
+                    $default_date = $start;
+                }
+                
+                $calendar[] = array(
+                    'id' =>$event->id,
+                    'title' => $event->ev_name,
+                    'url' => "/" . $globals->event_slug . "/?id=" . $event->id,
+                    'start' => $start,
+                    'end' => $end,
+                    'class' => "event-success",
+                    'color' => $event->status_color,
+                    'textColor' => $event->status_text_color,
+                    'defaultDate' => $default_date
+                );
+            }
+        }
+
+        $calendarData = $calendar;
+        wp_send_json_success($calendarData);
 
     }
 
