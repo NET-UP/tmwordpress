@@ -344,7 +344,7 @@
 			'headers' => $headers
 		));
             
-        wp_send_json_success($resource['body']);
+        wp_send_json_success($resource);
 
     }
 
