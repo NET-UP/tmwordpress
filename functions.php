@@ -65,7 +65,7 @@
 			$params->sort = "ev_date";
 		}
 
-		if(isset($params->$url_only) && $url_only == 1) {
+		if(isset($url_only) && $url_only == 1) {
 			$url = "cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
 		}else{
 			$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
@@ -97,7 +97,7 @@
 			$url .= "&approved[eq]=" . (int)$params->approved;
 		}
 
-		if(isset($params->$url_only) && $url_only == 1) {
+		if(isset($url_only) && $url_only == 1) {
 			return $url;
 		}else{
 			$events = (object)ticketmachine_apiRequest($url, $post, $method, $headers);
