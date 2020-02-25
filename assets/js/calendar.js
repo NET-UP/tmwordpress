@@ -6,7 +6,7 @@ var yyyy = today.getFullYear();
 jQuery("#ticketmachine_spinner").show();
 var locale= jQuery(".ticketmachine_page").data("locale");
 var ev_url= jQuery("#ticketmachine_ev_url").val();
-jQuery.getJSON(ev_url + location.search).success(function(data) {
+jQuery.getJSON(ajax_object.ajax_url).success(function(data) {
 
 	jQuery("#ticketmachine_spinner").hide();
 	var events_array = data;
