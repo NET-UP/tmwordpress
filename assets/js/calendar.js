@@ -16,7 +16,7 @@ var data = {
 jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
 
 	jQuery("#ticketmachine_spinner").hide();
-	var events_array = data;
+	var events_array = data['data'];
 
 	var calendarEl = document.getElementById('calendar');
 
