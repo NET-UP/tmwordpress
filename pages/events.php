@@ -62,7 +62,7 @@
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			) );
 
-			function ticketmachine_calendar_ajax() {
+			function ticketmachine_calendar_ajax_callback() {
 				$params = [ 
 					"query" => sanitize_text_field($_GET['q']), 
 					"sort" =>  sanitize_text_field($_GET['sort']), 
