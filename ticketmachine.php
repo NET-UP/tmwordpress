@@ -293,9 +293,45 @@
             "query" => sanitize_text_field($_REQUEST['q']), 
             "sort" =>  sanitize_text_field($_REQUEST['sort']), 
             "tag" =>  sanitize_text_field($_REQUEST['tag']), 
-            "approved" => 1, 
-            "url" => $_REQUEST['url']
+            "scheme" =>  sanitize_text_field($_REQUEST['scheme']), 
+            "environment" =>  sanitize_text_field($_REQUEST['environment']), 
+            "organizer" =>  sanitize_text_field($_REQUEST['organizer']), 
+            "first_event_date" =>  sanitize_text_field($_REQUEST['fe_date']), 
+            "approved" => 1
         ];
+
+        $params = (object)$params;
+		if(empty($params->sort)){
+			$params->sort = "ev_date";
+        }
+        
+		$url = $params->scheme . "://cloud." . $params->environment . "ticketmachine.de/api/v2/events?";
+		
+		if($params->organizer && $params->organizer != "" ){
+			$url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
+		}elseif($params->organizer){
+			$url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
+		}
+		
+		if(empty($params->show_old)) {
+			$url .= "&endtime[gte]=" . $params->first_event_date;
+		}
+		$url .= "&sort=". $params->sort;
+		if(!empty($params->per_page)) {
+			$url .= "&per_page=" . (int)$params->per_page;
+		}
+		
+		if(!empty($params->query)) {
+			$url .= "&ev_name[contains]=" . htmlspecialchars(urlencode($params->query));
+		}
+		
+		if(!empty($params->tag)) {
+			$url .= "&tags[eq]=" . htmlspecialchars(urlencode($params->tag));
+		}
+		
+		if(isset($params->approved)) {
+			$url .= "&approved[eq]=" . (int)$params->approved;
+		}
             
         wp_send_json_success($params);
 

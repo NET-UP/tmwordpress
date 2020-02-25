@@ -8,11 +8,14 @@ var locale= jQuery(".ticketmachine_page").data("locale");
 var ev_url= jQuery("#ticketmachine_ev_url").val();
 var data = {
 	action: 'my_action',
-	q: '1',
-	sort: '2',
-	tag: '1',
+	q: '',
+	sort: '',
+	tag: '',
+	scheme: 'https',
+	environment: 'staging',
+	organizer: '',
+	first_event_date: '',
 	approved: 1,
-	event_endpoint: ev_url
 };
 jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
 

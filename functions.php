@@ -65,11 +65,7 @@
 			$params->sort = "ev_date";
 		}
 
-		if(isset($url_only) && $url_only == 1) {
-			$url = "cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
-		}else{
-			$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
-		}
+		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
 		
 		if($globals->organizer && $globals->organizer != "" ){
 			$url .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
@@ -96,6 +92,8 @@
 		if(isset($params->approved)) {
 			$url .= "&approved[eq]=" . (int)$params->approved;
 		}
+
+		print_r($url);
 
 		if(isset($url_only) && $url_only == 1) {
 			return $url;
