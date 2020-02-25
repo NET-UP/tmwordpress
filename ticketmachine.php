@@ -336,7 +336,8 @@
 			'headers' => $headers
         ));
         echo "<pre>"; 
-        print_r($resource);
+        print_r($headers);
+        print_r($url);
         echo "</pre>";
             
         wp_send_json_success($resource);
