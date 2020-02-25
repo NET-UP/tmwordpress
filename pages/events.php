@@ -37,6 +37,7 @@
 		if($current_page == "calendar"){
 			
 			add_action( 'wp_ajax_ticketmachine_calendar_ajax', 'ticketmachine_calendar_ajax' );
+			add_action( 'wp_enqueue_scripts', 'ticketmachine_calendar_ajax_script' );
 
 			//Underscore
 			wp_enqueue_script( 'underscore_JS', plugins_url('../assets/js/ext/underscore.js', __FILE__ ) );
