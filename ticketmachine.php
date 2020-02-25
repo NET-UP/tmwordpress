@@ -159,9 +159,6 @@
 		//Core
 		wp_enqueue_style( 'core_CSS' );
 		wp_enqueue_script( 'core_JS' );
-
-		//Custom Styles
-        wp_enqueue_style( 'custom_CSS' );
         
         //Underscore
         wp_enqueue_script( 'underscore_JS' );
@@ -263,7 +260,7 @@
 		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
 
 		//Custom Styles
-        wp_register_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
+        wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
         
         //Underscore
         wp_register_script( 'underscore_JS', plugins_url('assets/js/ext/underscore.js', __FILE__ ) );
