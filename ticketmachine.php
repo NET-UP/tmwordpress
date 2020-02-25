@@ -18,7 +18,7 @@
 	
 	// load dynamic form for calculator from template
 	function ticketmachine_initialize( $atts ) {
-        global $globals, $api, $wpdb;
+        global $globals, $api, $wpdb, $ticketmachine_globals;
 
 		require_once( plugin_dir_path( __FILE__ ) . 'globals.php');
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
