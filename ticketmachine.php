@@ -634,6 +634,20 @@
 	if(isset($globals->activated) && $globals->activated > 0){
 		ticketmachine_tmapi_refresh_token_check();
 	}
+    
+    add_filter( 'oembed_response_data', 'ticketmachine_disable_embeds_filter_oembed_response_data_' );
+    function ticketmachine_disable_embeds_filter_oembed_response_data_( $data ) {
+        unset($data['author_url']);
+        unset($data['author_name']);
+        return $data;
+    }
+
+	add_action('wp_head','ticketmachine_event_metadata');
+    if(isset($_GET['id']) && $_GET['id'] > 0){
+        add_action('wp_head','ticketmachine_event_metadata_event');
+    }
+
+    
 
     add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
     add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
@@ -716,18 +730,6 @@
         wp_localize_script( 'my-action-script', 'my_action_data', array(
             'ajaxurl' => admin_url( 'admin-ajax.php' ),
         ) );
-    }
-    
-    add_filter( 'oembed_response_data', 'ticketmachine_disable_embeds_filter_oembed_response_data_' );
-    function ticketmachine_disable_embeds_filter_oembed_response_data_( $data ) {
-        unset($data['author_url']);
-        unset($data['author_name']);
-        return $data;
-    }
-
-	add_action('wp_head','ticketmachine_event_metadata');
-    if(isset($_GET['id']) && $_GET['id'] > 0){
-        add_action('wp_head','ticketmachine_event_metadata_event');
     }
 
 ?>
