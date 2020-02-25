@@ -112,6 +112,5 @@
         wp_enqueue_script( 'admin_JS', plugins_url('assets/js/settings.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
 	}
 	
-	print_r(get_current_scree());
 		
 ?>
