@@ -6,32 +6,32 @@
     $ticketmachine_design = $ticketmachine_design[0];
 ?>
     body .ticketmachine_page a:not(.btn) {
-        color: <?php echo $ticketmachine_design->link_text_color; ?>;
+        color: <?php echo $ticketmachine_design->link_text_color; ?> !important;
     }
 
     body .ticketmachine_page a:not(.btn):hover,  body .ticketmachine_page a:not(.btn):focus {
         color: <?php echo $ticketmachine_design->link_text_color_hover; ?>;
-        text-decoration:underline;
+        text-decoration:underline !important;
     }
     .card-img-top:focus {
-        border:2px solid <?php echo $ticketmachine_design->button_primary_background_color; ?>;
+        border:2px solid <?php echo $ticketmachine_design->button_primary_background_color; ?> !important;
     }
 
     
     .ticketmachine_page #calendar .fc-event:focus {
-        box-shadow: 0px 0px 1px 2px <?php echo $ticketmachine_design->button_primary_background_color; ?>;
+        box-shadow: 0px 0px 1px 2px <?php echo $ticketmachine_design->button_primary_background_color; ?> !important;
     }
 
     .ticketmachine_page .card {
-        background: <?php echo $ticketmachine_design->container_background_color; ?>;
+        background: <?php echo $ticketmachine_design->container_background_color; ?> !important;
     }
 
     .ticketmachine_page .card-date {
-        color: <?php echo $ticketmachine_design->date_text_color; ?>;
+        color: <?php echo $ticketmachine_design->date_text_color; ?> !important;
     }
 
     .ticketmachine_page .card-price {
-        color: <?php echo $ticketmachine_design->price_text_color; ?>;
+        color: <?php echo $ticketmachine_design->price_text_color; ?> !important;
     }
 
     .ticketmachine_page .btn-primary,
@@ -41,9 +41,9 @@
     .show>.ticketmachine_page .btn-primary.dropdown-toggle,
     .ticketmachine_page .btn-primary.disabled,
     .ticketmachine_page .btn-primary:disabled {
-        background-color: <?php echo $ticketmachine_design->button_primary_background_color; ?>;
+        background-color: <?php echo $ticketmachine_design->button_primary_background_color; ?> !important;
         color: <?php echo $ticketmachine_design->button_primary_text_color; ?> !important;
-        border-color: <?php echo $ticketmachine_design->button_primary_border_color; ?>;
+        border-color: <?php echo $ticketmachine_design->button_primary_border_color; ?> !important;
     }
 
     .ticketmachine_page .btn-primary:hover,
@@ -58,9 +58,9 @@
     .btn-secondary:visited,
     .btn-secondary:not(:disabled):not(.disabled).active,
     .btn-secondary:not(:disabled):not(.disabled):active {
-        background-color: <?php echo $ticketmachine_design->button_secondary_background_color; ?>;
+        background-color: <?php echo $ticketmachine_design->button_secondary_background_color; ?> !important;
         color: <?php echo $ticketmachine_design->button_secondary_text_color; ?> !important;
-        border-color: <?php echo $ticketmachine_design->button_secondary_border_color; ?>;
+        border-color: <?php echo $ticketmachine_design->button_secondary_border_color; ?> !important;
     }
 
     .btn-secondary:hover,
