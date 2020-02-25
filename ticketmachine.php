@@ -330,13 +330,13 @@
             'Accept' => 'application/json'
         );
 
-        print_r($url);
-
         $resource = wp_remote_get($url, array(
 			'method'  => 'GET',
 			'timeout' => 45,
 			'headers' => $headers
-		));
+        ));
+        
+        print_r($resource);
             
         wp_send_json_success($resource);
 
