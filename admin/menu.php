@@ -8,7 +8,7 @@
 		include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 		
 		if( current_user_can('edit_posts') ) {
-			add_menu_page(
+			$hook = add_menu_page(
 				'TicketMachine',
 				"TicketMachine",
 				'manage_options',
@@ -19,7 +19,7 @@
 			);
 
 			if($globals->activated || sanitize_text_field($_GET['code'])) {
-				add_submenu_page(
+				$hook2 = add_submenu_page(
 					'ticketmachine_event_manager',
 					esc_html__('Overview', 'ticketmachine'),
 					esc_html__('Overview', 'ticketmachine'),
@@ -30,7 +30,7 @@
 					97
 				);	
 
-				add_submenu_page(
+				$hook3 = add_submenu_page(
 					'ticketmachine_event_manager',
 					esc_html__('Events', 'ticketmachine'),
 					esc_html__('Events', 'ticketmachine'),
@@ -41,7 +41,7 @@
 					97
 				);
 				if( current_user_can('manage_options') ) {
-					add_submenu_page(
+					$hook4 = add_submenu_page(
 						'ticketmachine_event_manager',
 						esc_html__('Settings', 'ticketmachine'),
 						esc_html__('Settings', 'ticketmachine'),
@@ -76,7 +76,10 @@
 			}
 		}
 
-		add_action( 'admin_enqueue_scripts', 'ticketmachine_enqueue_admin_style' );
+		add_action( 'load-' . $hook, 'my_admin_enqueue_scripts' );
+		add_action( 'load-' . $hook2, 'my_admin_enqueue_scripts' );
+		add_action( 'load-' . $hook3, 'my_admin_enqueue_scripts' );
+		add_action( 'load-' . $hook4, 'my_admin_enqueue_scripts' );
 	}
 
 	add_filter( 'submenu_file', function($submenu_file){
