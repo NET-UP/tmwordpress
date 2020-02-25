@@ -289,15 +289,15 @@
 	function my_action_callback() {
         global $wpdb, $globals, $api;
         
-
         $params = [ 
             "query" => sanitize_text_field($_REQUEST['q']), 
             "sort" =>  sanitize_text_field($_REQUEST['sort']), 
             "tag" =>  sanitize_text_field($_REQUEST['tag']), 
-            "approved" => 1 
+            "approved" => 1, 
+            "url" => esc_url_raw($_REQUEST['url'])
         ];
             
-        wp_send_json_success($_REQUEST);
+        wp_send_json_success($params);
 
     }
 
