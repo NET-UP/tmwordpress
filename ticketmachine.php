@@ -344,16 +344,16 @@
             }
         }
     
-        function enqueue_my_action_script() {
-            wp_enqueue_script( 'my-action-script', plugins_url('../assets/js/calendar.js', __FILE__ ) );
-            wp_localize_script( 'my-action-script', 'my_action_data', array(
-                'ajaxurl' => admin_url( 'admin-ajax.php' ),
-            ) );
-        }
-    
         $calendarData = $calendar;
             
         wp_send_json_success(json_encode($calendarData));
+    }
+    
+    function enqueue_my_action_script() {
+        wp_enqueue_script( 'my-action-script', plugins_url('../assets/js/calendar.js', __FILE__ ) );
+        wp_localize_script( 'my-action-script', 'my_action_data', array(
+            'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        ) );
     }
     
     add_filter( 'oembed_response_data', 'ticketmachine_disable_embeds_filter_oembed_response_data_' );
