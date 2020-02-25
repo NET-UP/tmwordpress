@@ -9,12 +9,12 @@ var ev_url= jQuery("#ticketmachine_ev_url").val();
 var data = {
 	action: 'my_action',
 	q: '',
-	sort: '',
+	sort: 'ev_date',
 	tag: '',
 	scheme: 'https',
 	environment: 'staging',
-	organizer: '',
-	first_event_date: '',
+	organizer: 'acc16og1',
+	first_event_date: '2020-02-25',
 	approved: 1,
 };
 jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
