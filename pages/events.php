@@ -36,7 +36,7 @@
 		
 		if($current_page == "calendar"){
 			
-			add_action( 'wp_ajax_ticketmachine_calendar_ajax_events', 'ticketmachine_calendar_ajax_events' );
+			add_action( 'wp_ajax_ticketmachine_calendar_ajax', 'ticketmachine_calendar_ajax' );
 
 			//Underscore
 			wp_enqueue_script( 'underscore_JS', plugins_url('../assets/js/ext/underscore.js', __FILE__ ) );
@@ -62,7 +62,7 @@
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			) );
 
-			function ticketmachine_calendar_ajax_events() {
+			function ticketmachine_calendar_ajax() {
 				$params = [ 
 					"query" => sanitize_text_field($_GET['q']), 
 					"sort" =>  sanitize_text_field($_GET['sort']), 
