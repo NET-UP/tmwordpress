@@ -764,8 +764,7 @@
         die();
     }
 
-    add_action( 'wp_ajax_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
-    add_action( 'wp_ajax_nopriv_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
+    
 
     function ticketmachine_enqueue_calendar_files() {
     }
