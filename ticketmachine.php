@@ -288,9 +288,9 @@
 
     function my_action_callback() {
         $params = [ 
-            "query" => sanitize_text_field($_GET['q']), 
-            "sort" =>  sanitize_text_field($_GET['sort']), 
-            "tag" =>  sanitize_text_field($_GET['tag']), 
+            "query" => sanitize_text_field($_REQUEST['q']), 
+            "sort" =>  sanitize_text_field($_REQUEST['sort']), 
+            "tag" =>  sanitize_text_field($_REQUEST['tag']), 
             "approved" => 1 
         ];
         $events = ticketmachine_tmapi_events($params);
