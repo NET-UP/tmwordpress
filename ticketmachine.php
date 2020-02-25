@@ -289,11 +289,6 @@
             "query" => sanitize_text_field($_REQUEST['q']), 
             "sort" =>  sanitize_text_field($_REQUEST['sort']), 
             "tag" =>  sanitize_text_field($_REQUEST['tag']), 
-            "scheme" =>  sanitize_text_field($_REQUEST['scheme']), 
-            "environment" =>  sanitize_text_field($_REQUEST['environment']), //database
-            "organizer" =>  sanitize_text_field($_REQUEST['organizer']), //database
-            "first_event_date" =>  sanitize_text_field($_REQUEST['fe_date']), 
-            "access_token" =>  sanitize_text_field($_REQUEST['fe_date']), //database
             "approved" => 1
         ];
 
@@ -302,7 +297,7 @@
 			$params->sort = "ev_date";
 		}
 
-		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
+		$url = "https://cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
 		
 		if($globals->organizer && $globals->organizer != "" ){
 			$url .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
