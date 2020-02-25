@@ -647,8 +647,6 @@
         add_action('wp_head','ticketmachine_event_metadata_event');
     }
 
-    
-
     add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
     add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
 
