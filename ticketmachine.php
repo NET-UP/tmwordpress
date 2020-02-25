@@ -287,6 +287,7 @@
     add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
 
     function my_action_callback() {
+        global $wpdb, $globals, $api;
         $params = [ 
             "query" => sanitize_text_field($_REQUEST['q']), 
             "sort" =>  sanitize_text_field($_REQUEST['sort']), 
