@@ -265,6 +265,96 @@
             }
        }
     }
+
+    add_action( 'wp_ajax_ticketmachine_calendar_ajax', 'ticketmachine_calendar_ajax' );
+    add_action( 'wp_enqueue_scripts', 'ticketmachine_calendar_ajax_script' );
+
+    //Underscore
+    wp_enqueue_script( 'underscore_JS', plugins_url('../assets/js/ext/underscore.js', __FILE__ ) );
+
+    //Calendar Packages
+    wp_enqueue_style( 'calendar_CSS_1', plugins_url('../assets/packages/core/main.css', __FILE__ ) );
+    wp_enqueue_style( 'calendar_CSS_2', plugins_url('../assets/packages/daygrid/main.css', __FILE__ ) );
+    wp_enqueue_style( 'calendar_CSS_3', plugins_url('../assets/packages/timegrid/main.css', __FILE__ ) );
+    wp_enqueue_style( 'calendar_CSS_4', plugins_url('../assets/packages/list/main.css', __FILE__ ) );
+    wp_enqueue_style( 'calendar_CSS_5', plugins_url('../assets/packages/bootstrap/main.css', __FILE__ ) );
+    
+    wp_enqueue_script( 'calendar_JS_1', plugins_url('../assets/packages/core/main.js', __FILE__ ) );
+    wp_enqueue_script( 'calendar_JS_2', plugins_url('../assets/packages/interaction/main.js', __FILE__ ) );
+    wp_enqueue_script( 'calendar_JS_3', plugins_url('../assets/packages/daygrid/main.js', __FILE__ ) );
+    wp_enqueue_script( 'calendar_JS_4', plugins_url('../assets/packages/timegrid/main.js', __FILE__ ) );
+    wp_enqueue_script( 'calendar_JS_5', plugins_url('../assets/packages/list/main.js', __FILE__ ) );
+    wp_enqueue_script( 'calendar_JS_6', plugins_url('../assets/packages/bootstrap/main.js', __FILE__ ) );
+
+    function ticketmachine_calendar_ajax_callback() {
+        $params = [ 
+            "query" => sanitize_text_field($_GET['q']), 
+            "sort" =>  sanitize_text_field($_GET['sort']), 
+            "tag" =>  sanitize_text_field($_GET['tag']), 
+            "approved" => 1 
+        ];
+        $events = ticketmachine_tmapi_events($params);
+    
+        $calendar = array();
+        $i = 0;
+                
+        if(empty($events->result)) {	
+            header('HTTP/1.0 400 Bad error');
+        }else{
+    
+            foreach($events->result as $event) {
+                $event = (object) $event;
+                
+                $params = [ "id" => $event->id ];
+                
+                if($event->state['sale_active'] > 0){
+                    $event->status_color = "#d4edda";
+                    $event->status_text_color = "#155724";
+                }else{
+                    $event->status_color = "#f8d7da";
+                    $event->status_text_color = "#721c24";
+                }
+    
+                //Override for free plugin
+                $event->status_color = "#d4edda";
+                $event->status_text_color = "#155724";
+                
+                $start = strtotime(get_date_from_gmt($event->ev_date)) * 1000;
+                $end = strtotime(get_date_from_gmt($event->endtime)) * 1000;	
+    
+                if ($end < (strtotime("midnight", time())*1000)){
+                    $event->status_color = "#eeeeee";
+                    $event->status_text_color = "#999999";
+                }elseif($i == 0) {
+                    $i = 1;
+                    $default_date = $start;
+                }
+                
+                $calendar[] = array(
+                    'id' =>$event->id,
+                    'title' => $event->ev_name,
+                    'url' => "/" . $globals->event_slug . "/?id=" . $event->id,
+                    'start' => $start,
+                    'end' => $end,
+                    'class' => "event-success",
+                    'color' => $event->status_color,
+                    'textColor' => $event->status_text_color,
+                    'defaultDate' => $default_date
+                );
+            }
+        }
+    
+        function ticketmachine_calendar_ajax_script() {
+            wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ), array( 'jquery' ), null, true );
+            wp_localize_script( 'calendar_JS_0', 'ticketmachine_calendar_ajax_data', array(
+                'ajaxurl' => admin_url( 'admin-ajax.php' ),
+            ) );
+        }
+    
+        $calendarData = $calendar;
+            
+        wp_send_json_success(json_encode($calendarData));
+    }
     
     add_filter( 'oembed_response_data', 'ticketmachine_disable_embeds_filter_oembed_response_data_' );
     function ticketmachine_disable_embeds_filter_oembed_response_data_( $data ) {
