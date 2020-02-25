@@ -58,7 +58,7 @@
 			//Calendar Config
 			wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ) );
 			
-			wp_localize_script( 'calendar_JS_0', 'my_action_data', array(
+			wp_localize_script( 'calendar_JS_0', 'ticketmachine_calendar_ajax_data', array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
 			) );
 
