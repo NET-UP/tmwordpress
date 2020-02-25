@@ -97,6 +97,7 @@
 		include( plugin_dir_path( __FILE__) . 'pages/installation.php');
 	}
 
+	add_action( 'admin_enqueue_scripts', 'ticketmachine_enqueue_admin_style' );
 	
 		
 ?>
