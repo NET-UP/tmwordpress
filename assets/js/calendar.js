@@ -8,9 +8,9 @@ var locale= jQuery(".ticketmachine_page").data("locale");
 var ev_url= jQuery("#ticketmachine_ev_url").val();
 var data = {
 	action: 'my_action',
-	q: '',
-	sort: '',
-	tag: '',
+	q: '1',
+	sort: '2',
+	tag: '1',
 	approved: 1,
 	events_url: ev_url
 	
