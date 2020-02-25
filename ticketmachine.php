@@ -350,7 +350,7 @@
     }
     
     function enqueue_my_action_script() {
-        wp_enqueue_script( 'my-action-script', plugins_url('../assets/js/calendar.js', __FILE__ ) );
+        wp_enqueue_script( 'my-action-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
         wp_localize_script( 'my-action-script', 'my_action_data', array(
             'ajaxurl' => admin_url( 'admin-ajax.php' ),
         ) );
