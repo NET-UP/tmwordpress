@@ -75,12 +75,12 @@
 				);
 			}
 		}
-
-		add_action( 'load-' . $hook, 'my_admin_enqueue_scripts' );
-		add_action( 'load-' . $hook2, 'my_admin_enqueue_scripts' );
-		add_action( 'load-' . $hook3, 'my_admin_enqueue_scripts' );
-		add_action( 'load-' . $hook4, 'my_admin_enqueue_scripts' );
 	}
+
+	add_action( 'load-' . $hook, 'my_admin_enqueue_scripts' );
+	add_action( 'load-' . $hook2, 'my_admin_enqueue_scripts' );
+	add_action( 'load-' . $hook3, 'my_admin_enqueue_scripts' );
+	add_action( 'load-' . $hook4, 'my_admin_enqueue_scripts' );
 
 	add_filter( 'submenu_file', function($submenu_file){
 		$screen = get_current_screen();
