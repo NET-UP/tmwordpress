@@ -18,7 +18,7 @@
 	
 	// load dynamic form for calculator from template
 	function ticketmachine_initialize( $atts ) {
-        global $globals, $api, $wpdb, $ticketmachine_globals;
+        global $globals, $api, $wpdb;
 
 		require_once( plugin_dir_path( __FILE__ ) . 'globals.php');
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
@@ -283,67 +283,20 @@
     wp_enqueue_script( 'calendar_JS_5', plugins_url('assets/packages/list/main.js', __FILE__ ) );
     wp_enqueue_script( 'calendar_JS_6', plugins_url('assets/packages/bootstrap/main.js', __FILE__ ) );
 
-    add_action( 'wp_ajax_my_action', function() use ($api, $ticketmachine_globals) {
+    add_action( 'wp_ajax_my_action', 'my_action_callback' );
+    add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
 
-        $params = [ 
-            "query" => sanitize_text_field($_REQUEST['q']), 
-            "sort" =>  sanitize_text_field($_REQUEST['sort']), 
-            "tag" =>  sanitize_text_field($_REQUEST['tag']), 
-            "approved" => 1
-        ];
+	function my_action_callback() {
 
-		$params = (object)$params;
-		if(empty($params->sort)){
-			$params->sort = "ev_date";
-		}
-
-		$url = "https://cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
-		
-		if($ticketmachine_globals->organizer && $ticketmachine_globals->organizer != "" ){
-			$url .= "organizer.og_abbreviation[eq]=" . $ticketmachine_globals->organizer;
-		}elseif($params->organizer){
-			$url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
-		}
-		
-		if(empty($params->show_old)) {
-			$url .= "&endtime[gte]=" . $ticketmachine_globals->first_event_date;
-		}
-		$url .= "&sort=". $params->sort;
-		if(!empty($params->per_page)) {
-			$url .= "&per_page=" . (int)$params->per_page;
-		}
-		
-		if(!empty($params->query)) {
-			$url .= "&ev_name[contains]=" . htmlspecialchars(urlencode($params->query));
-		}
-		
-		if(!empty($params->tag)) {
-			$url .= "&tags[eq]=" . htmlspecialchars(urlencode($params->tag));
-		}
-		
-		if(isset($params->approved)) {
-			$url .= "&approved[eq]=" . (int)$params->approved;
-		}
-
-        $headers = array(
-            'Authorization' => 'Bearer ' . $ticketmachine_globals->api_access_token,
-            'Accept' => 'application/json'
-        );
-
-        $resource = wp_remote_get($url, array(
-			'method'  => 'GET',
-			'timeout' => 45,
-			'headers' => $headers
-        ));
-        echo "<pre>"; 
-        print_r($ticketmachine_globals);
-        print_r($api);
-        echo "</pre>";
+        $resource = get_events();
             
         wp_send_json_success($resource);
 
-    });
-    add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
+    }
+
+    function get_events(){
+        echo "lol";
+    }
 
     function enqueue_my_action_script() {
         wp_enqueue_script( 'my-action-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
