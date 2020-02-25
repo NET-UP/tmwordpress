@@ -12,7 +12,7 @@ var data = {
 	sort: 'ev_date',
 	tag: '',
 	scheme: 'https',
-	environment: 'staging',
+	environment: 'staging.',
 	organizer: 'acc16og1',
 	first_event_date: '2020-02-25',
 	access_token: '',
