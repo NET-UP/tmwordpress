@@ -75,6 +75,8 @@
 				);
 			}
 		}
+
+		add_action( 'admin_enqueue_scripts', 'ticketmachine_enqueue_admin_style' );
 	}
 
 	add_filter( 'submenu_file', function($submenu_file){
@@ -96,8 +98,6 @@
 	function ticketmachine_installation_page(){
 		include( plugin_dir_path( __FILE__) . 'pages/installation.php');
 	}
-
-	add_action( 'admin_enqueue_scripts', 'ticketmachine_enqueue_admin_style' );
 
     function ticketmachine_enqueue_admin_style() {
         wp_enqueue_style( 'admin_CSS', plugins_url('assets/css/style.css', __FILE__ ) );
