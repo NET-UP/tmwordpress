@@ -118,5 +118,5 @@
 		'scope' => "public organizer organizer/event"
 	);
 	
-	include('functions.php');
+	require_once('functions.php');
 ?>
