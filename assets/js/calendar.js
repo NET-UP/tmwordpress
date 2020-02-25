@@ -5,13 +5,14 @@ var yyyy = today.getFullYear();
 
 jQuery("#ticketmachine_spinner").show();
 var locale= jQuery(".ticketmachine_page").data("locale");
+var ev_url= jQuery("#ticketmachine_ev_url").val();
 var data = {
 	action: 'my_action',
 	q: '',
 	sort: '',
 	tag: '',
 	approved: 1,
-	events_url: jQuery("#ticketmachine_ev_url").val()
+	events_url: ev_url
 	
 };
 jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
