@@ -7,7 +7,7 @@ jQuery("#ticketmachine_spinner").show();
 var locale= jQuery(".ticketmachine_page").data("locale");
 var ev_url= jQuery("#ticketmachine_ev_url").val();
 var data = {
-	action: 'my_action',
+	action: 'ticketmachine_calendar',
 	q: '',
 	sort: 'ev_date',
 	tag: '',
