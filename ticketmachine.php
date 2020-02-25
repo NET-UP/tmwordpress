@@ -267,21 +267,21 @@
     }
 
     //Underscore
-    wp_enqueue_script( 'underscore_JS', plugins_url('/assets/js/ext/underscore.js', __FILE__ ) );
+    wp_enqueue_script( 'underscore_JS', plugins_url('assets/js/ext/underscore.js', __FILE__ ) );
 
     //Calendar Packages
-    wp_enqueue_style( 'calendar_CSS_1', plugins_url('/assets/packages/core/main.css', __FILE__ ) );
-    wp_enqueue_style( 'calendar_CSS_2', plugins_url('/assets/packages/daygrid/main.css', __FILE__ ) );
-    wp_enqueue_style( 'calendar_CSS_3', plugins_url('/assets/packages/timegrid/main.css', __FILE__ ) );
-    wp_enqueue_style( 'calendar_CSS_4', plugins_url('/assets/packages/list/main.css', __FILE__ ) );
-    wp_enqueue_style( 'calendar_CSS_5', plugins_url('/assets/packages/bootstrap/main.css', __FILE__ ) );
+    wp_enqueue_style( 'calendar_CSS_1', plugins_url('assets/packages/core/main.css', __FILE__ ) );
+    wp_enqueue_style( 'calendar_CSS_2', plugins_url('assets/packages/daygrid/main.css', __FILE__ ) );
+    wp_enqueue_style( 'calendar_CSS_3', plugins_url('assets/packages/timegrid/main.css', __FILE__ ) );
+    wp_enqueue_style( 'calendar_CSS_4', plugins_url('assets/packages/list/main.css', __FILE__ ) );
+    wp_enqueue_style( 'calendar_CSS_5', plugins_url('assets/packages/bootstrap/main.css', __FILE__ ) );
     
-    wp_enqueue_script( 'calendar_JS_1', plugins_url('/assets/packages/core/main.js', __FILE__ ) );
-    wp_enqueue_script( 'calendar_JS_2', plugins_url('/assets/packages/interaction/main.js', __FILE__ ) );
-    wp_enqueue_script( 'calendar_JS_3', plugins_url('/assets/packages/daygrid/main.js', __FILE__ ) );
-    wp_enqueue_script( 'calendar_JS_4', plugins_url('/assets/packages/timegrid/main.js', __FILE__ ) );
-    wp_enqueue_script( 'calendar_JS_5', plugins_url('/assets/packages/list/main.js', __FILE__ ) );
-    wp_enqueue_script( 'calendar_JS_6', plugins_url('/assets/packages/bootstrap/main.js', __FILE__ ) );
+    wp_enqueue_script( 'calendar_JS_1', plugins_url('assets/packages/core/main.js', __FILE__ ) );
+    wp_enqueue_script( 'calendar_JS_2', plugins_url('assets/packages/interaction/main.js', __FILE__ ) );
+    wp_enqueue_script( 'calendar_JS_3', plugins_url('assets/packages/daygrid/main.js', __FILE__ ) );
+    wp_enqueue_script( 'calendar_JS_4', plugins_url('assets/packages/timegrid/main.js', __FILE__ ) );
+    wp_enqueue_script( 'calendar_JS_5', plugins_url('assets/packages/list/main.js', __FILE__ ) );
+    wp_enqueue_script( 'calendar_JS_6', plugins_url('assets/packages/bootstrap/main.js', __FILE__ ) );
 
     add_action( 'wp_ajax_my_action', 'my_action_callback' );
     add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
