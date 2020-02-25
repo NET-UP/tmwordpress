@@ -536,6 +536,7 @@
     add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
 
 	function my_action_callback() {
+        global $api, $globals, $wpdb;
 
         $resource = ticketmachine_tmapi_events($_REQUEST);
             
