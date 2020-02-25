@@ -330,13 +330,6 @@
 			$url .= "&approved[eq]=" . (int)$params->approved;
 		}
 
-		if(isset($url_only) && $url_only == 1) {
-			return $url;
-		}else{
-			$events = (object)ticketmachine_apiRequest($url, $post, $method, $headers);
-			return $events;
-		}
-
         $headers = array(
             'Authorization' => 'Bearer ' . $params->access_token,
             'Accept' => 'application/json'
