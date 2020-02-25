@@ -287,7 +287,9 @@
     add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
 
 	function my_action_callback() {
-        include_once(plugins_url('globals.php', __FILE__ ));
+        global $wpdb, $globals, $api;
+        
+        print_r($globals);
 
         $params = [ 
             "query" => sanitize_text_field($_REQUEST['q']), 
