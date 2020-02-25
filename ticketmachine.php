@@ -158,9 +158,6 @@
                         include "partials/_tag_header.php";
                         include "pages/events.php";
                         $ticketmachine_output .= ticketmachine_display_events( $atts );
-                        add_action( 'wp_ajax_my_action', 'my_action_callback' );
-                        add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
-                        add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
                         break;
                     case 'event_boxes':
                         include "partials/_event_boxes_item.php";
@@ -188,9 +185,6 @@
                     case 'event_calendar':
                         include "widgets/event_calendar.php";
                         $ticketmachine_output .= ticketmachine_widget_event_calendar( $atts );
-                        add_action( 'wp_ajax_my_action', 'my_action_callback' );
-                        add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
-                        add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
                         break;
                 }
             }
