@@ -6,13 +6,13 @@ var yyyy = today.getFullYear();
 jQuery("#ticketmachine_spinner").show();
 var locale= jQuery(".ticketmachine_page").data("locale");
 var data = {
-	action: 'ticketmachine_calendar_ajax',
+	action: 'my_action',
 	q: '',
 	sort: '',
 	tag: '',
 	approved: 1
 };
-jQuery.getJSON(ticketmachine_calendar_ajax_data.ajaxurl, data).success(function(data) {
+jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
 
 	jQuery("#ticketmachine_spinner").hide();
 	var events_array = data;

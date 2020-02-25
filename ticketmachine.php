@@ -266,9 +266,6 @@
        }
     }
 
-    add_action( 'wp_ajax_ticketmachine_calendar_ajax', 'ticketmachine_calendar_ajax_callback' );
-    add_action( 'wp_enqueue_scripts', 'enqueue_ticketmachine_calendar_ajax_script' );
-
     //Underscore
     wp_enqueue_script( 'underscore_JS', plugins_url('/assets/js/ext/underscore.js', __FILE__ ) );
 
@@ -286,7 +283,10 @@
     wp_enqueue_script( 'calendar_JS_5', plugins_url('/assets/packages/list/main.js', __FILE__ ) );
     wp_enqueue_script( 'calendar_JS_6', plugins_url('/assets/packages/bootstrap/main.js', __FILE__ ) );
 
-    function ticketmachine_calendar_ajax_callback() {
+    add_action( 'wp_ajax_my_action', 'my_action_callback' );
+    add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
+
+    function my_action_callback() {
         $params = [ 
             "query" => sanitize_text_field($_GET['q']), 
             "sort" =>  sanitize_text_field($_GET['sort']), 
@@ -344,9 +344,9 @@
             }
         }
     
-        function enqueue_ticketmachine_calendar_ajax_script() {
-            wp_enqueue_script( 'ticketmachine_calendar_ajax_script', plugins_url('../assets/js/calendar.js', __FILE__ ) );
-            wp_localize_script( 'ticketmachine_calendar_ajax_script', 'ticketmachine_calendar_ajax_data', array(
+        function enqueue_my_action_script() {
+            wp_enqueue_script( 'my-action-script', plugins_url('../assets/js/calendar.js', __FILE__ ) );
+            wp_localize_script( 'my-action-script', 'my_action_data', array(
                 'ajaxurl' => admin_url( 'admin-ajax.php' ),
             ) );
         }
