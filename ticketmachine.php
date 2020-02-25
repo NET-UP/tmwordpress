@@ -297,21 +297,21 @@
             "approved" => 1
         ];
 
-        $params = (object)$params;
+		$params = (object)$params;
 		if(empty($params->sort)){
 			$params->sort = "ev_date";
-        }
-        
-		$url = $params->scheme . "://cloud." . $params->environment . "ticketmachine.de/api/v2/events?";
+		}
+
+		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
 		
-		if($params->organizer && $params->organizer != "" ){
-			$url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
+		if($globals->organizer && $globals->organizer != "" ){
+			$url .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
 		}elseif($params->organizer){
 			$url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
 		}
 		
 		if(empty($params->show_old)) {
-			$url .= "&endtime[gte]=" . $params->first_event_date;
+			$url .= "&endtime[gte]=" . $globals->first_event_date;
 		}
 		$url .= "&sort=". $params->sort;
 		if(!empty($params->per_page)) {
@@ -328,7 +328,14 @@
 		
 		if(isset($params->approved)) {
 			$url .= "&approved[eq]=" . (int)$params->approved;
-        }
+		}
+
+		if(isset($url_only) && $url_only == 1) {
+			return $url;
+		}else{
+			$events = (object)ticketmachine_apiRequest($url, $post, $method, $headers);
+			return $events;
+		}
 
         $headers = array(
             'Authorization' => 'Bearer ' . $params->access_token,
