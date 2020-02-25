@@ -331,9 +331,20 @@
 		
 		if(isset($params->approved)) {
 			$url .= "&approved[eq]=" . (int)$params->approved;
-		}
+        }
+
+        $headers = array(
+            'Authorization' => 'Bearer ' . $params->access_token,
+            'Accept' => 'application/json'
+        );
+
+        $resource = wp_remote_get($url, array(
+			'method'  => 'GET',
+			'timeout' => 45,
+			'headers' => $headers
+		));
             
-        wp_send_json_success($url);
+        wp_send_json_success($resource['body']);
 
     }
 
