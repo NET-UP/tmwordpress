@@ -345,8 +345,8 @@
         }
     
         function enqueue_ticketmachine_calendar_ajax_script() {
-            wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ), array( 'jquery' ), null, true );
-            wp_localize_script( 'calendar_JS_0', 'ticketmachine_calendar_ajax_data', array(
+            wp_enqueue_script( 'ticketmachine_calendar_ajax_script', plugins_url('../assets/js/calendar.js', __FILE__ ), array( 'jquery' ), null, true );
+            wp_localize_script( 'ticketmachine_calendar_ajax_script', 'ticketmachine_calendar_ajax_data', array(
                 'ajaxurl' => admin_url( 'admin-ajax.php' ),
             ) );
         }
