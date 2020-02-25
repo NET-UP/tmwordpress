@@ -333,7 +333,7 @@
 			$url .= "&approved[eq]=" . (int)$params->approved;
 		}
             
-        wp_send_json_success($params);
+        wp_send_json_success($url);
 
     }
 
