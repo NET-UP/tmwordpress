@@ -294,7 +294,7 @@
             "sort" =>  sanitize_text_field($_REQUEST['sort']), 
             "tag" =>  sanitize_text_field($_REQUEST['tag']), 
             "approved" => 1, 
-            "url" => esc_url_raw($_REQUEST['url'])
+            "url" => $_REQUEST['url']
         ];
             
         wp_send_json_success($params);
