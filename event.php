@@ -3,7 +3,12 @@
 
 	include "globals.php";
 
-	$params = [ "query" => sanitize_text_field($_GET['q']), "sort" =>  sanitize_text_field($_GET['sort']), "tag" =>  sanitize_text_field($_GET['tag']), "approved" => 1 ];
+	$params = [ 
+		"query" => sanitize_text_field($_GET['q']), 
+		"sort" =>  sanitize_text_field($_GET['sort']), 
+		"tag" =>  sanitize_text_field($_GET['tag']), 
+		"approved" => 1 
+	];
 	$events = ticketmachine_tmapi_events($params);
 
 	print_r($events);
