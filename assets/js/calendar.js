@@ -12,7 +12,7 @@ var data = {
 	sort: '2',
 	tag: '1',
 	approved: 1,
-	events_url: ev_url
+	events_url: 1
 };
 jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
 
