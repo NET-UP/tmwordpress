@@ -283,20 +283,17 @@
     wp_enqueue_script( 'calendar_JS_5', plugins_url('assets/packages/list/main.js', __FILE__ ) );
     wp_enqueue_script( 'calendar_JS_6', plugins_url('assets/packages/bootstrap/main.js', __FILE__ ) );
 
-    add_action( 'wp_ajax_my_action', 'my_action_callback' );
-    add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
+    add_action( 'wp_ajax_my_action', function() use ($api, $globals) {
 
-	function my_action_callback() {
-        global $wpdb, $globals, $api;
-        
         $params = [ 
             "query" => sanitize_text_field($_REQUEST['q']), 
             "sort" =>  sanitize_text_field($_REQUEST['sort']), 
             "tag" =>  sanitize_text_field($_REQUEST['tag']), 
             "scheme" =>  sanitize_text_field($_REQUEST['scheme']), 
-            "environment" =>  sanitize_text_field($_REQUEST['environment']), 
-            "organizer" =>  sanitize_text_field($_REQUEST['organizer']), 
+            "environment" =>  sanitize_text_field($_REQUEST['environment']), //database
+            "organizer" =>  sanitize_text_field($_REQUEST['organizer']), //database
             "first_event_date" =>  sanitize_text_field($_REQUEST['fe_date']), 
+            "access_token" =>  sanitize_text_field($_REQUEST['fe_date']), //database
             "approved" => 1
         ];
 
@@ -346,7 +343,8 @@
             
         wp_send_json_success($resource);
 
-    }
+    });
+    add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
 
     function enqueue_my_action_script() {
         wp_enqueue_script( 'my-action-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
