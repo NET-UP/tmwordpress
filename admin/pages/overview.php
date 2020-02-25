@@ -1,6 +1,5 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	defined("ABSPATH") or die("Permission denied");
 	include( str_replace("/admin/pages", "", plugin_dir_path(__FILE__)) . 'admin/includes/scriptstyles.php');
 	
     global $globals, $api, $wpdb;
@@ -88,17 +87,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="box mb-3">
-                        <div class="box-title"><?php esc_html_e("Change settings", "ticketmachine"); ?></div>
-                        <div class="box-body">
-                            <p><?php esc_html_e("Easily adjust the design, page layouts, URLs and general settings.", "ticketmachine"); ?></p>
-                            <a href="?page=ticketmachine_settings&tab=design" class="button button-secondary mb-1"><?php esc_html_e("Edit design", "ticketmachine"); ?></a>
-                            <a href="?page=ticketmachine_settings&tab=general" class="button button-secondary mb-1"><?php esc_html_e("General settings", "ticketmachine"); ?></a>
-                            <a href="?page=ticketmachine_settings&tab=detail" class="button button-secondary mb-1"><?php esc_html_e("Event settings", "ticketmachine"); ?></a>
+
+                <?php if(current_user_can('administrator')) { ?>
+                
+                    <div class="col-md-6 col-lg-4">
+                        <div class="box mb-3">
+                            <div class="box-title"><?php esc_html_e("Change settings", "ticketmachine"); ?></div>
+                            <div class="box-body">
+                                <p><?php esc_html_e("Easily adjust the design, page layouts, URLs and general settings.", "ticketmachine"); ?></p>
+                                <a href="?page=ticketmachine_settings&tab=design" class="button button-secondary mb-1"><?php esc_html_e("Edit design", "ticketmachine"); ?></a>
+                                <a href="?page=ticketmachine_settings&tab=general" class="button button-secondary mb-1"><?php esc_html_e("General settings", "ticketmachine"); ?></a>
+                                <a href="?page=ticketmachine_settings&tab=detail" class="button button-secondary mb-1"><?php esc_html_e("Event settings", "ticketmachine"); ?></a>
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                <?php } ?>
 
             </div>
         </div>

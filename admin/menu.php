@@ -1,12 +1,13 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
-	include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 
-	if (current_user_can('edit_posts')) {
-		function ticketmachine_admin_menu () {
-			global $globals, $api;
-			
+	function ticketmachine_admin_menu () {
+		global $globals, $api;
+
+		include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
+		include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
+		
+		if( current_user_can('edit_posts') ) {
 			add_menu_page(
 				'TicketMachine',
 				"TicketMachine",
@@ -17,7 +18,7 @@
 				96
 			);
 
-			if($globals->activated || absint($_GET['code'])) {
+			if($globals->activated || sanitize_text_field($_GET['code'])) {
 				add_submenu_page(
 					'ticketmachine_event_manager',
 					esc_html__('Overview', 'ticketmachine'),
@@ -39,7 +40,7 @@
 					null,
 					97
 				);
-				if (current_user_can('administrator')) {
+				if( current_user_can('manage_options') ) {
 					add_submenu_page(
 						'ticketmachine_event_manager',
 						esc_html__('Settings', 'ticketmachine'),
@@ -95,4 +96,7 @@
 	function ticketmachine_installation_page(){
 		include( plugin_dir_path( __FILE__) . 'pages/installation.php');
 	}
+
+	
+		
 ?>
