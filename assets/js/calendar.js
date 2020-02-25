@@ -10,7 +10,8 @@ var data = {
 	q: '',
 	sort: '',
 	tag: '',
-	approved: 1
+	approved: 1,
+	events_url: ""
 };
 jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
 

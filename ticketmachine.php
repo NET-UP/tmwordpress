@@ -296,12 +296,8 @@
             "tag" =>  sanitize_text_field($_REQUEST['tag']), 
             "approved" => 1 
         ];
-       
-        $calender = $globals;
-
-        $calendarData = $calendar;
             
-        wp_send_json_success(json_encode($calendarData));
+        wp_send_json_success(json_encode($_REQUEST));
 
     }
 
