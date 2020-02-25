@@ -7,7 +7,7 @@
         if(empty($params['approved'])) {
             $params = ticketmachine_array_push_assoc($params, "approved", 1);
         }
-        $events = ticketmachine_ticketmachine_tmapi_events($params)->result;
+        $events = ticketmachine_tmapi_events($params)->result;
         $ticketmachine_output = "";
         
 			

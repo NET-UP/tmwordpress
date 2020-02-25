@@ -57,7 +57,7 @@
 
 	/* API Requests */
 	/* Get event list */
-	function ticketmachine_ticketmachine_tmapi_events($params=array(), $method="GET", $post=FALSE,  $headers=array()){
+	function ticketmachine_tmapi_events($params=array(), $method="GET", $post=FALSE,  $headers=array()){
 		global $api, $globals;
 
 		$params = (object)$params;

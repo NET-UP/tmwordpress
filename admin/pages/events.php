@@ -79,7 +79,7 @@ class Event_List_Table extends WP_List_Table {
             $params = ticketmachine_array_push_assoc($params, "approved", 0);
         }
         $params = ticketmachine_array_push_assoc($params, "per_page", 100);
-        $events = ticketmachine_ticketmachine_tmapi_events($params)->result;
+        $events = ticketmachine_tmapi_events($params)->result;
         return $events;
     }
 
