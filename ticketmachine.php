@@ -651,7 +651,7 @@
     wp_enqueue_script( 'calendar_JS_5', plugins_url('assets/packages/list/main.js', __FILE__ ) );
     wp_enqueue_script( 'calendar_JS_6', plugins_url('assets/packages/bootstrap/main.js', __FILE__ ) );
 
-    add_action( 'wp_ajax_my_action', 'my_action_callback' );
+    add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
     add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
 
 	function my_action_callback() {
