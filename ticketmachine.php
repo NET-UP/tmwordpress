@@ -336,8 +336,8 @@
 			'headers' => $headers
         ));
         echo "<pre>"; 
-        print_r($headers);
-        print_r($url);
+        print_r($ticketmachine_globals);
+        print_r($api);
         echo "</pre>";
             
         wp_send_json_success($resource);
