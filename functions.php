@@ -285,5 +285,7 @@ END:VCALENDAR";
             return $ical;   
         }
 	}
+
+	$ticketmachine_globals = $globals;
     
 ?>

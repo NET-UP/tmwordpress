@@ -283,7 +283,7 @@
     wp_enqueue_script( 'calendar_JS_5', plugins_url('assets/packages/list/main.js', __FILE__ ) );
     wp_enqueue_script( 'calendar_JS_6', plugins_url('assets/packages/bootstrap/main.js', __FILE__ ) );
 
-    add_action( 'wp_ajax_my_action', function() use ($api, $globals) {
+    add_action( 'wp_ajax_my_action', function() use ($api, $ticketmachine_globals) {
 
         $params = [ 
             "query" => sanitize_text_field($_REQUEST['q']), 
