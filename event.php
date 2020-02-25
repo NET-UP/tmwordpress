@@ -11,6 +11,7 @@
 	];
 	$events = ticketmachine_tmapi_events($params);
 
+	print_r($params);
 	print_r($events);
 
 	$calendar = array();
