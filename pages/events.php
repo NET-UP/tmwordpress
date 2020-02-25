@@ -54,13 +54,6 @@
 			wp_enqueue_script( 'calendar_JS_4', plugins_url('../assets/packages/timegrid/main.js', __FILE__ ) );
 			wp_enqueue_script( 'calendar_JS_5', plugins_url('../assets/packages/list/main.js', __FILE__ ) );
 			wp_enqueue_script( 'calendar_JS_6', plugins_url('../assets/packages/bootstrap/main.js', __FILE__ ) );
-			
-			//Calendar Config
-			wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ), array( 'jquery' ), null, true );
-			
-			wp_localize_script( 'calendar_JS_0', 'ticketmachine_calendar_ajax_data', array(
-				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-			) );
 
 			function ticketmachine_calendar_ajax_callback() {
 				$params = [ 
@@ -118,6 +111,13 @@
 							'defaultDate' => $default_date
 						);
 					}
+				}
+			
+				function ticketmachine_calendar_ajax_script() {
+					wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ), array( 'jquery' ), null, true );
+					wp_localize_script( 'calendar_JS_0', 'ticketmachine_calendar_ajax_data', array(
+						'ajaxurl' => admin_url( 'admin-ajax.php' ),
+					) );
 				}
 			
 				$calendarData = $calendar;
