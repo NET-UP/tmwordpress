@@ -13,7 +13,6 @@ var data = {
 	tag: '1',
 	approved: 1,
 	events_url: ev_url
-	
 };
 jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
 
