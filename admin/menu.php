@@ -102,7 +102,7 @@
     function ticketmachine_enqueue_admin_style() {
         wp_enqueue_style( 'admin_CSS', plugins_url('assets/css/style.css', __FILE__ ) );
         wp_enqueue_style( 'admin_grid_CSS', plugins_url('assets/css/grid.min.css', __FILE__ ) );
-        wp_enqueue_style( 'fontawesome-5_CSS', plugins_url('assets/css/ext/fontawesome.min.css', __FILE__ ) );
+        wp_enqueue_style( 'fontawesome-5_CSS', plugins_url('../assets/css/ext/fontawesome.min.css', __FILE__ ) );
         wp_enqueue_style( 'datetimepicker_CSS', plugins_url('assets/css/ext/bootstrap-datetimepicker.css', __FILE__ ) );
         wp_enqueue_style( 'wp-color-picker' );
     
