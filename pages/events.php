@@ -55,6 +55,14 @@
 			
 			//Calendar Config
 			wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ) );
+
+			// Provide a global object to our JS file containing the AJAX url and security nonce
+			wp_localize_script( 'calendar_JS_0', 'ajax_object',
+				array(
+					'ajax_url'      => admin_url('admin-ajax.php'),
+					'ajax_nonce'    => wp_create_nonce('ajax_nonce'),
+				)
+			);
 			
 			$ticketmachine_output .= "
 			<input type='hidden' id='ticketmachine_ev_url' value='" . plugins_url('', dirname(__FILE__) ) . "/event.php'></input>
