@@ -621,8 +621,6 @@
 		return $formatted_date;
 	}
 
-    print_r($globals);
-    
 	switch ($globals->lang) {
 		case 'en':
 			setlocale(LC_TIME, 'en_US.UTF-8');
