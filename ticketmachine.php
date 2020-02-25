@@ -139,7 +139,6 @@
 	function ticketmachine_initialize( $atts ) {
         global $globals, $api, $wpdb;
 
-		require_once( plugin_dir_path( __FILE__ ) . 'globals.php');
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
         include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
 		
