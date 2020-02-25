@@ -11,7 +11,8 @@ var data = {
 	sort: '',
 	tag: '',
 	approved: 1,
-	events_url: ""
+	events_url: jQuery("#ticketmachine_ev_url").val()
+	
 };
 jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
 
