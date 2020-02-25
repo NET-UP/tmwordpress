@@ -11,6 +11,7 @@ var cal_sort = "";
 var cal_tag = "";
 jQuery.getJSON(ajax_object.ajax_url, { "q": cal_query, "sort": cal_sort, "tag": cal_tag, "action": "ticketmachine_calendar_ajax_events"}).success(function(data) {
 
+	alert("test");
 	jQuery("#ticketmachine_spinner").hide();
 	var events_array = data;
 
