@@ -8,7 +8,7 @@
 		include( plugin_dir_path( __FILE__ ) . 'pages/categories.php');
 		
 		if( current_user_can('edit_posts') ) {
-			$hook = add_menu_page(
+			add_menu_page(
 				'TicketMachine',
 				"TicketMachine",
 				'manage_options',
@@ -19,7 +19,7 @@
 			);
 
 			if($globals->activated || sanitize_text_field($_GET['code'])) {
-				$hook2 = add_submenu_page(
+				add_submenu_page(
 					'ticketmachine_event_manager',
 					esc_html__('Overview', 'ticketmachine'),
 					esc_html__('Overview', 'ticketmachine'),
@@ -30,7 +30,7 @@
 					97
 				);	
 
-				$hook3 = add_submenu_page(
+				add_submenu_page(
 					'ticketmachine_event_manager',
 					esc_html__('Events', 'ticketmachine'),
 					esc_html__('Events', 'ticketmachine'),
@@ -41,7 +41,7 @@
 					97
 				);
 				if( current_user_can('manage_options') ) {
-					$hook4 = add_submenu_page(
+					add_submenu_page(
 						'ticketmachine_event_manager',
 						esc_html__('Settings', 'ticketmachine'),
 						esc_html__('Settings', 'ticketmachine'),
@@ -77,11 +77,6 @@
 		}
 	}
 
-	add_action( 'load-' . $hook, 'my_admin_enqueue_scripts' );
-	add_action( 'load-' . $hook2, 'my_admin_enqueue_scripts' );
-	add_action( 'load-' . $hook3, 'my_admin_enqueue_scripts' );
-	add_action( 'load-' . $hook4, 'my_admin_enqueue_scripts' );
-
 	add_filter( 'submenu_file', function($submenu_file){
 		$screen = get_current_screen();
 		if($screen->id === 'ticketmachine_event_manager'){
@@ -102,6 +97,10 @@
 		include( plugin_dir_path( __FILE__) . 'pages/installation.php');
 	}
 
+	if (strpos($a, 'ticketmachine') !== false) {
+		add_action( 'admin_enqueue_scripts', 'ticketmachine_enqueue_admin_style' );
+	}
+	
     function ticketmachine_enqueue_admin_style() {
         wp_enqueue_style( 'admin_CSS', plugins_url('assets/css/style.css', __FILE__ ) );
         wp_enqueue_style( 'admin_grid_CSS', plugins_url('assets/css/grid.min.css', __FILE__ ) );
@@ -113,7 +112,6 @@
         wp_enqueue_script( 'datetimepicker_JS', plugins_url('assets/js/ext/bootstrap-datetimepicker.min.js', __FILE__ ) );
         wp_enqueue_script( 'taginput_JS', plugins_url('assets/js/ext/bootstrap-tag.min.js', __FILE__ ) );
         wp_enqueue_script( 'admin_JS', plugins_url('assets/js/settings.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
-	}
-	
+    }
 		
 ?>
