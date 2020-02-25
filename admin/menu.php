@@ -110,6 +110,8 @@
         wp_enqueue_script( 'datetimepicker_JS', plugins_url('assets/js/ext/bootstrap-datetimepicker.min.js', __FILE__ ) );
         wp_enqueue_script( 'taginput_JS', plugins_url('assets/js/ext/bootstrap-tag.min.js', __FILE__ ) );
         wp_enqueue_script( 'admin_JS', plugins_url('assets/js/settings.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
-    }
+	}
+	
+	print_r(get_current_scree());
 		
 ?>
