@@ -384,28 +384,7 @@
        }
     }
 
-    add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
-    add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
-
-	function my_action_callback() {
-        global $api, $globals, $wpdb;
-
-        $events = ticketmachine_tmapi_events($_REQUEST);
-
-        print_r($events);
-            
-        wp_send_json_success($events);
-
-    }
-
-    function enqueue_my_action_script() {
-
-        wp_enqueue_script( 'my-action-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
-        wp_localize_script( 'my-action-script', 'my_action_data', array(
-            'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        ) );
-    }
-
+	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	function ticketmachine_array_push_assoc($array, $key, $value){
 		$array[$key] = $value;
 		return $array;
@@ -666,6 +645,88 @@
 	add_action('wp_head','ticketmachine_event_metadata');
     if(isset($_GET['id']) && $_GET['id'] > 0){
         add_action('wp_head','ticketmachine_event_metadata_event');
+    }
+
+    add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
+    add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
+
+	function my_action_callback() {
+        global $api, $globals, $wpdb;
+
+        $events = ticketmachine_tmapi_events($_REQUEST);
+            
+        $calendar = array();
+        $i = 0;
+                
+        if(empty($events->result)) {	
+        }else{
+
+            foreach($events->result as $event) {
+                $event = (object) $event;
+                
+                $params = [ "id" => $event->id ];
+                
+                if($event->state['sale_active'] > 0){
+                    $event->status_color = "#d4edda";
+                    $event->status_text_color = "#155724";
+                }else{
+                    $event->status_color = "#f8d7da";
+                    $event->status_text_color = "#721c24";
+                }
+
+                //Override for free plugin
+                $event->status_color = "#d4edda";
+                $event->status_text_color = "#155724";
+                
+                $start = strtotime(get_date_from_gmt($event->ev_date)) * 1000;
+                $end = strtotime(get_date_from_gmt($event->endtime)) * 1000;	
+
+                if ($end < (strtotime("midnight", time())*1000)){
+                    $event->status_color = "#eeeeee";
+                    $event->status_text_color = "#999999";
+                }elseif($i == 0) {
+                    $i = 1;
+                    $default_date = $start;
+                }
+                
+                $calendar[] = array(
+                    'id' =>$event->id,
+                    'title' => $event->ev_name,
+                    'url' => "/" . $globals->event_slug . "/?id=" . $event->id,
+                    'start' => $start,
+                    'end' => $end,
+                    'class' => "event-success",
+                    'color' => $event->status_color,
+                    'textColor' => $event->status_text_color,
+                    'defaultDate' => $default_date
+                );
+            }
+        }
+
+        $calendarData = $calendar;
+        wp_send_json_success($calendarData);
+
+    }
+
+    function enqueue_my_action_script() {
+        //Calendar Packages
+        wp_enqueue_style( 'calendar_CSS_1', plugins_url('assets/packages/core/main.css', __FILE__ ) );
+        wp_enqueue_style( 'calendar_CSS_2', plugins_url('assets/packages/daygrid/main.css', __FILE__ ) );
+        wp_enqueue_style( 'calendar_CSS_3', plugins_url('assets/packages/timegrid/main.css', __FILE__ ) );
+        wp_enqueue_style( 'calendar_CSS_4', plugins_url('assets/packages/list/main.css', __FILE__ ) );
+        wp_enqueue_style( 'calendar_CSS_5', plugins_url('assets/packages/bootstrap/main.css', __FILE__ ) );
+        
+        wp_enqueue_script( 'calendar_JS_1', plugins_url('assets/packages/core/main.js', __FILE__ ) );
+        wp_enqueue_script( 'calendar_JS_2', plugins_url('assets/packages/interaction/main.js', __FILE__ ) );
+        wp_enqueue_script( 'calendar_JS_3', plugins_url('assets/packages/daygrid/main.js', __FILE__ ) );
+        wp_enqueue_script( 'calendar_JS_4', plugins_url('assets/packages/timegrid/main.js', __FILE__ ) );
+        wp_enqueue_script( 'calendar_JS_5', plugins_url('assets/packages/list/main.js', __FILE__ ) );
+        wp_enqueue_script( 'calendar_JS_6', plugins_url('assets/packages/bootstrap/main.js', __FILE__ ) );
+
+        wp_enqueue_script( 'my-action-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
+        wp_localize_script( 'my-action-script', 'my_action_data', array(
+            'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        ) );
     }
 
 ?>
