@@ -326,7 +326,7 @@
 		}
 
         $headers = array(
-            'Authorization' => 'Bearer ' . $params->access_token,
+            'Authorization' => 'Bearer ' . $globals->api_access_token,
             'Accept' => 'application/json'
         );
 
