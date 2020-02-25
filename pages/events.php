@@ -63,6 +63,71 @@
 					'ajax_nonce'    => wp_create_nonce('ajax_nonce'),
 				)
 			);
+
+			add_action( 'wp_ajax_nopriv_ajax_validate_email', 'ticketmachine_calendar_ajax_events' );
+
+			function ticketmachine_calendar_ajax_events() {
+				$params = [ 
+					"query" => sanitize_text_field($_POST['q']), 
+					"sort" =>  sanitize_text_field($_POST['sort']), 
+					"tag" =>  sanitize_text_field($_POST['tag']), 
+					"approved" => 1 
+				];
+				$events = ticketmachine_ticketmachine_tmapi_events($params);
+
+				$calendar = array();
+				$i = 0;
+						
+				if(empty($events->result)) {	
+					header('HTTP/1.0 400 Bad error');
+				}else{
+
+					foreach($events->result as $event) {
+						$event = (object) $event;
+						
+						$params = [ "id" => $event->id ];
+						
+						if($event->state['sale_active'] > 0){
+							$event->status_color = "#d4edda";
+							$event->status_text_color = "#155724";
+						}else{
+							$event->status_color = "#f8d7da";
+							$event->status_text_color = "#721c24";
+						}
+
+						//Override for free plugin
+						$event->status_color = "#d4edda";
+						$event->status_text_color = "#155724";
+						
+						$start = strtotime(get_date_from_gmt($event->ev_date)) * 1000;
+						$end = strtotime(get_date_from_gmt($event->endtime)) * 1000;	
+
+						if ($end < (strtotime("midnight", time())*1000)){
+							$event->status_color = "#eeeeee";
+							$event->status_text_color = "#999999";
+						}elseif($i == 0) {
+							$i = 1;
+							$default_date = $start;
+						}
+						
+						$calendar[] = array(
+							'id' =>$event->id,
+							'title' => $event->ev_name,
+							'url' => "/" . $globals->event_slug . "/?id=" . $event->id,
+							'start' => $start,
+							'end' => $end,
+							'class' => "event-success",
+							'color' => $event->status_color,
+							'textColor' => $event->status_text_color,
+							'defaultDate' => $default_date
+						);
+					}
+				}
+
+				$calendarData = $calendar;
+					
+				return json_encode($calendarData);
+			}
 			
 			$ticketmachine_output .= "
 			<input type='hidden' id='ticketmachine_ev_url' value='" . plugins_url('', dirname(__FILE__) ) . "/event.php'></input>
