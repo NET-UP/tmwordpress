@@ -176,6 +176,13 @@
         wp_enqueue_script( 'calendar_CSS_6' );
     
         wp_enqueue_script( 'ticketmachine-calendar-script' );
+    
+        wp_localize_script( 'ticketmachine-calendar-script', 'ticketmachine_calendar_data', array(
+            'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        ) );
+
+        add_action( 'wp_ajax_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
+        add_action( 'wp_ajax_nopriv_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
 
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
         include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
@@ -282,13 +289,6 @@
         wp_register_script( 'calendar_JS_6', plugins_url('assets/packages/bootstrap/main.js', __FILE__ ) );
 
         wp_register_script( 'my-action-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
-    
-        wp_localize_script( 'ticketmachine-calendar-script', 'ticketmachine_calendar_data', array(
-            'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        ) );
-
-        add_action( 'wp_ajax_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
-        add_action( 'wp_ajax_nopriv_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
     }
 	
     if(is_admin()){
