@@ -157,6 +157,9 @@
                         include "partials/_search_header.php";
                         include "partials/_tag_header.php";
                         include "pages/events.php";
+                        add_action( 'wp_ajax_my_action', 'my_action_callback' );
+                        add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
+                        add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
                         $ticketmachine_output .= ticketmachine_display_events( $atts );
                         break;
                     case 'event_boxes':
@@ -164,6 +167,9 @@
                         include "partials/_search_header.php";
                         include "partials/_tag_header.php";
                         include "pages/events.php";
+                        add_action( 'wp_ajax_my_action', 'my_action_callback' );
+                        add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
+                        add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
                         $ticketmachine_output .= ticketmachine_display_events( $atts );
                         break;
                     case 'event_details':
