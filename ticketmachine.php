@@ -12,7 +12,7 @@
     add_action( 'wp_loaded', 'ticketmachine_register_core_files' );
     add_action( 'wp_loaded', 'ticketmachine_register_calendar_files' );
     
-    add_action( 'wp_enqueue_styles', 'ticketmachine_enqueue_calendar_files' );
+    add_action( 'wp_enqueue_scripts', 'ticketmachine_enqueue_calendar_files' );
     add_action( 'wp_enqueue_scripts', 'ticketmachine_enqueue_core_files' );
 
     add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
