@@ -10,8 +10,6 @@
 		"approved" => 1 
 	];
 	$events = ticketmachine_tmapi_events($params);
-	
-	print_r($events);
 
 	$calendar = array();
 	$i = 0;

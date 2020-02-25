@@ -92,7 +92,6 @@
 		if(isset($params->approved)) {
 			$url .= "&approved[eq]=" . (int)$params->approved;
 		}
-		print_r($url);
 
 		$events = (object)ticketmachine_apiRequest($url, $post, $method, $headers);
 
