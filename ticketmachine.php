@@ -297,7 +297,7 @@
             "approved" => 1 
         ];
             
-        wp_send_json_success(json_encode($_REQUEST));
+        wp_send_json_success($_REQUEST);
 
     }
 
