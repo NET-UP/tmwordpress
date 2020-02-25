@@ -635,7 +635,7 @@
 		ticketmachine_tmapi_refresh_token_check();
 	}
 
-    add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
+    add_action( 'wp_ajax_my_action', 'my_action_callback' );
     add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
 
 	function my_action_callback() {
