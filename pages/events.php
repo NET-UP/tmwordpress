@@ -35,11 +35,7 @@
 		$ticketmachine_output .= "</div>";
 		
 		if($current_page == "calendar"){
-			
-			add_action( 'wp_ajax_my_action', 'my_action_callback' );
-			add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
-			add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
-			
+
 			$ticketmachine_output .= "
 			<input type='hidden' id='ticketmachine_ev_url' value='" . ticketmachine_tmapi_events($params, "GET", FALSE, array(), 1) . "'></input>
 			<div id='ticketmachine_cal_error' class='col-12 text-center mt-1' style='display:none;'>" . ticketmachine_alert(esc_html__("No events could be found", "ticketmachine"), "error") . "</div>
