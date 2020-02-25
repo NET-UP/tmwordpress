@@ -266,8 +266,8 @@
        }
     }
 
-    add_action( 'wp_ajax_ticketmachine_calendar_ajax', 'ticketmachine_calendar_ajax' );
-    add_action( 'wp_enqueue_scripts', 'ticketmachine_calendar_ajax_script' );
+    add_action( 'wp_ajax_ticketmachine_calendar_ajax', 'ticketmachine_calendar_ajax_callback' );
+    add_action( 'wp_enqueue_scripts', 'enqueue_ticketmachine_calendar_ajax_script' );
 
     //Underscore
     wp_enqueue_script( 'underscore_JS', plugins_url('/assets/js/ext/underscore.js', __FILE__ ) );
@@ -344,7 +344,7 @@
             }
         }
     
-        function ticketmachine_calendar_ajax_script() {
+        function enqueue_ticketmachine_calendar_ajax_script() {
             wp_enqueue_script( 'calendar_JS_0', plugins_url('../assets/js/calendar.js', __FILE__ ), array( 'jquery' ), null, true );
             wp_localize_script( 'calendar_JS_0', 'ticketmachine_calendar_ajax_data', array(
                 'ajaxurl' => admin_url( 'admin-ajax.php' ),
