@@ -299,14 +299,14 @@
 
 		$url = "https://cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
 		
-		if($globals->organizer && $globals->organizer != "" ){
-			$url .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
+		if($ticketmachine_globals->organizer && $ticketmachine_globals->organizer != "" ){
+			$url .= "organizer.og_abbreviation[eq]=" . $ticketmachine_globals->organizer;
 		}elseif($params->organizer){
 			$url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
 		}
 		
 		if(empty($params->show_old)) {
-			$url .= "&endtime[gte]=" . $globals->first_event_date;
+			$url .= "&endtime[gte]=" . $ticketmachine_globals->first_event_date;
 		}
 		$url .= "&sort=". $params->sort;
 		if(!empty($params->per_page)) {
@@ -326,7 +326,7 @@
 		}
 
         $headers = array(
-            'Authorization' => 'Bearer ' . $globals->api_access_token,
+            'Authorization' => 'Bearer ' . $ticketmachine_globals->api_access_token,
             'Accept' => 'application/json'
         );
 
