@@ -11,11 +11,6 @@ var data = {
 	q: '',
 	sort: 'ev_date',
 	tag: '',
-	scheme: 'https',
-	environment: 'staging.',
-	organizer: 'acc16og1',
-	first_event_date: '2020-02-25',
-	access_token: '',
 	approved: 1,
 };
 jQuery.getJSON(my_action_data.ajaxurl, data).success(function(data) {
