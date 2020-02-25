@@ -347,6 +347,99 @@
         $calendarData = $calendar;
             
         wp_send_json_success(json_encode($calendarData));
+
+        	/* API Requests */
+            /* Get event list */
+            function ticketmachine_tmapi_events($params=array(), $method="GET", $post=FALSE,  $headers=array()){
+                global $api, $globals;
+
+                $params = (object)$params;
+                if(empty($params->sort)){
+                    $params->sort = "ev_date";
+                }
+
+                $url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
+                
+                if($globals->organizer && $globals->organizer != "" ){
+                    $url .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
+                }elseif($params->organizer){
+                    $url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
+                }
+                
+                if(empty($params->show_old)) {
+                    $url .= "&endtime[gte]=" . $globals->first_event_date;
+                }
+                $url .= "&sort=". $params->sort;
+                if(!empty($params->per_page)) {
+                    $url .= "&per_page=" . (int)$params->per_page;
+                }
+                
+                if(!empty($params->query)) {
+                    $url .= "&ev_name[contains]=" . htmlspecialchars(urlencode($params->query));
+                }
+                
+                if(!empty($params->tag)) {
+                    $url .= "&tags[eq]=" . htmlspecialchars(urlencode($params->tag));
+                }
+                
+                if(isset($params->approved)) {
+                    $url .= "&approved[eq]=" . (int)$params->approved;
+                }
+
+                $events = (object)ticketmachine_apiRequest($url, $post, $method, $headers);
+
+                return $events;
+            }
+
+            function ticketmachine_apiRequest($url, $post=FALSE, $method="GET", $headers=array()) {
+
+                $headers = array();
+                $headers = ticketmachine_array_push_assoc($headers, 'User-Agent', 'https://www.ticketmachine.de/');
+          
+                if(isset($_SESSION['access_token']))
+                    $headers = ticketmachine_array_push_assoc($headers, 'Authorization', 'Bearer ' . $_SESSION['access_token']);
+          
+                if($method == "POST") {
+          
+                  if($post) {
+                      $headers = ticketmachine_array_push_assoc($headers, 'Content-Type', 'application/json');
+          
+                      $resource = wp_remote_post($url, array(
+                          'method'  => 'POST',
+                          'timeout' => 45,
+                          'headers' => $headers,
+                          'body' 	  => json_encode(
+                                      str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", $post))), 
+                                      JSON_UNESCAPED_SLASHES
+                                    )
+                      ));
+                  }
+          
+                }else{
+          
+                  if($post) {
+                      $headers = ticketmachine_array_push_assoc($headers, 'Accept', 'application/json');
+                  }
+          
+                  $resource = wp_remote_get($url, array(
+                      'method'  => 'GET',
+                      'timeout' => 45,
+                      'headers' => $headers
+                  ));
+          
+                }
+                $response = $resource['body'];
+                # echo "<pre>"; 
+                # print_r($url);
+                # echo "<br/>"; 
+                # print_r($headers);
+                # print_r($post);
+                # print_r($response);
+                # echo "</pre>";
+          
+                return json_decode($response, true);
+                
+              }
     }
     
     function enqueue_my_action_script() {
