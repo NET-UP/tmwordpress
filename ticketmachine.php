@@ -142,6 +142,7 @@
         add_action( 'wp_ajax_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
         add_action( 'wp_ajax_nopriv_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
         add_action( 'wp_enqueue_scripts', 'ticketmachine_enqueue_calendar_files' );
+        add_action( 'wp_enqueue_scripts', 'ticketmachine_enqueue_core_files' );
 
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
         include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
