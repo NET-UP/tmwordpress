@@ -97,8 +97,10 @@
 		include( plugin_dir_path( __FILE__) . 'pages/installation.php');
 	}
 
+	if (strpos(sanitize_text_field($_GET['page']), 'ticketmachine') !== false) {
 		add_action( 'admin_enqueue_scripts', 'ticketmachine_enqueue_admin_style' );
-	
+	}
+
     function ticketmachine_enqueue_admin_style() {
         wp_enqueue_style( 'admin_CSS', plugins_url('assets/css/style.css', __FILE__ ) );
         wp_enqueue_style( 'admin_grid_CSS', plugins_url('assets/css/grid.min.css', __FILE__ ) );
