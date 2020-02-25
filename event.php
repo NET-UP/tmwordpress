@@ -15,7 +15,7 @@
 	$i = 0;
 			
 	if(empty($events->result)) {	
-		header('HTTP/1.0 400 Bad error');
+		header('HTTP/1.0 404 Not found');
 	}else{
 
 		foreach($events->result as $event) {
