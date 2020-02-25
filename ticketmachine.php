@@ -286,6 +286,73 @@
     add_action( 'wp_ajax_my_action', 'my_action_callback' );
     add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
 
+    
+	
+	function my_action_callback() {
+        global $wpdb, $globals, $api;
+        $params = [ 
+            "query" => sanitize_text_field($_REQUEST['q']), 
+            "sort" =>  sanitize_text_field($_REQUEST['sort']), 
+            "tag" =>  sanitize_text_field($_REQUEST['tag']), 
+            "approved" => 1 
+        ];
+        $events = ticketmachine_tmapi_events($params);
+    
+        $calendar = array();
+        $i = 0;
+                
+        if(empty($events->result)) {	
+            header('HTTP/1.0 400 Bad error');
+        }else{
+    
+            foreach($events->result as $event) {
+                $event = (object) $event;
+                
+                $params = [ "id" => $event->id ];
+                
+                if($event->state['sale_active'] > 0){
+                    $event->status_color = "#d4edda";
+                    $event->status_text_color = "#155724";
+                }else{
+                    $event->status_color = "#f8d7da";
+                    $event->status_text_color = "#721c24";
+                }
+    
+                //Override for free plugin
+                $event->status_color = "#d4edda";
+                $event->status_text_color = "#155724";
+                
+                $start = strtotime(get_date_from_gmt($event->ev_date)) * 1000;
+                $end = strtotime(get_date_from_gmt($event->endtime)) * 1000;	
+    
+                if ($end < (strtotime("midnight", time())*1000)){
+                    $event->status_color = "#eeeeee";
+                    $event->status_text_color = "#999999";
+                }elseif($i == 0) {
+                    $i = 1;
+                    $default_date = $start;
+                }
+                
+                $calendar[] = array(
+                    'id' =>$event->id,
+                    'title' => $event->ev_name,
+                    'url' => "/" . $globals->event_slug . "/?id=" . $event->id,
+                    'start' => $start,
+                    'end' => $end,
+                    'class' => "event-success",
+                    'color' => $event->status_color,
+                    'textColor' => $event->status_text_color,
+                    'defaultDate' => $default_date
+                );
+            }
+        }
+    
+        $calendarData = $calendar;
+            
+        wp_send_json_success(json_encode($calendarData));
+
+    }
+
     function enqueue_my_action_script() {
         wp_enqueue_script( 'my-action-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
         wp_localize_script( 'my-action-script', 'my_action_data', array(
