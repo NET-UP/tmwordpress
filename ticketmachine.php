@@ -135,12 +135,12 @@
 		'client_secret' => $api->client_secret,
 		'scope' => "public organizer organizer/event"
 	);
-    wp_enqueue_script( 'ticketmachine_enqueue_calendar_files' );
-    wp_enqueue_script( 'ticketmachine_enqueue_core_files' );
 	
 	// load dynamic form for calculator from template
 	function ticketmachine_initialize( $atts ) {
         global $globals, $api, $wpdb;
+        add_action( 'wp_enqueue_scripts', 'ticketmachine_enqueue_calendar_files' );
+        add_action( 'wp_enqueue_scripts', 'ticketmachine_enqueue_core_files' );
 
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
         include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
