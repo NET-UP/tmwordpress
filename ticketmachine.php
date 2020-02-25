@@ -9,7 +9,8 @@
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
 	*/
-    add_action( 'wp_enqueue_scripts', 'ticketmachine_add_core_files' );
+    add_action( 'wp_loaded', 'ticketmachine_register_core_files' );
+    add_action( 'wp_loaded', 'ticketmachine_register_calendar_files' );
     
     add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
     function ticketmachine_wpdocs_load_textdomain() {
@@ -138,9 +139,9 @@
 	// load dynamic form for calculator from template
 	function ticketmachine_initialize( $atts ) {
         global $globals, $api, $wpdb;
-        add_action( 'wp_ajax_my_action', 'my_action_callback' );
-        add_action( 'wp_ajax_nopriv_my_action', 'my_action_callback' );
-        add_action( 'wp_enqueue_scripts', 'enqueue_my_action_script' );
+        add_action( 'wp_ajax_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
+        add_action( 'wp_ajax_nopriv_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
+        add_action( 'wp_enqueue_scripts', 'ticketmachine_enqueue_calendar_files' );
 
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
         include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
@@ -202,34 +203,52 @@
 
 	add_shortcode( 'ticketmachine', 'ticketmachine_initialize' );
 	
-	function ticketmachine_add_core_files () {
+	function ticketmachine_register_core_files () {
 		//jQuery
-		wp_enqueue_script( 'jquery-ui-datepicker', array("jquery") );
-		wp_enqueue_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
+		wp_register_script( 'jquery-ui-datepicker', array("jquery") );
+		wp_register_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
 		
 		//Cookies
-		wp_enqueue_script( 'cookies_JS', plugins_url( "assets/js/cookies.js", __FILE__ ) );
+		wp_register_script( 'cookies_JS', plugins_url( "assets/js/cookies.js", __FILE__ ) );
 
 		//Popper
-		wp_enqueue_script( 'popper_JS', plugins_url('assets/js/ext/popper.js', __FILE__ ) );
+		wp_register_script( 'popper_JS', plugins_url('assets/js/ext/popper.js', __FILE__ ) );
 		
 		//Bootstrap
-		wp_enqueue_script( 'bootstrap-4_JS', plugins_url( "assets/js/ext/bootstrap.min.js", __FILE__ ), array("jquery") );
-		wp_enqueue_style( 'boostrap-4_CSS', plugins_url('assets/css/ext/bootstrap.min.css', __FILE__ ) );
+		wp_register_script( 'bootstrap-4_JS', plugins_url( "assets/js/ext/bootstrap.min.js", __FILE__ ), array("jquery") );
+		wp_register_style( 'boostrap-4_CSS', plugins_url('assets/css/ext/bootstrap.min.css', __FILE__ ) );
 		
 		//Icons
-		wp_enqueue_style( 'fontawesome-5_CSS', plugins_url('assets/css/ext/fontawesome.min.css', __FILE__ ) );
+		wp_register_style( 'fontawesome-5_CSS', plugins_url('assets/css/ext/fontawesome.min.css', __FILE__ ) );
 		
 		//Core
-		wp_enqueue_style( 'core_CSS', plugins_url('assets/css/ticketmachine.css', __FILE__ ) );
-		wp_enqueue_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
+		wp_register_style( 'core_CSS', plugins_url('assets/css/ticketmachine.css', __FILE__ ) );
+		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
 
 		//Custom Styles
-        wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
+        wp_register_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
         
         //Underscore
-        wp_enqueue_script( 'underscore_JS', plugins_url('assets/js/ext/underscore.js', __FILE__ ) );
-	}
+        wp_register_script( 'underscore_JS', plugins_url('assets/js/ext/underscore.js', __FILE__ ) );
+    }
+    
+    function ticketmachine_register_calendar_files() {
+        //Calendar Packages
+        wp_register_style( 'calendar_CSS_1', plugins_url('assets/packages/core/main.css', __FILE__ ) );
+        wp_register_style( 'calendar_CSS_2', plugins_url('assets/packages/daygrid/main.css', __FILE__ ) );
+        wp_register_style( 'calendar_CSS_3', plugins_url('assets/packages/timegrid/main.css', __FILE__ ) );
+        wp_register_style( 'calendar_CSS_4', plugins_url('assets/packages/list/main.css', __FILE__ ) );
+        wp_register_style( 'calendar_CSS_5', plugins_url('assets/packages/bootstrap/main.css', __FILE__ ) );
+        
+        wp_register_script( 'calendar_JS_1', plugins_url('assets/packages/core/main.js', __FILE__ ) );
+        wp_register_script( 'calendar_JS_2', plugins_url('assets/packages/interaction/main.js', __FILE__ ) );
+        wp_register_script( 'calendar_JS_3', plugins_url('assets/packages/daygrid/main.js', __FILE__ ) );
+        wp_register_script( 'calendar_JS_4', plugins_url('assets/packages/timegrid/main.js', __FILE__ ) );
+        wp_register_script( 'calendar_JS_5', plugins_url('assets/packages/list/main.js', __FILE__ ) );
+        wp_register_script( 'calendar_JS_6', plugins_url('assets/packages/bootstrap/main.js', __FILE__ ) );
+
+        wp_register_script( 'my-action-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
+    }
 	
     if(is_admin()){
         include_once( plugin_dir_path( __FILE__ ) . 'admin/admin.php');
@@ -649,7 +668,7 @@
         add_action('wp_head','ticketmachine_event_metadata_event');
     }
 
-	function my_action_callback() {
+	function ticketmachine_calendar_callback() {
         global $api, $globals, $wpdb;
 
         $events = ticketmachine_tmapi_events($_REQUEST);
@@ -707,26 +726,53 @@
         die();
     }
 
-    function enqueue_my_action_script() {
-        //Calendar Packages
-        wp_enqueue_style( 'calendar_CSS_1', plugins_url('assets/packages/core/main.css', __FILE__ ) );
-        wp_enqueue_style( 'calendar_CSS_2', plugins_url('assets/packages/daygrid/main.css', __FILE__ ) );
-        wp_enqueue_style( 'calendar_CSS_3', plugins_url('assets/packages/timegrid/main.css', __FILE__ ) );
-        wp_enqueue_style( 'calendar_CSS_4', plugins_url('assets/packages/list/main.css', __FILE__ ) );
-        wp_enqueue_style( 'calendar_CSS_5', plugins_url('assets/packages/bootstrap/main.css', __FILE__ ) );
-        
-        wp_enqueue_script( 'calendar_JS_1', plugins_url('assets/packages/core/main.js', __FILE__ ) );
-        wp_enqueue_script( 'calendar_JS_2', plugins_url('assets/packages/interaction/main.js', __FILE__ ) );
-        wp_enqueue_script( 'calendar_JS_3', plugins_url('assets/packages/daygrid/main.js', __FILE__ ) );
-        wp_enqueue_script( 'calendar_JS_4', plugins_url('assets/packages/timegrid/main.js', __FILE__ ) );
-        wp_enqueue_script( 'calendar_JS_5', plugins_url('assets/packages/list/main.js', __FILE__ ) );
-        wp_enqueue_script( 'calendar_JS_6', plugins_url('assets/packages/bootstrap/main.js', __FILE__ ) );
-
-        wp_enqueue_script( 'my-action-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
-
-        wp_localize_script( 'my-action-script', 'my_action_data', array(
+    function ticketmachine_enqueue_calendar_files() {
+        wp_enqueue_style( 'calendar_CSS_1' );
+        wp_enqueue_style( 'calendar_CSS_2' );
+        wp_enqueue_style( 'calendar_CSS_3' );
+        wp_enqueue_style( 'calendar_CSS_4' );
+        wp_enqueue_style( 'calendar_CSS_t' );
+    
+        wp_enqueue_script( 'calendar_CSS_1' );
+        wp_enqueue_script( 'calendar_CSS_2' );
+        wp_enqueue_script( 'calendar_CSS_3' );
+        wp_enqueue_script( 'calendar_CSS_4' );
+        wp_enqueue_script( 'calendar_CSS_5' );
+        wp_enqueue_script( 'calendar_CSS_6' );
+    
+        wp_enqueue_script( 'my-action-script' );
+    
+        wp_localize_script( 'my-action-script', 'tm_calendar_data', array(
             'ajaxurl' => admin_url( 'admin-ajax.php' ),
         ) );
+    }
+
+    function ticketmachine_enqueue_core_files() {
+        wp_enqueue_script( 'jquery-ui-datepicker' );
+		wp_enqueue_style( 'jquery-ui_CSS' );
+		
+		//Cookies
+		wp_enqueue_script( 'cookies_JS' );
+
+		//Popper
+		wp_enqueue_script( 'popper_JS' );
+		
+		//Bootstrap
+		wp_enqueue_script( 'bootstrap-4_JS' );
+		wp_enqueue_style( 'boostrap-4_CSS' );
+		
+		//Icons
+		wp_enqueue_style( 'fontawesome-5_CSS' );
+		
+		//Core
+		wp_enqueue_style( 'core_CSS' );
+		wp_enqueue_script( 'core_JS' );
+
+		//Custom Styles
+        wp_enqueue_style( 'custom_CSS' );
+        
+        //Underscore
+        wp_enqueue_script( 'underscore_JS' );
     }
 
 ?>
