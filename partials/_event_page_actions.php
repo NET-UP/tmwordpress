@@ -12,7 +12,7 @@
 
         include( str_replace("/partials", "", plugin_dir_path(__FILE__)) . 'includes/google_calendar.php');
         $start = $event->ev_date;
-        $end = $event->endtime);
+        $end = $event->endtime;
 
         wp_add_inline_script( "fileSaver_JS", "jQuery('.download-ics').click(function(){var cal = ics();cal.addEvent('" . $event->ev_name . "', '" . $url . "', '" . $event->ev_location_name . "', '" . $start . "', '" . $end . "');cal.download();});");
 
