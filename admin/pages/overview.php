@@ -30,7 +30,7 @@
         }
     }
     
-    if($globals->activated == 1) {
+    if(!empty($globals->activated)) {
 ?>
 
 <div class="wrap tm-admin-page">
