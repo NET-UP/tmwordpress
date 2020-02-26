@@ -14,7 +14,7 @@
 
         include( str_replace("/partials", "", plugin_dir_path(__FILE__)) . 'includes/google_calendar.php');
 
-        wp_add_inline_script( "fileSaver_JS", "jQuery('.download-ics').click(function(){var cal = ics();cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');cal.download();});'");
+        wp_add_inline_script( "fileSaver_JS", "jQuery('.download-ics').click(function(){var cal = ics();cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');cal.download();});");
 
         $ticketmachine_output = '
                 <div class="title-height ticketmachine_actions text-right no-height-mobile mb-3 mb-lg-0">
