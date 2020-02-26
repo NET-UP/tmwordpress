@@ -5,7 +5,7 @@
     $ticketmachine_design = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_design LIMIT 0,1");
     $ticketmachine_design = $ticketmachine_design[0];
 ?>
-    body .ticketmachine_page a:not(.btn):not(.fc-event) {
+    body .ticketmachine_page a:not(.btn):not(.fc-event):not(.tm-list-title) {
         color: <?php echo $ticketmachine_design->link_text_color; ?> !important;
     }
 
