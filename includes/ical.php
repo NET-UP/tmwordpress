@@ -5,7 +5,7 @@
         include_once $path . '/wp-load.php';
     }
 
-    include(WP_PLUGIN_DIR . "/ticketmachine/globals.php");
+    include(WP_PLUGIN_DIR . "/ticketmachine-event-manager/globals.php");
 
     $params = [ "id" => absint($_GET['id']) ];
     $event = ticketmachine_tmapi_event($params);
