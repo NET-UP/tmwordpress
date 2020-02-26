@@ -242,46 +242,39 @@
 		//jQuery
 		wp_register_script( 'jquery-ui-datepicker', array("jquery") );
 		wp_register_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
-		
 		//Cookies
 		wp_register_script( 'cookies_JS', plugins_url( "assets/js/cookies.js", __FILE__ ) );
-
 		//Popper
 		wp_register_script( 'popper_JS', plugins_url('assets/js/ext/popper.js', __FILE__ ) );
-		
 		//Bootstrap
 		wp_register_script( 'bootstrap-4_JS', plugins_url( "assets/js/ext/bootstrap.min.js", __FILE__ ), array("jquery") );
 		wp_register_style( 'boostrap-4_CSS', plugins_url('assets/css/ext/bootstrap.min.css', __FILE__ ) );
-		
 		//Icons
 		wp_register_style( 'fontawesome-5_CSS', plugins_url('assets/css/ext/fontawesome.min.css', __FILE__ ) );
-		
 		//Core
 		wp_register_style( 'core_CSS', plugins_url('assets/css/ticketmachine.css', __FILE__ ) );
 		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
-
 		//Custom Styles
         wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
-        
         //Underscore
         wp_register_script( 'underscore_JS', plugins_url('assets/js/ext/underscore.js', __FILE__ ) );
     }
     
     function ticketmachine_register_calendar_files() {
-        //Calendar Packages
+        //Calendar Styles
         wp_register_style( 'calendar_CSS_1', plugins_url('assets/packages/core/main.css', __FILE__ ) );
         wp_register_style( 'calendar_CSS_2', plugins_url('assets/packages/daygrid/main.css', __FILE__ ) );
         wp_register_style( 'calendar_CSS_3', plugins_url('assets/packages/timegrid/main.css', __FILE__ ) );
         wp_register_style( 'calendar_CSS_4', plugins_url('assets/packages/list/main.css', __FILE__ ) );
         wp_register_style( 'calendar_CSS_5', plugins_url('assets/packages/bootstrap/main.css', __FILE__ ) );
-        
+        //Calendar Scripts
         wp_register_script( 'calendar_JS_1', plugins_url('assets/packages/core/main.js', __FILE__ ) );
         wp_register_script( 'calendar_JS_2', plugins_url('assets/packages/interaction/main.js', __FILE__ ) );
         wp_register_script( 'calendar_JS_3', plugins_url('assets/packages/daygrid/main.js', __FILE__ ) );
         wp_register_script( 'calendar_JS_4', plugins_url('assets/packages/timegrid/main.js', __FILE__ ) );
         wp_register_script( 'calendar_JS_5', plugins_url('assets/packages/list/main.js', __FILE__ ) );
         wp_register_script( 'calendar_JS_6', plugins_url('assets/packages/bootstrap/main.js', __FILE__ ) );
-
+		//Calendar Ajax
         wp_register_script( 'ticketmachine-calendar-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
     }
 	
