@@ -159,6 +159,21 @@
 		//Core
 		wp_enqueue_style( 'core_CSS' );
 		wp_enqueue_script( 'core_JS' );
+			
+        //Underscore
+        wp_enqueue_script( 'underscore_JS' );
+        wp_enqueue_style( 'calendar_CSS_1' );
+        wp_enqueue_style( 'calendar_CSS_2' );
+        wp_enqueue_style( 'calendar_CSS_3' );
+        wp_enqueue_style( 'calendar_CSS_4' );
+        wp_enqueue_style( 'calendar_CSS_t' );
+    
+        wp_enqueue_script( 'calendar_CSS_1' );
+        wp_enqueue_script( 'calendar_CSS_2' );
+        wp_enqueue_script( 'calendar_CSS_3' );
+        wp_enqueue_script( 'calendar_CSS_4' );
+        wp_enqueue_script( 'calendar_CSS_5' );
+        wp_enqueue_script( 'calendar_CSS_6' );
 
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
         include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
