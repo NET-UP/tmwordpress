@@ -14,6 +14,8 @@
 
         wp_add_inline_script( "fileSaver_JS", "jQuery('.download-ics').click(function(){var cal = ics();cal.addEvent('" . $event->ev_name . "', '" . $url . "', '" . $event->ev_location_name . "', '" . ticketmachine_i18n_date("Ymd", $event->ev_date) .'T'. ticketmachine_i18n_date("His", $event->ev_date) . "', '" . ticketmachine_i18n_date("Ymd", $event->endtime) .'T'. ticketmachine_i18n_date("His", $event->endtime) . "');cal.download();});");
 
+        echo ticketmachine_i18n_date("Ymd", $event->ev_date) .'T'. ticketmachine_i18n_date("His", $event->ev_date);
+
         $ticketmachine_output = '
                 <div class="title-height ticketmachine_actions text-right no-height-mobile mb-3 mb-lg-0">
                     <a class="btn btn-secondary px-3 mb-1 mb-lg-0 ml-1" href="/' . $globals->events_slug . '">
