@@ -53,7 +53,7 @@
             echo "<h1 class='wp-heading-inline'>TicketMachine > " . esc_html__('Create event', 'ticketmachine') . "</h1>";
         }
     ?>
-    <form name="event" action="?page=ticketmachine_events&action=save&id=<?php if(!empty($event->id)){ echo absint($_GET['id']); } ?>" method="post" id="event">
+    <form name="event" action="?page=ticketmachine_events&action=save<?php if(!empty($event->id)){ echo "&id=" . absint($_GET['id']); } ?>" method="post" id="event">
         <input type="hidden" name="organizer_id" value="<?php echo $globals->organizer_id; ?>">
         <input type="hidden" name="rules[sale_active]" value="0">
         <input type="hidden" name="rules[prices_shown]" value="0">
