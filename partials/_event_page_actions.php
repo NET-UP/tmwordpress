@@ -11,8 +11,8 @@
         $url.= $_SERVER['REQUEST_URI'];    
 
         include( str_replace("/partials", "", plugin_dir_path(__FILE__)) . 'includes/google_calendar.php');
-        $start = $event->ev_date;
-        $end = $event->endtime;
+        $start = ticketmachine_i18n_date("Y-m-d", $event->ev_date) .'T'. ticketmachine_i18n_date("H:i:s", $event->ev_date);
+        $end = ticketmachine_i18n_date("Y-m-d", $event->endtime) .'T'. ticketmachine_i18n_date("H:i:s", $event->endtime);
 
         wp_add_inline_script( "fileSaver_JS", "jQuery('.download-ics').click(function(){var cal = ics();cal.addEvent('" . $event->ev_name . "', '" . $url . "', '" . $event->ev_location_name . "', '" . $start . "', '" . $end . "');cal.download();});");
 
