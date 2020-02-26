@@ -18,7 +18,7 @@
 				96
 			);
 
-			if(!empty($globals->activated) || iseet(sanitize_text_field($_GET['code'])) {
+			if(!empty($globals->activated) || isset($_GET['code'])) {
 				add_submenu_page(
 					'ticketmachine_event_manager',
 					esc_html__('Overview', 'ticketmachine'),
