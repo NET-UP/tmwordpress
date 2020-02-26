@@ -35,6 +35,27 @@
 		$ticketmachine_output .= "</div>";
 		
 		if($current_page == "calendar"){
+			
+        //Underscore
+        wp_enqueue_script( 'underscore_JS' );
+        wp_enqueue_style( 'calendar_CSS_1' );
+        wp_enqueue_style( 'calendar_CSS_2' );
+        wp_enqueue_style( 'calendar_CSS_3' );
+        wp_enqueue_style( 'calendar_CSS_4' );
+        wp_enqueue_style( 'calendar_CSS_t' );
+    
+        wp_enqueue_script( 'calendar_CSS_1' );
+        wp_enqueue_script( 'calendar_CSS_2' );
+        wp_enqueue_script( 'calendar_CSS_3' );
+        wp_enqueue_script( 'calendar_CSS_4' );
+        wp_enqueue_script( 'calendar_CSS_5' );
+        wp_enqueue_script( 'calendar_CSS_6' );
+    
+        wp_localize_script( 'ticketmachine-calendar-script', 'ticketmachine_calendar_data', array(
+            'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		) );
+		
+        wp_enqueue_script( 'ticketmachine-calendar-script' );
 
 			$ticketmachine_output .= "
 			<input type='hidden' id='ticketmachine_ev_url' value='" . ticketmachine_tmapi_events($params, "GET", FALSE, array(), 1) . "'></input>
