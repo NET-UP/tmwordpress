@@ -40,6 +40,8 @@
     $_POST['vat_id'] = absint($_POST['vat_id']);
 
     $post_json = $_POST;
+
+    print_r($post_json);
     
     $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
     $response = (object)$ticketmachine_json;
