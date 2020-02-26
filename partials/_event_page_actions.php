@@ -13,8 +13,9 @@
         $url.= $_SERVER['REQUEST_URI'];    
 
         include( str_replace("/partials", "", plugin_dir_path(__FILE__)) . 'includes/google_calendar.php');
-        
 
+        wp_add_inline_script( "iCal_JS", "var cal = ics();cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');");
+        
         $ticketmachine_output = "
         <script>
             var cal = ics();
