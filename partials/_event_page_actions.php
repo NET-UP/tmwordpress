@@ -12,7 +12,7 @@
 
         include( str_replace("/partials", "", plugin_dir_path(__FILE__)) . 'includes/google_calendar.php');
 
-        wp_add_inline_script( "fileSaver_JS", "jQuery('.download-ics').click(function(){var cal = ics();cal.addEvent('" . $event->ev_name . "', '" . $url . "', '" . $event->ev_location_name . "', '" . date("Ymd", strtotime($event->ev_date))."T". date("His", strtotime($event->ev_date)) . "Z" . "', '" . date("Ymd", strtotime($event->endtime))."T". date("His", strtotime($event->endtime)) . "Z" . "');cal.download();});");
+        wp_add_inline_script( "fileSaver_JS", "jQuery('.download-ics').click(function(){var cal = ics();cal.addEvent('" . $event->ev_name . "', '" . $url . "', '" . $event->ev_location_name . "', '" . $event->ev_date . "', '" . $event->endtime . "');cal.download();});");
 
         $ticketmachine_output = '
                 <div class="title-height ticketmachine_actions text-right no-height-mobile mb-3 mb-lg-0">
