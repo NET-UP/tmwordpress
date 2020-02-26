@@ -446,7 +446,7 @@ function ticketmachine_render_list_page(){
         include "event_edit.php";
     } else {
 
-        if ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "save" && isset($_GET['id']) && $_POST ) {
+        if ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "save" && !empty($_POST) ) {
             include "actions/event_save.php";
         } elseif ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "publish" && isset($_GET['id']) || isset($_GET['action']) && sanitize_text_field($_GET['action']) == "deactivate" && isset($_GET['id']) ) {
             include "actions/event_toggle.php";
