@@ -97,7 +97,7 @@
 		include( plugin_dir_path( __FILE__) . 'pages/installation.php');
 	}
 
-	if (strpos(sanitize_text_field($_GET['page']), 'ticketmachine') !== false) {
+	if (isset($_GET['page']) && strpos(sanitize_text_field($_GET['page']), 'ticketmachine') !== false) {
 		add_action( 'admin_enqueue_scripts', 'ticketmachine_enqueue_admin_style' );
 	}
 
