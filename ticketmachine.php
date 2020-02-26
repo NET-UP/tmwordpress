@@ -528,7 +528,7 @@
 			$params = (object)$params;
 		}
 
-		if(!empty($params->id)){
+		if(empty($params->id)){
 			$params->id = "";
 		}
 
