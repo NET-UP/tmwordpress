@@ -9,7 +9,7 @@
     }
     if(isset($_POST['tags'])) {
         $_POST['tags'] = explode(",", $_POST['tags']);
-        array_walk($arr, function(&$value, &$key) {
+        array_walk($_POST['tags'], function(&$value, &$key) {
             $value = sanitize_text_field($value);
         });
     }
