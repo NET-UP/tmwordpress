@@ -31,7 +31,7 @@
                     }
                                         
                         $ticketmachine_output .= '<div class="media-body">';
-                        $ticketmachine_output .= '<h5 class="mt-0 mb-1"><a href="/' . $globals->event_slug . '?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
+                        $ticketmachine_output .= '<h5 class="mt-0 mb-1"><a class="tm-list-title" href="/' . $globals->event_slug . '?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
                         
                         if(isset($atts['show_date']) && $atts['show_date'] > 0){
                             $ticketmachine_output .= '
