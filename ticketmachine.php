@@ -288,7 +288,7 @@
         wp_register_script( 'calendar_JS_5', plugins_url('assets/packages/list/main.js', __FILE__ ) );
         wp_register_script( 'calendar_JS_6', plugins_url('assets/packages/bootstrap/main.js', __FILE__ ) );
 
-        //wp_register_script( 'my-action-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
+        wp_register_script( 'ticketmachine-calendar-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
     }
 	
     if(is_admin()){
