@@ -528,11 +528,11 @@
 			$params = (object)$params;
 		}
 
-		if(empty($params)){
-			$params->id = "";
+		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/";
+		if(!empty($params)){ 
+			$url .= (int)$params->id;
 		}
 
-		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/" . $params->id;
 		if(!empty($params->categories)) {
 			$url .= "?categories=true";
 		}
