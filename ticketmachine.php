@@ -158,6 +158,8 @@
 		wp_enqueue_script( 'underscore_JS' );
 		//iCal
 		wp_enqueue_script( 'iCal_JS' );
+        //FileSaver
+		wp_enqueue_script( 'fileSaver_JS' );
 
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
         include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
@@ -244,6 +246,8 @@
         wp_register_script( 'underscore_JS', plugins_url('assets/js/ext/underscore.js', __FILE__ ) );
         //iCal
         wp_register_script( 'iCal_JS', plugins_url('assets/js/ext/ics.js', __FILE__ ) );
+        //FileSaver
+        wp_register_script( 'fileSaver_JS', plugins_url('assets/js/ext/filesaver.js', __FILE__ ) );
     }
     
     function ticketmachine_register_calendar_files() {
