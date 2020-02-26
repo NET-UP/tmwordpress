@@ -139,41 +139,23 @@
 	// load dynamic form for calculator from template
 	function ticketmachine_initialize( $atts ) {
         global $globals, $api, $wpdb;
-        
+    
         wp_enqueue_script( 'jquery-ui-datepicker' );
 		wp_enqueue_style( 'jquery-ui_CSS' );
-		
 		//Cookies
 		wp_enqueue_script( 'cookies_JS' );
-
 		//Popper
 		wp_enqueue_script( 'popper_JS' );
-		
 		//Bootstrap
 		wp_enqueue_script( 'bootstrap-4_JS' );
 		wp_enqueue_style( 'boostrap-4_CSS' );
-		
 		//Icons
 		wp_enqueue_style( 'fontawesome-5_CSS' );
-		
 		//Core
 		wp_enqueue_style( 'core_CSS' );
 		wp_enqueue_script( 'core_JS' );
-			
         //Underscore
-        wp_enqueue_script( 'underscore_JS' );
-        wp_enqueue_style( 'calendar_CSS_1' );
-        wp_enqueue_style( 'calendar_CSS_2' );
-        wp_enqueue_style( 'calendar_CSS_3' );
-        wp_enqueue_style( 'calendar_CSS_4' );
-        wp_enqueue_style( 'calendar_CSS_t' );
-    
-        wp_enqueue_script( 'calendar_JS_1' );
-        wp_enqueue_script( 'calendar_JS_2' );
-        wp_enqueue_script( 'calendar_JS_3' );
-        wp_enqueue_script( 'calendar_JS_4' );
-        wp_enqueue_script( 'calendar_JS_5' );
-        wp_enqueue_script( 'calendar_JS_6' );
+		wp_enqueue_script( 'underscore_JS' );
 
         include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
         include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
