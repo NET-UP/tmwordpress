@@ -2,10 +2,8 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_event_page_actions ( $event, $globals ) {
 
-        if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')   
-        $url = "https://";   
-        else  
-        $url = "http://";   
+        $url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://";  
+
         // Append the host(domain name, ip) to the URL.   
         $url.= $_SERVER['HTTP_HOST'];   
 
@@ -14,7 +12,7 @@
 
         include( str_replace("/partials", "", plugin_dir_path(__FILE__)) . 'includes/google_calendar.php');
 
-        wp_add_inline_script( "fileSaver_JS", "jQuery('.download-ics').click(function(){var cal = ics();cal.addEvent('" . $event->ev_name . "', '" . filter_input(INPUT_SERVER, 'REQUEST_URI') . "', '" . $event->ev_location_name . "', '" . date("Ymd", strtotime($event->ev_date))."T". date("His", strtotime($event->ev_date)) . "Z" . "', '" . date("Ymd", strtotime($event->endtime))."T". date("His", strtotime($event->endtime)) . "Z" . "');cal.download();});");
+        wp_add_inline_script( "fileSaver_JS", "jQuery('.download-ics').click(function(){var cal = ics();cal.addEvent('" . $event->ev_name . "', '" . $url . "', '" . $event->ev_location_name . "', '" . date("Ymd", strtotime($event->ev_date))."T". date("His", strtotime($event->ev_date)) . "Z" . "', '" . date("Ymd", strtotime($event->endtime))."T". date("His", strtotime($event->endtime)) . "Z" . "');cal.download();});");
 
         $ticketmachine_output = '
                 <div class="title-height ticketmachine_actions text-right no-height-mobile mb-3 mb-lg-0">
