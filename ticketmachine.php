@@ -243,7 +243,7 @@
         //Underscore
         wp_register_script( 'underscore_JS', plugins_url('assets/js/ext/underscore.js', __FILE__ ) );
         //iCal
-        wp_register_script( 'iCal_JS', plugins_url('assets/js/ext/ical.js', __FILE__ ) );
+        wp_register_script( 'iCal_JS', plugins_url('assets/js/ext/ics.js', __FILE__ ) );
     }
     
     function ticketmachine_register_calendar_files() {
