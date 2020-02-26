@@ -57,11 +57,12 @@
         $ticketmachine_output .= '
                 </div>';
 
+                $ticketmachine_output .= "
+                    <script>
+                        var cal = ics();
+                        cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');
+                    </script>";
+
         return $ticketmachine_output;
 	}
 ?>
-
-<script>
-	var cal = ics();
-	cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');
-</script>
