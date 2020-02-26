@@ -524,13 +524,13 @@
 		global $api, $globals;
 		if($method == "POST"){
 			$post = $params;
+			$params = (object)$params;
 		}else{
 			$params = (object)$params;
 		}
 
 		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/";
 		if(!empty($params)){ 
-			$params = (object)$params;
 			$url .= (int)$params->id;
 		}
 
