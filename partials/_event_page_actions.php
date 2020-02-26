@@ -15,12 +15,6 @@
         include( str_replace("/partials", "", plugin_dir_path(__FILE__)) . 'includes/google_calendar.php');
 
         wp_add_inline_script( "iCal_JS", "var cal = ics();cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');");
-        
-        $ticketmachine_output = "
-        <script>
-            var cal = ics();
-            cal.addEvent('Demo Event', 'This is an all day event', 'Nome, AK', '8/7/2013', '8/7/2013');
-        </script>";
 
         $ticketmachine_output .= '
                 <div class="title-height ticketmachine_actions text-right no-height-mobile mb-3 mb-lg-0">
