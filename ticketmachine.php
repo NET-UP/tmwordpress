@@ -528,7 +528,7 @@
 		$params = (object)$params;
 
 		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/";
-		if(!empty($params)){ 
+		if(!empty($params && !isset($params->id))){ 
 			$url .= (int)$params->id;
 		}
 
