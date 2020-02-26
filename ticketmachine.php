@@ -175,11 +175,16 @@
         wp_enqueue_script( 'calendar_CSS_5' );
         wp_enqueue_script( 'calendar_CSS_6' );
     
-        wp_enqueue_script( 'ticketmachine-calendar-script' );
+        
+
+        wp_enqueue_script( 'my-action-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
     
         wp_localize_script( 'ticketmachine-calendar-script', 'ticketmachine_calendar_data', array(
             'ajaxurl' => admin_url( 'admin-ajax.php' ),
         ) );
+
+        add_action( 'wp_ajax_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
+        add_action( 'wp_ajax_nopriv_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
 
         add_action( 'wp_ajax_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
         add_action( 'wp_ajax_nopriv_ticketmachine_calendar', 'ticketmachine_calendar_callback' );
