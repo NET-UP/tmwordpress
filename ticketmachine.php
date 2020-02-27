@@ -245,7 +245,7 @@
 		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
 		//Custom Styles
         wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.css', __FILE__ ) );
-		wp_add_inline_style('custom_CSS', $css);
+		wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
         //Underscore
         wp_register_script( 'underscore_JS', plugins_url('assets/js/ext/underscore.js', __FILE__ ) );
         //iCal
