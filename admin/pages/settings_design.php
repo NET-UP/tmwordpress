@@ -1,48 +1,54 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	if (isset($_POST['submit'])) {
-		$save_array = 
-			array(
-				"button_primary_background_color" => sanitize_hex_color($_POST['button_primary_background_color']),
-				"button_primary_text_color" => sanitize_hex_color($_POST['button_primary_text_color']),
-				"button_primary_border_color" => sanitize_hex_color($_POST['button_primary_border_color']),
-				"button_primary_background_color_hover" => sanitize_hex_color($_POST['button_primary_background_color_hover']),
-				"button_primary_text_color_hover" => sanitize_hex_color($_POST['button_primary_text_color_hover']),
-				"button_primary_border_color_hover" => sanitize_hex_color($_POST['button_primary_border_color_hover']),
 
-				"button_secondary_border_color_hover" => sanitize_hex_color($_POST['button_secondary_border_color_hover']),
-				"button_secondary_background_color" => sanitize_hex_color($_POST['button_secondary_background_color']),
-				"button_secondary_text_color" => sanitize_hex_color($_POST['button_secondary_text_color']),
-				"button_secondary_border_color" => sanitize_hex_color($_POST['button_secondary_border_color']),
-				"button_secondary_background_color_hover" => sanitize_hex_color($_POST['button_secondary_background_color_hover']),
-				"button_secondary_text_color_hover" => sanitize_hex_color($_POST['button_secondary_text_color_hover']),
-				"button_secondary_border_color_hover" => sanitize_hex_color($_POST['button_secondary_border_color_hover']),
+	if ( ! isset( $_POST['ticketmachine_settings_page_form_nonce'] ) || ! wp_verify_nonce( $_POST['ticketmachine_settings_page_form_nonce'], 'ticketmachine_action_save_settings' ) ) {
+		print 'Sorry, your nonce did not verify.';
+		exit;
+	 } else {
+		if (isset($_POST['submit'])) {
+			$save_array = 
+				array(
+					"button_primary_background_color" => sanitize_hex_color($_POST['button_primary_background_color']),
+					"button_primary_text_color" => sanitize_hex_color($_POST['button_primary_text_color']),
+					"button_primary_border_color" => sanitize_hex_color($_POST['button_primary_border_color']),
+					"button_primary_background_color_hover" => sanitize_hex_color($_POST['button_primary_background_color_hover']),
+					"button_primary_text_color_hover" => sanitize_hex_color($_POST['button_primary_text_color_hover']),
+					"button_primary_border_color_hover" => sanitize_hex_color($_POST['button_primary_border_color_hover']),
 
-				"link_text_color" => sanitize_hex_color($_POST['link_text_color']),
-				"link_text_color_hover" => sanitize_hex_color($_POST['link_text_color_hover']),
+					"button_secondary_border_color_hover" => sanitize_hex_color($_POST['button_secondary_border_color_hover']),
+					"button_secondary_background_color" => sanitize_hex_color($_POST['button_secondary_background_color']),
+					"button_secondary_text_color" => sanitize_hex_color($_POST['button_secondary_text_color']),
+					"button_secondary_border_color" => sanitize_hex_color($_POST['button_secondary_border_color']),
+					"button_secondary_background_color_hover" => sanitize_hex_color($_POST['button_secondary_background_color_hover']),
+					"button_secondary_text_color_hover" => sanitize_hex_color($_POST['button_secondary_text_color_hover']),
+					"button_secondary_border_color_hover" => sanitize_hex_color($_POST['button_secondary_border_color_hover']),
 
-				"date_text_color" => sanitize_hex_color($_POST['date_text_color'])
-			);
-		if (!empty($ticketmachine_design)) {
-			$wpdb->update(
-				$wpdb->prefix . "ticketmachine_design",
-				$save_array,
-				array('id' => $ticketmachine_design->id)
-			);
-			?>
-			<div class="notice notice-success is-dismissable">
-				<p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
-			</div>
-			<?php
-		}else{
-			?>
-			<div class="notice notice-error is-dismissable">
-				<p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
-			</div>
-			<?php
+					"link_text_color" => sanitize_hex_color($_POST['link_text_color']),
+					"link_text_color_hover" => sanitize_hex_color($_POST['link_text_color_hover']),
+
+					"date_text_color" => sanitize_hex_color($_POST['date_text_color'])
+				);
+			if (!empty($ticketmachine_design)) {
+				$wpdb->update(
+					$wpdb->prefix . "ticketmachine_design",
+					$save_array,
+					array('id' => $ticketmachine_design->id)
+				);
+				?>
+				<div class="notice notice-success is-dismissable">
+					<p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
+				</div>
+				<?php
+			}else{
+				?>
+				<div class="notice notice-error is-dismissable">
+					<p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
+				</div>
+				<?php
+			}
+			$ticketmachine_design = (object)$_POST;
+
 		}
-		$ticketmachine_design = (object)$_POST;
-
 	}
 ?>
 

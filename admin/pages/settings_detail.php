@@ -1,39 +1,45 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	if (isset($_POST['submit'])) {
 
-		$save_array = 
-			array(
-				"show_social_media" => absint($_POST['show_social_media']),
-				"show_social_media_ical" => absint($_POST['show_social_media_ical']),
-				"show_social_media_google_cal" => absint($_POST['show_social_media_google_cal']),
-				"show_social_media_facebook" => absint($_POST['show_social_media_facebook']),
-				"show_social_media_twitter" => absint($_POST['show_social_media_twitter']),
-				"show_social_media_email" => absint($_POST['show_social_media_email']),
-				"show_social_media_messenger" => absint($_POST['show_social_media_messenger']),
-				"show_social_media_whatsapp" => absint($_POST['show_social_media_whatsapp']),
-				"show_google_map" => absint($_POST['show_google_map'])
-			);
-		if (!empty($ticketmachine_config)) {
-			$wpdb->update(
-				$wpdb->prefix . "ticketmachine_config",
-				$save_array,
-				array('id' => $ticketmachine_config->id)
-			);
-			?>
-			<div class="notice notice-success is-dismissable">
-				<p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
-			</div>
-			<?php
-		}else{
-			?>
-			<div class="notice notice-error is-dismissable">
-				<p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
-			</div>
-			<?php
-		}
-		$ticketmachine_config = (object)$_POST;
-	}
+	if ( ! isset( $_POST['ticketmachine_settings_page_form_nonce'] ) || ! wp_verify_nonce( $_POST['ticketmachine_settings_page_form_nonce'], 'ticketmachine_action_save_settings' ) ) {
+	   print 'Sorry, your nonce did not verify.';
+	   exit;
+	} else {
+        if (isset($_POST['submit'])) {
+
+            $save_array = 
+                array(
+                    "show_social_media" => absint($_POST['show_social_media']),
+                    "show_social_media_ical" => absint($_POST['show_social_media_ical']),
+                    "show_social_media_google_cal" => absint($_POST['show_social_media_google_cal']),
+                    "show_social_media_facebook" => absint($_POST['show_social_media_facebook']),
+                    "show_social_media_twitter" => absint($_POST['show_social_media_twitter']),
+                    "show_social_media_email" => absint($_POST['show_social_media_email']),
+                    "show_social_media_messenger" => absint($_POST['show_social_media_messenger']),
+                    "show_social_media_whatsapp" => absint($_POST['show_social_media_whatsapp']),
+                    "show_google_map" => absint($_POST['show_google_map'])
+                );
+            if (!empty($ticketmachine_config)) {
+                $wpdb->update(
+                    $wpdb->prefix . "ticketmachine_config",
+                    $save_array,
+                    array('id' => $ticketmachine_config->id)
+                );
+                ?>
+                <div class="notice notice-success is-dismissable">
+                    <p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
+                </div>
+                <?php
+            }else{
+                ?>
+                <div class="notice notice-error is-dismissable">
+                    <p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
+                </div>
+                <?php
+            }
+            $ticketmachine_config = (object)$_POST;
+        }
+    }
 ?>
 
 <script type='text/javascript'>
