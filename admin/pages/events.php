@@ -156,14 +156,14 @@ if( current_user_can('edit_posts') ) {
                 $view_text = esc_html__("View", 'ticketmachine');
             }
 
-            $ticketmachine_action_toggle_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url('admin.php?page=%s&action=%s&id=%s') );
-            $ticketmachine_action_copy_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_copy_event' ), admin_url('admin.php?page=%s&action=%s&id=%s') );
+            $ticketmachine_action_toggle_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s'),$_REQUEST['page'],$toggle_action,$item['id']) );
+            $ticketmachine_action_copy_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_copy_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s'),$_REQUEST['page'],'copy',$item['id']) );
 
             //Build row actions
             $actions = array(
                 'edit'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.esc_html__('Edit', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
-                $toggle_type    => sprintf('<a href="' . $ticketmachine_action_toggle_url . '">'.$toggle_text.'</a>',$_REQUEST['page'],$toggle_action,$item['id']),
-                'copy'          => sprintf('<a href="' . $ticketmachine_action_copy_url . '">'.esc_html__('Copy', 'ticketmachine').'</a>',$_REQUEST['page'],'copy',$item['id']),
+                $toggle_type    => '<a href="' . $ticketmachine_action_toggle_url . '">'.$toggle_text.'</a>',
+                'copy'          => '<a href="' . $ticketmachine_action_copy_url . '">'.esc_html__('Copy', 'ticketmachine').'</a>',
                 'view'          => sprintf('<a target="_blank" href="/'. $globals->event_slug .'?id=%s">'.$view_text.'</a>',$item['id'])
             );
             
