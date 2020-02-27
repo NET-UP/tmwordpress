@@ -1,11 +1,12 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-	if ( ! isset( $_POST['ticketmachine_settings_page_form_nonce'] ) || ! wp_verify_nonce( $_POST['ticketmachine_settings_page_form_nonce'], 'ticketmachine_action_save_settings' ) ) {
-	   print 'Sorry, your nonce did not verify.';
-	   exit;
-	} else {
-		if (isset($_POST['submit'])) {
+	if (isset($_POST['submit'])) {
+
+		if ( ! isset( $_POST['ticketmachine_settings_page_form_nonce'] ) || ! wp_verify_nonce( $_POST['ticketmachine_settings_page_form_nonce'], 'ticketmachine_action_save_settings' ) ) {
+			print 'Sorry, your nonce did not verify.';
+			exit;
+		} else {
 			$save_array = 
 				array(
 					"events_slug_id" => absint($_POST['events_slug_id']),
