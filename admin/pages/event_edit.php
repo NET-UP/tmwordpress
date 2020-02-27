@@ -54,6 +54,7 @@
         }
     ?>
     <form name="event" action="?page=ticketmachine_events&action=save<?php if(!empty($event->id)){ echo "&id=" . absint($_GET['id']); } ?>" method="post" id="event">
+		<?php wp_nonce_field( 'ticketmachine_action_save_event', 'ticketmachine_event_edit_form_nonce' ); ?>
         <input type="hidden" name="organizer_id" value="<?php echo $globals->organizer_id; ?>">
         <input type="hidden" name="rules[sale_active]" value="0">
         <input type="hidden" name="rules[prices_shown]" value="0">
@@ -108,7 +109,7 @@
                                     <div id="major-publishing-actions">
                                         <div id="publishing-action">
                                             <span class="spinner"></span>
-                                            <input type="submit" class="button button-primary button-large" id="publish" value="<?php empty($event->id) ? esc_attr_e('Save', 'ticketmachine') : esc_attr_e('Update', 'ticketmachine') ?>">
+                                            <input type="submit" name="submit" class="button button-primary button-large" id="publish" value="<?php empty($event->id) ? esc_attr_e('Save', 'ticketmachine') : esc_attr_e('Update', 'ticketmachine') ?>">
                                         </div>
                                         <div class="clear"></div>
                                     </div>
