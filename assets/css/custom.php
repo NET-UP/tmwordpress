@@ -1,5 +1,4 @@
 <?php
-    include_once("{$_SERVER['DOCUMENT_ROOT']}/wp-load.php"); 
     header("Content-type: text/css; charset: UTF-8");
     global $wpdb;
     $ticketmachine_design = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_design LIMIT 0,1");
