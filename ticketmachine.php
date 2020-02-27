@@ -1,8 +1,8 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	/*
-	Plugin Name:        TicketMachine Event Manager
-    Plugin URI:         https://www.ticketmachine.de/event-manager/wordpress
+	Plugin Name:        TicketMachine Event Manager & Calendar
+    Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
 	Version:            1.0.0
     Requires at least:  4.0
