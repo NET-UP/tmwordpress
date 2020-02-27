@@ -2,7 +2,7 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     global $globals, $api;
 
-    if ( ! isset( $_GET['ticketmachine_action_toggle_event'] ) || ! wp_verify_nonce( $_GET['ticketmachine_action_toggle_event'], 'ticketmachine_action_toggle_event' ) ) {
+    if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( $_GET['_wpnonce'], 'ticketmachine_action_toggle_event' ) ) {
         print 'Sorry, your nonce did not verify.';
         exit;
     } else {
