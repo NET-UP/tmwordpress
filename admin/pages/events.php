@@ -156,8 +156,8 @@ if( current_user_can('edit_posts') ) {
                 $view_text = esc_html__("View", 'ticketmachine');
             }
 
-            $ticketmachine_action_toggle_url = wp_nonce_url( admin_url('admin.php?page=%s&action=%s&id=%s'), 'ticketmachine_action_toggle_event' );
-            $ticketmachine_action_copy_url = wp_nonce_url( admin_url('admin.php?page=%s&action=%s&id=%s'), 'ticketmachine_action_toggle_event' );
+            $ticketmachine_action_toggle_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url('admin.php?page=%s&action=%s&id=%s') );
+            $ticketmachine_action_copy_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url('admin.php?page=%s&action=%s&id=%s') );
 
             //Build row actions
             $actions = array(
