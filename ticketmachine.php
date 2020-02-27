@@ -225,6 +225,9 @@
 	add_shortcode( 'ticketmachine', 'ticketmachine_initialize' );
 	
 	function ticketmachine_register_core_files () {
+		
+		include_once( plugins_url('assets/css/custom.php') );
+		
 		//jQuery
 		wp_register_script( 'jquery-ui-datepicker', array("jquery") );
 		wp_register_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
@@ -241,7 +244,8 @@
 		wp_register_style( 'core_CSS', plugins_url('assets/css/ticketmachine.css', __FILE__ ) );
 		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
 		//Custom Styles
-        wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
+        wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.css', __FILE__ ) );
+		wp_add_inline_style('custom_CSS', $css);
         //Underscore
         wp_register_script( 'underscore_JS', plugins_url('assets/js/ext/underscore.js', __FILE__ ) );
         //iCal
