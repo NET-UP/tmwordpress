@@ -48,6 +48,7 @@
 				</h2>
 
 				<form method="post" action="#">
+					<input type="hidden" name="ticketmachine_settings_page_form_nonce" value="<?php echo $ticketmachine_settings_page_meta_nonce; ?>" />
 
 					<?php
 						if( $active_tab == 'list' ) {
