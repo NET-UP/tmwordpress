@@ -7,8 +7,6 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-		if (isset($_POST['submit'])) {
-
 			if (isset($_POST['show_list'])){
 				$_POST['show_list'] = 1;
 			}
