@@ -11,8 +11,6 @@
 	$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_text_field($_GET[ 'tab' ]) : 'design';
 
 	if( current_user_can( 'manage_options' ) ) {	
-		// Generate a custom nonce value.
-		$ticketmachine_settings_page_meta_nonce = wp_create_nonce( 'ticketmachine_settings_page_form_nonce' ); 
 ?>
 
 	<div class="wrap tm-admin-page">
@@ -48,9 +46,9 @@
 				</h2>
 
 				<form method="post" action="#">
-					<input type="hidden" name="ticketmachine_settings_page_form_nonce" value="<?php echo $ticketmachine_settings_page_meta_nonce; ?>" />
+					<?php 
+						wp_nonce_field( 'ticketmachine_action_save_settings', 'ticketmachine_settings_page_form_nonce' );
 
-					<?php
 						if( $active_tab == 'list' ) {
 							include( plugin_dir_path( __FILE__ ) . 'settings_list.php');
 						}if( $active_tab == 'boxes' ) {
