@@ -15,7 +15,7 @@
 			$save_array = 
 				array(
 					"show_list" => absint($post->show_list),
-					"event_grouping" => absint($post>event_grouping),
+					"event_grouping" => absint($post->event_grouping),
 				);
 			if (!empty($ticketmachine_config)) {
 				$wpdb->update(
