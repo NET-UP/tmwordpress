@@ -40,7 +40,7 @@
                     $errors[] = "No end time was set";
                 }
 
-                if(isset($post['ev_name'])) {
+                if(!empty($post['ev_name'])) {
                     $post['ev_name'] = sanitize_text_field($post['ev_name']);
                 }else{
                     $errors[] = "No event title was set";
