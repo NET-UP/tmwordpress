@@ -8,13 +8,17 @@
 			exit;
 		} else {
 			$post = (object)$_POST
+
+			//validate
 			if (isset($post->show_list)){
 				$post->show_list = 1;
 			}
+			//sanitize
+			$post->show_list = absint($post->list);
 
 			$save_array = 
 				array(
-					"show_list" => absint($post->show_list)
+					"show_list" => $post->list
 				);
 			if (!empty($ticketmachine_config)) {
 				$wpdb->update(
