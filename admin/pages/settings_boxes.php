@@ -37,6 +37,7 @@
 					<p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
 				</div>
 				<?php
+				$ticketmachine_config = $post;
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">
@@ -44,7 +45,6 @@
 				</div>
 				<?php
 			}
-			$ticketmachine_config = (object)$_POST;
 		}
 	}
 ?>
