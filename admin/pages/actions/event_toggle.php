@@ -8,7 +8,7 @@
             print 'Sorry, your nonce did not verify.';
             exit;
         } else {
-            $errors[] = array();
+            $errors = array();
             $event_id = (int)$_GET['id'];
             
             if(!empty($event_id)){
