@@ -7,6 +7,16 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
+            $post = (object)$_POST;
+			$errors = array();
+
+			//validate
+			if (!empty($post->show_social_media)){
+				$post->show_social_media = absint(1);
+			}else{
+				$post->show_social_media = absint(0);
+			}
+
             $save_array = 
                 array(
                     "show_social_media" => absint($_POST['show_social_media']),
@@ -30,6 +40,7 @@
                     <p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
                 </div>
                 <?php
+                $ticketmachine_config = $post;
             }else{
                 ?>
                 <div class="notice notice-error is-dismissable">
@@ -37,7 +48,6 @@
                 </div>
                 <?php
             }
-            $ticketmachine_config = (object)$_POST;
         }
     }
 ?>

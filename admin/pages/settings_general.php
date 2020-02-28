@@ -10,23 +10,19 @@
 			$post = (object)$_POST;
 			$errors = array();
 
-			//validate && sanitize
-			if(!empty($post->events_slug_id)){
-				$post->events_slug_id = absint($post->events_slug_id);
-			}else{
+			//validate
+			if(empty($post->events_slug_id) || !ctype_digit($post->events_slug_id)){
 				$errors[] = "Events page can not be empty";
 			}
 
-			if(!empty($post->event_slug_id)){
-				$post->event_slug_id = absint($post->event_slug_id);
-			}else{
+			if(empty($post->event_slug_id) || !ctype_digit($post->events_slug_id)){
 				$errors[] = "Event page can not be empty";
 			}
 
 			$save_array = 
 				array(
-					"events_slug_id" => $post->events_slug_id,
-					"event_slug_id" => $post->event_slug_id
+					"events_slug_id" => absint($post->events_slug_id),
+					"event_slug_id" => absint($post->event_slug_id)
 				);
 			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(
