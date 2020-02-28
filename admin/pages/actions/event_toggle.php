@@ -31,7 +31,7 @@
             <div class="notice notice-error is-dismissable">
                 <p><?php esc_html_e($response->model_error[0]['error_message']); ?></p>
             </div>
-        <?php }elseif(empty($ticketmachine_json)){ ?>
+        <?php }elseif(empty($ticketmachine_json) || !empty($errors)){ ?>
             <div class="notice notice-error is-dismissable">
                 <p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
             </div>

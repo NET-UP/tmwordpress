@@ -9,6 +9,9 @@
                 print 'Sorry, your nonce did not verify.';
                 exit;
             } else {
+                $post = (object)$_POST;
+                $errors[] = array();
+                
                 if(!isset($_POST['rules']['shown'])) {
                     $_POST['rules']['shown'] = 1;
                 }
@@ -59,7 +62,7 @@
             <div class="notice notice-error is-dismissable">
                 <p><?php echo __($response->model_error[0]['error_message']); ?></p>
             </div>
-        <?php }elseif(empty($ticketmachine_json)){ ?>
+        <?php }elseif(empty($ticketmachine_json) || !empty($errors)){ ?>
             <div class="notice notice-error is-dismissable">
                 <p><?php echo __('Something went wrong', 'ticketmachine'); ?>!</p>
             </div>
