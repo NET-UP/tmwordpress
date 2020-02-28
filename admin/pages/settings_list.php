@@ -7,7 +7,7 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-			$post = (object)$_POST
+			$post = (object)$_POST;
 
 			//validate
 			if (!empty($post->show_list)){
