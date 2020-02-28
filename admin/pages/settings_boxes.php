@@ -16,21 +16,19 @@
 
 			//validate
 			if (!empty($post->show_boxes)){
-				$post->show_boxes = 1;
+				$post->show_boxes = true;
 			}else{
-				$post->show_boxes = 0;
+				$post->show_boxes = false;
 			}
 
-			if(in_array($post->event_grouping, array("Month", "Year","None"))){
-				$post->event_grouping = sanitize_text_field($post->event_grouping);
-			}else{
+			if(!in_array($post->event_grouping, array("Month", "Year","None"))){
 				$errors[] =  'Sorry, your groups did not verify.';
 			}
 
 			$save_array =
 				array(
-					"show_boxes" => absint($_POST['show_boxes']),
-					"event_grouping" => sanitize_text_field($_POST['event_grouping']),
+					"show_boxes" => (bool)$post->show_boxes,
+					"event_grouping" => sanitize_text_field($post->event_grouping),
 				);
 			if (!empty($ticketmachine_config)) {
 				$wpdb->update(
