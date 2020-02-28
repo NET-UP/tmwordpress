@@ -84,6 +84,7 @@
 		$globals->tag = htmlentities(sanitize_text_field($_GET['tag']));
 	}
 	$globals->organizer = $ticketmachine_config->organizer;
+	$globals->organizer_id = (int)$ticketmachine_config->organizer_id;
 
 	$globals->first_event_date = date('Y-m-d');
 	$globals->first_event_date_calendar = date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "-1 month" ) );
