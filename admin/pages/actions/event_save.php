@@ -10,8 +10,8 @@
                 exit;
             } else {
                 $post = (object)$_POST;
-                $errors[] = array();
-                
+                $errors = array();
+
                 if(!isset($_POST['rules']['shown'])) {
                     $_POST['rules']['shown'] = 1;
                 }

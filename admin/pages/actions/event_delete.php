@@ -9,7 +9,7 @@
             exit;
         } else {
             $post = (object)$_POST;
-            $errors[] = array();
+            $errors = array();
             
             if(isset($_GET['id'])){
                 $_POST['id'] = absint($_GET['id']);
