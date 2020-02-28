@@ -7,14 +7,15 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-			if (isset($_POST['show_list'])){
-				$_POST['show_list'] = 1;
+			$post = (object)$_POST
+			if (isset($post->show_list)){
+				$post->show_list = 1;
 			}
 
 			$save_array = 
 				array(
-					"show_list" => absint($_POST['show_list']),
-					"event_grouping" => absint($_POST['event_grouping']),
+					"show_list" => absint($post->show_list),
+					"event_grouping" => absint($post>event_grouping),
 				);
 			if (!empty($ticketmachine_config)) {
 				$wpdb->update(
@@ -34,7 +35,7 @@
 				</div>
 				<?php
 			}
-			$ticketmachine_config = (object)$_POST;
+			$ticketmachine_config = $post;
 			echo $ticketmachine_config;
 		}
 	}
