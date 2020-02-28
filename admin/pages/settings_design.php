@@ -32,6 +32,15 @@
 
 					"date_text_color" => sanitize_hex_color($post->date_text_color)
 				);
+
+			//validation
+			foreach($save_array as $color) {
+				if(ctype_xdigit(substr($color,1)) && strlen(ltrim($color,"#"))==6 || !isset($color)){ 
+				}else{
+					$errors[] = sanitize_hex_color($color) . " is not a valid hex color.";
+				}
+			}
+
 			if (!empty($ticketmachine_design) && empty($errors)) {
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_design",
