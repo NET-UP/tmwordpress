@@ -38,7 +38,7 @@
 				if(ctype_xdigit(substr($color,1)) && strlen(ltrim($color,"#"))==6 || empty($color)){ 
 					$save_array[$key] = sanitize_hex_color($color);
 				}else{
-					$errors[] = sanitize_hex_color($color) . " is not a valid hex color.";
+					$errors[] = sanitize_text_field($color) . " is not a valid hex color.";
 				}
 			}
 
