@@ -474,8 +474,6 @@
 	  }
 	  $response = $resource['body'];
 
-	  print_r($globals->api_access_token);
-
 	  return json_decode($response, true);
 	  
 	}
