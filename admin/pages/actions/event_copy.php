@@ -8,16 +8,25 @@
             print 'Sorry, your nonce did not verify.';
             exit;
         } else {
-            $post = (object)$_POST;
+            $event_id = (int)$_GET['id'];
             $errors = array();
         
-            if(isset($_GET['id'])){
-                $_POST['id'] = absint($_GET['id']);
-                $_POST['organizer_id'] = absint($globals->organizer_id);
+            if(!empty($event_id)){
+                if(empty($globals->organizer_id) || !is_int($globals->organizer_id)){
+                    $errors[] = "No organizer id could be found";
+                }
                 
-                $post_json = $_POST;
-                $ticketmachine_json = ticketmachine_tmapi_event_copy($post_json);
-                $response = (object)$ticketmachine_json;
+                if(empty($errors)){
+                    $post = array();
+                    $post['id'] = absint($event_id);
+                    $post['organizer_id'] = absint($globals->organizer_id);
+
+                    $post_json = $post;
+                    $ticketmachine_json = ticketmachine_tmapi_event_copy($post_json);
+                    $response = (object)$ticketmachine_json;
+                }
+            }else{
+                $errors[] = "No event id was set";
             }
         ?>
 

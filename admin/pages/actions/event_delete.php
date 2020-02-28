@@ -11,19 +11,22 @@
             $event_id = (int)$_GET['id'];
             $errors = array();
             
-            if(isset($event_id)){
+            if(!empty($event_id)){
                 if(empty($globals->organizer_id) || !is_int($globals->organizer_id)){
                     $errors[] = "No organizer id could be found";
                 }
                 
                 if(empty($errors)){
+                    $post = array();
                     $post['id'] = absint($event_id);
                     $post['organizer_id'] = absint($globals->organizer_id);
-                    
+
                     $post_json = json_encode($post);
                     $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
                     $response = (object)$ticketmachine_json;
                 }
+            }else{
+                $errors[] = "No event id was set";
             }
         ?>
 
