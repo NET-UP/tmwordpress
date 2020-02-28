@@ -7,13 +7,19 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-			if (isset($_POST['show_calendar'])){
-				$_POST['show_calendar'] = 1;
+			$post = (object)$_POST;
+			$errors = array();
+
+			//validate
+			if (!empty($post->show_calendar)){
+				$post->show_calendar = true;
+			}else{
+				$post->show_calendar = false;
 			}
 
 			$save_array = 
 				array(
-					"show_calendar" => absint($_POST['show_calendar']),
+					"show_calendar" => (bool)$post->show_calendar,
 				);
 			if (!empty($ticketmachine_config)) {
 				$wpdb->update(
@@ -26,6 +32,7 @@
 					<p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
 				</div>
 				<?php
+				$ticketmachine_config = $post;
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">
@@ -33,7 +40,6 @@
 				</div>
 				<?php
 			}
-			$ticketmachine_config = (object)$_POST;
 		}
 	}
 ?>
