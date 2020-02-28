@@ -8,6 +8,8 @@
             print 'Sorry, your nonce did not verify.';
             exit;
         } else {
+            $post = (object)$_POST;
+            $errors[] = array();
             
             if(isset($_GET['id'])){
                 $params = [ "id" => absint($_GET['id']) ];
