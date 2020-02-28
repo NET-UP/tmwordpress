@@ -34,7 +34,7 @@
 				</div>
 				<?php
 				$ticketmachine_config = $post;
-				print_r($ticketmachine_config);
+				print_r($save_array);
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">
