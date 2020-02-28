@@ -77,7 +77,7 @@
                     "show_social_media_whatsapp" => (bool)$post->show_social_media_whatsapp,
                     "show_google_map" => (bool)$post->show_google_map
                 );
-            if (!empty($ticketmachine_config)) {
+            if (!empty($ticketmachine_config) && empty($errors)) {
                 $wpdb->update(
                     $wpdb->prefix . "ticketmachine_config",
                     $save_array,
