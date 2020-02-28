@@ -12,9 +12,9 @@
 
 			//validate
 			if (!empty($post->show_list)){
-				$post->show_list = 1;
+				$post->show_list = true;
 			}else{
-				$post->show_list = 0;
+				$post->show_list = false;
 			}
 
 			$save_array = 
