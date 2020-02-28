@@ -23,6 +23,7 @@
 				);
 
 			if (!empty($ticketmachine_config) && empty($errors)) {
+				print_r($save_array);
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_config",
 					$save_array,
@@ -34,7 +35,6 @@
 				</div>
 				<?php
 				$ticketmachine_config = $post;
-				print_r($save_array);
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">
