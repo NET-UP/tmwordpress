@@ -67,15 +67,15 @@
 
             $save_array = 
                 array(
-                    "show_social_media" => $post->show_social_media,
-                    "show_social_media_ical" => $post->show_social_media_ical,
-                    "show_social_media_google_cal" => $post->show_social_media_google_cal,
-                    "show_social_media_facebook" => $post->show_social_media_facebook,
-                    "show_social_media_twitter" => $post->show_social_media_twitter,
-                    "show_social_media_email" => $post->show_social_media_email,
-                    "show_social_media_messenger" => $post->show_social_media_messenger,
-                    "show_social_media_whatsapp" => $post->show_social_media_whatsapp,
-                    "show_google_map" => $post->show_google_map
+                    "show_social_media" => (bool)$post->show_social_media,
+                    "show_social_media_ical" => (bool)$post->show_social_media_ical,
+                    "show_social_media_google_cal" => (bool)$post->show_social_media_google_cal,
+                    "show_social_media_facebook" => (bool)$post->show_social_media_facebook,
+                    "show_social_media_twitter" => (bool)$post->show_social_media_twitter,
+                    "show_social_media_email" => (bool)$post->show_social_media_email,
+                    "show_social_media_messenger" => (bool)$post->show_social_media_messenger,
+                    "show_social_media_whatsapp" => (bool)$post->show_social_media_whatsapp,
+                    "show_google_map" => (bool)$post->show_google_map
                 );
             if (!empty($ticketmachine_config)) {
                 $wpdb->update(
