@@ -7,11 +7,27 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-			if (isset($_POST['show_boxes'])){
-				$_POST['show_boxes'] = 1;
+			$post = (object)$_POST;
+
+			
+			echo $post->show_boxes;
+			//sanitize
+			$post->show_boxes = absint($post->show_boxes);
+
+			//validate
+			if (!empty($post->show_boxes)){
+				$post->show_boxes = 1;
+			}else{
+				$post->show_boxes = 0;
 			}
 
-			$save_array = 
+			if(in_array($post->event_grouping, array("Month", "Year","None")){
+				$post->event_grouping = sanitize_text_field($post->event_grouping)
+			}else{
+				$errors[] =  'Sorry, your groups did not verify.';
+			}
+
+			$save_array =
 				array(
 					"show_boxes" => absint($_POST['show_boxes']),
 					"event_grouping" => sanitize_text_field($_POST['event_grouping']),
