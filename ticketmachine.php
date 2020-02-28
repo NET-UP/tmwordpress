@@ -136,7 +136,9 @@
 	
 	// load dynamic form for calculator from template
 	function ticketmachine_initialize( $atts ) {
-
+		if(!session_id())
+			session_start(); 
+			
         global $globals, $api, $wpdb;
     
         wp_enqueue_script( 'jquery-ui-datepicker' );
