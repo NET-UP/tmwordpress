@@ -8,7 +8,7 @@
 			exit;
 		} else {
 			$post = (object)$_POST;
-
+			$errors = array();
 			
 			echo $post->show_boxes;
 			//sanitize
@@ -30,7 +30,7 @@
 					"show_boxes" => (bool)$post->show_boxes,
 					"event_grouping" => sanitize_text_field($post->event_grouping),
 				);
-			if (!empty($ticketmachine_config)) {
+			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_config",
 					$save_array,
