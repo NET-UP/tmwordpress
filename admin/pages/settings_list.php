@@ -8,6 +8,7 @@
 			exit;
 		} else {
 			$post = (object)$_POST;
+			$errors = array();
 
 			//validate
 			if (!empty($post->show_list)){
@@ -22,7 +23,7 @@
 				array(
 					"show_list" => $post->show_list
 				);
-			if (!empty($ticketmachine_config)) {
+			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_config",
 					$save_array,
