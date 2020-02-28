@@ -12,22 +12,70 @@
 
 			//validate
 			if (!empty($post->show_social_media)){
-				$post->show_social_media = absint(1);
+				$post->show_social_media = 1;
 			}else{
-				$post->show_social_media = absint(0);
-			}
+				$post->show_social_media = 0;
+            }
+            
+			if (!empty($post->show_social_media_ical)){
+				$post->show_social_media_ical = 1;
+			}else{
+				$post->show_social_media_ical = 0;
+            }
+            
+			if (!empty($post->show_social_media_google_cal)){
+				$post->show_social_media_google_cal = 1;
+			}else{
+				$post->show_social_media_google_cal = 0;
+            }
+            
+			if (!empty($post->show_social_media_facebook)){
+				$post->show_social_media_facebook = 1;
+			}else{
+				$post->show_social_media_facebook = 0;
+            }
+            
+			if (!empty($post->show_social_media_twitter)){
+				$post->show_social_media_twitter = 1;
+			}else{
+				$post->show_social_media_twitter = 0;
+            }
+            
+			if (!empty($post->show_social_media_email)){
+				$post->show_social_media_email = 1;
+			}else{
+				$post->show_social_media_email = 0;
+            }
+            
+			if (!empty($post->show_social_media_messenger)){
+				$post->show_social_media_messenger = 1;
+			}else{
+				$post->show_social_media_messenger = 0;
+            }
+            
+			if (!empty($post->show_social_media_whatsapp)){
+				$post->show_social_media_whatsapp = 1;
+			}else{
+				$post->show_social_media_whatsapp = 0;
+            }
+            
+			if (!empty($post->show_google_map)){
+				$post->show_google_map = 1;
+			}else{
+				$post->show_google_map = 0;
+            }
 
             $save_array = 
                 array(
-                    "show_social_media" => absint($_POST['show_social_media']),
-                    "show_social_media_ical" => absint($_POST['show_social_media_ical']),
-                    "show_social_media_google_cal" => absint($_POST['show_social_media_google_cal']),
-                    "show_social_media_facebook" => absint($_POST['show_social_media_facebook']),
-                    "show_social_media_twitter" => absint($_POST['show_social_media_twitter']),
-                    "show_social_media_email" => absint($_POST['show_social_media_email']),
-                    "show_social_media_messenger" => absint($_POST['show_social_media_messenger']),
-                    "show_social_media_whatsapp" => absint($_POST['show_social_media_whatsapp']),
-                    "show_google_map" => absint($_POST['show_google_map'])
+                    "show_social_media" => absint($post->show_social_media),
+                    "show_social_media_ical" => absint($post->show_social_media_ical),
+                    "show_social_media_google_cal" => absint($post->show_social_media_google_cal),
+                    "show_social_media_facebook" => absint($post->show_social_media_facebook),
+                    "show_social_media_twitter" => absint($post->show_social_media_twitter),
+                    "show_social_media_email" => absint($post->show_social_media_email),
+                    "show_social_media_messenger" => absint($post->show_social_media_messenger),
+                    "show_social_media_whatsapp" => absint($post->show_social_media_whatsapp),
+                    "show_google_map" => absint($post->show_google_map)
                 );
             if (!empty($ticketmachine_config)) {
                 $wpdb->update(
