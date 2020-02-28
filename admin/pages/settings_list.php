@@ -21,9 +21,8 @@
 				array(
 					"show_list" => $post->show_list
 				);
-				
+
 			if (!empty($ticketmachine_config) && empty($errors)) {
-				print_r($ticketmachine_config);
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_config",
 					$save_array,
@@ -35,6 +34,7 @@
 				</div>
 				<?php
 				$ticketmachine_config = $post;
+				print_r($ticketmachine_config);
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">
