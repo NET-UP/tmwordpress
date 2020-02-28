@@ -9,7 +9,7 @@
                 print 'Sorry, your nonce did not verify.';
                 exit;
             } else {
-                $post = (object)$_POST;
+                $post = $_POST;
                 $errors = array();
 
                 if(!isset($post['rules']['shown'])) {
