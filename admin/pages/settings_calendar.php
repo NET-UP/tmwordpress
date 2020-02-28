@@ -21,7 +21,7 @@
 				array(
 					"show_calendar" => (bool)$post->show_calendar,
 				);
-			if (!empty($ticketmachine_config)) {
+			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_config",
 					$save_array,
