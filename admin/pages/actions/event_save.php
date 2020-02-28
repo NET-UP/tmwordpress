@@ -44,16 +44,23 @@
                 if(isset($post['vat_id'])){
                     $post['vat_id'] = 1;
                 }
-                $post['organizer_id'] = absint($post['organizer_id']);
-                $post['approved'] = absint($post['approved']);
-                $post['rules']['shown'] = absint($post['rules']['shown']);
-                $post['rules']['sale_active'] = absint($post['rules']['sale_active']);
-                $post['vat_id'] = absint($post['vat_id']);
 
-                $post_json = $post;
+                if(empty($globals->organizer_id) || !is_int($globals->organizer_id)){
+                    $errors[] = "No organizer id could be found";
+                }
                 
-                $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
-                $response = (object)$ticketmachine_json;
+                if(empty($errors)){
+                    $post['organizer_id'] = absint($globals->organizer_id);
+                    $post['approved'] = absint($post['approved']);
+                    $post['rules']['shown'] = absint($post['rules']['shown']);
+                    $post['rules']['sale_active'] = absint($post['rules']['sale_active']);
+                    $post['vat_id'] = absint($post['vat_id']);
+
+                    $post_json = $post;
+                    
+                    $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
+                    $response = (object)$ticketmachine_json;
+                }
             }
     
         ?>
