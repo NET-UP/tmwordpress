@@ -25,10 +25,8 @@
                     $post['rules']['shown'] = 0;
                 }
 
-                if(empty($globals->organizer_id)){
+                if(empty($globals->organizer_id) || !is_int($globals->organizer_id)){
                     $errors[] = "No organizer id could be found";
-                }else{
-                    $globals->organizer_id = (int)$globals->organizer_id;
                 }
 
                 $post['id'] = absint($event_id);
