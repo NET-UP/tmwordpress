@@ -19,7 +19,7 @@
 
 			$save_array = 
 				array(
-					"show_list" => 0
+					"show_list" => "0"
 				);
 
 			if (!empty($ticketmachine_config) && empty($errors)) {
