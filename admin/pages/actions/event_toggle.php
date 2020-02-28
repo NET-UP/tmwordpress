@@ -34,9 +34,12 @@
                 $post['approved'] = 1 - absint($post['approved']);
                 $post['rules']['shown'] = absint($post['approved']);
                 
-                $post_json = $post;
-                $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
-                $response = (object)$ticketmachine_json;
+                if(empty($errors)){
+                    $post_json = $post;
+                    $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
+                    $response = (object)$ticketmachine_json;
+                }
+
             }else{
                 $errors[] = "No event id was set";
             }
