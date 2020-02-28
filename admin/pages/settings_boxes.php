@@ -9,10 +9,6 @@
 		} else {
 			$post = (object)$_POST;
 			$errors = array();
-			
-			echo $post->show_boxes;
-			//sanitize
-			$post->show_boxes = absint($post->show_boxes);
 
 			//validate
 			if (!empty($post->show_boxes)){
