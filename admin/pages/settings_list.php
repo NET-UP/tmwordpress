@@ -12,6 +12,8 @@
 			//validate
 			if (!empty($post->show_list)){
 				$post->show_list = 1;
+			}else{
+				$post->show_list = 0;
 			}
 			//sanitize
 			$post->show_list = absint($post->list);
