@@ -17,11 +17,9 @@
 				$post->show_list = 0;
 			}
 
-			print_r($post);
-
 			$save_array = 
 				array(
-					"show_list" => (int)$post->show_list
+					"show_list" => $post->show_list
 				);
 			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(
