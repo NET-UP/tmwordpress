@@ -42,8 +42,6 @@
 				}
 			}
 
-			print_r($errors);
-
 			if (!empty($ticketmachine_design) && empty($errors)) {
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_design",
