@@ -8,8 +8,8 @@
             print 'Sorry, your nonce did not verify.';
             exit;
         } else {
-            $errors = array();
             $event_id = (int)$_GET['id'];
+            $errors = array();
             
             if(!empty($event_id)){
                 $params = [ "id" => absint($event_id) ];
@@ -28,13 +28,13 @@
                 if(empty($globals->organizer_id) || !is_int($globals->organizer_id)){
                     $errors[] = "No organizer id could be found";
                 }
-
-                $post['id'] = absint($event_id);
-                $post['organizer_id'] = absint($globals->organizer_id);
-                $post['approved'] = 1 - absint($post['approved']);
-                $post['rules']['shown'] = absint($post['approved']);
                 
                 if(empty($errors)){
+                    $post['id'] = absint($event_id);
+                    $post['organizer_id'] = absint($globals->organizer_id);
+                    $post['approved'] = 1 - absint($post['approved']);
+                    $post['rules']['shown'] = absint($post['approved']);
+
                     $post_json = $post;
                     $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
                     $response = (object)$ticketmachine_json;
