@@ -17,6 +17,8 @@
 				$post->show_list = 0;
 			}
 
+			print_r($post);
+
 			$save_array = 
 				array(
 					"show_list" => (int)$post->show_list
