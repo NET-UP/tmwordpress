@@ -18,7 +18,9 @@
     }
 
     if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-		
+	if(!session_id())
+		session_start(); 
+
 	global $wpdb, $globals, $api;
 	
 	$ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
