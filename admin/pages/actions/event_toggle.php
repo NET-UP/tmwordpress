@@ -43,8 +43,6 @@
             }else{
                 $errors[] = "No event id was set";
             }
-
-            print_r($errors);
         ?>
 
         <?php if(isset($response->model_error[0]['error_code']) && strlen($response->model_error[0]['error_code']) > 0){ ?>
