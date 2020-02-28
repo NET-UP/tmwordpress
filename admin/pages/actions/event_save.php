@@ -12,45 +12,45 @@
                 $post = (object)$_POST;
                 $errors = array();
 
-                if(!isset($_POST['rules']['shown'])) {
-                    $_POST['rules']['shown'] = 1;
+                if(!isset($post['rules']['shown'])) {
+                    $post['rules']['shown'] = 0;
                 }
-                if(!isset($_POST['approved'])) {
-                    $_POST['approved'] = 0;
+                if(!isset($post['approved'])) {
+                    $post['approved'] = 0;
                 }
-                if(isset($_POST['tags'])) {
-                    $_POST['tags'] = explode(",", $_POST['tags']);
-                    array_walk($_POST['tags'], function(&$value, &$key) {
+                if(isset($post['tags'])) {
+                    $post['tags'] = explode(",", $post['tags']);
+                    array_walk($post['tags'], function(&$value, &$key) {
                         $value = sanitize_text_field($value);
                     });
                 }
-                if(isset($_POST['entrytime'])) {
-                    $_POST['entrytime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($_POST['entrytime']['date'] . $_POST['entrytime']['time']));
+                if(isset($post['entrytime'])) {
+                    $post['entrytime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($post['entrytime']['date'] . $post['entrytime']['time']));
                 }
-                if(isset($_POST['ev_date'])) {
-                    $_POST['ev_date'] = sanitize_text_field(ticketmachine_i18n_reverse_date($_POST['ev_date']['date'] . $_POST['ev_date']['time']));
+                if(isset($post['ev_date'])) {
+                    $post['ev_date'] = sanitize_text_field(ticketmachine_i18n_reverse_date($post['ev_date']['date'] . $post['ev_date']['time']));
                 }
-                if(isset($_POST['endtime'])) {
-                    $_POST['endtime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($_POST['endtime']['date'] . $_POST['endtime']['time']));
-                }
-
-                if(isset($_POST['description'])) {
-                    $_POST['description'] = sanitize_text_field(strip_shortcodes($_POST['description']));
+                if(isset($post['endtime'])) {
+                    $post['endtime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($post['endtime']['date'] . $post['endtime']['time']));
                 }
 
-                if(!empty($_POST['id'])) {
-                    $_POST['id'] = absint($_POST['id']);
+                if(isset($post['description'])) {
+                    $post['description'] = sanitize_text_field(strip_shortcodes($post['description']));
                 }
-                if(isset($_POST['vat_id'])){
-                    $_POST['vat_id'] = 1;
-                }
-                $_POST['organizer_id'] = absint($_POST['organizer_id']);
-                $_POST['approved'] = absint($_POST['approved']);
-                $_POST['rules']['shown'] = absint($_POST['rules']['shown']);
-                $_POST['rules']['sale_active'] = absint($_POST['rules']['sale_active']);
-                $_POST['vat_id'] = absint($_POST['vat_id']);
 
-                $post_json = $_POST;
+                if(!empty($post['id'])) {
+                    $post['id'] = absint($post['id']);
+                }
+                if(isset($post['vat_id'])){
+                    $post['vat_id'] = 1;
+                }
+                $post['organizer_id'] = absint($post['organizer_id']);
+                $post['approved'] = absint($post['approved']);
+                $post['rules']['shown'] = absint($post['rules']['shown']);
+                $post['rules']['sale_active'] = absint($post['rules']['sale_active']);
+                $post['vat_id'] = absint($post['vat_id']);
+
+                $post_json = $post;
                 
                 $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
                 $response = (object)$ticketmachine_json;
