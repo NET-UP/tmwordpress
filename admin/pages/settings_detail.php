@@ -12,70 +12,70 @@
 
 			//validate
 			if (!empty($post->show_social_media)){
-				$post->show_social_media = 1;
+				$post->show_social_media = true;
 			}else{
-				$post->show_social_media = 0;
+				$post->show_social_media = false;
             }
             
 			if (!empty($post->show_social_media_ical)){
-				$post->show_social_media_ical = 1;
+				$post->show_social_media_ical = true;
 			}else{
-				$post->show_social_media_ical = 0;
+				$post->show_social_media_ical = false;
             }
             
 			if (!empty($post->show_social_media_google_cal)){
-				$post->show_social_media_google_cal = 1;
+				$post->show_social_media_google_cal = true;
 			}else{
-				$post->show_social_media_google_cal = 0;
+				$post->show_social_media_google_cal = false;
             }
             
 			if (!empty($post->show_social_media_facebook)){
-				$post->show_social_media_facebook = 1;
+				$post->show_social_media_facebook = true;
 			}else{
-				$post->show_social_media_facebook = 0;
+				$post->show_social_media_facebook = false;
             }
             
 			if (!empty($post->show_social_media_twitter)){
-				$post->show_social_media_twitter = 1;
+				$post->show_social_media_twitter = true;
 			}else{
-				$post->show_social_media_twitter = 0;
+				$post->show_social_media_twitter = false;
             }
             
 			if (!empty($post->show_social_media_email)){
-				$post->show_social_media_email = 1;
+				$post->show_social_media_email = true;
 			}else{
-				$post->show_social_media_email = 0;
+				$post->show_social_media_email = false;
             }
             
 			if (!empty($post->show_social_media_messenger)){
-				$post->show_social_media_messenger = 1;
+				$post->show_social_media_messenger = true;
 			}else{
-				$post->show_social_media_messenger = 0;
+				$post->show_social_media_messenger = false;
             }
             
 			if (!empty($post->show_social_media_whatsapp)){
-				$post->show_social_media_whatsapp = 1;
+				$post->show_social_media_whatsapp = true;
 			}else{
-				$post->show_social_media_whatsapp = 0;
+				$post->show_social_media_whatsapp = false;
             }
             
 			if (!empty($post->show_google_map)){
-				$post->show_google_map = 1;
+				$post->show_google_map = true;
 			}else{
-				$post->show_google_map = 0;
+				$post->show_google_map = false;
             }
 
             $save_array = 
                 array(
-                    "show_social_media" => absint($post->show_social_media),
-                    "show_social_media_ical" => absint($post->show_social_media_ical),
-                    "show_social_media_google_cal" => absint($post->show_social_media_google_cal),
-                    "show_social_media_facebook" => absint($post->show_social_media_facebook),
-                    "show_social_media_twitter" => absint($post->show_social_media_twitter),
-                    "show_social_media_email" => absint($post->show_social_media_email),
-                    "show_social_media_messenger" => absint($post->show_social_media_messenger),
-                    "show_social_media_whatsapp" => absint($post->show_social_media_whatsapp),
-                    "show_google_map" => absint($post->show_google_map)
+                    "show_social_media" => $post->show_social_media,
+                    "show_social_media_ical" => $post->show_social_media_ical,
+                    "show_social_media_google_cal" => $post->show_social_media_google_cal,
+                    "show_social_media_facebook" => $post->show_social_media_facebook,
+                    "show_social_media_twitter" => $post->show_social_media_twitter,
+                    "show_social_media_email" => $post->show_social_media_email,
+                    "show_social_media_messenger" => $post->show_social_media_messenger,
+                    "show_social_media_whatsapp" => $post->show_social_media_whatsapp,
+                    "show_google_map" => $post->show_google_map
                 );
             if (!empty($ticketmachine_config)) {
                 $wpdb->update(
