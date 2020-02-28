@@ -21,7 +21,7 @@
 				$post->show_boxes = 0;
 			}
 
-			if(in_array($post->event_grouping, array("Month", "Year","None")){
+			if(in_array($post->event_grouping, array("Month", "Year","None"))){
 				$post->event_grouping = sanitize_text_field($post->event_grouping)
 			}else{
 				$errors[] =  'Sorry, your groups did not verify.';
