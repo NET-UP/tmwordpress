@@ -18,8 +18,6 @@
     }
 
     if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	if(!session_id())
-		session_start(); 
 		
 	global $wpdb, $globals, $api;
 	
