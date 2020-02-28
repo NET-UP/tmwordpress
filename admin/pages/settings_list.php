@@ -21,6 +21,8 @@
 				array(
 					"show_list" => $post->show_list
 				);
+
+				print_r($save_array);
 			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_config",
