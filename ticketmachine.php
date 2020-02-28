@@ -474,7 +474,7 @@
 	  }
 	  $response = $resource['body'];
 
-	  print_r($response);
+	  print_r($_SESSION['access_token']);
 
 	  return json_decode($response, true);
 	  
