@@ -25,6 +25,8 @@
                     $post['rules']['shown'] = 0;
                 }
 
+                print_r($globals);
+
                 if(empty($globals->organizer_id) || !is_int($globals->organizer_id)){
                     $errors[] = "No organizer id could be found";
                 }

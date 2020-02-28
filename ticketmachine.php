@@ -85,8 +85,6 @@
 	}
 	$globals->organizer = $ticketmachine_config->organizer;
 
-	print_r($globals->organizer_id);
-
 	$globals->first_event_date = date('Y-m-d');
 	$globals->first_event_date_calendar = date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "-1 month" ) );
 
