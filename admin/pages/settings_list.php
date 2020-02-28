@@ -16,11 +16,11 @@
 				$post->show_list = 0;
 			}
 			//sanitize
-			$post->show_list = absint($post->list);
+			$post->show_list = absint($post->show_list);
 
 			$save_array = 
 				array(
-					"show_list" => $post->list
+					"show_list" => $post->show_list
 				);
 			if (!empty($ticketmachine_config)) {
 				$wpdb->update(
