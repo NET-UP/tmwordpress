@@ -25,7 +25,7 @@
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_config",
 					$save_array,
-					array('id' => absint($ticketmachine_config->id))
+					array('id' => $ticketmachine_config->id)
 				);
 				?>
 				<div class="notice notice-success is-dismissable">
