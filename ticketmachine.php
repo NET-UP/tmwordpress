@@ -435,6 +435,7 @@
 	}
 
 	function ticketmachine_apiRequest($url, $post=FALSE, $method="GET", $headers=array()) {
+	  global $globals, $api;
 
 	  $headers = array();
 	  $headers = ticketmachine_array_push_assoc($headers, 'User-Agent', 'https://www.ticketmachine.de/');
