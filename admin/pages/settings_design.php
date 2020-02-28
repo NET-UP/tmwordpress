@@ -32,7 +32,7 @@
 
 					"date_text_color" => sanitize_hex_color($post->date_text_color)
 				);
-			if (!empty($ticketmachine_design)) {
+			if (!empty($ticketmachine_design) && empty($errors)) {
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_design",
 					$save_array,
@@ -43,6 +43,7 @@
 					<p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
 				</div>
 				<?php
+				$ticketmachine_design = $post;
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">
@@ -50,7 +51,6 @@
 				</div>
 				<?php
 			}
-			$ticketmachine_design = (object)$_POST;
 
 		}
 	}
