@@ -27,7 +27,6 @@
 	$globals = (object)$ticketmachine_config;
 	if(!empty($globals->api_refresh_token) && !empty($globals->api_access_token)) {
 		$globals->activated = 1;
-		$_SESSION['access_token'] = $globals->api_access_token;
 	}
 	
 	if ( defined( 'ICL_LANGUAGE_CODE' ) ) {
@@ -100,8 +99,8 @@
 	$api->scheme = "https";
 	
 	#TODO: Refactor api request
-	if(!isset($_SESSION['state'])){
-		$_SESSION['state'] = "";
+	if(!isset($globals->api_state)){
+		$globals->api_state = "";
 	}
 	$api->token = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/oauth/token";
 	$api->auth->url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/oauth/token";
@@ -121,7 +120,7 @@
 		'response_type' => 'code',
 		'client_id' => $api->client_id,
 		'redirect_uri' => $api->auth->proxy,
-		'state' => $_SESSION['state'],
+		'state' => $globals->api_state,
 		'environment' => $api->environment,
 		'start_uri' => $api->auth->start_uri,
 		'scope' => 'public organizer organizer/event'
@@ -440,8 +439,8 @@
 	  $headers = array();
 	  $headers = ticketmachine_array_push_assoc($headers, 'User-Agent', 'https://www.ticketmachine.de/');
 
-	  if(isset($_SESSION['access_token']))
-		  $headers = ticketmachine_array_push_assoc($headers, 'Authorization', 'Bearer ' . $_SESSION['access_token']);
+	  if(isset($globals->api_access_token))
+		  $headers = ticketmachine_array_push_assoc($headers, 'Authorization', 'Bearer ' . $globals->api_access_token);
 
 	  if($method == "POST") {
 
@@ -474,7 +473,7 @@
 	  }
 	  $response = $resource['body'];
 
-	  print_r($_SESSION['access_token']);
+	  print_r($globals->api_access_token);
 
 	  return json_decode($response, true);
 	  
@@ -590,7 +589,7 @@
 				$save_array,
 				array('id' => $globals->id)
 			);
-			$_SESSION['access_token'] = $token['access_token'];
+			$globals->api_access_token = $token['access_token'];
 		}
 	}
 
@@ -620,7 +619,7 @@
 		}
 
 		$token = ticketmachine_apiRequest($api->token, $api->auth->code, "POST");
-        $_SESSION['access_token'] = $token['access_token'];
+        $globals->api_access_token = $token['access_token'];
 
 		return $token;
 	}
