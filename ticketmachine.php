@@ -227,7 +227,6 @@
 		include_once( plugin_dir_path( __FILE__ ) . 'assets/css/custom.php');
 		
 		//jQuery
-    	wp_enqueue_script( 'jquery' );
 		wp_register_script( 'jquery-ui-datepicker', array("jquery") );
 		wp_register_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
 		//Cookies
