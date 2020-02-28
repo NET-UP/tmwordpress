@@ -10,7 +10,7 @@
 			$post = (object)$_POST
 
 			//validate
-			if (isset($post->show_list)){
+			if (!empty($post->show_list)){
 				$post->show_list = 1;
 			}
 			//sanitize
