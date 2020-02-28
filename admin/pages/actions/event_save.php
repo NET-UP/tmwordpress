@@ -26,12 +26,24 @@
                 }
                 if(isset($post['entrytime'])) {
                     $post['entrytime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($post['entrytime']['date'] . $post['entrytime']['time']));
+                }else{
+                    $errors[] = "No entry time was set";
                 }
                 if(isset($post['ev_date'])) {
                     $post['ev_date'] = sanitize_text_field(ticketmachine_i18n_reverse_date($post['ev_date']['date'] . $post['ev_date']['time']));
+                }else{
+                    $errors[] = "No start time was set";
                 }
                 if(isset($post['endtime'])) {
                     $post['endtime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($post['endtime']['date'] . $post['endtime']['time']));
+                }else{
+                    $errors[] = "No end time was set";
+                }
+
+                if(isset($post['ev_name'])) {
+                    $post['ev_name'] = sanitize_text_field($post['ev_name']);
+                }else{
+                    $errors[] = "No event title was set";
                 }
 
                 if(isset($post['description'])) {
