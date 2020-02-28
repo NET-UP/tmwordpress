@@ -35,6 +35,7 @@
 				<?php
 			}
 			$ticketmachine_config = (object)$_POST;
+			echo $ticketmachine_config;
 		}
 	}
 ?>
