@@ -23,6 +23,7 @@
 				);
 
 				print_r($save_array);
+				print_r($ticketmachine_config);
 			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_config",
