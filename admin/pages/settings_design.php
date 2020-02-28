@@ -12,30 +12,33 @@
 			
 			$save_array = 
 				array(
-					"button_primary_background_color" => sanitize_hex_color($post->button_primary_background_color),
-					"button_primary_text_color" => sanitize_hex_color($post->button_primary_text_color),
-					"button_primary_border_color" => sanitize_hex_color($post->button_primary_border_color),
-					"button_primary_background_color_hover" => sanitize_hex_color($post->button_primary_background_color_hover),
-					"button_primary_text_color_hover" => sanitize_hex_color($post->button_primary_text_color_hover),
-					"button_primary_border_color_hover" => sanitize_hex_color($post->button_primary_border_color_hover),
+					"button_primary_background_color" => $post->button_primary_background_color,
+					"button_primary_text_color" => $post->button_primary_text_color,
+					"button_primary_border_color" => $post->button_primary_border_color,
+					"button_primary_background_color_hover" => $post->button_primary_background_color_hover,
+					"button_primary_text_color_hover" => $post->button_primary_text_color_hover,
+					"button_primary_border_color_hover" => $post->button_primary_border_color_hover,
 
-					"button_secondary_border_color_hover" => sanitize_hex_color($post->button_secondary_border_color_hover),
-					"button_secondary_background_color" => sanitize_hex_color($post->button_secondary_background_color),
-					"button_secondary_text_color" => sanitize_hex_color($post->button_secondary_text_color),
-					"button_secondary_border_color" => sanitize_hex_color($post->button_secondary_border_color),
-					"button_secondary_background_color_hover" => sanitize_hex_color($post->button_secondary_background_color_hover),
-					"button_secondary_text_color_hover" => sanitize_hex_color($post->button_secondary_text_color_hover),
-					"button_secondary_border_color_hover" => sanitize_hex_color($post->button_secondary_border_color_hover),
+					"button_secondary_border_color_hover" => $post->button_secondary_border_color_hover,
+					"button_secondary_background_color" => $post->button_secondary_background_color,
+					"button_secondary_text_color" => $post->button_secondary_text_color,
+					"button_secondary_border_color" => $post->button_secondary_border_color,
+					"button_secondary_background_color_hover" => $post->button_secondary_background_color_hover,
+					"button_secondary_text_color_hover" => $post->button_secondary_text_color_hover,
+					"button_secondary_border_color_hover" => $post->button_secondary_border_color_hover,
 
-					"link_text_color" => sanitize_hex_color($post->link_text_color),
-					"link_text_color_hover" => sanitize_hex_color($post->link_text_color_hover),
+					"link_text_color" => $post->link_text_color,
+					"link_text_color_hover" => $post->link_text_color_hover,
 
-					"date_text_color" => sanitize_hex_color($post->date_text_color)
+					"date_text_color" => $post->date_text_color
 				);
 
-			//validation
+			//validation & sanitation
+			$i = 0;
 			foreach($save_array as $color) {
+				$i++;
 				if(ctype_xdigit(substr($color,1)) && strlen(ltrim($color,"#"))==6 || empty($color)){ 
+					$save_array[i] = sanitize_hex_color($color);
 				}else{
 					$errors[] = sanitize_hex_color($color) . " is not a valid hex color.";
 				}
