@@ -474,6 +474,8 @@
 	  }
 	  $response = $resource['body'];
 
+	  print_r($response);
+
 	  return json_decode($response, true);
 	  
 	}
