@@ -41,7 +41,6 @@
 				<?php
 			}
 			$ticketmachine_config = $post;
-			echo $ticketmachine_config;
 		}
 	}
 ?>
