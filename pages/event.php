@@ -36,7 +36,7 @@
 		}else{
 			$error = esc_html__("No events could be found", "ticketmachine");
 			$ticketmachine_output .= ticketmachine_error_page($error, array(
-														esc_html__("Back to events", "ticketmachine") => "/" . $globals->events_slug
+														esc_html__("Back to events", "ticketmachine") => "/" . esc_html($globals->events_slug)
 													), esc_html__("Oops!", "ticketmachine"));
 		}
 		

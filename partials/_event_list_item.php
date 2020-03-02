@@ -6,8 +6,8 @@
 		
 		$ticketmachine_output = '<div class="col-12 col-md-6 col-xl-4 card-group">';
 			$ticketmachine_output .= '<card class="card mb-4">';
-				$ticketmachine_output .= '<a aria-label="' . $event->ev_name . ' am ' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '" href="/' . $globals->event_slug .'?id=' . $event->id . '" class="card-img-top" style="background-image:url( ' . $event->event_img_url . ' )" title="' . $event->ev_name . '">';
-					$ticketmachine_output .= '<div class="badge badge-danger float-right mt-1 mr-2">'. $event->rules["badge"] .'</div>';
+				$ticketmachine_output .= '<a aria-label="' . esc_attr($event->ev_name) . ' am ' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '" href="/' . esc_html($globals->event_slug) .'?id=' . esc_html($event->id) . '" class="card-img-top" style="background-image:url( ' . $event->event_img_url . ' )" title="' . $event->ev_name . '">';
+					$ticketmachine_output .= '<div class="badge badge-danger float-right mt-1 mr-2">'. esc_html($event->rules["badge"]) .'</div>';
 				$ticketmachine_output .= '</a>';
 				$ticketmachine_output .= '<div class="card-body position-relative">';
 
@@ -15,7 +15,7 @@
 					$ticketmachine_output .= '<div class="card-day">' . ticketmachine_i18n_date("d", $event->ev_date) . '</div>';
 					$ticketmachine_output .= '<div class="card-month">' . ticketmachine_i18n_date("M", $event->ev_date) . '</div>';
 				  $ticketmachine_output .= '</div>';
-				  $ticketmachine_output .= '<h5 class="card-title" title="' . $event->ev_name . '">' . $event->ev_name . '</h5>';
+				  $ticketmachine_output .= '<h5 class="card-title" title="' . esc_attr($event->ev_name) . '">' . esc_html($event->ev_name) . '</h5>';
 				  $ticketmachine_output .= '<div class="card-price"></div>';
 
 				  $ticketmachine_output .= '<div class="row pt-2">';
@@ -23,12 +23,12 @@
 					if(!empty($event->ev_location_name)){
 						$ticketmachine_output .= '<p class="card-text mt-0 px-2 pt-sm-1 pb-3 pb-sm-2 ellipsis">';
 							$ticketmachine_output .= '<i class="fas fa-map-marker-alt tm-icon"></i> &nbsp;';
-							$ticketmachine_output .= '<a aria-label="' . esc_attr("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '" href="' . $globals->map_query_url . urlencode($event->ev_location_name . " " . $event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country ) . '" target="_blank" title="' . esc_html__("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
+							$ticketmachine_output .= '<a aria-label="' . esc_attr("Event Location", 'ticketmachine') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($globals->map_query_url) . urlencode($event->ev_location_name . " " . $event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country ) . '" target="_blank" title="' . esc_html__("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
 						$ticketmachine_output .= '</p>';
 					}
 					$ticketmachine_output .= '</div>';
 					$ticketmachine_output .= '<div class="col-sm-4 col-md-5">';
-					  $ticketmachine_output .= '<a aria-label="' . esc_attr("To ticket selection for", 'ticketmachine') . ' ' . $event->ev_name  . '" href="/' . $globals->event_slug .'/?id=' . $event->id . '" class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . esc_html__("To ticket selection", 'ticketmachine') . '">';
+					  $ticketmachine_output .= '<a aria-label="' . esc_attr("To ticket selection for", 'ticketmachine') . ' ' . esc_html($event->ev_name)  . '" href="/' . esc_html($globals->event_slug) .'/?id=' . esc_html($event->id) . '" class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . esc_html__("To ticket selection", 'ticketmachine') . '">';
 						$ticketmachine_output .= esc_html__("More", 'ticketmachine') . ' &nbsp;<i class="fas fa-angle-right"></i>';
 					  $ticketmachine_output .= '</a>';
 					$ticketmachine_output .= '</div>';
