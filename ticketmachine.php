@@ -169,7 +169,7 @@
 				$atts[$key] = $value;
 			}
 			
-            $ticketmachine_output = "<div class='ticketmachine_page' data-locale=" . $globals->locale_short . ">";
+            $ticketmachine_output = "<div class='ticketmachine_page' data-locale=" . esc_html($globals->locale_short) . ">";
             
             if(isset($atts['page'])){
                 switch ($atts['page']) {
