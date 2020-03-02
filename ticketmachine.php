@@ -409,7 +409,7 @@
 	function ticketmachine_event_metadata() {
         if(isset($_GET['id']) && $_GET['id'] > 0){
             $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-            echo '<meta property="og:url" content="' . $actual_link . '" />';
+            echo '<meta property="og:url" content="' . esc_url($actual_link) . '" />';
             echo '<meta property="og:type" content="website" />';
         }
 	}
@@ -419,8 +419,8 @@
             $params = [ "id" => absint($_GET['id']) ];
             $event = ticketmachine_tmapi_event($params);
             if(isset($event->id)){            
-                echo '<meta property="og:title" content="' . $event->ev_name . '" />';
-                echo '<meta property="og:image" content="' . $event->event_img_url . '" />';
+                echo '<meta property="og:title" content="' . esc_html($event->ev_name) . '" />';
+                echo '<meta property="og:image" content="' . esc_url($event->event_img_url) . '" />';
                 echo '<meta property="og:type" content="website" />';
                 echo '<meta property="og:description" content="'. ticketmachine_i18n_date("d.m.Y", $event->ev_date) .' @ '. ticketmachine_i18n_date("H:i", $event->ev_date) .'" />';
             }
