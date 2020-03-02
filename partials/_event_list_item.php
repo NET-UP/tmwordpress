@@ -23,7 +23,7 @@
 					if(!empty($event->ev_location_name)){
 						$ticketmachine_output .= '<p class="card-text mt-0 px-2 pt-sm-1 pb-3 pb-sm-2 ellipsis">';
 							$ticketmachine_output .= '<i class="fas fa-map-marker-alt tm-icon"></i> &nbsp;';
-							$ticketmachine_output .= '<a aria-label="' . esc_attr("Event Location", 'ticketmachine') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($globals->map_query_url) . urlencode($event->ev_location_name . " " . $event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country ) . '" target="_blank" title="' . esc_html__("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
+							$ticketmachine_output .= '<a aria-label="' . esc_attr("Event Location", 'ticketmachine') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($globals->map_query_url . urlencode($event->ev_location_name . " " . $event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country )) . '" target="_blank" title="' . esc_html__("Event Location", 'ticketmachine') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
 						$ticketmachine_output .= '</p>';
 					}
 					$ticketmachine_output .= '</div>';

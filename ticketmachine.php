@@ -733,9 +733,9 @@
                 }
                 
                 $calendar[] = array(
-                    'id' =>$event->id,
-                    'title' => $event->ev_name,
-                    'url' => "/" . $globals->event_slug . "/?id=" . $event->id,
+                    'id' => esc_html($event->id),
+                    'title' => esc_html($event->ev_name),
+                    'url' => "/" . esc_html($globals->event_slug) . "/?id=" . esc_html($event->id),
                     'start' => $start,
                     'end' => $end,
                     'class' => "event-success",
