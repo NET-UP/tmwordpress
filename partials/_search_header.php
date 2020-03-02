@@ -9,7 +9,7 @@
             $params .= "q=" . $globals->search_query;
         }
 
-        if(isset($globals->tag)){
+        if(!empty($globals->tag)){
             $params .= "&tag=" . $globals->tag;
         }
 
