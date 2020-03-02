@@ -51,16 +51,6 @@
 						98
 					);
 				}
-				#add_submenu_page(
-				#	'ticketmachine_events',
-				#	esc_html__('Categories', 'ticketmachine'),
-				#	esc_html__('Categories', 'ticketmachine'),
-				#	'manage_options',
-				#	'ticketmachine_categories',
-				#	'ticketmachine_render_categories_page',
-				#	null,
-				#	99
-				#);
 			}else{
 				add_submenu_page(
 					'ticketmachine_event_manager',
