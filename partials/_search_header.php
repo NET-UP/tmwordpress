@@ -23,7 +23,7 @@
                                 <div class='col-12'>
                                     <div class='input-group'>
                                         <input name='q' class='form-control' placeholder='" . esc_attr("Search for events", "ticketmachine") . "' value='" . esc_attr($globals->search_query) . "'/>
-                                        <input type='hidden' name='tag' value='" . $globals->tag . "'/>
+                                        <input type='hidden' name='tag' value='" . esc_html($globals->tag) . "'/>
                                         <div class='input-group-append'>
                                             <button type='submit' alt='" . esc_attr("Submit search", "ticketmachine") . "' class='btn btn-secondary form-control'><i class='fas fa-search'></i></button>
                                         </div>
