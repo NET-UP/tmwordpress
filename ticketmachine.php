@@ -694,7 +694,9 @@
     }
 
 	function ticketmachine_calendar_callback() {
-        global $api, $globals, $wpdb;
+		global $api, $globals, $wpdb;
+		
+		print_r($_REQUEST);
 
         $events = ticketmachine_tmapi_events($_REQUEST);
             
