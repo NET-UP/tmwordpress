@@ -29,7 +29,7 @@
         $ticketmachine_output .= '</div>
 
                     <div class="card-text mt-3">
-                        '. esc_html(wpautop($event->ev_description)) .'
+                        '. wpautop($event->ev_description) .'
                     </div>
 
                     <div class="card-meta text-center pt-1 pb-1 hidden read-more-container">
