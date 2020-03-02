@@ -13,8 +13,6 @@
             $params .= "&tag=" . $globals->tag;
         }
 
-        print_r($params);
-
         $ticketmachine_output .= "<form class='mb-3'>";
 
             if(isset($_GET['display'])){
