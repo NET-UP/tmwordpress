@@ -8,7 +8,7 @@
 
         $ticketmachine_output = '<label class="mr-3 ml-1">' . esc_html__("Tags", "ticketmachine") . ':</label> 
                       <div class="card-meta-tag keyword">' . $globals->tag . ' 
-                        <a class="ml-2" href="' . str_replace($tag, "", $url) .'">
+                        <a class="ml-2" href="' . str_replace($tag, "", esc_url($url)) .'">
                             <i class="fa fa-times"></i>
                         </a>
                       </div>';
