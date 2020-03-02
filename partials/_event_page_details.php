@@ -25,9 +25,9 @@
                 $ticketmachine_output .=       '<div class="col-sm-6">
                                         <h3 class="d-inline-block">'. esc_html__("Event Location", "ticketmachine") .'</h3>
                                         <br>
-                                        <div>'. $event->ev_location_name .'</div>
-                                        <div>'. $event->event_location['city'] .' '. $event->event_location['zip'] .'</div>
-                                        <div>'. $event->event_location['street'] .' '. $event->event_location['house_number'] .'</div>
+                                        <div>'. esc_html($event->ev_location_name) .'</div>
+                                        <div>'. esc_html($event->event_location['city']) .' '. esc_html($event->event_location['zip']) .'</div>
+                                        <div>'. esc_html($event->event_location['street']) .' '. esc_html($event->event_location['house_number']) .'</div>
                                     </div>';
             }      
 
