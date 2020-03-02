@@ -97,11 +97,11 @@
 						$ticketmachine_output .= '<li class="media mx-0 mt-2">';
 
 						if(isset($atts['show_image']) && $atts['show_image'] > 0){
-							$ticketmachine_output .= '<a class="mr-3 media-img" href="/' . $globals->event_slug . '?id=' . $event->id . '" style="background-image:url('. $event->event_img_url .')"></a>';
+							$ticketmachine_output .= '<a class="mr-3 media-img" href="/' . esc_html($globals->event_slug) . '?id=' . $event->id . '" style="background-image:url('. $event->event_img_url .')"></a>';
 						}
 											
 							$ticketmachine_output .= '<div class="media-body">';
-							$ticketmachine_output .= '<h5 class="mt-0 mb-1"><a class="tm-list-title" href="/' . $globals->event_slug . '?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
+							$ticketmachine_output .= '<h5 class="mt-0 mb-1"><a class="tm-list-title" href="/' . esc_html($globals->event_slug) . '?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
 
 							if(isset($atts['show_date']) && $atts['show_date'] > 0){
 								$ticketmachine_output .= '
@@ -114,7 +114,7 @@
 									$atts['description_length'] = 15;
 								}
 								if(isset($atts['description_length'])){
-									$ticketmachine_output .= '<div>' . wp_trim_words(wp_strip_all_tags($event->ev_description), $atts['description_length'], "...") . '</div>';
+									$ticketmachine_output .= '<div>' . wp_trim_words(wp_strip_all_tags(esc_html($event->ev_description)), $atts['description_length'], "...") . '</div>';
 								}
 							}
 
