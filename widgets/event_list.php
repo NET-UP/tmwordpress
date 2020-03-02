@@ -43,7 +43,7 @@
                             if(!$atts['description_length']){
                                 $atts['description_length'] = 15;
                             }
-                            $ticketmachine_output .= '<div>' . wp_trim_words(wp_strip_all_tags($event->ev_description), $atts['description_length'], "...") . '</div>';
+                            $ticketmachine_output .= '<div>' . esc_html(wp_trim_words(wp_strip_all_tags($event->ev_description), $atts['description_length'], "...")) . '</div>';
                         }
 
                     $ticketmachine_output .= '</div>
