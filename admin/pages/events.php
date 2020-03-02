@@ -156,20 +156,20 @@ if( current_user_can('edit_posts') ) {
                 $view_text = esc_html__("View", 'ticketmachine');
             }
 
-            $ticketmachine_action_toggle_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s', $_REQUEST['page'],$toggle_action,$item['id']) ) );
-            $ticketmachine_action_copy_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_copy_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s', $_REQUEST['page'],'copy',$item['id']) ) );
+            $ticketmachine_action_toggle_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s', esc_html($_REQUEST['page']),$toggle_action,$item['id']) ) );
+            $ticketmachine_action_copy_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_copy_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s', esc_html($_REQUEST['page']),'copy',$item['id']) ) );
 
             //Build row actions
             $actions = array(
-                'edit'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.esc_html__('Edit', 'ticketmachine').'</a>',$_REQUEST['page'],'edit',$item['id']),
+                'edit'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.esc_html__('Edit', 'ticketmachine').'</a>',esc_html($_REQUEST['page']),'edit',$item['id']),
                 $toggle_type    => '<a href="' . $ticketmachine_action_toggle_url . '">'.$toggle_text.'</a>',
                 'copy'          => '<a href="' . $ticketmachine_action_copy_url . '">'.esc_html__('Copy', 'ticketmachine').'</a>',
-                'view'          => sprintf('<a target="_blank" href="/'. $globals->event_slug .'?id=%s">'.$view_text.'</a>',$item['id'])
+                'view'          => sprintf('<a target="_blank" href="/'. esc_html($globals->event_slug) .'?id=%s">'.$view_text.'</a>',$item['id'])
             );
             
             //Return the title contents
             return sprintf('%1$s %2$s',
-            /*$1%s*/ '<strong><a class="row-title" href="?page='.$_REQUEST['page'].'&action=edit&id='.$item['id'].'">'.$item['ev_name'].'</a> '.$additional_text.'</strong>',
+            /*$1%s*/ '<strong><a class="row-title" href="?page='.esc_html($_REQUEST['page']).'&action=edit&id='.$item['id'].'">'.esc_html($item['ev_name']).'</a> '.$additional_text.'</strong>',
             /*$2%s*/ $this->row_actions($actions)
             );
         }
