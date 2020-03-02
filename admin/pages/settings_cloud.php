@@ -50,6 +50,6 @@
     <?php esc_html_e("If your events are not showing - or you would like to change to a different account, you can synchronize your events here.", "ticketmachine"); ?>
 </p>
 
-<a class="button button-primary" style="font-size:14px" href="<?php echo $authorize_url; ?>">
+<a class="button button-primary" style="font-size:14px" href="<?php echo esc_url($authorize_url); ?>">
     <i class="fas fa-sync-alt"></i> &nbsp;<?php esc_html_e("Sync events", "ticketmachine"); ?>
 </a>

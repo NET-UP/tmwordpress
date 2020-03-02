@@ -61,7 +61,7 @@
 
             <h1 class="wp-heading-inline mr-3 mb-3">
                 TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php esc_html_e('Overview', 'ticketmachine') ?>
-                <a target="_blank" href="/<?php echo $globals->events_slug; ?>" class="button button-secondary ml-2"><?php esc_html_e("Go to live webpage", "ticketmachine"); ?></a>
+                <a target="_blank" href="/<?php echo esc_html($globals->events_slug); ?>" class="button button-secondary ml-2"><?php esc_html_e("Go to live webpage", "ticketmachine"); ?></a>
             </h1>
 
             <div class="row">

@@ -44,7 +44,7 @@
                         $authorize_url .= http_build_query($api->auth->data);
                     ?>
                     
-                    <a class="button button-primary mt-4 px-3 py-md-1" style="font-size:14px" href="<?php echo $authorize_url; ?>">
+                    <a class="button button-primary mt-4 px-3 py-md-1" style="font-size:14px" href="<?php echo esc_url($authorize_url); ?>">
                         <?php esc_html_e("Connect with TicketMachine", "ticketmachine"); ?>
                     </a>
 
