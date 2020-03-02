@@ -67,7 +67,7 @@
                                                     }else{
                                                         $ticketmachine_output .= "btn-secondary"; 
                                                     }
-                                                $ticketmachine_output .="' title='" . esc_attr("Show events in calendar", "ticketmachine") . "' aria-label='" . esc_attr("Show events in calendar", "ticketmachine") . "' href='" . str_replace("?&", "?", esc_url($globals->current_url . $params . "&display=calendar")) . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
+                                                $ticketmachine_output .="' title='" . esc_attr("Show events in calendar", "ticketmachine") . "' aria-label='" . esc_attr("Show events in calendar", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params . "&display=calendar") . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
                                             }
 
                                         $ticketmachine_output .= "</div>";
