@@ -53,16 +53,16 @@
             echo "<h1 class='wp-heading-inline'>TicketMachine > " . esc_html__('Create event', 'ticketmachine') . "</h1>";
         }
     ?>
-    <form name="event" action="?page=ticketmachine_events&action=save<?php if(!empty($event->id)){ echo "&id=" . absint($_GET['id']); } ?>" method="post" id="event">
+    <form name="event" action="?page=ticketmachine_events&action=save<?php if(!empty($event->id)){ echo "&id=" . esc_attr(absint($_GET['id'])); } ?>" method="post" id="event">
 		<?php wp_nonce_field( 'ticketmachine_action_save_event', 'ticketmachine_event_edit_form_nonce' ); ?>
-        <input type="hidden" name="organizer_id" value="<?php echo $globals->organizer_id; ?>">
+        <input type="hidden" name="organizer_id" value="<?php echo esc_attr($globals->organizer_id); ?>">
         <input type="hidden" name="rules[sale_active]" value="0">
         <input type="hidden" name="rules[prices_shown]" value="0">
         <input type="hidden" name="vat_id" value="1">
         <input type="hidden" name="rules[shown]" value="1">
         
         <?php if(!empty($event->id)){ ?>
-            <input type="hidden" name="id" value="<?php echo $event->id; ?>">
+            <input type="hidden" name="id" value="<?php echo esc_attr($event->id); ?>">
         <?php } ?>
 
         <div id="poststuff">
@@ -71,7 +71,7 @@
                     <div id="titlediv">
                         <div id="titlewrap">
                             <label class="screen-reader-text" id="post-name-prompt-text" for="ev_name"><?php esc_html_e('Enter the event name', 'ticketmachine') ?></label>
-                            <input type="text" placeholder="<?php esc_attr('Event Name', 'ticketmachine') ?>" name="ev_name" size="30" id="title" spellcheck="true" autocomplete="off" value="<?php echo $event->ev_name; ?>">
+                            <input type="text" placeholder="<?php esc_attr('Event Name', 'ticketmachine') ?>" name="ev_name" size="30" id="title" spellcheck="true" autocomplete="off" value="<?php echo esc_attr($event->ev_name); ?>">
                         </div>
                     </div>
 
@@ -102,7 +102,7 @@
                                             </div>
                                             <div class="misc-pub-section misc-pub-section misc-pub-visibility">
                                                 <label for="event_edit_locationname"><?php esc_html_e('Hint Text','ticketmachine'); ?></label>
-                                                <input type="text" name="rules[badge]" class="fullw-input" value="<?php echo $event->rules['badge']; ?>"/>
+                                                <input type="text" name="rules[badge]" class="fullw-input" value="<?php echo esc_attr($event->rules['badge']); ?>"/>
                                             </div>
                                         </div>
                                     </div>
@@ -125,7 +125,7 @@
                                     <img id='image-preview' src='<?php echo $event->event_img_url; ?>' width='100' height='100' style='max-height: 500px; width: 100%;'>
                                 </div>
                                 <input id="upload_image_button" type="button" class="button" style="display:block;width:100%;" value="<?php esc_attr_e( 'Add Image', 'ticketmachine' ); ?>" />
-                                <input type='hidden' name='event_img_url' id='image_attachment_id' value='<?php echo $event->event_img_url; ?>'>
+                                <input type='hidden' name='event_img_url' id='image_attachment_id' value='<?php echo esc_attr($event->event_img_url); ?>'>
                             </div>
                         </div>
                         <div id="tagsdiv-post_tag" class="postbox">
@@ -138,7 +138,7 @@
                                         <div class="ajaxtag hide-if-no-js">
                                             <label class="screen-reader-text" for="new-tag-post_tag"><?php esc_html_e('Create new tag', 'ticketmachine') ?></label>
                                             <input type="text" class="form-control" 
-                                                value="<?php foreach($event->tags as $tag) { echo $tag.","; }?>" 
+                                                value="<?php foreach($event->tags as $tag) { echo esc_attr($tag).","; }?>" 
                                                 name="tags" data-role="tagsinput" >
                                         </div>
                                         <p class="howto" id="new-tag-post_tag-desc"><?php esc_html_e('Seperate tags with comma', 'ticketmachine') ?>.</p>
@@ -158,33 +158,33 @@
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="event_edit_locationname"><?php esc_html_e('Event Location', 'ticketmachine') ?></label>
-                                    <input id="event_location_name" name="ev_location_name" type="text" class="form-control" value="<?php echo $event->ev_location_name; ?>">
+                                    <input id="event_location_name" name="ev_location_name" type="text" class="form-control" value="<?php echo esc_attr($event->ev_location_name); ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-8 form-group">
                                     <label for="event_edit_strasse"><?php esc_html_e('Street', 'ticketmachine') ?></label>
-                                    <input id="event_edit_strasse" name="event_location[street]" type="text" class="form-control" value="<?php echo $event->event_location['street']; ?>">
+                                    <input id="event_edit_strasse" name="event_location[street]" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['street']); ?>">
                                 </div>
                                 <div class="col-sm-4 form-group">
                                     <label for="house_number"><?php esc_html_e('House No.', 'ticketmachine') ?></label>
-                                    <input id="event_edit_hausnr" name="event_location[house_number]" type="text" class="form-control" value="<?php echo $event->event_location['house_number']; ?>">
+                                    <input id="event_edit_hausnr" name="event_location[house_number]" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['house_number']); ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-4 form-group">
                                     <label for="event_edit_plz"><?php esc_html_e('Zipcode', 'ticketmachine') ?></label>
-                                    <input id="event_edit_plz" name="event_location[zip]" type="text" class="form-control" value="<?php echo $event->event_location['zip']; ?>">
+                                    <input id="event_edit_plz" name="event_location[zip]" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['zip']); ?>">
                                 </div>
                                 <div class="col-sm-8 form-group">
                                     <label for="event_edit_ort"><?php esc_html_e('City', 'ticketmachine') ?></label>
-                                    <input id="event_edit_ort" name="event_location[city]" type="text" class="form-control" value="<?php echo $event->event_location['city']; ?>">
+                                    <input id="event_edit_ort" name="event_location[city]" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['city']); ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="event_edit_land"><?php esc_html_e('Country', 'ticketmachine') ?></label>
-                                    <input id="event_edit_land" name="event_location[country]" type="text" class="form-control" value="<?php echo $event->event_location['country']; ?>">
+                                    <input id="event_edit_land" name="event_location[country]" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['country']); ?>">
                                 </div>
                             </div>
                         </div>
