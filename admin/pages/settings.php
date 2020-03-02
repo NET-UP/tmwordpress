@@ -8,7 +8,7 @@
     $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
     $ticketmachine_config = $ticketmachine_config[0];
 	
-	$active_tab = isset( $_GET[ 'tab' ] ) ? sanitize_text_field($_GET[ 'tab' ]) : 'design';
+	$active_tab = isset( $_GET[ 'tab' ] ) ? esc_html(sanitize_text_field($_GET[ 'tab' ])) : 'design';
 
 	if( current_user_can( 'manage_options' ) ) {	
 ?>
