@@ -47,7 +47,7 @@
                                                     }else{
                                                         $ticketmachine_output .= "btn-secondary"; 
                                                     }
-                                                $ticketmachine_output .="' title='" . esc_attr("Show events as boxes", "ticketmachine") . "' aria-label='" . esc_attr("Show events as boxes", "ticketmachine") . "' href='" . str_replace("?&", "?", $globals->current_url . $params) . "'><i class='fas fa-th'></i></i></a>";
+                                                $ticketmachine_output .="' title='" . esc_attr("Show events as boxes", "ticketmachine") . "' aria-label='" . esc_attr("Show events as boxes", "ticketmachine") . "' href='" . esc_url(str_replace("?&", "?", $globals->current_url . $params)) . "'><i class='fas fa-th'></i></i></a>";
                                             }
                                         
                                             if($globals->show_list){
@@ -57,7 +57,7 @@
                                                     }else{
                                                         $ticketmachine_output .= "btn-secondary"; 
                                                     }
-                                                $ticketmachine_output .="' title='" . esc_attr("Show events as list", "ticketmachine") . "' aria-label='" . esc_attr("Show events as list", "ticketmachine") . "' href='" . str_replace("?&", "?", esc_url($globals->current_url . $params . "&display=list")) . "'><i class='fas fa-list'></i></a>";
+                                                $ticketmachine_output .="' title='" . esc_attr("Show events as list", "ticketmachine") . "' aria-label='" . esc_attr("Show events as list", "ticketmachine") . "' href='" . esc_url(str_replace("?&", "?", $globals->current_url . $params . "&display=list")) . "'><i class='fas fa-list'></i></a>";
                                             }
 
                                             if($globals->show_calendar){
