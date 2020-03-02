@@ -90,7 +90,7 @@
                 <p>
                     <?php echo __('Event saved', 'ticketmachine'); ?>!
                     &nbsp;-&nbsp;
-                    <a target="_blank" href="/<?php echo $globals->event_slug; ?>?id=<?php echo $response->id; ?>">
+                    <a target="_blank" href="/<?php echo esc_html($globals->event_slug); ?>?id=<?php echo esc_html($response->id); ?>">
                         <?php 
                             if($response->approved == 1){
                                 echo __('View', 'ticketmachine'); 

@@ -65,7 +65,7 @@
                         $ticketmachine_action_toggle_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url( 'admin.php?page=ticketmachine_events&action=deactivate&id='.$response->id ) );
                     ?>!
                     &nbsp;-&nbsp;
-                    <a href="<?php echo $ticketmachine_action_toggle_url; ?>"><?php esc_html_e('Undo', 'ticketmachine'); ?></a>
+                    <a href="<?php echo esc_url($ticketmachine_action_toggle_url); ?>"><?php esc_html_e('Undo', 'ticketmachine'); ?></a>
                 </p>
             </div>
         <?php 
