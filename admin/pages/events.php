@@ -283,9 +283,9 @@ if( current_user_can('edit_posts') ) {
 
         function search_box( $text, $input_id ) { ?>
             <p class="search-box">
-                <label class="screen-reader-text" for="<?php echo $input_id ?>"><?php echo $text; ?>:</label>
-                <input type="search" id="<?php echo $input_id ?>" name="s" value="<?php _admin_search_query(); ?>" />
-                <?php submit_button( $text, 'button', false, false, array('id' => 'search-submit') ); ?>
+                <label class="screen-reader-text" for="<?php echo esc_attr($input_id)?>"><?php echo esc_attr($text); ?>:</label>
+                <input type="search" id="<?php echo esc_attr($input_id) ?>" name="s" value="<?php _admin_search_query(); ?>" />
+                <?php submit_button( esc_attr($text), 'button', false, false, array('id' => 'search-submit') ); ?>
             </p>
         <?php }
 
@@ -505,7 +505,7 @@ if( current_user_can('edit_posts') ) {
                                 </li>
                             </ul>
                             <!-- For plugins, we also need to ensure that the form posts back to our current page -->
-                            <input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
+                            <input type="hidden" name="page" value="<?php echo esc_attr($_REQUEST['page']) ?>" />
                             <!-- Now we can render the completed list table -->
                             <div class="mt-3 float-right">
                                 <?php $EventListTable->search_box(esc_html__('Search', 'ticketmachine'), 'search'); ?>
