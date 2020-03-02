@@ -3,14 +3,27 @@ var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
+var urlParams;
+(window.onpopstate = function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+})();
+
 jQuery("#ticketmachine_spinner").show();
 var locale= jQuery(".ticketmachine_page").data("locale");
 var ev_url= jQuery("#ticketmachine_ev_url").val();
 var data = {
 	action: 'ticketmachine_calendar',
-	q: '',
+	q: urlParams["q"],
 	sort: 'ev_date',
-	tag: '',
+	tag: urlParams["tag"],
 	approved: 1,
 };
 jQuery.getJSON(ticketmachine_calendar_data.ajaxurl, data).success(function(data) {
