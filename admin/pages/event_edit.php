@@ -122,7 +122,7 @@
                             </h2>
                             <div class="inside">
                                 <div class='image-preview-wrapper'>
-                                    <img id='image-preview' src='<?php echo $event->event_img_url; ?>' width='100' height='100' style='max-height: 500px; width: 100%;'>
+                                    <img id='image-preview' src='<?php echo esc_url($event->event_img_url); ?>' width='100' height='100' style='max-height: 500px; width: 100%;'>
                                 </div>
                                 <input id="upload_image_button" type="button" class="button" style="display:block;width:100%;" value="<?php esc_attr_e( 'Add Image', 'ticketmachine' ); ?>" />
                                 <input type='hidden' name='event_img_url' id='image_attachment_id' value='<?php echo esc_attr($event->event_img_url); ?>'>
@@ -201,10 +201,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="entrytime[date]" class="form-control date entrytime" value="<?php echo ticketmachine_i18n_date("d.m.Y", $event->entrytime); ?>">
+                                    <input type="text" name="entrytime[date]" class="form-control date entrytime" value="<?php echo esc_attr(ticketmachine_i18n_date("d.m.Y", $event->entrytime)); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="entrytime[time]" class="form-control time" value="<?php echo ticketmachine_i18n_date("H:i", $event->entrytime); ?>">
+                                    <input type="text" name="entrytime[time]" class="form-control time" value="<?php echo esc_attr(ticketmachine_i18n_date("H:i", $event->entrytime)); ?>">
                                 </div>
                             </div>
                             <div>
@@ -212,10 +212,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo ticketmachine_i18n_date("d.m.Y", $event->ev_date); ?>">
+                                    <input type="text" name="ev_date[date]" class="form-control date starttime" value="<?php echo esc_attr(ticketmachine_i18n_date("d.m.Y", $event->ev_date)); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo ticketmachine_i18n_date("H:i", $event->ev_date); ?>">
+                                    <input type="text" name="ev_date[time]" class="form-control time" value="<?php echo esc_attr(ticketmachine_i18n_date("H:i", $event->ev_date)); ?>">
                                 </div>
                             </div>
                             <div>
@@ -223,10 +223,10 @@
                             </div>
                             <div class="row">
                                 <div class="input-group col-8">
-                                    <input type="text" name="endtime[date]" class="form-control date endtime" value="<?php echo ticketmachine_i18n_date("d.m.Y", $event->endtime); ?>">
+                                    <input type="text" name="endtime[date]" class="form-control date endtime" value="<?php echo esc_attr(ticketmachine_i18n_date("d.m.Y", $event->endtime)); ?>">
                                 </div>
                                 <div class="input-group col-4">
-                                    <input type="text" name="endtime[time]" class="form-control time" value="<?php echo ticketmachine_i18n_date("H:i", $event->endtime); ?>">
+                                    <input type="text" name="endtime[time]" class="form-control time" value="<?php echo esc_attr(ticketmachine_i18n_date("H:i", $event->endtime)); ?>">
                                 </div>
                             </div>
                         </div>
@@ -266,7 +266,7 @@
         // Uploading files
         var file_frame;
         var wp_media_post_id = wp.media.model.settings.post.id; // Store the old id
-        var set_to_post_id = <?php echo $my_saved_attachment_post_id; ?>; // Set this
+        var set_to_post_id = <?php echo esc_attr($my_saved_attachment_post_id); ?>; // Set this
         jQuery('#upload_image_button').on('click', function( event ){
             event.preventDefault();
             // If the media frame already exists, reopen it.
