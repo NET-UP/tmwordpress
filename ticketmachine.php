@@ -8,6 +8,8 @@
     Requires at least:  4.0
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
+	Text Domain: 		ticketmachine
+	Domain Path: 		/languages
 	*/
     add_action( 'wp_enqueue_scripts', 'ticketmachine_register_core_files' );
     add_action( 'wp_enqueue_scripts', 'ticketmachine_register_calendar_files' );
@@ -341,7 +343,7 @@
                     api_access_token varchar(64) DEFAULT '' NOT NULL,
                     api_refresh_last int(11) DEFAULT " . time() . " NOT NULL,
                     api_refresh_interval int(11) DEFAULT 3600 NOT NULL,
-                    api_environment varchar(64) DEFAULT 'staging' NOT NULL,
+                    api_environment varchar(64) DEFAULT 'shop' NOT NULL,
                     show_list bit(1) DEFAULT 1 NOT NULL,
                     show_boxes bit(1) DEFAULT 1 NOT NULL,
                     show_calendar bit(1) DEFAULT 1 NOT NULL,
