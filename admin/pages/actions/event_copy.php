@@ -36,19 +36,19 @@
             </div>
         <?php }elseif(empty($ticketmachine_json) || !empty($errors)){ ?>
             <div class="notice notice-error is-dismissable">
-                <p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
+                <p><?php esc_html_e('Something went wrong', 'ticketmachine-event-manager'); ?>!</p>
             </div>
         <?php }else{ ?>
             <div class="notice notice-success is-dismissable">
                 <p>
-                    <?php esc_html_e('Event successfully copied', 'ticketmachine'); ?>!
+                    <?php esc_html_e('Event successfully copied', 'ticketmachine-event-manager'); ?>!
                     &nbsp;-&nbsp;
                     <a target="_blank" href="/<?php echo esc_html($globals->event_slug); ?>?id=<?php echo esc_html($response->id); ?>">
                         <?php 
                             if($response->approved == 1){
-                                esc_html_e('View', 'ticketmachine'); 
+                                esc_html_e('View', 'ticketmachine-event-manager'); 
                             }else{
-                                esc_html_e('Preview', 'ticketmachine'); 
+                                esc_html_e('Preview', 'ticketmachine-event-manager'); 
                             }
                         ?>
                     </a>

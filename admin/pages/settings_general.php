@@ -32,14 +32,14 @@
 				);
 				?>
 				<div class="notice notice-success is-dismissable">
-					<p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
+					<p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
 				</div>
 				<?php
 				$ticketmachine_config = $post;
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">
-					<p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
+					<p><?php esc_html_e('Something went wrong', 'ticketmachine-event-manager'); ?>!</p>
 				</div>
 				<?php
 			}
@@ -50,7 +50,7 @@
 <table class="form-table">
 	<tbody>
 		<tr>
-			<th><label><?php esc_html_e('Events overview page', 'ticketmachine'); ?></label></th>
+			<th><label><?php esc_html_e('Events overview page', 'ticketmachine-event-manager'); ?></label></th>
 			<td>
 				<select name="events_slug_id">
 					<?php
@@ -65,7 +65,7 @@
 			</td>
 		</tr>
 		<tr>
-			<th><label><?php esc_html_e('Event detail page', 'ticketmachine'); ?></label></th>
+			<th><label><?php esc_html_e('Event detail page', 'ticketmachine-event-manager'); ?></label></th>
 			<td>
 				<select name="event_slug_id">
 					<?php

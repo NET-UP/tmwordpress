@@ -36,11 +36,11 @@
             </div>
         <?php }elseif(empty($ticketmachine_json) || !empty($errors)){ ?>
             <div class="notice notice-error is-dismissable">
-                <p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
+                <p><?php esc_html_e('Something went wrong', 'ticketmachine-event-manager'); ?>!</p>
             </div>
         <?php }else{ ?>
             <div class="notice notice-success is-dismissable">
-                <p><?php esc_html_e('Event successfully deleted', 'ticketmachine'); ?>!</p>
+                <p><?php esc_html_e('Event successfully deleted', 'ticketmachine-event-manager'); ?>!</p>
             </div>
 
         <?php 

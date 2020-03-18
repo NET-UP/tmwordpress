@@ -19,29 +19,29 @@
 		<div class="row">
 			<div class="col-xl-9">
 				
-				<h1 class="wp-heading-inline mr-3 mb-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php esc_html_e('Settings', 'ticketmachine') ?></h1>
+				<h1 class="wp-heading-inline mr-3 mb-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php esc_html_e('Settings', 'ticketmachine-event-manager') ?></h1>
 			
 				<h2 class="nav-tab-wrapper">
 					<a href="?page=ticketmachine_settings&tab=design" class="nav-tab <?php echo $active_tab == 'design' ? 'nav-tab-active' : ''; ?>">
-						<?php esc_html_e('Design', 'ticketmachine'); ?>
+						<?php esc_html_e('Design', 'ticketmachine-event-manager'); ?>
 					</a>
 					<a href="?page=ticketmachine_settings&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>">
-						<?php esc_html_e('General', 'ticketmachine'); ?>
+						<?php esc_html_e('General', 'ticketmachine-event-manager'); ?>
 					</a>
 					<a href="?page=ticketmachine_settings&tab=boxes" class="nav-tab <?php echo $active_tab == 'boxes' ? 'nav-tab-active' : ''; ?>">
-						<?php esc_html_e('Box View', 'ticketmachine'); ?>
+						<?php esc_html_e('Box View', 'ticketmachine-event-manager'); ?>
 					</a>
 					<a href="?page=ticketmachine_settings&tab=list" class="nav-tab <?php echo $active_tab == 'list' ? 'nav-tab-active' : ''; ?>">
-						<?php esc_html_e('List View', 'ticketmachine'); ?>
+						<?php esc_html_e('List View', 'ticketmachine-event-manager'); ?>
 					</a>
 					<a href="?page=ticketmachine_settings&tab=calendar" class="nav-tab <?php echo $active_tab == 'calendar' ? 'nav-tab-active' : ''; ?>">
-						<?php esc_html_e('Calendar View', 'ticketmachine'); ?>
+						<?php esc_html_e('Calendar View', 'ticketmachine-event-manager'); ?>
 					</a>
 					<a href="?page=ticketmachine_settings&tab=detail" class="nav-tab <?php echo $active_tab == 'detail' ? 'nav-tab-active' : ''; ?>">
-						<?php esc_html_e('Details Page', 'ticketmachine'); ?>
+						<?php esc_html_e('Details Page', 'ticketmachine-event-manager'); ?>
 					</a>
 					<a href="?page=ticketmachine_settings&tab=cloud" class="nav-tab <?php echo $active_tab == 'cloud' ? 'nav-tab-active' : ''; ?>">
-						<?php esc_html_e('Cloud', 'ticketmachine'); ?>
+						<?php esc_html_e('Cloud', 'ticketmachine-event-manager'); ?>
 					</a>
 				</h2>
 

@@ -51,21 +51,21 @@
             </div>
         <?php }elseif(empty($ticketmachine_json) || !empty($errors)){ ?>
             <div class="notice notice-error is-dismissable">
-                <p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
+                <p><?php esc_html_e('Something went wrong', 'ticketmachine-event-manager'); ?>!</p>
             </div>
         <?php }else{ ?>
             <div class="notice notice-success is-dismissable">
                 <p>
                     <?php 
                         if($response->approved == 1){
-                            esc_html_e('Published', 'ticketmachine'); 
+                            esc_html_e('Published', 'ticketmachine-event-manager'); 
                         }else{
-                            esc_html_e('Deactivated', 'ticketmachine'); 
+                            esc_html_e('Deactivated', 'ticketmachine-event-manager'); 
                         }
                         $ticketmachine_action_toggle_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url( 'admin.php?page=ticketmachine_events&action=deactivate&id='.$response->id ) );
                     ?>!
                     &nbsp;-&nbsp;
-                    <a href="<?php echo esc_url($ticketmachine_action_toggle_url); ?>"><?php esc_html_e('Undo', 'ticketmachine'); ?></a>
+                    <a href="<?php echo esc_url($ticketmachine_action_toggle_url); ?>"><?php esc_html_e('Undo', 'ticketmachine-event-manager'); ?></a>
                 </p>
             </div>
         <?php 
