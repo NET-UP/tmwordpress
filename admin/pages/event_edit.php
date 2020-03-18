@@ -11,7 +11,7 @@
         ),
         "approved" => 1,
         "ev_name" => "", 
-        "ev_description" => esc_html__('Event Description', 'ticketmachine'),
+        "ev_description" => esc_html__('Event Description', 'ticketmachine-event-manager'),
         "event_img_url" => str_replace("/admin/pages", "", plugin_dir_url(__FILE__)) . 'assets/img/none.png',
         
         "ev_location_name" => "",
