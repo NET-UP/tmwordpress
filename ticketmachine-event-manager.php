@@ -5,10 +5,10 @@
     Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
 	Version:            1.0.0
-    Requires at least:  4.0
+    Requires at least:  4.5
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
-	Text Domain: 		ticketmachine
+	Text Domain: 		ticketmachine-event-manager
 	Domain Path: 		/languages
 	*/
     add_action( 'wp_enqueue_scripts', 'ticketmachine_register_core_files' );
@@ -16,7 +16,7 @@
 
     add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
     function ticketmachine_wpdocs_load_textdomain() {
-        load_plugin_textdomain( 'ticketmachine', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+        load_plugin_textdomain( 'ticketmachine-event-manager', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
     }
 
     if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
