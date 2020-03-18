@@ -22,7 +22,7 @@
                         <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("H:i", $event->ev_date) .'</div>';
 
                         if(isset($event->has_location) && $event->has_location == 1){                       
-                             $ticketmachine_output .= '<div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; <a aria-label="' . esc_attr("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location['street'] . " " . $event->event_location["house_number"] . " " . $event->event_location["zip"] . " " . $event->event_location["city"] . " " . $event->event_location["country"] )) . '" target="_blank" title="' . esc_attr("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '">' . esc_html($event->ev_location_name) . '</a> </div>';
+                             $ticketmachine_output .= '<div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; <a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location['street'] . " " . $event->event_location["house_number"] . " " . $event->event_location["zip"] . " " . $event->event_location["city"] . " " . $event->event_location["country"] )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '">' . esc_html($event->ev_location_name) . '</a> </div>';
                         }
                        
 
@@ -33,7 +33,7 @@
                     </div>
 
                     <div class="card-meta text-center pt-1 pb-1 hidden read-more-container">
-                        <button title="' . esc_attr("Read More", "ticketmachine-event-manager") . '" class="btn btn-sm btn-secondary read-more" style="border-radius: 20px;">
+                        <button title="' . esc_attr__("Read More", "ticketmachine-event-manager") . '" class="btn btn-sm btn-secondary read-more" style="border-radius: 20px;">
                             <i class="fas fa-chevron-down"></i>
                         </button>
                     </div>
