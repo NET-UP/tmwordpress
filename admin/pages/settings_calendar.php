@@ -29,14 +29,14 @@
 				);
 				?>
 				<div class="notice notice-success is-dismissable">
-					<p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
+					<p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
 				</div>
 				<?php
 				$ticketmachine_config = $post;
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">
-					<p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
+					<p><?php esc_html_e('Something went wrong', 'ticketmachine-event-manager'); ?>!</p>
 				</div>
 				<?php
 			}

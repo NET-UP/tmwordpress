@@ -141,19 +141,19 @@ if( current_user_can('edit_posts') ) {
             $additional_text = "";
             if($item['approved'] == 0){
                 $toggle_type = "publish";
-                $toggle_text = esc_html__("Publish", 'ticketmachine');
+                $toggle_text = esc_html__("Publish", 'ticketmachine-event-manager');
                 $toggle_action = "publish";
-                $additional_text .= " — <span class='post-state'>" . esc_html__('Draft' , 'ticketmachine') . "</span>";
+                $additional_text .= " — <span class='post-state'>" . esc_html__('Draft' , 'ticketmachine-event-manager') . "</span>";
             }else{
                 $toggle_type = "delete";
-                $toggle_text = esc_html__("Deactivate", 'ticketmachine');
+                $toggle_text = esc_html__("Deactivate", 'ticketmachine-event-manager');
                 $toggle_action = "deactivate";
             }
 
             if($item['approved'] == 0){
-                $view_text = esc_html__("Preview", 'ticketmachine');
+                $view_text = esc_html__("Preview", 'ticketmachine-event-manager');
             }else{
-                $view_text = esc_html__("View", 'ticketmachine');
+                $view_text = esc_html__("View", 'ticketmachine-event-manager');
             }
 
             $ticketmachine_action_toggle_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s', esc_html($_REQUEST['page']),$toggle_action,esc_attr($item['id'])) ) );
@@ -161,9 +161,9 @@ if( current_user_can('edit_posts') ) {
 
             //Build row actions
             $actions = array(
-                'edit'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.esc_html__('Edit', 'ticketmachine').'</a>',esc_html($_REQUEST['page']),'edit',esc_attr($item['id'])),
+                'edit'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.esc_html__('Edit', 'ticketmachine-event-manager').'</a>',esc_html($_REQUEST['page']),'edit',esc_attr($item['id'])),
                 $toggle_type    => '<a href="' . $ticketmachine_action_toggle_url . '">'.$toggle_text.'</a>',
-                'copy'          => '<a href="' . $ticketmachine_action_copy_url . '">'.esc_html__('Copy', 'ticketmachine').'</a>',
+                'copy'          => '<a href="' . $ticketmachine_action_copy_url . '">'.esc_html__('Copy', 'ticketmachine-event-manager').'</a>',
                 'view'          => sprintf('<a target="_blank" href="/'. esc_html($globals->event_slug) .'?id=%s">'.$view_text.'</a>',esc_attr($item['id']))
             );
             
@@ -209,10 +209,10 @@ if( current_user_can('edit_posts') ) {
         function get_columns(){
             $columns = array(
                 //'cb'       => '<input type="checkbox" />',
-                'ev_name'  => esc_html__('Name', 'ticketmachine'),
-                'tags'     => esc_html__('Tags', 'ticketmachine'),
-                'ev_date'  => esc_html__('Start date', 'ticketmachine'),
-                'endtime'  => esc_html__('End date', 'ticketmachine')
+                'ev_name'  => esc_html__('Name', 'ticketmachine-event-manager'),
+                'tags'     => esc_html__('Tags', 'ticketmachine-event-manager'),
+                'ev_date'  => esc_html__('Start date', 'ticketmachine-event-manager'),
+                'endtime'  => esc_html__('End date', 'ticketmachine-event-manager')
             );
             return $columns;
         }
@@ -472,8 +472,8 @@ if( current_user_can('edit_posts') ) {
                     <div class="col-xl-9">
                         
                         <h1 class="wp-heading-inline mr-3 mb-3 mb-md-0">
-                            TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php esc_html_e('Events', 'ticketmachine'); ?>
-                            <a href="?page=ticketmachine_events&action=edit" class="button button-secondary ml-2 mb-3 mb-md-0"><?php esc_html_e('Add','ticketmachine'); ?></a>
+                            TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php esc_html_e('Events', 'ticketmachine-event-manager'); ?>
+                            <a href="?page=ticketmachine_events&action=edit" class="button button-secondary ml-2 mb-3 mb-md-0"><?php esc_html_e('Add','ticketmachine-event-manager'); ?></a>
                         </h1>
                             
                         <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->
@@ -481,25 +481,25 @@ if( current_user_can('edit_posts') ) {
                             <ul class="subsubsub">
                                 <li class="all">
                                     <a href="<?php echo admin_url('admin.php?page=ticketmachine_events'); ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
-                                        <?php esc_html_e('All', 'ticketmachine'); ?> 
+                                        <?php esc_html_e('All', 'ticketmachine-event-manager'); ?> 
                                         <span class="count"></span>
                                     </a> |
                                 </li>
                                 <li class="upcoming">
                                     <a href="<?php echo admin_url('admin.php?page=ticketmachine_events&status=upcoming'); ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming"){ ?>class="current"<?php } ?>>
-                                        <?php esc_html_e('Upcoming', 'ticketmachine'); ?> 
+                                        <?php esc_html_e('Upcoming', 'ticketmachine-event-manager'); ?> 
                                         <span class="count"></span>
                                     </a> |
                                 </li>
                                 <li class="publish">
                                     <a href="<?php echo admin_url('admin.php?page=ticketmachine_events&status=published'); ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "published"){ ?>class="current"<?php } ?>>
-                                        <?php esc_html_e('Published', 'ticketmachine'); ?> 
+                                        <?php esc_html_e('Published', 'ticketmachine-event-manager'); ?> 
                                         <span class="count"></span> <!-- TO DO add logic -->
                                     </a> |
                                 </li>
                                 <li class="draft">
                                     <a href="<?php echo admin_url('admin.php?page=ticketmachine_events&status=drafts'); ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "drafts"){ ?>class="current"<?php } ?>>
-                                        <?php esc_html_e('Drafts', 'ticketmachine'); ?> 
+                                        <?php esc_html_e('Drafts', 'ticketmachine-event-manager'); ?> 
                                         <span class="count"></span> <!-- TO DO add logic -->
                                     </a>
                                 </li>
@@ -508,7 +508,7 @@ if( current_user_can('edit_posts') ) {
                             <input type="hidden" name="page" value="<?php echo esc_attr($_REQUEST['page']) ?>" />
                             <!-- Now we can render the completed list table -->
                             <div class="mt-3 float-right">
-                                <?php $EventListTable->search_box(esc_html__('Search', 'ticketmachine'), 'search'); ?>
+                                <?php $EventListTable->search_box(esc_html__('Search', 'ticketmachine-event-manager'), 'search'); ?>
                             </div>
                             <!--Fetch, prepare, sort, and filter our data... -->
                             <?php $EventListTable->prepare_items(); ?>

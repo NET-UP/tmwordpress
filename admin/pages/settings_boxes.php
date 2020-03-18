@@ -34,14 +34,14 @@
 				);
 				?>
 				<div class="notice notice-success is-dismissable">
-					<p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
+					<p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
 				</div>
 				<?php
 				$ticketmachine_config = $post;
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">
-					<p><?php esc_html_e('Something went wrong', 'ticketmachine'); ?>!</p>
+					<p><?php esc_html_e('Something went wrong', 'ticketmachine-event-manager'); ?>!</p>
 				</div>
 				<?php
 			}
@@ -52,16 +52,16 @@
 <table class="form-table">
 	<tbody>
 		<tr>
-			<th><label><?php esc_html_e('Activate Boxes?', 'ticketmachine'); ?></label></th>
+			<th><label><?php esc_html_e('Activate Boxes?', 'ticketmachine-event-manager'); ?></label></th>
             <td><input name="show_boxes" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_boxes){ ?>checked<?php } ?>/></td>
 		</tr>
 		<tr>
-			<th><label><?php esc_html_e('Group events by', 'ticketmachine'); ?></label></th>
+			<th><label><?php esc_html_e('Group events by', 'ticketmachine-event-manager'); ?></label></th>
             <td>
 				<select name="event_grouping">
-					<option value="Month" <?php if($ticketmachine_config->event_grouping == "Month"){ ?>selected<?php } ?>><?php esc_html_e('Month', 'ticketmachine'); ?></option>
-					<option value="Year" <?php if($ticketmachine_config->event_grouping == "Year" || !isset($ticketmachine_config->event_grouping)){ ?>selected<?php } ?>><?php esc_html_e('Year', 'ticketmachine'); ?></option>
-					<option value="None" <?php if($ticketmachine_config->event_grouping == "None"){ ?>selected<?php } ?>><?php esc_html_e('None', 'ticketmachine'); ?></option>
+					<option value="Month" <?php if($ticketmachine_config->event_grouping == "Month"){ ?>selected<?php } ?>><?php esc_html_e('Month', 'ticketmachine-event-manager'); ?></option>
+					<option value="Year" <?php if($ticketmachine_config->event_grouping == "Year" || !isset($ticketmachine_config->event_grouping)){ ?>selected<?php } ?>><?php esc_html_e('Year', 'ticketmachine-event-manager'); ?></option>
+					<option value="None" <?php if($ticketmachine_config->event_grouping == "None"){ ?>selected<?php } ?>><?php esc_html_e('None', 'ticketmachine-event-manager'); ?></option>
 				</select>
 			</td>
 		</tr>

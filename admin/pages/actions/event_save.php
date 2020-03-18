@@ -83,19 +83,19 @@
             </div>
         <?php }elseif(empty($ticketmachine_json) || !empty($errors)){ ?>
             <div class="notice notice-error is-dismissable">
-                <p><?php echo __('Something went wrong', 'ticketmachine'); ?>!</p>
+                <p><?php echo __('Something went wrong', 'ticketmachine-event-manager'); ?>!</p>
             </div>
         <?php }else{ ?>
             <div class="notice notice-success is-dismissable">
                 <p>
-                    <?php echo __('Event saved', 'ticketmachine'); ?>!
+                    <?php echo __('Event saved', 'ticketmachine-event-manager'); ?>!
                     &nbsp;-&nbsp;
                     <a target="_blank" href="/<?php echo esc_html($globals->event_slug); ?>?id=<?php echo esc_html($response->id); ?>">
                         <?php 
                             if($response->approved == 1){
-                                echo __('View', 'ticketmachine'); 
+                                echo __('View', 'ticketmachine-event-manager'); 
                             }else{
-                                echo __('Preview', 'ticketmachine'); 
+                                echo __('Preview', 'ticketmachine-event-manager'); 
                             }
                         ?>
                     </a>

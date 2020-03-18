@@ -31,7 +31,7 @@
         ?>
 
         <div class="notice notice-success is-dismissable">
-            <p><?php esc_html_e('Saved', 'ticketmachine'); ?>!</p>
+            <p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
         </div>
 
         <?php
@@ -47,9 +47,9 @@
 ?>
 
 <p class="mt-4">
-    <?php esc_html_e("If your events are not showing - or you would like to change to a different account, you can synchronize your events here.", "ticketmachine"); ?>
+    <?php esc_html_e("If your events are not showing - or you would like to change to a different account, you can synchronize your events here.", "ticketmachine-event-manager"); ?>
 </p>
 
 <a class="button button-primary" style="font-size:14px" href="<?php echo esc_url($authorize_url); ?>">
-    <i class="fas fa-sync-alt"></i> &nbsp;<?php esc_html_e("Sync events", "ticketmachine"); ?>
+    <i class="fas fa-sync-alt"></i> &nbsp;<?php esc_html_e("Sync events", "ticketmachine-event-manager"); ?>
 </a>

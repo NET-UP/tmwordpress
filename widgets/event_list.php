@@ -13,7 +13,7 @@
 			
         if(empty($events)) {	
             $ticketmachine_output .= "<div class='col-12 text-center mt-1'>";
-                $ticketmachine_output .= ticketmachine_alert(esc_html__("No events could be found", "ticketmachine"), "error");
+                $ticketmachine_output .= ticketmachine_alert(esc_html__("No events could be found", "ticketmachine-event-manager"), "error");
             $ticketmachine_output .= "</div>";
             
         }else{
@@ -51,7 +51,7 @@
                 }
 
                 if(isset($atts['show_more']) && $atts['show_more'] > 0){
-                    $ticketmachine_output .= '<li class="media"><a href="/' . esc_html($globals->events_slug) . '">' . esc_html__("Show all events", "ticketmachine") . '</a></li>';
+                    $ticketmachine_output .= '<li class="media"><a href="/' . esc_html($globals->events_slug) . '">' . esc_html__("Show all events", "ticketmachine-event-manager") . '</a></li>';
                 }
 
                 $ticketmachine_output .= '</ul>';

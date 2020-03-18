@@ -58,7 +58,7 @@
 
 			$ticketmachine_output .= "
 			<input type='hidden' id='ticketmachine_ev_url' value='" . ticketmachine_tmapi_events($params, "GET", FALSE, array(), 1) . "'></input>
-			<div id='ticketmachine_cal_error' class='col-12 text-center mt-1' style='display:none;'>" . ticketmachine_alert(esc_html__("No events could be found", "ticketmachine"), "error") . "</div>
+			<div id='ticketmachine_cal_error' class='col-12 text-center mt-1' style='display:none;'>" . ticketmachine_alert(esc_html__("No events could be found", "ticketmachine-event-manager"), "error") . "</div>
 				<div class='col-12 mt-3'>
 					<div class='row'>
 						<div class='col-12'>
@@ -78,7 +78,7 @@
 			
 			if(empty($events)) {	
 				$ticketmachine_output .= "<div class='col-12 text-center mt-1'>";
-					$ticketmachine_output .= ticketmachine_alert(esc_html__("No events could be found", "ticketmachine"), "error");
+					$ticketmachine_output .= ticketmachine_alert(esc_html__("No events could be found", "ticketmachine-event-manager"), "error");
 				$ticketmachine_output .= "</div>";
 				
 			}else{
@@ -134,7 +134,7 @@
 			
 			if(empty($events)) {	
 				$ticketmachine_output .= "<div class='col-12 text-center mt-1'>";
-					$ticketmachine_output .= ticketmachine_alert(esc_html__("No events could be found", "ticketmachine"), "error");
+					$ticketmachine_output .= ticketmachine_alert(esc_html__("No events could be found", "ticketmachine-event-manager"), "error");
 				$ticketmachine_output .= "</div>";
 				
 			}else{

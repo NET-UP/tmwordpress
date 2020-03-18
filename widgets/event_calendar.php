@@ -27,7 +27,7 @@
                 <input type='hidden' id='ticketmachine_ev_url' value='" . plugins_url('', dirname(__FILE__) ) . "/event.php'></input>
                 <div class='row'>
                     <div id='ticketmachine_cal_error' class='col-12 text-center mt-1' style='display:none;'>"
-                        . ticketmachine_alert(esc_html__("No events could be found", "ticketmachine"), "error") . "
+                        . ticketmachine_alert(esc_html__("No events could be found", "ticketmachine-event-manager"), "error") . "
                     </div>
                     <div class='col-12'>
                         <div class='input-group'>

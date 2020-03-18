@@ -18,21 +18,21 @@
                 <div class="text-center box-body pt-3 pb-4 px-4">
 
                     <h1>
-                        <?php esc_html_e("Thanks for installing me!", "ticketmachine"); ?>
+                        <?php esc_html_e("Thanks for installing me!", "ticketmachine-event-manager"); ?>
                     </h1>
                     <div>
-                        <?php esc_html_e("Just one more step to start using TicketMachine.", "ticketmachine"); ?>
+                        <?php esc_html_e("Just one more step to start using TicketMachine.", "ticketmachine-event-manager"); ?>
                     </div>
 
                     <i class="fas fa-cloud tm-icon-big mt-4 mb-2"></i>
                     <div class="mb-3">
-                        <?php esc_html_e("All events are saved through the TicketMachine Cloud Service.", "ticketmachine"); ?>
+                        <?php esc_html_e("All events are saved through the TicketMachine Cloud Service.", "ticketmachine-event-manager"); ?>
                     </div>
                     <hr>
 
                     <i class="far fa-user-circle tm-icon-big mt-2 mb-2"></i>
                     <div>
-                        <?php esc_html_e("In order to create your TicketMachine account (or connect to your current one), we require your email adress.", "ticketmachine"); ?>
+                        <?php esc_html_e("In order to create your TicketMachine account (or connect to your current one), we require your email adress.", "ticketmachine-event-manager"); ?>
                     </div>
 
                     <?php
@@ -45,7 +45,7 @@
                     ?>
                     
                     <a class="button button-primary mt-4 px-3 py-md-1" style="font-size:14px" href="<?php echo esc_url($authorize_url); ?>">
-                        <?php esc_html_e("Connect with TicketMachine", "ticketmachine"); ?>
+                        <?php esc_html_e("Connect with TicketMachine", "ticketmachine-event-manager"); ?>
                     </a>
 
                 </div>

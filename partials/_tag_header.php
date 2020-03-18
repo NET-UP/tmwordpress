@@ -6,7 +6,7 @@
         $url = htmlentities(urldecode($_SERVER['REQUEST_URI']));
         $tag = "tag=" . $globals->tag;
 
-        $ticketmachine_output = '<label class="mr-3 ml-1">' . esc_html__("Tags", "ticketmachine") . ':</label> 
+        $ticketmachine_output = '<label class="mr-3 ml-1">' . esc_html__("Tags", "ticketmachine-event-manager") . ':</label> 
                       <div class="card-meta-tag keyword">' . $globals->tag . ' 
                         <a class="ml-2" href="' . str_replace($tag, "", esc_url($url)) .'">
                             <i class="fa fa-times"></i>
