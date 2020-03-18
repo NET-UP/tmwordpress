@@ -47,7 +47,7 @@
 <table class="form-table">
 	<tbody>
 		<tr>
-			<th><label><?php esc_html_e('Activate calendar?', 'ticketmachine'); ?></label></th>
+			<th><label><?php esc_html_e('Activate calendar?', 'ticketmachine-event-manager'); ?></label></th>
             <td><input name="show_calendar" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_calendar){ ?>checked <?php } ?>/></td>
 		</tr>
 

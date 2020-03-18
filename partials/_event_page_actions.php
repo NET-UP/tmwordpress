@@ -22,37 +22,37 @@
                         <i class="fas fa-chevron-left"></i> &nbsp; ' . esc_html__('Go back', 'ticketmachine-event-manager') . '
                     </a>';
                     if ($globals->show_social_media_ical && $globals->show_social_media) {
-                        $ticketmachine_output .= '<a class="btn btn-secondary mb-1 mb-lg-0 ml-1 download-ics" title="' . esc_attr('Save as iCal', 'ticketmachine') . '">
+                        $ticketmachine_output .= '<a class="btn btn-secondary mb-1 mb-lg-0 ml-1 download-ics" title="' . esc_attr('Save as iCal', 'ticketmachine-event-manager') . '">
                             <i class="fas fa-calendar-alt"></i>
                         </a>';
                     }
                     if ($globals->show_social_media_google_cal && $globals->show_social_media) {
-                        $ticketmachine_output .= '<a class="btn btn-secondary mb-1 mb-lg-0 ml-1" target="_blank" href="' . esc_url($google_calendar_url) . '" title="' . esc_attr('Save to Google Calendar', 'ticketmachine') . '">
+                        $ticketmachine_output .= '<a class="btn btn-secondary mb-1 mb-lg-0 ml-1" target="_blank" href="' . esc_url($google_calendar_url) . '" title="' . esc_attr('Save to Google Calendar', 'ticketmachine-event-manager') . '">
                             <i class="fab fa-google"></i>
                         </a>';
                     }
                     if ($globals->show_social_media_facebook && $globals->show_social_media) {
-                        $ticketmachine_output .= '<a class="btn btn-secondary share-popup mb-1 mb-lg-0 ml-1" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='. esc_url($url) .'" title="' . esc_attr('Share to Facebook', 'ticketmachine') . '">
+                        $ticketmachine_output .= '<a class="btn btn-secondary share-popup mb-1 mb-lg-0 ml-1" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u='. esc_url($url) .'" title="' . esc_attr('Share to Facebook', 'ticketmachine-event-manager') . '">
                             <i class="fab fa-facebook-f"></i>
                         </a>';
                     }
                     if ($globals->show_social_media_twitter && $globals->show_social_media) {
-                        $ticketmachine_output .= '<a class="btn btn-secondary share-popup mb-1 mb-lg-0 ml-1" target="_blank" href="https://twitter.com/intent/tweet?text='. esc_url($url) .'" title="' . esc_attr('Share to Twitter', 'ticketmachine') . '">
+                        $ticketmachine_output .= '<a class="btn btn-secondary share-popup mb-1 mb-lg-0 ml-1" target="_blank" href="https://twitter.com/intent/tweet?text='. esc_url($url) .'" title="' . esc_attr('Share to Twitter', 'ticketmachine-event-manager') . '">
                             <i class="fab fa-twitter"></i>
                         </a>';
                     }
                     if ($globals->show_social_media_email && $globals->show_social_media) {
-                        $ticketmachine_output .= '<a class="btn btn-secondary mb-1 mb-lg-0 ml-1" href="mailto:?subject='. $event->ev_name .'&body='. esc_url($url) .'" title="' . esc_attr('Share via Email', 'ticketmachine') . '">
+                        $ticketmachine_output .= '<a class="btn btn-secondary mb-1 mb-lg-0 ml-1" href="mailto:?subject='. $event->ev_name .'&body='. esc_url($url) .'" title="' . esc_attr('Share via Email', 'ticketmachine-event-manager') . '">
                             <i class="fas fa-envelope"></i>
                         </a>';
                     }
                     if ($globals->show_social_media_messenger && $globals->show_social_media) {
-                        $ticketmachine_output .= '<a class="btn btn-secondary d-inline-block d-md-none mb-1 mb-lg-0 ml-1" href="fb-messenger://share/?link='. esc_url($url) .'" title="' . esc_attr('Share with Messenger', 'ticketmachine') . '">
+                        $ticketmachine_output .= '<a class="btn btn-secondary d-inline-block d-md-none mb-1 mb-lg-0 ml-1" href="fb-messenger://share/?link='. esc_url($url) .'" title="' . esc_attr('Share with Messenger', 'ticketmachine-event-manager') . '">
                             <i class="fab fa-facebook-messenger"></i>
                         </a>';
                     }
                     if ($globals->show_social_media_whatsapp && $globals->show_social_media) {
-                        $ticketmachine_output .= '<a class="btn btn-secondary d-inline-block d-md-none mb-1 mb-lg-0 ml-1" href="WhatsApp://send?text='. esc_url($url) .'" title="' . esc_attr('Share with WhatsApp', 'ticketmachine') . '">
+                        $ticketmachine_output .= '<a class="btn btn-secondary d-inline-block d-md-none mb-1 mb-lg-0 ml-1" href="WhatsApp://send?text='. esc_url($url) .'" title="' . esc_attr('Share with WhatsApp', 'ticketmachine-event-manager') . '">
                             <i class="fab fa-whatsapp"></i>
                         </a>';
                     }
