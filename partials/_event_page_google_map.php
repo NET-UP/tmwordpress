@@ -11,13 +11,13 @@
             }
         }
 
-        $ticketmachine_output = "<a class='disallow-google-maps float-right";
+        $ticketmachine_output .= "<a class='disallow-google-maps float-right";
         
         if (!isset($_COOKIE["allow_google_maps"])){
-            $ticketmachine_output = "hidden";
+            $ticketmachine_output .= " hidden";
         }
 
-        $ticketmachine_output = "' href='#'>" . esc_html__('Disallow Google Maps', 'ticketmachine-event-manager') . "</a>";
+        $ticketmachine_output .= "' href='#'>" . esc_html__('Disallow Google Maps', 'ticketmachine-event-manager') . "</a>";
 
         return $ticketmachine_output;
     }
