@@ -105,8 +105,10 @@
 	if(!isset($globals->api_state)){
 		$globals->api_state = "";
 	}
-	$api->token = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/oauth/token";
-	$api->auth->url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/oauth/token";
+	$api->base_url = $api->token = $api->scheme . "://cloud." . $api->environment;
+
+	$api->token = $api->base_url . "ticketmachine.de/oauth/token";
+	$api->auth->url = $api->base_url . "ticketmachine.de/oauth/token";
 
 	$api->auth->key = $api->client_id.":".$api->client_secret;
 	$api->auth->encoded_key = base64_encode($api->auth->key);
@@ -489,7 +491,7 @@
 			$params->sort = "ev_date";
 		}
 
-		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events?";
+		$url = $api->base_url . "ticketmachine.de/api/v2/events?";
 		
 		if($globals->organizer && $globals->organizer != "" ){
 			$url .= "organizer.og_abbreviation[eq]=" . $globals->organizer;
@@ -533,7 +535,7 @@
 		}
 		$params = (object)$params;
 
-		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/";
+		$url = $api->base_url. "ticketmachine.de/api/v2/events/";
 		if(!empty($params && isset($params->id))){ 
 			$url .= (int)$params->id;
 		}
@@ -551,7 +553,7 @@
 	function ticketmachine_tmapi_event_copy($params){
 		global $api, $globals;
 
-		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/" . absint($_GET['id']) . "/copy";
+		$url = $api->base_url . "ticketmachine.de/api/v2/events/" . absint($_GET['id']) . "/copy";
 
 		$event = ticketmachine_apiRequest($url, $params, "POST");
 		return (object)$event;
@@ -563,7 +565,7 @@
 
 		$params = (object)$params;
 
-		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/organizers/me";
+		$url = $api->base_url . "ticketmachine.de/api/v2/organizers/me";
 
 		$organizer = ticketmachine_apiRequest($url, $post, $method, $headers);
 
@@ -633,7 +635,7 @@
 			$params->sort = "name";
 		}
 
-		$url = $api->scheme . "://cloud." . $api->environment . "ticketmachine.de/api/v2/events/tags";
+		$url = $api->base_url . "ticketmachine.de/api/v2/events/tags";
 
 		$categories = ticketmachine_apiRequest($url, $params, $method);
 		return (object)$categories;
