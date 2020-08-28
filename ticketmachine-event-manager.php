@@ -137,6 +137,137 @@
 		'client_secret' => $api->client_secret,
 		'scope' => "public organizer organizer/event"
 	);
+
+    register_activation_hook(__FILE__, 'ticketmachine_activate');
+    register_deactivation_hook(__FILE__, 'ticketmachine_deactivate');
+
+    function ticketmachine_activate( ) {
+        global $wpdb;
+        global $jal_db_version;
+
+        //create events overview page
+        $new_page_title = 'Events';
+        $new_page_slug = 'events';
+        $new_page_content = '[ticketmachine page="event_list"]';
+        $new_page_template = '';
+    
+        $page_check = get_page_by_path($new_page_slug);
+        $new_page = array(
+            'post_type' => 'page',
+            'post_title' => $new_page_title,
+            'post_name' => $new_page_slug,
+            'post_content' => $new_page_content,
+            'post_status' => 'publish',
+            'post_author' => 1,
+        );
+        if(!isset($page_check->ID)){
+            $new_page_id = wp_insert_post($new_page);
+            if(!empty($new_page_template)){
+                update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
+            }
+        }
+        $events_slug = get_page_by_path($new_page_slug);
+
+        //create event detail page
+        $new_page_title = 'Event';
+        $new_page_slug = 'event';
+        $new_page_content = '[ticketmachine page="event_details"]';
+        $new_page_template = '';
+    
+        $page_check = get_page_by_path($new_page_slug);
+        $new_page = array(
+            'post_type' => 'page',
+            'post_title' => $new_page_title,
+            'post_name' => $new_page_slug,
+            'post_content' => $new_page_content,
+            'post_status' => 'publish',
+            'post_author' => 1,
+        );
+        if(!isset($page_check->ID)){
+            $new_page_id = wp_insert_post($new_page);
+            if(!empty($new_page_template)){
+                update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
+            }
+        }
+        $event_slug = get_page_by_path($new_page_slug);
+
+        $table = $wpdb->prefix . 'ticketmachine_config';
+        $charset = $wpdb->get_charset_collate();
+        $charset_collate = $wpdb->get_charset_collate();
+        $sql = "CREATE TABLE $table (
+                    id mediumint(9) NOT NULL AUTO_INCREMENT,
+                    organizer_id int(11) DEFAULT 0 NOT NULL,
+                    organizer varchar(64) DEFAULT '' NOT NULL,
+                    api_client_id varchar(64) DEFAULT 'c16727aa80540e51edcd276641c6f68974bb312ec5b17b75a3bc0ba254236a14' NOT NULL,
+                    api_client_secret varchar(64) DEFAULT '1d3fb26a828f0e09700464997271c5236bb7d3194992299331eaa1c420a7f522' NOT NULL,
+                    api_refresh_token varchar(64) DEFAULT '' NOT NULL,
+                    api_access_token varchar(64) DEFAULT '' NOT NULL,
+                    api_refresh_last int(11) DEFAULT " . time() . " NOT NULL,
+                    api_refresh_interval int(11) DEFAULT 3600 NOT NULL,
+                    api_environment varchar(64) DEFAULT 'shop' NOT NULL,
+                    show_list bit(1) DEFAULT 1 NOT NULL,
+                    show_boxes bit(1) DEFAULT 1 NOT NULL,
+                    show_calendar bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_ical bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_google_cal bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_facebook bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_twitter bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_email bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_messenger bit(1) DEFAULT 1 NOT NULL,
+                    show_social_media_whatsapp bit(1) DEFAULT 1 NOT NULL,
+                    show_google_map bit(1) DEFAULT 1 NOT NULL,
+                    event_grouping varchar(64) DEFAULT 'Year' NOT NULL,
+                    events_slug_id varchar(128) DEFAULT '" . $events_slug->ID . "' NOT NULL,
+                    event_slug_id varchar(128) DEFAULT '" . $event_slug->ID . "' NOT NULL,
+                PRIMARY KEY  (id)
+                ) $charset_collate;";
+
+        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+        dbDelta( $sql );
+        add_option('jal_db_version', $jal_db_version);
+        
+        $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
+        
+        $table = $wpdb->prefix . 'ticketmachine_design';
+        $charset = $wpdb->get_charset_collate();
+        $charset_collate = $wpdb->get_charset_collate();
+        $sql = "CREATE TABLE $table (
+                    id mediumint(9) NOT NULL AUTO_INCREMENT,
+                    link_text_color varchar(64) DEFAULT '#0fb1e4' NOT NULL,
+                    link_text_color_hover varchar(64) DEFAULT '#0056b3' NOT NULL,
+                    container_background_color varchar(64) DEFAULT '#ffffff' NOT NULL,
+                    date_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
+                    price_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
+                    button_primary_background_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
+                    button_primary_text_color varchar(64) DEFAULT '#ffffff' NOT NULL,
+                    button_primary_border_color varchar(64) DEFAULT '#f58d3e' NOT NULL,
+                    button_primary_background_color_hover varchar(64) DEFAULT '#f58d3e' NOT NULL,
+                    button_primary_text_color_hover varchar(64) DEFAULT '#ffffff' NOT NULL,
+                    button_primary_border_color_hover varchar(64) DEFAULT '#f58d3e' NOT NULL,
+                    button_secondary_background_color varchar(64) DEFAULT '#f7f7f7' NOT NULL,
+                    button_secondary_text_color varchar(64) DEFAULT '#666666' NOT NULL,
+                    button_secondary_border_color varchar(64) DEFAULT '#dadada' NOT NULL,
+                    button_secondary_background_color_hover varchar(64) DEFAULT '#f7f7f7' NOT NULL,
+                    button_secondary_text_color_hover varchar(64) DEFAULT '#666666' NOT NULL,
+                    button_secondary_border_color_hover varchar(64) DEFAULT '#dadada' NOT NULL,
+                PRIMARY KEY  (id)
+                ) $charset_collate;";
+
+        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+        dbDelta( $sql );
+        add_option('jal_db_version', $jal_db_version);
+        
+        $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
+    }
+
+    function ticketmachine_deactivate( ) {
+        global $wpdb;
+        $table_name = $wpdb->prefix . 'ticketmachine_config';
+        $wpdb->query("DROP TABLE IF EXISTS $table_name");
+        $table_name = $wpdb->prefix . 'ticketmachine_design';
+        $wpdb->query("DROP TABLE IF EXISTS $table_name");
+    }
 	
 	// load dynamic form for calculator from template
 	function ticketmachine_initialize( $atts ) {
@@ -277,137 +408,6 @@
 	
     if(is_admin()){
         include_once( plugin_dir_path( __FILE__ ) . 'admin/admin.php');
-    }
-	
-    register_activation_hook(__FILE__, 'ticketmachine_activate');
-    register_deactivation_hook(__FILE__, 'ticketmachine_deactivate');
-
-    function ticketmachine_activate( ) {
-        global $wpdb;
-        global $jal_db_version;
-
-        //create events overview page
-        $new_page_title = 'Events';
-        $new_page_slug = 'events';
-        $new_page_content = '[ticketmachine page="event_list"]';
-        $new_page_template = '';
-    
-        $page_check = get_page_by_path($new_page_slug);
-        $new_page = array(
-            'post_type' => 'page',
-            'post_title' => $new_page_title,
-            'post_name' => $new_page_slug,
-            'post_content' => $new_page_content,
-            'post_status' => 'publish',
-            'post_author' => 1,
-        );
-        if(!isset($page_check->ID)){
-            $new_page_id = wp_insert_post($new_page);
-            if(!empty($new_page_template)){
-                update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
-            }
-        }
-        $events_slug = get_page_by_path($new_page_slug);
-
-        //create event detail page
-        $new_page_title = 'Event';
-        $new_page_slug = 'event';
-        $new_page_content = '[ticketmachine page="event_details"]';
-        $new_page_template = '';
-    
-        $page_check = get_page_by_path($new_page_slug);
-        $new_page = array(
-            'post_type' => 'page',
-            'post_title' => $new_page_title,
-            'post_name' => $new_page_slug,
-            'post_content' => $new_page_content,
-            'post_status' => 'publish',
-            'post_author' => 1,
-        );
-        if(!isset($page_check->ID)){
-            $new_page_id = wp_insert_post($new_page);
-            if(!empty($new_page_template)){
-                update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
-            }
-        }
-        $event_slug = get_page_by_path($new_page_slug);
-
-        $table = $wpdb->prefix . 'ticketmachine_config';
-        $charset = $wpdb->get_charset_collate();
-        $charset_collate = $wpdb->get_charset_collate();
-        $sql = "CREATE TABLE $table (
-                    id mediumint(9) NOT NULL AUTO_INCREMENT,
-                    organizer_id int(11) DEFAULT 0 NOT NULL,
-                    organizer varchar(64) DEFAULT '' NOT NULL,
-                    api_client_id varchar(64) DEFAULT 'c16727aa80540e51edcd276641c6f68974bb312ec5b17b75a3bc0ba254236a14' NOT NULL,
-                    api_client_secret varchar(64) DEFAULT '1d3fb26a828f0e09700464997271c5236bb7d3194992299331eaa1c420a7f522' NOT NULL,
-                    api_refresh_token varchar(64) DEFAULT '' NOT NULL,
-                    api_access_token varchar(64) DEFAULT '' NOT NULL,
-                    api_refresh_last int(11) DEFAULT " . time() . " NOT NULL,
-                    api_refresh_interval int(11) DEFAULT 3600 NOT NULL,
-                    api_environment varchar(64) DEFAULT 'shop' NOT NULL,
-                    show_list bit(1) DEFAULT 1 NOT NULL,
-                    show_boxes bit(1) DEFAULT 1 NOT NULL,
-                    show_calendar bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_ical bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_google_cal bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_facebook bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_twitter bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_email bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_messenger bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_whatsapp bit(1) DEFAULT 1 NOT NULL,
-                    show_google_map bit(1) DEFAULT 1 NOT NULL,
-                    event_grouping varchar(64) DEFAULT 'Year' NOT NULL,
-                    events_slug_id varchar(128) DEFAULT '" . $events_slug->ID . "' NOT NULL,
-                    event_slug_id varchar(128) DEFAULT '" . $event_slug->ID . "' NOT NULL,
-                PRIMARY KEY  (id)
-                ) $charset_collate;";
-
-        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-        dbDelta( $sql );
-        add_option('jal_db_version', $jal_db_version);
-        
-        $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
-        
-        $table = $wpdb->prefix . 'ticketmachine_design';
-        $charset = $wpdb->get_charset_collate();
-        $charset_collate = $wpdb->get_charset_collate();
-        $sql = "CREATE TABLE $table (
-                    id mediumint(9) NOT NULL AUTO_INCREMENT,
-                    link_text_color varchar(64) DEFAULT '#0fb1e4' NOT NULL,
-                    link_text_color_hover varchar(64) DEFAULT '#0056b3' NOT NULL,
-                    container_background_color varchar(64) DEFAULT '#ffffff' NOT NULL,
-                    date_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
-                    price_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
-                    button_primary_background_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
-                    button_primary_text_color varchar(64) DEFAULT '#ffffff' NOT NULL,
-                    button_primary_border_color varchar(64) DEFAULT '#f58d3e' NOT NULL,
-                    button_primary_background_color_hover varchar(64) DEFAULT '#f58d3e' NOT NULL,
-                    button_primary_text_color_hover varchar(64) DEFAULT '#ffffff' NOT NULL,
-                    button_primary_border_color_hover varchar(64) DEFAULT '#f58d3e' NOT NULL,
-                    button_secondary_background_color varchar(64) DEFAULT '#f7f7f7' NOT NULL,
-                    button_secondary_text_color varchar(64) DEFAULT '#666666' NOT NULL,
-                    button_secondary_border_color varchar(64) DEFAULT '#dadada' NOT NULL,
-                    button_secondary_background_color_hover varchar(64) DEFAULT '#f7f7f7' NOT NULL,
-                    button_secondary_text_color_hover varchar(64) DEFAULT '#666666' NOT NULL,
-                    button_secondary_border_color_hover varchar(64) DEFAULT '#dadada' NOT NULL,
-                PRIMARY KEY  (id)
-                ) $charset_collate;";
-
-        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-        dbDelta( $sql );
-        add_option('jal_db_version', $jal_db_version);
-        
-        $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
-    }
-
-    function ticketmachine_deactivate( ) {
-        global $wpdb;
-        $table_name = $wpdb->prefix . 'ticketmachine_config';
-        $wpdb->query("DROP TABLE IF EXISTS $table_name");
-        $table_name = $wpdb->prefix . 'ticketmachine_design';
-        $wpdb->query("DROP TABLE IF EXISTS $table_name");
     }
 
 	function ticketmachine_event_metadata() {
