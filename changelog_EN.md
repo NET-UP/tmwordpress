@@ -1,6 +1,9 @@
 # Change Log (English)
 All notable changes to this project will be documented in this file.
 
+## [1.0.3] - 2020-09-15
++   Added compatability with Contact Form 7 & Enfold Theme
+
 ## [1.0.0] - 2020-02-10
 +   Added new tab "Cloud" in settings page to force synchronise events
 
