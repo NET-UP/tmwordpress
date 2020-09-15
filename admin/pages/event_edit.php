@@ -1,6 +1,6 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    global $globals, $api;
+    global $tm_globals, $api;
     wp_enqueue_media();
 
     //defaults
@@ -55,7 +55,7 @@
     ?>
     <form name="event" action="?page=ticketmachine_events&action=save<?php if(!empty($event->id)){ echo "&id=" . esc_attr(absint($_GET['id'])); } ?>" method="post" id="event">
 		<?php wp_nonce_field( 'ticketmachine_action_save_event', 'ticketmachine_event_edit_form_nonce' ); ?>
-        <input type="hidden" name="organizer_id" value="<?php echo esc_attr($globals->organizer_id); ?>">
+        <input type="hidden" name="organizer_id" value="<?php echo esc_attr($tm_globals->organizer_id); ?>">
         <input type="hidden" name="rules[sale_active]" value="0">
         <input type="hidden" name="rules[prices_shown]" value="0">
         <input type="hidden" name="vat_id" value="1">

@@ -1,7 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_widget_event_list ( $atts ) {
-		global $globals, $api;
+		global $tm_globals, $api;
 
         $params = $atts;
         if(empty($params['approved'])) {
@@ -27,11 +27,11 @@
                     $ticketmachine_output .= '<li class="media">';
 
                     if(isset($atts['show_image']) && $atts['show_image'] > 0){
-                        $ticketmachine_output .= '<a class="mr-3 media-img" href="/' . esc_html($globals->event_slug) . '?id=' . esc_html($event->id) . '" style="background-image:url('. esc_url($event->event_img_url) .')"></a>';
+                        $ticketmachine_output .= '<a class="mr-3 media-img" href="/' . esc_html($tm_globals->event_slug) . '?id=' . esc_html($event->id) . '" style="background-image:url('. esc_url($event->event_img_url) .')"></a>';
                     }
                                         
                         $ticketmachine_output .= '<div class="media-body">';
-                        $ticketmachine_output .= '<h5 class="mt-0 mb-1"><a class="tm-list-title" href="/' . esc_html($globals->event_slug) . '?id=' . esc_html($event->id) . '">' . esc_html($event->ev_name) . '</a></h5>';
+                        $ticketmachine_output .= '<h5 class="mt-0 mb-1"><a class="tm-list-title" href="/' . esc_html($tm_globals->event_slug) . '?id=' . esc_html($event->id) . '">' . esc_html($event->ev_name) . '</a></h5>';
                         
                         if(isset($atts['show_date']) && $atts['show_date'] > 0){
                             $ticketmachine_output .= '
@@ -51,7 +51,7 @@
                 }
 
                 if(isset($atts['show_more']) && $atts['show_more'] > 0){
-                    $ticketmachine_output .= '<li class="media"><a href="/' . esc_html($globals->events_slug) . '">' . esc_html__("Show all events", "ticketmachine-event-manager") . '</a></li>';
+                    $ticketmachine_output .= '<li class="media"><a href="/' . esc_html($tm_globals->events_slug) . '">' . esc_html__("Show all events", "ticketmachine-event-manager") . '</a></li>';
                 }
 
                 $ticketmachine_output .= '</ul>';

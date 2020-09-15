@@ -1,6 +1,6 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    global $globals, $api, $wpdb;
+    global $tm_globals, $api, $wpdb;
 
     $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
     $ticketmachine_config = $ticketmachine_config[0];
@@ -27,7 +27,7 @@
                 array('id' => $ticketmachine_config->id)
             );
 
-            $globals->activated = 1;
+            $tm_globals->activated = 1;
         ?>
 
         <div class="notice notice-success is-dismissable">

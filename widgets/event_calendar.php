@@ -1,7 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_widget_event_calendar ( $atts ) {
-        global $globals, $api;
+        global $tm_globals, $api;
 			
 		//Calendar styles
 		wp_enqueue_style( 'calendar_CSS_1' );

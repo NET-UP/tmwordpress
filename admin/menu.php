@@ -2,7 +2,7 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	function ticketmachine_admin_menu () {
-		global $globals, $api;
+		global $tm_globals, $api;
 
 		include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 		
@@ -17,7 +17,7 @@
 				96
 			);
 
-			if(!empty($globals->activated) || isset($_GET['code'])) {
+			if(!empty($tm_globals->activated) || isset($_GET['code'])) {
 				add_submenu_page(
 					'ticketmachine_event_manager',
 					esc_html__('Overview', 'ticketmachine-event-manager'),

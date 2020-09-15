@@ -1,7 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	function ticketmachine_display_events ( $atts ) {
-		global $globals, $api;
+		global $tm_globals, $api;
 
 		$params = array();
 		if(isset($_GET['q'])){
@@ -16,11 +16,11 @@
 		$params = ticketmachine_array_push_assoc($params, "approved", 1);
 		$events = ticketmachine_tmapi_events($params)->result;
 		
-		if(isset($atts['display']) && $atts['display'] == "calendar" && $globals->show_calendar || $globals->show_calendar && !$globals->show_boxes && !$globals->show_list){
+		if(isset($atts['display']) && $atts['display'] == "calendar" && $tm_globals->show_calendar || $tm_globals->show_calendar && !$tm_globals->show_boxes && !$tm_globals->show_list){
 			$current_page = "calendar";
-		}elseif(isset($atts['display']) && $atts['display'] == "list" && $globals->show_list || $globals->show_list && !$globals->show_boxes){
+		}elseif(isset($atts['display']) && $atts['display'] == "list" && $tm_globals->show_list || $tm_globals->show_list && !$tm_globals->show_boxes){
 			$current_page = "list";
-		}elseif($globals->show_boxes){
+		}elseif($tm_globals->show_boxes){
 			$current_page = "boxes";
 		}else{
 			$current_page = "unknown";
@@ -28,9 +28,9 @@
 		
 		$ticketmachine_output = "<div class='row ticketmachine_events_container'>";
 		
-		$ticketmachine_output .= "<div class='page-header col-12'>" . ticketmachine_search_header($globals, $current_page);
-			if($globals->tag){
-				$ticketmachine_output .= ticketmachine_tag_header($globals);
+		$ticketmachine_output .= "<div class='page-header col-12'>" . ticketmachine_search_header($tm_globals, $current_page);
+			if($tm_globals->tag){
+				$ticketmachine_output .= ticketmachine_tag_header($tm_globals);
 			}
 		$ticketmachine_output .= "</div>";
 		
@@ -97,11 +97,11 @@
 						$ticketmachine_output .= '<li class="media mx-0 mt-2">';
 
 						if(isset($atts['show_image']) && $atts['show_image'] > 0){
-							$ticketmachine_output .= '<a class="mr-3 media-img" href="/' . esc_html($globals->event_slug) . '?id=' . $event->id . '" style="background-image:url('. $event->event_img_url .')"></a>';
+							$ticketmachine_output .= '<a class="mr-3 media-img" href="/' . esc_html($tm_globals->event_slug) . '?id=' . $event->id . '" style="background-image:url('. $event->event_img_url .')"></a>';
 						}
 											
 							$ticketmachine_output .= '<div class="media-body">';
-							$ticketmachine_output .= '<h5 class="mt-0 mb-1"><a class="tm-list-title" href="/' . esc_html($globals->event_slug) . '?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
+							$ticketmachine_output .= '<h5 class="mt-0 mb-1"><a class="tm-list-title" href="/' . esc_html($tm_globals->event_slug) . '?id=' . $event->id . '">' . $event->ev_name . '</a></h5>';
 
 							if(isset($atts['show_date']) && $atts['show_date'] > 0){
 								$ticketmachine_output .= '
@@ -144,12 +144,12 @@
 					$event = (object)$event;
 					
 					$curr = $event->ev_date;
-					if(isset($globals->event_grouping) && $globals->event_grouping != "None") {
-						if ($i == 0 || date( $globals->group_by , strtotime( $curr ) ) != date( $globals->group_by, strtotime( $prev ) ) ) {
+					if(isset($tm_globals->event_grouping) && $tm_globals->event_grouping != "None") {
+						if ($i == 0 || date( $tm_globals->group_by , strtotime( $curr ) ) != date( $tm_globals->group_by, strtotime( $prev ) ) ) {
 							$ticketmachine_output .= "<div class='col-12 my-2'>
 												<div class='d-flex'>
 													<hr class='my-auto flex-grow-1'>
-													<h3 class='px-4'>" . ticketmachine_i18n_date($globals->format_date, $event->ev_date) . "</h3>
+													<h3 class='px-4'>" . ticketmachine_i18n_date($tm_globals->format_date, $event->ev_date) . "</h3>
 													<hr class='my-auto flex-grow-1'>
 												</div>
 											</div>";
@@ -157,7 +157,7 @@
 						}
 					}
 					
-					$ticketmachine_output .= ticketmachine_event_list_item ( $event, $globals );
+					$ticketmachine_output .= ticketmachine_event_list_item ( $event, $tm_globals );
 					
 					$i++;
 				}

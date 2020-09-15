@@ -1,6 +1,6 @@
 <?php 
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    global $globals, $api;
+    global $tm_globals, $api;
 
     if( current_user_can('edit_posts') ) {	
 
@@ -12,14 +12,14 @@
             $errors = array();
             
             if(!empty($event_id)){
-                if(empty($globals->organizer_id) || !is_int($globals->organizer_id)){
+                if(empty($tm_globals->organizer_id) || !is_int($tm_globals->organizer_id)){
                     $errors[] = "No organizer id could be found";
                 }
                 
                 if(empty($errors)){
                     $post = array();
                     $post['id'] = absint($event_id);
-                    $post['organizer_id'] = absint($globals->organizer_id);
+                    $post['organizer_id'] = absint($tm_globals->organizer_id);
 
                     $post_json = json_encode($post);
                     $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");

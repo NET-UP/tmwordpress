@@ -1,6 +1,6 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    function ticketmachine_event_page_google_map($event, $globals) {
+    function ticketmachine_event_page_google_map($event, $tm_globals) {
 
         if(isset($event->has_location) && $event->has_location == 1){
             if (isset($_COOKIE["allow_google_maps"])){

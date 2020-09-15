@@ -61,7 +61,7 @@ if( current_user_can('edit_posts') ) {
 
         function get_events(){
             
-            global $globals, $api;
+            global $tm_globals, $api;
 
             $params = array();
             if(isset($_GET['s'])){
@@ -136,7 +136,7 @@ if( current_user_can('edit_posts') ) {
          * @return string Text to be placed inside the column <td> (movie title only)
          **************************************************************************/
         function column_ev_name($item){
-            global $globals, $api;
+            global $tm_globals, $api;
 
             $additional_text = "";
             if($item['approved'] == 0){
@@ -164,7 +164,7 @@ if( current_user_can('edit_posts') ) {
                 'edit'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.esc_html__('Edit', 'ticketmachine-event-manager').'</a>',esc_html($_REQUEST['page']),'edit',esc_attr($item['id'])),
                 $toggle_type    => '<a href="' . $ticketmachine_action_toggle_url . '">'.$toggle_text.'</a>',
                 'copy'          => '<a href="' . $ticketmachine_action_copy_url . '">'.esc_html__('Copy', 'ticketmachine-event-manager').'</a>',
-                'view'          => sprintf('<a target="_blank" href="/'. esc_html($globals->event_slug) .'?id=%s">'.$view_text.'</a>',esc_attr($item['id']))
+                'view'          => sprintf('<a target="_blank" href="/'. esc_html($tm_globals->event_slug) .'?id=%s">'.$view_text.'</a>',esc_attr($item['id']))
             );
             
             //Return the title contents
