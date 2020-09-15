@@ -7,75 +7,75 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-            $post = (object)$_POST;
+            $tm_post = (object)$_POST;
 			$errors = array();
 
 			//validate
-			if (!empty($post->show_social_media)){
-				$post->show_social_media = true;
+			if (!empty($tm_post->show_social_media)){
+				$tm_post->show_social_media = true;
 			}else{
-				$post->show_social_media = false;
+				$tm_post->show_social_media = false;
             }
             
-			if (!empty($post->show_social_media_ical)){
-				$post->show_social_media_ical = true;
+			if (!empty($tm_post->show_social_media_ical)){
+				$tm_post->show_social_media_ical = true;
 			}else{
-				$post->show_social_media_ical = false;
+				$tm_post->show_social_media_ical = false;
             }
             
-			if (!empty($post->show_social_media_google_cal)){
-				$post->show_social_media_google_cal = true;
+			if (!empty($tm_post->show_social_media_google_cal)){
+				$tm_post->show_social_media_google_cal = true;
 			}else{
-				$post->show_social_media_google_cal = false;
+				$tm_post->show_social_media_google_cal = false;
             }
             
-			if (!empty($post->show_social_media_facebook)){
-				$post->show_social_media_facebook = true;
+			if (!empty($tm_post->show_social_media_facebook)){
+				$tm_post->show_social_media_facebook = true;
 			}else{
-				$post->show_social_media_facebook = false;
+				$tm_post->show_social_media_facebook = false;
             }
             
-			if (!empty($post->show_social_media_twitter)){
-				$post->show_social_media_twitter = true;
+			if (!empty($tm_post->show_social_media_twitter)){
+				$tm_post->show_social_media_twitter = true;
 			}else{
-				$post->show_social_media_twitter = false;
+				$tm_post->show_social_media_twitter = false;
             }
             
-			if (!empty($post->show_social_media_email)){
-				$post->show_social_media_email = true;
+			if (!empty($tm_post->show_social_media_email)){
+				$tm_post->show_social_media_email = true;
 			}else{
-				$post->show_social_media_email = false;
+				$tm_post->show_social_media_email = false;
             }
             
-			if (!empty($post->show_social_media_messenger)){
-				$post->show_social_media_messenger = true;
+			if (!empty($tm_post->show_social_media_messenger)){
+				$tm_post->show_social_media_messenger = true;
 			}else{
-				$post->show_social_media_messenger = false;
+				$tm_post->show_social_media_messenger = false;
             }
             
-			if (!empty($post->show_social_media_whatsapp)){
-				$post->show_social_media_whatsapp = true;
+			if (!empty($tm_post->show_social_media_whatsapp)){
+				$tm_post->show_social_media_whatsapp = true;
 			}else{
-				$post->show_social_media_whatsapp = false;
+				$tm_post->show_social_media_whatsapp = false;
             }
             
-			if (!empty($post->show_google_map)){
-				$post->show_google_map = true;
+			if (!empty($tm_post->show_google_map)){
+				$tm_post->show_google_map = true;
 			}else{
-				$post->show_google_map = false;
+				$tm_post->show_google_map = false;
             }
 
             $save_array = 
                 array(
-                    "show_social_media" => (bool)$post->show_social_media,
-                    "show_social_media_ical" => (bool)$post->show_social_media_ical,
-                    "show_social_media_google_cal" => (bool)$post->show_social_media_google_cal,
-                    "show_social_media_facebook" => (bool)$post->show_social_media_facebook,
-                    "show_social_media_twitter" => (bool)$post->show_social_media_twitter,
-                    "show_social_media_email" => (bool)$post->show_social_media_email,
-                    "show_social_media_messenger" => (bool)$post->show_social_media_messenger,
-                    "show_social_media_whatsapp" => (bool)$post->show_social_media_whatsapp,
-                    "show_google_map" => (bool)$post->show_google_map
+                    "show_social_media" => (bool)$tm_post->show_social_media,
+                    "show_social_media_ical" => (bool)$tm_post->show_social_media_ical,
+                    "show_social_media_google_cal" => (bool)$tm_post->show_social_media_google_cal,
+                    "show_social_media_facebook" => (bool)$tm_post->show_social_media_facebook,
+                    "show_social_media_twitter" => (bool)$tm_post->show_social_media_twitter,
+                    "show_social_media_email" => (bool)$tm_post->show_social_media_email,
+                    "show_social_media_messenger" => (bool)$tm_post->show_social_media_messenger,
+                    "show_social_media_whatsapp" => (bool)$tm_post->show_social_media_whatsapp,
+                    "show_google_map" => (bool)$tm_post->show_google_map
                 );
             if (!empty($ticketmachine_config) && empty($errors)) {
                 $wpdb->update(
@@ -88,7 +88,7 @@
                     <p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
                 </div>
                 <?php
-                $ticketmachine_config = $post;
+                $ticketmachine_config = $tm_post;
             }else{
                 ?>
                 <div class="notice notice-error is-dismissable">

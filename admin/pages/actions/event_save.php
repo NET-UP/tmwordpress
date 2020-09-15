@@ -9,52 +9,52 @@
                 print 'Sorry, your nonce did not verify.';
                 exit;
             } else {
-                $post = $_POST;
+                $tm_post = $_POST;
                 $errors = array();
 
-                if(!isset($post['rules']['shown'])) {
-                    $post['rules']['shown'] = 0;
+                if(!isset($tm_post['rules']['shown'])) {
+                    $tm_post['rules']['shown'] = 0;
                 }
-                if(!isset($post['approved'])) {
-                    $post['approved'] = 0;
+                if(!isset($tm_post['approved'])) {
+                    $tm_post['approved'] = 0;
                 }
-                if(isset($post['tags'])) {
-                    $post['tags'] = explode(",", $post['tags']);
-                    array_walk($post['tags'], function(&$value, &$key) {
+                if(isset($tm_post['tags'])) {
+                    $tm_post['tags'] = explode(",", $tm_post['tags']);
+                    array_walk($tm_post['tags'], function(&$value, &$key) {
                         $value = sanitize_text_field($value);
                     });
                 }
-                if(isset($post['entrytime'])) {
-                    $post['entrytime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($post['entrytime']['date'] . $post['entrytime']['time']));
+                if(isset($tm_post['entrytime'])) {
+                    $tm_post['entrytime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($tm_post['entrytime']['date'] . $tm_post['entrytime']['time']));
                 }else{
                     $errors[] = "No entry time was set";
                 }
-                if(isset($post['ev_date'])) {
-                    $post['ev_date'] = sanitize_text_field(ticketmachine_i18n_reverse_date($post['ev_date']['date'] . $post['ev_date']['time']));
+                if(isset($tm_post['ev_date'])) {
+                    $tm_post['ev_date'] = sanitize_text_field(ticketmachine_i18n_reverse_date($tm_post['ev_date']['date'] . $tm_post['ev_date']['time']));
                 }else{
                     $errors[] = "No start time was set";
                 }
-                if(isset($post['endtime'])) {
-                    $post['endtime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($post['endtime']['date'] . $post['endtime']['time']));
+                if(isset($tm_post['endtime'])) {
+                    $tm_post['endtime'] = sanitize_text_field(ticketmachine_i18n_reverse_date($tm_post['endtime']['date'] . $tm_post['endtime']['time']));
                 }else{
                     $errors[] = "No end time was set";
                 }
 
-                if(!empty($post['ev_name'])) {
-                    $post['ev_name'] = sanitize_text_field($post['ev_name']);
+                if(!empty($tm_post['ev_name'])) {
+                    $tm_post['ev_name'] = sanitize_text_field($tm_post['ev_name']);
                 }else{
                     $errors[] = "No event title was set";
                 }
 
-                if(isset($post['description'])) {
-                    $post['description'] = sanitize_text_field(strip_shortcodes($post['description']));
+                if(isset($tm_post['description'])) {
+                    $tm_post['description'] = sanitize_text_field(strip_shortcodes($tm_post['description']));
                 }
 
-                if(!empty($post['id'])) {
-                    $post['id'] = absint($post['id']);
+                if(!empty($tm_post['id'])) {
+                    $tm_post['id'] = absint($tm_post['id']);
                 }
-                if(isset($post['vat_id'])){
-                    $post['vat_id'] = 1;
+                if(isset($tm_post['vat_id'])){
+                    $tm_post['vat_id'] = 1;
                 }
 
                 if(empty($tm_globals->organizer_id) || !is_int($tm_globals->organizer_id)){
@@ -62,15 +62,15 @@
                 }
                 
                 if(empty($errors)){
-                    $post['organizer_id'] = absint($tm_globals->organizer_id);
-                    $post['approved'] = absint($post['approved']);
-                    $post['rules']['shown'] = absint($post['rules']['shown']);
-                    $post['rules']['sale_active'] = absint($post['rules']['sale_active']);
-                    $post['vat_id'] = absint($post['vat_id']);
+                    $tm_post['organizer_id'] = absint($tm_globals->organizer_id);
+                    $tm_post['approved'] = absint($tm_post['approved']);
+                    $tm_post['rules']['shown'] = absint($tm_post['rules']['shown']);
+                    $tm_post['rules']['sale_active'] = absint($tm_post['rules']['sale_active']);
+                    $tm_post['vat_id'] = absint($tm_post['vat_id']);
 
-                    $post_json = $post;
+                    $tm_post_json = $tm_post;
                     
-                    $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
+                    $ticketmachine_json = ticketmachine_tmapi_event($tm_post_json, "POST");
                     $response = (object)$ticketmachine_json;
                 }
             }

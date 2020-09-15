@@ -42,10 +42,10 @@
 	$api->auth = new stdClass();
 
 	//get page slugs
-	$post = get_post($tm_globals->events_slug_id); 
-	$tm_globals->events_slug = $post->post_name;
-	$post = get_post($tm_globals->event_slug_id); 
-	$tm_globals->event_slug = $post->post_name;
+	$tm_post = get_post($tm_globals->events_slug_id); 
+	$tm_globals->events_slug = $tm_post->post_name;
+	$tm_post = get_post($tm_globals->event_slug_id); 
+	$tm_globals->event_slug = $tm_post->post_name;
 
 	switch ($tm_globals->event_grouping) {
 		case 'Month':
@@ -437,7 +437,7 @@
 		return $array;
 	}
 
-	function ticketmachine_apiRequest($url, $post=FALSE, $method="GET", $headers=array()) {
+	function ticketmachine_apiRequest($url, $tm_post=FALSE, $method="GET", $headers=array()) {
 	  global $tm_globals, $api;
 
 	  $headers = array();
@@ -448,7 +448,7 @@
 
 	  if($method == "POST") {
 
-		if($post) {
+		if($tm_post) {
 			$headers = ticketmachine_array_push_assoc($headers, 'Content-Type', 'application/json');
 
 			$resource = wp_remote_post($url, array(
@@ -456,7 +456,7 @@
 				'timeout' => 45,
 				'headers' => $headers,
 				'body' 	  => json_encode(
-							str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", $post))), 
+							str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", $tm_post))), 
 							JSON_UNESCAPED_SLASHES
 						  )
 			));
@@ -464,7 +464,7 @@
 
 	  }else{
 
-		if($post) {
+		if($tm_post) {
 			$headers = ticketmachine_array_push_assoc($headers, 'Accept', 'application/json');
 		}
 
@@ -483,7 +483,7 @@
 
 	/* API Requests */
 	/* Get event list */
-	function ticketmachine_tmapi_events($params=array(), $method="GET", $post=FALSE,  $headers=array(), $url_only=0){
+	function ticketmachine_tmapi_events($params=array(), $method="GET", $tm_post=FALSE,  $headers=array(), $url_only=0){
 		global $api, $tm_globals;
 
 		$params = (object)$params;
@@ -522,16 +522,16 @@
 		if(isset($url_only) && $url_only == 1) {
 			return $url;
 		}else{
-			$events = (object)ticketmachine_apiRequest($url, $post, $method, $headers);
+			$events = (object)ticketmachine_apiRequest($url, $tm_post, $method, $headers);
 			return $events;
 		}
 	}
 
 	/* Get event */
-	function ticketmachine_tmapi_event($params=array(), $method="GET", $post=FALSE, $headers=array()){
+	function ticketmachine_tmapi_event($params=array(), $method="GET", $tm_post=FALSE, $headers=array()){
 		global $api, $tm_globals;
 		if($method == "POST"){
-			$post = $params;
+			$tm_post = $params;
 		}
 		$params = (object)$params;
 
@@ -544,7 +544,7 @@
 			$url .= "?categories=true";
 		}
 
-		$event = (object)ticketmachine_apiRequest($url, $post, $method, $headers);
+		$event = (object)ticketmachine_apiRequest($url, $tm_post, $method, $headers);
 
 		return $event;
 	}
@@ -560,14 +560,14 @@
 	}
 
 	/* Get connected organizer */
-	function ticketmachine_tmapi_organizers($params=array(), $method="GET", $post=FALSE, $headers=array()){
+	function ticketmachine_tmapi_organizers($params=array(), $method="GET", $tm_post=FALSE, $headers=array()){
 		global $api, $tm_globals;
 
 		$params = (object)$params;
 
 		$url = $api->base_url . "ticketmachine.de/api/v2/organizers/me";
 
-		$organizer = ticketmachine_apiRequest($url, $post, $method, $headers);
+		$organizer = ticketmachine_apiRequest($url, $tm_post, $method, $headers);
 
 		return $organizer;
 	}

@@ -14,15 +14,15 @@
             if(!empty($event_id)){
                 $params = [ "id" => absint($event_id) ];
                 $ticketmachine_json_a = ticketmachine_tmapi_event($params);
-                $post = (array)$ticketmachine_json_a;
+                $tm_post = (array)$ticketmachine_json_a;
 
                 //validation
-                if(!empty($post['approved'])){
-                    $post['approved'] = 1;
-                    $post['rules']['shown'] = 1;
+                if(!empty($tm_post['approved'])){
+                    $tm_post['approved'] = 1;
+                    $tm_post['rules']['shown'] = 1;
                 }else{
-                    $post['approved'] = 0;
-                    $post['rules']['shown'] = 0;
+                    $tm_post['approved'] = 0;
+                    $tm_post['rules']['shown'] = 0;
                 }
 
                 if(empty($tm_globals->organizer_id) || !is_int($tm_globals->organizer_id)){
@@ -30,13 +30,13 @@
                 }
                 
                 if(empty($errors)){
-                    $post['id'] = absint($event_id);
-                    $post['organizer_id'] = absint($tm_globals->organizer_id);
-                    $post['approved'] = 1 - absint($post['approved']);
-                    $post['rules']['shown'] = absint($post['approved']);
+                    $tm_post['id'] = absint($event_id);
+                    $tm_post['organizer_id'] = absint($tm_globals->organizer_id);
+                    $tm_post['approved'] = 1 - absint($tm_post['approved']);
+                    $tm_post['rules']['shown'] = absint($tm_post['approved']);
 
-                    $post_json = $post;
-                    $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
+                    $tm_post_json = $tm_post;
+                    $ticketmachine_json = ticketmachine_tmapi_event($tm_post_json, "POST");
                     $response = (object)$ticketmachine_json;
                 }
 

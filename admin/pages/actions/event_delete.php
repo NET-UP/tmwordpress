@@ -17,12 +17,12 @@
                 }
                 
                 if(empty($errors)){
-                    $post = array();
-                    $post['id'] = absint($event_id);
-                    $post['organizer_id'] = absint($tm_globals->organizer_id);
+                    $tm_post = array();
+                    $tm_post['id'] = absint($event_id);
+                    $tm_post['organizer_id'] = absint($tm_globals->organizer_id);
 
-                    $post_json = json_encode($post);
-                    $ticketmachine_json = ticketmachine_tmapi_event($post_json, "POST");
+                    $tm_post_json = json_encode($tm_post);
+                    $ticketmachine_json = ticketmachine_tmapi_event($tm_post_json, "POST");
                     $response = (object)$ticketmachine_json;
                 }
             }else{
