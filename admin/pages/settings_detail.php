@@ -133,8 +133,12 @@
         <tr>
             <th><label><?php esc_html_e('Page layout', 'ticketmachine-event-manager'); ?></label></th>
             <td>
-                <input name="detail_page_layout" type="radio" value=1 class="regular-text" <?php if($ticketmachine_config->detail_page_layout == 1){ ?>checked <?php  } ?>/> <?php esc_html_e('1 column', 'ticketmachine-event-manager'); ?> &nbsp;
-                <input name="detail_page_layout" type="radio" value=2 class="regular-text" <?php if($ticketmachine_config->detail_page_layout == 2){ ?>checked <?php  } ?>/> <?php esc_html_e('2 columns', 'ticketmachine-event-manager'); ?>
+                <label>
+                    <input name="detail_page_layout" type="radio" value=1 class="regular-text" <?php if($ticketmachine_config->detail_page_layout == 1){ ?>checked <?php  } ?>/> <?php esc_html_e('1 column', 'ticketmachine-event-manager'); ?> &nbsp;
+                </label>
+                <label>
+                    <input name="detail_page_layout" type="radio" value=2 class="regular-text" <?php if($ticketmachine_config->detail_page_layout == 2){ ?>checked <?php  } ?>/> <?php esc_html_e('2 columns', 'ticketmachine-event-manager'); ?>
+                </label>
             </td>
         </tr>
     </tbody>
