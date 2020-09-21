@@ -253,6 +253,10 @@ body .ticketmachine_page a.btn {
 
 
 /* Calendar */
+#calendar .fc-title {
+	white-space: normal;
+}
+
 #calendar .fc-day-grid-event {
     padding: 5px;
     font-size: 1em;
