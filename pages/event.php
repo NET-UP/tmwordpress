@@ -17,7 +17,7 @@
 				$event->has_location = 1;
 			}
 
-			if($tm_globals->event_page_columns == 1){
+			if($tm_globals->detail_page_layout == 1){
 				$tm1_lg_width = 12;
 				$tm1_xl_width = 12;
 				$tm2_lg_width = 12;
