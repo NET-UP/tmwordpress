@@ -133,8 +133,8 @@
         <tr>
             <th><label><?php esc_html_e('Page layout', 'ticketmachine-event-manager'); ?></label></th>
             <td>
-                <input name="detail_page_layout" type="radio" value=1 class="regular-text" <?php if($ticketmachine_config->detail_page_layout == 1){ ?>checked <?php  } ?>/>
-                <input name="detail_page_layout" type="radio" value=2 class="regular-text" <?php if($ticketmachine_config->detail_page_layout == 2){ ?>checked <?php  } ?>/>
+                <input name="detail_page_layout" type="radio" value=1 class="regular-text" <?php if($ticketmachine_config->detail_page_layout == 1){ ?>checked <?php  } ?>/> 1 spaltig
+                <input name="detail_page_layout" type="radio" value=2 class="regular-text" <?php if($ticketmachine_config->detail_page_layout == 2){ ?>checked <?php  } ?>/> 2 spaltig
             </td>
         </tr>
     </tbody>
