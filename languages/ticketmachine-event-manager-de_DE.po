@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2020-09-21 16:32+0200\n"
-"PO-Revision-Date: 2020-09-21 16:34+0200\n"
+"PO-Revision-Date: 2020-09-21 16:35+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -445,7 +445,7 @@ msgstr "Datum"
 
 #: admin/pages/settings_detail.php:134
 msgid "Page layout"
-msgstr ""
+msgstr "Seitenlayout"
 
 #: admin/pages/settings_detail.php:137
 msgid "1 column"
