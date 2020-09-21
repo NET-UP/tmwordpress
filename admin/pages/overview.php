@@ -41,7 +41,7 @@
         <div class="box mb-3">
             <a href="#" class="close"><i class="fas fa-times"></i></a>
             <div class="box-body">
-                <h1><?php esc_html_e('Welcome to', 'ticketmachine-event-manager'); ?> <span>TicketMachine</span> <span>Event Manager</span> <span class="text-primary">1.0!</span></h1>
+                <h1><?php esc_html_e('Welcome to', 'ticketmachine-event-manager'); ?> <span>TicketMachine</span> <span>Event Manager</span> <span class="text-primary">1.0.3!</span></h1>
                 <div><?php esc_html_e("You're ready to go!", 'ticketmachine-event-manager'); ?></div>
             
                 <br>
