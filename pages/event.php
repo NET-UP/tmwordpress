@@ -27,7 +27,9 @@
 							<div class="col-12 col-lg-7 col-xl-6 ticketmachine_right">';
 				$ticketmachine_output .= ticketmachine_event_page_actions($event, $tm_globals);
 				$ticketmachine_output .= ticketmachine_event_page_tickets($event, $tm_globals);
-				$ticketmachine_output .= ticketmachine_event_page_details($event, $tm_globals);
+				if ($tm_globals->show_additional_info) {
+					$ticketmachine_output .= ticketmachine_event_page_details($event, $tm_globals);
+				}
 				if ($tm_globals->show_google_map) {
 					$ticketmachine_output .= ticketmachine_event_page_google_map($event, $tm_globals);
 				}
