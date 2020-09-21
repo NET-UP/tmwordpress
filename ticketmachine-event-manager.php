@@ -217,6 +217,7 @@
                     show_social_media_messenger bit(1) DEFAULT 1 NOT NULL,
                     show_social_media_whatsapp bit(1) DEFAULT 1 NOT NULL,
                     show_google_map bit(1) DEFAULT 1 NOT NULL,
+                    show_additional_info bit(1) DEFAULT 1 NOT NULL,
                     event_grouping varchar(64) DEFAULT 'Year' NOT NULL,
                     events_slug_id varchar(128) DEFAULT '" . $events_slug->ID . "' NOT NULL,
                     event_slug_id varchar(128) DEFAULT '" . $event_slug->ID . "' NOT NULL,

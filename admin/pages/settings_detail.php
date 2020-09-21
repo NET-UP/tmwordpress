@@ -64,6 +64,12 @@
 			}else{
 				$tm_post->show_google_map = false;
             }
+            
+			if (!empty($tm_post->show_additional_info)){
+				$tm_post->show_additional_info = true;
+			}else{
+				$tm_post->show_additional_info = false;
+            }
 
             $save_array = 
                 array(
@@ -75,7 +81,8 @@
                     "show_social_media_email" => (bool)$tm_post->show_social_media_email,
                     "show_social_media_messenger" => (bool)$tm_post->show_social_media_messenger,
                     "show_social_media_whatsapp" => (bool)$tm_post->show_social_media_whatsapp,
-                    "show_google_map" => (bool)$tm_post->show_google_map
+                    "show_google_map" => (bool)$tm_post->show_google_map,
+                    "show_additional_info" => (bool)$tm_post->show_additional_info
                 );
             if (!empty($ticketmachine_config) && empty($errors)) {
                 $wpdb->update(
@@ -158,6 +165,15 @@
         <tr>
             <th><label><?php esc_html_e('Activate Google Maps?', 'ticketmachine-event-manager'); ?></label></th>
             <td><input name="show_google_map" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_google_map){ ?>checked <?php  } ?>/></td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="form-table">
+    <tbody>
+        <tr>
+            <th><label><?php esc_html_e('Activate Google Maps?', 'ticketmachine-event-manager'); ?></label></th>
+            <td><input name="show_additional_info" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_additional_info){ ?>checked <?php  } ?>/></td>
         </tr>
     </tbody>
 </table>
