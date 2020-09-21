@@ -123,32 +123,32 @@
             <td><input name="show_social_media" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
-            <th class="pl-4"><label><?php esc_html_e('iCal', 'ticketmachine-event-manager'); ?></label></th>
-            <td><input name="show_social_media_ical" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_ical){ ?>checked <?php  } ?>/></td>
+            <th class="pl-4 py-2"><label><?php esc_html_e('iCal', 'ticketmachine-event-manager'); ?></label></th>
+            <td class="py-2"><input name="show_social_media_ical" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_ical){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
-            <th class="pl-4"><label><?php esc_html_e('Google Calendar', 'ticketmachine-event-manager'); ?></label></th>
-            <td><input name="show_social_media_google_cal" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_google_cal){ ?>checked <?php  } ?>/></td>
+            <th class="pl-4 py-2"><label><?php esc_html_e('Google Calendar', 'ticketmachine-event-manager'); ?></label></th>
+            <td class="py-2"><input name="show_social_media_google_cal" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_google_cal){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
-            <th class="pl-4"><label><?php esc_html_e('Facebook', 'ticketmachine-event-manager'); ?></label></th>
-            <td><input name="show_social_media_facebook" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_facebook){ ?>checked <?php  } ?>/></td>
+            <th class="pl-4 py-2"><label><?php esc_html_e('Facebook', 'ticketmachine-event-manager'); ?></label></th>
+            <td class="py-2"><input name="show_social_media_facebook" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_facebook){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
-            <th class="pl-4"><label><?php esc_html_e('Twitter', 'ticketmachine-event-manager'); ?></label></th>
-            <td><input name="show_social_media_twitter" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_twitter){ ?>checked <?php  } ?>/></td>
+            <th class="pl-4 py-2"><label><?php esc_html_e('Twitter', 'ticketmachine-event-manager'); ?></label></th>
+            <td class="py-2"><input name="show_social_media_twitter" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_twitter){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
-            <th class="pl-4"><label><?php esc_html_e('Email', 'ticketmachine-event-manager'); ?></label></th>
-            <td><input name="show_social_media_email" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_email){ ?>checked <?php  } ?>/></td>
+            <th class="pl-4 py-2"><label><?php esc_html_e('Email', 'ticketmachine-event-manager'); ?></label></th>
+            <td class="py-2"><input name="show_social_media_email" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_email){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
-            <th class="pl-4"><label><?php esc_html_e('Messenger', 'ticketmachine-event-manager'); ?></label></th>
-            <td><input name="show_social_media_messenger" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_messenger){ ?>checked <?php  } ?>/></td>
+            <th class="pl-4 py-2"><label><?php esc_html_e('Messenger', 'ticketmachine-event-manager'); ?></label></th>
+            <td class="py-2"><input name="show_social_media_messenger" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_messenger){ ?>checked <?php  } ?>/></td>
         </tr>
         <tr class="social_media hidden">
-            <th class="pl-4"><label><?php esc_html_e('WhatsApp', 'ticketmachine-event-manager'); ?></label></th>
-            <td><input name="show_social_media_whatsapp" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_whatsapp){ ?>checked <?php  } ?>/></td>
+            <th class="pl-4 py-2"><label><?php esc_html_e('WhatsApp', 'ticketmachine-event-manager'); ?></label></th>
+            <td class="py-2"><input name="show_social_media_whatsapp" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_social_media_whatsapp){ ?>checked <?php  } ?>/></td>
         </tr>
     </tbody>
 </table>

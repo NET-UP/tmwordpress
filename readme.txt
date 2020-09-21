@@ -88,8 +88,17 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 == Changelog ==
 
+= 1.0.4 =
+* Fixed sign-up authentication error.
+
 = 1.0.3 =
-* Fixed compatability issues with many plugins.
+* Added compatability with Contact Form 7 & Enfold Theme.
+
+= 1.0.2 =
+* Fixed whitespace error when activating plugin on certain installations.
+
+= 1.0.1 =
+* Added new tab "Cloud" in settings page to force synchronise events.
 
 = 1.0.0 =
 * First published version.
