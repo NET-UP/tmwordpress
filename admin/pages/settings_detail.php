@@ -70,6 +70,10 @@
 			}else{
 				$tm_post->show_additional_info = false;
             }
+            
+			if (!empty($tm_post->detail_page_layout)){
+				$tm_post->detail_page_layout = 1;
+			}
 
             $save_array = 
                 array(
@@ -82,7 +86,8 @@
                     "show_social_media_messenger" => (bool)$tm_post->show_social_media_messenger,
                     "show_social_media_whatsapp" => (bool)$tm_post->show_social_media_whatsapp,
                     "show_google_map" => (bool)$tm_post->show_google_map,
-                    "show_additional_info" => (bool)$tm_post->show_additional_info
+                    "show_additional_info" => (bool)$tm_post->show_additional_info,
+                    "detail_page_layout" => (int)$tm_post->detail_page_layout
                 );
             if (!empty($ticketmachine_config) && empty($errors)) {
                 $wpdb->update(
@@ -122,6 +127,18 @@
         });
     });
 </script>
+
+<table class="form-table">
+    <tbody>
+        <tr>
+            <th><label><?php esc_html_e('Page layout', 'ticketmachine-event-manager'); ?></label></th>
+            <td>
+                <input name="detail_page_layout" type="radio" value=1 class="regular-text" <?php if($ticketmachine_config->detail_page_layout == 1){ ?>checked <?php  } ?>/>
+                <input name="detail_page_layout" type="radio" value=2 class="regular-text" <?php if($ticketmachine_config->detail_page_layout == 2){ ?>checked <?php  } ?>/>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 <table class="form-table">
 	<tbody>
