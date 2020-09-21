@@ -16,15 +16,27 @@
 			if(!empty($event->ev_location_name) || !empty($event->event_location['city']) || !empty($event->event_location['street']) || !empty($event->event_location['zip']) || !empty($event->event_location['house_number'])){
 				$event->has_location = 1;
 			}
+
+			if($tm_globals->event_page_columns == 1){
+				$tm1_lg_width = 12;
+				$tm1_xl_width = 12;
+				$tm2_lg_width = 12;
+				$tm2_xl_width = 12;
+			}else{
+				$tm1_lg_width = 5;
+				$tm1_xl_width = 6;
+				$tm2_lg_width = 7;
+				$tm2_xl_width = 6;
+			}
 	
 			if(isset($event->id)){
 				$ticketmachine_output .= '
 						<div class="row">
-							<div class="col-12 col-lg-5 col-xl-6 ticketmachine_left">';
+							<div class="col-12 col-lg-' . $tm1_lg_width . ' col-xl-' . $tm1_xl_width . ' ticketmachine_left">';
 				$ticketmachine_output .= ticketmachine_event_page_information($event, $tm_globals);
 				$ticketmachine_output .= '
 							</div>
-							<div class="col-12 col-lg-7 col-xl-6 ticketmachine_right">';
+							<div class="col-12 col-lg-' . $tm2_lg_width . ' col-xl-' . $tm2_xl_width . ' ticketmachine_right">';
 				$ticketmachine_output .= ticketmachine_event_page_actions($event, $tm_globals);
 				$ticketmachine_output .= ticketmachine_event_page_tickets($event, $tm_globals);
 				if ($tm_globals->show_additional_info) {
