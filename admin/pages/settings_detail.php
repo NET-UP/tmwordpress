@@ -71,7 +71,7 @@
 				$tm_post->show_additional_info = false;
             }
             
-			if (!empty($tm_post->detail_page_layout)){
+			if (empty($tm_post->detail_page_layout)){
 				$tm_post->detail_page_layout = 1;
 			}
 
