@@ -248,7 +248,7 @@ body .ticketmachine_page a.btn {
 	position:relative;
 }  
 
-.ticketmachine_page .card-text.closed {
+.ticketmachine_page .card-text.read-more-enabled.closed {
 	max-height: 170px;
 }  
 
