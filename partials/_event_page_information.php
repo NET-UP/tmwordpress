@@ -28,17 +28,24 @@
 
         $ticketmachine_output .= '</div>
 
-                    <div class="card-text mt-3">
-                        '. wpautop($event->ev_description) .'
-                    </div>
+                    <div class="card-text mt-3';
+                    
+                    if($tm_globals->detail_page_layout != 1){ 
+                        $ticketmachine_output .= ' read-more-enabled';
+                    }
+                        
+        $ticketmachine_output .= '">'. wpautop($event->ev_description) .'
+                    </div>';
 
-                    <div class="card-meta text-center pt-1 pb-1 hidden read-more-container">
-                        <button title="' . esc_attr__("Read More", "ticketmachine-event-manager") . '" class="btn btn-sm btn-secondary read-more" style="border-radius: 20px;">
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
+        if($tm_globals->detail_page_layout != 1){
+            $ticketmachine_output .= '<div class="card-meta text-center pt-1 pb-1 hidden read-more-container">
+                            <button title="' . esc_attr__("Read More", "ticketmachine-event-manager") . '" class="btn btn-sm btn-secondary read-more" style="border-radius: 20px;">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>';
+        }
 
-                    <div class="card-meta mt-2">';
+        $ticketmachine_output .= '<div class="card-meta mt-2">';
 
                     foreach($event->tags as $tag) {
                         $ticketmachine_output .= "<a href='/" . esc_html($tm_globals->events_slug) . "?tag=" . esc_html($tag) . "' class='card-meta-tag keyword'>". $tag ."</a>";

@@ -14,7 +14,7 @@ jQuery(document).ready(function(){
     });
 
     var t = jQuery('.card-text');
-    if(t.height() > 170) {
+    if(t.height() > 170 && t.hasClass("tm-read-more-enabled")) {
         t.addClass('closed');
         t.parent().find('.read-more-container').removeClass('hidden');
     }
