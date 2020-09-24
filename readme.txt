@@ -79,7 +79,7 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 1. Go to https://wordpress.org/plugins/ticketmachine-event-manager/ 
 2. Click "Download" at the top of the plugin page.
-3. In the Wordpres backend go to "Plugins" and click "Install".
+3. In the Wordpress backend go to "Plugins" and click "Install".
 3. Click "Upload Plugin".
 4. Select the ZIP file that you downloaded from the plugin page and press "Ok".
 7. When the download is finished, go to the TicketMachine settings page and click "Connect with TicketMachine". 
