@@ -11000,10 +11000,6 @@
     display: none;
 }
 
-.ticketmachine_page .badge {
-    border: 1px solid #000;
-}
-
 .ticketmachine_page .table {
     border-collapse: collapse !important;
 }
