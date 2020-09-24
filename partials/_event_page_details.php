@@ -4,7 +4,7 @@
         $ticketmachine_output = '<div class="card mb-3">
                             <div class="row card-body position-relative">
                                 <div class="col-sm-6">
-                                    <h3 class="d-inline-block">'. esc_html__("Details", "ticketmachine-event-manager") .'</h3>
+                                    <h4 class="d-inline-block">'. esc_html__("Details", "ticketmachine-event-manager") .'</h4>
                                     <br>
                                     <label>'. esc_html__("Start", "ticketmachine-event-manager") .':</label>
                                     <div class="mb-2">
@@ -23,7 +23,7 @@
             if(isset($event->has_location) && $event->has_location == 1){
                                     
                 $ticketmachine_output .=       '<div class="col-sm-6">
-                                        <h3 class="d-inline-block">'. esc_html__("Event Location", "ticketmachine-event-manager") .'</h3>
+                                        <h4 class="d-inline-block">'. esc_html__("Event Location", "ticketmachine-event-manager") .'</h4>
                                         <br>
                                         <div>'. esc_html($event->ev_location_name) .'</div>
                                         <div>'. esc_html($event->event_location['city']) .' '. esc_html($event->event_location['zip']) .'</div>
