@@ -1892,6 +1892,11 @@
     padding: 0.3rem;
 }
 
+.ticketmachine_page .table-bordered th,
+  .ticketmachine_page .table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
 .ticketmachine_page .table-bordered thead th,
   .ticketmachine_page .table-bordered thead td {
     border-bottom-width: 2px;
