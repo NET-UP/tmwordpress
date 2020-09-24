@@ -111,7 +111,7 @@ body .ticketmachine_page a.btn {
     max-height: 3.65em;
 	margin-left: 3.6em;
 	margin-right: 3.6em;
-	overflow: hidden;
+	overflow-y: hidden;
 	font-size: 1rem;
 }
 
