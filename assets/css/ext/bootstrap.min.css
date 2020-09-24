@@ -11019,7 +11019,7 @@
 
 .ticketmachine_page .table-bordered th,
     .ticketmachine_page .table-bordered td {
-    border: 1px solid #dee2e6 !important;
+    border: 1px solid #dee2e6;
 }
 
 .ticketmachine_page .table-dark {
