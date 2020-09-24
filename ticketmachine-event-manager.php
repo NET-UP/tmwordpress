@@ -492,6 +492,10 @@
 		if(empty($params->sort)){
 			$params->sort = "ev_date";
 		}
+		
+		if(!empty($params->q)) {
+			$params->query = $params->q;
+		}
 
 		$url = $api->base_url . "ticketmachine.de/api/v2/events?";
 		
