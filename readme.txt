@@ -88,6 +88,10 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 == Changelog ==
 
+= 1.0.8 =
+* Fixed search in calendar view
+* Small CSS optimizations
+
 = 1.0.7 =
 * Added compatability with Bootstrap 3 themes & plugins
 
