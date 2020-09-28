@@ -23,7 +23,7 @@
             if(isset($event->has_location) && $event->has_location == 1){
                                     
                 $ticketmachine_output .=       '<div class="col-sm-6">
-                                        <h4 class="d-inline-block">'. esc_html__("Event Location", "ticketmachine-event-manager") .'</h4>
+                                        <h4 class="d-inline-block">'. esc_html__("Location", "ticketmachine-event-manager") .'</h4>
                                         <br>
                                         <div>'. esc_html($event->ev_location_name) .'</div>
                                         <div>'. esc_html($event->event_location['city']) .' '. esc_html($event->event_location['zip']) .'</div>
