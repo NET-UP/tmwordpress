@@ -152,7 +152,7 @@
 					break;
 			}
 			
-			add_rewrite_rule( 'event/([a-z0-9-]+)[/]?$', 'event?id=$matches[1]', 'top' );
+			add_rewrite_rule( 'event/([a-z0-9-]+)[/]?$', 'event/?id=$matches[1]', 'top' );
 		}
 	}
 
