@@ -367,6 +367,9 @@ if( current_user_can('edit_posts') ) {
                 $result = strcmp($a[$orderby], $b[$orderby]); //Determine sort order
                 return ($order==='asc') ? $result : -$result; //Send final sort direction to usort
             }
+            if(empty($data)){
+                $data = [];
+            }
             usort($data, 'usort_reorder');
             
             
