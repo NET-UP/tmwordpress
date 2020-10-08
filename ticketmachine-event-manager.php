@@ -710,6 +710,7 @@
     if(isset($_GET['id']) && $_GET['id'] > 0){
 		add_action('wp_head','ticketmachine_event_metadata_event');
 		remove_action( 'wpseo_head', array( $GLOBALS['wpseo_og'], 'opengraph' ), 30 );
+		remove_action( 'wpseo_head', array( wpseo_output_twitter_card , 'get_instance' ) , 40 );
     }
 
 	function ticketmachine_calendar_callback() {
