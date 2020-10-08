@@ -436,12 +436,6 @@
             echo '<meta property="og:url" content="' . esc_url($actual_link) . '" />';
             echo '<meta property="og:type" content="website" />';
 		}
-		add_filter( 'wpseo_opengraph_url', 'yoast_change_url' );
-	}
-
-	function yoast_change_url( $url ) {
-		$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-		return $actual_link ;
 	}
 
 	function ticketmachine_event_metadata_event() {
@@ -714,7 +708,8 @@
 
 	add_action('wp_head','ticketmachine_event_metadata');
     if(isset($_GET['id']) && $_GET['id'] > 0){
-        add_action('wp_head','ticketmachine_event_metadata_event');
+		add_action('wp_head','ticketmachine_event_metadata_event');
+		remove_action( 'wpseo_head' , array( 'WPSEO_Twitter' , 'get_instance' ) , 40 );
     }
 
 	function ticketmachine_calendar_callback() {
