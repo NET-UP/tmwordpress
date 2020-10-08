@@ -152,7 +152,7 @@
 					break;
 			}
 			
-			add_rewrite_rule( 'event/?id=([a-z0-9-]+)[/]?$', 'index.php?page=event&id=$matches[1]', 'top' );
+			add_rewrite_rule( 'event/([a-z0-9-]+)[/]?$', 'index.php?page=event&id=$matches[1]', 'top' );
 		}
 	}
 
@@ -435,7 +435,13 @@
             $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             echo '<meta property="og:url" content="' . esc_url($actual_link) . '" />';
             echo '<meta property="og:type" content="website" />';
-        }
+		}
+		add_filter( 'wpseo_opengraph_url', 'yoast_change_url' );
+	}
+
+	function yoast_change_url( $url ) {
+		$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		return $actual_link ;
 	}
 
 	function ticketmachine_event_metadata_event() {
@@ -449,7 +455,7 @@
                 echo '<meta property="og:description" content="'. ticketmachine_i18n_date("d.m.Y", $event->ev_date) .' @ '. ticketmachine_i18n_date("H:i", $event->ev_date) .'" />';
             }
        }
-    }
+	}
 
 	function ticketmachine_array_push_assoc($array, $key, $value){
 		$array[$key] = $value;
