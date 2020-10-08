@@ -443,6 +443,7 @@
             $params = [ "id" => absint($_GET['id']) ];
             $event = ticketmachine_tmapi_event($params);
             if(isset($event->id)){            
+                echo '<title>' . esc_html($event->ev_name) . '</title>';
                 echo '<meta property="og:title" content="' . esc_html($event->ev_name) . '" />';
                 echo '<meta property="og:image" content="' . esc_url($event->event_img_url) . '" />';
                 echo '<meta property="og:type" content="website" />';
