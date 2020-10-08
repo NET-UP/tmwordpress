@@ -434,7 +434,10 @@
         if(isset($_GET['id']) && $_GET['id'] > 0){
             $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
             echo '<meta property="og:url" content="' . esc_url($actual_link) . '" />';
-            echo '<meta property="og:type" content="website" />';
+			echo '<meta property="og:type" content="website" />';
+
+			$front_end = YoastSEO()->classes->get( Yoast\WP\SEO\Integrations\Front_End_Integration::class ); 
+			remove_action( 'wpseo_head', [ $front_end, 'present_head' ], -9999 );
 		}
 	}
 
@@ -709,8 +712,6 @@
 	add_action('wp_head','ticketmachine_event_metadata');
     if(isset($_GET['id']) && $_GET['id'] > 0){
 		add_action('wp_head','ticketmachine_event_metadata_event');
-		remove_action( 'wpseo_head', array( $GLOBALS['wpseo_og'], 'opengraph' ), 30 );
-		remove_action( 'wpseo_head', array( 'wpseo_output_twitter_card' , 'get_instance' ) , 40 );
     }
 
 	function ticketmachine_calendar_callback() {
