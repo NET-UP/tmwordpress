@@ -709,8 +709,10 @@
 	add_action( 'template_redirect', 'remove_wpseo' );
 	function remove_wpseo() {
 		if(isset($_GET['id']) && $_GET['id'] > 0){
-			$front_end = YoastSEO()->classes->get( Yoast\WP\SEO\Integrations\Front_End_Integration::class );
-			remove_action( 'wpseo_head', [ $front_end, 'present_head' ], -9999 );
+			if (function_exists('YoastSEO')) {
+				$front_end = YoastSEO()->classes->get( Yoast\WP\SEO\Integrations\Front_End_Integration::class );
+				remove_action( 'wpseo_head', [ $front_end, 'present_head' ], -9999 );
+			}
 		}
 	}
 
