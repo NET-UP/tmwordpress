@@ -187,13 +187,9 @@ body .ticketmachine_page a.btn {
 }
 
 .ticketmachine_page li.media {
-    border-bottom: 1px solid #EEE;
-    margin-bottom: 7px;
-    padding-bottom: 9px;
-}
-
-.ticketmachine_page ul > li.media:last-child {
-    border-bottom: none;
+	border: 1px solid #EEE;
+	background:#FFF;
+	border-radius:3px;
 }
 
 .ticketmachine_page .media-img {
