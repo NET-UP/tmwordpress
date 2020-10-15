@@ -151,8 +151,10 @@
 					setlocale(LC_TIME, 'de_DE.UTF-8');
 					break;
 			}
-			
-			add_rewrite_rule( 'event/([a-z0-9-]+)[/]?$', 'index.php?page=event&id=$matches[1]', 'top' );
+
+			if(isset($tm_globals->activated) && $tm_globals->activated > 0){
+				ticketmachine_tmapi_refresh_token_check();
+			}
 		}
 	}
 
@@ -694,10 +696,6 @@
 	function ticketmachine_i18n_reverse_date($datetime){
 		$formatted_date = gmdate(DATE_ISO8601, strtotime(date_i18n(DATE_ISO8601, strtotime($datetime))));
 		return $formatted_date;
-	}
-
-	if(isset($tm_globals->activated) && $tm_globals->activated > 0){
-		ticketmachine_tmapi_refresh_token_check();
 	}
     
     add_filter( 'oembed_response_data', 'ticketmachine_disable_embeds_filter_oembed_response_data_' );
