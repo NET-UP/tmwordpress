@@ -88,6 +88,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 == Changelog ==
 
+= 1.1.3 =
+* Fixed small issue with requesting new access token from ticketmachine cloud
+
 = 1.1.2 =
 * Fixed opengraph conflict with YoastSEO v14.0+
 
