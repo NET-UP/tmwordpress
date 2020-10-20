@@ -499,6 +499,8 @@
 	  }
 	  $response = $resource['body'];
 
+	  print_r($resource['headers']);
+
 	  return json_decode($response, true);
 	  
 	}
