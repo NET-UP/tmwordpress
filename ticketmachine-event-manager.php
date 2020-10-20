@@ -606,20 +606,22 @@
 
 		if(time() > $tm_globals->api_refresh_last + $tm_globals->api_refresh_interval){
 			$token = ticketmachine_tmapi_get_access_token($tm_globals->api_refresh_token, "update");
-		
-			$save_array = array(
-				"api_access_token" => $token['access_token'],
-				"api_refresh_token" => $token['refresh_token'],
-				"api_refresh_last" => time(),
-				"api_refresh_interval" => $token['expires_in']/2
-			);
 
-			$wpdb->update(
-				$wpdb->prefix . "ticketmachine_config",
-				$save_array,
-				array('id' => $tm_globals->id)
-			);
-			$tm_globals->api_access_token = $token['access_token'];
+			if(isset($token['access_token'])){
+				$save_array = array(
+					"api_access_token" => $token['access_token'],
+					"api_refresh_token" => $token['refresh_token'],
+					"api_refresh_last" => time(),
+					"api_refresh_interval" => $token['expires_in']/2
+				);
+	
+				$wpdb->update(
+					$wpdb->prefix . "ticketmachine_config",
+					$save_array,
+					array('id' => $tm_globals->id)
+				);
+				$tm_globals->api_access_token = $token['access_token'];
+			}
 		}
 	}
 
