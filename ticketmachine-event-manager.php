@@ -648,6 +648,8 @@
 
 		$token = ticketmachine_apiRequest($api->token, $api->auth->code, "POST");
 		$tm_globals->api_access_token = $token['access_token'];
+
+		print_r($token);
 		
 		return $token;
 	}
