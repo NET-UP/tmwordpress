@@ -607,10 +607,15 @@
 		
 			$save_array = array(
 				"api_access_token" => $token['access_token'],
-				"api_refresh_token" => $token['refresh_token'],
-				"api_refresh_last" => time(),
-				"api_refresh_interval" => $token['expires_in']/2
+				"api_refresh_last" => time()
 			);
+
+			if(!$tm_globals->api_refresh_token) {
+				ticketmachine_array_push_assoc($save_array, "api_refresh_token", $token['refresh_token']);
+			}
+			if(!$tm_globals->api_refresh_interval) {
+				ticketmachine_array_push_assoc($save_array, "api_refresh_interval", $token['expires_in']/2);
+			}
 
 			$wpdb->update(
 				$wpdb->prefix . "ticketmachine_config",
