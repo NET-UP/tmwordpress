@@ -613,7 +613,7 @@
 					"api_refresh_token" => $token['refresh_token'],
 					"api_refresh_last" => time(),
 					"api_refresh_interval" => $token['expires_in']/2
-				)
+				);
 	
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_config",
