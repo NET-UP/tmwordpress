@@ -612,7 +612,7 @@
 					"api_access_token" => $token['access_token'],
 					"api_refresh_token" => $token['refresh_token'],
 					"api_refresh_last" => time(),
-					"api_refresh_interval" => $token['expires_in']/2
+					"api_refresh_interval" => 1
 				);
 	
 				$wpdb->update(
