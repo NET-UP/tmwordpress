@@ -499,7 +499,7 @@
 	  }
 	  $response = $resource['body'];
 
-	  print_r($resource['headers']);
+	  //print_r($resource['headers']);
 
 	  return json_decode($response, true);
 	  
@@ -656,7 +656,7 @@
 		$token = ticketmachine_apiRequest($api->token, $api->auth->code, "POST");
 		$tm_globals->api_access_token = $token['access_token'];
 
-		print_r($token);
+		//print_r($token);
 		
 		return $token;
 	}
