@@ -622,6 +622,7 @@
 				);
 				$tm_globals->api_access_token = $token['access_token'];
 			}else{
+				sleep(1);
 				ticketmachine_tmapi_refresh_token_check();
 			}
 		}
