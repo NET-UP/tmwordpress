@@ -613,7 +613,7 @@
 					"api_refresh_token" => $token['refresh_token'],
 					"api_refresh_last" => time(),
 					"api_refresh_interval" => $token['expires_in']/2
-				);
+				)
 	
 				$wpdb->update(
 					$wpdb->prefix . "ticketmachine_config",
@@ -621,6 +621,8 @@
 					array('id' => $tm_globals->id)
 				);
 				$tm_globals->api_access_token = $token['access_token'];
+			}else{
+				ticketmachine_tmapi_refresh_token_check();
 			}
 		}
 	}
