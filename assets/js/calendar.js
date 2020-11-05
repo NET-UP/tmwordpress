@@ -48,6 +48,7 @@ jQuery.getJSON(ticketmachine_calendar_data.ajaxurl, data).success(function(data)
 		header: false,
 		weekNumbers: false,
 		locale: locale,
+		height: "auto",
 		firstDay: 1,
 		eventLimit: false, // allow "more" link when too many events
 		events: events_array,
