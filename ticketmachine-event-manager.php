@@ -550,7 +550,7 @@
 			return $url;
 		}else{
 			$events = (object)ticketmachine_apiRequest($url, $tm_post, $method, $headers);
-			print_r($events->result[0]);
+			//print_r($events->result[0]);
 			return $events;
 		}
 	}
