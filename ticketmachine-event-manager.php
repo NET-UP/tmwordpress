@@ -109,7 +109,7 @@
 				$tm_globals->api_state = "";
 			}
 			$api->base_url = $api->token = $api->scheme . "://cloud." . $api->environment;
-			$tm_globals->webshop_url = $api->scheme -"://" . $tm_globals->environment . ".ticketmachine.de/" . $tm_globals->lang . "/customer/" . $tm_globals->organizer;
+			$tm_globals->webshop_url = $api->scheme . "://" . $tm_globals->environment . ".ticketmachine.de/" . $tm_globals->lang . "/customer/" . $tm_globals->organizer;
 		
 			$api->token = $api->base_url . "ticketmachine.de/oauth/token";
 			$api->auth->url = $api->base_url . "ticketmachine.de/oauth/token";
