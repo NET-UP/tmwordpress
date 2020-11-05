@@ -741,7 +741,13 @@
         }else{
 
             foreach($events->result as $event) {
-                $event = (object) $event;
+				$event = (object) $event;
+
+				if(empty($event->state['sale_active'])){
+					$event->link = '/' . esc_html($tm_globals->event_slug) .'/?id=' . esc_html($event->id);
+				}else{
+					$event->link = esc_html($tm_globals->webshop_url) .'/events/unseated/select_unseated?event_id=' . esc_html($event->id);
+				}
                 
                 $params = [ "id" => $event->id ];
                 
@@ -771,7 +777,7 @@
                 $calendar[] = array(
                     'id' => esc_html($event->id),
                     'title' => esc_html($event->ev_name),
-                    'url' => "/" . esc_html($tm_globals->event_slug) . "/?id=" . esc_html($event->id),
+                    'url' => "" . $event->link,
                     'start' => $start,
                     'end' => $end,
                     'class' => "event-success",
