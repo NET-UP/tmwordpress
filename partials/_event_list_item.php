@@ -35,7 +35,12 @@
 					  }
 					  
 					  $ticketmachine_output .=' class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . esc_html__("To ticket selection", 'ticketmachine-event-manager') . '">';
-						$ticketmachine_output .= esc_html__("More", 'ticketmachine-event-manager') . ' &nbsp;<i class="fas fa-angle-right"></i>';
+					
+					  if(empty($event->state['sale_active'])){
+						  $ticketmachine_output .= esc_html__("More", 'ticketmachine-event-manager') . ' &nbsp;<i class="fas fa-angle-right"></i>';
+					  }else{
+						$ticketmachine_output .= esc_html__("Tickets", 'ticketmachine-event-manager') . ' &nbsp;<i class="fas fa-ticket"></i>';
+					  }
 					  $ticketmachine_output .= '</a>';
 					$ticketmachine_output .= '</div>';
 				  $ticketmachine_output .= '</div>';
