@@ -96,8 +96,6 @@
 			$tm_globals->first_event_date = date('Y-m-d');
 			$tm_globals->first_event_date_calendar = date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "-1 month" ) );
 		
-			$tm_globals->webshop_url = "https://" . $tm_globals->environment . ".ticketmachine.de/" . $tm_globals->lang . "/customer/" . $tm_globals->organizer;
-			
 			if($tm_globals->environment == "staging"){
 				$api->environment = $tm_globals->environment . ".";
 			}else{
@@ -111,6 +109,7 @@
 				$tm_globals->api_state = "";
 			}
 			$api->base_url = $api->token = $api->scheme . "://cloud." . $api->environment;
+			$tm_globals->webshop_url = $api->scheme -"://" . $tm_globals->environment . ".ticketmachine.de/" . $tm_globals->lang . "/customer/" . $tm_globals->organizer;
 		
 			$api->token = $api->base_url . "ticketmachine.de/oauth/token";
 			$api->auth->url = $api->base_url . "ticketmachine.de/oauth/token";
