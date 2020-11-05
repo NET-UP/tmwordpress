@@ -2,11 +2,17 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	function ticketmachine_event_list_item ( $event, $tm_globals ) {
 		
+		if(empty($event->state['sale_active'])){
+			$event->link = esc_html($tm_globals->event_slug) .'/?id=' . esc_html($event->id);
+		}else{
+			$event->link = esc_html($tm_globals->webshop_url) .'/events/unseated/select_unseated?event_id=' . esc_html($event->id);
+		}
+		
 		$event->event_location = (object) $event->event_location;
 		
 		$ticketmachine_output = '<div class="col-12 col-md-6 col-xl-4 card-group">';
 			$ticketmachine_output .= '<card class="card mb-4">';
-				$ticketmachine_output .= '<a aria-label="' . esc_attr($event->ev_name) . ' am ' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '" href="/' . esc_html($tm_globals->event_slug) .'?id=' . esc_html($event->id) . '" class="card-img-top" style="background-image:url( ' . esc_url($event->event_img_url) . ' )" title="' . esc_attr($event->ev_name) . '">';
+				$ticketmachine_output .= '<a aria-label="' . esc_attr($event->ev_name) . ' am ' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '" href="/' . $event->link . '" class="card-img-top" style="background-image:url( ' . esc_url($event->event_img_url) . ' )" title="' . esc_attr($event->ev_name) . '">';
 					$ticketmachine_output .= '<div class="badge badge-danger float-right mt-1 mr-2">'. esc_html($event->rules["badge"]) .'</div>';
 				$ticketmachine_output .= '</a>';
 				$ticketmachine_output .= '<div class="card-body position-relative">';
@@ -29,13 +35,7 @@
 					$ticketmachine_output .= '</div>';
 					$ticketmachine_output .= '<div class="col-sm-4 col-md-5">';
 					  $ticketmachine_output .= '<a aria-label="' . esc_attr__("To ticket selection for", 'ticketmachine-event-manager') . ' ' . esc_html($event->ev_name)  . '"';
-					  
-					  if(empty($event->state['sale_active'])){
-						$ticketmachine_output .= ' href="/' . esc_html($tm_globals->event_slug) .'/?id=' . esc_html($event->id) . '"';
-					  }else{
-						$ticketmachine_output .= ' target="_blank" href="' . esc_html($tm_globals->webshop_url) .'/events/unseated/select_unseated?event_id=' . esc_html($event->id) . '"';
-					  }
-					  
+					  $ticketmachine_output .= ' href="/' . $event->link . '"';
 					  $ticketmachine_output .=' class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . esc_html__("To ticket selection", 'ticketmachine-event-manager') . '">';
 					
 					  if(empty($event->state['sale_active'])){
