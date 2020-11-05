@@ -39,7 +39,7 @@
 					  if(empty($event->state['sale_active'])){
 						  $ticketmachine_output .= esc_html__("More", 'ticketmachine-event-manager') . ' &nbsp;<i class="fas fa-angle-right"></i>';
 					  }else{
-						$ticketmachine_output .= esc_html__("Tickets", 'ticketmachine-event-manager') . ' &nbsp;<i class="fas fa-ticket"></i>';
+						$ticketmachine_output .= esc_html__("Tickets", 'ticketmachine-event-manager') . ' &nbsp;<i class="fas fa-ticket-alt"></i>';
 					  }
 					  $ticketmachine_output .= '</a>';
 					$ticketmachine_output .= '</div>';
