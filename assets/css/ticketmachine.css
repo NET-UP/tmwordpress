@@ -270,6 +270,10 @@ body .ticketmachine_page a.btn {
    overflow: visible !important;
 }
 
+body #calendar .fc-row {
+	min-height:2em;
+}
+
 #calendar .fc-row .fc-content-skeleton td {
 	border-color: #dee2e6 !important;
 }
