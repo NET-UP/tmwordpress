@@ -33,7 +33,7 @@
 					  if(empty($event->state['sale_active'])){
 						$ticketmachine_output .= ' href="/' . esc_html($tm_globals->event_slug) .'/?id=' . esc_html($event->id) . '"';
 					  }else{
-						$ticketmachine_output .= ' href="' . esc_html($tm_globals->webshop_url) .'/events/unseated/select_unseated?event_id=' . esc_html($event->id) . '"';
+						$ticketmachine_output .= ' target="_blank" href="' . esc_html($tm_globals->webshop_url) .'/events/unseated/select_unseated?event_id=' . esc_html($event->id) . '"';
 					  }
 					  
 					  $ticketmachine_output .=' class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . esc_html__("To ticket selection", 'ticketmachine-event-manager') . '">';
