@@ -190,6 +190,7 @@ body .ticketmachine_page a.btn {
 	border: 1px solid #DDD;
 	background:#FFF;
 	border-radius:3px;
+	margin-left: 0 !important;
 }
 
 .ticketmachine_page .media-img {
