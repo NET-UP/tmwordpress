@@ -193,6 +193,14 @@ body .ticketmachine_page a.btn {
 	margin-left: 0 !important;
 }
 
+}
+.ticketmachine_page .ticketmachine_widget_event_list li.media {
+    border: none;
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
 .ticketmachine_page .media-img {
 	width:80px;
 	height:80px;
