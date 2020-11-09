@@ -200,6 +200,9 @@ body .ticketmachine_page a.btn {
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
 }
+.ticketmachine_page .ticketmachine_widget_event_list li.media:last-child {
+    border-bottom: none;
+}
 
 .ticketmachine_page .media-img {
 	width:80px;
