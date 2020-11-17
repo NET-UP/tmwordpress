@@ -38,7 +38,18 @@
 
     if(!empty($_GET['id'])){
         $params = [ "id" => absint($_GET['id']) ];
-        $event = (object)ticketmachine_tmapi_event($params);
+        if(!empty($_GET['mode'] && $_GET['mode'] == "community")) {
+            
+            if (!function_exists('is_plugin_active')) {
+                include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+            }
+            if (is_plugin_active('ticketmachine-community-events/ticketmachine-community-events.php')){
+                $table = $wpdb->prefix . "ticketmachine_events";
+                $event = (object)$wpdb->get_row( "SELECT * FROM $table WHERE id = " . $params['id'] );
+            }
+        }else{
+            $event = (object)ticketmachine_tmapi_event($params);
+        }
     }
 ?>
 
