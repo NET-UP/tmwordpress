@@ -39,7 +39,7 @@
         if(!empty($_GET['mode'] && $_GET['mode'] == "community")) {
             
                 $table = $wpdb->prefix . "ticketmachine_events";
-                $event = $wpdb->get_row( "SELECT * FROM $table WHERE id = " . $params['id'] );
+                $event = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $params['id'] );
         }else{
             $event = ticketmachine_tmapi_event($params);
         }
