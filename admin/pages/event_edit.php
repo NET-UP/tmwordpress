@@ -1,6 +1,6 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    global $tm_globals, $api;
+    global $tm_globals, $api, $wpdb;
     wp_enqueue_media();
 
     //defaults
