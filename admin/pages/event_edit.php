@@ -34,18 +34,18 @@
         "endtime" =>  date(DATE_ISO8601, strtotime("today 23:59"))
     );
 
-    $event = (object)$event;
-
     if(!empty($_GET['id'])){
         $params = [ "id" => absint($_GET['id']) ];
         if(!empty($_GET['mode'] && $_GET['mode'] == "community")) {
             
                 $table = $wpdb->prefix . "ticketmachine_events";
-                $event = (object)$wpdb->get_row( "SELECT * FROM $table WHERE id = " . $params['id'] );
+                $event = $wpdb->get_row( "SELECT * FROM $table WHERE id = " . $params['id'] );
         }else{
-            $event = (object)ticketmachine_tmapi_event($params);
+            $event = ticketmachine_tmapi_event($params);
         }
     }
+
+    $event = (object)$event;
 ?>
 
 
