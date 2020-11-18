@@ -34,7 +34,7 @@
         "endtime" =>  date(DATE_ISO8601, strtotime("today 23:59"))
     );
 
-    if(!empty($_GET['mode'] && $_GET['mode'] == "community") && is_plugin_active( 'ticketmachine-event-manager/ticketmachine-event-manager.php' )) {
+    if(!empty($_GET['mode'] && $_GET['mode'] == "community") && is_plugin_active( 'ticketmachine-community-events/ticketmachine-community-events.php' )) {
         $isCommunityEvent = 1;
     }
 

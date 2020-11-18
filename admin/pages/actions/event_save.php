@@ -2,7 +2,7 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     global $tm_globals, $api, $wpdb;
 
-	if (isset($_POST['reject']) && is_plugin_active( 'plugin-directory/plugin-file.php' )) {
+	if (isset($_POST['reject']) && is_plugin_active( 'ticketmachine-community-events/ticketmachine-community-events.php' )) {
 
         if ( ! isset( $_POST['ticketmachine_event_edit_form_nonce'] ) || ! wp_verify_nonce( $_POST['ticketmachine_event_edit_form_nonce'], 'ticketmachine_action_save_event' ) ) {
             print 'Sorry, your nonce did not verify.';
@@ -95,7 +95,7 @@
                     $ticketmachine_json = ticketmachine_tmapi_event($tm_post_json, "POST");
                     $response = (object)$ticketmachine_json;
 
-                    if(isset($tm_post['old_id']) && is_plugin_active( 'plugin-directory/plugin-file.php' )) {
+                    if(isset($tm_post['old_id']) && is_plugin_active( 'ticketmachine-community-events/ticketmachine-community-events.php' )) {
                         $table = $wpdb->prefix . 'ticketmachine_events';
                         $wpdb->update($table, array('approved'=>1), array('id'=>$tm_post['old_id']));
                     }
