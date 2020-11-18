@@ -18,6 +18,7 @@
                     <?php echo __('Event rejected', 'ticketmachine-event-manager'); ?>!
                 </p>
             </div>
+            <script> location.href='<?php echo admin_url('admin.php?page=ticketmachine_communityevents_events&status=review'); ?>'; </script>";
 
             <?php
         }
