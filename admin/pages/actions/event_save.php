@@ -25,7 +25,7 @@
     }
 
 	if (isset($_POST['submit'])) {
-        if( current_user_can('edit_posts') ) {	
+        if( current_user_can('edit_posts') ) {
 
             if ( ! isset( $_POST['ticketmachine_event_edit_form_nonce'] ) || ! wp_verify_nonce( $_POST['ticketmachine_event_edit_form_nonce'], 'ticketmachine_action_save_event' ) ) {
                 print 'Sorry, your nonce did not verify.';
@@ -94,6 +94,11 @@
                     
                     $ticketmachine_json = ticketmachine_tmapi_event($tm_post_json, "POST");
                     $response = (object)$ticketmachine_json;
+
+                    if(isset($tm_post['old_id'])) {
+                        $table = $wpdb->prefix . 'ticketmachine_events';
+                        $wpdb->update($table, array('approved'=>1), array('id'=>$id));
+                    }
                 }
             }
     
