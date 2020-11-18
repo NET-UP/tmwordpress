@@ -1,9 +1,17 @@
 <?php 
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    global $tm_globals, $api;
+    global $tm_globals, $api, $wpdb;
 
 	if (isset($_POST['reject'])) {
-        exit;
+
+        if ( ! isset( $_POST['ticketmachine_event_edit_form_nonce'] ) || ! wp_verify_nonce( $_POST['ticketmachine_event_edit_form_nonce'], 'ticketmachine_action_save_event' ) ) {
+            print 'Sorry, your nonce did not verify.';
+            exit;
+        } else {
+            $tm_post = $_POST;
+            $table = $wpdb->prefix . 'ticketmachine_events';
+            $wpdb->delete( $table, array( 'id' => $tm_post['id'] ) );
+        }
     }
 
 	if (isset($_POST['submit'])) {
