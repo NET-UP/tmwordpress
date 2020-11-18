@@ -43,7 +43,7 @@
         if(isset($isCommunityEvent)) {
                 $table = $wpdb->prefix . "ticketmachine_events";
                 $event = (array)$wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $params['id'] );
-                if(!empty($event->id)){
+                if(!empty($event['id'])){
                     $event['old_id'] = $event['id'];
                     $event['id'] = "";
                     $event['approved'] = 1;
