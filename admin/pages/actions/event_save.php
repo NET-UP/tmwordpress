@@ -11,6 +11,15 @@
             $tm_post = $_POST;
             $table = $wpdb->prefix . 'ticketmachine_events';
             $wpdb->delete( $table, array( 'id' => $tm_post['id'] ) );
+            ?>
+
+            <div class="notice notice-success is-dismissable">
+                <p>
+                    <?php echo __('Event rejected', 'ticketmachine-event-manager'); ?>!
+                </p>
+            </div>
+
+            <?php
         }
     }
 
