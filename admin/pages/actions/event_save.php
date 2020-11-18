@@ -10,7 +10,7 @@
         } else {
             $tm_post = $_POST;
             $table = $wpdb->prefix . 'ticketmachine_events';
-            $wpdb->delete( $table, array( 'id' => $tm_post['id'] ) );
+            $wpdb->delete( $table, array( 'id' => $tm_post['old_id'] ) );
             ?>
 
             <div class="notice notice-success is-dismissable">
