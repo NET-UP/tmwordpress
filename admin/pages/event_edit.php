@@ -33,11 +33,14 @@
         "ev_date" =>  date(DATE_ISO8601, strtotime("today 11:00")),
         "endtime" =>  date(DATE_ISO8601, strtotime("today 23:59"))
     );
+    
+    if(!empty($_GET['mode'] && $_GET['mode'] == "community")) {
+        $isCommunityEvent = 1;
+    }
 
     if(!empty($_GET['id'])){
         $params = [ "id" => absint($_GET['id']) ];
-        if(!empty($_GET['mode'] && $_GET['mode'] == "community")) {
-            
+        if(isset($isCommunityEvent)) {
                 $table = $wpdb->prefix . "ticketmachine_events";
                 $event = (array)$wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $params['id'] );
                 $old_id = $event['id'];
@@ -117,7 +120,14 @@
                                     <div id="major-publishing-actions">
                                         <div id="publishing-action">
                                             <span class="spinner"></span>
-                                            <input type="submit" name="submit" class="button button-primary button-large" id="publish" value="<?php empty($event->id) ? esc_attr_e('Save', 'ticketmachine-event-manager') : esc_attr_e('Update', 'ticketmachine-event-manager') ?>">
+                                            
+                                            <?php if(isset($isCommunityEvent)) { ?>
+                                                <input type="submit" name="submit" class="button button-secondary button-large" id="publish" value="<?php esc_attr_e('Reject', 'ticketmachine-event-manager') ?>">
+                                                <input type="submit" name="submit" class="button button-primary button-large" id="publish" value="<?php esc_attr_e('Accept', 'ticketmachine-event-manager') ?>">
+                                            <?php }else{ ?>
+                                                <input type="submit" name="submit" class="button button-primary button-large" id="publish" value="<?php empty($event->id) ? esc_attr_e('Save', 'ticketmachine-event-manager') : esc_attr_e('Update', 'ticketmachine-event-manager') ?>">
+                                            <?php } ?>
+                                                
                                         </div>
                                         <div class="clear"></div>
                                     </div>
