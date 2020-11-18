@@ -97,7 +97,7 @@
 
                     if(isset($tm_post['old_id'])) {
                         $table = $wpdb->prefix . 'ticketmachine_events';
-                        $wpdb->update($table, array('approved'=>1), array('id'=>$id));
+                        $wpdb->update($table, array('approved'=>1), array('id'=>$tm_post['old_id']));
                     }
                 }
             }
