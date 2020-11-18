@@ -122,7 +122,7 @@
                                             <span class="spinner"></span>
                                             
                                             <?php if(isset($isCommunityEvent)) { ?>
-                                                <input type="submit" name="submit" class="button button-secondary button-large" id="publish" value="<?php esc_attr_e('Reject', 'ticketmachine-event-manager') ?>">
+                                                <input type="submit" name="reject" class="button button-secondary button-large" id="publish" value="<?php esc_attr_e('Reject', 'ticketmachine-event-manager') ?>">
                                                 <input type="submit" name="submit" class="button button-primary button-large" id="publish" value="<?php esc_attr_e('Accept', 'ticketmachine-event-manager') ?>">
                                             <?php }else{ ?>
                                                 <input type="submit" name="submit" class="button button-primary button-large" id="publish" value="<?php empty($event->id) ? esc_attr_e('Save', 'ticketmachine-event-manager') : esc_attr_e('Update', 'ticketmachine-event-manager') ?>">

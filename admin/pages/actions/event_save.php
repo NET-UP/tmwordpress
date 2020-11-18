@@ -2,6 +2,10 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     global $tm_globals, $api;
 
+	if (isset($_POST['reject'])) {
+        exit;
+    }
+
 	if (isset($_POST['submit'])) {
         if( current_user_can('edit_posts') ) {	
 
