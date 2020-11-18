@@ -43,7 +43,7 @@
         if(isset($isCommunityEvent)) {
                 $table = $wpdb->prefix . "ticketmachine_events";
                 $event = (array)$wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $params['id'] );
-            ?><input type="hidden" name="old_id" value="<?php echo esc_attr($event['id']); ?>"><?php
+                $event['old_id'] = $event['id'];
                 $event['id'] = "";
         }else{
             $event = ticketmachine_tmapi_event($params);
@@ -64,8 +64,11 @@
             echo "<h1 class='wp-heading-inline'>TicketMachine > " . esc_html__('Create event', 'ticketmachine-event-manager') . "</h1>";
         }
     ?>
-    <form name="event" action="?page=ticketmachine_events&action=save<?php if(!empty($event->id)){ echo "&id=" . esc_attr(absint($_GET['id'])); } ?>" method="post" id="event">
+    <form name="event" action="?page=ticketmachine_events&action=save<?php if(!empty($e vent->id)){ echo "&id=" . esc_attr(absint($_GET['id'])); } ?>" method="post" id="event">
 		<?php wp_nonce_field( 'ticketmachine_action_save_event', 'ticketmachine_event_edit_form_nonce' ); ?>
+        <?php if(isset($event->old_id)) { ?>
+            <input type="hidden" name="old_id" value="<?php echo esc_attr($event->old_id); ?>">
+        <?php } ?>
         <input type="hidden" name="organizer_id" value="<?php echo esc_attr($tm_globals->organizer_id); ?>">
         <input type="hidden" name="rules[sale_active]" value="0">
         <input type="hidden" name="rules[prices_shown]" value="0">
