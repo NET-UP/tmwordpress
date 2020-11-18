@@ -43,8 +43,12 @@
         if(isset($isCommunityEvent)) {
                 $table = $wpdb->prefix . "ticketmachine_events";
                 $event = (array)$wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $params['id'] );
-                $event['old_id'] = $event['id'];
-                $event['id'] = "";
+                if(!empty($event->id)){
+                    $event['old_id'] = $event['id'];
+                    $event['id'] = "";
+                }else{
+                    unset($isCommunityEvent);
+                }
         }else{
             $event = ticketmachine_tmapi_event($params);
         }
