@@ -46,6 +46,7 @@
                 if(!empty($event->id)){
                     $event['old_id'] = $event['id'];
                     $event['id'] = "";
+                    $event['approved'] = 1;
                 }else{
                     unset($isCommunityEvent);
                 }
