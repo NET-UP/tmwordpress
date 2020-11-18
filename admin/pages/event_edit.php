@@ -40,8 +40,7 @@
             
                 $table = $wpdb->prefix . "ticketmachine_events";
                 $event = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $params['id'] );
-                $old_id = $event['id'];
-                $event['id'] = "";
+                print_r($event);
         }else{
             $event = ticketmachine_tmapi_event($params);
         }
