@@ -208,11 +208,12 @@
                 update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
             }
         }
-        $event_slug = get_page_by_path($new_page_slug);
-
-        $table = $wpdb->prefix . 'ticketmachine_config';
+		$event_slug = get_page_by_path($new_page_slug);
+		
         $charset = $wpdb->get_charset_collate();
         $charset_collate = $wpdb->get_charset_collate();
+
+        $table = $wpdb->prefix . 'ticketmachine_config';
         $sql = "CREATE TABLE $table (
                     id mediumint(9) NOT NULL AUTO_INCREMENT,
                     organizer_id int(11) DEFAULT 0 NOT NULL,
@@ -251,8 +252,6 @@
         $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
         
         $table = $wpdb->prefix . 'ticketmachine_design';
-        $charset = $wpdb->get_charset_collate();
-        $charset_collate = $wpdb->get_charset_collate();
         $sql = "CREATE TABLE $table (
                     id mediumint(9) NOT NULL AUTO_INCREMENT,
                     link_text_color varchar(64) DEFAULT '#0fb1e4' NOT NULL,
@@ -282,8 +281,6 @@
         $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
         
         $table = $wpdb->prefix . 'ticketmachine_organizers';
-        $charset = $wpdb->get_charset_collate();
-        $charset_collate = $wpdb->get_charset_collate();
         $sql = "CREATE TABLE $table (
 					id int(11) NOT NULL AUTO_INCREMENT,
                     approved tinyint(1) DEFAULT 0 NOT NULL,
@@ -304,13 +301,11 @@
         $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
         
         $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
-        $charset = $wpdb->get_charset_collate();
-        $charset_collate = $wpdb->get_charset_collate();
         $sql = "CREATE TABLE $table (
 					id int(11) NOT NULL AUTO_INCREMENT,
                     organizer_id int(11) DEFAULT 0 NOT NULL,
                     api_event_id int(11) DEFAULT 0 NOT NULL,
-                    local_event_id int(11) DEFAULT 0 NOT NULL
+                    local_event_id int(11) DEFAULT 0 NOT NULL,
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
 
