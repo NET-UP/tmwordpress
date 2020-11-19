@@ -281,15 +281,11 @@
         
         $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
         
-        $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
-        
         $table = $wpdb->prefix . 'ticketmachine_organizers';
         $charset = $wpdb->get_charset_collate();
         $charset_collate = $wpdb->get_charset_collate();
         $sql = "CREATE TABLE $table (
 					id int(11) NOT NULL AUTO_INCREMENT,
-					api_event_id int(11) DEFAULT 0 NOT NULL,
-					local_event_id int(11) DEFAULT 0 NOT NULL,
                     og_name varchar(128) DEFAULT '' NOT NULL,
                     og_street varchar(128) DEFAULT '' NOT NULL,
                     og_street_number varchar(128) DEFAULT '' NOT NULL,
