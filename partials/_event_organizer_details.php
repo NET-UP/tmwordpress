@@ -8,17 +8,16 @@
                                             <h4 class="d-inline-block">'. esc_html__("Organizer", "ticketmachine-event-manager") .'</h4>
                                             <br>
                                             <div><strong>'. esc_html($organizer->og_name) .'</strong></div>
-                                            <div>'. esc_html($organizer->street) .' '. esc_html($organizer->og_house_number) .'</div>
-                                            <div>'. esc_html($organizer->zip) .' '. esc_html($organizer->city) .'</div>
-                                            <div>'. esc_html($event->event_location['street']) .' '. esc_html($event->event_location['house_number']) .'</div>
+                                            <div>'. esc_html($organizer->og_street) .' '. esc_html($organizer->og_house_number) .'</div>
+                                            <div>'. esc_html($organizer->og_zip) .' '. esc_html($organizer->og_city) .'</div>
+                                            <div>'. esc_html($organizer->og_country) .' </div>
                                         </div>';
                                     
                 $ticketmachine_output .= '<div class="col-sm-6">
                                             <h4 class="d-inline-block">'. esc_html__("Contact", "ticketmachine-event-manager") .'</h4>
                                             <br>
-                                            <div><strong>'. esc_html($organizer->og_name) .'</strong></div>
-                                            <div>'. esc_html($organizer->zip) .' '. esc_html($organizer->city) .'</div>
-                                            <div>'. esc_html($event->event_location['street']) .' '. esc_html($event->event_location['house_number']) .'</div>
+                                            <div><strong>'. esc_html($organizer->og_email) .'</strong></div>
+                                            <div>'. esc_html($organizer->og_phone) .'</div>
                                         </div>';
 
             $ticketmachine_output .=   '</div></div></div>
