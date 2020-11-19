@@ -286,7 +286,7 @@
                     approved tinyint(1) DEFAULT 0 NOT NULL,
                     og_name varchar(128) DEFAULT '' NOT NULL,
                     og_street varchar(128) DEFAULT '' NOT NULL,
-                    og_street_number varchar(128) DEFAULT '' NOT NULL,
+                    og_house_number varchar(128) DEFAULT '' NOT NULL,
                     og_zip varchar(128) DEFAULT '' NOT NULL,
                     og_city varchar(128) DEFAULT '' NOT NULL,
                     og_country varchar(128) DEFAULT '' NOT NULL,
