@@ -97,7 +97,7 @@
 
                     if(isset($tm_post['old_id']) && is_plugin_active( 'ticketmachine-community-events/ticketmachine-community-events.php' )) {
                         $table = $wpdb->prefix . 'ticketmachine_events';
-                        $wpdb->update($table, array('approved'=>1), array('id'=>$tm_post['old_id']));
+                        $wpdb->update($table, array('approved'=>1,'api_event_id'=>$response->id), array('id'=>$tm_post['old_id']));
                     }
                 }
             }
