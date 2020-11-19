@@ -110,7 +110,7 @@
                         $table = $wpdb->prefix . 'ticketmachine_organizers';
                         $wpdb->replace( $table, $organizer);
                         $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
-                        $wpdb->insert($table, array('organizer' => $wpdb->insert_id, 'api_event_id' => $response->id));
+                        $wpdb->insert($table, array('organizer_id' => $wpdb->insert_id, 'api_event_id' => $response->id));
                         $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
                     }
 
