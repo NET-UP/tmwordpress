@@ -117,6 +117,7 @@
                         $wpdb->delete($table, array('api_event_id' => $response->id));
                         $wpdb->insert($table, array('organizer_id' => $wpdb->insert_id, 'api_event_id' => $response->id));
                     }else{
+                        print_r($organizer);
                         $wpdb->delete($table, array('api_event_id' => $response->id));
                     }
 
