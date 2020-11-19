@@ -71,9 +71,6 @@
 
     $event = (object)$event;
     $organizer = (object)$organizer;
-
-    print_r($event);
-    print_r($organizer);
 ?>
 
 
