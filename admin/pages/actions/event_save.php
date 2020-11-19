@@ -109,7 +109,6 @@
                     }
                     
                     if(!empty($organizer)) {
-                        print_r($organizer);
                         $table = $wpdb->prefix . 'ticketmachine_organizers';
                         $organizerb = $wpdb->get_row( $table, array('og_name' => $organizer['og_name']));
                         print_r($organizerb);
