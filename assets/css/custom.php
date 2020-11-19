@@ -78,5 +78,6 @@
             color: ". $ticketmachine_design->button_primary_background_color ." !important;
             border-right-color: transparent !important;
         }";
-
+    
+        return $ticketmachine_custom_css;
 ?>
