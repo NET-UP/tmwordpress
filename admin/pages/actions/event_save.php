@@ -82,6 +82,11 @@
                 if(empty($tm_globals->organizer_id) || !is_int($tm_globals->organizer_id)){
                     $errors[] = "No organizer id could be found";
                 }
+
+                if(!empty($tm_post['organizer'])) {
+                    $organizer = $tm_post['organizer'];
+                    unset($tm_post['organizer']);
+                }
                 
                 if(empty($errors)){
                     $tm_post['organizer_id'] = absint($tm_globals->organizer_id);
@@ -98,6 +103,14 @@
                     if(isset($tm_post['old_id']) && is_plugin_active( 'ticketmachine-community-events/ticketmachine-community-events.php' )) {
                         $table = $wpdb->prefix . 'ticketmachine_events';
                         $wpdb->update($table, array('approved'=>1,'api_event_id'=>$response->id), array('id'=>$tm_post['old_id']));
+                    }
+                    
+                    if(!empty($organizer)) {
+                        $table = $wpdb->prefix . 'ticketmachine_organizers';
+                        $wpdb->replace( $table, $organizer);
+                        $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
+                        $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
+                        $wpdb->insert($table, array('organizer' => $wpdb->insert_id, 'api_event_id' => $response->id));
                     }
                 }
             }
