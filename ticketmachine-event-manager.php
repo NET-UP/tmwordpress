@@ -288,6 +288,7 @@
                     og_street varchar(128) DEFAULT '' NOT NULL,
                     og_street_number varchar(128) DEFAULT '' NOT NULL,
                     og_zip varchar(128) DEFAULT '' NOT NULL,
+                    og_city varchar(128) DEFAULT '' NOT NULL,
                     og_country varchar(128) DEFAULT '' NOT NULL,
                     og_email varchar(128) DEFAULT '' NOT NULL,
                     og_phone varchar(128) DEFAULT '' NOT NULL,

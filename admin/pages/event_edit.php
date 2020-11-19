@@ -33,6 +33,7 @@
         "ev_date" =>  date(DATE_ISO8601, strtotime("today 11:00")),
         "endtime" =>  date(DATE_ISO8601, strtotime("today 23:59"))
     );
+    $organizer = array();
 
     if(!empty($_GET['mode'] && $_GET['mode'] == "community") && is_plugin_active( 'ticketmachine-community-events/ticketmachine-community-events.php' )) {
         $isCommunityEvent = 1;
@@ -48,7 +49,7 @@
                     $event_organizer_match = $wpdb->get_row( "SELECT * FROM $table WHERE `local_event_id` = " . $event['id'] );
                     if(!empty($event_organizer_match)){
                         $table = $wpdb->prefix . "ticketmachine_organizers";
-                        $event['organizer'] = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $event_organizer_match->organizer_id );
+                        $organizer = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $event_organizer_match->organizer_id );
                     }
                     $event['old_id'] = $event['id'];
                     $event['id'] = "";
@@ -63,14 +64,16 @@
             $event_organizer_match = $wpdb->get_row( "SELECT * FROM $table WHERE `api_event_id` = " . $event->id );
             if(!empty($event_organizer_match)){
                 $table = $wpdb->prefix . "ticketmachine_organizers";
-                $event->organizer = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $event_organizer_match->organizer_id );
+                $organizer = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $event_organizer_match->organizer_id );
             }
         }
     }
 
     $event = (object)$event;
+    $organizer = (object)$organizer;
 
     print_r($event);
+    print_r($organizer);
 ?>
 
 
@@ -272,6 +275,47 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="postbox">
+                        <h2 class="hndle px-3 py-2 mt-0">
+                            <span><?php esc_html_e('Organizer details', 'ticketmachine-event-manager') ?></span>
+                        </h2>
+                        <div class="inside inside-pad">
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="og_name"><?php esc_html_e('Organizer name', 'ticketmachine-event-manager') ?></label>
+                                    <input id="og_name" name="organizer['name']" type="text" class="form-control" value="<?php echo esc_attr($event->ev_location_name); ?>">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8 form-group">
+                                    <label for="og_street"><?php esc_html_e('Street', 'ticketmachine-event-manager') ?></label>
+                                    <input id="og_street" name="organizer['street']" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['street']); ?>">
+                                </div>
+                                <div class="col-sm-4 form-group">
+                                    <label for="og_street_number"><?php esc_html_e('House No.', 'ticketmachine-event-manager') ?></label>
+                                    <input id="og_street_number" name="organizer['street_number']" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['house_number']); ?>">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 form-group">
+                                    <label for="og_zip"><?php esc_html_e('Zipcode', 'ticketmachine-event-manager') ?></label>
+                                    <input id="og_zip" name="organizer['zip']" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['zip']); ?>">
+                                </div>
+                                <div class="col-sm-8 form-group">
+                                    <label for="og_city"><?php esc_html_e('City', 'ticketmachine-event-manager') ?></label>
+                                    <input id="og_city" name="organizer[city]" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['city']); ?>">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 form-group">
+                                    <label for="og_country"><?php esc_html_e('Country', 'ticketmachine-event-manager') ?></label>
+                                    <input id="og_country" name="organizer[country]" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['country']); ?>">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
