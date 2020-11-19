@@ -284,33 +284,33 @@
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="og_name"><?php esc_html_e('Organizer name', 'ticketmachine-event-manager') ?></label>
-                                    <input id="og_name" name="organizer['name']" type="text" class="form-control" value="<?php echo esc_attr($event->ev_location_name); ?>">
+                                    <input id="og_name" name="organizer['name']" type="text" class="form-control" value="<?php echo esc_attr($organizer->og_name); ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-8 form-group">
                                     <label for="og_street"><?php esc_html_e('Street', 'ticketmachine-event-manager') ?></label>
-                                    <input id="og_street" name="organizer['street']" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['street']); ?>">
+                                    <input id="og_street" name="organizer['street']" type="text" class="form-control" value="<?php echo esc_attr($organizer->og_street); ?>">
                                 </div>
                                 <div class="col-sm-4 form-group">
-                                    <label for="og_street_number"><?php esc_html_e('House No.', 'ticketmachine-event-manager') ?></label>
-                                    <input id="og_street_number" name="organizer['street_number']" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['house_number']); ?>">
+                                    <label for="og_house_number"><?php esc_html_e('House No.', 'ticketmachine-event-manager') ?></label>
+                                    <input id="og_house_number" name="organizer['house_number']" type="text" class="form-control" value="<?php echo esc_attr($organizer->og_house_number); ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-4 form-group">
                                     <label for="og_zip"><?php esc_html_e('Zipcode', 'ticketmachine-event-manager') ?></label>
-                                    <input id="og_zip" name="organizer['zip']" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['zip']); ?>">
+                                    <input id="og_zip" name="organizer['zip']" type="text" class="form-control" value="<?php echo esc_attr($organizer->og_zip); ?>">
                                 </div>
                                 <div class="col-sm-8 form-group">
                                     <label for="og_city"><?php esc_html_e('City', 'ticketmachine-event-manager') ?></label>
-                                    <input id="og_city" name="organizer[city]" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['city']); ?>">
+                                    <input id="og_city" name="organizer[city]" type="text" class="form-control" value="<?php echo esc_attr($organizer->og_city); ?>">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 form-group">
                                     <label for="og_country"><?php esc_html_e('Country', 'ticketmachine-event-manager') ?></label>
-                                    <input id="og_country" name="organizer[country]" type="text" class="form-control" value="<?php echo esc_attr($event->event_location['country']); ?>">
+                                    <input id="og_country" name="organizer[country]" type="text" class="form-control" value="<?php echo esc_attr($organizer->og_country); ?>">
                                 </div>
                             </div>
                         </div>
