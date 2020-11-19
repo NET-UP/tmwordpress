@@ -1,7 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_event_organizer_details ( $organizer, $tm_globals ) {
-        $ticketmachine_output = '<div class="row"><div class="col-12"><div class="card mb-3"> 
+        $ticketmachine_output = '<div class="row"><div class="col-12"><div class="card mt-2 mb-3"> 
                                     <div class="row card-body position-relative">';
                                     
                 $ticketmachine_output .= '<div class="col-sm-6">
