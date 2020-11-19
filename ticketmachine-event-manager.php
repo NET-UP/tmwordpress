@@ -296,6 +296,12 @@
                     og_phone varchar(128) DEFAULT '' NOT NULL,
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
+
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+		dbDelta( $sql );
+		add_option('jal_db_version', $jal_db_version);
+        
+        $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
         
         $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
         $charset = $wpdb->get_charset_collate();
