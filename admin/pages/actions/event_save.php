@@ -107,7 +107,6 @@
                     
                     if(!empty($organizer)) {
                         $table = $wpdb->prefix . 'ticketmachine_organizers';
-                        $wpdb->delete($table, array('og_name' => $organizer['og_name']));
                         $wpdb->insert( $table, $organizer);
                         $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
                         $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
