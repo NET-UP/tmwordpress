@@ -399,7 +399,7 @@
 		wp_register_style( 'core_CSS', plugins_url('assets/css/ticketmachine.css', __FILE__ ) );
 		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
 		//Custom Styles
-        wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.css', __FILE__ ) );
+        wp_enqueue_style( 'custom_CSS', admin_url('admin-ajax.php').'?action=ticketmachine_dynamic_css' );
 		wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
         //Underscore
     	wp_enqueue_script( 'underscore' );
@@ -407,7 +407,15 @@
         wp_register_script( 'iCal_JS', plugins_url('assets/js/ext/ics.js', __FILE__ ) );
         //FileSaver
         wp_register_script( 'fileSaver_JS', plugins_url('assets/js/ext/filesaver.js', __FILE__ ) );
-    }
+	}
+	
+	function ticketmachine_dynamic_css() {
+		require(plugins_url('assets/css/custom.css', __FILE__ ));
+		exit;
+	}
+
+	add_action('wp_ajax_dynamic_css', 'dynaminc_css');
+	add_action('wp_ajax_nopriv_dynamic_css', 'dynaminc_css');
     
     function ticketmachine_register_calendar_files() {
         //Calendar Styles
