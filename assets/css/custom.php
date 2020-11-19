@@ -79,5 +79,5 @@
             border-right-color: transparent !important;
         }";
     
-        return $ticketmachine_custom_css;
+        echo $ticketmachine_custom_css;
 ?>
