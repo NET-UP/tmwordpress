@@ -85,7 +85,7 @@
                 
                 if(empty($errors)){
 
-                    if(!isset($tm_post['organizer']['og_name'])) {
+                    if(empty($tm_post['organizer']['og_name'])) {
                         $organizer = $tm_post['organizer'];
                         unset($tm_post['organizer']);
                     }
