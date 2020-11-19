@@ -26,7 +26,7 @@
                                         <h4 class="d-inline-block">'. esc_html__("Location", "ticketmachine-event-manager") .'</h4>
                                         <br>
                                         <div>'. esc_html($event->ev_location_name) .'</div>
-                                        <div>'. esc_html($event->event_location['city']) .' '. esc_html($event->event_location['zip']) .'</div>
+                                        <div>'. esc_html($event->event_location['zip']) .' '. esc_html($event->event_location['city']) .'</div>
                                         <div>'. esc_html($event->event_location['street']) .' '. esc_html($event->event_location['house_number']) .'</div>
                                     </div>';
             }      
