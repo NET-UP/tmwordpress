@@ -82,10 +82,13 @@
                 if(empty($tm_globals->organizer_id) || !is_int($tm_globals->organizer_id)){
                     $errors[] = "No organizer id could be found";
                 }
+
+                if(empty($tm_post['organizer']['og_name'])) {
+                    unset($tm_post['organizer']);
+                }
                 
                 if(empty($errors)){
-
-                    if(empty($tm_post['organizer']['og_name'])) {
+                    if(!empty($tm_post['organizer'])){
                         $organizer = $tm_post['organizer'];
                         unset($tm_post['organizer']);
                     }
