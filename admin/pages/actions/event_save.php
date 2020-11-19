@@ -111,6 +111,7 @@
                     if(!empty($organizer)) {
                         $table = $wpdb->prefix . 'ticketmachine_organizers';
                         $organizer_check = $wpdb->get_row( $table, array('og_name' => $organizer['og_name']));
+                        print_r($organizer_check);
                         if(!empty($organizer_check)){
                             $wpdb->update($table, $organizer, array('id' => $organizer_check->id));
                         }else{
