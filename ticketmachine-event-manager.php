@@ -272,7 +272,32 @@
                     button_secondary_background_color_hover varchar(64) DEFAULT '#f7f7f7' NOT NULL,
                     button_secondary_text_color_hover varchar(64) DEFAULT '#666666' NOT NULL,
                     button_secondary_border_color_hover varchar(64) DEFAULT '#dadada' NOT NULL,
-                PRIMARY KEY  (id)
+                	PRIMARY KEY  (id)
+                ) $charset_collate;";
+
+        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+        dbDelta( $sql );
+        add_option('jal_db_version', $jal_db_version);
+        
+        $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
+        
+        $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
+        
+        $table = $wpdb->prefix . 'ticketmachine_organizers';
+        $charset = $wpdb->get_charset_collate();
+        $charset_collate = $wpdb->get_charset_collate();
+        $sql = "CREATE TABLE $table (
+					id int(11) NOT NULL AUTO_INCREMENT,
+					api_event_id int(11) DEFAULT 0 NOT NULL,
+					local_event_id int(11) DEFAULT 0 NOT NULL,
+                    og_name varchar(128) DEFAULT '' NOT NULL,
+                    og_street varchar(128) DEFAULT '' NOT NULL,
+                    og_street_number varchar(128) DEFAULT '' NOT NULL,
+                    og_zip varchar(128) DEFAULT '' NOT NULL,
+                    og_country varchar(128) DEFAULT '' NOT NULL,
+                    og_email varchar(128) DEFAULT '' NOT NULL,
+                    og_phone varchar(128) DEFAULT '' NOT NULL,
+                	PRIMARY KEY  (id)
                 ) $charset_collate;";
 
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
