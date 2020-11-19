@@ -400,7 +400,6 @@
 		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
 		//Custom Styles
         wp_enqueue_style( 'custom_CSS', admin_url('admin-ajax.php').'?action=ticketmachine_dynamic_css' );
-		wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
         //Underscore
     	wp_enqueue_script( 'underscore' );
         //iCal
