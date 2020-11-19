@@ -1,6 +1,4 @@
 <?php
-    header("Content-type: text/css; charset: UTF-8");
-
     global $wpdb;
     $ticketmachine_design = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_design LIMIT 0,1");
     $ticketmachine_design = $ticketmachine_design[0];
@@ -78,6 +76,5 @@
             color: ". $ticketmachine_design->button_primary_background_color ." !important;
             border-right-color: transparent !important;
         }";
-    
-        echo $ticketmachine_custom_css;
+
 ?>
