@@ -15,7 +15,6 @@
             if(!empty($event_organizer_match)){
                 $table = $wpdb->prefix . "ticketmachine_organizers";
 				$organizer = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $event_organizer_match->organizer_id );
-				print_r($organizer);
             }
 		}
 		if(isset($event)){
@@ -47,11 +46,13 @@
 							<div class="col-12 col-lg-' . $tm2_lg_width . ' col-xl-' . $tm2_xl_width . ' ticketmachine_right">';
 				$ticketmachine_output .= ticketmachine_event_page_actions($event, $tm_globals);
 				$ticketmachine_output .= ticketmachine_event_page_tickets($event, $tm_globals);
-				if ($tm_globals->show_additional_info) {
+				if (isset($tm_globals->show_additional_info) && $tm_globals->show_additional_info) {
 					$ticketmachine_output .= ticketmachine_event_page_details($event, $tm_globals);
 				}
-				if ($tm_globals->show_google_map) {
+				if (isset($tm_globals->show_google_map) && $tm_globals->show_google_map) {
 					$ticketmachine_output .= ticketmachine_event_page_google_map($event, $tm_globals);
+				}
+				if (!empty($organizer)) {
 				}
 				$ticketmachine_output .= '
 							</div>
