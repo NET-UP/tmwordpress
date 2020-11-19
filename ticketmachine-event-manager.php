@@ -303,6 +303,7 @@
 					id int(11) NOT NULL AUTO_INCREMENT,
                     organizer_id int(11) DEFAULT 0 NOT NULL,
                     api_event_id int(11) DEFAULT 0 NOT NULL,
+                    local_event_id int(11) DEFAULT 0 NOT NULL,
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
 
