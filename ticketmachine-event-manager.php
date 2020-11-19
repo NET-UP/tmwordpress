@@ -410,7 +410,6 @@
 	
 	function ticketmachine_dynamic_css() {
 		require(plugins_url('assets/css/custom.css', __FILE__ ));
-		exit;
 	}
 
 	add_action('wp_ajax_dynamic_css', 'dynaminc_css');
