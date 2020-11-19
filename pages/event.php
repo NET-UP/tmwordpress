@@ -53,6 +53,7 @@
 					$ticketmachine_output .= ticketmachine_event_page_google_map($event, $tm_globals);
 				}
 				if (!empty($organizer)) {
+					$ticketmachine_output .= ticketmachine_event_organizer_details($event, $tm_globals);
 				}
 				$ticketmachine_output .= '
 							</div>
