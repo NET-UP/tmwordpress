@@ -319,6 +319,10 @@
         $wpdb->query("DROP TABLE IF EXISTS $table_name");
         $table_name = $wpdb->prefix . 'ticketmachine_design';
         $wpdb->query("DROP TABLE IF EXISTS $table_name");
+        $table_name = $wpdb->prefix . 'ticketmachine_organizers';
+        $wpdb->query("DROP TABLE IF EXISTS $table_name");
+        $table_name = $wpdb->prefix . 'ticketmachine_organizers_events_match';
+        $wpdb->query("DROP TABLE IF EXISTS $table_name");
     }
 	
 	// load dynamic form for calculator from template
