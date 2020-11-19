@@ -63,7 +63,7 @@
             $event_organizer_match = $wpdb->get_row( "SELECT * FROM $table WHERE `api_event_id` = " . $event->id );
             if(!empty($event_organizer_match)){
                 $table = $wpdb->prefix . "ticketmachine_organizers";
-                $event['organizer'] = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $event_organizer_match->organizer_id );
+                $event->organizer = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $event_organizer_match->organizer_id );
             }
         }
     }
