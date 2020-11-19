@@ -286,6 +286,7 @@
         $charset_collate = $wpdb->get_charset_collate();
         $sql = "CREATE TABLE $table (
 					id int(11) NOT NULL AUTO_INCREMENT,
+                    approved tinyint(1) DEFAULT 0 NOT NULL,
                     og_name varchar(128) DEFAULT '' NOT NULL,
                     og_street varchar(128) DEFAULT '' NOT NULL,
                     og_street_number varchar(128) DEFAULT '' NOT NULL,
@@ -303,7 +304,7 @@
 					id int(11) NOT NULL AUTO_INCREMENT,
                     organizer_id int(11) DEFAULT 0 NOT NULL,
                     api_event_id int(11) DEFAULT 0 NOT NULL,
-                    local_event_id int(11) DEFAULT 0 NOT NULL,
+                    local_event_id int(11) DEFAULT 0 NOT NULL
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
 
