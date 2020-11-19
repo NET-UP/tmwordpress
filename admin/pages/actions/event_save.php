@@ -110,8 +110,10 @@
                     
                     if(!empty($organizer)) {
                         $table = $wpdb->prefix . 'ticketmachine_organizers';
-                        $organizerb = $wpdb->get_row( $table, array('og_name' => $organizer['og_name']));
-                        print_r($organizerb);
+                        $organizer_check = $wpdb->get_row( $table, array('og_name' => $organizer['og_name']));
+                        if(!empty($organizer_check)){
+                            $wpdb->update($table, $organizer, array('og_name' => $organizer['og_name']);
+                        }
                         //$table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
                         //$wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
                         //$wpdb->delete($table, array('api_event_id' => $response->id));
