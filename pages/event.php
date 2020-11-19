@@ -1,7 +1,9 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	function ticketmachine_display_event ( $atts ) {
-		global $event, $tm_globals, $api;
+		global $event, $tm_globals, $api, $wpdb;
+
+		
 
 		$params = array();
 		$ticketmachine_output = "";

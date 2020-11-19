@@ -111,17 +111,20 @@
                     if(!empty($organizer)) {
                         $table = $wpdb->prefix . 'ticketmachine_organizers';
                         $organizer_check = $wpdb->get_row( "SELECT * FROM $table WHERE og_name = " . $organizer['og_name']);
-                        print_r($organizer_check);
                         if(!empty($organizer_check)){
                             $wpdb->update($table, $organizer, array('id' => $organizer_check->id));
                             $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
-                            $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
+                            if(isset($tm_post['old_id']) {
+                                $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
+                            }
                             $wpdb->delete($table, array('api_event_id' => $response->id));
                             $wpdb->insert($table, array('organizer_id' => $organizer_check->id, 'api_event_id' => $response->id));
                         }else{
                             $wpdb->insert($table, $organizer);
                             $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
-                            $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
+                            if(isset($tm_post['old_id']) {
+                                $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
+                            }
                             $wpdb->delete($table, array('api_event_id' => $response->id));
                             $wpdb->insert($table, array('organizer_id' => $wpdb->insert_id, 'api_event_id' => $response->id));
                         }
