@@ -313,6 +313,16 @@
                                     <input id="og_country" name="organizer[country]" type="text" class="form-control" value="<?php echo esc_attr($organizer->og_country); ?>">
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-6 form-group">
+                                    <label for="og_email"><?php esc_html_e('Email address', 'ticketmachine-event-manager') ?></label>
+                                    <input id="og_email" name="organizer[email]" type="email" class="form-control" value="<?php echo esc_attr($organizer->og_email); ?>">
+                                </div>
+                                <div class="col-6 form-group">
+                                    <label for="og_phone"><?php esc_html_e('Phone number', 'ticketmachine-event-manager') ?></label>
+                                    <input id="og_phone" name="organizer[phone]" type="text" class="form-control" value="<?php echo esc_attr($organizer->og_phone); ?>">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
