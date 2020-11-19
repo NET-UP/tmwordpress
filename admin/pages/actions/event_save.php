@@ -106,6 +106,7 @@
                     }
                     
                     if(!empty($organizer)) {
+                        print_r($organizer);
                         $table = $wpdb->prefix . 'ticketmachine_organizers';
                         $wpdb->insert( $table, $organizer);
                         $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
@@ -113,7 +114,6 @@
                         $wpdb->insert($table, array('organizer' => $wpdb->insert_id, 'api_event_id' => $response->id));
                     }
 
-                    print_r($organizer);
                 }
             }
     
