@@ -44,6 +44,12 @@
                 $table = $wpdb->prefix . "ticketmachine_events";
                 $event = (array)$wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $params['id'] );
                 if(!empty($event['id'])){
+                    $table = $wpdb->prefix . "ticketmachine_organizers_events_match";
+                    $event_organizer_match = $wpdb->get_row( "SELECT * FROM $table WHERE `local_event_id` = " . $event['id'] );
+                    if(!empty($event_organizer_match)){
+                        $table = $wpdb->prefix . "ticketmachine_organizers";
+                        $event['organizer'] = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $event_organizer_match->organizer_id );
+                    }
                     $event['old_id'] = $event['id'];
                     $event['id'] = "";
                     $event['approved'] = 1;
@@ -52,10 +58,13 @@
                 }
         }else{
             $event = ticketmachine_tmapi_event($params);
+            
         }
     }
 
     $event = (object)$event;
+
+    print_r($event);
 ?>
 
 
