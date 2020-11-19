@@ -295,6 +295,17 @@
                     og_phone varchar(128) DEFAULT '' NOT NULL,
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
+        
+        $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
+        $charset = $wpdb->get_charset_collate();
+        $charset_collate = $wpdb->get_charset_collate();
+        $sql = "CREATE TABLE $table (
+					id int(11) NOT NULL AUTO_INCREMENT,
+                    organizer_id int(11) DEFAULT 0 NOT NULL,
+                    api_event_id int(11) DEFAULT 0 NOT NULL,
+                    local_event_id int(11) DEFAULT 0 NOT NULL,
+                	PRIMARY KEY  (id)
+                ) $charset_collate;";
 
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         dbDelta( $sql );
