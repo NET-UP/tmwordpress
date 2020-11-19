@@ -1,4 +1,6 @@
 <?php
+    if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+    
     global $wpdb;
     $ticketmachine_design = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_design LIMIT 0,1");
     $ticketmachine_design = $ticketmachine_design[0];
