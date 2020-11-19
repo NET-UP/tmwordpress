@@ -82,13 +82,13 @@
                 if(empty($tm_globals->organizer_id) || !is_int($tm_globals->organizer_id)){
                     $errors[] = "No organizer id could be found";
                 }
-
-                if(!empty($tm_post['organizer'])) {
-                    $organizer = $tm_post['organizer'];
-                    unset($tm_post['organizer']);
-                }
                 
                 if(empty($errors)){
+
+                    if(!isset($tm_post['organizer']['og_name'])) {
+                        $organizer = $tm_post['organizer'];
+                        unset($tm_post['organizer']);
+                    }
                     $tm_post['organizer_id'] = absint($tm_globals->organizer_id);
                     $tm_post['approved'] = absint($tm_post['approved']);
                     $tm_post['rules']['shown'] = absint($tm_post['rules']['shown']);
