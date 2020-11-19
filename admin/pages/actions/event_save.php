@@ -114,7 +114,7 @@
                         if(!empty($organizer_check)){
                             $wpdb->update($table, $organizer, array('id' => $organizer_check->id));
                             $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
-                            if(isset($tm_post['old_id']) {
+                            if(isset($tm_post['old_id'])) {
                                 $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
                             }
                             $wpdb->delete($table, array('api_event_id' => $response->id));
@@ -122,7 +122,7 @@
                         }else{
                             $wpdb->insert($table, $organizer);
                             $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
-                            if(isset($tm_post['old_id']) {
+                            if(isset($tm_post['old_id'])) {
                                 $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
                             }
                             $wpdb->delete($table, array('api_event_id' => $response->id));
