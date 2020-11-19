@@ -3,14 +3,19 @@
 	function ticketmachine_display_event ( $atts ) {
 		global $event, $tm_globals, $api, $wpdb;
 
-		
-
 		$params = array();
 		$ticketmachine_output = "";
 
 		if(!empty($_GET['id'])){
 			$params = ticketmachine_array_push_assoc($params, "id", absint($_GET['id']));
 			$event = ticketmachine_tmapi_event($params);
+
+            $table = $wpdb->prefix . "ticketmachine_organizers_events_match";
+            $event_organizer_match = $wpdb->get_row( "SELECT * FROM $table WHERE `api_event_id` = " . $event->id );
+            if(!empty($event_organizer_match)){
+                $table = $wpdb->prefix . "ticketmachine_organizers";
+                $organizer = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $event_organizer_match->organizer_id );
+            }
 		}
 		if(isset($event)){
 
