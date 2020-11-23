@@ -53,6 +53,11 @@
                     }
                     $event['old_id'] = $event['id'];
                     $event['id'] = "";
+                    $event['event_location']['street'] = $event['street'];
+                    $event['event_location']['house_number'] = $event['house_number'];
+                    $event['event_location']['zip'] = $event['zip'];
+                    $event['event_location']['city'] = $event['city'];
+                    $event['event_location']['country'] = $event['country'];
                     $event['approved'] = 1;
                 }else{
                     unset($isCommunityEvent);
