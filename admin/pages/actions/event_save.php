@@ -110,7 +110,7 @@
                     
                     if(!empty($organizer)) {
                         $table = $wpdb->prefix . 'ticketmachine_organizers';
-                        $organizer_check = $wpdb->get_row( "SELECT * FROM $table WHERE og_name = " . $organizer['og_name']);
+                        $organizer_check = $wpdb->get_row( "SELECT * FROM $table WHERE og_name = '" . $organizer['og_name'] . "'");
                         if(!empty($organizer_check)){
                             $wpdb->update($table, $organizer, array('id' => $organizer_check->id));
                             $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
