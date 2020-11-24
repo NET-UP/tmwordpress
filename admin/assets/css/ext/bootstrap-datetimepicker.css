@@ -15,6 +15,7 @@
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
+    z-index:99999;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   }
   @media (min-width: 768px) {
