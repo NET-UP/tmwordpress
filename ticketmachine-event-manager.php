@@ -340,30 +340,30 @@
 			session_start(); 
 			
         global $tm_globals, $api, $wpdb;
-    
-        wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_style( 'jquery-ui_CSS' );
-		//Cookies
-		wp_enqueue_script( 'cookies_JS' );
-		//Popper
-		wp_enqueue_script( 'popper_JS' );
-		//Bootstrap
-		wp_enqueue_script( 'bootstrap-4_JS' );
-		wp_enqueue_style( 'boostrap-4_CSS' );
-		//Icons
-		wp_enqueue_style( 'fontawesome-5_CSS' );
-		//Core
-		wp_enqueue_style( 'core_CSS' );
-		wp_enqueue_script( 'core_JS' );
-		//iCal
-		wp_enqueue_script( 'iCal_JS' );
-        //FileSaver
-		wp_enqueue_script( 'fileSaver_JS' );
-
-        include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
-        include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
 		
 		if( $atts ) {
+    
+			wp_enqueue_script( 'jquery-ui-datepicker' );
+			wp_enqueue_style( 'jquery-ui_CSS' );
+			//Cookies
+			wp_enqueue_script( 'cookies_JS' );
+			//Popper
+			wp_enqueue_script( 'popper_JS' );
+			//Bootstrap
+			wp_enqueue_script( 'bootstrap-4_JS' );
+			wp_enqueue_style( 'boostrap-4_CSS' );
+			//Icons
+			wp_enqueue_style( 'fontawesome-5_CSS' );
+			//Core
+			wp_enqueue_style( 'core_CSS' );
+			wp_enqueue_script( 'core_JS' );
+			//iCal
+			wp_enqueue_script( 'iCal_JS' );
+			//FileSaver
+			wp_enqueue_script( 'fileSaver_JS' );
+	
+			include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
+			include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
 			
 			foreach($_GET as $key => $value) {
 				$atts[$key] = $value;
