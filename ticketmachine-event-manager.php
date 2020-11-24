@@ -432,7 +432,7 @@
 		
 		//jQuery
 		wp_register_script( 'jquery-ui-datepicker', array("jquery") );
-		wp_register_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
+		wp_register_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery-ui.css', __FILE__ ) );
 		//Cookies
 		wp_register_script( 'cookies_JS', plugins_url( "assets/js/cookies.js", __FILE__ ) );
 		//Popper
