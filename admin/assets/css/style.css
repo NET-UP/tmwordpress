@@ -65,6 +65,10 @@
     padding: 10px 20px 20px;
 }
 
+.tm-admin-page .bootstrap-datetimepicker-widget {
+    z-index:99999;
+}
+
 .tm-admin-page .bootstrap-tagsinput > input[type="text"] {
     width: 100%;
     display: block;
