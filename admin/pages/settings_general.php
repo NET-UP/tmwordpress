@@ -19,10 +19,15 @@
 				$errors[] = "Event page can not be empty";
 			}
 
+			if(empty($tm_post->privacy_slug_id) || !ctype_digit($tm_post->privacy_slug_id)){
+				$errors[] = "Event page can not be empty";
+			}
+
 			$save_array = 
 				array(
 					"events_slug_id" => absint($tm_post->events_slug_id),
-					"event_slug_id" => absint($tm_post->event_slug_id)
+					"event_slug_id" => absint($tm_post->event_slug_id),
+					"privacy_slug_id" => absint($tm_post->privacy_slug_id)
 				);
 			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(
@@ -72,6 +77,21 @@
 						if( $pages = get_pages() ){
 							foreach( $pages as $page ){
 								$selected = ($page->ID == $ticketmachine_config->event_slug_id) ? 'selected="selected"' : '';
+								echo '<option value="' . $page->ID . '" ' . $selected . '>' . $page->post_title . '</option>';
+							}
+						}
+					?>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th><label><?php esc_html_e('Privacy policy page', 'ticketmachine-event-manager'); ?></label></th>
+			<td>
+				<select name="privacy_slug_id">
+					<?php
+						if( $pages = get_pages() ){
+							foreach( $pages as $page ){
+								$selected = ($page->ID == $ticketmachine_config->privacy_slug_id) ? 'selected="selected"' : '';
 								echo '<option value="' . $page->ID . '" ' . $selected . '>' . $page->post_title . '</option>';
 							}
 						}
