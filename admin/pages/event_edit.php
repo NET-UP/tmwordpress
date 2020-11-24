@@ -92,7 +92,7 @@
     <form name="event" action="?page=ticketmachine_events&action=save<?php if(!empty($event->id)){ echo "&id=" . esc_attr(absint($_GET['id'])); } ?>" method="post" id="event">
 		<?php wp_nonce_field( 'ticketmachine_action_save_event', 'ticketmachine_event_edit_form_nonce' ); ?>
         <?php if(isset($event->old_id)) { ?>
-            <input type="hidden" name="old_id" data-name="<?php echo esc_html__('Event details', 'ticketmachine-event-manager'); ?>" value="<?php echo esc_attr($event->old_id); ?>">
+            <input type="hidden" name="old_id" data-name="<?php echo esc_html__('Event Details', 'ticketmachine-event-manager'); ?>" value="<?php echo esc_attr($event->old_id); ?>">
         <?php } ?>
         <input type="hidden" name="organizer_id" value="<?php echo esc_attr($tm_globals->organizer_id); ?>">
         <input type="hidden" name="rules[sale_active]" value="0">
@@ -280,12 +280,12 @@
 
                     <div class="postbox">
                         <h2 class="hndle px-3 py-2 mt-0">
-                            <span><?php esc_html_e('Organizer details', 'ticketmachine-event-manager') ?></span>
+                            <span><?php esc_html_e('Organizer Details', 'ticketmachine-event-manager') ?></span>
                         </h2>
                         <div class="inside inside-pad">
                             <div class="row">
                                 <div class="col-12 form-group">
-                                    <label for="og_name"><?php esc_html_e('Organizer name', 'ticketmachine-event-manager') ?></label>
+                                    <label for="og_name"><?php esc_html_e('Organizer Name', 'ticketmachine-event-manager') ?></label>
                                     <input id="og_name" name="organizer[og_name]" type="text" class="form-control" value="<?php echo esc_attr($organizer->og_name); ?>">
                                 </div>
                             </div>
