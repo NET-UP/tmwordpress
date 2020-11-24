@@ -88,6 +88,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 == Changelog ==
 
+= 1.1.7 =
+* Code cleanup and speed optimizations
+
 = 1.1.6 =
 * Added hooks for "Community Events" extension
 * Added ability to enter and display organizer details
