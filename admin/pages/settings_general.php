@@ -101,7 +101,7 @@
 		</tr>
 
 		<label class="hidden" style="display:none;">
-			<?php echo esc_html__('I have read and agree to the', 'ticketmachine-event-manager') . ' ' . esc_html__('Privacy Policy', 'ticketmachine-event-manager'); ?>
+			<?php echo esc_html__('I have read and understood the', 'ticketmachine-event-manager') . esc_html__('Privacy Policy', 'ticketmachine-event-manager') . esc_html__('and agree with the contents.', 'ticketmachine-event-manager'); ?>
 		</label>
 
 	</tbody>
