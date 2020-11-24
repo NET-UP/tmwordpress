@@ -100,5 +100,9 @@
 			</td>
 		</tr>
 
+		<label class="hidden" style="display:none;">
+			<?php echo esc_html__('I have read and agree to the', 'ticketmachine-event-manager') . ' ' . esc_html__('Privacy Policy', 'ticketmachine-event-manager'); ?>
+		</label>
+
 	</tbody>
 </table>
