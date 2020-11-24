@@ -33,7 +33,16 @@
         "ev_date" =>  date(DATE_ISO8601, strtotime("today 11:00")),
         "endtime" =>  date(DATE_ISO8601, strtotime("today 23:59"))
     );
-    $organizer = array();
+    $organizer = array(
+        "og_name" => "",
+        "og_street" => "",
+        "og_house_number" => "",
+        "og_zip" => "",
+        "og_city" => "",
+        "og_country" => "",
+        "og_email" => "",
+        "og_phone" => ""
+    );
 
     if(!empty($_GET['mode'] && $_GET['mode'] == "community") && is_plugin_active( 'ticketmachine-community-events/ticketmachine-community-events.php' )) {
         $isCommunityEvent = 1;
