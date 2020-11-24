@@ -92,7 +92,7 @@
     <form name="event" action="?page=ticketmachine_events&action=save<?php if(!empty($event->id)){ echo "&id=" . esc_attr(absint($_GET['id'])); } ?>" method="post" id="event">
 		<?php wp_nonce_field( 'ticketmachine_action_save_event', 'ticketmachine_event_edit_form_nonce' ); ?>
         <?php if(isset($event->old_id)) { ?>
-            <input type="hidden" name="old_id" value="<?php echo esc_attr($event->old_id); ?>">
+            <input type="hidden" name="old_id" data-name="<?php echo esc_html__('Event details', 'ticketmachine-event-manager'); ?>" value="<?php echo esc_attr($event->old_id); ?>">
         <?php } ?>
         <input type="hidden" name="organizer_id" value="<?php echo esc_attr($tm_globals->organizer_id); ?>">
         <input type="hidden" name="rules[sale_active]" value="0">
