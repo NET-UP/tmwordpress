@@ -340,32 +340,32 @@
 			session_start(); 
 			
         global $tm_globals, $api, $wpdb;
+		//Underscore
+		wp_enqueue_script( 'underscore' );
+
+		wp_enqueue_script( 'jquery-ui-datepicker' );
+		wp_enqueue_style( 'jquery-ui_CSS' );
+		//Cookies
+		wp_enqueue_script( 'cookies_JS' );
+		//Popper
+		wp_enqueue_script( 'popper_JS' );
+		//Bootstrap
+		wp_enqueue_script( 'bootstrap-4_JS' );
+		wp_enqueue_style( 'boostrap-4_CSS' );
+		//Icons
+		wp_enqueue_style( 'fontawesome-5_CSS' );
+		//Core
+		wp_enqueue_style( 'core_CSS' );
+		wp_enqueue_script( 'core_JS' );
+		//iCal
+		wp_enqueue_script( 'iCal_JS' );
+		//FileSaver
+		wp_enqueue_script( 'fileSaver_JS' );
+
+		include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
+		include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
 		
 		if( $atts ) {
-			//Underscore
-			wp_enqueue_script( 'underscore' );
-    
-			wp_enqueue_script( 'jquery-ui-datepicker' );
-			wp_enqueue_style( 'jquery-ui_CSS' );
-			//Cookies
-			wp_enqueue_script( 'cookies_JS' );
-			//Popper
-			wp_enqueue_script( 'popper_JS' );
-			//Bootstrap
-			wp_enqueue_script( 'bootstrap-4_JS' );
-			wp_enqueue_style( 'boostrap-4_CSS' );
-			//Icons
-			wp_enqueue_style( 'fontawesome-5_CSS' );
-			//Core
-			wp_enqueue_style( 'core_CSS' );
-			wp_enqueue_script( 'core_JS' );
-			//iCal
-			wp_enqueue_script( 'iCal_JS' );
-			//FileSaver
-			wp_enqueue_script( 'fileSaver_JS' );
-	
-			include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
-			include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
 			
 			foreach($_GET as $key => $value) {
 				$atts[$key] = $value;
@@ -442,13 +442,12 @@
 		wp_register_style( 'boostrap-4_CSS', plugins_url('assets/css/ext/bootstrap.min.css', __FILE__ ) );
 		//Icons
 		wp_register_style( 'fontawesome-5_CSS', plugins_url('assets/css/ext/fontawesome.min.css', __FILE__ ) );
-		
-		//Custom Styles
-		wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.css', __FILE__ ) );
-		wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
 		//Core
 		wp_register_style( 'core_CSS', plugins_url('assets/css/ticketmachine.css', __FILE__ ) );
 		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
+		//Custom Styles
+		wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
+		wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
         //iCal
         wp_register_script( 'iCal_JS', plugins_url('assets/js/ext/ics.js', __FILE__ ) );
         //FileSaver
