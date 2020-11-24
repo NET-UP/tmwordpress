@@ -442,12 +442,13 @@
 		wp_register_style( 'boostrap-4_CSS', plugins_url('assets/css/ext/bootstrap.min.css', __FILE__ ) );
 		//Icons
 		wp_register_style( 'fontawesome-5_CSS', plugins_url('assets/css/ext/fontawesome.min.css', __FILE__ ) );
-		//Core
-		wp_register_style( 'core_CSS', plugins_url('assets/css/ticketmachine.css', __FILE__ ) );
-		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
+		
 		//Custom Styles
 		wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.css', __FILE__ ) );
 		wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
+		//Core
+		wp_register_style( 'core_CSS', plugins_url('assets/css/ticketmachine.css', __FILE__ ) );
+		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
         //iCal
         wp_register_script( 'iCal_JS', plugins_url('assets/js/ext/ics.js', __FILE__ ) );
         //FileSaver
