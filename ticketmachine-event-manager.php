@@ -340,18 +340,6 @@
 			session_start(); 
 			
         global $tm_globals, $api, $wpdb;
-		//Underscore
-		wp_enqueue_script( 'underscore' );
-
-		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_style( 'jquery-ui_CSS' );
-		//Cookies
-		wp_enqueue_script( 'cookies_JS' );
-		//Popper
-		wp_enqueue_script( 'popper_JS' );
-		//Bootstrap
-		wp_enqueue_script( 'bootstrap-4_JS' );
-		wp_enqueue_style( 'boostrap-4_CSS' );
 		//Icons
 		wp_enqueue_style( 'fontawesome-5_CSS' );
 		//Core
@@ -451,7 +439,20 @@
         //iCal
         wp_register_script( 'iCal_JS', plugins_url('assets/js/ext/ics.js', __FILE__ ) );
         //FileSaver
-        wp_register_script( 'fileSaver_JS', plugins_url('assets/js/ext/filesaver.js', __FILE__ ) );
+		wp_register_script( 'fileSaver_JS', plugins_url('assets/js/ext/filesaver.js', __FILE__ ) );
+		
+		//Underscore
+		wp_enqueue_script( 'underscore' );
+
+		wp_enqueue_script( 'jquery-ui-datepicker' );
+		wp_enqueue_style( 'jquery-ui_CSS' );
+		//Cookies
+		wp_enqueue_script( 'cookies_JS' );
+		//Popper
+		wp_enqueue_script( 'popper_JS' );
+		//Bootstrap
+		wp_enqueue_script( 'bootstrap-4_JS' );
+		wp_enqueue_style( 'boostrap-4_CSS' );
     }
     
     function ticketmachine_register_calendar_files() {
