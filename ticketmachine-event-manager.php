@@ -342,6 +342,12 @@
         global $tm_globals, $api, $wpdb;
 		
 		if( $atts ) {
+			
+			//Custom Styles
+			wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
+			wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
+			//Underscore
+			wp_enqueue_script( 'underscore' );
     
 			wp_enqueue_script( 'jquery-ui-datepicker' );
 			wp_enqueue_style( 'jquery-ui_CSS' );
@@ -443,11 +449,6 @@
 		//Core
 		wp_register_style( 'core_CSS', plugins_url('assets/css/ticketmachine.css', __FILE__ ) );
 		wp_register_script( 'core_JS', plugins_url('assets/js/ticketmachine.js', __FILE__ ) );
-		//Custom Styles
-        wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
-		wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
-        //Underscore
-    	wp_enqueue_script( 'underscore' );
         //iCal
         wp_register_script( 'iCal_JS', plugins_url('assets/js/ext/ics.js', __FILE__ ) );
         //FileSaver
