@@ -48,11 +48,17 @@
 		
 			//get page slugs
 			$tm_post = get_post($tm_globals->events_slug_id); 
-			$tm_globals->events_slug = $tm_post->post_name;
+			if(!empty($tm_globals->events_slug_id) && $tm_globals->events_slug_id > 0){
+				$tm_globals->events_slug = $tm_post->post_name;
+			}
 			$tm_post = get_post($tm_globals->event_slug_id); 
-			$tm_globals->event_slug = $tm_post->post_name;
+			if(!empty($tm_globals->event_slug_id) && $tm_globals->event_slug_id > 0){
+				$tm_globals->event_slug = $tm_post->post_name;
+			}
 			$tm_post = get_post($tm_globals->privacy_slug_id); 
-			$tm_globals->privacy_slug = $tm_post->post_name;
+			if(!empty($tm_globals->privacy_slug_id) && $tm_globals->privacy_slug_id > 0){
+				$tm_globals->privacy_slug = $tm_post->post_name;
+			}
 		
 			switch ($tm_globals->event_grouping) {
 				case 'Month':
