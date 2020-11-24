@@ -4,7 +4,7 @@
 
 	if (isset($_POST['reject']) && is_plugin_active( 'ticketmachine-community-events/ticketmachine-community-events.php' )) {
 
-        if ( ! isset( $_POST['ticketmachine_event_edit_form_nonce'] ) || ! wp_verify_nonce( $_POST['ticketmachine_event_edit_form_nonce'], 'ticketmachine_communityevents_action_save_event' ) ) {
+        if ( ! isset( $_POST['ticketmachine_event_edit_form_nonce'] ) || ! wp_verify_nonce( $_POST['ticketmachine_event_edit_form_nonce'], 'ticketmachine_action_save_event' ) ) {
             print 'Sorry, your nonce did not verify.';
             exit;
         } else {
