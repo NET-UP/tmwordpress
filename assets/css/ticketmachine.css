@@ -36,7 +36,7 @@ body .ticketmachine_page a.btn {
 }
 
 .ticketmachine_page .card {
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .ticketmachine_page .card-img-top {
