@@ -26,7 +26,7 @@ var data = {
 	q: urlParams["q"],
 	sort: 'ev_date',
 	tag: urlParams["tag"],
-	approved: 1,
+	approved: urlParams["approved"],
 };
 jQuery.getJSON(ticketmachine_calendar_data.ajaxurl, data).success(function(data) {
 
