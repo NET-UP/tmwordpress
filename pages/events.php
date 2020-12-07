@@ -37,7 +37,7 @@
 		if($current_page == "calendar"){
 			
 			include plugin_dir_path( __FILE__ ) . "../widgets/event_calendar.php";
-			ticketmachine_widget_event_calendar( $params, 0 );
+			$ticketmachine_output .= ticketmachine_widget_event_calendar( $params, 0 );
 			
 		}elseif($current_page == "list"){
 			
