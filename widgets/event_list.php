@@ -14,7 +14,7 @@
 			$atts['show_image'] = 1;
         }
         if(!isset($atts['show_description'])){
-			$attss['show_description'] = 1;
+			$atts['show_description'] = 1;
         }
         if(!isset($atts['show_date'])){
 			$atts['show_date'] = 1;
