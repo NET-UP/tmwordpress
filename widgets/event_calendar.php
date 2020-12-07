@@ -28,7 +28,8 @@
                             </div>
                         </div>
                     </div>
-                </div>";
+                </div>
+                <div class='row'>";
         }
 
         $ticketmachine_output .= "
@@ -49,6 +50,10 @@
                     <div id='calendar' class='col-12'></div>
                 </div>
             </div>";
+
+            if($isWidget == 1){
+                $ticketmachine_output .= "</div>";
+            }
 
             //Calendar scripts
             wp_enqueue_script( 'calendar_JS_1' );
