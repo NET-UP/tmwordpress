@@ -35,6 +35,7 @@
 
         $ticketmachine_output .= "
             <input type='hidden' id='ticketmachine_ev_url' value='" . ticketmachine_tmapi_events($atts, "GET", FALSE, array(), 1) . "'></input>
+            <input type='hidden' id='ticketmachine_ev_params' value='" . http_build_query($atts) . "'></input>
             <div id='ticketmachine_cal_error' class='col-12 text-center mt-1' style='display:none;'>" . ticketmachine_alert(esc_html__("No events could be found", "ticketmachine-event-manager"), "error") . "</div>
             <div class='col-12 mt-3'>
                 <div class='row'>

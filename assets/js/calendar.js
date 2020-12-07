@@ -3,6 +3,8 @@ var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
+var ev_url= jQuery("#ticketmachine_ev_url").val();
+var ev_params= jQuery("#ticketmachine_ev_params").val();
 var urlParams;
 (window.onpopstate = function () {
     var match,
@@ -18,7 +20,6 @@ var urlParams;
 
 jQuery("#ticketmachine_spinner").show();
 var locale= jQuery(".ticketmachine_page").data("locale");
-var ev_url= jQuery("#ticketmachine_ev_url").val();
 var data = {
 	action: 'ticketmachine_calendar',
 	q: urlParams["q"],
