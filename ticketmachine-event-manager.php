@@ -392,7 +392,7 @@
                 switch ($atts['widget']) {
                     case 'event_list':
                         include "widgets/event_list.php";
-                        $ticketmachine_output .= ticketmachine_widget_event_list( $atts );
+                        $ticketmachine_output .= ticketmachine_widget_event_list( $atts, 1 );
                         break;
                     case 'event_calendar':
                         include "widgets/event_calendar.php";

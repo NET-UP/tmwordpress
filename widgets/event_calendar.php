@@ -3,6 +3,8 @@
     function ticketmachine_widget_event_calendar ( $atts, $isWidget ) {
         global $tm_globals, $api;
         $ticketmachine_output = "";
+
+        print_r($atts);
 			
 		//Calendar styles
         wp_enqueue_style( 'calendar_CSS_1' );
