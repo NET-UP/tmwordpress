@@ -20,6 +20,10 @@
 			$atts['show_date'] = 1;
         }
 
+        if($isWidget == 1){
+            $ticketmachine_output .= "<div class='row ticketmachine_widget_event_list'>";
+        }
+
         if(empty($events)) {	
             $ticketmachine_output .= "<div class='col-12 text-center mt-1'>";
                 $ticketmachine_output .= ticketmachine_alert(esc_html__("No events could be found", "ticketmachine-event-manager"), "error");
@@ -27,7 +31,7 @@
             
         }else{
 				
-            $ticketmachine_output .= '<div class="col-12 ticketmachine_widget_event_list">';
+            $ticketmachine_output .= '<div class="col-12">';
                 $ticketmachine_output .= '<ul class="list-unstyled mx-0">';
 
                 foreach($events as $event){
@@ -76,6 +80,10 @@
 
             $ticketmachine_output .= '</div>';
 
+        }
+
+        if($isWidget == 1){
+            $ticketmachine_output .= "</div>";
         }
 
         return $ticketmachine_output;
