@@ -593,6 +593,8 @@
 		}
 
 
+		print_r($url);
+
 		if(isset($url_only) && $url_only == 1) {
 			return $url;
 		}else{
@@ -600,8 +602,6 @@
 			//print_r($events->result[0]);
 			return $events;
 		}
-
-		print_r($url);
 	}
 
 	/* Get event */
