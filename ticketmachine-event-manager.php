@@ -593,7 +593,6 @@
 		}
 
 		if(isset($url_only) && $url_only == 1) {
-			print_r($url);
 			return $url;
 		}else{
 			$events = (object)ticketmachine_apiRequest($url, $tm_post, $method, $headers);
