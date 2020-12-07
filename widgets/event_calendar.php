@@ -8,8 +8,6 @@
         unset($atts['widget']);
 
         $atts['approved'] == 1;
-
-        print_r($atts);
 			
 		//Calendar styles
         wp_enqueue_style( 'calendar_CSS_1' );
