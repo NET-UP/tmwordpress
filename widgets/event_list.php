@@ -10,14 +10,14 @@
         $events = ticketmachine_tmapi_events($params)->result;
         $ticketmachine_output = "";
 
-        if(!isset($params['show_image'])){
-			$params['show_image'] = 1;
+        if(!isset($atts['show_image'])){
+			$atts['show_image'] = 1;
         }
-        if(!isset($params['show_description'])){
-			$params['show_description'] = 1;
+        if(!isset($atts['show_description'])){
+			$attss['show_description'] = 1;
         }
-        if(!isset($params['show_date'])){
-			$params['show_date'] = 1;
+        if(!isset($atts['show_date'])){
+			$atts['show_date'] = 1;
         }
 
         if(empty($events)) {	
