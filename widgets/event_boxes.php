@@ -3,8 +3,10 @@
     function ticketmachine_widget_event_boxes ( $atts, $isWidget ) {
         global $tm_globals, $api;
         $ticketmachine_output = "";
-        
+
         $params = $atts;
+
+        print_r($params);
         if(empty($params['approved'])) {
             $params = ticketmachine_array_push_assoc($params, "approved", 1);
         }

@@ -4,6 +4,7 @@
 		global $tm_globals, $api;
 
         $params = $atts;
+        print_r($params);
         if(empty($params['approved'])) {
             $params = ticketmachine_array_push_assoc($params, "approved", 1);
         }
