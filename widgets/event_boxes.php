@@ -39,5 +39,7 @@
                 $i++;
             }
         }
+
+        return $ticketmachine_output;
     }
 ?>
