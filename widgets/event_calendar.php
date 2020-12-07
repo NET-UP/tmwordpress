@@ -9,19 +9,6 @@
         wp_enqueue_style( 'calendar_CSS_3' );
         wp_enqueue_style( 'calendar_CSS_4' );
         wp_enqueue_style( 'calendar_CSS_t' );
-        //Calendar scripts
-        wp_enqueue_script( 'calendar_JS_1' );
-        wp_enqueue_script( 'calendar_JS_2' );
-        wp_enqueue_script( 'calendar_JS_3' );
-        wp_enqueue_script( 'calendar_JS_4' );
-        wp_enqueue_script( 'calendar_JS_5' );
-        wp_enqueue_script( 'calendar_JS_6' );
-    
-        wp_localize_script( 'ticketmachine-calendar-script', 'ticketmachine_calendar_data', array(
-            'ajaxurl' => admin_url( 'admin-ajax.php' ),
-        ) );
-        
-        wp_enqueue_script( 'ticketmachine-calendar-script' );
 
         if(!empty($isWidget) && $isWidget == 1){
             $ticketmachine_output .= "
@@ -56,6 +43,20 @@
                 </div>
             </div>";
     }
+    
+    //Calendar scripts
+    wp_enqueue_script( 'calendar_JS_1' );
+    wp_enqueue_script( 'calendar_JS_2' );
+    wp_enqueue_script( 'calendar_JS_3' );
+    wp_enqueue_script( 'calendar_JS_4' );
+    wp_enqueue_script( 'calendar_JS_5' );
+    wp_enqueue_script( 'calendar_JS_6' );
+
+    wp_localize_script( 'ticketmachine-calendar-script', 'ticketmachine_calendar_data', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+    ) );
+    
+    wp_enqueue_script( 'ticketmachine-calendar-script' );
 
     return $ticketmachine_output;
 
