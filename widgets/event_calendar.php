@@ -3,7 +3,6 @@
     function ticketmachine_widget_event_calendar ( $atts, $isWidget ) {
         global $tm_globals, $api;
         $ticketmachine_output = "";
-
         unset($atts['page']);
         unset($atts['widget']);
 

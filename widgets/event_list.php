@@ -2,14 +2,16 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_widget_event_list ( $atts, $isWidget ) {
 		global $tm_globals, $api;
+        $ticketmachine_output = "";
+        unset($atts['page']);
+        unset($atts['widget']);
 
         $params = $atts;
-        print_r($params);
+        
         if(empty($params['approved'])) {
             $params = ticketmachine_array_push_assoc($params, "approved", 1);
         }
         $events = ticketmachine_tmapi_events($params)->result;
-        $ticketmachine_output = "";
 
         if(!isset($atts['show_image'])){
 			$atts['show_image'] = 1;
