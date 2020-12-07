@@ -41,11 +41,6 @@
 			
 		}elseif($current_page == "list"){
 
-			//ToDo: Move to setting page
-			$params['show_image'] = 1;
-			$params['show_description'] = 1;
-			$params['show_date'] = 1;
-
 			include plugin_dir_path( __FILE__ ) . "../widgets/event_list.php";
 			$ticketmachine_output .= ticketmachine_widget_event_list ( $params, 0 );
 
