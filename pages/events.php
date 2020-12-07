@@ -14,7 +14,6 @@
 			$params = ticketmachine_array_push_assoc($params, "tag", sanitize_text_field($_GET['tag']));
 		}
 		$params = ticketmachine_array_push_assoc($params, "approved", 1);
-		$events = ticketmachine_tmapi_events($params)->result;
 		
 		if(isset($atts['display']) && $atts['display'] == "calendar" && $tm_globals->show_calendar || $tm_globals->show_calendar && !$tm_globals->show_boxes && !$tm_globals->show_list){
 			$current_page = "calendar";

@@ -3,6 +3,8 @@
     function ticketmachine_widget_event_boxes ( $atts, $isWidget ) {
         global $tm_globals, $api;
         $ticketmachine_output = "";
+        $params = $atts;
+		$events = ticketmachine_tmapi_events($params)->result;
 
         include plugin_dir_path( __FILE__ ) . "../partials/_event_list_item.php";
         
