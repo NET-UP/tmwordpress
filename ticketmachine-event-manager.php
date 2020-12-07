@@ -592,7 +592,6 @@
 			$url .= "&approved[eq]=" . (int)$params->approved;
 		}
 
-		print_r($url);
 
 		if(isset($url_only) && $url_only == 1) {
 			return $url;
