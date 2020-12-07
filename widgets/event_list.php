@@ -24,6 +24,7 @@
         }
 
         if($isWidget == 1){
+            $ticketmachine_output .= "<div class='row'>";
             $ticketmachine_output .= "<div class='row ticketmachine_widget_event_list'>";
         }
 
@@ -86,7 +87,7 @@
         }
 
         if($isWidget == 1){
-            $ticketmachine_output .= "</div>";
+            $ticketmachine_output .= "</div></div>";
         }
 
         return $ticketmachine_output;
