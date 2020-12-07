@@ -600,6 +600,8 @@
 			//print_r($events->result[0]);
 			return $events;
 		}
+
+		print_r($url);
 	}
 
 	/* Get event */
