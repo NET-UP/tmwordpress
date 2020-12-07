@@ -7,6 +7,8 @@
         unset($atts['page']);
         unset($atts['widget']);
 
+        $atts['approved'] == 1;
+
         print_r($atts);
 			
 		//Calendar styles
