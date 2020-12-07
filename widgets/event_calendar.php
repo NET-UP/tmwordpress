@@ -4,6 +4,9 @@
         global $tm_globals, $api;
         $ticketmachine_output = "";
 
+        unset($atts['page']);
+        unset($atts['widget']);
+
         print_r($atts);
 			
 		//Calendar styles
