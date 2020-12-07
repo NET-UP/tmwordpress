@@ -7,7 +7,7 @@
         unset($atts['page']);
         unset($atts['widget']);
 
-        $atts['approved'] == 1;
+        $atts['approved'] = 1;
 
         print_r($atts);
 			
