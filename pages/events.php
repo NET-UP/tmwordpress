@@ -47,7 +47,7 @@
 			$params['show_date'] = 1;
 
 			include plugin_dir_path( __FILE__ ) . "../widgets/event_list.php";
-			$ticketmachine_output .= ticketmachine_widget_event_list ( $atts, 0 );
+			$ticketmachine_output .= ticketmachine_widget_event_list ( $params, 0 );
 
 		}elseif($current_page == "boxes"){
 			
