@@ -27,7 +27,7 @@
             
         }else{
 				
-            $ticketmachine_output .= '<div class="col-12">';
+            $ticketmachine_output .= '<div class="col-12 ticketmachine_widget_event_list">';
                 $ticketmachine_output .= '<ul class="list-unstyled mx-0">';
 
                 foreach($events as $event){
