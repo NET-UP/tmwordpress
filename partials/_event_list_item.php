@@ -9,8 +9,19 @@
 		}
 		
 		$event->event_location = (object) $event->event_location;
+
+		if($atts['columns'] == 1) {
+			$colmd = 12;
+			$colxl = 12;
+		}elseif($atts['columns'] == 2){
+			$colmd = 6;
+			$colxl = 6;
+		}else{
+			$colmd = 6;
+			$colxl = 4;
+		}
 		
-		$ticketmachine_output = '<div class="col-12 col-md-6 col-xl-4 card-group">';
+		$ticketmachine_output = '<div class="col-12 col-md-' . $colmd . ' col-xl-' . $colxl . ' card-group">';
 			$ticketmachine_output .= '<card class="card mb-4">';
 				$ticketmachine_output .= '<a aria-label="' . esc_attr($event->ev_name) . ' am ' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '" href="' . $event->link . '" class="card-img-top" style="background-image:url( ' . esc_url($event->event_img_url) . ' )" title="' . esc_attr($event->ev_name) . '">';
 					$ticketmachine_output .= '<div class="badge badge-danger float-right mt-1 mr-2">'. esc_html($event->rules["badge"]) .'</div>';
