@@ -87,6 +87,11 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.2.0 =
+* Community events full integration added
+* Code improvements for widgets & pages
+* Added widget "event_boxes"
+* Added ability to add tag & search query filters to all event widgets
 
 = 1.1.7 =
 * Code cleanup and speed optimizations
