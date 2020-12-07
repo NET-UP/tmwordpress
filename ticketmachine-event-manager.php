@@ -396,7 +396,7 @@
                         break;
                     case 'event_calendar':
                         include "widgets/event_calendar.php";
-                        $ticketmachine_output .= ticketmachine_widget_event_calendar( $atts );
+                        $ticketmachine_output .= ticketmachine_widget_event_calendar( $atts, 1 );
                         break;
                 }
             }
