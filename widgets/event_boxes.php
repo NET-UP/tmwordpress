@@ -18,6 +18,10 @@
         $prev = NULL;
         $i = 0;
         
+        if($isWidget == 1){
+            $ticketmachine_output .= "<div class='row'>";
+        }
+        
         if(empty($events)) {	
             $ticketmachine_output .= "<div class='col-12 text-center mt-1'>";
                 $ticketmachine_output .= ticketmachine_alert(esc_html__("No events could be found", "ticketmachine-event-manager"), "error");
@@ -47,6 +51,10 @@
                 
                 $i++;
             }
+        }
+
+        if($isWidget == 1){
+            $ticketmachine_output .= "</div>";
         }
 
         return $ticketmachine_output;
