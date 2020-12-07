@@ -1,6 +1,6 @@
 <?php 
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	function ticketmachine_event_list_item ( $event, $tm_globals ) {
+	function ticketmachine_event_list_item ( $event, $tm_globals, $atts ) {
 		
 		if(empty($event->state['sale_active'])){
 			$event->link = '/' . esc_html($tm_globals->event_slug) .'/?id=' . esc_html($event->id);

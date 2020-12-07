@@ -43,7 +43,7 @@
                     }
                 }
                 
-                $ticketmachine_output .= ticketmachine_event_list_item ( $event, $tm_globals );
+                $ticketmachine_output .= ticketmachine_event_list_item ( $event, $tm_globals, $atts );
                 
                 $i++;
             }
