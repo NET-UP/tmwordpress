@@ -580,6 +580,8 @@
 		$url .= "&sort=". $params->sort;
 		if(!empty($params->per_page)) {
 			$url .= "&per_page=" . (int)$params->per_page;
+		}else{
+			$url .= "&per_page=100";
 		}
 		
 		if(!empty($params->query)) {
