@@ -61,7 +61,7 @@ if( current_user_can('edit_posts') ) {
 
         function get_events(){
             
-            global $tm_globals, $api;
+            global $tm_globals, $tm_api;
 
             $params = array();
             if(isset($_GET['s'])){
@@ -136,7 +136,7 @@ if( current_user_can('edit_posts') ) {
          * @return string Text to be placed inside the column <td> (movie title only)
          **************************************************************************/
         function column_ev_name($item){
-            global $tm_globals, $api;
+            global $tm_globals, $tm_api;
 
             $additional_text = "";
             if($item['approved'] == 0){

@@ -1,7 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	function ticketmachine_display_events ( $atts ) {
-		global $tm_globals, $api;
+		global $tm_globals, $tm_api;
 
 		$params = array();
 		if(isset($_GET['q'])){

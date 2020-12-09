@@ -1,6 +1,6 @@
 <?php 
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    global $tm_globals, $api;
+    global $tm_globals, $tm_api;
 
     if( current_user_can('edit_posts') ) {	
 

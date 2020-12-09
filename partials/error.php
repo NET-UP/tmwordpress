@@ -9,8 +9,8 @@
         $ticketmachine_output = "<div class='alert alert-" . $type . "'>" . esc_html__($message, "ticketmachine-event-manager") . "</div>";
 
         if(!empty($actions)){
-            foreach($actions as $text => $url){
-                $ticketmachine_output .= "<a href='" . $url . "' class='btn btn-secondary'>" . esc_html__($text, "ticketmachine-event-manager") . "</a>";
+            foreach($actions as $text => $tm_url){
+                $ticketmachine_output .= "<a href='" . $tm_url . "' class='btn btn-secondary'>" . esc_html__($text, "ticketmachine-event-manager") . "</a>";
             }
         }
 

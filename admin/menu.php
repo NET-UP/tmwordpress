@@ -2,7 +2,7 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	function ticketmachine_admin_menu () {
-		global $tm_globals, $api;
+		global $tm_globals, $tm_api;
 
 		include( plugin_dir_path( __FILE__ ) . 'pages/events.php');
 		
