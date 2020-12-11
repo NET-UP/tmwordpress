@@ -544,11 +544,13 @@
 		));
 
 	  }
-	  $response = $resource['body'];
 
-	  //print_r($resource['headers']);
-
-	  return json_decode($response, true);
+	  if(isset($resource['body'])){
+		$response = $resource['body'];
+		return json_decode($response, true);
+	  }else{
+		  print_r($response);
+	  }
 	  
 	}
 
