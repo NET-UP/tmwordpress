@@ -14,13 +14,16 @@
     add_action( 'wp_enqueue_scripts', 'ticketmachine_register_core_files' );
     add_action( 'wp_enqueue_scripts', 'ticketmachine_register_calendar_files' );
 
-    add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
+	add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
+	
+	// Load translations if they don't already exist
     function ticketmachine_wpdocs_load_textdomain() {
         load_plugin_textdomain( 'ticketmachine-event-manager', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
 	}
 
 	add_action( 'init', 'ticketmachine_check_some_other_plugin' );
 
+	// Check if plugin is already installed
 	function ticketmachine_check_some_other_plugin() {
 		if (!function_exists('is_plugin_active')) {
 			include_once(ABSPATH . 'wp-admin/includes/plugin.php');
@@ -168,6 +171,7 @@
     register_activation_hook(__FILE__, 'ticketmachine_activate');
     register_deactivation_hook(__FILE__, 'ticketmachine_deactivate');
 
+	// Run when plugin is activated
     function ticketmachine_activate( ) {
         global $wpdb;
 		global $jal_db_version;
@@ -316,10 +320,11 @@
         add_option('jal_db_version', $jal_db_version);
 	}
 	
+	// Run when plugin is deactivated
     function ticketmachine_deactivate( ) {
 	}
 	
-	// load dynamic form for calculator from template
+	// Run only if TicketMachine shortcode is found on current page
 	function ticketmachine_initialize( $atts ) {
 		if(!session_id())
 			session_start(); 
@@ -401,6 +406,7 @@
 
 	add_shortcode( 'ticketmachine', 'ticketmachine_initialize' );
 	
+	// Precompile styles and javascript
 	function ticketmachine_register_core_files () {
 		
 		include_once( plugin_dir_path( __FILE__ ) . 'assets/css/custom.php');
@@ -441,7 +447,8 @@
 		wp_enqueue_script( 'bootstrap-4_JS' );
 		wp_enqueue_style( 'boostrap-4_CSS' );
     }
-    
+	
+	// Precompile calendar dependencies
     function ticketmachine_register_calendar_files() {
         //Calendar Styles
         wp_register_style( 'calendar_CSS_1', plugins_url('assets/packages/core/main.css', __FILE__ ) );
@@ -460,10 +467,12 @@
         wp_register_script( 'ticketmachine-calendar-script', plugins_url('assets/js/calendar.js', __FILE__ ) );
     }
 	
+	// Run only if inside of admin backend
     if(is_admin()){
         include_once( plugin_dir_path( __FILE__ ) . 'admin/admin.php');
     }
 
+	// Add general metadata for TicketMachine pages
 	function ticketmachine_event_metadata() {
         if(isset($_GET['id']) && $_GET['id'] > 0){
             $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -472,6 +481,7 @@
 		}
 	}
 
+	// Add metadata only for Event pages
 	function ticketmachine_event_metadata_event() {
         if(isset($_GET['id']) && $_GET['id'] > 0){
             $params = [ "id" => absint($_GET['id']) ];
@@ -486,11 +496,13 @@
        }
 	}
 
+	// Function to easily add key value pairs to an array
 	function ticketmachine_array_push_assoc($array, $key, $value){
 		$array[$key] = $value;
 		return $array;
 	}
 
+	// Send GET or POST request to the TicketMachine API
 	function ticketmachine_apiRequest($tm_url, $tm_post=FALSE, $method="GET", $headers=array()) {
 	  global $tm_globals, $tm_api;
 
@@ -540,7 +552,7 @@
 	}
 
 	/* API Requests */
-	/* Get event list */
+	// Get event list
 	function ticketmachine_tmapi_events($params=array(), $method="GET", $tm_post=FALSE,  $headers=array(), $tm_url_only=0){
 		global $tm_api, $tm_globals;
 
@@ -592,7 +604,7 @@
 		}
 	}
 
-	/* Get event */
+	// Get event
 	function ticketmachine_tmapi_event($params=array(), $method="GET", $tm_post=FALSE, $headers=array()){
 		global $tm_api, $tm_globals;
 		if($method == "POST"){
@@ -614,7 +626,7 @@
 		return $event;
 	}
 
-	/* Copy event */
+	// Copy event
 	function ticketmachine_tmapi_event_copy($params){
 		global $tm_api, $tm_globals;
 
@@ -624,7 +636,7 @@
 		return (object)$event;
 	}
 
-	/* Get connected organizer */
+	// Get connected organizer
 	function ticketmachine_tmapi_organizers($params=array(), $method="GET", $tm_post=FALSE, $headers=array()){
 		global $tm_api, $tm_globals;
 
@@ -698,7 +710,7 @@
 		return $token;
 	}
 
-	/* Get all categories */
+	// Get all categories
 	function ticketmachine_tmapi_categories($params=array(), $method="GET", $headers=array()){
 		global $tm_api, $tm_globals;
 
@@ -713,7 +725,7 @@
 		return (object)$categories;
 	}
 
-	/* Add to category */
+	// Add to category
 	function ticketmachine_tmapi_category_add($params=array(), $method="POST", $headers=array()){
 		global $tm_api, $tm_globals;
 
@@ -724,7 +736,7 @@
 		return (object)$category;
 	}
 
-	/* Remove from category */
+	// Remove from category
 	function ticketmachine_tmapi_category_remove($params=array(), $method="POST", $headers=array()){
 		global $tm_api, $tm_globals;
 
@@ -734,16 +746,19 @@
 		return (object)$category;
 	}
 
+	// Internationalize DateTime objects
 	function ticketmachine_i18n_date($format, $datetime){
 		$formatted_date = date_i18n($format, strtotime(get_date_from_gmt($datetime)) );
 		return $formatted_date;
 	}
 
+	// Uninternationalize DateTime objects
 	function ticketmachine_i18n_reverse_date($datetime){
 		$formatted_date = gmdate(DATE_ISO8601, strtotime(date_i18n(DATE_ISO8601, strtotime($datetime))));
 		return $formatted_date;
 	}
-    
+	
+	// Remove author metadata on ticketmachine pages
     add_filter( 'oembed_response_data', 'ticketmachine_disable_embeds_filter_oembed_response_data_' );
     function ticketmachine_disable_embeds_filter_oembed_response_data_( $data ) {
         unset($data['author_url']);
@@ -751,8 +766,9 @@
         return $data;
 	}
 	
-	add_action( 'template_redirect', 'remove_wpseo' );
-	function remove_wpseo() {
+	add_action( 'template_redirect', 'ticketmachine_remove_wpseo' );
+	// Remove YoastSEO metadata
+	function ticketmachine_remove_wpseo() {
 		if(isset($_GET['id']) && $_GET['id'] > 0){
 			if (function_exists('YoastSEO')) {
 				$front_end = YoastSEO()->classes->get( Yoast\WP\SEO\Integrations\Front_End_Integration::class );
@@ -766,6 +782,7 @@
 		add_action('wp_head','ticketmachine_event_metadata_event');
     }
 
+	// Load events into calendar
 	function ticketmachine_calendar_callback() {
 		global $tm_api, $tm_globals, $wpdb;
 
@@ -830,8 +847,10 @@
         die();
     }
 
+	// Deprecated!
     function ticketmachine_enqueue_calendar_files() {
     }
 
+	// Deprecated!
     function ticketmachine_enqueue_core_files() {
     }
