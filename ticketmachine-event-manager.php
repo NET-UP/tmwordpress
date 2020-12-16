@@ -170,7 +170,9 @@
 
     function ticketmachine_activate( ) {
         global $wpdb;
-        global $jal_db_version;
+		global $jal_db_version;
+		
+		ticketmachine_deactivate();
 
         //create events overview page
         $new_page_title = 'Events';
