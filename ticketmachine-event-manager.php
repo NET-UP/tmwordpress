@@ -171,8 +171,6 @@
     function ticketmachine_activate( ) {
         global $wpdb;
 		global $jal_db_version;
-		
-		ticketmachine_deactivate();
 
         //create events overview page
         $new_page_title = 'Events';
@@ -316,19 +314,10 @@
                 ) $charset_collate;";
         dbDelta( $sql );
         add_option('jal_db_version', $jal_db_version);
-    }
-
+	}
+	
     function ticketmachine_deactivate( ) {
-        global $wpdb;
-        $table_name = $wpdb->prefix . 'ticketmachine_config';
-        $wpdb->query("DROP TABLE IF EXISTS $table_name");
-        $table_name = $wpdb->prefix . 'ticketmachine_design';
-        $wpdb->query("DROP TABLE IF EXISTS $table_name");
-        $table_name = $wpdb->prefix . 'ticketmachine_organizers';
-        $wpdb->query("DROP TABLE IF EXISTS $table_name");
-        $table_name = $wpdb->prefix . 'ticketmachine_organizers_events_match';
-        $wpdb->query("DROP TABLE IF EXISTS $table_name");
-    }
+	}
 	
 	// load dynamic form for calculator from template
 	function ticketmachine_initialize( $atts ) {
