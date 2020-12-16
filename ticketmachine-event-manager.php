@@ -4,7 +4,7 @@
 	Plugin Name:        TicketMachine Event Manager & Calendar
     Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
-	Version:            1.2.2
+	Version:            1.2.3
     Requires at least:  4.5
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
@@ -261,7 +261,7 @@
         $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
         
         $table = $wpdb->prefix . 'ticketmachine_design';
-        $sql = "CREATE TABLE $table (
+        $sql = "CREATE TABLE IF NOT EXISTS $table (
                     id mediumint(9) NOT NULL AUTO_INCREMENT,
                     link_text_color varchar(64) DEFAULT '#0fb1e4' NOT NULL,
                     link_text_color_hover varchar(64) DEFAULT '#0056b3' NOT NULL,
@@ -282,15 +282,13 @@
                     button_secondary_border_color_hover varchar(64) DEFAULT '#dadada' NOT NULL,
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
-
-        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         dbDelta( $sql );
         add_option('jal_db_version', $jal_db_version);
         
         $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
         
         $table = $wpdb->prefix . 'ticketmachine_organizers';
-        $sql = "CREATE TABLE $table (
+        $sql = "CREATE TABLE IF NOT EXISTS $table (
 					id int(11) NOT NULL AUTO_INCREMENT,
                     approved tinyint(1) DEFAULT 0 NOT NULL,
                     og_name varchar(128) DEFAULT '' NOT NULL,
@@ -303,8 +301,6 @@
                     og_phone varchar(128) DEFAULT '' NOT NULL,
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
-
-		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql );
 		add_option('jal_db_version', $jal_db_version);
         
@@ -316,8 +312,6 @@
                     local_event_id int(11) DEFAULT 0 NOT NULL,
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
-
-        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         dbDelta( $sql );
         add_option('jal_db_version', $jal_db_version);
     }
