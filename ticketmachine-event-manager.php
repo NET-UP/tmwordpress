@@ -850,7 +850,6 @@
 	// Deprecated!
     function ticketmachine_enqueue_calendar_files() {
     }
-
 	// Deprecated!
     function ticketmachine_enqueue_core_files() {
     }
