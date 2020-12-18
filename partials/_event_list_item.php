@@ -10,10 +10,10 @@
 		
 		$event->event_location = (object) $event->event_location;
 
-		if($atts['columns'] == 1) {
+		if(isset($atts['columns']) && $atts['columns'] == 1) {
 			$colmd = 12;
 			$colxl = 12;
-		}elseif($atts['columns'] == 2){
+		}elseif(isset($atts['columns']) && $atts['columns'] == 2){
 			$colmd = 6;
 			$colxl = 6;
 		}else{
