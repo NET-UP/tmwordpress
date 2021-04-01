@@ -326,7 +326,8 @@
 	
 	// Run only if TicketMachine shortcode is found on current page
 	function ticketmachine_initialize( $atts ) {
-		if(!session_id()){session_start();}
+		if(!session_id())
+			session_start(); 
 			
         global $tm_globals, $tm_api, $wpdb;
 		//Icons
