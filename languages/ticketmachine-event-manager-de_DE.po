@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2020-09-21 16:32+0200\n"
-"PO-Revision-Date: 2020-09-21 16:40+0200\n"
+"POT-Creation-Date: 2021-02-08 13:33+0100\n"
+"PO-Revision-Date: 2021-02-08 13:38+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Overview"
 msgstr "Übersicht"
 
-#: admin/menu.php:34 admin/menu.php:35 admin/pages/events.php:475
+#: admin/menu.php:34 admin/menu.php:35 admin/pages/events.php:478
 msgid "Events"
 msgstr "Veranstaltungen"
 
@@ -39,10 +39,10 @@ msgstr "Installation"
 
 #: admin/pages/actions/event_copy.php:39
 #: admin/pages/actions/event_delete.php:39
-#: admin/pages/actions/event_save.php:86
+#: admin/pages/actions/event_save.php:144
 #: admin/pages/actions/event_toggle.php:54 admin/pages/settings_boxes.php:44
 #: admin/pages/settings_calendar.php:39 admin/pages/settings_design.php:60
-#: admin/pages/settings_detail.php:107 admin/pages/settings_general.php:42
+#: admin/pages/settings_detail.php:107 admin/pages/settings_general.php:47
 #: admin/pages/settings_list.php:40
 msgid "Something went wrong"
 msgstr "Etwas ist schiefgelaufen"
@@ -51,12 +51,12 @@ msgstr "Etwas ist schiefgelaufen"
 msgid "Event successfully copied"
 msgstr "Veranstaltung erfolgreich kopiert"
 
-#: admin/pages/actions/event_copy.php:49 admin/pages/actions/event_save.php:96
+#: admin/pages/actions/event_copy.php:49 admin/pages/actions/event_save.php:154
 #: admin/pages/events.php:156
 msgid "View"
 msgstr "Anzeigen"
 
-#: admin/pages/actions/event_copy.php:51 admin/pages/actions/event_save.php:98
+#: admin/pages/actions/event_copy.php:51 admin/pages/actions/event_save.php:156
 #: admin/pages/events.php:154
 msgid "Preview"
 msgstr "Vorschau"
@@ -65,12 +65,16 @@ msgstr "Vorschau"
 msgid "Event successfully deleted"
 msgstr "Veranstaltung erfolgreich gelöscht"
 
-#: admin/pages/actions/event_save.php:91
+#: admin/pages/actions/event_save.php:18
+msgid "Event rejected"
+msgstr "Veranstaltung erfolgreich abgelehnt"
+
+#: admin/pages/actions/event_save.php:149
 msgid "Event saved"
 msgstr "Veranstaltung erfolgreich gespeichert"
 
-#: admin/pages/actions/event_toggle.php:61 admin/pages/event_edit.php:99
-#: admin/pages/events.php:496
+#: admin/pages/actions/event_toggle.php:61 admin/pages/event_edit.php:147
+#: admin/pages/events.php:499
 msgid "Published"
 msgstr "Veröffentlicht"
 
@@ -86,111 +90,138 @@ msgstr "Rückgängig machen"
 msgid "Event Description"
 msgstr "Beschreibung der Veranstaltung"
 
-#: admin/pages/event_edit.php:51
+#: admin/pages/event_edit.php:96
 msgid "Edit event"
 msgstr "Veranstaltung bearbeiten"
 
-#: admin/pages/event_edit.php:53
+#: admin/pages/event_edit.php:98
 msgid "Create event"
 msgstr "Veranstaltung erstellen"
 
-#: admin/pages/event_edit.php:73
+#: admin/pages/event_edit.php:104
+msgid "Event Details"
+msgstr "Veranstaltungsdetails"
+
+#: admin/pages/event_edit.php:121
 msgid "Enter the event name"
 msgstr "Veranstaltungsname eingeben"
 
-#: admin/pages/event_edit.php:74
+#: admin/pages/event_edit.php:122
 msgid "Event Name"
 msgstr "Name der Veranstaltung"
 
-#: admin/pages/event_edit.php:90 admin/pages/events.php:144
+#: admin/pages/event_edit.php:138 admin/pages/events.php:144
 msgid "Publish"
 msgstr "Veröffentlichen"
 
-#: admin/pages/event_edit.php:97
+#: admin/pages/event_edit.php:145
 msgid "Status"
 msgstr "Status"
 
-#: admin/pages/event_edit.php:100 admin/pages/events.php:146
+#: admin/pages/event_edit.php:148 admin/pages/events.php:146
 msgid "Draft"
 msgstr "Entwurf"
 
-#: admin/pages/event_edit.php:104
+#: admin/pages/event_edit.php:152
 msgid "Hint Text"
 msgstr "Hinweistext"
 
-#: admin/pages/event_edit.php:112
+#: admin/pages/event_edit.php:162
+msgid "Reject"
+msgstr "Ablehnen"
+
+#: admin/pages/event_edit.php:163
+msgid "Accept"
+msgstr "Akzeptieren"
+
+#: admin/pages/event_edit.php:165
 msgid "Save"
 msgstr "Speichern"
 
-#: admin/pages/event_edit.php:112
+#: admin/pages/event_edit.php:165
 msgid "Update"
 msgstr "Aktualisieren"
 
-#: admin/pages/event_edit.php:121
+#: admin/pages/event_edit.php:176
 msgid "Event Image"
 msgstr "Veranstaltungsbild"
 
-#: admin/pages/event_edit.php:127
+#: admin/pages/event_edit.php:182
 msgid "Add Image"
 msgstr "Bild festlegen"
 
-#: admin/pages/event_edit.php:133 admin/pages/events.php:213
+#: admin/pages/event_edit.php:188 admin/pages/events.php:213
 #: partials/_tag_header.php:9
 msgid "Tags"
 msgstr "Schlagwörter"
 
-#: admin/pages/event_edit.php:139
+#: admin/pages/event_edit.php:194
 msgid "Create new tag"
 msgstr "Neues Schlagwort erstellen"
 
-#: admin/pages/event_edit.php:144
+#: admin/pages/event_edit.php:199
 msgid "Seperate tags with comma"
 msgstr "Schlagwörter durch Kommas trennen"
 
-#: admin/pages/event_edit.php:155
+#: admin/pages/event_edit.php:210 partials/_event_page_details.php:26
 msgid "Location"
 msgstr "Standort"
 
-#: admin/pages/event_edit.php:160 partials/_event_list_item.php:26
-#: partials/_event_page_details.php:26
+#: admin/pages/event_edit.php:215 partials/_event_list_item.php:43
 msgid "Event Location"
 msgstr "Veranstaltungsort"
 
-#: admin/pages/event_edit.php:166
+#: admin/pages/event_edit.php:221 admin/pages/event_edit.php:303
 msgid "Street"
 msgstr "Straße"
 
-#: admin/pages/event_edit.php:170
+#: admin/pages/event_edit.php:225 admin/pages/event_edit.php:307
 msgid "House No."
 msgstr "House Nr."
 
-#: admin/pages/event_edit.php:176
+#: admin/pages/event_edit.php:231 admin/pages/event_edit.php:313
 msgid "Zipcode"
 msgstr "PLZ"
 
-#: admin/pages/event_edit.php:180
+#: admin/pages/event_edit.php:235 admin/pages/event_edit.php:317
 msgid "City"
 msgstr "Ort"
 
-#: admin/pages/event_edit.php:186
+#: admin/pages/event_edit.php:241 admin/pages/event_edit.php:323
 msgid "Country"
 msgstr "Land"
 
-#: admin/pages/event_edit.php:196
+#: admin/pages/event_edit.php:251
 msgid "Dates & Times"
 msgstr "Termine"
 
-#: admin/pages/event_edit.php:200
+#: admin/pages/event_edit.php:255
 msgid "Entry Time"
 msgstr "Einlasszeit"
 
-#: admin/pages/event_edit.php:211
+#: admin/pages/event_edit.php:266
 msgid "Event begins at"
 msgstr "Veranstaltungsbeginn"
 
-#: admin/pages/event_edit.php:222
+#: admin/pages/event_edit.php:277
 msgid "Event ends at"
 msgstr "Veranstaltungsende"
+
+#: admin/pages/event_edit.php:292
+msgid "Organizer Details"
+msgstr "Organizerdetails"
+
+#: admin/pages/event_edit.php:297
+msgid "Organizer Name"
+msgstr "Organizername"
+
+#: admin/pages/event_edit.php:329
+msgid "Email address"
+msgstr "E-Mail Adresse"
+
+#: admin/pages/event_edit.php:333
+msgid "Phone number"
+msgstr "Telefonnummer"
 
 #: admin/pages/events.php:149
 msgid "Deactivate"
@@ -216,23 +247,23 @@ msgstr "Anfangsdatum"
 msgid "End date"
 msgstr "Enddatum"
 
-#: admin/pages/events.php:476
+#: admin/pages/events.php:479
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: admin/pages/events.php:484
+#: admin/pages/events.php:487
 msgid "All"
 msgstr "Alle"
 
-#: admin/pages/events.php:490
+#: admin/pages/events.php:493
 msgid "Upcoming"
 msgstr "Kommende"
 
-#: admin/pages/events.php:502 admin/pages/overview.php:84
+#: admin/pages/events.php:505 admin/pages/overview.php:84
 msgid "Drafts"
 msgstr "Entwürfe"
 
-#: admin/pages/events.php:511
+#: admin/pages/events.php:514
 msgid "Search"
 msgstr "Suche"
 
@@ -365,7 +396,7 @@ msgstr "Cloud"
 
 #: admin/pages/settings_boxes.php:37 admin/pages/settings_calendar.php:32
 #: admin/pages/settings_cloud.php:34 admin/pages/settings_design.php:53
-#: admin/pages/settings_detail.php:100 admin/pages/settings_general.php:35
+#: admin/pages/settings_detail.php:100 admin/pages/settings_general.php:40
 #: admin/pages/settings_list.php:33
 msgid "Saved"
 msgstr "Gespeichert"
@@ -495,13 +526,29 @@ msgstr "Zusatzinfos anzeigen?"
 msgid "Activate Google Maps?"
 msgstr "Google Maps aktivieren?"
 
-#: admin/pages/settings_general.php:53
+#: admin/pages/settings_general.php:58
 msgid "Events overview page"
 msgstr "Veranstaltungsübersicht Seite"
 
-#: admin/pages/settings_general.php:68
+#: admin/pages/settings_general.php:73
 msgid "Event detail page"
 msgstr "Veranstaltungsdetail Seite"
+
+#: admin/pages/settings_general.php:88
+msgid "Privacy policy page"
+msgstr "Seite für Datenschutzerklärung"
+
+#: admin/pages/settings_general.php:104
+msgid "I have read and understood the"
+msgstr "Ich habe die"
+
+#: admin/pages/settings_general.php:104
+msgid "Privacy Policy"
+msgstr "Datenschutzerklärung"
+
+#: admin/pages/settings_general.php:104
+msgid "and agree with the contents."
+msgstr "gelesen und bin damit einverstanden."
 
 #: admin/pages/settings_list.php:51
 msgid "Activate List?"
@@ -539,30 +586,42 @@ msgstr "Preiskategorien für Veranstaltungen erstellen"
 msgid "Apply for Pro"
 msgstr "TicketMachine Pro besorgen"
 
-#: pages/event.php:52 pages/events.php:61 pages/events.php:81
-#: pages/events.php:137 widgets/event_calendar.php:30 widgets/event_list.php:16
+#: pages/event.php:62 widgets/event_boxes.php:27 widgets/event_calendar.php:37
+#: widgets/event_list.php:32
 msgid "No events could be found"
 msgstr "Es konnte keine Veranstaltung gefunden werden"
 
-#: pages/event.php:54
+#: pages/event.php:64
 msgid "Back to events"
 msgstr "Zurück zu den Veranstaltungen"
 
-#: pages/event.php:55
+#: pages/event.php:65
 msgid "Oops!"
 msgstr "Hoppla!"
 
-#: pages/events.php:167
+#: pages/events.php:52
 msgid "List, Boxes & Calendar are deactivated"
 msgstr "Liste, Kacheln & Kalender sind deaktiviert"
 
-#: partials/_event_list_item.php:31
+#: partials/_event_list_item.php:50
 msgid "To ticket selection"
 msgstr "Zur Ticketauswahlseite"
 
-#: partials/_event_list_item.php:32
+#: partials/_event_list_item.php:53
 msgid "More"
 msgstr "Weiter"
+
+#: partials/_event_list_item.php:55
+msgid "Tickets"
+msgstr "Tickets"
+
+#: partials/_event_organizer_details.php:8
+msgid "Organizer"
+msgstr "Organizer"
+
+#: partials/_event_organizer_details.php:17
+msgid "Contact"
+msgstr "Kontakt"
 
 #: partials/_event_page_actions.php:22
 msgid "Go back"
@@ -588,15 +647,15 @@ msgstr "Eintritt"
 msgid "free"
 msgstr "kostenlos"
 
-#: partials/_event_page_google_map.php:10
+#: partials/_event_page_google_map.php:12
 msgid "Allow Google Maps"
 msgstr "Google Maps erlauben"
 
-#: partials/_event_page_google_map.php:20
+#: partials/_event_page_google_map.php:22
 msgid "Disallow Google Maps"
 msgstr "Google Maps nicht erlauben"
 
-#: widgets/event_list.php:54
+#: widgets/event_list.php:79
 msgid "Show all events"
 msgstr "Alle Veranstaltungen anzeigen"
 
@@ -670,9 +729,6 @@ msgstr "Alle Veranstaltungen anzeigen"
 
 #~ msgid "API Client Secret"
 #~ msgstr "API Client Secret"
-
-#~ msgid "Organizer"
-#~ msgstr "Organizer"
 
 #~ msgid "Event Name hier eingeben"
 #~ msgstr "Event Name hier eingeben"
