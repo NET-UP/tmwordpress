@@ -25,11 +25,11 @@
 
 	// Check if plugin is already installed
 	function ticketmachine_check_some_other_plugin() {
+		if(!session_id()){session_start();}
 		if (!function_exists('is_plugin_active')) {
 			include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 		}
 		if (is_plugin_active('ticketmachine-event-manager/ticketmachine-event-manager.php')){
-			if(!session_id()){session_start();}
 			global $wpdb, $tm_globals, $tm_api;
 		
 			$ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
