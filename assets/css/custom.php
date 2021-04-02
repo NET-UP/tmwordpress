@@ -22,16 +22,16 @@
             box-shadow: 0px 0px 1px 2px ". $ticketmachine_design->button_primary_background_color ." !important;
         }
 
-        body .ticketmachine_page .card h1, 
-        body .ticketmachine_page .card h2, 
-        body .ticketmachine_page .card h3, 
-        body .ticketmachine_page .card h4, 
-        body .ticketmachine_page .card h5,
-        body .ticketmachine_page .media h1, 
-        body .ticketmachine_page .media h2, 
-        body .ticketmachine_page .media h3, 
-        body .ticketmachine_page .media h4, 
-        body .ticketmachine_page .media h5 {
+        body .ticketmachine_page h1, 
+        body .ticketmachine_page h2, 
+        body .ticketmachine_page h3, 
+        body .ticketmachine_page h4, 
+        body .ticketmachine_page h5,
+        body .ticketmachine_page h1, 
+        body .ticketmachine_page h2, 
+        body .ticketmachine_page h3, 
+        body .ticketmachine_page h4, 
+        body .ticketmachine_page h5 {
             color: ". $ticketmachine_design->box_header_color ." !important;
         }
 
