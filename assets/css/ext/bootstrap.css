@@ -52,9 +52,7 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
     text-align: left;
-    background-color: #fff;
 }
 
 .ticketmachine_page [tabindex="-1"]:focus:not(:focus-visible) {
