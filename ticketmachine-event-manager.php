@@ -274,7 +274,7 @@
                     box_text_color varchar(64) DEFAULT '#222' NOT NULL,
                     box_meta_color varchar(64) DEFAULT '#222' NOT NULL,
                     box_header_color varchar(64) DEFAULT '#222' NOT NULL,
-                    box_border_color varchar(64) DEFAULT '#CCC' NOT NULL,
+                    box_border_color varchar(64) DEFAULT '#DDD' NOT NULL,
                     date_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
                     price_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
                     button_primary_background_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
