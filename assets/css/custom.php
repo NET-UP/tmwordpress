@@ -31,7 +31,7 @@
         }
 
         body .ticketmachine_page .card-text {
-            background: ". $ticketmachine_design->box_text_color ." !important;
+            color: ". $ticketmachine_design->box_text_color ." !important;
         }
 
         body .ticketmachine_page .card {
