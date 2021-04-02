@@ -12,6 +12,9 @@
 			
 			$save_array = 
 				array(
+					"container_background_color" => $tm_post->container_background_color,
+					"box_text_color" => $tm_post->box_text_color,
+
 					"button_primary_background_color" => $tm_post->button_primary_background_color,
 					"button_primary_text_color" => $tm_post->button_primary_text_color,
 					"button_primary_border_color" => $tm_post->button_primary_border_color,
@@ -68,6 +71,22 @@
 
 <table class="form-table table-vertical-top">
 	<tbody>
+
+		<tr style="border-bottom: 1px solid #ccc;">
+			<th><h2><?php esc_html_e('General', 'ticketmachine-event-manager'); ?></h2></th>
+			<td>
+				<table class="form-table">
+					<tr>
+						<th><label><?php esc_html_e('Background color', 'ticketmachine-event-manager'); ?> </label></th>
+						<td><input class="color-field" type="text" value="<?php echo esc_html($ticketmachine_design->container_background_color); ?>" data-default-color="#ffffff" name="container_background_color" /></td>
+					</tr>		
+					<tr>
+						<th><label><?php esc_html_e('Text color', 'ticketmachine-event-manager'); ?> </label></th>
+						<td><input class="color-field" type="text" value="<?php echo esc_html($ticketmachine_design->box_text_color); ?>" data-default-color="#222" name="box_text_color" /></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
 
 		<tr style="border-bottom: 1px solid #ccc;">
 			<th><h2><?php esc_html_e('Primary Button', 'ticketmachine-event-manager'); ?></h2></th>
