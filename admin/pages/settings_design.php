@@ -87,6 +87,10 @@
 						<th><label><?php esc_html_e('Text color', 'ticketmachine-event-manager'); ?> </label></th>
 						<td><input class="color-field" type="text" value="<?php echo esc_html($ticketmachine_design->box_text_color); ?>" data-default-color="#222" name="box_text_color" /></td>
 					</tr>
+					<tr>
+						<th><label><?php esc_html_e('Border color', 'ticketmachine-event-manager'); ?> </label></th>
+						<td><input class="color-field" type="text" value="<?php echo esc_html($ticketmachine_design->box_border_color); ?>" data-default-color="#ddd" name="box_border_color" /></td>
+					</tr>
 				</table>
 			</td>
 		</tr>

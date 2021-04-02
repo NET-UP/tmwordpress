@@ -34,12 +34,14 @@
             color: ". $ticketmachine_design->box_text_color ." !important;
         }
 
-        body .ticketmachine_page .card {
-            border-color: ". $ticketmachine_design->box_border_color ." !important;
+        body .ticketmachine_page .card,
+        body .ticketmachine_page .media {
+            background: ". $ticketmachine_design->container_background_color ." !important;
         }
 
-        body .ticketmachine_page .card {
-            background: ". $ticketmachine_design->container_background_color ." !important;
+        body .ticketmachine_page .card,
+        body .ticketmachine_page .media {
+            border-color: ". $ticketmachine_design->box_border_color ." !important;
         }
 
         body .ticketmachine_page .card-date {
