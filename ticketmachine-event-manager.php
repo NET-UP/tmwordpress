@@ -227,7 +227,7 @@
         $charset_collate = $wpdb->get_charset_collate();
 
         $table = $wpdb->prefix . 'ticketmachine_config';
-        $sql = "CREATE TABLE $table (
+        $sql = "CREATE TABLE IF NOT EXISTS $table (
                     id mediumint(9) NOT NULL AUTO_INCREMENT,
                     organizer_id int(11) DEFAULT 0 NOT NULL,
                     organizer varchar(64) DEFAULT '' NOT NULL,
