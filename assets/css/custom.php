@@ -17,10 +17,21 @@
         body .ticketmachine_page .card-img-top:focus {
             border:2px solid ". $ticketmachine_design->button_primary_background_color ." !important;
         }
-
         
         body .ticketmachine_page #calendar .fc-event:focus {
             box-shadow: 0px 0px 1px 2px ". $ticketmachine_design->button_primary_background_color ." !important;
+        }
+
+        body .ticketmachine_page .card h1, body .ticketmachine_page .card h2, body .ticketmachine_page .card h3, body .ticketmachine_page .card h4, body .ticketmachine_page .card h5 {
+            color: ". $ticketmachine_design->box_header_color ." !important;
+        }
+
+        body .ticketmachine_page .card-meta-tag {
+            color: ". $ticketmachine_design->box_meta_color ." !important;
+        }
+
+        body .ticketmachine_page .card-text {
+            background: ". $ticketmachine_design->box_text_color ." !important;
         }
 
         body .ticketmachine_page .card {
@@ -78,5 +89,6 @@
             color: ". $ticketmachine_design->button_primary_background_color ." !important;
             border-right-color: transparent !important;
         }";
+        
 
 ?>
