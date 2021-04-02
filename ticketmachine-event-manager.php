@@ -227,8 +227,8 @@
         $charset_collate = $wpdb->get_charset_collate();
 
         $table = $wpdb->prefix . 'ticketmachine_config';
-        $sql = "CREATE TABLE IF NOT EXISTS $table (
-                    id mediumint(9) NOT NULL AUTO_INCREMENT,
+        $sql = "CREATE TABLE $table (
+                    id mediumint(9) DEFAULT 1 NOT NULL,
                     organizer_id int(11) DEFAULT 0 NOT NULL,
                     organizer varchar(64) DEFAULT '' NOT NULL,
                     api_client_id varchar(64) DEFAULT 'c16727aa80540e51edcd276641c6f68974bb312ec5b17b75a3bc0ba254236a14' NOT NULL,
@@ -266,8 +266,8 @@
         $wpdb->query("INSERT INTO $table (id) VALUES (NULL)");
         
         $table = $wpdb->prefix . 'ticketmachine_design';
-        $sql = "CREATE TABLE IF NOT EXISTS $table (
-                    id mediumint(9) NOT NULL AUTO_INCREMENT,
+        $sql = "CREATE TABLE $table (
+                    id mediumint(9) DEFAULT 1 NOT NULL,
                     link_text_color varchar(64) DEFAULT '#0fb1e4' NOT NULL,
                     link_text_color_hover varchar(64) DEFAULT '#0056b3' NOT NULL,
                     container_background_color varchar(64) DEFAULT '#ffffff' NOT NULL,
