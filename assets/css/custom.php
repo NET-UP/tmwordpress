@@ -51,7 +51,8 @@
         }
 
         body .ticketmachine_page .card,
-        body .ticketmachine_page .media {
+        body .ticketmachine_page .media,
+        body .ticketmachine_page hr {
             border-color: ". $ticketmachine_design->box_border_color ." !important;
         }
 
