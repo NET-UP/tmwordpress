@@ -40,7 +40,6 @@ body .ticketmachine_page .card {
 }
 
 body .ticketmachine_page .card-img-top {
-	height: 10em;
 	background-size: cover;
 	background-position: center center;
 	background-color: #f7f7f7;
@@ -48,7 +47,18 @@ body .ticketmachine_page .card-img-top {
 }
 
 body .ticketmachine_page .card-img-top.full {
-	height: 15em;
+}
+
+.ratio-16-9 {
+    width: 100%;
+    padding-top: 56.25%;
+    height: 0
+}
+
+.ratio-1-1 {
+    width: 100%;
+    padding-top: 100%;
+    height: 0
 }
 
 body .ticketmachine_page .card-meta-tag.keyword {
