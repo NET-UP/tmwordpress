@@ -6,7 +6,7 @@
     $ticketmachine_design = $ticketmachine_design[0];
 
     $ticketmachine_custom_css = "
-        body .ticketmachine_page a:not(.btn):not(.fc-event) {
+        body .ticketmachine_page a:not(.btn):not(.fc-event):not(.tm-list-title) {
             color: ". $ticketmachine_design->link_text_color ." !important;
         }
 
