@@ -30,6 +30,13 @@ body .ticketmachine_page a.btn {
 	text-decoration:none;
 }
 
+body .ticketmachine_page .card-img-top .event-badges, 
+body .ticketmachine_page .media-img .event-badges {
+    position: absolute;
+    top: .25rem;
+    right: .5rem;
+}
+
 body .ticketmachine_page .badge {
 	padding: 4px 7px!important;
     font-size: 0.8em;
@@ -49,13 +56,13 @@ body .ticketmachine_page .card-img-top {
 body .ticketmachine_page .card-img-top.full {
 }
 
-.ratio-16-9 {
+body .ticketmachine_page .ratio-16-9 {
     width: 100%;
     padding-top: 56.25%;
     height: 0
 }
 
-.ratio-1-1 {
+body .ticketmachine_page .ratio-1-1 {
     width: 100%;
     padding-top: 100%;
     height: 0
