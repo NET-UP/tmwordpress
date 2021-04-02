@@ -35,6 +35,10 @@
         }
 
         body .ticketmachine_page .card {
+            border-color: ". $ticketmachine_design->box_border_color ." !important;
+        }
+
+        body .ticketmachine_page .card {
             background: ". $ticketmachine_design->container_background_color ." !important;
         }
 
