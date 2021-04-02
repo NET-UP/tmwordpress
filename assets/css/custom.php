@@ -39,6 +39,7 @@
             color: ". $ticketmachine_design->box_meta_color ." !important;
         }
 
+        body .ticketmachine_page .card-body,
         body .ticketmachine_page .card-text,
         body .ticketmachine_page .media-body {
             color: ". $ticketmachine_design->box_text_color ." !important;
