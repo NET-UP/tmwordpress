@@ -14,6 +14,8 @@
 				array(
 					"container_background_color" => $tm_post->container_background_color,
 					"box_text_color" => $tm_post->box_text_color,
+					"box_meta-color" => $tm_post->box_text_color,
+					"box_header_color" => $tm_post->box_text_color,
 
 					"button_primary_background_color" => $tm_post->button_primary_background_color,
 					"button_primary_text_color" => $tm_post->button_primary_text_color,
