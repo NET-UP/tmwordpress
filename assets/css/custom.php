@@ -40,7 +40,7 @@
         }
 
         body .ticketmachine_page .card-text,
-        body .ticketmachine_Page .media-body {
+        body .ticketmachine_page .media-body {
             color: ". $ticketmachine_design->box_text_color ." !important;
         }
 
