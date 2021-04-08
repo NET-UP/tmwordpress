@@ -341,7 +341,7 @@ body .ticketmachine_page .fc-content-skeleton tr {
 }
 
 body .ticketmachine_page #calendar .fc-bg .fc-past {
-    background: rgba(0,0,0,0.05);
+    background: rgba(0,0,0,0.03);
 }
 
 body .ticketmachine_page .alert-danger {
