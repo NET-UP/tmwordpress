@@ -340,8 +340,8 @@ body .ticketmachine_page .fc-content-skeleton tr {
 	background: none !important;
 }
 
-body .ticketmachine_page #calendar .fc-past {
-    background: #f2f2f2;
+body .ticketmachine_page #calendar .fc-bg .fc-past {
+    background: rgba(0,0,0,0.05);
 }
 
 body .ticketmachine_page .alert-danger {
