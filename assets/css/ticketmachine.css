@@ -305,7 +305,7 @@ body .ticketmachine_page #calendar .fc-row {
 }
 
 body .ticketmachine_page #calendar .fc-row .fc-content-skeleton td {
-	border-color: #dee2e6 !important;
+	border-color: #dee2e6;
 }
 
 body .ticketmachine_page #calendar .table-bordered {
