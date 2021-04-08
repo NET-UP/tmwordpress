@@ -46,7 +46,8 @@
         }
 
         body .ticketmachine_page .card,
-        body .ticketmachine_page .media {
+        body .ticketmachine_page .media,
+        body .ticketmachine_page .fc-bg > table > tbody > tr {
             background: ". $ticketmachine_design->container_background_color ." !important;
         }
 
