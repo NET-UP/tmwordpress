@@ -334,6 +334,7 @@ body .ticketmachine_page #calendar .fc-list-empty-wrap2 {
 
 body .ticketmachine_page td.fc-today {
     background: rgb(238 125 38 / 0.1);
+	border-radius: 0;
 }
 
 body .ticketmachine_page .fc-content-skeleton tr {
