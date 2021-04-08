@@ -308,6 +308,10 @@ body .ticketmachine_page #calendar .fc-row .fc-content-skeleton td {
 	border-color: #dee2e6;
 }
 
+body .ticketmachine_page .fc-today.alert.alert-info {
+    padding: 0;
+}
+
 body .ticketmachine_page #calendar .table-bordered {
     margin: 0;
 }
