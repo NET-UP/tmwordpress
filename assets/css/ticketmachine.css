@@ -333,7 +333,7 @@ body .ticketmachine_page #calendar .fc-list-empty-wrap2 {
 }
 
 body .ticketmachine_page td.fc-today {
-    background: #fcf8e3;
+    background: rgb(238 125 38 / 0.1);
 }
 
 body .ticketmachine_page .fc-content-skeleton tr {
