@@ -54,7 +54,8 @@
         body .ticketmachine_page .media,
         body .ticketmachine_page hr,
         body .ticketmachine_page .table-bordered th, 
-        body .ticketmachine_page .table-bordered td {
+        body .ticketmachine_page .table-bordered td,
+        body .ticketmachine_page #calendar .fc-row .fc-content-skeleton td {
             border-color: ". $ticketmachine_design->box_border_color ." !important;
         }
 
