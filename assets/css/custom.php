@@ -41,7 +41,9 @@
 
         body .ticketmachine_page .card-body,
         body .ticketmachine_page .card-text,
-        body .ticketmachine_page .media-body {
+        body .ticketmachine_page .media-body,
+        body .ticketmachine_page .fc-dayGrid-view .fc-week-number, 
+        body .ticketmachine_page .fc-dayGrid-view .fc-day-number {
             color: ". $ticketmachine_design->box_text_color ." !important;
         }
 
