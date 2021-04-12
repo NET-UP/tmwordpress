@@ -13,6 +13,9 @@
         }
         $events = ticketmachine_tmapi_events($params)->result;
 
+		if(isset($atts['tag'])){
+			$params = ticketmachine_array_push_assoc($params, "tag", sanitize_text_field($atts['tag']));
+		}
         if(!isset($atts['show_image'])){
 			$atts['show_image'] = 1;
         }

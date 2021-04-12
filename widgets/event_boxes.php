@@ -8,6 +8,11 @@
 
         $params = $atts;
 
+        
+		if(isset($atts['tag'])){
+			$params = ticketmachine_array_push_assoc($params, "tag", sanitize_text_field($atts['tag']));
+		}
+
         if(empty($params['approved'])) {
             $params = ticketmachine_array_push_assoc($params, "approved", 1);
         }
