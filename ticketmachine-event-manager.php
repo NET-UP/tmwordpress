@@ -263,7 +263,7 @@
         dbDelta( $sql );
         add_option('jal_db_version', $jal_db_version);
         
-        $wpdb->query("INSERT INTO $table (id) VALUES (1)");
+        $wpdb->query("INSERT IGNORE INTO $table (id) VALUES (1)");
         
         $table = $wpdb->prefix . 'ticketmachine_design';
         $sql = "CREATE TABLE $table (
@@ -294,7 +294,7 @@
         dbDelta( $sql );
         add_option('jal_db_version', $jal_db_version);
         
-        $wpdb->query("INSERT INTO $table (id) VALUES (1)");
+        $wpdb->query("INSERT IGNORE INTO $table (id) VALUES (1)");
         
         $table = $wpdb->prefix . 'ticketmachine_organizers';
         $sql = "CREATE TABLE IF NOT EXISTS $table (
