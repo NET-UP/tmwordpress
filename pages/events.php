@@ -35,17 +35,17 @@
 		
 		if($current_page == "calendar"){
 			
-			include plugin_dir_path( __FILE__ ) . "../widgets/event_calendar.php";
+			include_once plugin_dir_path( __FILE__ ) . "../widgets/event_calendar.php";
 			$ticketmachine_output .= ticketmachine_widget_event_calendar( $params, 0 );
 			
 		}elseif($current_page == "list"){
 
-			include plugin_dir_path( __FILE__ ) . "../widgets/event_list.php";
+			include_once plugin_dir_path( __FILE__ ) . "../widgets/event_list.php";
 			$ticketmachine_output .= ticketmachine_widget_event_list ( $params, 0 );
 
 		}elseif($current_page == "boxes"){
 			
-			include plugin_dir_path( __FILE__ ) . "../widgets/event_boxes.php";
+			include_once plugin_dir_path( __FILE__ ) . "../widgets/event_boxes.php";
 			$ticketmachine_output .= ticketmachine_widget_event_boxes ( $params, 0 );
 
 		}else{

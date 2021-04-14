@@ -14,7 +14,7 @@
             }
             $events = ticketmachine_tmapi_events($params)->result;
 
-            include plugin_dir_path( __FILE__ ) . "../partials/_event_list_item.php";
+            include_once plugin_dir_path( __FILE__ ) . "../partials/_event_list_item.php";
             
             $prev = NULL;
             $i = 0;

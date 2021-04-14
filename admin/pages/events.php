@@ -276,7 +276,7 @@ if( current_user_can('edit_posts') ) {
             
             //Detect when a bulk action is being triggered...
             if( 'delete'===$this->current_action() ) {
-                include "actions/event_delete.php";
+                include_once "actions/event_delete.php";
             }
             
         }
@@ -451,17 +451,17 @@ if( current_user_can('edit_posts') ) {
     function ticketmachine_render_list_page(){
 
         if( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "edit" ) {
-            include "event_edit.php";
+            include_once "event_edit.php";
         } else {
 
             if ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "save" && !empty($_POST) ) {
-                include "actions/event_save.php";
+                include_once "actions/event_save.php";
             } elseif ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "publish" && isset($_GET['id']) || isset($_GET['action']) && sanitize_text_field($_GET['action']) == "deactivate" && isset($_GET['id']) ) {
-                include "actions/event_toggle.php";
+                include_once "actions/event_toggle.php";
             } elseif ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "delete" && isset($_GET['id']) ) {
-                include "actions/event_remove.php";
+                include_once "actions/event_remove.php";
             } elseif ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "copy" && isset($_GET['id']) ){
-                include "actions/event_copy.php";
+                include_once "actions/event_copy.php";
             }
 
             //Create an instance of our package class...
