@@ -4,7 +4,7 @@
 	Plugin Name:        TicketMachine Event Manager & Calendar
     Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
-	Version:            1.3.1
+	Version:            1.3.0
     Requires at least:  4.5
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
@@ -357,24 +357,24 @@
             if(isset($atts['page'])){
                 switch ($atts['page']) {
                     case 'event_list':
-                        include "partials/_search_header.php";
-                        include "partials/_tag_header.php";
+                        include_once "partials/_search_header.php";
+                        include_once "partials/_tag_header.php";
                         include "pages/events.php";
                         $ticketmachine_output .= ticketmachine_display_events( $atts );
                         break;
                     case 'event_boxes':
-                        include "partials/_search_header.php";
-                        include "partials/_tag_header.php";
+                        include_once "partials/_search_header.php";
+                        include_once "partials/_tag_header.php";
                         include "pages/events.php";
                         $ticketmachine_output .= ticketmachine_display_events( $atts );
                         break;
                     case 'event_details':
-                        include "partials/_event_page_information.php";
-                        include "partials/_event_page_tickets.php";
-                        include "partials/_event_page_details.php";
-                        include "partials/_event_page_google_map.php";
-                        include "partials/_event_organizer_details.php";
-                        include "partials/_event_page_actions.php";
+                        include_once "partials/_event_page_information.php";
+                        include_once "partials/_event_page_tickets.php";
+                        include_once "partials/_event_page_details.php";
+                        include_once "partials/_event_page_google_map.php";
+                        include_once "partials/_event_organizer_details.php";
+                        include_once "partials/_event_page_actions.php";
                         include "pages/event.php";
                         $ticketmachine_output .= ticketmachine_display_event( $atts );
                         break;
