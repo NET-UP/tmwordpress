@@ -359,13 +359,13 @@
                     case 'event_list':
                         include_once "partials/_search_header.php";
                         include_once "partials/_tag_header.php";
-                        include "pages/events.php";
+                        include_once "pages/events.php";
                         $ticketmachine_output .= ticketmachine_display_events( $atts );
                         break;
                     case 'event_boxes':
                         include_once "partials/_search_header.php";
                         include_once "partials/_tag_header.php";
-                        include "pages/events.php";
+                        include_once "pages/events.php";
                         $ticketmachine_output .= ticketmachine_display_events( $atts );
                         break;
                     case 'event_details':
@@ -375,22 +375,22 @@
                         include_once "partials/_event_page_google_map.php";
                         include_once "partials/_event_organizer_details.php";
                         include_once "partials/_event_page_actions.php";
-                        include "pages/event.php";
+                        include_once "pages/event.php";
                         $ticketmachine_output .= ticketmachine_display_event( $atts );
                         break;
                 }
             }elseif($atts['widget']){
                 switch ($atts['widget']) {
                     case 'event_boxes':
-                        include "widgets/event_boxes.php";
+                        include_once "widgets/event_boxes.php";
                         $ticketmachine_output .= ticketmachine_widget_event_boxes( $atts, 1 );
                         break;
                     case 'event_list':
-                        include "widgets/event_list.php";
+                        include_once "widgets/event_list.php";
                         $ticketmachine_output .= ticketmachine_widget_event_list( $atts, 1 );
                         break;
                     case 'event_calendar':
-                        include "widgets/event_calendar.php";
+                        include_once "widgets/event_calendar.php";
                         $ticketmachine_output .= ticketmachine_widget_event_calendar( $atts, 1 );
                         break;
                 }
