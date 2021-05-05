@@ -41,7 +41,7 @@
 
 			//validation & sanitation
 			foreach($save_array as $key => $color) {
-				if(ctype_xdigit(substr($color,1)) && strlen(ltrim($color,"#"))==6 || empty($color)){ 
+				if(ctype_xdigit(substr($color,1)) && strlen(ltrim($color,"#"))==6 || ctype_xdigit(substr($color,1)) && strlen(ltrim($color,"#"))==3 || empty($color)){ 
 					$save_array[$key] = sanitize_hex_color($color);
 				}else{
 					$errors[] = sanitize_text_field($color) . " is not a valid hex color.";
@@ -64,6 +64,16 @@
 				?>
 				<div class="notice notice-error is-dismissable">
 					<p><?php esc_html_e('Something went wrong', 'ticketmachine-event-manager'); ?>!</p>
+						<?php 
+							if(!empty($errors)){
+								foreach($errors as $error) {
+									?>
+									<p><?php echo $error ?>!</p>
+									<?php
+								}
+							}
+						?>
+					}
 				</div>
 				<?php
 			}
@@ -85,11 +95,11 @@
 					</tr>		
 					<tr>
 						<th><label><?php esc_html_e('Text color', 'ticketmachine-event-manager'); ?> </label></th>
-						<td><input class="color-field" type="text" value="<?php echo esc_html($ticketmachine_design->box_text_color); ?>" data-default-color="#222" name="box_text_color" /></td>
+						<td><input class="color-field" type="text" value="<?php echo esc_html($ticketmachine_design->box_text_color); ?>" data-default-color="#222222" name="box_text_color" /></td>
 					</tr>
 					<tr>
 						<th><label><?php esc_html_e('Border color', 'ticketmachine-event-manager'); ?> </label></th>
-						<td><input class="color-field" type="text" value="<?php echo esc_html($ticketmachine_design->box_border_color); ?>" data-default-color="#ddd" name="box_border_color" /></td>
+						<td><input class="color-field" type="text" value="<?php echo esc_html($ticketmachine_design->box_border_color); ?>" data-default-color="#dddddd" name="box_border_color" /></td>
 					</tr>
 				</table>
 			</td>

@@ -4,7 +4,7 @@
 	Plugin Name:        TicketMachine Event Manager & Calendar
     Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
-	Version:            1.3.4
+	Version:            1.3.5
     Requires at least:  4.5
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
@@ -271,10 +271,10 @@
                     link_text_color varchar(64) DEFAULT '#0fb1e4' NOT NULL,
                     link_text_color_hover varchar(64) DEFAULT '#0056b3' NOT NULL,
                     container_background_color varchar(64) DEFAULT '#ffffff' NOT NULL,
-                    box_text_color varchar(64) DEFAULT '#222' NOT NULL,
-                    box_meta_color varchar(64) DEFAULT '#222' NOT NULL,
-                    box_header_color varchar(64) DEFAULT '#222' NOT NULL,
-                    box_border_color varchar(64) DEFAULT '#DDD' NOT NULL,
+                    box_text_color varchar(64) DEFAULT '#222222' NOT NULL,
+                    box_meta_color varchar(64) DEFAULT '#222222' NOT NULL,
+                    box_header_color varchar(64) DEFAULT '#222222' NOT NULL,
+                    box_border_color varchar(64) DEFAULT '#DDDDDD' NOT NULL,
                     date_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
                     price_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
                     button_primary_background_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
