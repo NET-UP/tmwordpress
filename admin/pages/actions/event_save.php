@@ -34,13 +34,13 @@
                 $tm_post = $_POST;
                 $errors = array();
 
-                if(!isset($tm_post['rules']['shown'])) {
+                if(empty($tm_post['rules']['shown'])) {
                     $tm_post['rules']['shown'] = 0;
                 }
-                if(!isset($tm_post['rules']['prices_shown'])) {
+                if(empty($tm_post['rules']['prices_shown'])) {
                     $tm_post['rules']['prices_shown'] = 0;
                 }
-                if(!isset($tm_post['rules']['sale_active'])) {
+                if(empty($tm_post['rules']['sale_active'])) {
                     $tm_post['rules']['sale_active'] = 0;
                 }
                 if(!isset($tm_post['approved'])) {
