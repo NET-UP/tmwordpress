@@ -46,7 +46,6 @@
                 if(!isset($tm_post['approved'])) {
                     $tm_post['approved'] = 0;
                 }
-                print_r($tm_post);
                 if(isset($tm_post['tags'])) {
                     $tm_post['tags'] = explode(",", $tm_post['tags']);
                     array_walk($tm_post['tags'], function(&$value, &$key) {
