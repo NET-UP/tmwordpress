@@ -32,6 +32,7 @@
                 exit;
             } else {
                 $tm_post = $_POST;
+                die(print_r($tm_post));
                 $errors = array();
 
                 if(!isset($tm_post['rules']['shown'])) {
