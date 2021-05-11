@@ -24,7 +24,9 @@
         ),
 
         "rules" => array(
-            "badge" => ""
+            "badge" => "",
+            "sale_active" => 0,
+            "prices_shown" => 0
         ),
 
         "tags" => array(),
@@ -97,7 +99,6 @@
         } else {
             echo "<h1 class='wp-heading-inline'>TicketMachine > " . esc_html__('Create event', 'ticketmachine-event-manager') . "</h1>";
         }
-        print_r($event);
     ?>
     
     <form name="event" action="?page=ticketmachine_events&action=save<?php if(!empty($event->id)){ echo "&id=" . esc_attr(absint($_GET['id'])); } ?>" method="post" id="event">
@@ -106,10 +107,10 @@
             <input type="hidden" name="old_id" data-name="<?php echo esc_html__('Event Details', 'ticketmachine-event-manager'); ?>" value="<?php echo esc_attr($event->old_id); ?>">
         <?php } ?>
         <input type="hidden" name="organizer_id" value="<?php echo esc_attr($tm_globals->organizer_id); ?>">
-        <input type="hidden" name="rules[sale_active]" value="0">
-        <input type="hidden" name="rules[prices_shown]" value="0">
+        <input type="hidden" name="rules[sale_active]" value="<?php echo esc_attr($event->rules["sale_active"]); ?>">
+        <input type="hidden" name="rules[prices_shown]" value="<?php echo esc_attr($event->rules["prices_shown"]); ?>">
+        <input type="hidden" name="rules[shown]" value="<?php echo esc_attr($event->rules["shown"]); ?>">
         <input type="hidden" name="vat_id" value="1">
-        <input type="hidden" name="rules[shown]" value="1">
         
         <?php if(!empty($event->id)){ ?>
             <input type="hidden" name="id" value="<?php echo esc_attr($event->id); ?>">
