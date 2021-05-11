@@ -37,6 +37,12 @@
                 if(!isset($tm_post['rules']['shown'])) {
                     $tm_post['rules']['shown'] = 0;
                 }
+                if(!isset($tm_post['rules']['prices_shown'])) {
+                    $tm_post['rules']['prices_shown'] = 0;
+                }
+                if(!isset($tm_post['rules']['sale_active'])) {
+                    $tm_post['rules']['sale_active'] = 0;
+                }
                 if(!isset($tm_post['approved'])) {
                     $tm_post['approved'] = 0;
                 }
