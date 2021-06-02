@@ -289,7 +289,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <input name="full_day" type="checkbox" value="1" class="regular-text"<?php if(isset($event->endtime) && ticketmachine_i18n_date("d.m.Y", $event->ev_date) != ticketmachine_i18n_date("d.m.Y", $event->endtime)) { echo " checked"; ?>>
+                                    <input name="full_day" type="checkbox" value="1" class="regular-text"<?php if(ticketmachine_i18n_date("H:i", $event->ev_date) == "00:00" && ticketmachine_i18n_date("H:i", $event->endtime) == "23:59") { echo " checked"; } ?>>
                                     <label for="full_day"><?php echo __("Full-Day Event", "ticketmachine-event-manager"); ?></label>
                                 </div>
                             </div>
