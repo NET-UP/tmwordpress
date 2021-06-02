@@ -18,7 +18,7 @@ function isFullDayEvent() {
         jQuery('input[name="entrytime[time]"').val("00:00").attr("disabled", true);
         jQuery('input[name="ev_date[time]"').val("00:00").attr("disabled", true);
         jQuery('input[name="endtime[date]"').val(jQuery('input[name="ev_date[date]"').val()).attr("disabled", true);
-        jQuery('input[name="endtime[time]"').val("00:00").attr("disabled", true);
+        jQuery('input[name="endtime[time]"').val("23:59").attr("disabled", true);
     }else{
         jQuery('input[name="entrytime[date]"').attr("disabled", false);
         jQuery('input[name="entrytime[time]"').attr("disabled", false);
