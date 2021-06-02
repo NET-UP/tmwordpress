@@ -288,7 +288,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-6"><?php echo __("Full-Day Event", "ticketmachine-event-manager"); ?></div>
+                                <div class="col-6">
+                                    <input name="full_day" type="checkbox" value="1" class="regular-text" checked="">
+                                    <label for="full_day"><?php echo __("Full-Day Event", "ticketmachine-event-manager"); ?></label>
+                                </div>
                             </div>
                         </div>
                     </div>
