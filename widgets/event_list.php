@@ -57,9 +57,15 @@
                             $ticketmachine_output .= '<div class="media-body">';
 
                             if(isset($atts['show_date']) && $atts['show_date'] > 0){
-                                $ticketmachine_output .= '
-                                <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("d.m.Y", $event->ev_date) .'</div> 
-                                <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("H:i", $event->ev_date) .'</div>';
+                                if(ticketmachine_i18n_date("d.m.Y", $event->ev_date) != ticketmachine_i18n_date("d.m.Y", $event->ev_endtime) ) {
+                                    $ticketmachine_output .= '
+                                    <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("d.m.Y", $event->ev_date) .' - '. ticketmachine_i18n_date("d.m.Y", $event->endtime) .'</div> 
+                                    <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("H:i", $event->ev_date) .'</div>';
+                                }else{
+                                    $ticketmachine_output .= '
+                                    <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("d.m.Y", $event->ev_date) .'</div> 
+                                    <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("H:i", $event->ev_date) .'</div>';
+                                }
                             }
 
                             $ticketmachine_output .= '<h5 class="mt-0 mb-1"><a class="tm-list-title" href="' . $event->link . '">' . $event->ev_name . '</a></h5>';
