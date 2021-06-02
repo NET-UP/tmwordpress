@@ -13,9 +13,10 @@ jQuery(document).ready(function($){
 });
 
 function isFullDayEvent() {
-    if(jQuery("#full_day").attr("checked") == true) {
+    if(jQuery("#full_day").is(':checked')) {
         jQuery('input[name="entrytime[date]"').val(jQuery('input[name="ev_date[date]"').val()).attr("disabled", true);
         jQuery('input[name="entrytime[time]"').val("00:00").attr("disabled", true);
+        jQuery('input[name="ev_date[time]"').val("00:00").attr("disabled", true);
         jQuery('input[name="endtime[date]"').val(jQuery('input[name="ev_date[date]"').val()).attr("disabled", true);
         jQuery('input[name="endtime[time]"').val("00:00").attr("disabled", true);
     }else{
