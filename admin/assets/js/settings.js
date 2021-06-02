@@ -22,6 +22,7 @@ function isFullDayEvent() {
     }else{
         jQuery('input[name="entrytime[date]"').attr("disabled", false);
         jQuery('input[name="entrytime[time]"').attr("disabled", false);
+        jQuery('input[name="ev_date[time]"').attr("disabled", false);
         jQuery('input[name="endtime[date]"').attr("disabled", false);
         jQuery('input[name="endtime[time]"').attr("disabled", false);
     }
