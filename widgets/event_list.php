@@ -57,7 +57,7 @@
                             $ticketmachine_output .= '<div class="media-body">';
 
                             if(isset($atts['show_date']) && $atts['show_date'] > 0){
-                                if(ticketmachine_i18n_date("d.m.Y", $event->ev_date) != ticketmachine_i18n_date("d.m.Y", $event->ev_endtime) ) {
+                                if(isset($event->endtime) && ticketmachine_i18n_date("d.m.Y", $event->ev_date) != ticketmachine_i18n_date("d.m.Y", $event->endtime) ) {
                                     $ticketmachine_output .= '
                                     <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("d.m.Y", $event->ev_date) .' - '. ticketmachine_i18n_date("d.m.Y", $event->endtime) .'</div> 
                                     <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("H:i", $event->ev_date) .'</div>';
