@@ -34,8 +34,6 @@
                 $tm_post = $_POST;
                 $errors = array();
 
-                die(print_r($tm_post));
-
                 if(empty($tm_post['rules']['shown'])) {
                     $tm_post['rules']['shown'] = 0;
                 }
