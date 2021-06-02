@@ -87,6 +87,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.3.9 =
+* Added Full-Day Event quick select & custom logic to display better and remove unnecessary information
+
 = 1.3.8 =
 * Fixed google maps problem
 
