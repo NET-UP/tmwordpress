@@ -40,6 +40,7 @@ body .ticketmachine_page .media-img .event-badges {
 body .ticketmachine_page .badge {
 	padding: 4px 7px!important;
     font-size: 0.8em;
+    color: #FFF !important;
 }
 
 body .ticketmachine_page .card {
