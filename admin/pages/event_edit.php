@@ -287,8 +287,10 @@
                                     <input type="text" name="endtime[time]" class="form-control time" value="<?php echo esc_attr(ticketmachine_i18n_date("H:i", $event->endtime)); ?>">
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-6"><?php echo __("Full-Day Event", "ticketmachine-event-manager"); ?></div>
+                            </div>
                         </div>
-                        <?php echo __("Full-Day Event", "ticketmachine-event-manager"); ?>
                     </div>
 
                     <div class="postbox">
