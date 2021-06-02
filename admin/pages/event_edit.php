@@ -288,6 +288,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php __("Full-Day Event", "ticketmachine-event-manager"); ?>
                     </div>
 
                     <div class="postbox">
