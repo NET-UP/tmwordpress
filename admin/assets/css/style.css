@@ -23,7 +23,7 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.tm-admin-page .form-control:disabled {
+.tm-admin-page .form-control:disabled, .tm-admin-page .form-control:read-only {
     background-color: #f0f0f1;
     color: #949494;
 }
