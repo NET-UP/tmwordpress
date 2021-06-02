@@ -4,7 +4,8 @@
 
         $ticketmachine_output = "";
         
-        if(isset($event->has_location) && $event->has_location == 1 && ticketmachine_i18n_date("H:i", $event->ev_date) != "00:00" && ticketmachine_i18n_date("H:i", $event->endtime) != "23:59") {
+        if(isset($event->has_location) && $event->has_location == 1 && ticketmachine_i18n_date("H:i", $event->ev_date) == "00:00" && ticketmachine_i18n_date("H:i", $event->endtime) == "23:59") {
+        }else{
 
             $ticketmachine_output = '<div class="card mb-3">
                                         <div class="row card-body position-relative">';
