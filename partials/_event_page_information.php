@@ -3,7 +3,7 @@
     function ticketmachine_event_page_information ( $event, $tm_globals ) {
 
         if(ticketmachine_i18n_date("H:i", $event->ev_date) == "00:00" && ticketmachine_i18n_date("H:i", $event->endtime) == "23:59") {
-            __("Entire Day", "ticketmachine-event-manager")
+            $dateoutput = __("Entire Day", "ticketmachine-event-manager");
         }else{
             $dateoutput = ticketmachine_i18n_date("H:i", $event->ev_date);
         }
