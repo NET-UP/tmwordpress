@@ -48,7 +48,7 @@
                 }
                 if(isset($tm_post['tags'])) {
                     $tm_post['tags'] = explode(",", $tm_post['tags']);
-                    array_walk($tm_post['tags'], function(&$value, &$key) {
+                    array_walk($tm_post['tags'], function(&$value) {
                         $value = sanitize_text_field($value);
                     });
                 }
