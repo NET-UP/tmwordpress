@@ -4,7 +4,7 @@
 	Plugin Name:        TicketMachine Event Manager & Calendar
     Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
-	Version:            1.3.9
+	Version:            1.3.10
     Requires at least:  4.5
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
@@ -36,6 +36,7 @@
 			$ticketmachine_config = $ticketmachine_config[0];
 		
 			$tm_globals = (object)$ticketmachine_config;
+			$tm_globals->timeout = 0;
 			if(!empty($tm_globals->api_refresh_token) && !empty($tm_globals->api_access_token)) {
 				$tm_globals->activated = 1;
 			}
@@ -656,7 +657,7 @@
 	function ticketmachine_tmapi_refresh_token_check() {
 		global $tm_globals, $tm_api, $wpdb;
 
-		if(time() > $tm_globals->api_refresh_last + $tm_globals->api_refresh_interval){
+		if(time() > $tm_globals->api_refresh_last + $tm_globals->api_refresh_interval && isset($tm_globals->activated) && $tm_globals->activated > 0){
 			$token = ticketmachine_tmapi_get_access_token($tm_globals->api_refresh_token, "update");
 
 			if(isset($token['access_token'])){
@@ -674,8 +675,25 @@
 				);
 				$tm_globals->api_access_token = $token['access_token'];
 			}else{
-				sleep(1);
-				ticketmachine_tmapi_refresh_token_check();
+				$tm_globals->timeout++;
+				if($tm_globals->timeout < 3){
+					sleep(1);
+					ticketmachine_tmapi_refresh_token_check();
+				}else{
+					$tm_globals->activated == 0;
+					$save_array = array(
+						"api_access_token" => "",
+						"api_refresh_token" => "",
+						"api_refresh_last" => time()-1000,
+						"api_refresh_interval" => $token['expires_in']/2
+					);
+	
+					$wpdb->update(
+						$wpdb->prefix . "ticketmachine_config",
+						$save_array,
+						array('id' => $tm_globals->id)
+					);
+				}
 			}
 		}
 	}
