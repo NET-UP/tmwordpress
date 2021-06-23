@@ -24,9 +24,9 @@
 				$event->has_location = 1;
 			}
 
-			$event->has_locatin_link = 1;
+			$event->has_location_link = 1;
 			if(empty($event->event_location['city']) || empty($event->event_location['street']) || empty($event->event_location['house_number'])){
-				$event->has_locatin_link = 0;
+				$event->has_location_link = 0;
 			}
 
 			if($tm_globals->detail_page_layout == 1){
