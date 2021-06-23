@@ -20,11 +20,12 @@
 		if(isset($event)){
 
 			$event->has_location = 0;
+			$event->has_location_link = 0;
 			if(!empty($event->ev_location_name) || !empty($event->event_location['city']) || !empty($event->event_location['street']) || !empty($event->event_location['zip']) || !empty($event->event_location['house_number'])){
 				$event->has_location = 1;
+				$event->has_location_link = 1;
 			}
 
-			$event->has_location_link = 1;
 			if(empty($event->event_location['city']) || empty($event->event_location['street']) || empty($event->event_location['house_number'])){
 				$event->has_location_link = 0;
 			}
