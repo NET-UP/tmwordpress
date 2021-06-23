@@ -28,17 +28,20 @@
 				$ticketmachine_output .= '</a>';
 				$ticketmachine_output .= '<div class="card-body position-relative">';
 				
-				  $ticketmachine_output .= '<div class="card-date" title="' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '">';
 
 					if(isset($event->endtime) && ticketmachine_i18n_date("d.m.Y", $event->ev_date) != ticketmachine_i18n_date("d.m.Y", $event->endtime) ) {
-						$ticketmachine_output .= '<div class="card-day" style="font-size:16px;font-weight:500;">' . ticketmachine_i18n_date("d.m", $event->ev_date) . '</div>';
-						$ticketmachine_output .= '<div class="card-month" style="font-weight:500;">bis ' . ticketmachine_i18n_date("d.m", $event->endtime) . '</div>';
+						$ticketmachine_output .= '<div class="card-date" style="overflow:visible;" title="' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '">';
+							$ticketmachine_output .= '<div class="card-day" style="font-size:16px;font-weight:500;">' . ticketmachine_i18n_date("d.m", $event->ev_date) . '</div>';
+							$ticketmachine_output .= '<div class="card-month" style="font-weight:500;">bis ' . ticketmachine_i18n_date("d.m", $event->endtime) . '</div>';
+						$ticketmachine_output .= '</div>';
 					}else{
-						$ticketmachine_output .= '<div class="card-day">' . ticketmachine_i18n_date("d", $event->ev_date) . '</div>';
-						$ticketmachine_output .= '<div class="card-month">' . ticketmachine_i18n_date("M", $event->ev_date) . '</div>';
+						$ticketmachine_output .= '<div class="card-date" title="' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '">';
+							$ticketmachine_output .= '<div class="card-day">' . ticketmachine_i18n_date("d", $event->ev_date) . '</div>';
+							$ticketmachine_output .= '<div class="card-month">' . ticketmachine_i18n_date("M", $event->ev_date) . '</div>';
+						$ticketmachine_output .= '</div>';
 					}
 
-				  $ticketmachine_output .= '</div>';
+
 				  $ticketmachine_output .= '<h5 class="card-title" title="' . esc_attr($event->ev_name) . '">' . esc_html($event->ev_name) . '</h5>';
 				  $ticketmachine_output .= '<div class="card-price"></div>';
 
