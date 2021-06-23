@@ -30,6 +30,8 @@
                         if(isset($event->has_location) && $event->has_location == 1){   
                             if(empty($event->ev_location_name)) {
                                 $event_location = $event->event_location['street'] . " " . $event->event_location['house_number'];
+                            }else{
+                                $event_location = $event->ev_location_name;
                             }
                             $ticketmachine_output .= '<div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; ';
                                 if(isset($event->has_location_link) && $event->has_location_link == 1){        

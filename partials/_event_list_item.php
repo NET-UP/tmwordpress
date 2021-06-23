@@ -41,6 +41,8 @@
 					if(isset($event->has_location) && $event->has_location == 1){   
 						if(empty($event->ev_location_name)) {
 							$event_location = $event->event_location->street . " " . $event->event_location->house_number;
+						}else{
+							$event_location = $event->ev_location_name;
 						}
 						$ticketmachine_output .= '<p class="card-text mt-0 px-2 pt-sm-1 pb-3 pb-sm-2 ellipsis"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; ';
 							if(isset($event->has_location_link) && $event->has_location_link == 1){        
