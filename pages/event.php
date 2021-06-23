@@ -24,6 +24,11 @@
 				$event->has_location = 1;
 			}
 
+			$event->has_locatin_link = 1;
+			if(empty($event->event_location['city']) || empty($event->event_location['street']) || empty($event->event_location['house_number'])){
+				$event->has_locatin_link = 0;
+			}
+
 			if($tm_globals->detail_page_layout == 1){
 				$tm1_lg_width = 12;
 				$tm1_xl_width = 12;
