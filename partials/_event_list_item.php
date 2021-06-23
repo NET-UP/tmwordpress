@@ -32,7 +32,7 @@
 					if(isset($event->endtime) && ticketmachine_i18n_date("d.m.Y", $event->ev_date) != ticketmachine_i18n_date("d.m.Y", $event->endtime) ) {
 						$ticketmachine_output .= '<div class="card-date" title="' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '">';
 							$ticketmachine_output .= '<div class="card-day" style="font-size:16px;">' . ticketmachine_i18n_date("d.m", $event->ev_date) . '</div>';
-							$ticketmachine_output .= '<div class="card-month">bis ' . ticketmachine_i18n_date("d.m", $event->endtime) . '</div>';
+							$ticketmachine_output .= '<div class="card-month">' . esc_attr__("to", 'ticketmachine-event-manager') . ' ' . ticketmachine_i18n_date("d.m", $event->endtime) . '</div>';
 						$ticketmachine_output .= '</div>';
 					}else{
 						$ticketmachine_output .= '<div class="card-date" title="' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '">';
