@@ -27,10 +27,17 @@
 					$ticketmachine_output .= '<div class="event-badges"><div class="badge badge-danger float-right mt-1 mr-2">'. esc_html($event->rules["badge"]) .'</div></div>';
 				$ticketmachine_output .= '</a>';
 				$ticketmachine_output .= '<div class="card-body position-relative">';
-
+				
 				  $ticketmachine_output .= '<div class="card-date" title="' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '">';
-					$ticketmachine_output .= '<div class="card-day">' . ticketmachine_i18n_date("d", $event->ev_date) . '</div>';
-					$ticketmachine_output .= '<div class="card-month">' . ticketmachine_i18n_date("M", $event->ev_date) . '</div>';
+
+					if(isset($event->endtime) && ticketmachine_i18n_date("d.m.Y", $event->ev_date) != ticketmachine_i18n_date("d.m.Y", $event->endtime) ) {
+						$ticketmachine_output .= '<div class="card-day">' . ticketmachine_i18n_date("d.M", $event->ev_date) . '</div>';
+						$ticketmachine_output .= '<div class="card-month">' . ticketmachine_i18n_date("d.M", $event->endtime) . '</div>';
+					}else{
+						$ticketmachine_output .= '<div class="card-day">' . ticketmachine_i18n_date("d", $event->ev_date) . '</div>';
+						$ticketmachine_output .= '<div class="card-month">' . ticketmachine_i18n_date("M", $event->ev_date) . '</div>';
+					}
+
 				  $ticketmachine_output .= '</div>';
 				  $ticketmachine_output .= '<h5 class="card-title" title="' . esc_attr($event->ev_name) . '">' . esc_html($event->ev_name) . '</h5>';
 				  $ticketmachine_output .= '<div class="card-price"></div>';
