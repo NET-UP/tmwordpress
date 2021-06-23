@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-06-22 13:34+0200\n"
-"PO-Revision-Date: 2021-06-22 13:35+0200\n"
+"POT-Creation-Date: 2021-06-23 11:40+0200\n"
+"PO-Revision-Date: 2021-06-23 11:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -13,8 +13,8 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: esc_html;esc_html_e;esc_attr;esc_attr_e;__;"
-"esc_html__\n"
+"X-Poedit-KeywordsList: esc_html;esc_html_e;esc_attr;esc_attr_e;__;esc_html__;"
+"esc_attr__\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: .git\n"
 "X-Poedit-SearchPathExcluded-1: webfonts\n"
@@ -167,7 +167,8 @@ msgstr "Schlagwörter durch Kommas trennen"
 msgid "Location"
 msgstr "Standort"
 
-#: admin/pages/event_edit.php:218 partials/_event_list_item.php:43
+#: admin/pages/event_edit.php:218 partials/_event_list_item.php:59
+#: partials/_event_page_information.php:38
 msgid "Event Location"
 msgstr "Veranstaltungsort"
 
@@ -593,16 +594,16 @@ msgstr "Preiskategorien für Veranstaltungen erstellen"
 msgid "Apply for Pro"
 msgstr "TicketMachine Pro besorgen"
 
-#: pages/event.php:62 widgets/event_boxes.php:28 widgets/event_calendar.php:39
+#: pages/event.php:68 widgets/event_boxes.php:28 widgets/event_calendar.php:39
 #: widgets/event_list.php:34
 msgid "No events could be found"
 msgstr "Es konnte keine Veranstaltung gefunden werden"
 
-#: pages/event.php:64
+#: pages/event.php:70
 msgid "Back to events"
 msgstr "Zurück zu den Veranstaltungen"
 
-#: pages/event.php:65
+#: pages/event.php:71
 msgid "Oops!"
 msgstr "Hoppla!"
 
@@ -610,15 +611,23 @@ msgstr "Hoppla!"
 msgid "List, Boxes & Calendar are deactivated"
 msgstr "Liste, Kacheln & Kalender sind deaktiviert"
 
-#: partials/_event_list_item.php:50
+#: partials/_event_list_item.php:35
+msgid "to"
+msgstr "bis"
+
+#: partials/_event_list_item.php:68
+msgid "To ticket selection for"
+msgstr "Zur Ticketauswahlseite für"
+
+#: partials/_event_list_item.php:70
 msgid "To ticket selection"
 msgstr "Zur Ticketauswahlseite"
 
-#: partials/_event_list_item.php:53
+#: partials/_event_list_item.php:73
 msgid "More"
 msgstr "Weiter"
 
-#: partials/_event_list_item.php:55
+#: partials/_event_list_item.php:75
 msgid "Tickets"
 msgstr "Tickets"
 
@@ -633,6 +642,34 @@ msgstr "Kontakt"
 #: partials/_event_page_actions.php:22
 msgid "Go back"
 msgstr "Zurück"
+
+#: partials/_event_page_actions.php:25
+msgid "Save as iCal"
+msgstr "Als iCal speichern"
+
+#: partials/_event_page_actions.php:30
+msgid "Save to Google Calendar"
+msgstr "Im Google Kalender speichern"
+
+#: partials/_event_page_actions.php:35
+msgid "Share to Facebook"
+msgstr "Auf Facebook teilen"
+
+#: partials/_event_page_actions.php:40
+msgid "Share to Twitter"
+msgstr "Auf Twitter teilen"
+
+#: partials/_event_page_actions.php:45
+msgid "Share via Email"
+msgstr "Via E-Mail teilen"
+
+#: partials/_event_page_actions.php:50
+msgid "Share with Messenger"
+msgstr "Mit Messenger teilen"
+
+#: partials/_event_page_actions.php:55
+msgid "Share with WhatsApp"
+msgstr "Mit WhatsApp teilen"
 
 #: partials/_event_page_details.php:15
 msgid "Details"
@@ -662,64 +699,48 @@ msgstr "Google Maps nicht erlauben"
 msgid "Allow Google Maps"
 msgstr "Google Maps erlauben"
 
-#: partials/_event_page_information.php:6 widgets/event_list.php:61
+#: partials/_event_page_information.php:6 widgets/event_list.php:72
 msgid "Entire Day"
 msgstr "ganztägig"
 
-#: widgets/event_list.php:93
+#: partials/_event_page_information.php:59
+msgid "Read More"
+msgstr "Weiterlesen"
+
+#: partials/_search_header.php:26
+msgid "Search for events"
+msgstr "Suche nach Veranstaltungen"
+
+#: partials/_search_header.php:29
+msgid "Submit search"
+msgstr "Suche absenden"
+
+#: partials/_search_header.php:36 widgets/event_calendar.php:26
+msgid "To previous month"
+msgstr "Zum vorherigen Monat"
+
+#: partials/_search_header.php:38 widgets/event_calendar.php:28
+msgid "To next month"
+msgstr "Zum nächsten Monat"
+
+#: partials/_search_header.php:51
+msgid "Show events as boxes"
+msgstr "Veranstaltungen als Kacheln anzeigen"
+
+#: partials/_search_header.php:61
+msgid "Show events as list"
+msgstr "Veranstaltungen als Liste anzeigen"
+
+#: partials/_search_header.php:71
+msgid "Show events in calendar"
+msgstr "Veranstaltungen im Kalender anzeigen"
+
+#: widgets/event_list.php:104
 msgid "Show all events"
 msgstr "Alle Veranstaltungen anzeigen"
 
 #~ msgid "Categories"
 #~ msgstr "Kategorien"
-
-#~ msgid "To ticket selection for"
-#~ msgstr "Zur Ticketauswahlseite für"
-
-#~ msgid "Save as iCal"
-#~ msgstr "Als iCal speichern"
-
-#~ msgid "Save to Google Calendar"
-#~ msgstr "Im Google Kalender speichern"
-
-#~ msgid "Share to Facebook"
-#~ msgstr "Auf Facebook teilen"
-
-#~ msgid "Share to Twitter"
-#~ msgstr "Auf Twitter teilen"
-
-#~ msgid "Share via Email"
-#~ msgstr "Via E-Mail teilen"
-
-#~ msgid "Share with Messenger"
-#~ msgstr "Mit Messenger teilen"
-
-#~ msgid "Share with WhatsApp"
-#~ msgstr "Mit WhatsApp teilen"
-
-#~ msgid "Read More"
-#~ msgstr "Weiterlesen"
-
-#~ msgid "Search for events"
-#~ msgstr "Suche nach Veranstaltungen"
-
-#~ msgid "Submit search"
-#~ msgstr "Suche absenden"
-
-#~ msgid "To previous month"
-#~ msgstr "Zum vorherigen Monat"
-
-#~ msgid "To next month"
-#~ msgstr "Zum nächsten Monat"
-
-#~ msgid "Show events as boxes"
-#~ msgstr "Veranstaltungen als Kacheln anzeigen"
-
-#~ msgid "Show events as list"
-#~ msgstr "Veranstaltungen als Liste anzeigen"
-
-#~ msgid "Show events in calendar"
-#~ msgstr "Veranstaltungen im Kalender anzeigen"
 
 #~ msgid "Interactive seated events"
 #~ msgstr "Bestuhlte Veranstaltungen mit Saalplänen"
