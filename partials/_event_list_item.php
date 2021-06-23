@@ -37,12 +37,20 @@
 
 				  $ticketmachine_output .= '<div class="row pt-2">';
 					$ticketmachine_output .= '<div class="col-sm-8 col-md-7">';
-					if(!empty($event->ev_location_name)){
+
+					if(isset($event->has_location) && $event->has_location == 1){   
+						if(empty($event->ev_location_name)) {
+							$event_location = $event->event_location['street'] . " " . $event->event_location['house_number'];
+						}
 						$ticketmachine_output .= '<p class="card-text mt-0 px-2 pt-sm-1 pb-3 pb-sm-2 ellipsis">';
-							$ticketmachine_output .= '<i class="fas fa-map-marker-alt tm-icon"></i> &nbsp;';
-							$ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($tm_globals->map_query_url . urlencode($event->ev_location_name . " " . $event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country )) . '" target="_blank" title="' . esc_html__("Event Location", 'ticketmachine-event-manager') . ': ' . $event->ev_location_name . '">' . $event->ev_location_name . '</a>';
+							if(isset($event->has_location_link) && $event->has_location_link == 1){        
+								$ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($tm_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location['street'] . " " . $event->event_location["house_number"] . " " . $event->event_location["zip"] . " " . $event->event_location["city"] . " " . $event->event_location["country"] )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
+							}else{
+								$ticketmachine_output .= $event_location;
+							}
 						$ticketmachine_output .= '</p>';
 					}
+
 					$ticketmachine_output .= '</div>';
 					$ticketmachine_output .= '<div class="col-sm-4 col-md-5">';
 					  $ticketmachine_output .= '<a aria-label="' . esc_attr__("To ticket selection for", 'ticketmachine-event-manager') . ' ' . esc_html($event->ev_name)  . '"';
