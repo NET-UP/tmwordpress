@@ -35,7 +35,7 @@
 						$ticketmachine_output .= '<div class="card-month">' . ticketmachine_i18n_date("d.m", $event->endtime) . '</div>';
 					}else{
 						$ticketmachine_output .= '<div class="card-day">' . ticketmachine_i18n_date("d", $event->ev_date) . '</div>';
-						$ticketmachine_output .= '<div class="card-month">' . ticketmachine_i18n_date("M", $event->ev_date) . '</div>';
+						$ticketmachine_output .= '<div class="card-month">bis ' . ticketmachine_i18n_date("M", $event->ev_date) . '</div>';
 					}
 
 				  $ticketmachine_output .= '</div>';
