@@ -678,18 +678,6 @@
 					ticketmachine_tmapi_refresh_token_check();
 				}else{
 					$tm_globals->activated == 0;
-					$save_array = array(
-						"api_access_token" => "",
-						"api_refresh_token" => "",
-						"api_refresh_last" => time()-1000,
-						"api_refresh_interval" => $token['expires_in']/2
-					);
-	
-					$wpdb->update(
-						$wpdb->prefix . "ticketmachine_config",
-						$save_array,
-						array('id' => $tm_globals->id)
-					);
 				}
 			}
 		}
