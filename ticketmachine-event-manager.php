@@ -763,6 +763,8 @@
 
 		//print_r($token);
 		
+		ticketmachine_log(json_encode($token), "info");
+		
 		return $token;
 	}
 
