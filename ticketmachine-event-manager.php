@@ -4,7 +4,7 @@
 	Plugin Name:        TicketMachine Event Manager & Calendar
     Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
-	Version:            1.3.14
+	Version:            1.3.16
     Requires at least:  4.5
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
@@ -16,7 +16,7 @@
 
 	add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
 	global $ticketmachine_db_version;
-	$ticketmachine_db_version = "1.3.14";
+	$ticketmachine_db_version = "1.3.16";
 	
 	// Load translations if they don't already exist
     function ticketmachine_wpdocs_load_textdomain() {
@@ -337,7 +337,19 @@
         dbDelta( $sql );
         add_option('ticketmachine_db_version', $ticketmachine_db_version);
 	}
-	add_action( 'upgrader_process_complete', 'ticketmachine_activate', 10, 2);
+	add_action( 'upgrader_process_complete', 'ticketmachine_update', 10, 2);
+	
+	function ticketmachine_update( $upgrader_object, $options ) {
+		$current_plugin_path_name = plugin_basename( __FILE__ );
+	
+		if ($options['action'] == 'update' && $options['type'] == 'plugin' ) {
+			foreach($options['plugins'] as $each_plugin) {
+				if ($each_plugin==$current_plugin_path_name) {
+					ticketmachine_activate();
+				}
+			}
+		}
+	}
 	
 	// Run when plugin is deactivated
     function ticketmachine_deactivate( ) {
@@ -665,7 +677,15 @@
 	
 
 	function ticketmachine_log($message, $type) {
+		$save_array = array(
+			"log_message" => $message,
+			"error_type" => $type,
+		);
 
+		$wpdb->insert(
+			$wpdb->prefix . "ticketmachine_log",
+			$save_array
+		);
 	}
 
 	//Check if access token expired
