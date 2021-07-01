@@ -674,7 +674,7 @@
 			}else{
 				$tm_globals->timeout++;
 				if($tm_globals->timeout < 3){
-					sleep(1);
+					sleep(2);
 					ticketmachine_tmapi_refresh_token_check();
 				}else{
 					$tm_globals->activated == 0;
