@@ -4,7 +4,7 @@
 	Plugin Name:        TicketMachine Event Manager & Calendar
     Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
-	Version:            1.3.13
+	Version:            1.3.14
     Requires at least:  4.5
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
@@ -15,6 +15,8 @@
     add_action( 'wp_enqueue_scripts', 'ticketmachine_register_calendar_files' );
 
 	add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
+	global $ticketmachine_db_version;
+	$ticketmachine_db_version = "1.3.14";
 	
 	// Load translations if they don't already exist
     function ticketmachine_wpdocs_load_textdomain() {
@@ -176,7 +178,7 @@
 	// Run when plugin is activated
     function ticketmachine_activate( ) {
         global $wpdb;
-		global $jal_db_version;
+		global $ticketmachine_db_version;
 
         //create events overview page
         $new_page_title = 'Events';
@@ -262,7 +264,7 @@
 
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         dbDelta( $sql );
-        add_option('jal_db_version', $jal_db_version);
+        add_option('ticketmachine_db_version', $ticketmachine_db_version);
         
         $wpdb->query("INSERT IGNORE INTO $table (id) VALUES (1)");
         
@@ -293,7 +295,7 @@
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
         dbDelta( $sql );
-        add_option('jal_db_version', $jal_db_version);
+        add_option('ticketmachine_db_version', $ticketmachine_db_version);
         
         $wpdb->query("INSERT IGNORE INTO $table (id) VALUES (1)");
         
@@ -312,7 +314,7 @@
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
 		dbDelta( $sql );
-		add_option('jal_db_version', $jal_db_version);
+		add_option('ticketmachine_db_version', $ticketmachine_db_version);
         
         $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
         $sql = "CREATE TABLE $table (
@@ -323,7 +325,7 @@
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
         dbDelta( $sql );
-        add_option('jal_db_version', $jal_db_version);
+        add_option('ticketmachine_db_version', $ticketmachine_db_version);
         
         $table = $wpdb->prefix . 'ticketmachine_log';
         $sql = "CREATE TABLE $table (
@@ -333,7 +335,7 @@
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
         dbDelta( $sql );
-        add_option('jal_db_version', $jal_db_version);
+        add_option('ticketmachine_db_version', $ticketmachine_db_version);
 	}
 	
 	// Run when plugin is deactivated
