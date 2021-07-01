@@ -22,5 +22,7 @@
     $wpdb->query("DROP TABLE IF EXISTS $table_name");
     $table_name = $wpdb->prefix . 'ticketmachine_organizers_events_match';
     $wpdb->query("DROP TABLE IF EXISTS $table_name");
+    $table_name = $wpdb->prefix . 'ticketmachine_log';
+    $wpdb->query("DROP TABLE IF EXISTS $table_name");
 
 ?>
