@@ -337,6 +337,7 @@
         dbDelta( $sql );
         add_option('ticketmachine_db_version', $ticketmachine_db_version);
 	}
+	add_action( 'upgrader_process_complete', 'ticketmachine_activate', 10, 2);
 	
 	// Run when plugin is deactivated
     function ticketmachine_deactivate( ) {
