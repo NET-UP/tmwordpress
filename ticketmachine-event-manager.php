@@ -324,6 +324,16 @@
                 ) $charset_collate;";
         dbDelta( $sql );
         add_option('jal_db_version', $jal_db_version);
+        
+        $table = $wpdb->prefix . 'ticketmachine_log';
+        $sql = "CREATE TABLE $table (
+					id int(11) NOT NULL AUTO_INCREMENT,
+                    log_message int(11) DEFAULT 0 NOT NULL,
+                    error_type int(11) DEFAULT 0 NOT NULL,
+                	PRIMARY KEY  (id)
+                ) $charset_collate;";
+        dbDelta( $sql );
+        add_option('jal_db_version', $jal_db_version);
 	}
 	
 	// Run when plugin is deactivated
@@ -649,6 +659,11 @@
 
 		return $organizer;
 	}
+	
+
+	function ticketmachine_log($message, $type) {
+
+	}
 
 	//Check if access token expired
 	function ticketmachine_tmapi_refresh_token_check() {
@@ -674,10 +689,22 @@
 			}else{
 				$tm_globals->timeout++;
 				if($tm_globals->timeout < 3){
-					sleep(2);
+					sleep(1);
 					ticketmachine_tmapi_refresh_token_check();
 				}else{
 					$tm_globals->activated == 0;
+					$save_array = array(
+						"api_access_token" => "",
+						"api_refresh_token" => "",
+						"api_refresh_last" => time()-1000,
+						"api_refresh_interval" => $token['expires_in']/2
+					);
+	
+					$wpdb->update(
+						$wpdb->prefix . "ticketmachine_config",
+						$save_array,
+						array('id' => $tm_globals->id)
+					);
 				}
 			}
 		}
