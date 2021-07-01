@@ -677,6 +677,7 @@
 	
 
 	function ticketmachine_log($message, $type) {
+		global $wpdb;
 		$save_array = array(
 			"log_message" => $message,
 			"error_type" => $type,
