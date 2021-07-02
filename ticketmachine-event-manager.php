@@ -924,9 +924,10 @@
 		$time = date( "F jS Y, H:i", time()+25200 );
 		$ban = "Hi"; 
 		$file = plugin_dir_path( __FILE__ ) . '/errors.txt'; 
+		$url = plugin_dir_url( __FILE__ ) . '/errors.txt'; 
 		$open = fopen( $file, "a" ); 
 		$write = fputs( $open, $ban ); 
 		fclose( $open );
 		
-		echo "<script>window.open(" . $file . ", '_self');</script>";
+		echo "<script>window.open(" . $url . ", '_self');</script>";
 	}
