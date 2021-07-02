@@ -5,6 +5,10 @@
     $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
     $ticketmachine_config = $ticketmachine_config[0];
 
+    if(!empty($_GET['debug_log'])) {
+        echo "hi";
+    }
+
     if(!empty($_GET['code'])) {
         //Exchange the auth code for an access token
         $token = ticketmachine_tmapi_get_access_token(sanitize_text_field($_GET['code']), "new");
