@@ -554,7 +554,7 @@
 				'body' 	  => str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES))))
 			));
 			$log_resource = $resource;
-			$log_resource['headers'] = (array)$log_resource["headers"]);
+			$log_resource['headers'] = (array)$log_resource["headers"];
 			$log = array(
 				"url" => (array)$tm_url,
 				"sent" => (array)$tm_post,
