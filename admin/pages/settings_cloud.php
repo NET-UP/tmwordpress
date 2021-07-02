@@ -6,7 +6,7 @@
     $ticketmachine_config = $ticketmachine_config[0];
 
     if(!empty($_GET['debug_log'])) {
-        $file = plugin_dir_url(__FILE__) ."/test.txt";
+        $file = $_SERVER['DOCUMENT_ROOT'] ."/test.txt";
         $txt = fopen($file, "w") or die("Unable to open file!");
         fwrite($txt, "lorem ipsum");
         fclose($txt);
