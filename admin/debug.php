@@ -4,7 +4,7 @@
 
     global $wpdb;
 
-    $rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}`ticketmachine_log`");
+    $rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ticketmachine_log");
 
     foreach ($rows as $row) {
         echo "[]";
