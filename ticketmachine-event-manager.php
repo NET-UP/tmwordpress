@@ -343,7 +343,7 @@
 	function ticketmachine_update( $upgrader_object, $options ) {
 		$current_plugin_path_name = plugin_basename( __FILE__ );
 	
-		if ($options['action'] == 'update' && $options['type'] == 'plugin' ) {
+		if ($options['action'] == 'update' && $options['type'] == 'plugin' && isset( $options['plugins'] ) {
 			foreach($options['plugins'] as $each_plugin) {
 				if ($each_plugin==$current_plugin_path_name) {
 					ticketmachine_activate();
