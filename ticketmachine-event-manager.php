@@ -332,7 +332,7 @@
 					id int(11) NOT NULL AUTO_INCREMENT,
                     log_message text DEFAULT '' NOT NULL,
                     log_type varchar(64) DEFAULT 'info' NOT NULL,
-                    log_time int(11) DEFAULT 0 NOT NULL,
+                    log_time varchar(254) DEFAULT 0 NOT NULL,
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
         dbDelta( $sql );
