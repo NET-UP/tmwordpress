@@ -919,3 +919,12 @@
     }
     function ticketmachine_enqueue_core_files() {
     }
+
+	function ticketmachine_create_log( ) {   
+		$time = date( "F jS Y, H:i", time()+25200 );
+		$ban = "Hi"; 
+		$file = plugin_dir_path( __FILE__ ) . '/errors.txt'; 
+		$open = fopen( $file, "a" ); 
+		$write = fputs( $open, $ban ); 
+		fclose( $open );
+	}
