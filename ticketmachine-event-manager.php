@@ -575,7 +575,7 @@
 		));
 
 	  }
-	  print_r((array)$resource["headers"]);
+	  print_r(json_encode((array)$resource["headers"]));
 
 	  if(isset($resource['body'])){
 		$response = $resource['body'];
