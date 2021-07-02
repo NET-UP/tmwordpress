@@ -558,7 +558,6 @@
 				"sent" => (array)$tm_post,
 				"response" => $resource
 			);
-			print_r($resource);
 			ticketmachine_log(json_encode($log), "info");
 		
 		}
@@ -576,6 +575,7 @@
 		));
 
 	  }
+	  print_r($resource);
 
 	  if(isset($resource['body'])){
 		$response = $resource['body'];
