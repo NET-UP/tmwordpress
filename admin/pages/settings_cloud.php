@@ -5,13 +5,6 @@
     $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
     $ticketmachine_config = $ticketmachine_config[0];
 
-    if(!empty($_GET['debug_log'])) {
-        $file = $_SERVER['DOCUMENT_ROOT'] ."/test.txt";
-        $txt = fopen($file, "w") or die("Unable to open file!");
-        fwrite($txt, "lorem ipsum");
-        fclose($txt);
-    }
-
     if(!empty($_GET['code'])) {
         //Exchange the auth code for an access token
         $token = ticketmachine_tmapi_get_access_token(sanitize_text_field($_GET['code']), "new");
@@ -61,7 +54,7 @@
     <i class="fas fa-sync-alt"></i> &nbsp;<?php esc_html_e("Sync events", "ticketmachine-event-manager"); ?>
 </a>
 
-<a class="button button-primary" style="font-size:14px" href="?page=ticketmachine_settings&tab=cloud&debug_log=1">
+<a class="button button-primary" style="font-size:14px" href="<?php echo plugin_dir_url() . 'debug.php'; ?>">
     <i class="fas fa-heartbeat"></i> &nbsp;<?php esc_html_e("Debug Log", "ticketmachine-event-manager"); ?>
 </a>
 
