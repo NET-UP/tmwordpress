@@ -575,7 +575,7 @@
 		));
 
 	  }
-	  print_r($resource);
+	  print_r((array)$resource["headers"]);
 
 	  if(isset($resource['body'])){
 		$response = $resource['body'];
