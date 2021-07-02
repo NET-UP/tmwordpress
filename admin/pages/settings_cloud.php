@@ -57,3 +57,5 @@
 <a class="button button-primary" style="font-size:14px" href="#">
     <i class="fas fa-heartbeat"></i> &nbsp;<?php esc_html_e("Debug Log", "ticketmachine-event-manager"); ?>
 </a>
+
+<br/>
