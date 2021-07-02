@@ -570,7 +570,7 @@
 	  }
 
 	  if(isset($resource['body'])){
-		ticketmachine_log($resource, "info");
+		ticketmachine_log(json_encode($resource), "info");
 		$response = $resource['body'];
 		return json_decode($response, true);
 	  }
