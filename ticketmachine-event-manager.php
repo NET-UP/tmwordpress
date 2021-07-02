@@ -919,17 +919,3 @@
     }
     function ticketmachine_enqueue_core_files() {
     }
-
-	function ticketmachine_create_log( ) {   
-		$time = date( "F jS Y, H:i", time()+25200 );
-		$ban = "Hi"; 
-		$timestamp = time();
-		$file = plugin_dir_path( __FILE__ ) . '/debug_log_'.$timestamp.'.txt'; 
-		$url = plugin_dir_url( __FILE__ ) . '/debug_log_'.$timestamp.'.txt'; 
-		$open = fopen( $file, "a" ); 
-		$write = fputs( $open, $ban ); 
-		fclose( $open );
-		
-		echo "<script>window.open('" . $url . "', '_blank');</script>";
-		unlink($file);
-	}
