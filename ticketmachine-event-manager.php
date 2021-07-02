@@ -332,7 +332,7 @@
 					id int(11) NOT NULL AUTO_INCREMENT,
                     log_message text DEFAULT '' NOT NULL,
                     log_type varchar(64) DEFAULT 'info' NOT NULL,
-                    log_time varchar(254) DEFAULT 0 NOT NULL,
+                    log_time int(11) DEFAULT 0 NOT NULL,
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
         dbDelta( $sql );
@@ -683,7 +683,7 @@
 		$save_array = array(
 			"log_message" => $message,
 			"log_type" => $type,
-			"log_time" => date("Y-m-d h:i:sa")
+			"log_time" => time()
 		);
 
 		$wpdb->insert(
