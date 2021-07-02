@@ -4,7 +4,7 @@
 
     global $wpdb;
 
-    $rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ticketmachine_log");
+    $rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ticketmachine_log ORDER BY log_time DESC");
 
     foreach ($rows as $row) {
         echo "[" . date("c", $row->log_time) . "] - " . $row->log_type . "\n";
