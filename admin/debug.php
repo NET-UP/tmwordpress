@@ -7,7 +7,7 @@
     $rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ticketmachine_log");
 
     foreach ($rows as $row) {
-        echo "[" . $row->log_time . "] - " . $row->log_type . "\n";
+        echo "[" . date("c", $row->log_time) . "] - " . $row->log_type . "\n";
         echo $row->log_message . "]\n\n";
     }
 ?>
