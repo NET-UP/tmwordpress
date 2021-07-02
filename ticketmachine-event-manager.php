@@ -542,7 +542,6 @@
 	  if(isset($tm_globals->api_access_token))
 		  $headers = ticketmachine_array_push_assoc($headers, 'Authorization', 'Bearer ' . $tm_globals->api_access_token);
 
-		  print_r(wp_remote_post("https://google.com"));
 	  if($method == "POST") {
 
 		if($tm_post) {
@@ -559,6 +558,7 @@
 				"sent" => (array)$tm_post,
 				"response" => $resource
 			);
+			print_r($resource);
 			ticketmachine_log(json_encode($log), "info");
 		
 		}
