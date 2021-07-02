@@ -558,6 +558,7 @@
 				"response" => $resource
 			);
 			print_r($tm_url);
+			print_r($log);
 			ticketmachine_log(json_encode($log), "info");
 		
 		}
