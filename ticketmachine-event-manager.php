@@ -554,11 +554,10 @@
 				'body' 	  => str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES))))
 			));
 			$log = array(
+				"url" => (array)$tm_url,
 				"sent" => (array)$tm_post,
 				"response" => $resource
 			);
-			print_r($tm_url);
-			print_r($log);
 			ticketmachine_log(json_encode($log), "info");
 		
 		}
