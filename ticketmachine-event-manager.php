@@ -553,8 +553,7 @@
 				'headers' => $headers,
 				'body' 	  => str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES))))
 			));
-			
-			ticketmachine_log(json_encode($resource), "info");
+		
 		}
 
 	  }else{
@@ -570,6 +569,7 @@
 		));
 
 	  }
+	  ticketmachine_log(json_encode($resource), "info");
 
 	  if(isset($resource['body'])){
 		$response = $resource['body'];
