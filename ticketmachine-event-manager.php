@@ -929,5 +929,5 @@
 		$write = fputs( $open, $ban ); 
 		fclose( $open );
 		
-		echo "<script>window.open('" . $url . "', '_self');</script>";
+		echo "<script>window.open('" . $url . "', '_blank');</script>";
 	}
