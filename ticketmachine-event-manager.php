@@ -557,6 +557,7 @@
 				"sent" => (array)$tm_post,
 				"response" => $resource
 			);
+			print_r($tm_url);
 			ticketmachine_log(json_encode($log), "info");
 		
 		}
