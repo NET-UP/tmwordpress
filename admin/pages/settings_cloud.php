@@ -54,7 +54,7 @@
     <i class="fas fa-sync-alt"></i> &nbsp;<?php esc_html_e("Sync events", "ticketmachine-event-manager"); ?>
 </a>
 
-<a class="button button-primary" style="font-size:14px" href="<?php echo plugin_dir_url() . 'debug.php'; ?>">
+<a class="button button-primary" style="font-size:14px" href="<?php echo plugin_dir_url(__dir__) . 'debug.php'; ?>">
     <i class="fas fa-heartbeat"></i> &nbsp;<?php esc_html_e("Debug Log", "ticketmachine-event-manager"); ?>
 </a>
 
