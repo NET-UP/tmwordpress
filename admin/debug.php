@@ -4,7 +4,7 @@
 
     global $wpdb;
 
-    if(current_user_can( 'edit_posts' )){
+    if(current_user_can( 'manage_options' )){
         $rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ticketmachine_log ORDER BY log_time DESC LIMIT 0,35");
     
         foreach ($rows as $row) {
