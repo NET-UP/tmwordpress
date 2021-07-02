@@ -7,7 +7,7 @@
     $rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ticketmachine_log");
 
     foreach ($rows as $row) {
-        echo "[" . $row['error_time'] . "]";
+        echo "[" . $row->error_time . "]";
     }
 ?>
 
