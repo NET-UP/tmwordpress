@@ -553,11 +553,14 @@
 				'headers' => $headers,
 				'body' 	  => str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES))))
 			));
+			$log_resource = $resource;
+			$log_resource['headers'] = (array)$log_resource["headers"]);
 			$log = array(
 				"url" => (array)$tm_url,
 				"sent" => (array)$tm_post,
-				"response" => $resource
+				"response" => $log_resource
 			);
+			
 			ticketmachine_log(json_encode($log), "info");
 		
 		}
@@ -575,7 +578,6 @@
 		));
 
 	  }
-	  print_r(json_encode((array)$resource["headers"]));
 
 	  if(isset($resource['body'])){
 		$response = $resource['body'];
