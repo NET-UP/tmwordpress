@@ -547,7 +547,7 @@
 		if($tm_post) {
 			$headers = ticketmachine_array_push_assoc($headers, 'Content-Type', 'application/json');
 
-			$resource = wp_remote_head($tm_url, array(
+			$resource = wp_get_http_headers($tm_url, array(
 				'method'  => 'POST',
 				'timeout' => 45,
 				'headers' => $headers,
