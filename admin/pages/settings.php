@@ -41,7 +41,7 @@
 						<?php esc_html_e('Details Page', 'ticketmachine-event-manager'); ?>
 					</a>
 					<a href="?page=ticketmachine_settings&tab=cloud" class="nav-tab <?php echo $active_tab == 'cloud' ? 'nav-tab-active' : ''; ?>">
-						<?php esc_html_e('Cloud', 'ticketmachine-event-manager'); ?>
+						<?php esc_html_e('Cloud & Support', 'ticketmachine-event-manager'); ?>
 					</a>
 				</h2>
 

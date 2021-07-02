@@ -53,3 +53,7 @@
 <a class="button button-primary" style="font-size:14px" href="<?php echo esc_url($authorize_url); ?>">
     <i class="fas fa-sync-alt"></i> &nbsp;<?php esc_html_e("Sync events", "ticketmachine-event-manager"); ?>
 </a>
+
+<a class="button button-primary" style="font-size:14px" href="#">
+    <i class="fas fa-heartbeat"></i> &nbsp;<?php esc_html_e("Debug Log", "ticketmachine-event-manager"); ?>
+</a>
