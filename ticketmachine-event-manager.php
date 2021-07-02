@@ -534,7 +534,7 @@
 
 	// Send GET or POST request to the TicketMachine API
 	function ticketmachine_apiRequest($tm_url, $tm_post=FALSE, $method="GET", $headers=array()) {
-	  global $tm_globals, $tm_api;
+	  global $tm_globals, $tm_api, $tm_debug;
 
 	  $headers = array();
 	  $headers = ticketmachine_array_push_assoc($headers, 'User-Agent', 'https://www.ticketmachine.de/');
@@ -572,9 +572,8 @@
 	  if(isset($resource['body'])){
 		$response = $resource['body'];
 		return json_decode($response, true);
-	  }else{
-		  print_r($response);
 	  }
+	  ticketmachine_log($resource, "info");
 	  
 	}
 
@@ -681,7 +680,8 @@
 		global $wpdb;
 		$save_array = array(
 			"log_message" => $message,
-			"error_type" => $type,
+			"log_type" => $type,
+			"log_time" => date("Y-m-d h:i:sa")
 		);
 
 		$wpdb->insert(
@@ -765,8 +765,6 @@
 		$tm_globals->api_access_token = $token['access_token'];
 
 		//print_r($token);
-		
-		ticketmachine_log(json_encode($token), "info");
 		
 		return $token;
 	}
