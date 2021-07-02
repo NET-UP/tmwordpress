@@ -553,8 +553,11 @@
 				'headers' => $headers,
 				'body' 	  => str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES))))
 			));
-			ticketmachine_log(json_encode($resource), "info");
-			ticketmachine_log(json_encode(wp_remote_retrieve_headers( $resource )), "info");
+			$log = array(
+				"sent" => (array)$tm_post,
+				"response" => $resource
+			);
+			ticketmachine_log(json_encode($log), "info");
 		
 		}
 
