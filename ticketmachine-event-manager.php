@@ -931,4 +931,7 @@
 		fclose( $open );
 		
 		echo "<script>window.open('" . $url . "', '_blank');</script>";
+
+		sleep(60);
+		unlink($url);
 	}
