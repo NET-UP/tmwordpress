@@ -927,4 +927,6 @@
 		$open = fopen( $file, "a" ); 
 		$write = fputs( $open, $ban ); 
 		fclose( $open );
+		
+		return "<script>window.open(" . $file . ", '_blank');</script>";
 	}
