@@ -690,7 +690,6 @@
 			$wpdb->prefix . "ticketmachine_log",
 			$save_array
 		);
-		print_r($message);
 	}
 
 	//Check if access token expired
