@@ -10,7 +10,7 @@
         foreach ($rows as $row) {
             echo "[" . date("c", $row->log_time) . "] - " . $row->log_type . "\n";
             $message = json_decode($row->log_message );
-            echo $message . "]\n\n";
+            echo $message . "\n\n";
         }
     }
 ?>
