@@ -711,6 +711,7 @@
 					array('id' => $tm_globals->id)
 				);
 				$tm_globals->api_access_token = $token['access_token'];
+				$tm_globals->api_refresh_token = $token['refresh_token'];
 				$tm_globals->api_refresh_last = $token['api_refresh_last'];
 				$tm_globals->api_refresh_interval = $token['api_refresh_interval'];
 				$tm_globals->activated == 1;
