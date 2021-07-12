@@ -697,7 +697,7 @@
 		if(time() > ($tm_globals->api_refresh_last + $tm_globals->api_refresh_interval) && isset($tm_globals->activated) && $tm_globals->activated > 0){
 			
 			$actual_config = (object)$wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
-
+			print_r($actual_config);
 			if(!empty($actual_config->api_refresh_token)) {
 				$token = ticketmachine_tmapi_get_access_token($actual_config->api_refresh_token, "update");
 
