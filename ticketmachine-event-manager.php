@@ -749,7 +749,7 @@
 		global $tm_api, $tm_globals, $wpdb;
 
 		$actual_config = (object)$wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1")[0];
-
+		print_r($actual_config);
 		if($status == "new"){
 			$tm_api->auth->code = array(
 				'grant_type' => 'authorization_code',
