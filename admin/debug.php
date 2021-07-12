@@ -5,7 +5,7 @@
     global $wpdb;
 
     if(current_user_can( 'manage_options' )){
-        $rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ticketmachine_log ORDER BY id ASC LIMIT 0,35");
+        $rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ticketmachine_log ORDER BY id ASC");
     
         foreach ($rows as $row) {
             echo "[" . date("c", $row->log_time) . "] - " . $row->log_type . "\n";
