@@ -737,6 +737,9 @@
 							array('id' => $tm_globals->id)
 						);
 					}
+				}else{
+					$tm_globals->api_access_token = $actual_config->api_access_token;
+					$tm_globals->api_refresh_token = $actual_config->api_refresh_token;
 				}
 			}
 		}
