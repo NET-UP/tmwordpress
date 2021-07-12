@@ -695,45 +695,49 @@
 		global $tm_globals, $tm_api, $wpdb;
 
 		if(time() > ($tm_globals->api_refresh_last + $tm_globals->api_refresh_interval) && isset($tm_globals->activated) && $tm_globals->activated > 0){
-			$token = ticketmachine_tmapi_get_access_token($tm_globals->api_refresh_token, "update");
-
-			if(isset($token['access_token'])){
-				$save_array = array(
-					"api_access_token" => $token['access_token'],
-					"api_refresh_token" => $token['refresh_token'],
-					"api_refresh_last" => time(),
-					"api_refresh_interval" => $token['expires_in']/2
-				);
-	
-				$wpdb->update(
-					$wpdb->prefix . "ticketmachine_config",
-					$save_array,
-					array('id' => $tm_globals->id)
-				);
-				$tm_globals->api_access_token = $token['access_token'];
-				$tm_globals->api_refresh_token = $token['refresh_token'];
-				$tm_globals->api_refresh_last = $token['api_refresh_last'];
-				$tm_globals->api_refresh_interval = $token['api_refresh_interval'];
-				$tm_globals->activated == 1;
-			}else{
-				$tm_globals->timeout++;
-				if($tm_globals->timeout < 3){
-					sleep(1);
-					ticketmachine_tmapi_refresh_token_check();
-				}else{
-					$tm_globals->activated == 0;
+			
+			$actual_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
+			if(!empty($actual_config->api_refresh_token)) {
+				$token = ticketmachine_tmapi_get_access_token($actual_config->api_refresh_token, "update");
+				
+				if(isset($token['access_token'])){
 					$save_array = array(
-						"api_access_token" => "",
-						"api_refresh_token" => "",
-						"api_refresh_last" => time()-1000,
+						"api_access_token" => $token['access_token'],
+						"api_refresh_token" => $token['refresh_token'],
+						"api_refresh_last" => time(),
 						"api_refresh_interval" => $token['expires_in']/2
 					);
-	
+		
 					$wpdb->update(
 						$wpdb->prefix . "ticketmachine_config",
 						$save_array,
 						array('id' => $tm_globals->id)
 					);
+					$tm_globals->api_access_token = $token['access_token'];
+					$tm_globals->api_refresh_token = $token['refresh_token'];
+					$tm_globals->api_refresh_last = $token['api_refresh_last'];
+					$tm_globals->api_refresh_interval = $token['api_refresh_interval'];
+					$tm_globals->activated == 1;
+				}else{
+					$tm_globals->timeout++;
+					if($tm_globals->timeout < 3){
+						sleep(1);
+						ticketmachine_tmapi_refresh_token_check();
+					}else{
+						$tm_globals->activated == 0;
+						$save_array = array(
+							"api_access_token" => "",
+							"api_refresh_token" => "",
+							"api_refresh_last" => time()-1000,
+							"api_refresh_interval" => $token['expires_in']/2
+						);
+		
+						$wpdb->update(
+							$wpdb->prefix . "ticketmachine_config",
+							$save_array,
+							array('id' => $tm_globals->id)
+						);
+					}
 				}
 			}
 		}
