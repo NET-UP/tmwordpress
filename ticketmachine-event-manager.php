@@ -697,7 +697,7 @@
 		if(time() > ($tm_globals->api_refresh_last + $tm_globals->api_refresh_interval) && isset($tm_globals->activated) && $tm_globals->activated > 0){
 			
 			$actual_config = (object)$wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1")[0];
-			print_r($actual_config);
+
 			if(!empty($actual_config->api_refresh_token)) {
 				$token = ticketmachine_tmapi_get_access_token($actual_config->api_refresh_token, "update");
 
@@ -746,7 +746,9 @@
 
 	// Get new access token
 	function ticketmachine_tmapi_get_access_token($refresh_token, $status="update") {
-		global $tm_api, $tm_globals;
+		global $tm_api, $tm_globals, $wpdb;
+
+		$actual_config = (object)$wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1")[0];
 
 		if($status == "new"){
 			$tm_api->auth->code = array(
@@ -761,9 +763,9 @@
 		if($status == "update"){
 			$tm_api->auth->code = array(
 				'grant_type' => 'refresh_token',
-				'client_id' => $tm_api->client_id,
-				'client_secret' => $tm_api->client_secret,
-				'refresh_token' => $refresh_token,
+				'client_id' => $actual_config->api_client_id,
+				'client_secret' => $actual_config->api_client_secret,
+				'refresh_token' => $actual_config->api_refresh_token,
 				'redirect_uri' => $tm_api->auth->proxy,
 				'scope' => "public organizer organizer/event"
 			);
