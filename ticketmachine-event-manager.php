@@ -711,6 +711,7 @@
 					array('id' => $tm_globals->id)
 				);
 				$tm_globals->api_access_token = $token['access_token'];
+				$tm_globals->activated == 1;
 			}else{
 				$tm_globals->timeout++;
 				if($tm_globals->timeout < 3){
