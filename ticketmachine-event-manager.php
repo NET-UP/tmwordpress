@@ -4,7 +4,7 @@
 	Plugin Name:        TicketMachine Event Manager & Calendar
     Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
-	Version:            1.4.1
+	Version:            1.4.2
     Requires at least:  4.5
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
@@ -16,7 +16,7 @@
 
 	add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
 	global $ticketmachine_db_version;
-	$ticketmachine_db_version = "1.4.1";
+	$ticketmachine_db_version = "1.4.2";
 	
 	// Load translations if they don't already exist
     function ticketmachine_wpdocs_load_textdomain() {
@@ -264,7 +264,6 @@
 
         require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
         dbDelta( $sql );
-        add_option('ticketmachine_db_version', $ticketmachine_db_version);
         
         $wpdb->query("INSERT IGNORE INTO $table (id) VALUES (1)");
         
@@ -295,7 +294,6 @@
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
         dbDelta( $sql );
-        add_option('ticketmachine_db_version', $ticketmachine_db_version);
         
         $wpdb->query("INSERT IGNORE INTO $table (id) VALUES (1)");
         
@@ -314,7 +312,6 @@
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
 		dbDelta( $sql );
-		add_option('ticketmachine_db_version', $ticketmachine_db_version);
         
         $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
         $sql = "CREATE TABLE $table (
@@ -325,7 +322,6 @@
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
         dbDelta( $sql );
-        add_option('ticketmachine_db_version', $ticketmachine_db_version);
         
         $table = $wpdb->prefix . 'ticketmachine_log';
         $sql = "CREATE TABLE $table (
@@ -336,27 +332,16 @@
                 	PRIMARY KEY  (id)
                 ) $charset_collate;";
         dbDelta( $sql );
-        add_option('ticketmachine_db_version', $ticketmachine_db_version);
+        update_option('ticketmachine_db_version', $ticketmachine_db_version);
 	}
-	add_action( 'upgrader_process_complete', 'ticketmachine_update', 10, 2);
 	
-	function ticketmachine_update( $upgrader_object, $options ) {
-
-		$current_plugin_path_name = plugin_basename( __FILE__ );
-	
-		if ( isset( $options['plugins'] ) && is_array( $options['plugins'] ) ) {
-		  foreach($options['plugins'] as $each_plugin) {
-			if ($each_plugin == $current_plugin_path_name) {
-				ticketmachine_activate();
-			}
-		  }
-		}elseif(isset( $options['plugin'] ) && ($options['plugin'] != "")){
-		  if ($options['plugin'] == $current_plugin_path_name) {
+	function ticketmachine_update() {
+		global $ticketmachine_db_version;
+		if ( get_site_option( 'ticketmachine_db_version' ) != $ticketmachine_db_version) {
 			ticketmachine_activate();
-		  }
 		}
-
 	}
+	add_action('plugins_loaded', 'ticketmachine_update');
 	
 	// Run when plugin is deactivated
     function ticketmachine_deactivate( ) {
