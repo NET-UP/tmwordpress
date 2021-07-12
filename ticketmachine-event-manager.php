@@ -694,7 +694,7 @@
 	function ticketmachine_tmapi_refresh_token_check() {
 		global $tm_globals, $tm_api, $wpdb;
 
-		if(time() > $tm_globals->api_refresh_last + $tm_globals->api_refresh_interval && isset($tm_globals->activated) && $tm_globals->activated > 0){
+		if(time() > ($tm_globals->api_refresh_last + $tm_globals->api_refresh_interval) && isset($tm_globals->activated) && $tm_globals->activated > 0){
 			$token = ticketmachine_tmapi_get_access_token($tm_globals->api_refresh_token, "update");
 
 			if(isset($token['access_token'])){
