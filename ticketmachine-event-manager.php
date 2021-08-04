@@ -544,7 +544,9 @@
 				'headers' => $headers,
 				'body' 	  => str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES))))
 			));
+			print_r("<pre>");
 			print_r(str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES)))));
+			print_r("<pre>");
 			$log_resource = $resource;
 			$log_resource['headers'] = (array)$log_resource["headers"];
 			$log = array(
