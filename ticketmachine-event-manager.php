@@ -535,6 +535,8 @@
 
 	  if($method == "POST") {
 
+		print_r($tm_url);
+
 		if($tm_post) {
 			$headers = ticketmachine_array_push_assoc($headers, 'Content-Type', 'application/json');
 			
@@ -778,8 +780,6 @@
 		}
 
 		$token = ticketmachine_apiRequest($tm_api->token, $tm_api->auth->code, "POST");
-
-		print_r($token);
 
 		$tm_globals->api_access_token = $token['access_token'];
 
