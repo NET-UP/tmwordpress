@@ -545,7 +545,7 @@
 				'body' 	  => str_replace("\'", "'", str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES)))))
 			));
 			$log_resource = $resource;
-			if(!is_wp_error($log_resource["headers"])){
+			if(!is_wp_error($log_resource)){
 				$log_resource['headers'] = (array)$log_resource["headers"];
 				$log = array(
 					"url" => (array)$tm_url,
