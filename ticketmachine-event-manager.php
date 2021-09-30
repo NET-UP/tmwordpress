@@ -537,23 +537,25 @@
 
 		if($tm_post) {
 			$headers = ticketmachine_array_push_assoc($headers, 'Content-Type', 'application/json');
-
-			$resource = wp_remote_post($tm_url, array(
-				'method'  => 'POST',
-				'timeout' => 45,
-				'headers' => $headers,
-				'body' 	  => str_replace("\'", "'", str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES)))))
-			));
-			$log_resource = $resource;
-			if(!is_wp_error($log_resource)){
-				$log_resource['headers'] = (array)$log_resource["headers"];
-				$log = array(
-					"url" => (array)$tm_url,
-					"sent" => (array)$tm_post,
-					"response" => $log_resource
-				);
 			
-				ticketmachine_log(json_encode($log), "info");
+			if(!is_wp_error($resource)){
+
+				$resource = wp_remote_post($tm_url, array(
+					'method'  => 'POST',
+					'timeout' => 45,
+					'headers' => $headers,
+					'body' 	  => str_replace("\'", "'", str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES)))))
+				));
+				$log_resource = $resource;
+					$log_resource['headers'] = (array)$log_resource["headers"];
+					$log = array(
+						"url" => (array)$tm_url,
+						"sent" => (array)$tm_post,
+						"response" => $log_resource
+					);
+				
+					ticketmachine_log(json_encode($log), "info");
+				}
 			}
 
 		}
@@ -572,10 +574,12 @@
 
 	  }
 
-	  if(isset($resource['body'])){
-		$response = $resource['body'];
-		return json_decode($response, true);
-	  }
+	  if(!is_wp_error($resource)){
+		if(isset($resource['body'])){
+			$response = $resource['body'];
+			return json_decode($response, true);
+		}
+		}
 	  
 	}
 
