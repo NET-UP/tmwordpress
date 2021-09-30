@@ -11,6 +11,8 @@
 
         $current_organizer = (object)ticketmachine_tmapi_organizers()[0];
 
+        print_r($_GET['code']);
+
         $save_array = array(
             "api_access_token" => $token['access_token'],
             "api_refresh_token" => $token['refresh_token'],
