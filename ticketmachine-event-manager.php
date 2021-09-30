@@ -545,9 +545,10 @@
 				'body' 	  => str_replace("\'", "'", str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES)))))
 			));
 				
-			if(!is_wp_error($resource)){
 				$log_resource = $resource;
-				$log_resource['headers'] = (array)$log_resource["headers"];
+				if(!is_wp_error($resource)){
+					$log_resource['headers'] = (array)$log_resource["headers"];
+				}
 				$log = array(
 					"url" => (array)$tm_url,
 					"sent" => (array)$tm_post,
@@ -555,7 +556,6 @@
 				);
 			
 				ticketmachine_log(json_encode($log), "info");
-			}
 
 		}
 
@@ -578,7 +578,7 @@
 			$response = $resource['body'];
 			return json_decode($response, true);
 		}
-		}
+	  }
 	  
 	}
 
