@@ -540,6 +540,7 @@
 			
 			$resource = wp_remote_post($tm_url, array(
 				'method'  => 'POST',
+				'sslverify' => FALSE,
 				'timeout' => 45,
 				'headers' => $headers,
 				'body' 	  => str_replace("\'", "'", str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES)))))
@@ -567,6 +568,7 @@
 
 		$resource = wp_remote_get($tm_url, array(
 			'method'  => 'GET',
+			'sslverify' => FALSE,
 			'timeout' => 45,
 			'headers' => $headers
 		));
