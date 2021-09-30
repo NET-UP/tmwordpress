@@ -9,9 +9,9 @@
         //Exchange the auth code for an access token
         $token = ticketmachine_tmapi_get_access_token(sanitize_text_field($_GET['code']), "new");
 
-        $current_organizer = (object)ticketmachine_tmapi_organizers()[0];
+        print_r($token);
 
-        print_r($_GET['code']);
+        $current_organizer = (object)ticketmachine_tmapi_organizers()[0];
 
         $save_array = array(
             "api_access_token" => $token['access_token'],
