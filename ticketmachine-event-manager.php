@@ -777,9 +777,9 @@
 			);
 		}
 
-		print_r($tm_api->auth->code);
-		
 		$token = ticketmachine_apiRequest($tm_api->token, $tm_api->auth->code, "POST");
+
+		print_r($token);
 
 		$tm_globals->api_access_token = $token['access_token'];
 
