@@ -569,6 +569,7 @@
 		$resource = wp_remote_get($tm_url, array(
 			'method'  => 'GET',
 			'timeout' => 45,
+			'sslverify' => FALSE,
 			'headers' => $headers
 		));
 
