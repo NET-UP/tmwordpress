@@ -777,13 +777,12 @@
 			);
 		}
 
-		$token = ticketmachine_apiRequest($tm_api->token, $tm_api->auth->code, "POST");
-		print_r($tm_api->token);
+		print_r($tm_api->auth->code);
 		
-		print_r( $tm_api->auth->code);
+		$token = ticketmachine_apiRequest($tm_api->token, $tm_api->auth->code, "POST");
+
 		$tm_globals->api_access_token = $token['access_token'];
 
-		//print_r($token);
 		
 		return $token;
 	}
