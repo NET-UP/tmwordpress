@@ -544,7 +544,6 @@
 				'headers' => $headers,
 				'body' 	  => str_replace("\'", "'", str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES)))))
 			));
-			print_r($resource);
 				
 			if(!is_wp_error($resource)){
 				$log_resource = $resource;
