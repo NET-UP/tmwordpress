@@ -538,14 +538,14 @@
 		if($tm_post) {
 			$headers = ticketmachine_array_push_assoc($headers, 'Content-Type', 'application/json');
 			
+			$resource = wp_remote_post($tm_url, array(
+				'method'  => 'POST',
+				'timeout' => 45,
+				'headers' => $headers,
+				'body' 	  => str_replace("\'", "'", str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES)))))
+			));
+				
 			if(!is_wp_error($resource)){
-
-				$resource = wp_remote_post($tm_url, array(
-					'method'  => 'POST',
-					'timeout' => 45,
-					'headers' => $headers,
-					'body' 	  => str_replace("\'", "'", str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES)))))
-				));
 				$log_resource = $resource;
 				$log_resource['headers'] = (array)$log_resource["headers"];
 				$log = array(
