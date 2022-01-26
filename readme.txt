@@ -4,8 +4,8 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: Event, Veranstaltung, Events, Veranstaltungen, Calendar, Kalender, Organizer, Veranstalter, GDPR, DSGVO
 Requires at least: 4.5.1
-Tested up to: 5.8.2
-Stable tag: 1.4.3
+Tested up to: 5.9.0
+Stable tag: 1.4.5
 
 Easily create, manage and share your events with TicketMachine
 
