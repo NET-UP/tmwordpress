@@ -16,9 +16,12 @@
             "api_refresh_token" => $token['refresh_token'],
             "api_refresh_last" => time(),
             "api_refresh_interval" => $token['expires_in']/2,
-            "organizer_id" => $current_organizer->id,
-            "organizer" => $current_organizer->og_abbreviation
+            "organizer_id" => $current_organizer->id
         );
+
+        if(empty($ticketmachine_config['organizer']){
+            $save_array["organizer"] = $current_organizer->og_abbreviation;
+        }
 
         if(!empty($token['access_token']) && !empty($token['refresh_token'])){
             $wpdb->update(
