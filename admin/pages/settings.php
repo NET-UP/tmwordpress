@@ -64,10 +64,6 @@
 						}elseif( $active_tab == 'cloud' ) {
 							include( plugin_dir_path( __FILE__ ) . 'settings_cloud.php');
 						}
-
-						if( $active_tab != 'cloud' ) {
-							submit_button(); 
-						}
 					?>
 					
 				</form>
