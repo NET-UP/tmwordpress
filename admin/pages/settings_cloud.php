@@ -17,7 +17,7 @@
 
 			$save_array = 
 				array(
-                    "organizer" => $tm_post->organizer_id
+                    "organizer" => $tm_post->organizer
                 );
 
                 if (!empty($ticketmachine_config) && empty($errors)) {
