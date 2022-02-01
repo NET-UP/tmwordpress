@@ -5,6 +5,54 @@
     $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
     $ticketmachine_config = $ticketmachine_config[0];
 
+    
+	if (isset($_POST['submit'])) {
+
+		if ( ! isset( $_POST['ticketmachine_settings_page_form_nonce'] ) || ! wp_verify_nonce( $_POST['ticketmachine_settings_page_form_nonce'], 'ticketmachine_action_save_settings' ) ) {
+			print 'Sorry, your nonce did not verify.';
+			exit;
+		} else {
+			$tm_post = (object)$_POST;
+			$errors = array();
+
+			$save_array = 
+				array(
+                    "organizer" => $tm_post->organizer_id
+                );
+
+                if (!empty($ticketmachine_config) && empty($errors)) {
+                    $wpdb->update(
+                        $wpdb->prefix . "ticketmachine_config",
+                        $save_array,
+                        array('id' => $ticketmachine_config->id)
+                    );
+                    ?>
+                    <div class="notice notice-success is-dismissable">
+                        <p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
+                    </div>
+                    <?php
+                    $ticketmachine_config->organizer = $tm_post->organizer;
+                }else{
+                    ?>
+                    <div class="notice notice-error is-dismissable">
+                        <p><?php esc_html_e('Something went wrong', 'ticketmachine-event-manager'); ?>!</p>
+                            <?php 
+                                if(!empty($errors)){
+                                    foreach($errors as $error) {
+                                        ?>
+                                        <p><?php echo $error ?>!</p>
+                                        <?php
+                                    }
+                                }
+                            ?>
+                        }
+                    </div>
+                    <?php
+                }
+
+        }
+    }
+
     if(!empty($_GET['code'])) {
         //Exchange the auth code for an access token
         $token = ticketmachine_tmapi_get_access_token(sanitize_text_field($_GET['code']), "new");
@@ -62,3 +110,15 @@
 </a>
 
 <br/>
+
+<table class="form-table">
+    <tbody>
+        <tr>
+            <td>
+                <label>
+                    <input name="organizer" type="text" value="<?php echo $ticketmachine_config->organizer; ?>" class="regular-text" />
+                </label>
+            </td>
+        </tr>
+    </tbody>
+</table>
