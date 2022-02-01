@@ -117,7 +117,7 @@
         <tr>
 			<th><label><?php esc_html_e('Ticketshop URL', 'ticketmachine-event-manager'); ?></label></th>
             <td>
-                    <input name="organizer" type="text" value="<?php echo $ticketmachine_config->organizer; ?>" class="regular-text" />
+                    <input name="organizer" type="text" value="<?php echo $ticketmachine_config->webshop_url; ?>" class="regular-text" />
             </td>
         </tr>
     </tbody>
