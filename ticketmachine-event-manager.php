@@ -107,6 +107,11 @@
 			}
 			$tm_globals->organizer = $ticketmachine_config->organizer;
 			$tm_globals->organizer_id = (int)$ticketmachine_config->organizer_id;
+			if(!empty($ticketmachine_config->webshop_url)){
+				$tm_globals->webshop_url = $ticketmachine_config->webshop_url;
+			}else{
+				$tm_globals->webshop_url = $ticketmachine_config->organizer;
+			}
 		
 			$tm_globals->first_event_date = date('Y-m-d');
 			$tm_globals->first_event_date_calendar = date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "-1 month" ) );
