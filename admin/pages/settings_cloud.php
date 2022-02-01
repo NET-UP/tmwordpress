@@ -111,9 +111,11 @@
 <table class="form-table">
     <tbody>
         <tr>
-			<th><label><?php esc_html_e('Ticketshop URL', 'ticketmachine-event-manager'); ?></label></th>
+			<th><label><?php esc_html_e('Ticketshop Kürzel', 'ticketmachine-event-manager'); ?></label></th>
             <td>
                     <input name="webshop_url" type="text" value="<?php echo $ticketmachine_config->webshop_url; ?>" class="regular-text" />
+                    <br>
+                    <?php esc_html_e('Achtung: Ticketshop Kürzel muss die Kürzel des Verkaufkanals im TicketMachine-Backend entsprechen!', 'ticketmachine-event-manager'); ?>
             </td>
         </tr>
     </tbody>
