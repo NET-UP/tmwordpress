@@ -17,7 +17,7 @@
 
 			$save_array = 
 				array(
-                    "organizer" => $tm_post->organizer
+                    "webshop_url" => $tm_post->webshop_url
                 );
 
                 if (!empty($ticketmachine_config) && empty($errors)) {
@@ -31,7 +31,7 @@
                         <p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
                     </div>
                     <?php
-                    $ticketmachine_config->organizer = $tm_post->organizer;
+                    $ticketmachine_config->webshop_url = $tm_post->webshop_url;
                 }else{
                     ?>
                     <div class="notice notice-error is-dismissable">
@@ -64,11 +64,12 @@
             "api_refresh_token" => $token['refresh_token'],
             "api_refresh_last" => time(),
             "api_refresh_interval" => $token['expires_in']/2,
-            "organizer_id" => $current_organizer->id
+            "organizer_id" => $current_organizer->id,
+            "organizer" => $current_organizer->og_abbreviation
         );
 
-        if(empty($ticketmachine_config->organizer) || $current_organizer->id != $ticketmachine_config->organizer_id){
-            $save_array["organizer"] = $current_organizer->og_abbreviation;
+        if(empty($ticketmachine_config->webshop_url)){
+            $save_array["webshop_url"] = $current_organizer->og_abbreviation;
         }
 
         if(!empty($token['access_token']) && !empty($token['refresh_token'])){
