@@ -19,7 +19,7 @@
             "organizer_id" => $current_organizer->id
         );
 
-        if(empty($ticketmachine_config->organizer)){
+        if(empty($ticketmachine_config->organizer) || $current_organizer->id != $ticketmachine_config->organizer_id){
             $save_array["organizer"] = $current_organizer->og_abbreviation;
         }
 
