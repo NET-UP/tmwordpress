@@ -68,10 +68,6 @@
             "organizer" => $current_organizer->og_abbreviation
         );
 
-        if(empty($ticketmachine_config->webshop_url)){
-            $save_array["webshop_url"] = $current_organizer->og_abbreviation;
-        }
-
         if(!empty($token['access_token']) && !empty($token['refresh_token'])){
             $wpdb->update(
                 $wpdb->prefix . "ticketmachine_config",
