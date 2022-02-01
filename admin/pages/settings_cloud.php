@@ -111,11 +111,11 @@
 <table class="form-table">
     <tbody>
         <tr>
-			<th><label><?php esc_html_e('Ticketshop-Kürzel', 'ticketmachine-event-manager'); ?></label></th>
+			<th><label><?php esc_html_e('Ticketshop abbreviation', 'ticketmachine-event-manager'); ?></label></th>
             <td>
                     <input name="webshop_url" type="text" value="<?php echo $ticketmachine_config->webshop_url; ?>" class="regular-text" />
                     <br>
-                    <?php esc_html_e('Achtung: Ticketshop-Kürzel muss dem Kürzel des Verkaufkanals im TicketMachine-Backend entsprechen!', 'ticketmachine-event-manager'); ?>
+                    <?php esc_html_e('Warning: Attention: The Ticketshop abbreviation must correspond to the abbreviation of the sales channel in the TicketMachine admin panel!', 'ticketmachine-event-manager'); ?>
             </td>
         </tr>
     </tbody>
