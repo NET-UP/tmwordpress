@@ -107,11 +107,6 @@
 			}
 			$tm_globals->organizer = $ticketmachine_config->organizer;
 			$tm_globals->organizer_id = (int)$ticketmachine_config->organizer_id;
-			if(!empty($ticketmachine_config->webshop_url)){
-				$tm_globals->webshop_url = $ticketmachine_config->webshop_url;
-			}else{
-				$tm_globals->webshop_url = $ticketmachine_config->organizer;
-			}
 		
 			$tm_globals->first_event_date = date('Y-m-d');
 			$tm_globals->first_event_date_calendar = date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "-1 month" ) );
@@ -129,7 +124,13 @@
 				$tm_globals->api_state = "";
 			}
 			$tm_api->base_url = $tm_api->token = $tm_api->scheme . "://cloud." . $tm_api->environment;
-			$tm_globals->webshop_url = $tm_api->scheme . "://" . $tm_globals->environment . ".ticketmachine.de/" . $tm_globals->lang . "/customer/" . $tm_globals->organizer;
+			
+			if(!empty($ticketmachine_config->webshop_url)){
+				$tm_globals->webshop_url = $tm_api->scheme . "://" . $ticketmachine_config->webshop_url . ".ticketmachine.de/" . $tm_globals->lang;;
+			}else{
+				$tm_globals->webshop_url = $tm_api->scheme . "://" . $tm_globals->organizer . ".ticketmachine.de/" . $tm_globals->lang;
+			}
+			
 		
 			$tm_api->token = $tm_api->base_url . "ticketmachine.de/oauth/token";
 			$tm_api->auth->url = $tm_api->base_url . "ticketmachine.de/oauth/token";
