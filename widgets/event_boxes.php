@@ -13,7 +13,6 @@
                 $params = ticketmachine_array_push_assoc($params, "approved", 1);
             }
             $events = ticketmachine_tmapi_events($params)->result;
-            print_r($params);
 
             include_once plugin_dir_path( __FILE__ ) . "../partials/_event_list_item.php";
             
