@@ -636,12 +636,6 @@
 		}
 
 		print_r($tm_url);
-		echo "<br>";
-		echo "<br>";
-		print_r($tm_post);
-		echo "<br>";
-		echo "<br>";
-		print_r($headers);
 
 		if(isset($tm_url_only) && $tm_url_only == 1) {
 			return $tm_url;
