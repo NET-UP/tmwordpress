@@ -362,7 +362,7 @@
 		wp_enqueue_style( 'fontawesome-5_CSS' );
 		//Core
 		wp_enqueue_style( 'core_CSS' );
-		wp_enqueue_script( 'core_JS' );
+		wp_enqueue_script( 'core_JS', array("jquery") );
 		//iCal
 		wp_enqueue_script( 'iCal_JS' );
 		//FileSaver
