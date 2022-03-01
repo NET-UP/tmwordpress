@@ -27,7 +27,7 @@
 
 	// Check if plugin is already installed
 	function ticketmachine_check_some_other_plugin() {
-		if(!session_id()){session_start();}
+		if(!headers_sent() && !session_id()){session_start();}
 		if (!function_exists('is_plugin_active')) {
 			include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 		}
