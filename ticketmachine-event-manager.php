@@ -199,8 +199,11 @@
 			$create_new_page = true;
         }else{
 			if(!has_shortcode( $page_check->post_content, 'ticketmachine')){
-				$create_new_page = true;
 				$new_page_slug = 'tm-events';
+				$page_check = get_page_by_path($new_page_slug);
+				if(!isset($page_check->ID)){
+					$create_new_page = true;
+				}
 			}
 		}
 
@@ -235,8 +238,11 @@
 			$create_new_page = true;
         }else{
 			if(!has_shortcode( $page_check->post_content, 'ticketmachine')){
-				$create_new_page = true;
 				$new_page_slug = 'tm-event';
+				$page_check = get_page_by_path($new_page_slug);
+				if(!isset($page_check->ID)){
+					$create_new_page = true;
+				}
 			}
 		}
 
