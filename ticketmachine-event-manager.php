@@ -933,8 +933,8 @@
                 $event->status_color = "#d4edda";
                 $event->status_text_color = "#155724";
                 
-                $start = $event->ev_date);
-                $end = $event->endtime);	
+                $start = $event->ev_date;
+                $end = $event->endtime;	
 
                 if ($end < (strtotime("midnight", time())*1000)){
                     $event->status_color = "#eeeeee";
