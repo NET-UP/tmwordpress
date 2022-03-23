@@ -463,7 +463,7 @@ if( current_user_can('edit_posts') ) {
             } elseif ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "publish" && isset($_GET['id']) || isset($_GET['action']) && sanitize_text_field($_GET['action']) == "deactivate" && isset($_GET['id']) ) {
                 include_once "actions/event_toggle.php";
             } elseif ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "delete" && isset($_GET['id']) ) {
-                include_once "actions/event_remove.php";
+                include_once "actions/event_delete.php";
             } elseif ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "copy" && isset($_GET['id']) ){
                 include_once "actions/event_copy.php";
             }
