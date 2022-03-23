@@ -708,6 +708,16 @@
 		return (object)$event;
 	}
 
+	// Delete event
+	function ticketmachine_tmapi_event_delete($params){
+		global $tm_api, $tm_globals;
+
+		$tm_url = $tm_api->base_url . "ticketmachine.de/api/v2/events/" . absint($_GET['id']) . "/delete";
+
+		$event = ticketmachine_apiRequest($tm_url, $params, "POST");
+		return (object)$event;
+	}
+
 	// Get connected organizer
 	function ticketmachine_tmapi_organizers($params=array(), $method="GET", $tm_post=FALSE, $headers=array()){
 		global $tm_api, $tm_globals;
