@@ -4,7 +4,7 @@
 
     if( current_user_can('edit_posts') ) {	
 
-        if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( $_GET['_wpnonce'], 'ticketmachine_action_toggle_event' ) ) {
+        if ( ! isset( $_GET['_wpnonce'] ) || ! wp_verify_nonce( $_GET['_wpnonce'], 'ticketmachine_action_delete_event' ) ) {
             print 'Sorry, your nonce did not verify.';
             exit;
         } else {
