@@ -158,6 +158,7 @@ if( current_user_can('edit_posts') ) {
 
             $ticketmachine_action_toggle_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s', esc_html($_REQUEST['page']),$toggle_action,esc_attr($item['id'])) ) );
             $ticketmachine_action_copy_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_copy_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s', esc_html($_REQUEST['page']),'copy',esc_attr($item['id'])) ) );
+            $ticketmachine_action_delete_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_delete_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s', esc_html($_REQUEST['page']),'delete',esc_attr($item['id'])) ) );
 
             //Build row actions
             $actions = array(
@@ -166,6 +167,9 @@ if( current_user_can('edit_posts') ) {
                 'copy'          => '<a href="' . $ticketmachine_action_copy_url . '">'.esc_html__('Copy', 'ticketmachine-event-manager').'</a>',
                 'view'          => sprintf('<a target="_blank" href="/'. esc_html($tm_globals->event_slug) .'?id=%s">'.$view_text.'</a>',esc_attr($item['id']))
             );
+            if($toggle_type == "publish") {
+                $actions['delete'] = '<a href="' . $ticketmachine_action_delete_url . '">'.esc_html__('Delete', 'ticketmachine-event-manager').'</a>';
+            }
             
             //Return the title contents
             return sprintf('%1$s %2$s',
