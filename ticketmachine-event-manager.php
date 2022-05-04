@@ -654,6 +654,11 @@
 		}else{
 			$tm_url .= "&per_page=100";
 		}
+		if(!empty($params->per_page)) {
+			$tm_url .= "&page=" . (int)$params->page;
+		}else{
+			$tm_url .= "&page=1";
+		}
 		
 		if(!empty($params->query)) {
 			$tm_url .= "&ev_name[contains]=" . htmlspecialchars(urlencode($params->query));
