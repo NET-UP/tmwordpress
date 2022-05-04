@@ -13,7 +13,9 @@
             if(empty($params['approved'])) {
                 $params = ticketmachine_array_push_assoc($params, "approved", 1);
             }
-            $events = ticketmachine_tmapi_events($params)->result;
+            $response = ticketmachine_tmapi_events($params);
+            $events = $response->result;
+            $meta = $response->meta;
 
             if(!isset($atts['show_image'])){
                 $atts['show_image'] = 1;
@@ -114,10 +116,12 @@
             $query['pg'] = $params['pg']-1;
             $query_result = http_build_query($query);
             $ticketmachine_output .= "<a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>Previous page</a>";
-            
-            $query['pg'] = $params['pg']+1;
-            $query_result = http_build_query($query);
-            $ticketmachine_output .= "<a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>Next page</a>";
+
+            if($meta['next'] < $meta['count_filtered']) {
+                $query['pg'] = $params['pg']+1;
+                $query_result = http_build_query($query);
+                $ticketmachine_output .= "<a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>Next page</a>";
+            }
 
             if($isWidget == 1){
                 $ticketmachine_output .= "</div></div>";
