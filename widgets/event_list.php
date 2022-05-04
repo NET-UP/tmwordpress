@@ -122,6 +122,7 @@
                         $query_result = http_build_query($query);
                         $ticketmachine_output .= "<a class='btn btn-secondary' href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'><i class='fas fa-angle-right'></i></a>";
                     }
+                    
                     $ticketmachine_output .= '</div>';
 
                 $ticketmachine_output .= '</div>';
