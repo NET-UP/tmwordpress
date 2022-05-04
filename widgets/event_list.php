@@ -113,18 +113,21 @@
             }
 
             $query = $_GET;
-            
+
+            $ticketmachine_output .= '<ul class="pagination">';
+
             if($meta['has_previous_page']) {
                 $query['pg'] = $params['pg']-1;
                 $query_result = http_build_query($query);
-                $ticketmachine_output .= "<a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>Previous page</a>";
+                $ticketmachine_output .= "<a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Previous page", "ticketmachine-event-manager") . "</a>";
             }
 
             if($meta['next'] < $meta['count_filtered']) {
                 $query['pg'] = $params['pg']+1;
                 $query_result = http_build_query($query);
-                $ticketmachine_output .= "<a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>Next page</a>";
+                $ticketmachine_output .= "<a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Next page", "ticketmachine-event-manager") . "</a>";
             }
+            $ticketmachine_output .= '</ul>';
 
             if($isWidget == 1){
                 $ticketmachine_output .= "</div></div>";
