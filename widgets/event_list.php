@@ -112,7 +112,7 @@
 
             $query = $_GET;
             // replace parameter(s)
-            $query['pg'] = $params->pg+1;
+            $query['pg'] = $params['pg']+1;
             // rebuild url
             $query_result = http_build_query($query);
 
