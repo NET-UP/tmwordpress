@@ -8,7 +8,7 @@
             unset($atts['widget']);
 
             $params = $atts;
-            
+
             if(empty($params["pg"])) {
                 $params["pg"] = 1;
             }
@@ -72,7 +72,7 @@
             }
             
                     
-            $ticketmachine_output .= '<div class="float-right btn-group">';
+            $ticketmachine_output .= '<div class="col-12"><div class="float-right btn-group">';
 
             $query = $_GET;
             if($meta['has_previous_page']) {
@@ -87,7 +87,7 @@
                 $ticketmachine_output .= "<a class='btn btn-secondary' href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'><i class='fas fa-angle-right'></i></a>";
             }
             
-            $ticketmachine_output .= '</div>';
+            $ticketmachine_output .= '</div></div>';
 
             if($isWidget == 1){
                 $ticketmachine_output .= "</div>";
