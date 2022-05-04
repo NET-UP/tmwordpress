@@ -654,7 +654,7 @@
 		}else{
 			$tm_url .= "&per_page=100";
 		}
-		if(!empty($params->per_page)) {
+		if(!empty($params->page)) {
 			$tm_url .= "&page=" . (int)$params->page;
 		}else{
 			$tm_url .= "&page=1";
