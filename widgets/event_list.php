@@ -10,6 +10,10 @@
 
             $params = $atts;
             
+            if(empty($params["pg"])) {
+                $params["pg"] = 1;
+            }
+            
             if(empty($params['approved'])) {
                 $params = ticketmachine_array_push_assoc($params, "approved", 1);
             }
@@ -111,9 +115,6 @@
                     $ticketmachine_output .= '<div class="float-right btn-group">';
 
                     $query = $_GET;
-                    if(empty($query["pg"])) {
-                        $query["pg"] = 1;
-                    }
                     if($meta['has_previous_page']) {
                         $query['pg'] = $params['pg']-1;
                         $query_result = http_build_query($query);
