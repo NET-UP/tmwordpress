@@ -655,9 +655,9 @@
 			$tm_url .= "&per_page=100";
 		}
 		if(!empty($params->pg)) {
-			$tm_url .= "&page=" . (int)$params->pg;
+			$tm_url .= "&offset=" . (int)$params->per_page*($params->pg-1);
 		}else{
-			$tm_url .= "&page=1";
+			$tm_url .= "&offset=1";
 		}
 
 		print_r($params);
