@@ -116,7 +116,7 @@
             // rebuild url
             $query_result = http_build_query($query);
 
-            $ticketmachine_output .= "<a href='" . $_SERVER['PHP_SELF'] . "?" . $query_result . "'>Next page</a>";
+            $ticketmachine_output .= "<a href='" . $_SERVER['REQUEST_URI'] . "?" . $query_result . "'>Next page</a>";
 
             if($isWidget == 1){
                 $ticketmachine_output .= "</div></div>";
