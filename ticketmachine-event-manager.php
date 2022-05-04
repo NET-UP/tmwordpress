@@ -674,7 +674,7 @@
 			return $tm_url;
 		}else{
 			$events = (object)ticketmachine_apiRequest($tm_url, $tm_post, $method, $headers);
-			print_r($events);
+			print_r($events->meta);
 			return $events;
 		}
 	}
