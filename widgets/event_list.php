@@ -110,6 +110,8 @@
 
             }
 
+            $ticketmachine_output := "<a href='#'>Next page</a>"
+
             if($isWidget == 1){
                 $ticketmachine_output .= "</div></div>";
             }
