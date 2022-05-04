@@ -657,8 +657,6 @@
 		if(!empty($params->pg)) {
 			$tm_url .= "&offset=" . (int)$params->per_page*($params->pg-1);
 		}
-
-		print_r($params);
 		
 		if(!empty($params->query)) {
 			$tm_url .= "&ev_name[contains]=" . htmlspecialchars(urlencode($params->query));
@@ -676,7 +674,7 @@
 			return $tm_url;
 		}else{
 			$events = (object)ticketmachine_apiRequest($tm_url, $tm_post, $method, $headers);
-			//print_r($events->result[0]);
+			print_r($events);
 			return $events;
 		}
 	}
