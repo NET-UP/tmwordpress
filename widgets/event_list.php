@@ -125,7 +125,7 @@
             if($meta['next'] < $meta['count_filtered']) {
                 $query['pg'] = $params['pg']+1;
                 $query_result = http_build_query($query);
-                $ticketmachine_output .= "<a class='btn btn-seconday'  href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Next page", "ticketmachine-event-manager") . "</a>";
+                $ticketmachine_output .= "<a class='btn btn-secondary'  href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Next page", "ticketmachine-event-manager") . "</a>";
             }
             $ticketmachine_output .= '<div class="pagination">';
 
