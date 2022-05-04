@@ -108,19 +108,19 @@
 
                     $ticketmachine_output .= '</ul>';
                     
-                    $ticketmachine_output .= '<div>';
+                    $ticketmachine_output .= '<div class="text-right">';
 
                     $query = $_GET;
                     if($meta['has_previous_page']) {
                         $query['pg'] = $params['pg']-1;
                         $query_result = http_build_query($query);
-                        $ticketmachine_output .= "<a class='btn btn-secondary mr-3' href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Previous page", "ticketmachine-event-manager") . "</a>";
+                        $ticketmachine_output .= "<a class='btn btn-secondary mr-3' href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Previous", "ticketmachine-event-manager") . "</a>";
                     }
 
                     if($meta['next'] < $meta['count_filtered']) {
                         $query['pg'] = $params['pg']+1;
                         $query_result = http_build_query($query);
-                        $ticketmachine_output .= "<a class='btn btn-secondary'  href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Next page", "ticketmachine-event-manager") . "</a>";
+                        $ticketmachine_output .= "<a class='btn btn-secondary'  href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Next", "ticketmachine-event-manager") . "</a>";
                     }
                     $ticketmachine_output .= '</div>';
 
