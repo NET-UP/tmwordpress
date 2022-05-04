@@ -7,8 +7,8 @@
             $ticketmachine_output = "";
             unset($atts['page']);
             unset($atts['widget']);
-            if(!empty($_GET['page'])) {
-                $atts['page'] = $_GET['page'];
+            if(!empty($_GET['pg'])) {
+                $atts['page'] = $_GET['pg'];
             }
 
             $params = $atts;
