@@ -108,7 +108,7 @@
 
                     $ticketmachine_output .= '</ul>';
                     
-                    $ticketmachine_output .= '<div class="text-right btn-group">';
+                    $ticketmachine_output .= '<div class="float-right btn-group">';
 
                     $query = $_GET;
                     if($meta['has_previous_page']) {
