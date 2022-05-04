@@ -656,8 +656,6 @@
 		}
 		if(!empty($params->pg)) {
 			$tm_url .= "&offset=" . (int)$params->per_page*($params->pg-1);
-		}else{
-			$tm_url .= "&offset=1";
 		}
 
 		print_r($params);
