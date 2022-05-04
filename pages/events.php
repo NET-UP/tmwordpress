@@ -13,6 +13,9 @@
 		if(isset($_GET['tag'])){
 			$params = ticketmachine_array_push_assoc($params, "tag", sanitize_text_field($_GET['tag']));
 		}
+		if(isset($_GET['pg'])){
+			$params = ticketmachine_array_push_assoc($params, "pg", sanitize_text_field($_GET['pg']));
+		}
 		$params = ticketmachine_array_push_assoc($params, "approved", 1);
 		
 		if(isset($atts['display']) && $atts['display'] == "calendar" && $tm_globals->show_calendar || $tm_globals->show_calendar && !$tm_globals->show_boxes && !$tm_globals->show_list){
