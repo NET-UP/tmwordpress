@@ -659,6 +659,8 @@
 		}else{
 			$tm_url .= "&page=1";
 		}
+
+		print_r($params);
 		
 		if(!empty($params->query)) {
 			$tm_url .= "&ev_name[contains]=" . htmlspecialchars(urlencode($params->query));
