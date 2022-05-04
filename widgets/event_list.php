@@ -119,13 +119,13 @@
             if($meta['has_previous_page']) {
                 $query['pg'] = $params['pg']-1;
                 $query_result = http_build_query($query);
-                $ticketmachine_output .= "<li class='page-item'><a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Previous page", "ticketmachine-event-manager") . "</a></li>";
+                $ticketmachine_output .= "<li class='page-item'><a class='page-link' href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Previous page", "ticketmachine-event-manager") . "</a></li>";
             }
 
             if($meta['next'] < $meta['count_filtered']) {
                 $query['pg'] = $params['pg']+1;
                 $query_result = http_build_query($query);
-                $ticketmachine_output .= "<li class='page-item'><a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Next page", "ticketmachine-event-manager") . "</a></li>";
+                $ticketmachine_output .= "<li class='page-item'><a class='page-link' href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>" . __("Next page", "ticketmachine-event-manager") . "</a></li>";
             }
             $ticketmachine_output .= '</ul>';
 
