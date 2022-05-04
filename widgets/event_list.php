@@ -113,9 +113,12 @@
             }
 
             $query = $_GET;
-            $query['pg'] = $params['pg']-1;
-            $query_result = http_build_query($query);
-            $ticketmachine_output .= "<a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>Previous page</a>";
+            
+            if($meta['has_previous_page']) {
+                $query['pg'] = $params['pg']-1;
+                $query_result = http_build_query($query);
+                $ticketmachine_output .= "<a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>Previous page</a>";
+            }
 
             if($meta['next'] < $meta['count_filtered']) {
                 $query['pg'] = $params['pg']+1;
