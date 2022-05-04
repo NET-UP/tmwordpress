@@ -111,11 +111,12 @@
             }
 
             $query = $_GET;
-            // replace parameter(s)
-            $query['pg'] = $params['pg']+1;
-            // rebuild url
+            $query['pg'] = $params['pg']-1;
             $query_result = http_build_query($query);
-
+            $ticketmachine_output .= "<a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>Previous page</a>";
+            
+            $query['pg'] = $params['pg']+1;
+            $query_result = http_build_query($query);
             $ticketmachine_output .= "<a href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'>Next page</a>";
 
             if($isWidget == 1){
