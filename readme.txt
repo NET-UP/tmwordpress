@@ -4,7 +4,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: Event, Veranstaltung, Events, Veranstaltungen, Calendar, Kalender, Organizer, Veranstalter, GDPR, DSGVO
 Requires at least: 4.5.1
-Tested up to: 5.9.0
+Tested up to: 5.9.3
 Stable tag: 1.4.5
 
 Easily create, manage and share your events with TicketMachine
@@ -87,6 +87,12 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.5.1 =
+* Added pagination and "per_page" attributes to shortcodes/widgets
+
+= 1.5.0 =
+* Many small improvements and bugfixes
+
 = 1.3.10 =
 * Plugin compatibility with PHP8 added
 * Fixed infinite loop when access token can not be found
