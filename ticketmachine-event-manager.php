@@ -961,9 +961,3 @@
         wp_send_json_success($calendarData);
         die();
     }
-
-	// Deprecated!
-    function ticketmachine_enqueue_calendar_files() {
-    }
-    function ticketmachine_enqueue_core_files() {
-    }
