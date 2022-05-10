@@ -11,6 +11,9 @@
 	Text Domain: 		ticketmachine-event-manager
 	Domain Path: 		/languages
 	*/
+
+	require_once(plugin_dir_path( __FILE__ ) . "/utils.php");
+
     add_action( 'wp_enqueue_scripts', 'ticketmachine_register_core_files' );
     add_action( 'wp_enqueue_scripts', 'ticketmachine_register_calendar_files' );
 
@@ -20,7 +23,7 @@
 	
 	// Load translations if they don't already exist
     function ticketmachine_wpdocs_load_textdomain() {
-        load_plugin_textdomain( 'ticketmachine-event-manager', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+        load_plugin_textdomain( 'ticketmachine-event-manager', false, plugin_dir_path( __FILE__ ) . '/languages' ); 
 	}
 
 	add_action( 'init', 'ticketmachine_check_some_other_plugin' );
@@ -119,7 +122,7 @@
 		
 			$tm_api->scheme = "https";
 			
-			#TODO: Refactor api request
+			# Build API base url
 			if(!isset($tm_globals->api_state)){
 				$tm_globals->api_state = "";
 			}
@@ -556,12 +559,6 @@
        }
 	}
 
-	// Function to easily add key value pairs to an array
-	function ticketmachine_array_push_assoc($array, $key, $value){
-		$array[$key] = $value;
-		return $array;
-	}
-
 	// Send GET or POST request to the TicketMachine API
 	function ticketmachine_apiRequest($tm_url, $tm_post=FALSE, $method="GET", $headers=array()) {
 	  global $tm_globals, $tm_api, $tm_debug;
@@ -875,17 +872,6 @@
 		return (object)$category;
 	}
 
-	// Internationalize DateTime objects
-	function ticketmachine_i18n_date($format, $datetime){
-		$formatted_date = date_i18n($format, strtotime(get_date_from_gmt($datetime)) );
-		return $formatted_date;
-	}
-
-	// Uninternationalize DateTime objects
-	function ticketmachine_i18n_reverse_date($datetime){
-		$formatted_date = gmdate(DATE_ISO8601, strtotime(date_i18n(DATE_ISO8601, strtotime($datetime))));
-		return $formatted_date;
-	}
 	
 	// Remove author metadata on ticketmachine pages
     add_filter( 'oembed_response_data', 'ticketmachine_disable_embeds_filter_oembed_response_data_' );
