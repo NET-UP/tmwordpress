@@ -1,5 +1,20 @@
 <?php
 
+    // Writes to the ticketmachine log
+    function ticketmachine_log($message, $type) {
+        global $wpdb;
+        $save_array = array(
+            "log_message" => $message,
+            "log_type" => $type,
+            "log_time" => time()
+        );
+
+        $wpdb->insert(
+            $wpdb->prefix . "ticketmachine_log",
+            $save_array
+        );
+    }
+
     // Function to easily debug arrays and objects
     function ticketmachine_debug($var){
         print_r("<pre>");

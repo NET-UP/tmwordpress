@@ -563,6 +563,8 @@
 	function ticketmachine_apiRequest($tm_url, $tm_post=FALSE, $method="GET", $headers=array()) {
 	  global $tm_globals, $tm_api, $tm_debug;
 
+	  debug($tm_url);
+
 	  $headers = array();
 	  $headers = ticketmachine_array_push_assoc($headers, 'User-Agent', 'https://www.ticketmachine.de/');
 
@@ -729,21 +731,6 @@
 		$organizer = ticketmachine_apiRequest($tm_url, $tm_post, $method, $headers);
 
 		return $organizer;
-	}
-	
-
-	function ticketmachine_log($message, $type) {
-		global $wpdb;
-		$save_array = array(
-			"log_message" => $message,
-			"log_type" => $type,
-			"log_time" => time()
-		);
-
-		$wpdb->insert(
-			$wpdb->prefix . "ticketmachine_log",
-			$save_array
-		);
 	}
 
 	//Check if access token expired
