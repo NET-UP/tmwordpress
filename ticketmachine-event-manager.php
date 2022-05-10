@@ -563,8 +563,6 @@
 	function ticketmachine_apiRequest($tm_url, $tm_post=FALSE, $method="GET", $headers=array()) {
 	  global $tm_globals, $tm_api, $tm_debug;
 
-	  ticketmachine_debug($tm_url);
-
 	  $headers = array();
 	  $headers = ticketmachine_array_push_assoc($headers, 'User-Agent', 'https://www.ticketmachine.de/');
 

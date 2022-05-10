@@ -1,4 +1,5 @@
 # TicketMachine Wordpress Plugin
 
-+   [Change Log (English)](changelog_EN.md)
-+   [Änderungsprotokoll (Deutsch)](changelog_DE.md)
+- [Change Log](readme.txt)
+- [Developer Documentation](docs.md)
+- [Customer Documentation](https://ticketmachine.de/support/)
