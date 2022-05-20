@@ -1,7 +1,6 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_pagination ( $meta, $params ) {
-        ticketmachine_debug($meta);
         $query = $_GET;
         $ticketmachine_output = "";
         if($params['per_page'] < $meta['count_filtered']) {
