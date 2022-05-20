@@ -15,7 +15,7 @@
                 $ticketmachine_output .= "<a class='btn btn-secondary " . $disabled . "'" . $href . ">" . $query['pg'] . "</a>";
             }
 
-            $ticketmachine_output .= "<button class='btn btn-secondary' readonly>" .$params['pg'] . "</button>";
+            $ticketmachine_output .= "<button class='btn btn-secondary disabled' disabled>" .$params['pg'] . "</button>";
 
             if($meta['has_next_page'] && $meta['next'] <  $meta['count_filtered']) {
                 $query['pg'] = $params['pg']+1;
