@@ -20,7 +20,7 @@
             }
             $ticketmachine_output .= "<a class='btn btn-secondary " . $disabled . "'" . $href . "><i class='fas fa-angle-left'></i></a>";
 
-            $ticketmachine_output .= "<span class='btn btn-secondary readonly'>" .$params['pg'] . "</span>";
+            $ticketmachine_output .= "<span class='btn btn-secondary disabled'>" .$params['pg'] . "</span>";
 
             if($meta['has_next_page'] && $meta['next'] <  $meta['count_filtered']) {
                 $query['pg'] = $params['pg']+1;
