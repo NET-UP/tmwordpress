@@ -17,7 +17,7 @@
 
     // Function to easily debug arrays and objects
     function ticketmachine_debug($var){
-        if($_GET['tm_debug'] == 1) {
+        if(isset($_GET['tm_debug'])) {
             print_r("<pre>");
             print_r($var);
             print_r("</pre>");
