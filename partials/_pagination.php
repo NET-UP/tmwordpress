@@ -14,10 +14,10 @@
                 $href = strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result;
                 $disabled = "";
             }else{
-                $href = "";
+                $href = " href='" . $href . "'";
                 $disabled = "disabled";
             }
-            $ticketmachine_output .= "<button class='btn btn-secondary' href='" . $href . "' " . $disabled . "><i class='fas fa-angle-left'></i></button>";
+            $ticketmachine_output .= "<button class='btn btn-secondary'" . $href . $disabled . "><i class='fas fa-angle-left'></i></button>";
 
             $ticketmachine_output .= "<";
 
@@ -27,10 +27,10 @@
                 $href = strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result;
                 $disabled = "";
             }else{
-                $href = "";
+                $href = " href='" . $href . "'";
                 $disabled = "disabled";
             }
-            $ticketmachine_output .= "<button class='btn btn-secondary' href='" . $href . "' " . $disabled . "><i class='fas fa-angle-right'></i></button>";
+            $ticketmachine_output .= "<button class='btn btn-secondary'" . $href . $disabled . "><i class='fas fa-angle-right'></i></button>";
 
             $ticketmachine_output .= '</div>';
         }
