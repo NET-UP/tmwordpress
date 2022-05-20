@@ -667,6 +667,10 @@
 		if(isset($params->approved)) {
 			$tm_url .= "&approved[eq]=" . (int)$params->approved;
 		}
+		
+		if(isset($params->approved)) {
+			$tm_url .= "&limit[eq]=150";
+		}
 
 		
         ticketmachine_debug($tm_url);
