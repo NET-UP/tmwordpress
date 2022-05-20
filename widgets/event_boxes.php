@@ -74,7 +74,7 @@
                     
             $ticketmachine_output .= '<div class="col-12"><div class="float-right btn-group">';
 
-            $ticketmachine_putput .= ticketmachine_pagination($meta, $params);
+            $ticketmachine_output .= ticketmachine_pagination($meta, $params);
             
             $ticketmachine_output .= '</div></div>';
 
