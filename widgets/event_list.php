@@ -114,7 +114,7 @@
                     
                     $ticketmachine_output .= '<div class="float-right btn-group">';
 
-                    debug($meta);
+                    ticketmachine_debug($meta);
 
                     $query = $_GET;
                     if($meta['has_previous_page']) {
