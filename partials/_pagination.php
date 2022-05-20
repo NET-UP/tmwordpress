@@ -2,6 +2,7 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_pagination ( $meta, $params ) {
         ticketmachine_debug($meta);
+        ticketmachine_debug($params);
         $query = $_GET;
         if($params['per_page'] < $meta['count_all']) {
             $ticketmachine_output = '<div class="float-right btn-group">';
