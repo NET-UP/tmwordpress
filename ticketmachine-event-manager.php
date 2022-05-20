@@ -415,6 +415,7 @@
             $ticketmachine_output = "<div class='ticketmachine_page' data-locale=" . esc_html($tm_globals->locale_short) . ">";
             
             if(isset($atts['page'])){
+				include_once "partials/_pagination.php";
                 switch ($atts['page']) {
                     case 'event_list':
                         include_once "partials/_search_header.php";
@@ -440,6 +441,7 @@
                         break;
                 }
             }elseif($atts['widget']){
+				include_once "partials/_pagination.php";
                 switch ($atts['widget']) {
                     case 'event_boxes':
                         include_once "widgets/event_boxes.php";
