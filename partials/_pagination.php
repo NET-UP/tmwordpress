@@ -11,10 +11,11 @@
             if($meta['has_previous_page']) {
                 $query['pg'] = $params['pg']-1;
                 $query_result = http_build_query($query);
-                $href = strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result;
+                $link = strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result;
+                $href = " href='" . $link . "'";
                 $disabled = "";
             }else{
-                $href = " href='" . $href . "'";
+                $href = "";
                 $disabled = "disabled";
             }
             $ticketmachine_output .= "<button class='btn btn-secondary'" . $href . $disabled . "><i class='fas fa-angle-left'></i></button>";
@@ -24,10 +25,11 @@
             if($meta['has_next_page'] && $meta['next'] <  $meta['count_filtered']) {
                 $query['pg'] = $params['pg']+1;
                 $query_result = http_build_query($query);
-                $href = strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result;
+                $link = strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result;
+                $href = " href='" . $link . "'";
                 $disabled = "";
             }else{
-                $href = " href='" . $href . "'";
+                $href = "";
                 $disabled = "disabled";
             }
             $ticketmachine_output .= "<button class='btn btn-secondary'" . $href . $disabled . "><i class='fas fa-angle-right'></i></button>";
