@@ -1,6 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     function ticketmachine_pagination ( $meta, $params ) {
+        ticketmachine_debug($meta);
         $ticketmachine_output = "";
         $query = $_GET;
         if($meta['has_previous_page']) {
