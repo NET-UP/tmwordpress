@@ -18,7 +18,7 @@
                 $href = "";
                 $disabled = "disabled";
             }
-            $ticketmachine_output .= "<button class='btn btn-secondary'" . $href . $disabled . "><i class='fas fa-angle-left'></i></button>";
+            $ticketmachine_output .= "<a class='btn btn-secondary'" . $href . $disabled . "><i class='fas fa-angle-left'></i></a>";
 
             $ticketmachine_output .= "<";
 
@@ -32,7 +32,7 @@
                 $href = "";
                 $disabled = "disabled";
             }
-            $ticketmachine_output .= "<button class='btn btn-secondary'" . $href . $disabled . "><i class='fas fa-angle-right'></i></button>";
+            $ticketmachine_output .= "<a class='btn btn-secondary'" . $href . $disabled . "><i class='fas fa-angle-right'></i></a>";
 
             $ticketmachine_output .= '</div>';
         }
