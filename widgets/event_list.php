@@ -114,6 +114,8 @@
                     
                     $ticketmachine_output .= '<div class="float-right btn-group">';
 
+                    debug($meta);
+
                     $query = $_GET;
                     if($meta['has_previous_page']) {
                         $query['pg'] = $params['pg']-1;
