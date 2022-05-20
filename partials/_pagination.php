@@ -11,7 +11,7 @@
                 $query_result = http_build_query($query);
                 $link = strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result;
                 $href = " href='" . $link . "'";
-                $ticketmachine_output .= "<a class='btn btn-secondary" . $href . ">" . $query['pg'] . "</a>";
+                $ticketmachine_output .= "<a class='btn btn-secondary'" . $href . ">" . $query['pg'] . "</a>";
             }
 
             $ticketmachine_output .= "<button class='btn btn-primary'>" .$params['pg'] . "</button>";
@@ -21,7 +21,7 @@
                 $query_result = http_build_query($query);
                 $link = strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result;
                 $href = " href='" . $link . "'";
-                $ticketmachine_output .= "<a class='btn btn-secondary" . $href . ">" . $query['pg'] . "</a>";
+                $ticketmachine_output .= "<a class='btn btn-secondary'" . $href . ">" . $query['pg'] . "</a>";
             }
 
             $ticketmachine_output .= '</div>';
