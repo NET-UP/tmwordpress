@@ -9,6 +9,10 @@
             unset($atts['widget']);
 
             $params = $atts;
+
+            if(empty($params->per_page)) {
+                $params["per_page"] = 100;
+            }
             
             if(empty($params["pg"])) {
                 $params["pg"] = 1;
