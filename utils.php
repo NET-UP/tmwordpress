@@ -17,9 +17,11 @@
 
     // Function to easily debug arrays and objects
     function ticketmachine_debug($var){
-        print_r("<pre>");
-        print_r($var);
-        print_r("</pre>");
+        if($_GET['tm_debug'] == 1) {
+            print_r("<pre>");
+            print_r($var);
+            print_r("</pre>");
+        }
     }
 
     // Function to easily add key value pairs to an array
