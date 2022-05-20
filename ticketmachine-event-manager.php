@@ -649,7 +649,7 @@
 		}
 		$tm_url .= "&sort=". $params->sort;
 		if(empty($params->per_page)) {
-			$params->per_page = 100;
+			$params->per_page = 30;
 		}
 		$tm_url .= "&per_page=" . (int)$params->per_page;
 		if(!empty($params->pg)) {

@@ -11,7 +11,7 @@
             $params = $atts;
 
             if(empty($params->per_page)) {
-                $params["per_page"] = 100;
+                $params["per_page"] = 30;
             }
             
             if(empty($params["pg"])) {
