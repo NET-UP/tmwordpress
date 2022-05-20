@@ -5,6 +5,7 @@
         ticketmachine_debug($params);
         $query = $_GET;
         $ticketmachine_output = "";
+        $query_result = "";
         if($params['per_page'] < $meta['count_filtered']) {
             $ticketmachine_output .= '<div class="float-right btn-group">';
 
