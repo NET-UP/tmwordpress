@@ -668,14 +668,13 @@
 			$tm_url .= "&approved[eq]=" . (int)$params->approved;
 		}
 
-		echo "Request";
         ticketmachine_debug($tm_url);
 
 		if(isset($tm_url_only) && $tm_url_only == 1) {
 			return $tm_url;
 		}else{
 			$events = (object)ticketmachine_apiRequest($tm_url, $tm_post, $method, $headers);
-			//print_r($events->meta);
+			ticketmachine_debug($events->meta);
 			return $events;
 		}
 	}
