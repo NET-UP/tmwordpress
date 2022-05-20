@@ -4,8 +4,9 @@
         ticketmachine_debug($meta);
         ticketmachine_debug($params);
         $query = $_GET;
+        $ticketmachine_output = "";
         if($params['per_page'] < $meta['count_filtered']) {
-            $ticketmachine_output = '<div class="float-right btn-group">';
+            $ticketmachine_output .= '<div class="float-right btn-group">';
 
             if($meta['has_previous_page']) {
                 $query['pg'] = $params['pg']-1;
