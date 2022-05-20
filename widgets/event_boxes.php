@@ -71,7 +71,12 @@
                 }
             }
             
-            $ticketmachine_output .= ticketmachine_pagination($meta, $params);         
+                    
+            $ticketmachine_output .= '<div class="col-12">';
+
+            $ticketmachine_output .= ticketmachine_pagination($meta, $params);
+            
+            $ticketmachine_output .= '</div>';
 
             if($isWidget == 1){
                 $ticketmachine_output .= "</div>";

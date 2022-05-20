@@ -3,7 +3,7 @@
     function ticketmachine_pagination ( $meta, $params ) {
         ticketmachine_debug($meta);
         $query = $_GET;
-        $ticketmachine_output = '<div class="col-12"><div class="float-right btn-group">';
+        $ticketmachine_output = '<div class="float-right btn-group">';
         if($meta['has_previous_page']) {
             $query['pg'] = $params['pg']-1;
             $query_result = http_build_query($query);
@@ -17,8 +17,8 @@
             $query_result = http_build_query($query);
             $ticketmachine_output .= "<a class='btn btn-secondary' href='" . strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result . "'><i class='fas fa-angle-right'></i></a>";
         }
-        
-        $ticketmachine_output .= '</div></div>';
+
+        $ticketmachine_output .= '</div>';
 
         return $ticketmachine_output;
 	}
