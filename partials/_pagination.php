@@ -11,11 +11,10 @@
                 $query_result = http_build_query($query);
                 $link = strtok($_SERVER["REQUEST_URI"], '?') . "?" . $query_result;
                 $href = " href='" . $link . "'";
-                $disabled = "";
                 $ticketmachine_output .= "<a class='btn btn-secondary" . $href . ">" . $query['pg'] . "</a>";
             }
 
-            $ticketmachine_output .= "<button class='btn btn-primary' disabled' disabled'>" .$params['pg'] . "</button>";
+            $ticketmachine_output .= "<button class='btn btn-primary'>" .$params['pg'] . "</button>";
 
             if($meta['has_next_page'] && $meta['next'] <  $meta['count_filtered']) {
                 $query['pg'] = $params['pg']+1;
