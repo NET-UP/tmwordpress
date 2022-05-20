@@ -112,11 +112,7 @@
 
                     $ticketmachine_output .= '</ul>';
                     
-                    $ticketmachine_output .= '<div class="float-right btn-group">';
-
                     $ticketmachine_output .= ticketmachine_pagination($meta, $params);
-
-                    $ticketmachine_output .= '</div>';
 
                 $ticketmachine_output .= '</div>';
 

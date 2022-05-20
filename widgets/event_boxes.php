@@ -71,12 +71,7 @@
                 }
             }
             
-                    
-            $ticketmachine_output .= '<div class="col-12"><div class="float-right btn-group">';
-
-            $ticketmachine_output .= ticketmachine_pagination($meta, $params);
-            
-            $ticketmachine_output .= '</div></div>';
+            $ticketmachine_output .= ticketmachine_pagination($meta, $params);         
 
             if($isWidget == 1){
                 $ticketmachine_output .= "</div>";
