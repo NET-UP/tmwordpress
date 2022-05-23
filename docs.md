@@ -58,6 +58,7 @@ Send a GET or POST request to the specified API endpoint and return the response
     ticketmachine_debug($object)
 
 Returns a preformatted `print_r($object)` for a nicer way to debug objects and arrays.
+To view the debug output, simply add "tm_debug" to the URL as a parameter. Ex. https://customerurl.com/?tm_debug
 
 ---
 

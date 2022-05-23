@@ -10,7 +10,7 @@
 
             $params = $atts;
 
-            if(empty($params->per_page)) {
+            if(empty($params['per_page'])) {
                 $params["per_page"] = 30;
             }
             
