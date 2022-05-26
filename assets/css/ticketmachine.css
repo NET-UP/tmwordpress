@@ -375,6 +375,11 @@ body .ticketmachine_page iframe {
 }
 
 /* BS Overrides */
+.ticketmachine_page em {
+  font-style: initial;
+  font-size: initial;
+}
+
 .ticketmachine_page .btn {
   --bs-btn-color: inherit;
   --bs-btn-active-border-color: transparent;
