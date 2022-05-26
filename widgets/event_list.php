@@ -72,7 +72,7 @@
                         $ticketmachine_output .= '<li class="media mx-0 mt-2 p-3">';
 
                         if(isset($atts['show_image']) && $atts['show_image'] > 0){
-                            $ticketmachine_output .= '<a class="mr-3 media-img" href="' . $event->link . '" style="background-image:url('. $event->event_img_url .')"></a>';
+                            $ticketmachine_output .= '<a class="me-3 media-img" href="' . $event->link . '" style="background-image:url('. $event->event_img_url .')"></a>';
                         }
                                             
                             $ticketmachine_output .= '<div class="media-body">';

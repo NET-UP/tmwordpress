@@ -5,9 +5,9 @@
             $tm_url = htmlentities(urldecode($_SERVER['REQUEST_URI']));
             $tag = "tag=" . $tm_globals->tag;
 
-            $ticketmachine_output = '<label class="mr-3 ml-1">' . esc_html__("Tags", "ticketmachine-event-manager") . ':</label> 
+            $ticketmachine_output = '<label class="me-3 ms-1">' . esc_html__("Tags", "ticketmachine-event-manager") . ':</label> 
                         <div class="card-meta-tag keyword">' . $tm_globals->tag . ' 
-                            <a class="ml-2" href="' . str_replace($tag, "", esc_url($tm_url)) .'">
+                            <a class="ms-2" href="' . str_replace($tag, "", esc_url($tm_url)) .'">
                                 <i class="fa fa-times"></i>
                             </a>
                         </div>';

@@ -19,7 +19,7 @@
 		<div class="row">
 			<div class="col-xl-9">
 				
-				<h1 class="wp-heading-inline mr-3 mb-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php esc_html_e('Settings', 'ticketmachine-event-manager') ?></h1>
+				<h1 class="wp-heading-inline me-3 mb-3">TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php esc_html_e('Settings', 'ticketmachine-event-manager') ?></h1>
 			
 				<h2 class="nav-tab-wrapper">
 					<a href="?page=ticketmachine_settings&tab=design" class="nav-tab <?php echo $active_tab == 'design' ? 'nav-tab-active' : ''; ?>">

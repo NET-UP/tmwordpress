@@ -478,9 +478,9 @@ if( current_user_can('edit_posts') ) {
                 <div class="row">
                     <div class="col-xl-9">
                         
-                        <h1 class="wp-heading-inline mr-3 mb-3 mb-md-0">
+                        <h1 class="wp-heading-inline me-3 mb-3 mb-md-0">
                             TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php esc_html_e('Events', 'ticketmachine-event-manager'); ?>
-                            <a href="?page=ticketmachine_events&action=edit" class="button button-secondary ml-2 mb-3 mb-md-0"><?php esc_html_e('Add','ticketmachine-event-manager'); ?></a>
+                            <a href="?page=ticketmachine_events&action=edit" class="button button-secondary ms-2 mb-3 mb-md-0"><?php esc_html_e('Add','ticketmachine-event-manager'); ?></a>
                         </h1>
                             
                         <!-- Forms are NOT created automatically, so you need to wrap the table in one to use features like bulk actions -->

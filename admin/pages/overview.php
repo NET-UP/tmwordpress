@@ -47,8 +47,8 @@
                 <br>
                 <p class="">
                     <a href="?page=ticketmachine_settings&tab=design"><?php esc_html_e("Customize your theme", "ticketmachine-event-manager"); ?></a>
-                    <a class="ml-3" href="?page=ticketmachine_events&action=edit"><?php esc_html_e("Create an event", "ticketmachine-event-manager"); ?></a>
-                    <a class="ml-3 d-none" href="?page=ticketmachine_events&action=edit"><?php esc_html_e("What's new?", "ticketmachine-event-manager"); ?></a>
+                    <a class="ms-3" href="?page=ticketmachine_events&action=edit"><?php esc_html_e("Create an event", "ticketmachine-event-manager"); ?></a>
+                    <a class="ms-3 d-none" href="?page=ticketmachine_events&action=edit"><?php esc_html_e("What's new?", "ticketmachine-event-manager"); ?></a>
                 </p>
             </div>
         
@@ -59,9 +59,9 @@
     <div class="row">
         <div class="col-xl-9">
 
-            <h1 class="wp-heading-inline mr-3 mb-3">
+            <h1 class="wp-heading-inline me-3 mb-3">
                 TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php esc_html_e('Overview', 'ticketmachine-event-manager') ?>
-                <a target="_blank" href="/<?php echo esc_html($tm_globals->events_slug); ?>" class="button button-secondary ml-2"><?php esc_html_e("Go to live webpage", "ticketmachine-event-manager"); ?></a>
+                <a target="_blank" href="/<?php echo esc_html($tm_globals->events_slug); ?>" class="button button-secondary ms-2"><?php esc_html_e("Go to live webpage", "ticketmachine-event-manager"); ?></a>
             </h1>
 
             <div class="row">

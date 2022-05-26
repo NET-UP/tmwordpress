@@ -32,14 +32,14 @@
     
     
                                             if(isset($_GET['display']) && sanitize_text_field($_GET['display']) == "calendar"){
-                                $ticketmachine_output .= "<div class='btn-group ml-0 ml-sm-4'>
+                                $ticketmachine_output .= "<div class='btn-group ms-0 ms-sm-4'>
                                                     <a href='#' aria-label='" . esc_attr__("To previous month", "ticketmachine-event-manager") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
                                                     <a href='#' class='btn btn-secondary' id='calendar-title'></a>
                                                     <a href='#' aria-label='" . esc_attr__("To next month", "ticketmachine-event-manager") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
                                                 </div>";
                                             }
     
-                                            $ticketmachine_output .= "<div class='btn-group ml-sm-4'>";
+                                            $ticketmachine_output .= "<div class='btn-group ms-sm-4'>";
                                             
                                                 if($tm_globals->show_boxes){
                                                     $ticketmachine_output .= "<a class='btn ";
