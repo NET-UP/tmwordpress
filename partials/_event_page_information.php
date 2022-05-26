@@ -9,11 +9,12 @@
         }
 
         $ticketmachine_output = '
-        
             <div class="title-height no-height-mobile">
-                <h5><span><h3 class="d-inline-block">' . esc_html($event->ev_name) . '</h3></span></h5>
+                <h5><span><h3 class="d-inline-block">' . esc_html($event->ev_name) . '</h3>
+                    </span>
+                </h5>
             </div>
-            <card class="card mb-3">
+            <div class="card mb-3">
                 <div class="card-img-top ratio-16-9" style="background-image:url('. esc_url($event->event_img_url) .')">
                     <div class="event-badges"><div class="badge badge-danger float-right mt-1 me-2">'. esc_html($event->rules["badge"]) .'</div></div>
                 </div>
@@ -67,7 +68,7 @@
                     </div>
 
                 </div>
-            </card>
+            </div>
         ';
 
         return $ticketmachine_output;
