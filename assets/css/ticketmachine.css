@@ -378,6 +378,8 @@ body .ticketmachine_page iframe {
 .ticketmachine_page .btn {
   --bs-btn-color: inherit;
   --bs-btn-active-border-color: transparent;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .ticketmachine_page a {
