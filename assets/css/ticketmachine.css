@@ -380,6 +380,13 @@ body .ticketmachine_page iframe {
   font-size: initial;
 }
 
+.ticketmachine_page h5 > em,
+.ticketmachine_page h4 > em,
+.ticketmachine_page h3 > em,
+.ticketmachine_page h2 > em {
+  font-size: inherit;
+}
+
 .ticketmachine_page .btn {
   --bs-btn-color: inherit;
   --bs-btn-active-border-color: transparent;
