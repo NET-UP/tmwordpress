@@ -25,9 +25,7 @@
                                         <div class='input-group'>
                                             <input name='q' class='form-control' placeholder='" . esc_attr__("Search for events", "ticketmachine-event-manager") . "' value='" . esc_attr__($tm_globals->search_query) . "'/>
                                             <input type='hidden' name='tag' value='" . esc_html($tm_globals->tag) . "'/>
-                                            <div class='input-group-append'>
-                                                <button type='submit' alt='" . esc_attr__("Submit search", "ticketmachine-event-manager") . "' class='btn btn-secondary form-control'><i class='fas fa-search'></i></button>
-                                            </div>
+                                            <button type='submit' alt='" . esc_attr__("Submit search", "ticketmachine-event-manager") . "' class='btn btn-secondary'><i class='fas fa-search'></i></button>
                                             <div class='col-12 d-sm-none mb-3'></div>";
     
     
