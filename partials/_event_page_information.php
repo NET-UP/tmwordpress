@@ -10,7 +10,11 @@
 
         $ticketmachine_output = '
             <div class="title-height no-height-mobile">
-                <h3>' . esc_html($event->ev_name) . '</h3>
+                <h5>
+                    <span>
+                        <h3 class="d-inline-block">' . esc_html($event->ev_name) . '</h3>
+                    </span>
+                </h5>
             </div>
             <div class="card mb-3">
                 <div class="card-img-top ratio-16-9" style="background-image:url('. esc_url($event->event_img_url) .')">
