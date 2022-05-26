@@ -1,195 +1,201 @@
 .tm-admin-page label {
-    display:inline-block !important;
-    font-weight:500;
-    margin-bottom: 0.25rem;
+  display: inline-block !important;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
 }
 
-.tm-admin-page .form-group, .tm-admin-page .input-group {
-    margin-bottom: 0.5rem;
+.tm-admin-page .form-group,
+.tm-admin-page .input-group {
+  margin-bottom: 0.5rem;
 }
 .tm-admin-page .form-control {
-    display: block;
-    width: 100%;
-    height: calc(1.5em + .75rem + 2px);
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.tm-admin-page .form-control:disabled, .tm-admin-page .form-control:read-only {
-    background-color: #f0f0f1;
-    color: #949494;
+.tm-admin-page .form-control:disabled,
+.tm-admin-page .form-control:read-only {
+  background-color: #f0f0f1;
+  color: #949494;
 }
 
 .tm-admin-page .email-icon-right {
-    position:relative;
+  position: relative;
 }
 
 .tm-admin-page .email-icon-right:after {
-    content: "@";
-    position: absolute;
-    right: 10px;
-    top: 8px;
-    font-size: 20px;
+  content: "@";
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  font-size: 20px;
 }
 
 .tm-admin-page .tm-button {
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    width: 100%;
-    background-color: #ed7b25;
-    padding: 7px 0px;
-    border: 1px solid #ed7b25;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  width: 100%;
+  background-color: #ed7b25;
+  padding: 7px 0px;
+  border: 1px solid #ed7b25;
 }
 
 .tm-admin-page .tm-icon-big {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .tm-admin-page .tm-input {
-    width: 100%;
-    height: 35px;
-    border-left-width: 4px;
-    border-left-color: #ed7b25;
+  width: 100%;
+  height: 35px;
+  border-left-width: 4px;
+  border-left-color: #ed7b25;
 }
 
-
 .tm-admin-page img#image-preview {
-    margin-bottom: 7px;
+  margin-bottom: 7px;
 }
 
 .tm-admin-page .inside-pad {
-    padding: 10px 20px 20px;
+  padding: 10px 20px 20px;
 }
 
 .tm-admin-page .bootstrap-datetimepicker-widget {
-    z-index:99999;
+  z-index: 99999;
 }
 
 .tm-admin-page .bootstrap-tagsinput > input[type="text"] {
-    width: 100%;
-    display: block;
-    margin-top: 10px;
-    padding: 3px 8px;
+  width: 100%;
+  display: block;
+  margin-top: 10px;
+  padding: 3px 8px;
 }
 
 .tm-admin-page .tag.label {
-    padding: 3px 11px;
-    margin-bottom: 3px;
-    display: inline-block;
-    border-radius: 3px;
-    background: #007cba;
-    border-color: #007cba;
-    color: #fff;
-    text-decoration: none;
-    text-shadow: none;
+  padding: 3px 11px;
+  margin-bottom: 3px;
+  display: inline-block;
+  border-radius: 3px;
+  background: #007cba;
+  border-color: #007cba;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
 }
 
 .tm-admin-page .bootstrap-tagsinput .tag [data-role="remove"] {
-    margin-left: 8px;
-    cursor: pointer;
+  margin-left: 8px;
+  cursor: pointer;
 }
 
 .tm-admin-page .bootstrap-tagsinput .tag [data-role="remove"]:after {
-    content: "x";
-    padding: 0px 2px;
+  content: "x";
+  padding: 0px 2px;
 }
 
 .tm-admin-page .hndle {
-    cursor:default !important;
+  cursor: default !important;
 }
 
 .tm-admin-page .fullw-input {
-    width: 100%;
-    display: block;
-    padding: 3px 8px;
+  width: 100%;
+  display: block;
+  padding: 3px 8px;
 }
 
-.tm-admin-page input[type=checkbox]:checked:before {
-    color: #ed7b25;
+.tm-admin-page input[type="checkbox"]:checked:before {
+  color: #ed7b25;
 }
 
 .tm-admin-page .container-md {
-    max-width: 395px;
+  max-width: 395px;
 }
 
 .tm-admin-page .center-center {
-    margin: 0 auto;
-    padding: 5.5% 0 0;
+  margin: 0 auto;
+  padding: 5.5% 0 0;
 }
 
 .tm-admin-page .box {
-    background: #FFF;
-    border-radius: 3px;
-    border: 1px solid#DDD;
-    font-size:15px;
-    line-height:20px;
-    padding:0;
-    position: relative;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid#DDD;
+  font-size: 15px;
+  line-height: 20px;
+  padding: 0;
+  position: relative;
 }
 
 .tm-admin-page .box .box-body {
-    padding: 1em 1.25em;
+  padding: 1em 1.25em;
 }
 
 .tm-admin-page .box .box-body p {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .tm-admin-page .box .box-title {
-    background: #f5f5f5;
-    border-bottom: 1px solid #EEE;
-    padding: 1em 1.25em;
+  background: #f5f5f5;
+  border-bottom: 1px solid #eee;
+  padding: 1em 1.25em;
 }
 
 .tm-admin-page .box .close {
-    position: absolute;
-    right: 25px;
-    top: 17px;
+  position: absolute;
+  right: 25px;
+  top: 17px;
 }
 
 .tm-admin-page .bg-primary {
-    background: #ee7c26 !important;
+  background: #ee7c26 !important;
 }
 .tm-admin-page .box-primary {
-    border-color: #ee7c26 !important;
+  border-color: #ee7c26 !important;
 }
 
 .tm-admin-page .fa-ul li i {
-    color: #ee7c26;
+  color: #ee7c26;
 }
 
 .tm-admin-page .btn-primary {
-    background: #ee7c26;
-    border-color: #ee7c26;
-    box-shadow: none !important;
-    text-shadow: none !important;
+  background: #ee7c26;
+  border-color: #ee7c26;
+  box-shadow: none !important;
+  text-shadow: none !important;
 }
 
-.tm-admin-page .btn-primary:hover, 
+.tm-admin-page .btn-primary:hover,
 .tm-admin-page .btn-primary:active {
-    background: #dc6f1c;
-    border-color: #dc6f1c;
+  background: #dc6f1c;
+  border-color: #dc6f1c;
 }
 
 .tm-admin-page .float-right {
-    float: right !important;
+  float: right !important;
 }
 .tm-admin-page .float-left {
-    float: left !important;
+  float: left !important;
 }
 .tm-admin-page .float-none {
-    float: none !important;
+  float: none !important;
 }
 
-.tm-admin-page .table-vertical-top th, .tm-admin-page .table-vertical-top td {
-    vertical-align: top !important;
+.tm-admin-page .table-vertical-top th,
+.tm-admin-page .table-vertical-top td {
+  vertical-align: top !important;
+}
+
+.tm-admin-page .text-white {
+  color: #fff;
 }
