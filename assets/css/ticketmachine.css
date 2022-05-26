@@ -1,264 +1,265 @@
 .ellipsis {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 body .ticketmachine_page {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-	line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.5;
 }
 
 body .ticketmachine_page .row {
-	margin-bottom:0;
+  margin-bottom: 0;
 }
 
 body .ticketmachine_page a {
-	letter-spacing: normal;
+  letter-spacing: normal;
 }
 
 body .ticketmachine_page a:not(.btn) {
-	text-decoration:none;
-	font-weight:500;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 body .ticketmachine_page a:not(.btn):hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 body .ticketmachine_page a.btn {
-	text-decoration:none;
+  text-decoration: none;
 }
 
-body .ticketmachine_page .card-img-top .event-badges, 
+body .ticketmachine_page .card-img-top .event-badges,
 body .ticketmachine_page .media-img .event-badges {
-    position: absolute;
-    top: .25rem;
-    right: .5rem;
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
 }
 
 body .ticketmachine_page .badge {
-	padding: 4px 7px!important;
-    font-size: 0.8em;
-    color: #FFF !important;
-    border: none;
+  padding: 4px 7px !important;
+  font-size: 0.8em;
+  color: #fff !important;
+  border: none;
 }
 
 body .ticketmachine_page .card {
-	/*overflow: hidden;*/
+  /*overflow: hidden;*/
 }
 
 body .ticketmachine_page .card-img-top {
-	background-size: cover;
-	background-position: center center;
-	background-color: #f7f7f7;
-	border-bottom: 1px solid rgba(0,0,0,.025);
+  background-size: cover;
+  background-position: center center;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.025);
 }
 
 body .ticketmachine_page .card-img-top.full {
 }
 
 body .ticketmachine_page .ratio-16-9 {
-    width: 100%;
-    padding-top: 56.25%;
-    height: 0
+  width: 100%;
+  padding-top: 56.25%;
+  height: 0;
 }
 
 body .ticketmachine_page .ratio-1-1 {
-    width: 100%;
-    padding-top: 100%;
-    height: 0
+  width: 100%;
+  padding-top: 100%;
+  height: 0;
 }
 
 body .ticketmachine_page .card-meta-tag.keyword {
-    display: inline-block;
-    background: #eee;
-    padding: .2em 1em;
-	border-radius: 1em;
-	margin-bottom: 2px;
-	margin-right: 2px;
+  display: inline-block;
+  background: #eee;
+  padding: 0.2em 1em;
+  border-radius: 1em;
+  margin-bottom: 2px;
+  margin-right: 2px;
 }
 
 body .ticketmachine_page .fc-event {
-	margin-bottom:2px;
+  margin-bottom: 2px;
 }
 
-
 body .ticketmachine_page .card-meta {
-	font-weight: 500;
+  font-weight: 500;
 }
 
 body .ticketmachine_page .card-meta-tag {
-	display: inline-block;
-	padding-right: 1em;
+  display: inline-block;
+  padding-right: 1em;
 }
 
 body .ticketmachine_page .card-meta-tag.keyword {
-	display: inline-block;
-	padding: 0.2em 1em;
-	border-radius: 1em;
+  display: inline-block;
+  padding: 0.2em 1em;
+  border-radius: 1em;
 }
 
 body .ticketmachine_page .card-date {
-	display: inline-block;
-	position: absolute;
-	width: 3.25em;
-	height: 3.25em;
-	overflow: hidden;
-	border: 1px solid #eee;
-	border-radius: 100%;
-	text-align: center;
-	margin-top: -3px;
-	margin-left: -3px;
+  display: inline-block;
+  position: absolute;
+  width: 3.25em;
+  height: 3.25em;
+  overflow: hidden;
+  border: 1px solid #eee;
+  border-radius: 100%;
+  text-align: center;
+  margin-top: -3px;
+  margin-left: -3px;
 }
 
 body .ticketmachine_page .card-day {
-	font-weight: 500;
-	font-size: 1.1rem;
-	line-height: 1rem;
-	padding-top: 0.5em;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1rem;
+  padding-top: 0.5em;
 }
 
 body .ticketmachine_page .card-month {
-	font-weight: 500;
-	text-transform: uppercase;
-	font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.7rem;
 }
 
 body .ticketmachine_page h5.card-title {
-	min-height: 2.65em;
-    max-height: 3.65em;
-	margin-left: 3.6em;
-	margin-right: 0.5em;
-	overflow-y: hidden;
-	font-size: 1rem;
+  min-height: 2.65em;
+  max-height: 3.65em;
+  margin-left: 3.6em;
+  margin-right: 0.5em;
+  overflow-y: hidden;
+  font-size: 1rem;
 }
 
 body .ticketmachine_page .card-price {
-	right: 1.1em;
-	position: absolute;
-	top: 1.3em;
-	font-weight: 500;
-	display: none !important;
+  right: 1.1em;
+  position: absolute;
+  top: 1.3em;
+  font-weight: 500;
+  display: none !important;
 }
 
 body .ticketmachine_page .card-group .card:hover {
-	box-shadow: 0 1px 5px rgba(124, 124, 124, 0.1);
+  box-shadow: 0 1px 5px rgba(124, 124, 124, 0.1);
 }
 
-body .ticketmachine_page .card-group .card:hover>.card-img-top {
-	opacity: 0.95;
+body .ticketmachine_page .card-group .card:hover > .card-img-top {
+  opacity: 0.95;
 }
 
 body .ticketmachine_page .card-state {
-	background: #ffffff57;
-	font-weight: 500;
-	height: 100%;
-	align-items: center;
-	display: flex;
-	justify-content: center;
+  background: #ffffff57;
+  font-weight: 500;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-body .ticketmachine_page .card-state>div {
-	background: #ffffff;
-	padding: 0.5em 20em;
-	border: 1px solid #00000021;
-	transform: rotate(342deg);
+body .ticketmachine_page .card-state > div {
+  background: #ffffff;
+  padding: 0.5em 20em;
+  border: 1px solid #00000021;
+  transform: rotate(342deg);
 }
 
 body .ticketmachine_page .btn-primary:hover,
 body .ticketmachine_page .btn-primary:active,
 body .ticketmachine_page .btn-primary:focus {
-	text-decoration:none !important;
+  text-decoration: none !important;
 }
 
 body .ticketmachine_page .btn {
-	min-width: 44px;
+  min-width: 44px;
 }
 
 body .ticketmachine_page .btn-primary.disabled,
 body .ticketmachine_page .btn-primary:disabled {
-	opacity: 0.3;
+  opacity: 0.3;
 }
 
 body .ticketmachine_page .line-header {
-	position: relative;
-    text-align: center;    
-    margin-bottom: 1rem;
-    margin-top: 0.5rem;
+  position: relative;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
 
 body .ticketmachine_page .line-header span {
-    background: #FFF;
-    padding: 0 10px;
-    position: relative;    
-	font-size: 16pt;
+  background: #fff;
+  padding: 0 10px;
+  position: relative;
+  font-size: 16pt;
 }
 
 body .ticketmachine_page .line-header:before {
-    content: '';
-    display: block;
-    border-top: solid 1px rgba(0,0,0,0.05);
-    width: 100%;
-    height: 2px;
-    position: absolute;
-    top: 50%;
-    z-index: 0;
+  content: "";
+  display: block;
+  border-top: solid 1px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  z-index: 0;
 }
 
 body .ticketmachine_page li.media {
-	border: 1px solid #DDD;
-	background:#FFF;
-	border-radius:3px;
-	margin-left: 0 !important;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 3px;
+  margin-left: 0 !important;
 }
 
 body .ticketmachine_page .ticketmachine_widget_event_list li.media {
-    border: none;
-    border-bottom: 1px solid #DDD;
-    padding-bottom: 0.5rem;
-    margin-bottom: 0.5rem;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 body .ticketmachine_page .ticketmachine_widget_event_list li.media:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 body .ticketmachine_page .media-img {
-	width:80px;
-	height:80px;
-	background-color: #EEE;
-	background-position: center center;
-    background-size: cover;
-    border-radius: 3px;
+  width: 80px;
+  height: 80px;
+  background-color: #eee;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 3px;
 }
 
 body .ticketmachine_page .ticketmachine_widget_event_list ul {
-	margin-left:0;
+  margin-left: 0;
 }
 
 body .ticketmachine_page .media-body {
-	word-break: break-word;
+  word-break: break-word;
 }
 
 body .ticketmachine_page .title-height {
-	height:50px;
+  height: 50px;
 }
 
 body .ticketmachine_page .read-more {
-	min-width:auto !important;
+  min-width: auto !important;
 }
 
 body .ticketmachine_page .allow-google-maps-container {
-	width: 100%;
-    height: 300px;
-    background: #EEE;
-	position: relative;
-	border-radius: 3px;
-	border: 1px solid #DDD;
+  width: 100%;
+  height: 300px;
+  background: #eee;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #ddd;
 }
 
 body .ticketmachine_page .hidden {
-	display:none;
+  display: none;
 }
 
 body .ticketmachine_page .vertical-center {
@@ -267,110 +268,150 @@ body .ticketmachine_page .vertical-center {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  width:100%;
+  width: 100%;
 }
 
 body .ticketmachine_page .card-text {
-	overflow: hidden;
-	position:relative;
-}  
+  overflow: hidden;
+  position: relative;
+}
 
 body .ticketmachine_page .card-text.read-more-enabled.closed {
-	max-height: 170px;
-}  
-
-
-
+  max-height: 170px;
+}
 
 /* Calendar */
 body .ticketmachine_page #calendar .fc-title {
-	white-space: normal;
+  white-space: normal;
 }
 
 body .ticketmachine_page #calendar .fc-day-grid-event {
-    padding: 5px;
-    font-size: 1em;
-	border-width: 0;
+  padding: 5px;
+  font-size: 1em;
+  border-width: 0;
 }
 
 body .ticketmachine_page #calendar .fc-day-grid-event .fc-time {
-    display: none;
+  display: none;
 }
 
 body .ticketmachine_page #calendar .fc-scroller {
-   overflow: visible !important;
+  overflow: visible !important;
 }
 
 body .ticketmachine_page #calendar .fc-row {
-	min-height:3em;
-	height: auto !important;
+  min-height: 3em;
+  height: auto !important;
 }
 
 body .ticketmachine_page #calendar .fc-row .fc-content-skeleton td {
-	border-color: #dee2e6;
+  border-color: #dee2e6;
 }
 
 body .ticketmachine_page .fc-today.alert.alert-info {
-    padding: 0;
+  padding: 0;
 }
 
 body .ticketmachine_page #calendar .table-bordered {
-    margin: 0;
+  margin: 0;
 }
 
-body .ticketmachine_page #calendar .table-bordered thead td, body .ticketmachine_page .table-bordered thead th {
-    border-bottom-width: 1px;
+body .ticketmachine_page #calendar .table-bordered thead td,
+body .ticketmachine_page .table-bordered thead th {
+  border-bottom-width: 1px;
 }
 
 body .ticketmachine_page #calendar .fc-head tr {
-    background: #f7f7f7;
+  background: #f7f7f7;
 }
 
 body .ticketmachine_page #calendar .fc-head tr th {
-    padding: 0.75em 0;
+  padding: 0.75em 0;
 }
 
 body .ticketmachine_page #calendar .fc-list-empty-wrap2 {
-    position: relative;
+  position: relative;
 }
 
 body .ticketmachine_page td.fc-today {
-    background: rgb(238 125 38 / 0.1);
-	border-radius: 0;
+  background: rgb(238 125 38 / 0.1);
+  border-radius: 0;
 }
 
 body .ticketmachine_page .fc-content-skeleton tr {
-	background: none !important;
+  background: none !important;
 }
 
 body .ticketmachine_page #calendar .fc-bg .fc-past {
-    background: rgba(0,0,0,0.03);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 body .ticketmachine_page .alert-danger {
-	border-color: #f5c6cb;
+  border-color: #f5c6cb;
 }
 
 body .ticketmachine_page .alert-warning {
-	border-color: #ffeeba;
+  border-color: #ffeeba;
 }
 
 body .ticketmachine_page .title-height h3 {
-	font-size: 19px !important;
+  font-size: 19px !important;
 }
 
 body .ticketmachine_page .alert-success {
-	border-color: #c3e6cb;
+  border-color: #c3e6cb;
 }
 
 body .ticketmachine_page iframe {
-	background: #f1f1f1;
-	border: 1px solid rgba(0,0,0,.025);
-	border-radius: 3px;
+  background: #f1f1f1;
+  border: 1px solid rgba(0, 0, 0, 0.025);
+  border-radius: 3px;
 }
 
 @media only screen and (max-width: 991px) {
-	body .no-height-mobile {
-	  height: auto !important;
-	}
+  body .no-height-mobile {
+    height: auto !important;
+  }
+}
+
+/* BS Overrides */
+.ticketmachine_page .btn {
+  --bs-btn-color: inherit;
+  --bs-btn-active-border-color: transparent;
+}
+
+.ticketmachine_page a {
+  text-decoration: none;
+}
+
+.ticketmachine_page li.media {
+  display: flex;
+}
+
+.ticketmachine_page .navbar > .container {
+  padding: 0;
+}
+
+.ticketmachine_page input,
+select,
+textarea,
+.form-control {
+  box-shadow: none !important;
+}
+
+.ticketmachine_page select.form-control {
+  appearance: revert;
+}
+
+.ticketmachine_page .navbar {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.ticketmachine_page .navbar .navbar-nav {
+  flex-direction: row;
+}
+
+.ticketmachine_page .navbar .nav-link {
+  padding: 0.5rem;
 }
