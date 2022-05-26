@@ -60,7 +60,6 @@
         }
 
         $ticketmachine_output .= '<div class="card-meta mt-2">';
-
                     foreach($event->tags as $tag) {
                         $ticketmachine_output .= "<a href='/" . esc_html($tm_globals->events_slug) . "?tag=" . esc_html($tag) . "' class='card-meta-tag keyword'>". $tag ."</a>";
                     }
