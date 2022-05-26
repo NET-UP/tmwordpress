@@ -11,7 +11,9 @@
         $ticketmachine_output = '
             <div class="title-height no-height-mobile">
                 <h5>
-                    <h3 class="d-inline-block">' . esc_html($event->ev_name) . '</h3>
+                    <div>
+                        <h3 class="d-inline-block">' . esc_html($event->ev_name) . '</h3>
+                    </div>
                 </h5>
             </div>
             <div class="card mb-3">
