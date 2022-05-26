@@ -12,7 +12,7 @@
             <div class="title-height no-height-mobile">
                 <h5>
                     <div>
-                        <h3 class="d-inline-block">' . esc_html($event->ev_name) . '</h3>
+                        <h3>' . esc_html($event->ev_name) . '</h3>
                     </div>
                 </h5>
             </div>
