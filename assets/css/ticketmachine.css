@@ -226,6 +226,7 @@ body .ticketmachine_page .ticketmachine_widget_event_list li.media:last-child {
 
 body .ticketmachine_page .media-img {
   width: 80px;
+  min-width: 80px;
   height: 80px;
   background-color: #eee;
   background-position: center center;
