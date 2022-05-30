@@ -87,6 +87,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.6.2 =
+* Fixed responsiveness of images in list view
+
 = 1.6.1 =
 * Upgraded Plugin to Bootstrap 5
 * Removed reliance on jQuery
