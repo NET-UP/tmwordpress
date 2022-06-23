@@ -105,6 +105,7 @@ body .ticketmachine_page .card-date {
   position: absolute;
   width: 3.25em;
   height: 3.25em;
+  left: 1.25rem;
   overflow: hidden;
   border: 1px solid #eee;
   border-radius: 100%;
