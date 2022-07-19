@@ -93,7 +93,7 @@
                                     <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("d.m.Y", $event->ev_date) .'</div> 
                                     <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. $dateoutput .'</div>';
                                 }
-                                $ticketmachine_output .= '<div class="event-badges"><div class="badge bg-danger float-right mt-1 me-2">'. esc_html($event->rules["badge"]) .'</div></div>';
+                                $ticketmachine_output .= '<div class="badge bg-danger float-right m-0">'. esc_html($event->rules["badge"]) .'</div>';
                             }
 
                             $ticketmachine_output .= '<h5 class="mt-0 mb-1"><a class="tm-list-title" href="' . $event->link . '">' . $event->ev_name . '</a></h5>';
