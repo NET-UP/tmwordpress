@@ -74,6 +74,10 @@
                     $errors[] = "No event title was set";
                 }
 
+                if(empty($tm_post['artist'])) {
+                    $tm_post['artist'] = "";
+                }
+
                 if(isset($tm_post['description'])) {
                     $tm_post['description'] = sanitize_text_field(strip_shortcodes($tm_post['description']));
                 }
