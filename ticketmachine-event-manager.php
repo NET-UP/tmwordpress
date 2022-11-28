@@ -388,11 +388,8 @@
 	// Run when plugin is deactivated
     function ticketmachine_deactivate( ) {
 	}
-	
-	// Run only if TicketMachine shortcode is found on current page
-	function ticketmachine_initialize( $atts ) {
-			
-        global $tm_globals, $tm_api, $wpdb;
+
+	function ticketmachine_enqueue_assets() {
 		include_once( plugin_dir_path( __FILE__ ) . 'assets/css/custom.php');
 		
 		//Custom Styles
@@ -420,6 +417,14 @@
 		wp_enqueue_script( 'iCal_JS' );
 		//FileSaver
 		wp_enqueue_script( 'fileSaver_JS' );
+	}
+	
+	// Run only if TicketMachine shortcode is found on current page
+	function ticketmachine_initialize( $atts ) {
+			
+        global $tm_globals, $tm_api, $wpdb;
+
+		tm_enqueue_assets();
 
 		include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
 		include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
@@ -511,6 +516,9 @@
         wp_register_script( 'iCal_JS', plugins_url('assets/js/ext/ics.js', __FILE__ ) );
         //FileSaver
 		wp_register_script( 'fileSaver_JS', plugins_url('assets/js/ext/filesaver.js', __FILE__ ) );
+		if(is_admin()){ 
+			ticketmachine_enqueue_assets();
+		}
     }
 	
 	// Precompile calendar dependencies
@@ -534,23 +542,6 @@
 	
 	// Run only if inside of admin backend
     if(is_admin()){
-		include_once( plugin_dir_path( __FILE__ ) . 'assets/css/custom.php');
-		//Custom Styles
-		wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
-		wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
-		//Underscore
-		wp_enqueue_script( 'underscore' );
-
-		wp_enqueue_script( 'jquery-ui-datepicker' );
-		wp_enqueue_style( 'jquery-ui_CSS' );
-		//Cookies
-		wp_enqueue_script( 'cookies_JS' );
-		//Popper
-		wp_enqueue_script( 'popper_JS' );
-		//Bootstrap
-		wp_enqueue_script( 'bootstrap-4_JS' );
-		wp_enqueue_style( 'boostrap-4_CSS' );
-
         include_once( plugin_dir_path( __FILE__ ) . 'admin/admin.php');
     }
 
