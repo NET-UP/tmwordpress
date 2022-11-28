@@ -393,6 +393,7 @@
 	function ticketmachine_initialize( $atts ) {
 			
         global $tm_globals, $tm_api, $wpdb;
+		include_once( plugin_dir_path( __FILE__ ) . 'assets/css/custom.php');
 		
 		//Custom Styles
 		wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
@@ -491,8 +492,6 @@
 	// Precompile styles and javascript
 	function ticketmachine_register_core_files () {
 		
-		include_once( plugin_dir_path( __FILE__ ) . 'assets/css/custom.php');
-		
 		//jQuery
 		wp_register_script( 'jquery-ui-datepicker', array("jquery") );
 		wp_register_style( 'jquery-ui_CSS', plugins_url('assets/css/ext/jquery_ui.css', __FILE__ ) );
@@ -535,6 +534,7 @@
 	
 	// Run only if inside of admin backend
     if(is_admin()){
+		include_once( plugin_dir_path( __FILE__ ) . 'assets/css/custom.php');
 		//Custom Styles
 		wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
 		wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
