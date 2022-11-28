@@ -424,7 +424,7 @@
 			
         global $tm_globals, $tm_api, $wpdb;
 
-		tm_enqueue_assets();
+		ticketmachine_enqueue_assets();
 
 		include_once( plugin_dir_path( __FILE__ ) . 'pages/error.php');
 		include_once( plugin_dir_path( __FILE__ ) . 'partials/error.php');
