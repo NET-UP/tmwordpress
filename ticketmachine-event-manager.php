@@ -394,6 +394,7 @@
 		
 		//Custom Styles
 		wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
+		wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
 		//Underscore
 		wp_enqueue_script( 'underscore' );
 
