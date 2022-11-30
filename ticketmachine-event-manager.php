@@ -392,8 +392,6 @@
 	function ticketmachine_enqueue_assets() {
 		include_once( plugin_dir_path( __FILE__ ) . 'assets/css/custom.php');
 		
-		//Custom Styles
-		wp_enqueue_style( 'custom_CSS', plugins_url('assets/css/custom.php', __FILE__ ) );
 		wp_add_inline_style('custom_CSS', $ticketmachine_custom_css);
 		//Underscore
 		wp_enqueue_script( 'underscore' );
