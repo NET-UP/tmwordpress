@@ -115,5 +115,6 @@
             border-right-color: transparent !important;
         }";
         
+        echo "<style>" . $ticketmachine_custom_css . "</style>";
 
 ?>
