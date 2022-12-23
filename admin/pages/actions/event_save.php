@@ -79,7 +79,8 @@
                 }
 
                 if(isset($tm_post['event_img_url'])) {
-                    $tm_post['event_img_url'] = urlencode($tm_post['event_img_url']);
+                    $pos = strrpos($tm_post['event_img_url'], '/') + 1;
+                    $tm_post['event_img_url'] = substr($tm_post['event_img_url'], 0, $pos) . urlencode(substr($tm_post['event_img_url'], $pos));
                 }
 
                 if(isset($tm_post['description'])) {
