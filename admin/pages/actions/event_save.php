@@ -78,6 +78,10 @@
                     $tm_post['artist'] = "";
                 }
 
+                if(isset($tm_post['event_img_url'])) {
+                    $tm_post['event_img_url'] = urlencode($tm_post['event_img_url']);
+                }
+
                 if(isset($tm_post['description'])) {
                     $tm_post['description'] = sanitize_text_field(strip_shortcodes($tm_post['description']));
                 }
