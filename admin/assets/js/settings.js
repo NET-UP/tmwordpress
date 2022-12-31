@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
     tm_isFullDayEvent();
   });
 
-  tm_isFullDayEvent();
+  setInterval(tm_isFullDayEvent, 200);
 });
 
 function tm_isFullDayEvent() {
@@ -58,10 +58,10 @@ jQuery(document).on("submit", "#event", function (e) {
   }
 
   if (errors.length > 0) {
+    e.preventDefault();
     errors.forEach((error) => {
       alert(error);
     });
-    e.preventDefault();
     return false;
   }
 });
