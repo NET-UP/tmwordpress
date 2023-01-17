@@ -179,6 +179,8 @@
 				ticketmachine_tmapi_refresh_token_check();
 			}
 		}
+
+		session_write_close();
 	}
 
     register_activation_hook(__FILE__, 'ticketmachine_activate');
