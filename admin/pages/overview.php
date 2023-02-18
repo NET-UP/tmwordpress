@@ -87,7 +87,7 @@
                     </div>
                 </div>
 
-                <?php if(current_user_can('administrator')) { ?>
+                <?php if(current_user_can('manage_options')) { ?>
                 
                     <div class="col-md-6 col-lg-4">
                         <div class="box mb-3">
