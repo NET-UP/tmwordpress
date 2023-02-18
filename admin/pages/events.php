@@ -1,7 +1,7 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-if( current_user_can('edit_posts') ) {	
+if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {	
     /*************************** LOAD THE BASE CLASS *******************************
      *******************************************************************************
     * The WP_List_Table class isn't automatically available to plugins, so we need
