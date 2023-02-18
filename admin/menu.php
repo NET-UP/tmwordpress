@@ -10,7 +10,7 @@
 			add_menu_page(
 				'TicketMachine',
 				"TicketMachine",
-				'manage_options',
+				'edit_pages',
 				'ticketmachine_event_manager',
 				'ticketmachine_overview_page',
 				null,
@@ -22,7 +22,7 @@
 					'ticketmachine_event_manager',
 					esc_html__('Overview', 'ticketmachine-event-manager'),
 					esc_html__('Overview', 'ticketmachine-event-manager'),
-					'manage_options',
+					'edit_pages',
 					'ticketmachine_event_manager',
 					'ticketmachine_overview_page',
 					null,
