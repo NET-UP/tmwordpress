@@ -200,7 +200,7 @@
                                         <div class="ajaxtag hide-if-no-js">
                                             <label class="screen-reader-text" for="new-tag-post_tag"><?php esc_html_e('Create new tag', 'ticketmachine-event-manager') ?></label>
                                             <input type="text" class="form-control" 
-                                                value="<?php foreach($event->tags as $tag) { echo esc_attr($tag).","; }?>" 
+                                                value="<?php foreach((array) $event->tags as $tag) { echo esc_attr($tag).","; }?>" 
                                                 name="tags" data-role="tagsinput" >
                                         </div>
                                         <p class="howto" id="new-tag-post_tag-desc"><?php esc_html_e('Seperate tags with comma', 'ticketmachine-event-manager') ?>.</p>
