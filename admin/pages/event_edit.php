@@ -70,6 +70,10 @@
                     $event['event_location']['city'] = $event['city'];
                     $event['event_location']['country'] = $event['country'];
                     $event['approved'] = 1;
+                    $event["rules"]["badge"] = "";
+                    $event["rules"]["sale_active"] = 1;
+                    $event["rules"]["prices_shown"] = 1;
+                    $event["rules"]["shown"] = 1;
                 }else{
                     unset($isCommunityEvent);
                 }
