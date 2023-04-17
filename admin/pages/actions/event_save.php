@@ -78,7 +78,7 @@
                     $tm_post['artist'] = "";
                 }
 
-                if(isset($tm_post['event_img_url'])) {
+                if(isset($tm_post['event_img_url']) && strlen($tm_post['event_img_url']) > 1) {
                     $pos = strrpos($tm_post['event_img_url'], '/') + 1;
                     $tm_post['event_img_url'] = substr($tm_post['event_img_url'], 0, $pos) . urlencode(substr($tm_post['event_img_url'], $pos));
                 }
@@ -117,32 +117,37 @@
                     
                     $ticketmachine_json = ticketmachine_tmapi_event($tm_post_json, "POST");
                     $response = (object)$ticketmachine_json;
-
-                    if(isset($tm_post['old_id']) && is_plugin_active( 'ticketmachine-community-events/ticketmachine-community-events.php' )) {
-                        $table = $wpdb->prefix . 'ticketmachine_events';
-                        $wpdb->update($table, array('approved'=>1,'api_event_id'=>$response->id), array('id'=>$tm_post['old_id']));
-                    }
-                    
-                    if(!empty($organizer)) {
-                        $table = $wpdb->prefix . 'ticketmachine_organizers';
-                        $organizer_check = $wpdb->get_row( "SELECT * FROM $table WHERE og_name = '" . $organizer['og_name'] . "'");
-                        if(!empty($organizer_check)){
-                            $wpdb->update($table, $organizer, array('id' => $organizer_check->id));
-                            $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
-                            if(isset($tm_post['old_id'])) {
-                                $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
-                            }
-                            $wpdb->delete($table, array('api_event_id' => $response->id));
-                            $wpdb->insert($table, array('organizer_id' => $organizer_check->id, 'api_event_id' => $response->id));
-                        }else{
-                            $wpdb->insert($table, $organizer);
-                            $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
-                            if(isset($tm_post['old_id'])) {
-                                $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
-                            }
-                            $wpdb->delete($table, array('api_event_id' => $response->id));
-                            $wpdb->insert($table, array('organizer_id' => $wpdb->insert_id, 'api_event_id' => $response->id));
+                    if(!isset($response->error)) {
+                        if(isset($tm_post['old_id']) && is_plugin_active( 'ticketmachine-community-events/ticketmachine-community-events.php' )) {
+                            $table = $wpdb->prefix . 'ticketmachine_events';
+                            $wpdb->update($table, array('approved'=>1,'api_event_id'=>$response->id), array('id'=>$tm_post['old_id']));
                         }
+                        
+                        if(!empty($organizer)) {
+                            $table = $wpdb->prefix . 'ticketmachine_organizers';
+                            $organizer_check = $wpdb->get_row( "SELECT * FROM $table WHERE og_name = '" . $organizer['og_name'] . "'");
+                            if(!empty($organizer_check)){
+                                $wpdb->update($table, $organizer, array('id' => $organizer_check->id));
+                                $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
+                                if(isset($tm_post['old_id'])) {
+                                    $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
+                                }
+                                $wpdb->delete($table, array('api_event_id' => $response->id));
+                                $wpdb->insert($table, array('organizer_id' => $organizer_check->id, 'api_event_id' => $response->id));
+                            }else{
+                                $wpdb->insert($table, $organizer);
+                                $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
+                                if(isset($tm_post['old_id'])) {
+                                    $wpdb->delete($table, array('local_event_id' => $tm_post['old_id']));
+                                }
+                                $wpdb->delete($table, array('api_event_id' => $response->id));
+                                $wpdb->insert($table, array('organizer_id' => $wpdb->insert_id, 'api_event_id' => $response->id));
+                            }
+                        }
+                    }else{
+                        print_r("<pre>");
+                        print_r($tm_post);
+                        print_r("</pre>");
                     }
 
                 }
@@ -153,6 +158,10 @@
         <?php if(isset($response->model_error[0]['error_code']) && strlen($response->model_error[0]['error_code']) > 0){ ?>
             <div class="notice notice-error is-dismissable">
                 <p><?php echo __($response->model_error[0]['error_message']); ?></p>
+            </div>
+        <?php }elseif(isset($response->error)) { ?>
+            <div class="notice notice-error is-dismissable">
+                <p><?php echo __($response->error['error_message']); ?></p>
             </div>
         <?php }elseif(empty($ticketmachine_json) || !empty($errors)){ ?>
             <div class="notice notice-error is-dismissable">
