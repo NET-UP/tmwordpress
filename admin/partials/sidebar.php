@@ -12,7 +12,7 @@
                 <li><span class="fa-li"><i class="fas fa-list-ul"></i></i></span> <?php esc_html_e('Update or cancel bookings', 'ticketmachine-event-manager') ?></li>
                 <li><span class="fa-li"><i class="fas fa-search-dollar"></i></span> <?php esc_html_e('Price categories for events', 'ticketmachine-event-manager') ?></li>
             </ul>
-            <a class="button button-primary btn-primary" target="_blank" href="https://www.ticketmachine.de/kontakt/"><?php esc_html_e("Apply for Pro", "ticketmachine-event-manager"); ?></a>
+            <a class="button button-primary btn-primary" target="_blank" href="https://cloud.ticketmachine.de/"><?php esc_html_e("Apply for Pro", "ticketmachine-event-manager"); ?></a>
         </div>
     </div>
 </div>
