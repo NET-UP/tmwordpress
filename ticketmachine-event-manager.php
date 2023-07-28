@@ -795,7 +795,7 @@
 							get_option('admin_email')
 						);
 						$subj = 'ERROR: Wordpress Plugin - TicketMachine Event Manager & Calendar';
-						$body = 'TicketMachine could not get a new access token!\n\nWebsite: ' . get_site_url() .'\nWordpress Version: ' . $wp_version . '\nPlugin Version: ' . $ticketmachine_db_version . '\nPHP Version: ' . $php_version . '\n';
+						$body = 'TicketMachine could not get a new access token!\n\nWebsite: ' . get_site_url() .'\nWordpress Version: ' . $wp_version . '\nPlugin Version: ' . $ticketmachine_db_version . '\nPHP Version: ' . $php_version . '\nAdmin Email: ' . get_option('admin_email');
 						wp_mail( $multiple_recipients, $subj, $body );
 					}
 				}
