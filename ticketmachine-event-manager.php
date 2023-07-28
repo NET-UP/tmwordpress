@@ -792,8 +792,18 @@
 						'support@net-up.de',
 						get_option('admin_email')
 					);
+
+					$rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ticketmachine_log ORDER BY id DESC LIMIT 0,20");
+				
+					$sendTMLog = "";
+
+					foreach ($rows as $row) {
+						$sendTMLog .= "[" . date("c", $row->log_time) . "] - " . $row->log_type . "<br/>";
+						$sendTMLog .= $row->log_message . "]<br/><br/>";
+					}
+
 					$subj = 'ERROR: Wordpress Plugin - TicketMachine Event Manager & Calendar';
-					$body = 'TicketMachine could not get a new access token!<br/><br/>Website: ' . get_site_url() .'<br/>Wordpress Version: ' . $wp_version . '<br/>Plugin Version: ' . $ticketmachine_db_version . '<br/>PHP Version: ' . $php_version . '<br/>Admin Email: ' . get_option('admin_email');
+					$body = 'TicketMachine could not get a new access token!<br/><br/>Website: ' . get_site_url() .'<br/>Wordpress Version: ' . $wp_version . '<br/>Plugin Version: ' . $ticketmachine_db_version . '<br/>PHP Version: ' . $php_version . '<br/>Admin Email: ' . get_option('admin_email') . '<br/><br/>Log:<br/>' . $sendTMLog;
 					wp_mail( $multiple_recipients, $subj, $body, $headers );
 				}
 			}else{
