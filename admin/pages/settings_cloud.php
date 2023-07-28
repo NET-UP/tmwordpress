@@ -1,6 +1,6 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    global $tm_globals, $tm_api, $wpdb;
+    global $tm_globals, $tm_api, $wpdb, $ticketmachine_db_version, $wp_version;
 
     $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
     $ticketmachine_config = $ticketmachine_config[0];
@@ -117,6 +117,41 @@
                     <br>
                     <?php esc_html_e('Warning: Attention: The Ticketshop abbreviation must correspond to the abbreviation of the sales channel in the TicketMachine admin panel!', 'ticketmachine-event-manager'); ?>
             </td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+
+<table class="form-table">
+    <tbody>
+        <tr>
+			<th><label><?php esc_html_e('Cloud Connection', 'ticketmachine-event-manager'); ?></label></th>
+            <td>
+                <?php if($tm_globals->activated) {
+                    echo "<div style='width: 11px; height: 11px;background-color: green;border-radius: 100px;'></div>";
+                }else{
+                    echo "<div style='width: 11px; height: 11px;background-color: red;border-radius: 100px;'></div>";
+                } ?>
+           </td>
+        </tr>
+        <tr>
+			<th><label><?php esc_html_e('Wordpress Version', 'ticketmachine-event-manager'); ?></label></th>
+            <td>
+                <?php echo $wp_version; ?>
+           </td>
+        </tr>
+        <tr>
+			<th><label><?php esc_html_e('Plugin Version', 'ticketmachine-event-manager'); ?></label></th>
+            <td>
+                <?php echo $ticketmachine_db_version; ?>
+           </td>
+        </tr>
+        <tr>
+			<th><label><?php esc_html_e('PHP Version', 'ticketmachine-event-manager'); ?></label></th>
+            <td>
+                <?php echo PHP_VERSION ?? $PHP_VERSION; ?>
+           </td>
         </tr>
     </tbody>
 </table>

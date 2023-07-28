@@ -19,7 +19,7 @@
 
 	add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
 	global $ticketmachine_db_version;
-	$ticketmachine_db_version = "1.6.5";
+	$ticketmachine_db_version = "1.7.8";
 	
 	// Load translations if they don't already exist
     function ticketmachine_wpdocs_load_textdomain() {
@@ -743,7 +743,7 @@
 
 	//Check if access token expired
 	function ticketmachine_tmapi_refresh_token_check() {
-		global $tm_globals, $tm_api, $wpdb;
+		global $tm_globals, $tm_api, $wpdb, $ticketmachine_db_version, $wp_version;
 
 		if(time() > ($tm_globals->api_refresh_last + $tm_globals->api_refresh_interval) && isset($tm_globals->activated) && $tm_globals->activated > 0){
 			
@@ -771,7 +771,7 @@
 				}else{
 					$tm_globals->timeout++;
 					if($tm_globals->timeout < 3){
-						sleep(1);
+						sleep(100);
 						ticketmachine_tmapi_refresh_token_check();
 					}else{
 						$tm_globals->activated == 0;
@@ -787,6 +787,16 @@
 							$save_array,
 							array('id' => $tm_globals->id)
 						);
+						
+						// COULD NOT GET AN ACCESS TOKEN!
+						$php_version = PHP_VERSION ?? $PHP_VERSION;
+						$multiple_recipients = array(
+							'support@net-up.de',
+							get_option('admin_email')
+						);
+						$subj = 'ERROR: Wordpress Plugin - TicketMachine Event Manager & Calendar';
+						$body = 'TicketMachine could not get a new access token!\n\nWebsite: ' . get_site_url() .'\nWordpress Version: ' . $wp_version . '\nPlugin Version: ' . $ticketmachine_db_version . '\nPHP Version: ' . $php_version . '\n';
+						wp_mail( $multiple_recipients, $subj, $body );
 					}
 				}
 			}else{
@@ -826,7 +836,6 @@
 		$token = ticketmachine_apiRequest($tm_api->token, $tm_api->auth->code, "POST");
 
 		$tm_globals->api_access_token = $token['access_token'];
-
 		
 		return $token;
 	}
