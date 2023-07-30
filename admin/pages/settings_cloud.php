@@ -129,7 +129,11 @@
 			<th><label><?php esc_html_e('Cloud Connection', 'ticketmachine-event-manager'); ?></label></th>
             <td>
                 <?php if($tm_globals->activated) {
-                    echo "<div style='width: 11px; height: 11px;background-color: green;border-radius: 100px;'></div>";
+                    if($ticketmachine_config->api_token_failed == 1) {
+                        echo "<div style='width: 11px; height: 11px;background-color: orange;border-radius: 100px;'></div>";
+                    }else{
+                        echo "<div style='width: 11px; height: 11px;background-color: green;border-radius: 100px;'></div>";
+                    }
                 }else{
                     echo "<div style='width: 11px; height: 11px;background-color: red;border-radius: 100px;'></div>";
                 } ?>
