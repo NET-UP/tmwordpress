@@ -24,7 +24,14 @@
 		$ticketmachine_output = '<div class="col-12 col-md-' . $colmd . ' col-xl-' . $colxl . ' card-group">';
 			$ticketmachine_output .= '<card class="card mb-4">';
 				$ticketmachine_output .= '<a aria-label="' . esc_attr($event->ev_name) . ' am ' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '" href="' . $event->link . '" class="card-img-top ratio-16-9" style="background-image:url( ' . esc_url($event->event_img_url) . ' )" title="' . esc_attr($event->ev_name) . '">';
-					$ticketmachine_output .= '<div class="event-badges"><div class="badge bg-danger float-right mt-1 me-2">'. esc_html($event->rules["badge"]) .'</div></div>';
+					$ticketmachine_output .= '<div class="event-badges">';
+					if($event->rules["sale_active"] && !$event->state["sale_active"]) {
+						$ticketmachine_output .= '<div class="badge bg-danger float-right mt-1 me-2">'. __("Sold out", "ticketmachine-event-manager") .'</div>';
+					}
+					if($event->rules["badge"]) {
+						$ticketmachine_output .= '<div class="badge bg-danger float-right mt-1 me-2">'. esc_html($event->rules["badge"]) .'</div>';
+					}
+					$ticketmachine_output .= '</div>';
 				$ticketmachine_output .= '</a>';
 				$ticketmachine_output .= '<div class="card-body position-relative">';
 				
@@ -69,7 +76,7 @@
 					  $ticketmachine_output .= ' href="' . $event->link . '"';
 					  $ticketmachine_output .=' class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . esc_html__("To ticket selection", 'ticketmachine-event-manager') . '">';
 					
-					  if(empty($event->state['sale_active'])){
+					  if(empty($event->rules['sale_active'])){
 						  $ticketmachine_output .= esc_html__("More", 'ticketmachine-event-manager') . ' &nbsp;<i class="fas fa-angle-right"></i>';
 					  }else{
 						$ticketmachine_output .= esc_html__("Tickets", 'ticketmachine-event-manager') . ' &nbsp;<i class="fas fa-ticket-alt"></i>';
@@ -86,7 +93,3 @@
 	}
 	
 ?>
-	
-
-
-
