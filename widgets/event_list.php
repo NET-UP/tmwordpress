@@ -77,6 +77,9 @@
                                             
                             $ticketmachine_output .= '<div class="media-body">';
 
+                            if(!empty($event->rules["badge"])) {
+                                $ticketmachine_output .= '<div class="badge bg-danger m-0">'. esc_html($event->rules["badge"]) .'</div><br/>';
+                            }
                             if(isset($atts['show_date']) && $atts['show_date'] > 0){
                                 if(ticketmachine_i18n_date("H:i", $event->ev_date) == "00:00" && ticketmachine_i18n_date("H:i", $event->endtime) == "23:59") {
                                     $dateoutput = __("Entire Day", "ticketmachine-event-manager");
@@ -93,7 +96,22 @@
                                     <div class="card-meta-tag"><i class="far fa-calendar-alt tm-icon" aria-hidden="true"></i> &nbsp;'. ticketmachine_i18n_date("d.m.Y", $event->ev_date) .'</div> 
                                     <div class="card-meta-tag"><i class="far fa-clock tm-icon" aria-hidden="true"></i> &nbsp;'. $dateoutput .'</div>';
                                 }
-                                $ticketmachine_output .= '<div class="badge bg-danger float-right m-0">'. esc_html($event->rules["badge"]) .'</div>';
+
+                            }
+
+                            if(isset($event->has_location) && $event->has_location == 1){   
+                                if(empty($event->ev_location_name)) {
+                                    $event_location = $event->event_location->street . " " . $event->event_location->house_number;
+                                }else{
+                                    $event_location = $event->ev_location_name;
+                                }
+                                $ticketmachine_output .= '<div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; ';
+                                    if(isset($event->has_location_link) && $event->has_location_link == 1){        
+                                        $ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($tm_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
+                                    }else{
+                                        $ticketmachine_output .= $event_location;
+                                    }
+                                $ticketmachine_output .= '</div>';
                             }
 
                             $ticketmachine_output .= '<h5 class="mt-0 mb-1"><a class="tm-list-title" href="' . $event->link . '">' . $event->ev_name . '</a></h5>';
