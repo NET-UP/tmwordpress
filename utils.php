@@ -1,4 +1,5 @@
 <?php
+    if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
     // Writes to the ticketmachine log
     function ticketmachine_log($message, $type) {
