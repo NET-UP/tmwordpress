@@ -62,6 +62,9 @@
                         $table = $wpdb->prefix . "ticketmachine_organizers";
                         $organizer = $wpdb->get_row( "SELECT * FROM $table WHERE `id` = " . $event_organizer_match->organizer_id );
                     }
+                    if(!empty($event["event_image"])) {
+                        $event["event_img_url"] = $event["event_image"];
+                    }
                     $event['old_id'] = $event['id'];
                     $event['id'] = "";
                     $event['event_location']['street'] = $event['street'];
