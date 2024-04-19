@@ -87,6 +87,11 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.8.5 =
+* Community event functionality
+* Many bugfixes
+* Logging and plugin health
+
 = 1.6.2 =
 * Fixed responsiveness of images in list view
 
