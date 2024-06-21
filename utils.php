@@ -10,6 +10,11 @@
             "log_time" => time()
         );
 
+        $wpdb->query(
+            "DELETE FROM " . $wpdb->prefix . "ticketmachine_log
+             WHERE log_time < UNIX_TIMESTAMP(CURRENT_DATE - INTERVAL 30 DAY)"
+          );
+
         $wpdb->insert(
             $wpdb->prefix . "ticketmachine_log",
             $save_array
