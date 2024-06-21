@@ -3,8 +3,10 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     
     global $tm_globals, $tm_api, $wpdb;
-    $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
-    $ticketmachine_config = $ticketmachine_config[0];
+
+    if(isset($tm_globals)) {
+        $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
+        $ticketmachine_config = $ticketmachine_config[0];
 ?>
 
 <div class="wrap tm-admin-page">
@@ -53,3 +55,5 @@
         </div>
     </div>
 </div>
+
+<?php }else{ echo "An error has occurred!"; } ?>
