@@ -43,13 +43,18 @@
                         "response" => $log_resource
                     );
 
-                    ticketmachine_log(json_encode($log), "info");
-
                     $status_code = wp_remote_retrieve_response_code($resource);
 
-                    if(str_contains($tm_url, 'token')) {
+                    if($status_code == 400 || $status_code == 500) {
+                        ticketmachine_log(json_encode($log), "error");
+                    }elseif($status_code == 200) {
+                        ticketmachine_log(json_encode($log), "success");
+                    }else{
+                        ticketmachine_log(json_encode($log), "info");
+                    }
+
+                    if(strpos($tm_url, 'token') !== false) {
                         if($status_code == 409) {
-                            // conflict
                         }elseif($status_code == 400) {
                              // INVALID REFRESH TOKEN
                              $save_array = array(
@@ -86,7 +91,7 @@
                             $subj = 'ERROR: Wordpress Plugin - TicketMachine Event Manager & Calendar';
                             $body = 'TicketMachine could not get a new access token!<br/><br/>Website: ' . get_site_url() .'<br/>Wordpress Version: ' . $wp_version . '<br/>Plugin Version: ' . $ticketmachine_db_version . '<br/>PHP Version: ' . $php_version . '<br/>Admin Email: ' . get_option('admin_email') . '<br/><br/>Log:<br/>' . $sendTMLog;
                             wp_mail( $multiple_recipients, $subj, $body, $headers );
-                        }
+                        }else{}
                     }
 
                 }
