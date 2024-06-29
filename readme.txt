@@ -1,5 +1,5 @@
 === TicketMachine Event Manager & Calendar ===
-Contributors: NET-UP AG, TicketMachine
+Contributors: netupag, ticketmachine
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: Events, Veranstaltungen, Kalender, GDPR, DSGVO
