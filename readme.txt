@@ -87,6 +87,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.8.8 =
+* Fixed problem with constant disconnection from TicketMachine Cloud
+
 = 1.8.5 =
 * Community event functionality
 * Many bugfixes
