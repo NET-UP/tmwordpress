@@ -91,7 +91,7 @@
                             $subj = 'ERROR: Wordpress Plugin - TicketMachine Event Manager & Calendar';
                             $body = 'TicketMachine could not get a new access token!<br/><br/>Website: ' . get_site_url() .'<br/>Wordpress Version: ' . $wp_version . '<br/>Plugin Version: ' . $ticketmachine_db_version . '<br/>PHP Version: ' . $php_version . '<br/>Admin Email: ' . get_option('admin_email') . '<br/><br/>Log:<br/>' . $sendTMLog;
                             wp_mail( $multiple_recipients, $subj, $body, $headers );
-                        }else{}
+                        }
                     }
 
                 }
@@ -246,7 +246,7 @@
 
         if(isset($tm_globals) && isset($tm_globals->activated) && $tm_globals->activated > 0) {
             if(time() > ($tm_globals->api_refresh_last + $tm_globals->api_refresh_interval)){
-                
+                sleep(rand(0,1000));
                 $actual_config = (object)$wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1")[0];
 
                 if(!empty($actual_config->api_refresh_token) && $actual_config->api_refresh_token == $tm_globals->api_refresh_token) {
@@ -267,7 +267,6 @@
                             array('id' => $tm_globals->id)
                         );
                         $tm_globals->api_access_token = $token['access_token'];
-                        $tm_globals->api_refresh_token = $token['refresh_token'];
                         $tm_globals->activated = 1;
                     }else{
                         // COULD NOT GET AN ACCESS TOKEN
