@@ -56,8 +56,8 @@
                     if(strpos($tm_url, 'token') !== false) {
                         if($status_code == 409) {
                         }elseif($status_code == 400) {
-                            // retry after 1 second if invalid token somehow
-                            sleep(1);
+                            // retry after 2 seconds if invalid token somehow
+                            sleep(2);
                             ticketmachine_tmapi_refresh_token_check(true);
                         }
                     }
