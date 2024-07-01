@@ -267,6 +267,7 @@
                             array('id' => $tm_globals->id)
                         );
                         $tm_globals->api_access_token = $token['access_token'];
+                        $tm_globals->api_refresh_token = $token['access_token'];
                         $tm_globals->activated = 1;
                     }else{
                         // COULD NOT GET AN ACCESS TOKEN
