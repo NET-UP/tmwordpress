@@ -246,7 +246,7 @@
 
         if(isset($tm_globals) && isset($tm_globals->activated) && $tm_globals->activated > 0) {
             if(time() > ($tm_globals->api_refresh_last + $tm_globals->api_refresh_interval)){
-                sleep(rand(0,1));
+                usleep(rand(0,100000));
                 $actual_config = (object)$wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1")[0];
 
                 if(!empty($actual_config->api_refresh_token) && $actual_config->api_refresh_token == $tm_globals->api_refresh_token) {
