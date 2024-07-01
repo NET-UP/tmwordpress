@@ -3,7 +3,7 @@
     
     // Send GET or POST request to the TicketMachine API
     function ticketmachine_apiRequest($tm_url, $tm_post=FALSE, $method="GET", $headers=array()) {
-        global $wpdb, $tm_globals, $tm_api, $tm_debug;
+        global $wpdb, $tm_globals, $tm_api, $tm_debug, $wp_version, $ticketmachine_db_version;
 
         if(!$headers) {
             $headers = array();
@@ -242,7 +242,7 @@
 
     //Check if access token expired
     function ticketmachine_tmapi_refresh_token_check() {
-        global $tm_globals, $tm_api, $wpdb, $ticketmachine_db_version, $wp_version;
+        global $tm_globals, $tm_api, $wpdb;
 
         if(isset($tm_globals) && isset($tm_globals->activated) && $tm_globals->activated > 0) {
             if(time() > ($tm_globals->api_refresh_last + $tm_globals->api_refresh_interval)){
