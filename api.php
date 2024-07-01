@@ -3,7 +3,7 @@
     
     // Send GET or POST request to the TicketMachine API
     function ticketmachine_apiRequest($tm_url, $tm_post=FALSE, $method="GET", $headers=array()) {
-        global $wpdb, $tm_globals, $tm_api, $tm_debug, $wp_version, $ticketmachine_db_version;
+        global $wpdb, $tm_globals, $tm_api, $tm_debug;
 
         if(!$headers) {
             $headers = array();
@@ -56,41 +56,9 @@
                     if(strpos($tm_url, 'token') !== false) {
                         if($status_code == 409) {
                         }elseif($status_code == 400) {
-                             // INVALID REFRESH TOKEN
-                             $save_array = array(
-                                "api_access_token" => "",
-                                "api_refresh_token" => "",
-                                "api_refresh_last" => time()-1000,
-                                "api_token_failed" => false,
-                            );
-    
-                            $wpdb->update(
-                                $wpdb->prefix . "ticketmachine_config",
-                                $save_array,
-                                array('id' => $tm_globals->id)
-                            );
-                            
-                            $tm_globals->activated = 0;
-                            
-                            $php_version = PHP_VERSION ?? $PHP_VERSION;
-                            $headers = array('Content-Type: text/html; charset=UTF-8');
-                            $multiple_recipients = array(
-                                'support@net-up.de',
-                                get_option('admin_email')
-                            );
-    
-                            $rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ticketmachine_log ORDER BY id DESC LIMIT 0,20");
-                        
-                            $sendTMLog = "";
-    
-                            foreach ($rows as $row) {
-                                $sendTMLog .= "[" . date("c", $row->log_time) . "] - " . $row->log_type . "<br/>";
-                                $sendTMLog .= $row->log_message . "]<br/><br/>";
-                            }
-    
-                            $subj = 'ERROR: Wordpress Plugin - TicketMachine Event Manager & Calendar';
-                            $body = 'TicketMachine could not get a new access token!<br/><br/>Website: ' . get_site_url() .'<br/>Wordpress Version: ' . $wp_version . '<br/>Plugin Version: ' . $ticketmachine_db_version . '<br/>PHP Version: ' . $php_version . '<br/>Admin Email: ' . get_option('admin_email') . '<br/><br/>Log:<br/>' . $sendTMLog;
-                            wp_mail( $multiple_recipients, $subj, $body, $headers );
+                            // retry after 1 second if invalid token somehow
+                            sleep(1);
+                            ticketmachine_tmapi_refresh_token_check(true);
                         }
                     }
 
@@ -241,8 +209,8 @@
     }
 
     //Check if access token expired
-    function ticketmachine_tmapi_refresh_token_check() {
-        global $tm_globals, $tm_api, $wpdb;
+    function ticketmachine_tmapi_refresh_token_check($retry = false) {
+        global $tm_globals, $tm_api, $wpdb, $wp_version, $ticketmachine_db_version;
 
         if(isset($tm_globals) && isset($tm_globals->activated) && $tm_globals->activated > 0) {
             if(time() > ($tm_globals->api_refresh_last + $tm_globals->api_refresh_interval)){
@@ -280,6 +248,44 @@
                             $save_array,
                             array('id' => $tm_globals->id)
                         );
+
+                        if($retry == true) {
+                             // INVALID REFRESH TOKEN
+                             $save_array = array(
+                                "api_access_token" => "",
+                                "api_refresh_token" => "",
+                                "api_refresh_last" => time()-1000,
+                                "api_token_failed" => false,
+                            );
+    
+                            $wpdb->update(
+                                $wpdb->prefix . "ticketmachine_config",
+                                $save_array,
+                                array('id' => $tm_globals->id)
+                            );
+                            
+                            $tm_globals->activated = 0;
+                            
+                            $php_version = PHP_VERSION ?? $PHP_VERSION;
+                            $headers = array('Content-Type: text/html; charset=UTF-8');
+                            $multiple_recipients = array(
+                                'support@net-up.de',
+                                get_option('admin_email')
+                            );
+    
+                            $rows = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}ticketmachine_log ORDER BY id DESC LIMIT 0,20");
+                        
+                            $sendTMLog = "";
+    
+                            foreach ($rows as $row) {
+                                $sendTMLog .= "[" . date("c", $row->log_time) . "] - " . $row->log_type . "<br/>";
+                                $sendTMLog .= $row->log_message . "]<br/><br/>";
+                            }
+    
+                            $subj = 'ERROR: Wordpress Plugin - TicketMachine Event Manager & Calendar';
+                            $body = 'TicketMachine could not get a new access token!<br/><br/>Website: ' . get_site_url() .'<br/>Wordpress Version: ' . $wp_version . '<br/>Plugin Version: ' . $ticketmachine_db_version . '<br/>PHP Version: ' . $php_version . '<br/>Admin Email: ' . get_option('admin_email') . '<br/><br/>Log:<br/>' . $sendTMLog;
+                            wp_mail( $multiple_recipients, $subj, $body, $headers );
+                        }
                     }
                 }else{
                     $tm_globals->api_access_token = $actual_config->api_access_token;
