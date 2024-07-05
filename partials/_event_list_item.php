@@ -48,7 +48,7 @@
 				  $ticketmachine_output .= '<h5 class="card-title" title="' . esc_attr($event->ev_name) . '">' . esc_html($event->ev_name) . '</h5>';
 				  $ticketmachine_output .= '<div class="card-price"></div>';
 
-				  $ticketmachine_output .= '<div class="row pt-2">';
+				  $ticketmachine_output .= '<div class="row pt-2 row pt-2 gap-3 gap-sm-0">';
 					$ticketmachine_output .= '<div class="col-sm-8 col-md-7">';
 
 					if(isset($event->has_location) && $event->has_location == 1){   
