@@ -310,6 +310,10 @@
                     'redirect_uri' => $tm_api->auth->proxy,
                     'scope' => "public organizer organizer/event"
                 );
+
+                $headers = array(
+                    'Idempotency-Key' => hash("sha256", $refresh_token),
+                );
             }
             if($status == "update"){
                 $tm_api->auth->code = array(
@@ -320,11 +324,11 @@
                     'redirect_uri' => $tm_api->auth->proxy,
                     'scope' => "public organizer organizer/event"
                 );
-            }
 
-            $headers = array(
-                'Idempotency-Key' => hash("sha256", $actual_config->api_refresh_token),
-            );
+                $headers = array(
+                    'Idempotency-Key' => hash("sha256", $actual_config->api_refresh_token),
+                );
+            }
 
             $token = ticketmachine_apiRequest($tm_api->token, $tm_api->auth->code, "POST", $headers);
 
