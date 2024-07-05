@@ -35,18 +35,14 @@
 				$ticketmachine_output .= '</a>';
 				$ticketmachine_output .= '<div class="card-body position-relative">';
 				
+					$ticketmachine_output .= '<div class="card-date" title="' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '">';
 
 					if(isset($event->endtime) && ticketmachine_i18n_date("d.m.Y", $event->ev_date) != ticketmachine_i18n_date("d.m.Y", $event->endtime) ) {
-						$ticketmachine_output .= '<div class="card-date" title="' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '">';
-							$ticketmachine_output .= '<div class="card-day" style="font-size:16px;">' . ticketmachine_i18n_date("d.m", $event->ev_date) . '</div>';
-							$ticketmachine_output .= '<div class="card-month">' . esc_attr__("to", 'ticketmachine-event-manager') . ' ' . ticketmachine_i18n_date("d.m", $event->endtime) . '</div>';
-						$ticketmachine_output .= '</div>';
+							$ticketmachine_output .= '<div class="card-day">' . ticketmachine_i18n_date("d.m.y", $event->ev_date) . ' - ' . ticketmachine_i18n_date("d.m.y", $event->endtime) . '</div>';
 					}else{
-						$ticketmachine_output .= '<div class="card-date" title="' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '">';
-							$ticketmachine_output .= '<div class="card-day">' . ticketmachine_i18n_date("d", $event->ev_date) . '</div>';
-							$ticketmachine_output .= '<div class="card-month">' . ticketmachine_i18n_date("M", $event->ev_date) . '</div>';
-						$ticketmachine_output .= '</div>';
+							$ticketmachine_output .= '<div>' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '</div>';
 					}
+					$ticketmachine_output .= '</div>';
 
 
 				  $ticketmachine_output .= '<h5 class="card-title" title="' . esc_attr($event->ev_name) . '">' . esc_html($event->ev_name) . '</h5>';
@@ -61,7 +57,7 @@
 						}else{
 							$event_location = $event->ev_location_name;
 						}
-						$ticketmachine_output .= '<p class="card-text mt-0 px-2 pt-sm-1 pb-3 pb-sm-2 ellipsis"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; ';
+						$ticketmachine_output .= '<p class="card-text mt-0 px-2 pt-sm-1 ellipsis"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; ';
 							if(isset($event->has_location_link) && $event->has_location_link == 1){        
 								$ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($tm_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
 							}else{

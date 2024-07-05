@@ -87,6 +87,12 @@ body .ticketmachine_page .fc-event {
   margin-bottom: 2px;
 }
 
+body .ticketmachine_page .card-body {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 body .ticketmachine_page .card-meta {
   font-weight: 500;
 }
@@ -103,38 +109,11 @@ body .ticketmachine_page .card-meta-tag.keyword {
 }
 
 body .ticketmachine_page .card-date {
-  display: inline-block;
-  position: absolute;
-  width: 3.25em;
-  height: 3.25em;
-  left: 1.25rem;
-  overflow: hidden;
-  border: 1px solid #eee;
-  border-radius: 100%;
-  text-align: center;
-  margin-top: -3px;
-  margin-left: -3px;
-}
-
-body .ticketmachine_page .card-day {
-  font-weight: 500;
-  font-size: 1.1rem;
-  line-height: 1rem;
-  padding-top: 0.5em;
-}
-
-body .ticketmachine_page .card-month {
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
 }
 
 body .ticketmachine_page h5.card-title {
-  min-height: 2.65em;
-  max-height: 3.65em;
-  margin-left: 3.6em;
-  margin-right: 0.5em;
-  overflow-y: hidden;
   font-size: 1rem;
 }
 
