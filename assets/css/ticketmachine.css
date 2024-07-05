@@ -87,7 +87,7 @@ body .ticketmachine_page .fc-event {
   margin-bottom: 2px;
 }
 
-body .ticketmachine_page .card-body {
+body .ticketmachine_page .ticketmachine_events_container .card-body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
