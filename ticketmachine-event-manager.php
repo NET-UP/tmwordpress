@@ -36,137 +36,138 @@
 			include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 		}
 		if (is_plugin_active('ticketmachine-event-manager/ticketmachine-event-manager.php')){
-			global $wpdb, $tm_globals, $tm_api;
+			global $wpdb, $ticketmachine_globals, $ticketmachine_api;
 		
 			$ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
 			$ticketmachine_config = $ticketmachine_config[0];
 		
-			$tm_globals = (object)$ticketmachine_config;
-			if(!empty($tm_globals->api_refresh_token) && !empty($tm_globals->api_access_token)) {
-				$tm_globals->activated = 1;
+			$ticketmachine_globals = new stdClass();
+			$ticketmachine_globals = (object)$ticketmachine_config;
+			if(!empty($ticketmachine_globals->api_refresh_token) && !empty($ticketmachine_globals->api_access_token)) {
+				$ticketmachine_globals->activated = 1;
 			}
 			
 			if ( defined( 'ICL_LANGUAGE_CODE' ) ) {
-				$tm_globals->locale = ICL_LANGUAGE_CODE;
+				$ticketmachine_globals->locale = ICL_LANGUAGE_CODE;
 			}else{
-				$tm_globals->locale = get_locale();
+				$ticketmachine_globals->locale = get_locale();
 			}
-			$tm_globals->locale_short = strtok($tm_globals->locale, '_');
+			$ticketmachine_globals->locale_short = strtok($ticketmachine_globals->locale, '_');
 			
-			$tm_api = new stdClass();
-			$tm_api->auth = new stdClass();
+			$ticketmachine_api = new stdClass();
+			$ticketmachine_api->auth = new stdClass();
 		
 			//get page slugs
-			if(!empty($tm_globals->events_slug_id) && $tm_globals->events_slug_id > 0){
-				$tm_post = (object)get_post($tm_globals->events_slug_id); 
-				$tm_globals->events_slug = $tm_post->post_name;
+			if(!empty($ticketmachine_globals->events_slug_id) && $ticketmachine_globals->events_slug_id > 0){
+				$tm_post = (object)get_post($ticketmachine_globals->events_slug_id); 
+				$ticketmachine_globals->events_slug = $tm_post->post_name;
 			}
-			if(!empty($tm_globals->event_slug_id) && $tm_globals->event_slug_id > 0){
-				$tm_post = (object)get_post($tm_globals->event_slug_id); 
-				$tm_globals->event_slug = $tm_post->post_name;
+			if(!empty($ticketmachine_globals->event_slug_id) && $ticketmachine_globals->event_slug_id > 0){
+				$tm_post = (object)get_post($ticketmachine_globals->event_slug_id); 
+				$ticketmachine_globals->event_slug = $tm_post->post_name;
 			}
-			if(!empty($tm_globals->privacy_slug_id) && $tm_globals->privacy_slug_id > 0){
-				$tm_post = (object)get_post($tm_globals->privacy_slug_id); 
-				$tm_globals->privacy_slug = $tm_post->post_name;
+			if(!empty($ticketmachine_globals->privacy_slug_id) && $ticketmachine_globals->privacy_slug_id > 0){
+				$tm_post = (object)get_post($ticketmachine_globals->privacy_slug_id); 
+				$ticketmachine_globals->privacy_slug = $tm_post->post_name;
 			}
 		
-			switch ($tm_globals->event_grouping) {
+			switch ($ticketmachine_globals->event_grouping) {
 				case 'Month':
-					$tm_globals->group_by = "m Y";
-					$tm_globals->format_date = "F Y";
+					$ticketmachine_globals->group_by = "m Y";
+					$ticketmachine_globals->format_date = "F Y";
 					break;
 				case 'Year':
-					$tm_globals->group_by = "Y";
-					$tm_globals->format_date = "Y";
+					$ticketmachine_globals->group_by = "Y";
+					$ticketmachine_globals->format_date = "Y";
 					break;
 				case 'None':
-					$tm_globals->group_by = "";
-					$tm_globals->format_date = "";
+					$ticketmachine_globals->group_by = "";
+					$ticketmachine_globals->format_date = "";
 					break;
 				default:
-					$tm_globals->group_by = "Y";
-					$tm_globals->format_date = "Y";
+					$ticketmachine_globals->group_by = "Y";
+					$ticketmachine_globals->format_date = "Y";
 					break;
 			}
 			
-			$tm_globals->map_query_url = "https://www.google.de/maps?q=";
-			$tm_globals->lang = "de";
-			$tm_globals->current_url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+			$ticketmachine_globals->map_query_url = "https://www.google.de/maps?q=";
+			$ticketmachine_globals->lang = "de";
+			$ticketmachine_globals->current_url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
 			
 			/* Backend Settings */
-			$tm_api->client_id = $ticketmachine_config->api_client_id;
-			$tm_api->client_secret = $ticketmachine_config->api_client_secret;
-			$tm_globals->environment = $ticketmachine_config->api_environment;
-			$tm_globals->timezone = "";
-			$tm_globals->inverted_timezone = "";
+			$ticketmachine_api->client_id = $ticketmachine_config->api_client_id;
+			$ticketmachine_api->client_secret = $ticketmachine_config->api_client_secret;
+			$ticketmachine_globals->environment = $ticketmachine_config->api_environment;
+			$ticketmachine_globals->timezone = "";
+			$ticketmachine_globals->inverted_timezone = "";
 			
-			$tm_globals->search_query = "";
+			$ticketmachine_globals->search_query = "";
 			if(isset($_GET['q'])){
-				$tm_globals->search_query = htmlentities(sanitize_text_field($_GET['q']));
+				$ticketmachine_globals->search_query = htmlentities(sanitize_text_field($_GET['q']));
 			}
-			$tm_globals->tag = "";
+			$ticketmachine_globals->tag = "";
 			if(isset($_GET['tag'])){
-				$tm_globals->tag = htmlentities(sanitize_text_field($_GET['tag']));
+				$ticketmachine_globals->tag = htmlentities(sanitize_text_field($_GET['tag']));
 			}
-			$tm_globals->organizer = $ticketmachine_config->organizer;
-			$tm_globals->organizer_id = (int)$ticketmachine_config->organizer_id;
+			$ticketmachine_globals->organizer = $ticketmachine_config->organizer;
+			$ticketmachine_globals->organizer_id = (int)$ticketmachine_config->organizer_id;
 		
-			$tm_globals->first_event_date = date('Y-m-d');
-			$tm_globals->first_event_date_calendar = date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "-1 month" ) );
+			$ticketmachine_globals->first_event_date = date('Y-m-d');
+			$ticketmachine_globals->first_event_date_calendar = date("Y-m-d", strtotime( date( "Y-m-d", strtotime( date("Y-m-d") ) ) . "-1 month" ) );
 		
-			if($tm_globals->environment == "staging"){
-				$tm_api->environment = $tm_globals->environment . ".";
+			if($ticketmachine_globals->environment == "staging"){
+				$ticketmachine_api->environment = $ticketmachine_globals->environment . ".";
 			}else{
-				$tm_api->environment = "";
+				$ticketmachine_api->environment = "";
 			}
 		
-			$tm_api->scheme = "https";
+			$ticketmachine_api->scheme = "https";
 			
 			# Build API base url
-			if(!isset($tm_globals->api_state)){
-				$tm_globals->api_state = "";
+			if(!isset($ticketmachine_globals->api_state)){
+				$ticketmachine_globals->api_state = "";
 			}
-			$tm_api->base_url = $tm_api->token = $tm_api->scheme . "://cloud." . $tm_api->environment;
+			$ticketmachine_api->base_url = $ticketmachine_api->token = $ticketmachine_api->scheme . "://cloud." . $ticketmachine_api->environment;
 			
 			if(!empty($ticketmachine_config->webshop_url)){
-				$tm_globals->webshop_url = $tm_api->scheme . "://" . $ticketmachine_config->webshop_url . ".ticketmachine.de/" . $tm_globals->lang;;
+				$ticketmachine_globals->webshop_url = $ticketmachine_api->scheme . "://" . $ticketmachine_config->webshop_url . ".ticketmachine.de/" . $ticketmachine_globals->lang;;
 			}else{
-				$tm_globals->webshop_url = $tm_api->scheme . "://" . $tm_globals->organizer . ".ticketmachine.de/" . $tm_globals->lang;
+				$ticketmachine_globals->webshop_url = $ticketmachine_api->scheme . "://" . $ticketmachine_globals->organizer . ".ticketmachine.de/" . $ticketmachine_globals->lang;
 			}
 			
 		
-			$tm_api->token = $tm_api->base_url . "ticketmachine.de/oauth/token";
-			$tm_api->auth->url = $tm_api->base_url . "ticketmachine.de/oauth/token";
+			$ticketmachine_api->token = $ticketmachine_api->base_url . "ticketmachine.de/oauth/token";
+			$ticketmachine_api->auth->url = $ticketmachine_api->base_url . "ticketmachine.de/oauth/token";
 		
-			$tm_api->auth->key = $tm_api->client_id.":".$tm_api->client_secret;
-			$tm_api->auth->encoded_key = base64_encode($tm_api->auth->key);
-			$tm_api->auth->headers = array();
-			$tm_api->auth->headers = [
-				'Authorization: Basic' . $tm_api->auth->encoded_key,
+			$ticketmachine_api->auth->key = $ticketmachine_api->client_id.":".$ticketmachine_api->client_secret;
+			$ticketmachine_api->auth->encoded_key = base64_encode($ticketmachine_api->auth->key);
+			$ticketmachine_api->auth->headers = array();
+			$ticketmachine_api->auth->headers = [
+				'Authorization: Basic' . $ticketmachine_api->auth->encoded_key,
 				'Content-Type: application/x-www-form-urlencoded'
 			];
 		
-			$tm_api->auth->start_uri = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-			$tm_api->auth->proxy = $tm_api->scheme . "://www.ticketmachine.de/oauth/proxy.php";
+			$ticketmachine_api->auth->start_uri = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+			$ticketmachine_api->auth->proxy = $ticketmachine_api->scheme . "://www.ticketmachine.de/oauth/proxy.php";
 			
-			$tm_api->auth->data = array(
+			$ticketmachine_api->auth->data = array(
 				'response_type' => 'code',
-				'client_id' => $tm_api->client_id,
-				'redirect_uri' => $tm_api->auth->proxy,
-				'state' => $tm_globals->api_state,
-				'environment' => $tm_api->environment,
-				'start_uri' => $tm_api->auth->start_uri,
+				'client_id' => $ticketmachine_api->client_id,
+				'redirect_uri' => $ticketmachine_api->auth->proxy,
+				'state' => $ticketmachine_globals->api_state,
+				'environment' => $ticketmachine_api->environment,
+				'start_uri' => $ticketmachine_api->auth->start_uri,
 				'scope' => 'public organizer organizer/event'
 			);
 		
-			$tm_api->auth->access = array(
+			$ticketmachine_api->auth->access = array(
 				'grant_type' => 'client_credentials',
-				'client_id' => $tm_api->client_id,
-				'client_secret' => $tm_api->client_secret,
+				'client_id' => $ticketmachine_api->client_id,
+				'client_secret' => $ticketmachine_api->client_secret,
 				'scope' => "public organizer organizer/event"
 			);
 		
-			switch ($tm_globals->lang) {
+			switch ($ticketmachine_globals->lang) {
 				case 'en':
 					setlocale(LC_TIME, 'en_US.UTF-8');
 					break;
@@ -175,7 +176,7 @@
 					break;
 			}
 
-			if(isset($tm_globals->activated) && $tm_globals->activated > 0){
+			if(isset($ticketmachine_globals->activated) && $ticketmachine_globals->activated > 0){
 				ticketmachine_tmapi_refresh_token_check();
 			}
 		}
@@ -422,7 +423,7 @@
 	// Run only if TicketMachine shortcode is found on current page
 	function ticketmachine_initialize( $atts ) {
 			
-        global $tm_globals, $tm_api, $wpdb;
+        global $ticketmachine_globals, $ticketmachine_api, $wpdb;
 
 		ticketmachine_enqueue_assets();
 
@@ -435,7 +436,7 @@
 				$atts[$key] = $value;
 			}
 			
-            $ticketmachine_output = "<div class='ticketmachine_page' data-locale=" . esc_html($tm_globals->locale_short) . ">";
+            $ticketmachine_output = "<div class='ticketmachine_page' data-locale=" . esc_html($ticketmachine_globals->locale_short) . ">";
             
             if(isset($atts['page'])){
 				include_once "partials/_pagination.php";
@@ -595,7 +596,7 @@
 
 	// Load events into calendar
 	function ticketmachine_calendar_callback() {
-		global $tm_api, $tm_globals, $wpdb;
+		global $ticketmachine_api, $ticketmachine_globals, $wpdb;
 
         $events = ticketmachine_tmapi_events($_REQUEST);
             
@@ -609,9 +610,9 @@
 				$event = (object) $event;
 
 				if(empty($event->state['sale_active'])){
-					$event->link = '/' . esc_html($tm_globals->event_slug) .'/?id=' . esc_html($event->id);
+					$event->link = '/' . esc_html($ticketmachine_globals->event_slug) .'/?id=' . esc_html($event->id);
 				}else{
-					$event->link = esc_html($tm_globals->webshop_url) .'/events/unseated/select_unseated?event_id=' . esc_html($event->id);
+					$event->link = esc_html($ticketmachine_globals->webshop_url) .'/events/unseated/select_unseated?event_id=' . esc_html($event->id);
 				}
                 
                 $params = [ "id" => $event->id ];
