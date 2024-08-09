@@ -1,11 +1,11 @@
 <?php 
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-	function ticketmachine_event_list_item ( $event, $tm_globals, $atts ) {
+	function ticketmachine_event_list_item ( $event, $ticketmachine_globals, $atts ) {
 		
 		if(empty($event->state['sale_active'])){
-			$event->link = '/' . esc_html($tm_globals->event_slug) .'/?id=' . esc_html($event->id);
+			$event->link = '/' . esc_html($ticketmachine_globals->event_slug) .'/?id=' . esc_html($event->id);
 		}else{
-			$event->link = esc_html($tm_globals->webshop_url) .'/events/unseated/select_unseated?event_id=' . esc_html($event->id);
+			$event->link = esc_html($ticketmachine_globals->webshop_url) .'/events/unseated/select_unseated?event_id=' . esc_html($event->id);
 		}
 		
 		$event->event_location = (object) $event->event_location;
@@ -59,7 +59,7 @@
 						}
 						$ticketmachine_output .= '<p class="card-text mt-0 pt-sm-1 ellipsis"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; ';
 							if(isset($event->has_location_link) && $event->has_location_link == 1){        
-								$ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($tm_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
+								$ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($ticketmachine_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
 							}else{
 								$ticketmachine_output .= $event_location;
 							}

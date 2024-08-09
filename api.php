@@ -3,7 +3,7 @@
     
     // Send GET or POST request to the TicketMachine API
     function ticketmachine_apiRequest($tm_url, $tm_post=FALSE, $method="GET", $headers=array()) {
-        global $wpdb, $ticketmachine_globals, $ticketmachine_api, $tm_debug;
+        global $wpdb, $ticketmachine_globals, $ticketmachine_api, $ticketmachine_debug;
 
         if(!$headers) {
             $headers = array();

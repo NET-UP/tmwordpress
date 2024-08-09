@@ -1,6 +1,6 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    global $tm_globals, $tm_api, $wpdb;
+    global $ticketmachine_globals, $ticketmachine_api, $wpdb;
     wp_enqueue_media();
 
     //defaults
@@ -117,7 +117,7 @@
         <?php if(isset($event->old_id)) { ?>
             <input type="hidden" name="old_id" data-name="<?php echo esc_html__('Event Details', 'ticketmachine-event-manager'); ?>" value="<?php echo esc_attr($event->old_id); ?>">
         <?php } ?>
-        <input type="hidden" name="organizer_id" value="<?php echo esc_attr($tm_globals->organizer_id); ?>">
+        <input type="hidden" name="organizer_id" value="<?php echo esc_attr($ticketmachine_globals->organizer_id); ?>">
         <input type="hidden" name="rules[sale_active]" value="<?php echo esc_attr($event->rules["sale_active"]); ?>">
         <input type="hidden" name="rules[prices_shown]" value="<?php echo esc_attr($event->rules["prices_shown"]); ?>">
         <input type="hidden" name="rules[shown]" value="<?php echo esc_attr($event->rules["shown"]); ?>">

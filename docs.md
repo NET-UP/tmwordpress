@@ -10,21 +10,21 @@
 
 ## Getting configuration variables
 
-All variables from the **ticketmachine_config** database are accessible from the variable `global $tm_globals.`
+All variables from the **ticketmachine_config** database are accessible from the variable `global $ticketmachine_globals.`
 
-> _Note: this does not include theme related variables from the table "ticketmachine_design". use `ticketmachine_debug($tm_globals)` to see the available options._
+> _Note: this does not include theme related variables from the table "ticketmachine_design". use `ticketmachine_debug($ticketmachine_globals)` to see the available options._
 
 ## Current user locale
 
-Current user local can be accessed through `$tm_globals->locale`
+Current user local can be accessed through `$ticketmachine_globals->locale`
 
 > Translations are now managed by WordPress Polyglots.
 
 # API Communication
 
-All API variables such as the base url, tokens and secrets can be globally accessed with `global $tm_api`.
+All API variables such as the base url, tokens and secrets can be globally accessed with `global $ticketmachine_api`.
 
-> You can switch between our staging and production API by changing the **api_environment** field in the **ticketmachine_config** table or overwriting `$tm_api->environment` locally.
+> You can switch between our staging and production API by changing the **api_environment** field in the **ticketmachine_config** table or overwriting `$ticketmachine_api->environment` locally.
 >
 > Example base URL for production: https://cloud.ticketmachine.de/api/v2/
 

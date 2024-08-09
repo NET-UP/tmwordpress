@@ -3,7 +3,7 @@
     
     if(!function_exists("ticketmachine_widget_event_calendar")) {
         function ticketmachine_widget_event_calendar ( $atts, $isWidget ) {
-            global $tm_globals, $tm_api;
+            global $ticketmachine_globals, $ticketmachine_api;
             $ticketmachine_output = "";
             unset($atts['page']);
             unset($atts['widget']);

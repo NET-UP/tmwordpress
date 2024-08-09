@@ -1,6 +1,6 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    function ticketmachine_event_page_details ( $event, $tm_globals ) {
+    function ticketmachine_event_page_details ( $event, $ticketmachine_globals ) {
 
         $ticketmachine_output = "";
         

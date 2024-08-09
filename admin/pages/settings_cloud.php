@@ -1,6 +1,6 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    global $tm_globals, $tm_api, $wpdb, $ticketmachine_db_version, $wp_version;
+    global $ticketmachine_globals, $ticketmachine_api, $wpdb, $ticketmachine_db_version, $wp_version;
 
     $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
     $ticketmachine_config = $ticketmachine_config[0];
@@ -75,7 +75,7 @@
                 array('id' => $ticketmachine_config->id)
             );
 
-            $tm_globals->activated = 1;
+            $ticketmachine_globals->activated = 1;
         ?>
 
         <div class="notice notice-success is-dismissable">
@@ -89,9 +89,9 @@
     $current_locale = get_locale();
     $parsed_locale = substr($current_locale, 0, strpos($current_locale, '_'));
 
-    $authorize_url = $tm_api->auth->proxy;
+    $authorize_url = $ticketmachine_api->auth->proxy;
     $authorize_url .= "?";
-    $authorize_url .= http_build_query($tm_api->auth->data);
+    $authorize_url .= http_build_query($ticketmachine_api->auth->data);
 ?>
 
 <p class="mt-4">
@@ -128,7 +128,7 @@
         <tr>
 			<th><label><?php esc_html_e('Cloud Connection', 'ticketmachine-event-manager'); ?></label></th>
             <td>
-                <?php if($tm_globals->activated) {
+                <?php if($ticketmachine_globals->activated) {
                     if($ticketmachine_config->api_token_failed) {
                         echo "<div style='width: 11px; height: 11px;background-color: orange;border-radius: 100px;'></div>";
                     }else{

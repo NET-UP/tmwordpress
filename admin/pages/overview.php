@@ -1,11 +1,11 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	
-    global $tm_globals, $tm_api, $wpdb;
+    global $ticketmachine_globals, $ticketmachine_api, $wpdb;
     $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
     $ticketmachine_config = $ticketmachine_config[0];
 
-    if(!empty($_GET['code']) && empty($tm_globals->activated)) {
+    if(!empty($_GET['code']) && empty($ticketmachine_globals->activated)) {
         //Exchange the auth code for an access token
         $token = ticketmachine_tmapi_get_access_token(sanitize_text_field($_GET['code']), "new");
 
@@ -26,11 +26,11 @@
                 $save_array,
                 array('id' => $ticketmachine_config->id)
             );
-            $tm_globals->activated = 1;
+            $ticketmachine_globals->activated = 1;
         }
     }
     
-    if(!empty($tm_globals->activated)) {
+    if(!empty($ticketmachine_globals->activated)) {
 ?>
 
 <div class="wrap tm-admin-page">
@@ -61,7 +61,7 @@
 
             <h1 class="wp-heading-inline me-3 mb-3">
                 TicketMachine <i class="fas fa-angle-right mx-1"></i> <?php esc_html_e('Overview', 'ticketmachine-event-manager') ?>
-                <a target="_blank" href="/<?php echo esc_html($tm_globals->events_slug); ?>" class="button button-secondary ms-2"><?php esc_html_e("Go to live webpage", "ticketmachine-event-manager"); ?></a>
+                <a target="_blank" href="/<?php echo esc_html($ticketmachine_globals->events_slug); ?>" class="button button-secondary ms-2"><?php esc_html_e("Go to live webpage", "ticketmachine-event-manager"); ?></a>
             </h1>
 
             <div class="row">

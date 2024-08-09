@@ -1,7 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	function ticketmachine_display_event ( $atts ) {
-		global $event, $tm_globals, $tm_api, $wpdb;
+		global $event, $ticketmachine_globals, $ticketmachine_api, $wpdb;
 
 		$params = array();
 		$ticketmachine_output = "";
@@ -30,7 +30,7 @@
 				$event->has_location_link = 0;
 			}
 
-			if($tm_globals->detail_page_layout == 1){
+			if($ticketmachine_globals->detail_page_layout == 1){
 				$tm1_lg_width = 12;
 				$tm1_xl_width = 12;
 				$tm2_lg_width = 12;
@@ -46,20 +46,20 @@
 				$ticketmachine_output .= '
 						<div class="row">
 							<div class="col-12 col-lg-' . $tm1_lg_width . ' col-xl-' . $tm1_xl_width . ' ticketmachine_left">';
-				$ticketmachine_output .= ticketmachine_event_page_information($event, $tm_globals);
+				$ticketmachine_output .= ticketmachine_event_page_information($event, $ticketmachine_globals);
 				$ticketmachine_output .= '
 							</div>
 							<div class="col-12 col-lg-' . $tm2_lg_width . ' col-xl-' . $tm2_xl_width . ' ticketmachine_right">';
-				$ticketmachine_output .= ticketmachine_event_page_actions($event, $tm_globals);
-				$ticketmachine_output .= ticketmachine_event_page_tickets($event, $tm_globals);
-				if (isset($tm_globals->show_additional_info) && $tm_globals->show_additional_info) {
-					$ticketmachine_output .= ticketmachine_event_page_details($event, $tm_globals);
+				$ticketmachine_output .= ticketmachine_event_page_actions($event, $ticketmachine_globals);
+				$ticketmachine_output .= ticketmachine_event_page_tickets($event, $ticketmachine_globals);
+				if (isset($ticketmachine_globals->show_additional_info) && $ticketmachine_globals->show_additional_info) {
+					$ticketmachine_output .= ticketmachine_event_page_details($event, $ticketmachine_globals);
 				}
-				if (isset($tm_globals->show_google_map) && $tm_globals->show_google_map) {
-					$ticketmachine_output .= ticketmachine_event_page_google_map($event, $tm_globals);
+				if (isset($ticketmachine_globals->show_google_map) && $ticketmachine_globals->show_google_map) {
+					$ticketmachine_output .= ticketmachine_event_page_google_map($event, $ticketmachine_globals);
 				}
 				if (!empty($organizer)) {
-					$ticketmachine_output .= ticketmachine_event_organizer_details($organizer, $tm_globals);
+					$ticketmachine_output .= ticketmachine_event_organizer_details($organizer, $ticketmachine_globals);
 				}
 				$ticketmachine_output .= '
 							</div>
@@ -67,7 +67,7 @@
 			}else{
 				$error = esc_html__("No events could be found", "ticketmachine-event-manager");
 				$ticketmachine_output .= ticketmachine_error_page($error, array(
-															esc_html__("Back to events", "ticketmachine-event-manager") => "/" . esc_html($tm_globals->events_slug)
+															esc_html__("Back to events", "ticketmachine-event-manager") => "/" . esc_html($ticketmachine_globals->events_slug)
 														), esc_html__("Oops!", "ticketmachine-event-manager"));
 			}
 			

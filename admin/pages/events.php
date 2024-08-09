@@ -61,7 +61,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
 
         function get_events(){
             
-            global $tm_globals, $tm_api;
+            global $ticketmachine_globals, $ticketmachine_api;
 
             $params = array();
             if(isset($_GET['s'])){
@@ -136,7 +136,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
          * @return string Text to be placed inside the column <td> (movie title only)
          **************************************************************************/
         function column_ev_name($item){
-            global $tm_globals, $tm_api;
+            global $ticketmachine_globals, $ticketmachine_api;
 
             $additional_text = "";
             if($item['approved'] == 0){
@@ -165,7 +165,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
                 'edit'          => sprintf('<a href="?page=%s&action=%s&id=%s">'.esc_html__('Edit', 'ticketmachine-event-manager').'</a>',esc_html($_REQUEST['page']),'edit',esc_attr($item['id'])),
                 $toggle_type    => '<a href="' . $ticketmachine_action_toggle_url . '">'.$toggle_text.'</a>',
                 'copy'          => '<a href="' . $ticketmachine_action_copy_url . '">'.esc_html__('Copy', 'ticketmachine-event-manager').'</a>',
-                'view'          => sprintf('<a target="_blank" href="/'. esc_html($tm_globals->event_slug) .'?id=%s">'.$view_text.'</a>',esc_attr($item['id']))
+                'view'          => sprintf('<a target="_blank" href="/'. esc_html($ticketmachine_globals->event_slug) .'?id=%s">'.$view_text.'</a>',esc_attr($item['id']))
             );
             if($toggle_type == "publish") {
                 $actions['delete'] = '<a href="' . $ticketmachine_action_delete_url . '">'.esc_html__('Delete', 'ticketmachine-event-manager').'</a>';

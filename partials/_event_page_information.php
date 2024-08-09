@@ -1,6 +1,6 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    function ticketmachine_event_page_information ( $event, $tm_globals ) {
+    function ticketmachine_event_page_information ( $event, $ticketmachine_globals ) {
 
         if(ticketmachine_i18n_date("H:i", $event->ev_date) == "00:00" && ticketmachine_i18n_date("H:i", $event->endtime) == "23:59") {
             $dateoutput = __("Entire Day", "ticketmachine-event-manager");
@@ -30,7 +30,7 @@
                             }
                             $ticketmachine_output .= '<div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; ';
                                 if(isset($event->has_location_link) && $event->has_location_link == 1){        
-                                    $ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($tm_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location['street'] . " " . $event->event_location["house_number"] . " " . $event->event_location["zip"] . " " . $event->event_location["city"] . " " . $event->event_location["country"] )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
+                                    $ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($ticketmachine_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location['street'] . " " . $event->event_location["house_number"] . " " . $event->event_location["zip"] . " " . $event->event_location["city"] . " " . $event->event_location["country"] )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
                                 }else{
                                     $ticketmachine_output .= $event_location;
                                 }
@@ -42,14 +42,14 @@
 
                     <div class="card-text mt-3';
                     
-                    if($tm_globals->detail_page_layout != 1){ 
+                    if($ticketmachine_globals->detail_page_layout != 1){ 
                         $ticketmachine_output .= ' read-more-enabled';
                     }
                         
         $ticketmachine_output .= '">'. wpautop($event->ev_description) .'
                     </div>';
 
-        if($tm_globals->detail_page_layout != 1){
+        if($ticketmachine_globals->detail_page_layout != 1){
             $ticketmachine_output .= '<div class="card-meta text-center pt-1 pb-1 hidden read-more-container">
                             <button title="' . esc_attr__("Read More", "ticketmachine-event-manager") . '" class="btn btn-sm btn-secondary read-more" style="border-radius: 20px;">
                                 <i class="fas fa-chevron-down"></i>
@@ -59,7 +59,7 @@
 
         $ticketmachine_output .= '<div class="card-meta mt-2">';
                     foreach($event->tags as $tag) {
-                        $ticketmachine_output .= "<a href='/" . esc_html($tm_globals->events_slug) . "?tag=" . esc_html($tag) . "' class='card-meta-tag keyword'>". $tag ."</a>";
+                        $ticketmachine_output .= "<a href='/" . esc_html($ticketmachine_globals->events_slug) . "?tag=" . esc_html($tag) . "' class='card-meta-tag keyword'>". $tag ."</a>";
                     }
         $ticketmachine_output .= '
                     </div>

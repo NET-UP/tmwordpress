@@ -1,7 +1,7 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	function ticketmachine_display_events ( $atts ) {
-		global $tm_globals, $tm_api;
+		global $ticketmachine_globals, $ticketmachine_api;
 
 		$params = array();
 		if(isset($_GET['q'])){
@@ -21,11 +21,11 @@
 		}
 		$params = ticketmachine_array_push_assoc($params, "approved", 1);
 		
-		if(isset($atts['display']) && $atts['display'] == "calendar" && $tm_globals->show_calendar || $tm_globals->show_calendar && !$tm_globals->show_boxes && !$tm_globals->show_list){
+		if(isset($atts['display']) && $atts['display'] == "calendar" && $ticketmachine_globals->show_calendar || $ticketmachine_globals->show_calendar && !$ticketmachine_globals->show_boxes && !$ticketmachine_globals->show_list){
 			$current_page = "calendar";
-		}elseif(isset($atts['display']) && $atts['display'] == "list" && $tm_globals->show_list || $tm_globals->show_list && !$tm_globals->show_boxes){
+		}elseif(isset($atts['display']) && $atts['display'] == "list" && $ticketmachine_globals->show_list || $ticketmachine_globals->show_list && !$ticketmachine_globals->show_boxes){
 			$current_page = "list";
-		}elseif($tm_globals->show_boxes){
+		}elseif($ticketmachine_globals->show_boxes){
 			$current_page = "boxes";
 		}else{
 			$current_page = "unknown";
@@ -33,9 +33,9 @@
 		
 		$ticketmachine_output = "<div class='row ticketmachine_events_container'>";
 		
-		$ticketmachine_output .= "<div class='page-header col-12'>" . ticketmachine_search_header($tm_globals, $current_page);
-			if($tm_globals->tag){
-				$ticketmachine_output .= ticketmachine_tag_header($tm_globals);
+		$ticketmachine_output .= "<div class='page-header col-12'>" . ticketmachine_search_header($ticketmachine_globals, $current_page);
+			if($ticketmachine_globals->tag){
+				$ticketmachine_output .= ticketmachine_tag_header($ticketmachine_globals);
 			}
 		$ticketmachine_output .= "</div>";
 		

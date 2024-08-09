@@ -1,6 +1,6 @@
 <?php 
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-    global $tm_globals, $tm_api, $wpdb;
+    global $ticketmachine_globals, $ticketmachine_api, $wpdb;
 
 	if (isset($_POST['reject']) && is_plugin_active( 'ticketmachine-community-events/ticketmachine-community-events.php' )) {
 
@@ -94,7 +94,7 @@
                     $tm_post['vat_id'] = 1;
                 }
 
-                if(empty($tm_globals->organizer_id) || !is_int($tm_globals->organizer_id)){
+                if(empty($ticketmachine_globals->organizer_id) || !is_int($ticketmachine_globals->organizer_id)){
                     $errors[] = "No organizer id could be found";
                 }
 
@@ -107,7 +107,7 @@
                         $organizer = $tm_post['organizer'];
                         unset($tm_post['organizer']);
                     }
-                    $tm_post['organizer_id'] = absint($tm_globals->organizer_id);
+                    $tm_post['organizer_id'] = absint($ticketmachine_globals->organizer_id);
                     $tm_post['approved'] = absint($tm_post['approved']);
                     $tm_post['rules']['shown'] = absint($tm_post['rules']['shown']);
                     $tm_post['rules']['sale_active'] = absint($tm_post['rules']['sale_active']);
@@ -172,7 +172,7 @@
                 <p>
                     <?php echo __('Event saved', 'ticketmachine-event-manager'); ?>!
                     &nbsp;-&nbsp;
-                    <a target="_blank" href="/<?php echo esc_html($tm_globals->event_slug); ?>?id=<?php echo esc_html($response->id); ?>">
+                    <a target="_blank" href="/<?php echo esc_html($ticketmachine_globals->event_slug); ?>?id=<?php echo esc_html($response->id); ?>">
                         <?php 
                             if($response->approved == 1){
                                 echo __('View', 'ticketmachine-event-manager'); 

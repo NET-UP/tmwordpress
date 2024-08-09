@@ -2,9 +2,9 @@
 <?php
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     
-    global $tm_globals, $tm_api, $wpdb;
+    global $ticketmachine_globals, $ticketmachine_api, $wpdb;
 
-    if(isset($tm_globals)) {
+    if(isset($ticketmachine_globals)) {
         $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
         $ticketmachine_config = $ticketmachine_config[0];
 ?>
@@ -41,9 +41,9 @@
                         $current_locale = get_locale();
                         $parsed_locale = substr($current_locale, 0, strpos($current_locale, '_'));
 
-                        $authorize_url = $tm_api->auth->proxy;
+                        $authorize_url = $ticketmachine_api->auth->proxy;
                         $authorize_url .= "?";
-                        $authorize_url .= http_build_query($tm_api->auth->data);
+                        $authorize_url .= http_build_query($ticketmachine_api->auth->data);
                     ?>
                     
                     <a class="button button-primary mt-4 px-3 py-md-1" style="font-size:14px" href="<?php echo esc_url($authorize_url); ?>">

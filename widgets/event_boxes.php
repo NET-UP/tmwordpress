@@ -2,7 +2,7 @@
 	if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     if(!function_exists("ticketmachine_widget_event_boxes")) {
         function ticketmachine_widget_event_boxes ( $atts, $isWidget ) {
-            global $tm_globals, $tm_api;
+            global $ticketmachine_globals, $ticketmachine_api;
             $ticketmachine_output = "";
             unset($atts['page']);
             unset($atts['widget']);
@@ -45,12 +45,12 @@
                     $event = (object)$event;
                     
                     $curr = $event->ev_date;
-                    if(isset($tm_globals->event_grouping) && $tm_globals->event_grouping != "None") {
-                        if ($i == 0 || date( $tm_globals->group_by , strtotime( $curr ) ) != date( $tm_globals->group_by, strtotime( $prev ) ) ) {
+                    if(isset($ticketmachine_globals->event_grouping) && $ticketmachine_globals->event_grouping != "None") {
+                        if ($i == 0 || date( $ticketmachine_globals->group_by , strtotime( $curr ) ) != date( $ticketmachine_globals->group_by, strtotime( $prev ) ) ) {
                             $ticketmachine_output .= "<div class='col-12 my-2'>
                                                 <div class='d-flex'>
                                                     <hr class='my-auto flex-grow-1'>
-                                                    <h3 class='px-4'>" . ticketmachine_i18n_date($tm_globals->format_date, $event->ev_date) . "</h3>
+                                                    <h3 class='px-4'>" . ticketmachine_i18n_date($ticketmachine_globals->format_date, $event->ev_date) . "</h3>
                                                     <hr class='my-auto flex-grow-1'>
                                                 </div>
                                             </div>";
@@ -69,7 +69,7 @@
                         $event->has_location_link = 0;
                     }
                     
-                    $ticketmachine_output .= ticketmachine_event_list_item ( $event, $tm_globals, $atts );
+                    $ticketmachine_output .= ticketmachine_event_list_item ( $event, $ticketmachine_globals, $atts );
                     
                     $i++;
                 }

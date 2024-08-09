@@ -3,7 +3,7 @@
     
     if(!function_exists("ticketmachine_widget_event_list")) {
         function ticketmachine_widget_event_list ( $atts, $isWidget ) {
-            global $tm_globals, $tm_api;
+            global $ticketmachine_globals, $ticketmachine_api;
             $ticketmachine_output = "";
             unset($atts['page']);
             unset($atts['widget']);
@@ -64,9 +64,9 @@
                         }
         
                         if(empty($event->state['sale_active'])){
-                            $event->link = '/' . esc_html($tm_globals->event_slug) .'/?id=' . esc_html($event->id);
+                            $event->link = '/' . esc_html($ticketmachine_globals->event_slug) .'/?id=' . esc_html($event->id);
                         }else{
-                            $event->link = esc_html($tm_globals->webshop_url) .'/events/unseated/select_unseated?event_id=' . esc_html($event->id);
+                            $event->link = esc_html($ticketmachine_globals->webshop_url) .'/events/unseated/select_unseated?event_id=' . esc_html($event->id);
                         }
 
                         $ticketmachine_output .= '<li class="media mx-0 mt-2 p-3">';
@@ -107,7 +107,7 @@
                                 }
                                 $ticketmachine_output .= '<div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; ';
                                     if(isset($event->has_location_link) && $event->has_location_link == 1){        
-                                        $ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($tm_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
+                                        $ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($ticketmachine_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
                                     }else{
                                         $ticketmachine_output .= $event_location;
                                     }
@@ -130,7 +130,7 @@
                     }
 
                     if(isset($atts['show_more']) && $atts['show_more'] > 0){
-                        $ticketmachine_output .= '<li class="media"><a href="/' . esc_html($tm_globals->events_slug) . '">' . esc_html__("Show all events", "ticketmachine-event-manager") . '</a></li>';
+                        $ticketmachine_output .= '<li class="media"><a href="/' . esc_html($ticketmachine_globals->events_slug) . '">' . esc_html__("Show all events", "ticketmachine-event-manager") . '</a></li>';
                     }
 
                     $ticketmachine_output .= '</ul>';
