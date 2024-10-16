@@ -48,8 +48,7 @@
 				  $ticketmachine_output .= '<h5 class="card-title" title="' . esc_attr($event->ev_name) . '">' . esc_html($event->ev_name) . '</h5>';
 				  $ticketmachine_output .= '<div class="card-price"></div>';
 
-				  $ticketmachine_output .= '<div class="row pt-2 row pt-2 gap-3 gap-sm-0">';
-					$ticketmachine_output .= '<div class="col-sm-8 col-md-7">';
+				  $ticketmachine_output .= '<div class="d-sm-flex justify-content-between align-items-center gap-3">';
 
 					if(isset($event->has_location) && $event->has_location == 1){   
 						if(empty($event->ev_location_name)) {
@@ -57,20 +56,18 @@
 						}else{
 							$event_location = $event->ev_location_name;
 						}
-						$ticketmachine_output .= '<p class="card-text mt-0 pt-sm-1 ellipsis"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; ';
+						$ticketmachine_output .= '<div class="card-text mt-0 pt-sm-1 ellipsis"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; ';
 							if(isset($event->has_location_link) && $event->has_location_link == 1){        
 								$ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($ticketmachine_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
 							}else{
 								$ticketmachine_output .= $event_location;
 							}
-						$ticketmachine_output .= '</p>';
+						$ticketmachine_output .= '</div>';
 					}
 
-					$ticketmachine_output .= '</div>';
-					$ticketmachine_output .= '<div class="col-sm-4 col-md-5">';
 					  $ticketmachine_output .= '<a aria-label="' . esc_attr__("To ticket selection for", 'ticketmachine-event-manager') . ' ' . esc_html($event->ev_name)  . '"';
 					  $ticketmachine_output .= ' href="' . $event->link . '"';
-					  $ticketmachine_output .=' class="btn btn-primary btn-sm px-3 float-sm-right d-block" title="' . esc_html__("To ticket selection", 'ticketmachine-event-manager') . '">';
+					  $ticketmachine_output .=' class="btn btn-primary btn-sm px-3 mt-md-2 ticket-btn" title="' . esc_html__("To ticket selection", 'ticketmachine-event-manager') . '">';
 					
 					  if(empty($event->rules['sale_active'])){
 						  $ticketmachine_output .= esc_html__("More", 'ticketmachine-event-manager') . ' &nbsp;<i class="fas fa-angle-right"></i>';
@@ -78,7 +75,6 @@
 						$ticketmachine_output .= esc_html__("Tickets", 'ticketmachine-event-manager') . ' &nbsp;<i class="fas fa-ticket-alt"></i>';
 					  }
 					  $ticketmachine_output .= '</a>';
-					$ticketmachine_output .= '</div>';
 				  $ticketmachine_output .= '</div>';
 				$ticketmachine_output .= '</div>';
 			$ticketmachine_output .= '</card>';
