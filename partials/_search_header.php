@@ -22,22 +22,23 @@
     
                 $ticketmachine_output .= "<div class='form-row'>
                                     <div class='col-12'>
-                                        <div class='input-group'>
-                                            <input name='q' class='form-control' placeholder='" . esc_attr__("Search for events", "ticketmachine-event-manager") . "' value='" . esc_attr__($ticketmachine_globals->search_query) . "'/>
-                                            <input type='hidden' name='tag' value='" . esc_html($ticketmachine_globals->tag) . "'/>
-                                            <button type='submit' alt='" . esc_attr__("Submit search", "ticketmachine-event-manager") . "' class='btn btn-secondary'><i class='fas fa-search'></i></button>
-                                            <div class='col-12 d-sm-none mb-3'></div>";
+                                        <div class='d-flex flex-column flex-md-row gap-2 gap-md-4'>
+                                            <div class='input-group'>
+                                                <input name='q' class='form-control' placeholder='" . esc_attr__("Search for events", "ticketmachine-event-manager") . "' value='" . esc_attr__($ticketmachine_globals->search_query) . "'/>
+                                                <input type='hidden' name='tag' value='" . esc_html($ticketmachine_globals->tag) . "'/>
+                                                <button type='submit' alt='" . esc_attr__("Submit search", "ticketmachine-event-manager") . "' class='btn btn-secondary'><i class='fas fa-search'></i></button>
+                                            </div>";
     
     
                                             if(isset($_GET['display']) && sanitize_text_field($_GET['display']) == "calendar"){
-                                $ticketmachine_output .= "<div class='btn-group ms-0 ms-sm-4'>
+                                $ticketmachine_output .= "<div class='btn-group' style='min-width: 200px'>
                                                     <a href='#' aria-label='" . esc_attr__("To previous month", "ticketmachine-event-manager") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
                                                     <a href='#' class='btn btn-secondary' id='calendar-title'></a>
                                                     <a href='#' aria-label='" . esc_attr__("To next month", "ticketmachine-event-manager") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
                                                 </div>";
                                             }
     
-                                            $ticketmachine_output .= "<div class='btn-group ms-sm-4'>";
+                                            $ticketmachine_output .= "<div class='btn-group'>";
                                             
                                                 if($ticketmachine_globals->show_boxes){
                                                     $ticketmachine_output .= "<a class='btn ";
@@ -69,9 +70,8 @@
                                                     $ticketmachine_output .="' title='" . esc_attr__("Show events in calendar", "ticketmachine-event-manager") . "' aria-label='" . esc_attr__("Show events in calendar", "ticketmachine-event-manager") . "' href='" . esc_url(str_replace("?&", "?", $ticketmachine_globals->current_url . $params . "&display=calendar")) . "' data-calendar-view='month'><i class='far fa-calendar-alt'></i></a>";
                                                 }
     
-                                            $ticketmachine_output .= "</div>";
-    
-                    $ticketmachine_output .= "		</div>
+                    $ticketmachine_output .= "</div>
+                                        </div>
                                     </div>
                                 </div>
                             </form>";

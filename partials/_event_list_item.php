@@ -49,7 +49,7 @@
 				  $ticketmachine_output .= '<div class="card-price"></div>';
 
 				  $ticketmachine_output .= '<div class="d-sm-flex justify-content-between align-items-center gap-3">';
-					$ticketmachine_output .= '<div class="card-text mt-0 pt-sm-1 ellipsis">';
+					$ticketmachine_output .= '<div class="card-text mt-0 pt-sm-1 ellipsis opacity-75">';
 						if(isset($event->has_location) && $event->has_location == 1){   
 							if(empty($event->ev_location_name)) {
 								$event_location = $event->event_location->street . " " . $event->event_location->house_number;
