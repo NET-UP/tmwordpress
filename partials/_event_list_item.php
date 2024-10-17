@@ -44,11 +44,9 @@
 					}
 					$ticketmachine_output .= '</div>';
 
-
 				  $ticketmachine_output .= '<h5 class="card-title" title="' . esc_attr($event->ev_name) . '">' . esc_html($event->ev_name) . '</h5>';
 				  $ticketmachine_output .= '<div class="card-price"></div>';
 
-				  $ticketmachine_output .= '<div class="d-sm-flex justify-content-between align-items-center gap-3">';
 					$ticketmachine_output .= '<div class="card-text mt-0 pt-sm-1 ellipsis opacity-75">';
 						if(isset($event->has_location) && $event->has_location == 1){   
 							if(empty($event->ev_location_name)) {
@@ -67,15 +65,14 @@
 
 					$ticketmachine_output .= '<a aria-label="' . esc_attr__("To ticket selection for", 'ticketmachine-event-manager') . ' ' . esc_html($event->ev_name)  . '"';
 					$ticketmachine_output .= ' href="' . $event->link . '"';
-					$ticketmachine_output .=' class="btn btn-primary btn-sm px-3 mt-2 mt-sm-0 d-block ticket-btn" title="' . esc_html__("To ticket selection", 'ticketmachine-event-manager') . '">';
-				
-					if(empty($event->rules['sale_active'])){
-						$ticketmachine_output .= esc_html__("More", 'ticketmachine-event-manager');
-					}else{
-					$ticketmachine_output .= esc_html__("Tickets", 'ticketmachine-event-manager');
-					}
+					$ticketmachine_output .=' class="btn btn-primary btn-sm px-3 mt-2 d-block ticket-btn" title="' . esc_html__("To ticket selection", 'ticketmachine-event-manager') . '">';
+						if(empty($event->rules['sale_active'])){
+							$ticketmachine_output .= esc_html__("More", 'ticketmachine-event-manager');
+						}else{
+						$ticketmachine_output .= esc_html__("Tickets", 'ticketmachine-event-manager');
+						}
 					$ticketmachine_output .= '</a>';
-				  $ticketmachine_output .= '</div>';
+
 				$ticketmachine_output .= '</div>';
 			$ticketmachine_output .= '</card>';
 		$ticketmachine_output .= '</div>';
