@@ -7,36 +7,36 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-			$tm_post = (object)$_POST;
+			$ticketmachine_post = (object)$_POST;
 			$errors = array();
 			
 			$save_array = 
 				array(
-					"container_background_color" => $tm_post->container_background_color,
-					"box_text_color" => $tm_post->box_text_color,
-					"box_meta_color" => $tm_post->box_text_color,
-					"box_header_color" => $tm_post->box_text_color,
-					"box_border_color" => $tm_post->box_border_color,
+					"container_background_color" => $ticketmachine_post->container_background_color,
+					"box_text_color" => $ticketmachine_post->box_text_color,
+					"box_meta_color" => $ticketmachine_post->box_text_color,
+					"box_header_color" => $ticketmachine_post->box_text_color,
+					"box_border_color" => $ticketmachine_post->box_border_color,
 
-					"button_primary_background_color" => $tm_post->button_primary_background_color,
-					"button_primary_text_color" => $tm_post->button_primary_text_color,
-					"button_primary_border_color" => $tm_post->button_primary_border_color,
-					"button_primary_background_color_hover" => $tm_post->button_primary_background_color_hover,
-					"button_primary_text_color_hover" => $tm_post->button_primary_text_color_hover,
-					"button_primary_border_color_hover" => $tm_post->button_primary_border_color_hover,
+					"button_primary_background_color" => $ticketmachine_post->button_primary_background_color,
+					"button_primary_text_color" => $ticketmachine_post->button_primary_text_color,
+					"button_primary_border_color" => $ticketmachine_post->button_primary_border_color,
+					"button_primary_background_color_hover" => $ticketmachine_post->button_primary_background_color_hover,
+					"button_primary_text_color_hover" => $ticketmachine_post->button_primary_text_color_hover,
+					"button_primary_border_color_hover" => $ticketmachine_post->button_primary_border_color_hover,
 
-					"button_secondary_border_color_hover" => $tm_post->button_secondary_border_color_hover,
-					"button_secondary_background_color" => $tm_post->button_secondary_background_color,
-					"button_secondary_text_color" => $tm_post->button_secondary_text_color,
-					"button_secondary_border_color" => $tm_post->button_secondary_border_color,
-					"button_secondary_background_color_hover" => $tm_post->button_secondary_background_color_hover,
-					"button_secondary_text_color_hover" => $tm_post->button_secondary_text_color_hover,
-					"button_secondary_border_color_hover" => $tm_post->button_secondary_border_color_hover,
+					"button_secondary_border_color_hover" => $ticketmachine_post->button_secondary_border_color_hover,
+					"button_secondary_background_color" => $ticketmachine_post->button_secondary_background_color,
+					"button_secondary_text_color" => $ticketmachine_post->button_secondary_text_color,
+					"button_secondary_border_color" => $ticketmachine_post->button_secondary_border_color,
+					"button_secondary_background_color_hover" => $ticketmachine_post->button_secondary_background_color_hover,
+					"button_secondary_text_color_hover" => $ticketmachine_post->button_secondary_text_color_hover,
+					"button_secondary_border_color_hover" => $ticketmachine_post->button_secondary_border_color_hover,
 
-					"link_text_color" => $tm_post->link_text_color,
-					"link_text_color_hover" => $tm_post->link_text_color_hover,
+					"link_text_color" => $ticketmachine_post->link_text_color,
+					"link_text_color_hover" => $ticketmachine_post->link_text_color_hover,
 
-					"date_text_color" => $tm_post->date_text_color
+					"date_text_color" => $ticketmachine_post->date_text_color
 				);
 
 			//validation & sanitation
@@ -59,7 +59,7 @@
 					<p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
 				</div>
 				<?php
-				$ticketmachine_design = $tm_post;
+				$ticketmachine_design = $ticketmachine_post;
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">

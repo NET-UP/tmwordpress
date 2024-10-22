@@ -59,16 +59,16 @@
 		
 			//get page slugs
 			if(!empty($ticketmachine_globals->events_slug_id) && $ticketmachine_globals->events_slug_id > 0){
-				$tm_post = (object)get_post($ticketmachine_globals->events_slug_id); 
-				$ticketmachine_globals->events_slug = $tm_post->post_name;
+				$ticketmachine_post = (object)get_post($ticketmachine_globals->events_slug_id); 
+				$ticketmachine_globals->events_slug = $ticketmachine_post->post_name;
 			}
 			if(!empty($ticketmachine_globals->event_slug_id) && $ticketmachine_globals->event_slug_id > 0){
-				$tm_post = (object)get_post($ticketmachine_globals->event_slug_id); 
-				$ticketmachine_globals->event_slug = $tm_post->post_name;
+				$ticketmachine_post = (object)get_post($ticketmachine_globals->event_slug_id); 
+				$ticketmachine_globals->event_slug = $ticketmachine_post->post_name;
 			}
 			if(!empty($ticketmachine_globals->privacy_slug_id) && $ticketmachine_globals->privacy_slug_id > 0){
-				$tm_post = (object)get_post($ticketmachine_globals->privacy_slug_id); 
-				$ticketmachine_globals->privacy_slug = $tm_post->post_name;
+				$ticketmachine_post = (object)get_post($ticketmachine_globals->privacy_slug_id); 
+				$ticketmachine_globals->privacy_slug = $ticketmachine_post->post_name;
 			}
 		
 			switch ($ticketmachine_globals->event_grouping) {

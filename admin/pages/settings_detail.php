@@ -7,87 +7,87 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-            $tm_post = (object)$_POST;
+            $ticketmachine_post = (object)$_POST;
 			$errors = array();
 
 			//validate
-			if (!empty($tm_post->show_social_media)){
-				$tm_post->show_social_media = true;
+			if (!empty($ticketmachine_post->show_social_media)){
+				$ticketmachine_post->show_social_media = true;
 			}else{
-				$tm_post->show_social_media = false;
+				$ticketmachine_post->show_social_media = false;
             }
             
-			if (!empty($tm_post->show_social_media_ical)){
-				$tm_post->show_social_media_ical = true;
+			if (!empty($ticketmachine_post->show_social_media_ical)){
+				$ticketmachine_post->show_social_media_ical = true;
 			}else{
-				$tm_post->show_social_media_ical = false;
+				$ticketmachine_post->show_social_media_ical = false;
             }
             
-			if (!empty($tm_post->show_social_media_google_cal)){
-				$tm_post->show_social_media_google_cal = true;
+			if (!empty($ticketmachine_post->show_social_media_google_cal)){
+				$ticketmachine_post->show_social_media_google_cal = true;
 			}else{
-				$tm_post->show_social_media_google_cal = false;
+				$ticketmachine_post->show_social_media_google_cal = false;
             }
             
-			if (!empty($tm_post->show_social_media_facebook)){
-				$tm_post->show_social_media_facebook = true;
+			if (!empty($ticketmachine_post->show_social_media_facebook)){
+				$ticketmachine_post->show_social_media_facebook = true;
 			}else{
-				$tm_post->show_social_media_facebook = false;
+				$ticketmachine_post->show_social_media_facebook = false;
             }
             
-			if (!empty($tm_post->show_social_media_twitter)){
-				$tm_post->show_social_media_twitter = true;
+			if (!empty($ticketmachine_post->show_social_media_twitter)){
+				$ticketmachine_post->show_social_media_twitter = true;
 			}else{
-				$tm_post->show_social_media_twitter = false;
+				$ticketmachine_post->show_social_media_twitter = false;
             }
             
-			if (!empty($tm_post->show_social_media_email)){
-				$tm_post->show_social_media_email = true;
+			if (!empty($ticketmachine_post->show_social_media_email)){
+				$ticketmachine_post->show_social_media_email = true;
 			}else{
-				$tm_post->show_social_media_email = false;
+				$ticketmachine_post->show_social_media_email = false;
             }
             
-			if (!empty($tm_post->show_social_media_messenger)){
-				$tm_post->show_social_media_messenger = true;
+			if (!empty($ticketmachine_post->show_social_media_messenger)){
+				$ticketmachine_post->show_social_media_messenger = true;
 			}else{
-				$tm_post->show_social_media_messenger = false;
+				$ticketmachine_post->show_social_media_messenger = false;
             }
             
-			if (!empty($tm_post->show_social_media_whatsapp)){
-				$tm_post->show_social_media_whatsapp = true;
+			if (!empty($ticketmachine_post->show_social_media_whatsapp)){
+				$ticketmachine_post->show_social_media_whatsapp = true;
 			}else{
-				$tm_post->show_social_media_whatsapp = false;
+				$ticketmachine_post->show_social_media_whatsapp = false;
             }
             
-			if (!empty($tm_post->show_google_map)){
-				$tm_post->show_google_map = true;
+			if (!empty($ticketmachine_post->show_google_map)){
+				$ticketmachine_post->show_google_map = true;
 			}else{
-				$tm_post->show_google_map = false;
+				$ticketmachine_post->show_google_map = false;
             }
             
-			if (!empty($tm_post->show_additional_info)){
-				$tm_post->show_additional_info = true;
+			if (!empty($ticketmachine_post->show_additional_info)){
+				$ticketmachine_post->show_additional_info = true;
 			}else{
-				$tm_post->show_additional_info = false;
+				$ticketmachine_post->show_additional_info = false;
             }
             
-			if (empty($tm_post->detail_page_layout)){
-				$tm_post->detail_page_layout = 1;
+			if (empty($ticketmachine_post->detail_page_layout)){
+				$ticketmachine_post->detail_page_layout = 1;
 			}
 
             $save_array = 
                 array(
-                    "show_social_media" => (bool)$tm_post->show_social_media,
-                    "show_social_media_ical" => (bool)$tm_post->show_social_media_ical,
-                    "show_social_media_google_cal" => (bool)$tm_post->show_social_media_google_cal,
-                    "show_social_media_facebook" => (bool)$tm_post->show_social_media_facebook,
-                    "show_social_media_twitter" => (bool)$tm_post->show_social_media_twitter,
-                    "show_social_media_email" => (bool)$tm_post->show_social_media_email,
-                    "show_social_media_messenger" => (bool)$tm_post->show_social_media_messenger,
-                    "show_social_media_whatsapp" => (bool)$tm_post->show_social_media_whatsapp,
-                    "show_google_map" => (bool)$tm_post->show_google_map,
-                    "show_additional_info" => (bool)$tm_post->show_additional_info,
-                    "detail_page_layout" => (int)$tm_post->detail_page_layout
+                    "show_social_media" => (bool)$ticketmachine_post->show_social_media,
+                    "show_social_media_ical" => (bool)$ticketmachine_post->show_social_media_ical,
+                    "show_social_media_google_cal" => (bool)$ticketmachine_post->show_social_media_google_cal,
+                    "show_social_media_facebook" => (bool)$ticketmachine_post->show_social_media_facebook,
+                    "show_social_media_twitter" => (bool)$ticketmachine_post->show_social_media_twitter,
+                    "show_social_media_email" => (bool)$ticketmachine_post->show_social_media_email,
+                    "show_social_media_messenger" => (bool)$ticketmachine_post->show_social_media_messenger,
+                    "show_social_media_whatsapp" => (bool)$ticketmachine_post->show_social_media_whatsapp,
+                    "show_google_map" => (bool)$ticketmachine_post->show_google_map,
+                    "show_additional_info" => (bool)$ticketmachine_post->show_additional_info,
+                    "detail_page_layout" => (int)$ticketmachine_post->detail_page_layout
                 );
             if (!empty($ticketmachine_config) && empty($errors)) {
                 $wpdb->update(
@@ -100,7 +100,7 @@
                     <p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
                 </div>
                 <?php
-                $ticketmachine_config = $tm_post;
+                $ticketmachine_config = $ticketmachine_post;
             }else{
                 ?>
                 <div class="notice notice-error is-dismissable">

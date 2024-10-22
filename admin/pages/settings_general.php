@@ -7,27 +7,27 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-			$tm_post = (object)$_POST;
+			$ticketmachine_post = (object)$_POST;
 			$errors = array();
 
 			//validate
-			if(empty($tm_post->events_slug_id) || !ctype_digit($tm_post->events_slug_id)){
+			if(empty($ticketmachine_post->events_slug_id) || !ctype_digit($ticketmachine_post->events_slug_id)){
 				$errors[] = "Events page can not be empty";
 			}
 
-			if(empty($tm_post->event_slug_id) || !ctype_digit($tm_post->events_slug_id)){
+			if(empty($ticketmachine_post->event_slug_id) || !ctype_digit($ticketmachine_post->events_slug_id)){
 				$errors[] = "Event page can not be empty";
 			}
 
-			if(empty($tm_post->privacy_slug_id) || !ctype_digit($tm_post->privacy_slug_id)){
+			if(empty($ticketmachine_post->privacy_slug_id) || !ctype_digit($ticketmachine_post->privacy_slug_id)){
 				$errors[] = "Event page can not be empty";
 			}
 
 			$save_array = 
 				array(
-					"events_slug_id" => absint($tm_post->events_slug_id),
-					"event_slug_id" => absint($tm_post->event_slug_id),
-					"privacy_slug_id" => absint($tm_post->privacy_slug_id)
+					"events_slug_id" => absint($ticketmachine_post->events_slug_id),
+					"event_slug_id" => absint($ticketmachine_post->event_slug_id),
+					"privacy_slug_id" => absint($ticketmachine_post->privacy_slug_id)
 				);
 			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(
@@ -40,7 +40,7 @@
 					<p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
 				</div>
 				<?php
-				$ticketmachine_config = $tm_post;
+				$ticketmachine_config = $ticketmachine_post;
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">

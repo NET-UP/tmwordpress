@@ -7,24 +7,24 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-			$tm_post = (object)$_POST;
+			$ticketmachine_post = (object)$_POST;
 			$errors = array();
 
 			//validate
-			if (!empty($tm_post->show_boxes)){
-				$tm_post->show_boxes = true;
+			if (!empty($ticketmachine_post->show_boxes)){
+				$ticketmachine_post->show_boxes = true;
 			}else{
-				$tm_post->show_boxes = false;
+				$ticketmachine_post->show_boxes = false;
 			}
 
-			if(!in_array($tm_post->event_grouping, array("Month", "Year","None"))){
+			if(!in_array($ticketmachine_post->event_grouping, array("Month", "Year","None"))){
 				$errors[] =  'Sorry, your groups did not verify.';
 			}
 
 			$save_array =
 				array(
-					"show_boxes" => (bool)$tm_post->show_boxes,
-					"event_grouping" => sanitize_text_field($tm_post->event_grouping),
+					"show_boxes" => (bool)$ticketmachine_post->show_boxes,
+					"event_grouping" => sanitize_text_field($ticketmachine_post->event_grouping),
 				);
 			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(
@@ -37,7 +37,7 @@
 					<p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
 				</div>
 				<?php
-				$ticketmachine_config = $tm_post;
+				$ticketmachine_config = $ticketmachine_post;
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">

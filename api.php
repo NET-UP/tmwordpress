@@ -2,7 +2,7 @@
     if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     
     // Send GET or POST request to the TicketMachine API
-    function ticketmachine_apiRequest($tm_url, $tm_post=FALSE, $method="GET", $headers=array()) {
+    function ticketmachine_apiRequest($ticketmachine_url, $ticketmachine_post=FALSE, $method="GET", $headers=array()) {
         global $wpdb, $ticketmachine_globals, $ticketmachine_api, $ticketmachine_debug;
 
         if(!$headers) {
@@ -16,15 +16,15 @@
 
             if($method == "POST") {
 
-                if($tm_post) {
+                if($ticketmachine_post) {
                     $headers = ticketmachine_array_push_assoc($headers, 'Content-Type', 'application/json');
                     
-                    $resource = wp_remote_post($tm_url, array(
+                    $resource = wp_remote_post($ticketmachine_url, array(
                         'method'  => 'POST',
                         'sslverify' => FALSE,
                         'timeout' => 45,
                         'headers' => $headers,
-                        'body' 	  => str_replace("\'", "'", str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($tm_post, JSON_UNESCAPED_SLASHES)))))
+                        'body' 	  => str_replace("\'", "'", str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($ticketmachine_post, JSON_UNESCAPED_SLASHES)))))
                     ));
                         
                     $log_resource = $resource;
@@ -34,11 +34,11 @@
 
                     $sent = array(
                         "headers" => (array)$headers,
-                        "body" => (array)$tm_post
+                        "body" => (array)$ticketmachine_post
                     );
 
                     $log = array(
-                        "url" => $tm_url,
+                        "url" => $ticketmachine_url,
                         "sent" => $sent,
                         "response" => $log_resource
                     );
@@ -53,9 +53,8 @@
                         ticketmachine_log(json_encode($log), "info");
                     }
 
-                    if(strpos($tm_url, 'token') !== false) {
-                        if($status_code == 409) {
-                        }elseif($status_code == 400) {
+                    if(strpos($ticketmachine_url, 'token') !== false) {
+                        if($status_code == 400) {
                             // retry after 2 seconds if invalid token somehow
                             sleep(2);
                             ticketmachine_tmapi_refresh_token_check(true);
@@ -66,11 +65,11 @@
 
             }else{
 
-                if($tm_post) {
+                if($ticketmachine_post) {
                     $headers = ticketmachine_array_push_assoc($headers, 'Accept', 'application/json');
                 }
 
-                $resource = wp_remote_get($tm_url, array(
+                $resource = wp_remote_get($ticketmachine_url, array(
                     'method'  => 'GET',
                     'sslverify' => FALSE,
                     'timeout' => 45,
@@ -91,7 +90,7 @@
 
     /* API Requests */
     // Get event list
-    function ticketmachine_tmapi_events($params=array(), $method="GET", $tm_post=FALSE,  $headers=array(), $tm_url_only=0){
+    function ticketmachine_tmapi_events($params=array(), $method="GET", $ticketmachine_post=FALSE,  $headers=array(), $ticketmachine_url_only=0){
         global $ticketmachine_api, $ticketmachine_globals;
 
         if(isset($ticketmachine_api)) {
@@ -104,44 +103,44 @@
                 $params->query = $params->q;
             }
 
-            $tm_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/events?";
+            $ticketmachine_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/events?";
             
             if($ticketmachine_globals->organizer && $ticketmachine_globals->organizer != "" ){
-                $tm_url .= "organizer.og_abbreviation[eq]=" . $ticketmachine_globals->organizer;
+                $ticketmachine_url .= "organizer.og_abbreviation[eq]=" . $ticketmachine_globals->organizer;
             }elseif($params->organizer){
-                $tm_url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
+                $ticketmachine_url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
             }
             
             if(empty($params->show_old)) {
-                $tm_url .= "&endtime[gte]=" . $ticketmachine_globals->first_event_date;
+                $ticketmachine_url .= "&endtime[gte]=" . $ticketmachine_globals->first_event_date;
             }
-            $tm_url .= "&sort=". $params->sort;
+            $ticketmachine_url .= "&sort=". $params->sort;
             if(empty($params->per_page)) {
                 $params->per_page = 30;
             }
-            $tm_url .= "&per_page=" . (int)$params->per_page;
+            $ticketmachine_url .= "&per_page=" . (int)$params->per_page;
             if(!empty($params->pg)) {
-                $tm_url .= "&offset=" . (int)$params->per_page*($params->pg-1);
+                $ticketmachine_url .= "&offset=" . (int)$params->per_page*($params->pg-1);
             }
             
             if(!empty($params->query)) {
-                $tm_url .= "&ev_name[contains]=" . htmlspecialchars(urlencode($params->query));
+                $ticketmachine_url .= "&ev_name[contains]=" . htmlspecialchars(urlencode($params->query));
             }
             
             if(!empty($params->tag)) {
-                $tm_url .= "&tags[eq]=" . htmlspecialchars(urlencode($params->tag));
+                $ticketmachine_url .= "&tags[eq]=" . htmlspecialchars(urlencode($params->tag));
             }
             
             if(isset($params->approved)) {
-                $tm_url .= "&approved[eq]=" . (int)$params->approved;
+                $ticketmachine_url .= "&approved[eq]=" . (int)$params->approved;
             }
 
-            ticketmachine_debug($tm_url);
+            ticketmachine_debug($ticketmachine_url);
 
-            if(isset($tm_url_only) && $tm_url_only == 1) {
-                return $tm_url;
+            if(isset($ticketmachine_url_only) && $ticketmachine_url_only == 1) {
+                return $ticketmachine_url;
             }else{
-                $events = (object)ticketmachine_apiRequest($tm_url, $tm_post, $method, $headers);
+                $events = (object)ticketmachine_apiRequest($ticketmachine_url, $ticketmachine_post, $method, $headers);
                 ticketmachine_debug($events->meta);
                 return $events;
             }
@@ -149,25 +148,25 @@
     }
 
     // Get event
-    function ticketmachine_tmapi_event($params=array(), $method="GET", $tm_post=FALSE, $headers=array()){
+    function ticketmachine_tmapi_event($params=array(), $method="GET", $ticketmachine_post=FALSE, $headers=array()){
         global $ticketmachine_api, $ticketmachine_globals;
         if(isset($ticketmachine_api)) {
                 
             if($method == "POST"){
-                $tm_post = $params;
+                $ticketmachine_post = $params;
             }
             $params = (object)$params;
 
-            $tm_url = $ticketmachine_api->base_url. "ticketmachine.de/api/v2/events/";
+            $ticketmachine_url = $ticketmachine_api->base_url. "ticketmachine.de/api/v2/events/";
             if(!empty($params && isset($params->id))){ 
-                $tm_url .= (int)$params->id;
+                $ticketmachine_url .= (int)$params->id;
             }
 
             if(!empty($params->categories)) {
-                $tm_url .= "?categories=true";
+                $ticketmachine_url .= "?categories=true";
             }
 
-            $event = (object)ticketmachine_apiRequest($tm_url, $tm_post, $method, $headers);
+            $event = (object)ticketmachine_apiRequest($ticketmachine_url, $ticketmachine_post, $method, $headers);
 
             return $event;
         }
@@ -178,9 +177,9 @@
         global $ticketmachine_api, $ticketmachine_globals;
 
         if(isset($ticketmachine_api)) {
-            $tm_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/events/" . absint($_GET['id']) . "/copy";
+            $ticketmachine_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/events/" . absint($_GET['id']) . "/copy";
 
-            $event = ticketmachine_apiRequest($tm_url, $params, "POST");
+            $event = ticketmachine_apiRequest($ticketmachine_url, $params, "POST");
             return (object)$event;
         }
     }
@@ -189,21 +188,21 @@
     function ticketmachine_tmapi_event_delete($params){
         global $ticketmachine_api, $ticketmachine_globals;
 
-        $tm_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/events/" . absint($_GET['id']) . "/delete";
+        $ticketmachine_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/events/" . absint($_GET['id']) . "/delete";
 
-        $event = ticketmachine_apiRequest($tm_url, $params, "POST");
+        $event = ticketmachine_apiRequest($ticketmachine_url, $params, "POST");
         return (object)$event;
     }
 
     // Get connected organizer
-    function ticketmachine_tmapi_organizers($params=array(), $method="GET", $tm_post=FALSE, $headers=array()){
+    function ticketmachine_tmapi_organizers($params=array(), $method="GET", $ticketmachine_post=FALSE, $headers=array()){
         global $ticketmachine_api, $ticketmachine_globals;
 
         $params = (object)$params;
 
-        $tm_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/organizers/me";
+        $ticketmachine_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/organizers/me";
 
-        $organizer = ticketmachine_apiRequest($tm_url, $tm_post, $method, $headers);
+        $organizer = ticketmachine_apiRequest($ticketmachine_url, $ticketmachine_post, $method, $headers);
 
         return $organizer;
     }
@@ -350,9 +349,9 @@
                 $params->sort = "name";
             }
 
-            $tm_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/events/tags";
+            $ticketmachine_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/events/tags";
 
-            $categories = ticketmachine_apiRequest($tm_url, $params, $method);
+            $categories = ticketmachine_apiRequest($ticketmachine_url, $params, $method);
             return (object)$categories;
         }
     }
@@ -363,9 +362,9 @@
 
         if(isset($ticketmachine_api)) {
             $params = (object)$params;
-            $tm_url = $ticketmachine_api->scheme . "://cloud." . $ticketmachine_api->environment . "ticketmachine.de/api/v2/event/tags/types/category/add";
+            $ticketmachine_url = $ticketmachine_api->scheme . "://cloud." . $ticketmachine_api->environment . "ticketmachine.de/api/v2/event/tags/types/category/add";
 
-            $category = ticketmachine_apiRequest($tm_url, $params, $method);
+            $category = ticketmachine_apiRequest($ticketmachine_url, $params, $method);
             return (object)$category;
         }
     }
@@ -376,8 +375,8 @@
 
         if(isset($ticketmachine_api)) {
             $params = (object)$params;
-            $tm_url = $ticketmachine_api->scheme . "://cloud." . $ticketmachine_api->environment . "ticketmachine.de/api/v2/event/tags/types/category/remove";
-            $category = ticketmachine_apiRequest($tm_url, $params, $method);
+            $ticketmachine_url = $ticketmachine_api->scheme . "://cloud." . $ticketmachine_api->environment . "ticketmachine.de/api/v2/event/tags/types/category/remove";
+            $category = ticketmachine_apiRequest($ticketmachine_url, $params, $method);
             return (object)$category;
         }
     }

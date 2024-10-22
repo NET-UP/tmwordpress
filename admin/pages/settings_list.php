@@ -7,19 +7,19 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-			$tm_post = (object)$_POST;
+			$ticketmachine_post = (object)$_POST;
 			$errors = array();
 
 			//validate
-			if (!empty($tm_post->show_list)){
-				$tm_post->show_list = true;
+			if (!empty($ticketmachine_post->show_list)){
+				$ticketmachine_post->show_list = true;
 			}else{
-				$tm_post->show_list = false;
+				$ticketmachine_post->show_list = false;
 			}
 
 			$save_array = 
 				array(
-					"show_list" => (bool)$tm_post->show_list
+					"show_list" => (bool)$ticketmachine_post->show_list
 				);
 
 			if (!empty($ticketmachine_config) && empty($errors)) {
@@ -33,7 +33,7 @@
 					<p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
 				</div>
 				<?php
-				$ticketmachine_config = $tm_post;
+				$ticketmachine_config = $ticketmachine_post;
 			}else{
 				?>
 				<div class="notice notice-error is-dismissable">

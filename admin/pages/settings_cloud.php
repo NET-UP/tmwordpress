@@ -12,12 +12,12 @@
 			print 'Sorry, your nonce did not verify.';
 			exit;
 		} else {
-			$tm_post = (object)$_POST;
+			$ticketmachine_post = (object)$_POST;
 			$errors = array();
 
 			$save_array = 
 				array(
-                    "webshop_url" => $tm_post->webshop_url
+                    "webshop_url" => $ticketmachine_post->webshop_url
                 );
 
                 if (!empty($ticketmachine_config) && empty($errors)) {
@@ -31,7 +31,7 @@
                         <p><?php esc_html_e('Saved', 'ticketmachine-event-manager'); ?>!</p>
                     </div>
                     <?php
-                    $ticketmachine_config->webshop_url = $tm_post->webshop_url;
+                    $ticketmachine_config->webshop_url = $ticketmachine_post->webshop_url;
                 }else{
                     ?>
                     <div class="notice notice-error is-dismissable">
