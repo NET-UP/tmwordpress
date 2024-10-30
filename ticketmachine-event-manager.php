@@ -21,7 +21,7 @@
 	add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
 
 	global $ticketmachine_db_version;
-	$ticketmachine_db_version = "1.9.8";
+	$ticketmachine_db_version = "1.9.9";
 	
 	// Load translations if they don't already exist
     function ticketmachine_wpdocs_load_textdomain() {
