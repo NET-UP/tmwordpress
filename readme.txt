@@ -87,6 +87,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.9.11 =
+* Fixed mass email sending error
+
 = 1.9.10 =
 * Fixed event tag filter bug
 
