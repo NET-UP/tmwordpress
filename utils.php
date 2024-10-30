@@ -49,4 +49,32 @@
 		return $formatted_date;
 	}
 
+    function ticketmachine_strip_query_param($url, $param) {
+        $parsedUrl = parse_url($url);
+        $query = array();
+    
+        if (isset($parsedUrl['query'])) {
+            parse_str($parsedUrl['query'], $query);
+
+            $result = array();
+
+            foreach ($query as $key => $value) {
+                $key = str_replace('amp;', '', $key);
+         
+                $result[$key] = $value;
+            }
+
+            $query = $result;
+
+            unset($query[$param]);
+        }
+        echo var_dump($query);
+    
+        $path = isset($parsedUrl['path']) ? $parsedUrl['path'] : '/';
+        $query = !empty($query) ? '?'. http_build_query($query) : '';
+
+    
+        return $path . $query;
+    }
+
 ?>

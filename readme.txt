@@ -87,6 +87,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.9.10 =
+* Fixed event tag filter bug
+
 = 1.9.9 =
 * Fixed compatibility with Gutenberg
 * Fixed minor design issues
