@@ -114,7 +114,7 @@
                                 $ticketmachine_output .= '</div>';
                             }
 
-                            $ticketmachine_output .= '<h5 class="mt-0 mb-1"><a class="tm-list-title" href="' . $event->link . '">' . $event->ev_name . '</a></h5>';
+                            $ticketmachine_output .= '<h5 class="mt-1 mb-1"><a class="tm-list-title" href="' . $event->link . '">' . $event->ev_name . '</a></h5>';
                             
                             if(isset($atts['show_description']) && $atts['show_description'] > 0){
                                 if(empty($atts['description_length'])){
