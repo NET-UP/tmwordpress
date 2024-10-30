@@ -68,7 +68,6 @@
 
             unset($query[$param]);
         }
-        echo var_dump($query);
     
         $path = isset($parsedUrl['path']) ? $parsedUrl['path'] : '/';
         $query = !empty($query) ? '?'. http_build_query($query) : '';
