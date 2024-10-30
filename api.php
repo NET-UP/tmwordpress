@@ -216,6 +216,8 @@
                 $actual_config = (object)$wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1")[0];
 
                 if(!empty($actual_config->api_refresh_token) && $actual_config->api_refresh_token == $ticketmachine_globals->api_refresh_token) {
+                    sleep(1);
+
                     $token = ticketmachine_tmapi_get_access_token($actual_config->api_refresh_token, "update");
 
                     if(isset($token['access_token'])){
@@ -261,8 +263,10 @@
                                 $save_array,
                                 array('id' => $ticketmachine_globals->id)
                             );
-                            
+
                             $ticketmachine_globals->activated = 0;
+                            
+                            sleep(1);
                             
                             $php_version = PHP_VERSION ?? $PHP_VERSION;
                             $headers = array('Content-Type: text/html; charset=UTF-8');
