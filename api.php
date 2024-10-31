@@ -249,7 +249,7 @@
                             array('id' => $ticketmachine_globals->id)
                         );
 
-                        if($retry == true && $ticketmachine_globals->api_token_failed) {
+                        if($retry == true && $actual_config->api_token_failed) {
                              // INVALID REFRESH TOKEN
                              $save_array = array(
                                 "api_access_token" => "",
