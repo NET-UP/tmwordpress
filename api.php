@@ -286,7 +286,7 @@
     
                             $subj = 'ERROR: Wordpress Plugin - TicketMachine Event Manager & Calendar';
                             $body = 'TicketMachine could not get a new access token!<br/><br/>Website: ' . get_site_url() .'<br/>Wordpress Version: ' . $wp_version . '<br/>Plugin Version: ' . $ticketmachine_db_version . '<br/>PHP Version: ' . $php_version . '<br/>Admin Email: ' . get_option('admin_email') . '<br/><br/>Log:<br/>' . $sendTMLog;
-                            wp_mail( $multiple_recipients, $subj, $body, $headers );
+                            //wp_mail( $multiple_recipients, $subj, $body, $headers );
                         }
                     }
                 }else{
