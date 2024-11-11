@@ -291,10 +291,11 @@
 
     function ticketmachine_tmapi_refresh_token_failed () {
         global $wpdb, $ticketmachine_globals, $wp_version, $ticketmachine_db_version;
+        sleep(3);
         
         $actual_config = (object)$wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1")[0];
 
-        if(!empty($actual_config->api_refresh_token)) {
+        if(!empty($actual_config->api_refresh_token) && time() > ($actual_config->api_refresh_last + $actual_config->api_refresh_interval)) {
             $save_array = array(
                 "api_access_token" => "",
                 "api_refresh_token" => "",
