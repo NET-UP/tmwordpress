@@ -290,7 +290,7 @@
 
     function ticketmachine_tmapi_refresh_token_failed () {
         global $wpdb, $ticketmachine_globals, $wp_version, $ticketmachine_db_version;
-        sleep(3);
+        sleep(4);
         
         $actual_config = (object)$wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1")[0];
 
