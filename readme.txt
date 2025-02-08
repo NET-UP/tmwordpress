@@ -87,6 +87,10 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.9.16 =
+* Fixed design errors with certain template builders
+* Fixed special character display errors in calendars
+
 = 1.9.15 =
 * Compatibility with Wordpress 6.7
 

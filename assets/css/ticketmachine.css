@@ -89,10 +89,19 @@ body .ticketmachine_page .fc-event {
   margin-bottom: 2px;
 }
 
+body .ticketmachine_page .card-group > em {
+  display: block;
+  width: 100%;
+}
+
 body .ticketmachine_page .ticketmachine_events_container .card-body {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+}
+
+body .ticketmachine_page .card-body {
+  text-align: left;
 }
 
 body .ticketmachine_page .card-meta {
