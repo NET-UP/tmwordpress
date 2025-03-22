@@ -140,6 +140,8 @@
             }else{
                 $events = (object)ticketmachine_apiRequest($ticketmachine_url, $ticketmachine_post, $method, $headers);
                 ticketmachine_debug($events->meta);
+                
+                ticketmachine_debug($events);
                 return $events;
             }
         }

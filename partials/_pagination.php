@@ -18,7 +18,11 @@
             }
             $ticketmachine_output .= "<a class='btn btn-secondary " . $disabled . "'" . $href . "><i class='fas fa-angle-left'></i></a>";
 
-            $ticketmachine_output .= "<button class='btn btn-secondary' readonly>" .$params['pg'] . "</button>";
+            if($meta['has_previous_page']) {
+                $ticketmachine_output .= "<a class='btn btn-secondary'" . $href . ">" .$params['pg']-1 . "</a>";
+            }
+
+            $ticketmachine_output .= "<button class='btn btn-primary' readonly>" .$params['pg'] . "</button>";
 
             if($meta['has_next_page'] && $meta['next'] <  $meta['count_filtered']) {
                 $query['pg'] = $params['pg']+1;
@@ -30,6 +34,11 @@
                 $href = "";
                 $disabled = "disabled";
             }
+            
+            if($meta['has_next_page'] && $meta['next'] <  $meta['count_filtered']) {
+                $ticketmachine_output .= "<a class='btn btn-secondary'" . $href . ">" .$params['pg']+1 . "</a>";
+            }
+            
             $ticketmachine_output .= "<a class='btn btn-secondary " . $disabled . "'" . $href . "><i class='fas fa-angle-right'></i></a>";
 
             $ticketmachine_output .= '</div>';
