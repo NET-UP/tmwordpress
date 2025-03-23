@@ -149,7 +149,6 @@
                         print_r($ticketmachine_post);
                         print_r("</pre>");
                     }
-
                 }
             }
     

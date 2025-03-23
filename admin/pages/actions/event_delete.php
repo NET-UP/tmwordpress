@@ -24,6 +24,10 @@
                     $ticketmachine_post_json = $ticketmachine_post;
                     $ticketmachine_json = ticketmachine_tmapi_event_delete($ticketmachine_post_json);
                     $response = (object)$ticketmachine_json;
+
+                    if($response->result == "failure") {
+                        $errors[] = $response->reason;
+                    }
                 }
             }else{
                 $errors[] = "No event id was set";

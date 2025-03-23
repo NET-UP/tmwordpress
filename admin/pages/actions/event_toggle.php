@@ -38,6 +38,10 @@
                     $ticketmachine_post_json = $ticketmachine_post;
                     $ticketmachine_json = ticketmachine_tmapi_event($ticketmachine_post_json, "POST");
                     $response = (object)$ticketmachine_json;
+                    
+                    if($response->result == "failure") {
+                        $errors[] = $response->reason;
+                    }
                 }
 
             }else{
