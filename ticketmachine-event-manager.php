@@ -4,7 +4,7 @@
 	Plugin Name:        TicketMachine Event Manager & Calendar
     Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
-	Version:            1.9.18
+	Version:            1.9.19
     Requires at least:  4.5
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
@@ -21,7 +21,7 @@
 	add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
 
 	global $ticketmachine_db_version;
-	$ticketmachine_db_version = "1.9.18";
+	$ticketmachine_db_version = "1.9.19";
 	
 	// Load translations if they don't already exist
     function ticketmachine_wpdocs_load_textdomain() {
@@ -192,85 +192,99 @@
         global $wpdb;
 		global $ticketmachine_db_version;
 
-        //create events overview page
-        $new_page_title = 'Events';
-        $new_page_slug = 'events';
-        $new_page_content = '[ticketmachine page="event_list"]';
-        $new_page_template = '';
-		$create_new_page = false;
-    
-        $page_check = get_page_by_path($new_page_slug);
+		$table_name = $wpdb->prefix.'ticketmachine_config';
+		$query = $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $table_name ) );
 
-        if(!isset($page_check->ID)){
-			$create_new_page = true;
-        }else{
-			if(!has_shortcode( $page_check->post_content, 'ticketmachine')){
-				$new_page_slug = 'tm-events';
-				$page_check = get_page_by_path($new_page_slug);
-				if(!isset($page_check->ID)){
-					$create_new_page = true;
-				}
-			}
-		}
-
-        $new_page = array(
-            'post_type' => 'page',
-            'post_title' => $new_page_title,
-            'post_name' => $new_page_slug,
-            'post_content' => $new_page_content,
-            'post_status' => 'publish',
-            'post_author' => 1,
-        );
-
-		if($create_new_page === true){
-			$new_page_id = wp_insert_post($new_page);
-			if(!empty($new_page_template)){
-				update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
-			}
-		}
-
-        $events_slug = get_page_by_path($new_page_slug);
-
-        //create event detail page
-        $new_page_title = 'Event';
-        $new_page_slug = 'event';
-        $new_page_content = '[ticketmachine page="event_details"]';
-        $new_page_template = '';
-		$create_new_page = false;
-    
-        $page_check = get_page_by_path($new_page_slug);
-
-        if(!isset($page_check->ID)){
-			$create_new_page = true;
-        }else{
-			if(!has_shortcode( $page_check->post_content, 'ticketmachine')){
-				$new_page_slug = 'tm-event';
-				$page_check = get_page_by_path($new_page_slug);
-				if(!isset($page_check->ID)){
-					$create_new_page = true;
-				}
-			}
-		}
-
-        $new_page = array(
-            'post_type' => 'page',
-            'post_title' => $new_page_title,
-            'post_name' => $new_page_slug,
-            'post_content' => $new_page_content,
-            'post_status' => 'publish',
-            'post_author' => 1,
-        );
-
-		if($create_new_page === true){
-			$new_page_id = wp_insert_post($new_page);
-			if(!empty($new_page_template)){
-				update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
-			}
-		}
-
-		$event_slug = get_page_by_path($new_page_slug);
+		// check if table doesnt exist
+		if ( ! $wpdb->get_var( $query ) == $table_name ) {
+			//create events overview page
+			$new_page_title = 'Events';
+			$new_page_slug = 'events';
+			$new_page_content = '[ticketmachine page="event_list"]';
+			$new_page_template = '';
+			$create_new_page = false;
 		
-        $charset = $wpdb->get_charset_collate();
+			$page_check = get_page_by_path($new_page_slug);
+
+			if(!isset($page_check->ID)){
+				$create_new_page = true;
+			}else{
+				if(!has_shortcode( $page_check->post_content, 'ticketmachine')){
+					$new_page_slug = 'tm-events';
+					$page_check = get_page_by_path($new_page_slug);
+					if(!isset($page_check->ID)){
+						$create_new_page = true;
+					}
+				}
+			}
+
+			$new_page = array(
+				'post_type' => 'page',
+				'post_title' => $new_page_title,
+				'post_name' => $new_page_slug,
+				'post_content' => $new_page_content,
+				'post_status' => 'publish',
+				'post_author' => 1,
+			);
+
+			if($create_new_page === true){
+				$new_page_id = wp_insert_post($new_page);
+				if(!empty($new_page_template)){
+					update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
+				}
+			}
+
+			$events_slug = get_page_by_path($new_page_slug);
+
+			//create event detail page
+			$new_page_title = 'Event';
+			$new_page_slug = 'event';
+			$new_page_content = '[ticketmachine page="event_details"]';
+			$new_page_template = '';
+			$create_new_page = false;
+		
+			$page_check = get_page_by_path($new_page_slug);
+
+			if(!isset($page_check->ID)){
+				$create_new_page = true;
+			}else{
+				if(!has_shortcode( $page_check->post_content, 'ticketmachine')){
+					$new_page_slug = 'tm-event';
+					$page_check = get_page_by_path($new_page_slug);
+					if(!isset($page_check->ID)){
+						$create_new_page = true;
+					}
+				}
+			}
+
+			$new_page = array(
+				'post_type' => 'page',
+				'post_title' => $new_page_title,
+				'post_name' => $new_page_slug,
+				'post_content' => $new_page_content,
+				'post_status' => 'publish',
+				'post_author' => 1,
+			);
+
+			if($create_new_page === true){
+				$new_page_id = wp_insert_post($new_page);
+				if(!empty($new_page_template)){
+					update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
+				}
+			}
+
+			$event_slug = get_page_by_path($new_page_slug);	
+
+			$event_slug_id = $event_slug->id;
+			$events_slug_id = $events_slug->ID;
+		}else{
+			$ticketmachine_config_temp = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
+			$ticketmachine_config_temp = $ticketmachine_config_temp[0];
+
+			$event_slug_id = $ticketmachine_config_temp->event_slug_id;
+			$events_slug_id = $ticketmachine_config_temp->events_slug_id;
+		}
+		
         $charset_collate = $wpdb->get_charset_collate();
 
         $table = $wpdb->prefix . 'ticketmachine_config';
@@ -302,8 +316,8 @@
                     show_additional_info bit(1) DEFAULT 1 NOT NULL,
                     detail_page_layout int(3) DEFAULT 2 NOT NULL,
                     event_grouping varchar(64) DEFAULT 'Year' NOT NULL,
-                    events_slug_id int(11) DEFAULT " . $events_slug->ID . " NOT NULL,
-                    event_slug_id int(11) DEFAULT " . $event_slug->ID . " NOT NULL,
+                    events_slug_id int(11) DEFAULT " . $events_slug_id . " NOT NULL,
+                    event_slug_id int(11) DEFAULT " . $event_slug_id . " NOT NULL,
                     privacy_slug_id varchar(11) DEFAULT 0 NOT NULL,
                 PRIMARY KEY  (id)
                 ) $charset_collate;";

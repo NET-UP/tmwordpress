@@ -87,6 +87,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.9.19 =
+* Fixed new pages being generated constantly
+
 = 1.9.18 =
 * Improved pagination
 
