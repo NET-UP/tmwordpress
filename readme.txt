@@ -64,6 +64,12 @@ That's not all! For more functions we have multiple affordable plans.
 * **[Enterprise]** Seated events with interactive plan
 * **[Enterprise]** Access control to events
 
+= Extensions =
+
+Additionally, you can extend the base plugin with our premium extensions.
+
+* **[Community Events]** Sell tickets for your events
+
 When using the TicketMachine Event Manager plugin, you automatically receive a TicketMachine account.
 
 == Installation ==
