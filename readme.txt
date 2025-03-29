@@ -93,6 +93,17 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 8. If asked, enter your email adress or sign in to your TicketMachine Cloud account.
 9. Done! You can now start managing your events.
 
+
+== Screenshots ==
+
+1. Event calendar
+2. Main events page
+4. Event detail page
+5. Event list for admins
+6. Customize your design
+7. Use our widgets
+
+
 == Changelog ==
 = 1.10.10 =
 * Added event image to event list in admin area
