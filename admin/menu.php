@@ -51,6 +51,16 @@
 						98
 					);
 				}
+				add_submenu_page(
+					'ticketmachine_event_manager',
+					esc_html__('Extensions', 'ticketmachine-event-manager'),
+					esc_html__('Extensions', 'ticketmachine-event-manager'),
+					'edit_posts',
+					'ticketmachine_extensions',
+					'ticketmachine_extensions_page',
+					null,
+					99
+				);
 			}else{
 				add_submenu_page(
 					'ticketmachine_event_manager',
@@ -81,6 +91,9 @@
 	}
 	function ticketmachine_settings_page(){
 		include( plugin_dir_path( __FILE__ ) . 'pages/settings.php');
+	}
+	function ticketmachine_extensions_page(){
+		include( plugin_dir_path( __FILE__ ) . 'pages/extensions.php');
 	}
 	function ticketmachine_installation_page(){
 		include( plugin_dir_path( __FILE__) . 'pages/installation.php');
