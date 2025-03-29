@@ -57,6 +57,9 @@
 		}else{
 			esc_html_e("List, Boxes & Calendar are deactivated", "ticketmachine-event-manager");
 		}
+		
+		$ticketmachine_output .= "</div>";
+		
 		return $ticketmachine_output;
 		
 	}

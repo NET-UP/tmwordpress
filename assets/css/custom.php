@@ -123,6 +123,6 @@
             }";
         }
         
-        return "<style>" . $ticketmachine_custom_css . "</style>";
+        return "<style class='ticketmachine_custom_css'>" . $ticketmachine_custom_css . "</style>";
 
 ?>
