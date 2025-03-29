@@ -90,6 +90,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 = 1.10.3 =
 * Improved design in wordpress backend
 
+= 1.10.2 =
+* Improved translations
+
 = 1.10.1 =
 * Added extensions store
 
