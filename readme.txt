@@ -87,6 +87,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.10.3 =
+* Improved design in wordpress backend
+
 = 1.10.1 =
 * Added extensions store
 

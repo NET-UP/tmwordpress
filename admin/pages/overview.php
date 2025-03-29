@@ -65,8 +65,7 @@
             </h1>
 
             <div class="row">
-
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 d-flex">
                     <div class="box mb-3">
                         <div class="box-title"><?php esc_html_e("Create an event", "ticketmachine-event-manager"); ?></div>
                         <div class="box-body">
@@ -75,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4 d-flex">
                     <div class="box mb-3">
                         <div class="box-title"><?php esc_html_e("Edit events", "ticketmachine-event-manager"); ?></div>
                         <div class="box-body">
@@ -88,8 +87,7 @@
                 </div>
 
                 <?php if(current_user_can('manage_options')) { ?>
-                
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4 d-flex">
                         <div class="box mb-3">
                             <div class="box-title"><?php esc_html_e("Change settings", "ticketmachine-event-manager"); ?></div>
                             <div class="box-body">
@@ -103,6 +101,15 @@
 
                 <?php } ?>
 
+                <div class="col-md-6 col-lg-4 d-flex">
+                    <div class="box mb-3">
+                        <div class="box-title"><?php esc_html_e("Extensions", "ticketmachine-event-manager"); ?></div>
+                        <div class="box-body">
+                            <p><?php esc_html_e("Make your TicketMachine plugin more powerful with our extensions.", "ticketmachine-event-manager"); ?></p>
+                            <a href="?page=ticketmachine_events&action=edit" class="button button-secondary mb-1"><?php esc_html_e("New event", "ticketmachine-event-manager"); ?></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
