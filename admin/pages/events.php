@@ -376,8 +376,6 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
              * ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
              * ---------------------------------------------------------------------
              **********************************************************************/
-            
-			print_r($meta);
                     
             /**
              * REQUIRED for pagination. Let's figure out what page the user is currently 
