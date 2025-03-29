@@ -24,7 +24,7 @@
                                     <div class='col-12'>
                                         <div class='d-flex flex-column flex-md-row gap-2 gap-md-4'>
                                             <div class='input-group ticketmachine-search-container'>
-                                                <input name='q' class='form-control' placeholder='" . esc_attr__("Search for events", "ticketmachine-event-manager") . "' value='" . esc_attr__($ticketmachine_globals->search_query) . "'/>
+                                                <input name='q' class='form-control' aria-label='" . esc_attr__("Search for events", "ticketmachine-event-manager") . "' placeholder='" . esc_attr__("Search for events", "ticketmachine-event-manager") . "' value='" . esc_attr__($ticketmachine_globals->search_query) . "'/>
                                                 <input type='hidden' name='tag' value='" . esc_html($ticketmachine_globals->tag) . "'/>
                                                 <button type='submit' alt='" . esc_attr__("Submit search", "ticketmachine-event-manager") . "' class='btn btn-secondary'><i class='fas fa-search'></i></button>
                                             </div>";
