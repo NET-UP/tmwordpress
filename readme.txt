@@ -94,6 +94,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.10.8 =
+* Fix: Navigating calendar no longer scrolls to top of page.
+
 = 1.10.7 =
 * Option to hide search on events overview page
 
