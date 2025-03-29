@@ -199,3 +199,10 @@
 .tm-admin-page .text-white {
   color: #fff;
 }
+
+.tm-admin-page img.ticketmachine_event_thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 3px;
+}

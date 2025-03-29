@@ -107,6 +107,8 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
          **************************************************************************/
         function column_default($item, $column_name){
             switch($column_name){
+                case 'event_img_url':
+                    return "<img class='ticketmachine_event_thumbnail' src='" . $item[$column_name] . "'/>";
                 case 'tags':
                     return implode(", ", $item[$column_name]);
                 case 'ev_date':
@@ -213,6 +215,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
         function get_columns(){
             $columns = array(
                 //'cb'       => '<input type="checkbox" />',
+                'event_img_url'  => esc_html__('Image'),
                 'ev_name'  => esc_html__('Name', 'ticketmachine-event-manager'),
                 'tags'     => esc_html__('Tags', 'ticketmachine-event-manager'),
                 'ev_date'  => esc_html__('Start date', 'ticketmachine-event-manager'),
