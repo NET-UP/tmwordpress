@@ -50,6 +50,12 @@ Whether you’re a small operation in a basement, or a large corporation with th
 * BiTV & WCAG compliant (Accessibility for all)
 * W3C Valid
 
+= Extensions =
+
+Additionally, you can extend the base plugin with our premium extensions.
+
+* **[Community Events]** Give your users the ability to manage their own events and add them to your community calendar!
+
 = Premium Services =
 
 That's not all! For more functions we have multiple affordable plans.
@@ -64,11 +70,6 @@ That's not all! For more functions we have multiple affordable plans.
 * **[Enterprise]** Seated events with interactive plan
 * **[Enterprise]** Access control to events
 
-= Extensions =
-
-Additionally, you can extend the base plugin with our premium extensions.
-
-* **[Community Events]** Sell tickets for your events
 
 When using the TicketMachine Event Manager plugin, you automatically receive a TicketMachine account.
 
