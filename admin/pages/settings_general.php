@@ -23,8 +23,15 @@
 				$errors[] = "Event page can not be empty";
 			}
 
+			if (!empty($ticketmachine_post->show_search)){
+				$ticketmachine_post->show_search = true;
+			}else{
+				$ticketmachine_post->show_search = false;
+			}
+
 			$save_array = 
 				array(
+					"show_search" => (bool)($ticketmachine_post->show_search),
 					"events_slug_id" => absint($ticketmachine_post->events_slug_id),
 					"event_slug_id" => absint($ticketmachine_post->event_slug_id),
 					"privacy_slug_id" => absint($ticketmachine_post->privacy_slug_id)
@@ -100,5 +107,9 @@
 			</td>
 		</tr>
 
+		<tr>
+			<th><label><?php esc_html_e('Show event search field?', 'ticketmachine-event-manager'); ?></label></th>
+            <td><input name="show_search" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_search){ ?>checked <?php } ?>/></td>
+		</tr>
 	</tbody>
 </table>

@@ -33,7 +33,7 @@
 		
 		$ticketmachine_output = "<div class='row ticketmachine_events_container'>";
 		
-		$ticketmachine_output .= "<div class='page-header col-12'>" . ticketmachine_search_header($ticketmachine_globals, $current_page);
+		$ticketmachine_output .= "<div class='page-header col-12 ticketmachine-search-header'>" . ticketmachine_search_header($ticketmachine_globals, $current_page);
 			if($ticketmachine_globals->tag){
 				$ticketmachine_output .= ticketmachine_tag_header($ticketmachine_globals);
 			}

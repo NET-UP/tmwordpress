@@ -122,6 +122,18 @@
                 display: none;
             }";
         }
+
+        if(!$ticketmachine_config->show_search) {
+            $ticketmachine_custom_css .= "body .ticketmachine_page .ticketmachine-search-container > * {
+                display: none;
+            }";
+        }
+
+        if((int)$ticketmachine_config->show_calendar + (int)$ticketmachine_config->show_boxes + (int)$ticketmachine_config->show_list <= 1) {
+            $ticketmachine_custom_css .= "body .ticketmachine_page .ticketmachine-view-switch {
+                display: none;
+            }";
+        }
         
         return "<style class='ticketmachine_custom_css'>" . $ticketmachine_custom_css . "</style>";
 

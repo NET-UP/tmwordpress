@@ -94,6 +94,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.10.7 =
+* Option to hide search on events overview page
+
 = 1.10.6 =
 * Fixed bug in widget shortcode displaying "1"
 

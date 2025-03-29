@@ -23,14 +23,14 @@
                 $ticketmachine_output .= "<div class='form-row'>
                                     <div class='col-12'>
                                         <div class='d-flex flex-column flex-md-row gap-2 gap-md-4'>
-                                            <div class='input-group'>
+                                            <div class='input-group ticketmachine-search-container'>
                                                 <input name='q' class='form-control' placeholder='" . esc_attr__("Search for events", "ticketmachine-event-manager") . "' value='" . esc_attr__($ticketmachine_globals->search_query) . "'/>
                                                 <input type='hidden' name='tag' value='" . esc_html($ticketmachine_globals->tag) . "'/>
                                                 <button type='submit' alt='" . esc_attr__("Submit search", "ticketmachine-event-manager") . "' class='btn btn-secondary'><i class='fas fa-search'></i></button>
                                             </div>";
     
     
-                                            if(isset($_GET['display']) && sanitize_text_field($_GET['display']) == "calendar"){
+                                            if(isset($_GET['display']) && sanitize_text_field($_GET['display']) == "calendar" || !$ticketmachine_globals->show_boxes && !$ticketmachine_globals->show_list){
                                 $ticketmachine_output .= "<div class='btn-group' style='min-width: 200px'>
                                                     <a href='#' aria-label='" . esc_attr__("To previous month", "ticketmachine-event-manager") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
                                                     <a href='#' class='btn btn-secondary' id='calendar-title'></a>
@@ -38,7 +38,7 @@
                                                 </div>";
                                             }
     
-                                            $ticketmachine_output .= "<div class='btn-group'>";
+                                            $ticketmachine_output .= "<div class='btn-group ticketmachine-view-switch'>";
                                             
                                                 if($ticketmachine_globals->show_boxes){
                                                     $ticketmachine_output .= "<a class='btn ";
