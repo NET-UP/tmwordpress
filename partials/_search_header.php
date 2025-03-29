@@ -33,7 +33,7 @@
                                             if(isset($_GET['display']) && sanitize_text_field($_GET['display']) == "calendar" || !$ticketmachine_globals->show_boxes && !$ticketmachine_globals->show_list){
                                 $ticketmachine_output .= "<div class='btn-group' style='min-width: 200px'>
                                                     <a href='#' aria-label='" . esc_attr__("To previous month", "ticketmachine-event-manager") . "' class='btn btn-secondary' id='calendar-prev'><i class='fas fa-angle-left'></i></a>
-                                                    <a href='#' class='btn btn-secondary' id='calendar-title'></a>
+                                                    <span class='btn btn-secondary' id='calendar-title'></span>
                                                     <a href='#' aria-label='" . esc_attr__("To next month", "ticketmachine-event-manager") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
                                                 </div>";
                                             }
