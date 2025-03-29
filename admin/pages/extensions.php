@@ -37,7 +37,7 @@
                                     <?php if($ticketmachine_extension->active) { ?>
                                         <button class="button button-secondary mb-1"><?php _e("Active", "ticketmachine-event-manager"); ?></button>
                                     <?php } else { ?>
-                                        <a href="<?php echo $ticketmachine_extension->link ?>" class="button button-primary mb-1"><?php _e("Install", "ticketmachine-event-manager"); ?></a>
+                                        <a href="<?php echo $ticketmachine_extension->link ?>" target="_blank" class="button button-primary mb-1"><?php _e("Install", "ticketmachine-event-manager"); ?></a>
                                     <?php } ?>
                                 </div>
                             </div>
