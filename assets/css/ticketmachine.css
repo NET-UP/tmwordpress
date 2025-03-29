@@ -129,6 +129,7 @@ body .ticketmachine_page h5.card-title {
   font-size: 1rem;
   margin-bottom: auto;
   padding-bottom: 0.5rem;
+  margin-top: 0.25rem !important;
 }
 
 body .ticketmachine_page .card-price {
