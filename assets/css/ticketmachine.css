@@ -363,6 +363,11 @@ body .ticketmachine_page iframe {
   border-radius: 3px;
 }
 
+.ticketmachine_page hr.my-auto:before {
+  height: 1px;
+  width: 100%;
+}
+
 @media only screen and (max-width: 991px) {
   body .no-height-mobile {
     height: auto !important;
