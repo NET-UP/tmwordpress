@@ -59,7 +59,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
             
         }
 
-        function get_events(){
+        function get_events($per_page){
             
             global $ticketmachine_globals, $ticketmachine_api;
 
@@ -72,14 +72,17 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
             }else{
                 $params = ticketmachine_array_push_assoc($params, "show_old", 1);
             }
-            $params = ticketmachine_array_push_assoc($params, "per_page", 100);
+            $params = ticketmachine_array_push_assoc($params, "per_page", $per_page);
             if(isset($_GET['status']) && sanitize_text_field($_GET['status']) == "published"){
                 $params = ticketmachine_array_push_assoc($params, "approved", 1);
             }elseif(isset($_GET['status']) && sanitize_text_field($_GET['status']) == "drafts") {
                 $params = ticketmachine_array_push_assoc($params, "approved", 0);
             }
-            $params = ticketmachine_array_push_assoc($params, "per_page", 100);
-            $events = ticketmachine_tmapi_events($params)->result;
+            $params = ticketmachine_array_push_assoc($params, "per_page", $per_page);
+			if($_GET['paged']) {
+            	$params = ticketmachine_array_push_assoc($params, "pg", $_GET['paged']);
+			}
+            $events = ticketmachine_tmapi_events($params);
             return $events;
         }
 
@@ -241,10 +244,10 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
          **************************************************************************/
         function get_sortable_columns() {
             $sortable_columns = array(
-                'ev_name'   => array('ev_name',false), //true means it's already sorted
-                'tags'      => array('tags',false),
-                'ev_date'   => array('ev_date',false),
-                'endtime'   => array('endtime',false)
+                //'ev_name'   => array('ev_name',false), //true means it's already sorted
+                //'tags'      => array('tags',false),
+                //'ev_date'   => array('ev_date',false),
+                //'endtime'   => array('endtime',false)
             );
             return $sortable_columns;
         }
@@ -357,27 +360,8 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
              * use sort and pagination data to build a custom query instead, as you'll
              * be able to use your precisely-queried data immediately.
              */
-            $data = $this->get_events();
-                    
-            
-            /**
-             * This checks for sorting input and sorts the data in our array accordingly.
-             * 
-             * In a real-world situation involving a database, you would probably want 
-             * to handle sorting by passing the 'orderby' and 'order' values directly 
-             * to a custom query. The returned data will be pre-sorted, and this array
-             * sorting technique would be unnecessary.
-             */
-            function usort_reorder($a,$b){
-                $orderby = (!empty($_REQUEST['orderby'])) ? $_REQUEST['orderby'] : 'ev_name'; //If no sort, default to title
-                $order = (!empty($_REQUEST['order'])) ? $_REQUEST['order'] : 'asc'; //If no order, default to asc
-                $result = strcmp($a[$orderby], $b[$orderby]); //Determine sort order
-                return ($order==='asc') ? $result : -$result; //Send final sort direction to usort
-            }
-            if(empty($data)){
-                $data = [];
-            }
-            usort($data, 'usort_reorder');
+            $data = $this->get_events($per_page)->result;
+            $meta = $this->get_events($per_page)->meta;
             
             
             /***********************************************************************
@@ -393,6 +377,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
              * ---------------------------------------------------------------------
              **********************************************************************/
             
+			print_r($meta);
                     
             /**
              * REQUIRED for pagination. Let's figure out what page the user is currently 
@@ -407,16 +392,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
              * without filtering. We'll need this later, so you should always include it 
              * in your own package classes.
              */
-            $total_events = count($data);
-            
-            
-            /**
-             * The WP_List_Table class does not handle pagination for us, so we need
-             * to ensure that the data is trimmed to only the current page. We can use
-             * array_slice() to 
-             */
-            $data = array_slice($data,(($current_page-1)*$per_page),$per_page);
-            
+            $total_events = $meta['count_filtered'];
             
             
             /**
