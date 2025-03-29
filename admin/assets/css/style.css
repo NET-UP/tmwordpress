@@ -206,3 +206,7 @@
   object-fit: cover;
   border-radius: 3px;
 }
+
+.tm-admin-page .column-event_img_url {
+  width: 80px;
+}
