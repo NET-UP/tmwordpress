@@ -278,11 +278,6 @@ body .ticketmachine_page .card-text.read-more-enabled.closed {
 }
 
 /* Calendar */
-body .ticketmachine_page .fc-view-container {
-  box-shadow: 0px 0px 0 1px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
-  overflow: hidden;
-}
 
 body .ticketmachine_page #calendar .fc-title {
   white-space: normal;
@@ -370,6 +365,14 @@ body .ticketmachine_page iframe {
 @media only screen and (max-width: 991px) {
   body .no-height-mobile {
     height: auto !important;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  body .ticketmachine_page .fc-view-container {
+    box-shadow: 0px 0px 0 1px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
   }
 }
 
