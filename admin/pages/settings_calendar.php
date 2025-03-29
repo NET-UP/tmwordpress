@@ -17,9 +17,17 @@
 				$ticketmachine_post->show_calendar = false;
 			}
 
+			if (!empty($ticketmachine_post->show_calendar_start_time)){
+				$ticketmachine_post->show_calendar_start_time = true;
+			}else{
+				$ticketmachine_post->show_calendar_start_time = false;
+			}
+
+
 			$save_array = 
 				array(
 					"show_calendar" => (bool)$ticketmachine_post->show_calendar,
+					"show_calendar_start_time" => (bool)$ticketmachine_post->show_calendar_start_time,
 				);
 			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(
@@ -49,6 +57,10 @@
 		<tr>
 			<th><label><?php esc_html_e('Activate calendar?', 'ticketmachine-event-manager'); ?></label></th>
             <td><input name="show_calendar" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_calendar){ ?>checked <?php } ?>/></td>
+		</tr>
+		<tr>
+			<th><label><?php esc_html_e('Show event start time?', 'ticketmachine-event-manager'); ?></label></th>
+            <td><input name="show_calendar_start_time" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_calendar_start_time){ ?>checked <?php } ?>/></td>
 		</tr>
 
 	</tbody>

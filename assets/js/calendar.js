@@ -74,6 +74,11 @@ jQuery
       firstDay: 1,
       eventLimit: false, // allow "more" link when too many events
       events,
+      eventTimeFormat: {
+        hour: "2-digit",
+        minute: "2-digit",
+        meridiem: false,
+      },
       defaultDate: events_array[events_array.length - 1]["defaultDate"],
       loading: function (bool) {
         document.getElementById("loading").style.display = bool

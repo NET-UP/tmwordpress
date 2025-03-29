@@ -4,6 +4,8 @@
     global $wpdb;
     $ticketmachine_design = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_design LIMIT 0,1");
     $ticketmachine_design = $ticketmachine_design[0];
+    $ticketmachine_config = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
+    $ticketmachine_config = $ticketmachine_config[0];
 
     $ticketmachine_custom_css = "
         body .ticketmachine_page a:not(.btn):not(.fc-event):not(.tm-list-title) {
@@ -114,6 +116,12 @@
             color: ". $ticketmachine_design->button_primary_background_color ." !important;
             border-right-color: transparent !important;
         }";
+
+        if(!$ticketmachine_config->show_calendar_start_time) {
+            $ticketmachine_custom_css .= "body .ticketmachine_page #calendar .fc-day-grid-event .fc-time {
+                display: none;
+            }";
+        }
         
         return "<style>" . $ticketmachine_custom_css . "</style>";
 

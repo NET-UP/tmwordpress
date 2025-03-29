@@ -288,10 +288,6 @@ body .ticketmachine_page #calendar .fc-day-grid-event {
   border-width: 0;
 }
 
-body .ticketmachine_page #calendar .fc-day-grid-event .fc-time {
-  display: none;
-}
-
 body .ticketmachine_page #calendar .fc-scroller {
   overflow: visible !important;
 }
