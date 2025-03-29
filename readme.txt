@@ -95,6 +95,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 == Changelog ==
 = 1.10.8 =
+* Fixed search in calendar widget
+
+= 1.10.8 =
 * Fix: Navigating calendar no longer scrolls to top of page.
 
 = 1.10.7 =
