@@ -27,13 +27,14 @@ var calendar
 var events = []
 var data = {
   action: "ticketmachine_calendar",
-  q: urlParams["q"],
+  q: urlParams["query"],
   pg: 1,
   per_page: 100,
   sort: "ev_date",
   tag: urlParams["tag"],
   approved: urlParams["approved"],
 }
+
 jQuery
   .getJSON(ticketmachine_calendar_data.ajaxurl, data)
   .success(function (data) {
