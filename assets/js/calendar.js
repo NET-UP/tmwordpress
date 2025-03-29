@@ -94,13 +94,15 @@ jQuery
     jQuery("#calendar-title").html(view.title)
 
     // Next/Prev buttons
-    jQuery("#calendar-next").on("click", function () {
+    jQuery("#calendar-next").on("click", function (e) {
+      e.preventDefault()
       var view = calendar.view
       calendar.next()
       getMoreEvents()
       jQuery("#calendar-title").html(view.title)
     })
-    jQuery("#calendar-prev").on("click", function () {
+    jQuery("#calendar-prev").on("click", function (e) {
+      e.preventDefault()
       var view = calendar.view
       calendar.prev()
       jQuery("#calendar-title").html(view.title)
