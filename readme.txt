@@ -94,6 +94,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 9. Done! You can now start managing your events.
 
 == Changelog ==
+= 1.10.5 =
+* Option to show/hide start times in calendar
+
 = 1.10.3 =
 * Improved design in wordpress backend
 
