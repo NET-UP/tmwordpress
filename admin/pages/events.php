@@ -111,7 +111,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
         function column_default($item, $column_name){
             switch($column_name){
                 case 'event_img_url':
-                    return "<img class='ticketmachine_event_thumbnail' src='" . $item[$column_name] . "'/>";
+                    return "<img class='ticketmachine_event_thumbnail' src='" . $item[$column_name] . "' width='60px' height='60px'/>";
                 case 'tags':
                     return implode(", ", $item[$column_name]);
                 case 'ev_date':
