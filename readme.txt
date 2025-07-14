@@ -105,6 +105,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 
 == Changelog ==
+= 1.10.16 =
+* Added calendar compatibility with elementor
+
 = 1.10.10 =
 * Added event image to event list in admin area
 

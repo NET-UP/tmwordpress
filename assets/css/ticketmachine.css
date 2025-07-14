@@ -280,6 +280,10 @@ body .ticketmachine_page .card-text.read-more-enabled.closed {
 
 /* Calendar */
 
+body .ticketmachine_page #calendar {
+  margin-bottom: 0.5em;
+}
+
 body .ticketmachine_page #calendar .fc-title {
   white-space: normal;
 }
