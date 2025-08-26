@@ -81,8 +81,11 @@
                             $ticketmachine_output .= '<div class="media-body">';
 
                             if(!empty($event->rules["badge"])) {
-                                $ticketmachine_output .= '<div class="badge bg-danger m-0">'. esc_html($event->rules["badge"]) .'</div><br/>';
+                                $ticketmachine_output .= '<div class="badge bg-danger m-0">'. esc_html($event->rules["badge"]) .'</div>';
                             }
+                            
+                            $ticketmachine_output .= '<div class="mb-1 h5"><a class="tm-list-title" href="' . $event->link . '">' . $event->ev_name . '</a></div>';
+
                             if(isset($atts['show_date']) && $atts['show_date'] > 0){
                                 if(ticketmachine_i18n_date("H:i", $event->ev_date) == "00:00" && ticketmachine_i18n_date("H:i", $event->endtime) == "23:59") {
                                     $dateoutput = __("Entire Day", "ticketmachine-event-manager");
@@ -116,15 +119,13 @@
                                     }
                                 $ticketmachine_output .= '</div>';
                             }
-
-                            $ticketmachine_output .= '<div class="mt-1 mb-1 h5"><a class="tm-list-title" href="' . $event->link . '">' . $event->ev_name . '</a></div>';
                             
                             if(isset($atts['show_description']) && $atts['show_description'] > 0){
                                 if(empty($atts['description_length'])){
                                     $atts['description_length'] = 15;
                                 }
                                 if(isset($atts['description_length'])){
-                                    $ticketmachine_output .= '<div>' . esc_html(wp_trim_words(wp_strip_all_tags($event->ev_description), $atts['description_length'], "...")) . '</div>';
+                                    $ticketmachine_output .= '<div class="mt-1">' . esc_html(wp_trim_words(wp_strip_all_tags($event->ev_description), $atts['description_length'], "...")) . '</div>';
                                 }
                             }
 
