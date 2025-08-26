@@ -34,6 +34,9 @@
             if(!isset($atts['show_date'])){
                 $atts['show_date'] = 1;
             }
+            if(!isset($atts['pagination'])){
+                $atts['pagination'] = 1;
+            }
 
             if($isWidget == 1){
                 $ticketmachine_output .= "<div class='row'><div class='row ticketmachine_widget_event_list'>";
@@ -135,7 +138,9 @@
 
                     $ticketmachine_output .= '</ul>';
                     
-                    $ticketmachine_output .= ticketmachine_pagination($meta, $params);
+					if(isset($atts['pagination']) && $atts['pagination'] > 0) {
+                    	$ticketmachine_output .= ticketmachine_pagination($meta, $params);
+					}
 
                 $ticketmachine_output .= '</div>';
 

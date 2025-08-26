@@ -16,6 +16,10 @@
             if(empty($params["pg"])) {
                 $params["pg"] = 1;
             }
+            
+            if(!isset($atts['pagination'])){
+                $atts['pagination'] = 1;
+            }
 
             if(empty($params['approved'])) {
                 $params = ticketmachine_array_push_assoc($params, "approved", 1);
@@ -78,7 +82,9 @@
                     
             $ticketmachine_output .= '<div class="col-12">';
 
-            $ticketmachine_output .= ticketmachine_pagination($meta, $params);
+			if(isset($atts['pagination']) && $atts['pagination'] > 0) {
+                $ticketmachine_output .= ticketmachine_pagination($meta, $params);
+			}
             
             $ticketmachine_output .= '</div>';
 
