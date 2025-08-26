@@ -44,7 +44,7 @@
 					}
 					$ticketmachine_output .= '</div>';
 
-				  $ticketmachine_output .= '<h5 class="card-title" title="' . esc_attr($event->ev_name) . '">' . esc_html($event->ev_name) . '</h5>';
+				  $ticketmachine_output .= '<div class="card-title h5" title="' . esc_attr($event->ev_name) . '">' . esc_html($event->ev_name) . '</div>';
 				  $ticketmachine_output .= '<div class="card-price"></div>';
 
 					$ticketmachine_output .= '<div class="card-text mt-0 pt-sm-1 ellipsis opacity-75">';

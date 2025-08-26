@@ -454,8 +454,9 @@
 			
 			$ticketmachine_output = "";
 			
-			$ticketmachine_custom_css = include_once( plugin_dir_path( __FILE__ ) . 'assets/css/custom.php');
-			if($ticketmachine_custom_css !== true ){
+			$ticketmachine_custom_css = include( plugin_dir_path( __FILE__ ) . 'assets/css/custom.php');
+
+			if((string)$ticketmachine_custom_css !== "true" ){
 
 				$ticketmachine_output .= $ticketmachine_custom_css;
 			}

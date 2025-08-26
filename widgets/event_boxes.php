@@ -54,7 +54,7 @@
                             $ticketmachine_output .= "<div class='col-12 my-2'>
                                                 <div class='d-flex'>
                                                     <hr class='my-auto flex-grow-1'>
-                                                    <h3 class='px-4 mt-0'>" . ticketmachine_i18n_date($ticketmachine_globals->format_date, $event->ev_date) . "</h3>
+                                                    <div class='px-4 mt-0 h3'>" . ticketmachine_i18n_date($ticketmachine_globals->format_date, $event->ev_date) . "</div>
                                                     <hr class='my-auto flex-grow-1'>
                                                 </div>
                                             </div>";
