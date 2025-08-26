@@ -125,7 +125,7 @@ body .ticketmachine_page .card-date {
   align-items: center;
 }
 
-body .ticketmachine_page h5.card-title {
+body .ticketmachine_page .card-title {
   font-size: 1rem;
   margin-bottom: auto;
   padding-bottom: 0.5rem;
@@ -453,4 +453,5 @@ textarea,
 
 .ticketmachine_page a.tm-list-title {
   color: inherit;
+  font-size: 1.125rem;
 }
