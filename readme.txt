@@ -105,9 +105,14 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 
 == Changelog ==
+= 1.10.19 =
+* Fixed some styling issues
+
+= 1.10.18 =
+* Added pagination toggle for event boxes widget
+
 = 1.10.17 =
 * Added pagination toggle for event list widget
-* Added pagination toggle for event boxes widget
 
 = 1.10.16 =
 * Added calendar compatibility with elementor
