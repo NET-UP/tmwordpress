@@ -38,6 +38,20 @@
                 $atts['pagination'] = 1;
             }
 
+            $image_ratio = $atts['image_ratio'];
+
+            if(empty($image_ratio)) {
+                $image_ratio = $ticketmachine_globals->event_list_image_ratio;
+            }
+
+            if(empty($image_ratio)) {
+                $image_ratio = "1:1";
+            }
+
+            $image_ratio = str_replace($image_ratio, " ", "");
+            $image_ratio = str_replace($image_ratio, "/", "-");
+            $image_ratio = str_replace($image_ratio, ":", "-");
+
             if($isWidget == 1){
                 $ticketmachine_output .= "<div class='row'><div class='row ticketmachine_widget_event_list'>";
             }
@@ -75,7 +89,7 @@
                         $ticketmachine_output .= '<li class="media mx-0 mt-2 p-3">';
 
                         if(isset($atts['show_image']) && $atts['show_image'] > 0){
-                            $ticketmachine_output .= '<a class="me-3 media-img" href="' . $event->link . '" style="background-image:url('. $event->event_img_url .')"></a>';
+                            $ticketmachine_output .= '<div><a class="me-3 media-img ratio-' . $image_ratio . '" href="' . $event->link . '" style="background-image:url('. $event->event_img_url .')"></a></div>';
                         }
                                             
                             $ticketmachine_output .= '<div class="media-body">';

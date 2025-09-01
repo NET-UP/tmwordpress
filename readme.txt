@@ -105,6 +105,11 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 
 == Changelog ==
+= 1.11.1 =
+* Custom setting of image ratio in event boxes
+* Custom setting of image ratio in event lists
+* Custom setting of image ratio on event detail page
+
 = 1.11.0 =
 * Redesign event list elements
 * Fixed more styling issues

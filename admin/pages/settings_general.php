@@ -76,6 +76,7 @@
 				</select>
 			</td>
 		</tr>
+		
 		<tr>
 			<th><label><?php esc_html_e('Event detail page', 'ticketmachine-event-manager'); ?></label></th>
 			<td>
@@ -91,6 +92,7 @@
 				</select>
 			</td>
 		</tr>
+
 		<tr>
 			<th><label><?php esc_html_e('Privacy policy page', 'ticketmachine-event-manager'); ?></label></th>
 			<td>

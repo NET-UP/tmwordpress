@@ -19,7 +19,8 @@
 
 			$save_array = 
 				array(
-					"show_list" => (bool)$ticketmachine_post->show_list
+					"show_list" => (bool)$ticketmachine_post->show_list,
+					"event_list_image_ratio" => (bool)$ticketmachine_post->event_list_image_ratio
 				);
 
 			if (!empty($ticketmachine_config) && empty($errors)) {
@@ -52,5 +53,38 @@
             <td><input name="show_list" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_list){ ?>checked<?php } ?>/></td>
 		</tr>
 
+		<?php 
+			$image_ratios = [
+				[
+					'value' => '1:1',
+					'label' => __('Square', 'ticketmachine-event-manager')
+				],
+				[
+					'value' => '3:4',
+					'label' => __('Landscape', 'ticketmachine-event-manager')
+				],
+				[
+					'value' => '4:3',
+					'label' => __('Portrait', 'ticketmachine-event-manager')
+				],
+				[
+					'value' => '16:9',
+					'label' => __('Wide', 'ticketmachine-event-manager')
+				]
+			];
+		?>
+		<tr>
+			<th><label><?php esc_html_e('Image ratio', 'ticketmachine-event-manager'); ?></label></th>
+			<td>
+				<select name="event_list_image_ratio">
+					<?php
+					foreach ($image_ratios as $image_ratio) {
+						$selected = ($image_ratio['value'] == $ticketmachine_config->event_list_image_ratio) ? 'selected="selected"' : '';
+						echo '<option value="' . $image_ratio['value'] . '" ' . $selected . '>' . $image_ratio['label'] . ' (' . $image_ratio['value'] . ')</option>';
+					}
+					?>
+				</select>
+			</td>
+		</tr>
 	</tbody>
 </table>

@@ -8,12 +8,22 @@
             $dateoutput = ticketmachine_i18n_date("H:i", $event->ev_date);
         }
 
+		$image_ratio = $ticketmachine_globals->event_detail_image_ratio;
+
+		if(empty($image_ratio)) {
+			$image_ratio = "16:9";
+		}
+
+		$image_ratio = str_replace($image_ratio, " ", "");
+		$image_ratio = str_replace($image_ratio, "/", "-");
+		$image_ratio = str_replace($image_ratio, ":", "-");
+
         $ticketmachine_output = '
             <div class="title-height no-height-mobile">
                 <h3>' . esc_html($event->ev_name) . '</h3>
             </div>
             <div class="card mb-3">
-                <div class="card-img-top ratio-16-9" style="background-image:url('. esc_url($event->event_img_url) .')">
+                <div class="card-img-top ratio-' . $image_ratio . '" style="background-image:url('. esc_url($event->event_img_url) .')">
                     <div class="event-badges"><div class="badge bg-danger float-right mt-1 me-2">'. esc_html($event->rules["badge"]) .'</div></div>
                 </div>
                 <div class="card-body position-relative">

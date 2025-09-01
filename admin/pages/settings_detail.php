@@ -87,7 +87,8 @@
                     "show_social_media_whatsapp" => (bool)$ticketmachine_post->show_social_media_whatsapp,
                     "show_google_map" => (bool)$ticketmachine_post->show_google_map,
                     "show_additional_info" => (bool)$ticketmachine_post->show_additional_info,
-                    "detail_page_layout" => (int)$ticketmachine_post->detail_page_layout
+                    "detail_page_layout" => (int)$ticketmachine_post->detail_page_layout,
+					"event_detail_image_ratio" => (bool)$ticketmachine_post->event_detail_image_ratio
                 );
             if (!empty($ticketmachine_config) && empty($errors)) {
                 $wpdb->update(
@@ -187,14 +188,44 @@
             <th><label><?php esc_html_e('Show additional information?', 'ticketmachine-event-manager'); ?></label></th>
             <td><input name="show_additional_info" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_additional_info){ ?>checked <?php  } ?>/></td>
         </tr>
-    </tbody>
-</table>
 
-<table class="form-table">
-    <tbody>
         <tr>
             <th><label><?php esc_html_e('Activate Google Maps?', 'ticketmachine-event-manager'); ?></label></th>
             <td><input name="show_google_map" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_google_map){ ?>checked <?php  } ?>/></td>
         </tr>
+
+		<?php 
+			$image_ratios = [
+				[
+					'value' => '1:1',
+					'label' => __('Square', 'ticketmachine-event-manager')
+				],
+				[
+					'value' => '3:4',
+					'label' => __('Landscape', 'ticketmachine-event-manager')
+				],
+				[
+					'value' => '4:3',
+					'label' => __('Portrait', 'ticketmachine-event-manager')
+				],
+				[
+					'value' => '16:9',
+					'label' => __('Wide', 'ticketmachine-event-manager')
+				]
+			];
+		?>
+		<tr>
+			<th><label><?php esc_html_e('Image ratio', 'ticketmachine-event-manager'); ?></label></th>
+			<td>
+				<select name="event_detail_image_ratio">
+					<?php
+					foreach ($image_ratios as $image_ratio) {
+						$selected = ($image_ratio['value'] == $ticketmachine_config->event_detail_image_ratio) ? 'selected="selected"' : '';
+						echo '<option value="' . $image_ratio['value'] . '" ' . $selected . '>' . $image_ratio['label'] . ' (' . $image_ratio['value'] . ')</option>';
+					}
+					?>
+				</select>
+			</td>
+		</tr>
     </tbody>
 </table>
