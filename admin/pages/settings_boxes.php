@@ -25,7 +25,7 @@
 				array(
 					"show_boxes" => (bool)$ticketmachine_post->show_boxes,
 					"event_grouping" => sanitize_text_field($ticketmachine_post->event_grouping),
-					"event_box_image_ratio" => (bool)$ticketmachine_post->event_box_image_ratio
+					"event_box_image_ratio" => (string)$ticketmachine_post->event_box_image_ratio
 				);
 			if (!empty($ticketmachine_config) && empty($errors)) {
 				$wpdb->update(

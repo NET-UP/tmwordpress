@@ -88,7 +88,7 @@
                     "show_google_map" => (bool)$ticketmachine_post->show_google_map,
                     "show_additional_info" => (bool)$ticketmachine_post->show_additional_info,
                     "detail_page_layout" => (int)$ticketmachine_post->detail_page_layout,
-					"event_detail_image_ratio" => (bool)$ticketmachine_post->event_detail_image_ratio
+					"event_detail_image_ratio" => (string)$ticketmachine_post->event_detail_image_ratio
                 );
             if (!empty($ticketmachine_config) && empty($errors)) {
                 $wpdb->update(

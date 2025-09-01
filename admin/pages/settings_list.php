@@ -20,7 +20,7 @@
 			$save_array = 
 				array(
 					"show_list" => (bool)$ticketmachine_post->show_list,
-					"event_list_image_ratio" => (bool)$ticketmachine_post->event_list_image_ratio
+					"event_list_image_ratio" => (string)$ticketmachine_post->event_list_image_ratio
 				);
 
 			if (!empty($ticketmachine_config) && empty($errors)) {

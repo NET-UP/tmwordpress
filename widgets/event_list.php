@@ -48,9 +48,9 @@
                 $image_ratio = "1:1";
             }
 
-            $image_ratio = str_replace($image_ratio, " ", "");
-            $image_ratio = str_replace($image_ratio, "/", "-");
-            $image_ratio = str_replace($image_ratio, ":", "-");
+            $image_ratio = str_replace(" ", "", $image_ratio);
+            $image_ratio = str_replace("/", "-", $image_ratio);
+            $image_ratio = str_replace(":", "-", $image_ratio);
 
             if($isWidget == 1){
                 $ticketmachine_output .= "<div class='row'><div class='row ticketmachine_widget_event_list'>";

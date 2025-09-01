@@ -31,9 +31,9 @@
 			$image_ratio = "16:9";
 		}
 
-		$image_ratio = str_replace($image_ratio, " ", "");
-		$image_ratio = str_replace($image_ratio, "/", "-");
-		$image_ratio = str_replace($image_ratio, ":", "-");
+		$image_ratio = str_replace(" ", "", $image_ratio);
+		$image_ratio = str_replace("/", "-", $image_ratio);
+		$image_ratio = str_replace(":", "-", $image_ratio);
 		
 		$ticketmachine_output = '<div class="col-12 col-md-' . $colmd . ' col-xl-' . $colxl . ' card-group">';
 			$ticketmachine_output .= '<card class="card mb-4">';

@@ -14,9 +14,9 @@
 			$image_ratio = "16:9";
 		}
 
-		$image_ratio = str_replace($image_ratio, " ", "");
-		$image_ratio = str_replace($image_ratio, "/", "-");
-		$image_ratio = str_replace($image_ratio, ":", "-");
+        $image_ratio = str_replace(" ", "", $image_ratio);
+        $image_ratio = str_replace("/", "-", $image_ratio);
+        $image_ratio = str_replace(":", "-", $image_ratio);
 
         $ticketmachine_output = '
             <div class="title-height no-height-mobile">
