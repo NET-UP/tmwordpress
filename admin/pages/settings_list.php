@@ -61,11 +61,11 @@
 				],
 				[
 					'value' => '3:4',
-					'label' => __('Landscape', 'ticketmachine-event-manager')
+					'label' => __('Portrait', 'ticketmachine-event-manager')
 				],
 				[
 					'value' => '4:3',
-					'label' => __('Portrait', 'ticketmachine-event-manager')
+					'label' => __('Landscape', 'ticketmachine-event-manager')
 				],
 				[
 					'value' => '16:9',
