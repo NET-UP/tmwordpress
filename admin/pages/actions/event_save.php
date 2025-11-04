@@ -146,7 +146,7 @@
                         }
                         
                         //Upload image
-                        if(!empty($ticketmachine_post['event_img_url'])) {  
+                        if(!empty($ticketmachine_post['event_img_url']) && strpos($ticketmachine_post['event_img_url'], "cloud.ticketmachine.de/") === false) {  
                             $imageResult = ticketmachine_tmapi_update_event_image( 
                                 $response->id, 
                                 $ticketmachine_post['event_img_url']

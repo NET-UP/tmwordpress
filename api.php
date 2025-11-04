@@ -390,22 +390,64 @@
             return new WP_Error( 'image_fetch_failed', 'Failed to retrieve image from URL.', $image_response->get_error_message() );
         }
 
-        $image_data = wp_remote_retrieve_body( $image_response );
-        $image_mime_type = wp_remote_retrieve_header( $image_response, 'Content-Type' );
-        if ( empty( $image_data ) ) {
+        $image_data_raw = wp_remote_retrieve_body( $image_response );
+        $original_mime_type = wp_remote_retrieve_header( $image_response, 'Content-Type' );
+        
+        if ( empty( $image_data_raw ) ) {
             return new WP_Error( 'image_empty', 'Image data retrieved was empty.' );
         }
         
-        $binary_hash = hash( 'sha256', $image_data, true );
+        $image_data = $image_data_raw;
+        $target_mime_type = 'image/png';
+        $conversion_required = ( strpos( $original_mime_type, 'image/png' ) === false );
+        $conversion_success = true;
 
+        if ( $conversion_required ) {
+            $conversion_success = false;
+            
+            if ( class_exists( 'Imagick' ) ) {
+                try {
+                    $imagick = new Imagick();
+                    $imagick->readImageBlob( $image_data_raw );
+                    $imagick->setImageFormat( 'png' );
+                    $image_data = $imagick->getImageBlob();
+                    $conversion_success = true;
+                } catch ( Exception $e ) {
+                    error_log( 'Ticketmachine API: Imagick conversion failed: ' . $e->getMessage() );
+                }
+            }
+
+            if ( ! $conversion_success && function_exists( 'imagecreatefromstring' ) ) {
+                $gd_image = imagecreatefromstring( $image_data_raw );
+                
+                if ( $gd_image !== false ) {
+                    ob_start();
+                    imagepng( $gd_image, null, 9 );
+                    $image_data = ob_get_clean();
+                    imagedestroy( $gd_image );
+                    $conversion_success = true;
+                }
+            }
+        }
+        
+        if ( $conversion_required && ( ! $conversion_success || empty( $image_data ) ) ) {
+            return new WP_Error( 
+                'conversion_dependency_error', 
+                'Image conversion to PNG failed. The original image was not PNG and the necessary PHP extensions (GD or Imagick) are not installed or are failing.' 
+            );
+        }
+        
+        $image_mime_type = $target_mime_type;
+        $content_length = strlen( $image_data );
+
+        $binary_hash = hash( 'sha256', $image_data, true );
         $base64_digest_raw = base64_encode( $binary_hash );
 
         $content_digest_header = 'sha-256=:' . $base64_digest_raw . ':';
-        $content_length = strlen( $image_data );
-        
+
         $graphql_query = sprintf(
-            'mutation { updateEventImage(id: "%d", checksum: "%s") { target { url, token } } }',
-            $event_id,
+            'mutation { updateEventImage(id: "%s", checksum: "%s") { target { url, token } } }',
+            (string)$event_id, 
             $content_digest_header
         );
 
@@ -414,7 +456,7 @@
         $graphql_endpoint = $ticketmachine_api->base_url . "ticketmachine.de/graphql";
 
         $graphql_call_response = wp_remote_post( $graphql_endpoint, [
-            'method'    => 'POST',
+            'method'    => 'POST', 
             'headers'   => [
                 'Content-Type'  => 'application/json',
                 'Authorization' => 'Bearer ' . $api_key,
