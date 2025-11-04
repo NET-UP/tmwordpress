@@ -144,6 +144,22 @@
                                 $wpdb->insert($table, array('organizer_id' => $wpdb->insert_id, 'api_event_id' => $response->id));
                             }
                         }
+                        
+                        //Upload image
+                        if(!empty($ticketmachine_post['event_img_url'])) {  
+                            $imageResult = ticketmachine_tmapi_update_event_image( 
+                                $response->id, 
+                                $ticketmachine_post['event_img_url']
+                            );
+
+                            if ( is_wp_error( $imageResult ) ) {
+                                print_r("<pre>");
+                                print_r($imageResult);
+                                print_r("</pre>");
+                            }
+                            
+                        }
+                        
                     }else{
                         print_r("<pre>");
                         print_r($ticketmachine_post);

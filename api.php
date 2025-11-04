@@ -356,7 +356,7 @@
 
         if(isset($ticketmachine_api)) {
             $params = (object)$params;
-            $ticketmachine_url = $ticketmachine_api->scheme . "://cloud." . $ticketmachine_api->environment . "ticketmachine.de/api/v2/event/tags/types/category/add";
+            $ticketmachine_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/event/tags/types/category/add";
 
             $category = ticketmachine_apiRequest($ticketmachine_url, $params, $method);
             return (object)$category;
@@ -369,9 +369,100 @@
 
         if(isset($ticketmachine_api)) {
             $params = (object)$params;
-            $ticketmachine_url = $ticketmachine_api->scheme . "://cloud." . $ticketmachine_api->environment . "ticketmachine.de/api/v2/event/tags/types/category/remove";
+            $ticketmachine_url = $ticketmachine_api->base_url . "ticketmachine.de/api/v2/event/tags/types/category/remove";
             $category = ticketmachine_apiRequest($ticketmachine_url, $params, $method);
             return (object)$category;
         }
+    }
+
+    // Upload image
+    // Refactor this later!
+    function ticketmachine_tmapi_update_event_image( $event_id, $image_url ) {
+        global $ticketmachine_globals, $ticketmachine_api;
+
+        $api_key = $ticketmachine_globals->api_access_token;
+
+        $image_response = wp_remote_get( $image_url, [
+            'timeout' => 30,
+        ] );
+
+        if ( is_wp_error( $image_response ) ) {
+            return new WP_Error( 'image_fetch_failed', 'Failed to retrieve image from URL.', $image_response->get_error_message() );
+        }
+
+        $image_data = wp_remote_retrieve_body( $image_response );
+        $image_mime_type = wp_remote_retrieve_header( $image_response, 'Content-Type' );
+        if ( empty( $image_data ) ) {
+            return new WP_Error( 'image_empty', 'Image data retrieved was empty.' );
+        }
+        
+        $binary_hash = hash( 'sha256', $image_data, true );
+
+        $base64_digest_raw = base64_encode( $binary_hash );
+
+        $content_digest_header = 'sha-256=:' . $base64_digest_raw . ':';
+        $content_length = strlen( $image_data );
+        
+        $graphql_query = sprintf(
+            'mutation { updateEventImage(id: "%d", checksum: "%s") { target { url, token } } }',
+            $event_id,
+            $content_digest_header
+        );
+
+        $graphql_payload = json_encode( ['query' => $graphql_query] );
+
+        $graphql_endpoint = $ticketmachine_api->base_url . "ticketmachine.de/graphql";
+
+        $graphql_call_response = wp_remote_post( $graphql_endpoint, [
+            'method'    => 'POST',
+            'headers'   => [
+                'Content-Type'  => 'application/json',
+                'Authorization' => 'Bearer ' . $api_key,
+            ],
+            'body'      => $graphql_payload,
+            'data_format' => 'body',
+        ] );
+
+        if ( is_wp_error( $graphql_call_response ) ) {
+            return new WP_Error( 'graphql_call_failed', 'GraphQL call failed.', $graphql_call_response->get_error_message() );
+        }
+        
+        $graphql_body = json_decode( wp_remote_retrieve_body( $graphql_call_response ) );
+
+        if ( isset( $graphql_body->errors ) || empty( $graphql_body->data->updateEventImage->target->url ) ) {
+            $error_details = json_encode( $graphql_body->errors ?? 'Target data missing.' );
+            return new WP_Error( 'graphql_response_error', 'GraphQL response invalid or contained errors.', $error_details );
+        }
+
+        $upload_url = $graphql_body->data->updateEventImage->target->url;
+        $upload_token = $graphql_body->data->updateEventImage->target->token;
+
+        $upload_response = wp_remote_post( $upload_url, [
+            'method'    => 'POST', 
+            'headers'   => [
+                'Content-Type'      => $image_mime_type, 
+                'Authorization'     => 'Bearer ' . $upload_token,
+                'Content-Digest'    => $content_digest_header,
+                'Content-Length'    => $content_length, 
+            ],
+            'body'      => $image_data,
+            'data_format' => 'body',
+        ] );
+
+        if ( is_wp_error( $upload_response ) ) {
+            return new WP_Error( 'upload_failed', 'Raw image upload failed.', $upload_response->get_error_message() );
+        }
+        
+        $http_code = wp_remote_retrieve_response_code( $upload_response );
+
+        if ( $http_code < 200 || $http_code >= 300 ) {
+            return new WP_Error( 'upload_server_error', 'Upload failed with HTTP code ' . $http_code . '.', wp_remote_retrieve_body( $upload_response ) );
+        }
+        
+        return [
+            'status' => 'success',
+            'message' => 'Image successfully uploaded and assigned to event ' . $event_id . '.',
+            'http_code' => $http_code,
+        ];
     }
 ?>
