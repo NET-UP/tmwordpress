@@ -42,12 +42,19 @@
             <div class="notice notice-error is-dismissable">
                 <p><?php esc_html_e('Something went wrong', 'ticketmachine-event-manager'); ?>!</p>
             </div>
-        <?php }else{ ?>
-            <div class="notice notice-success is-dismissable">
-                <p><?php esc_html_e('Event successfully deleted', 'ticketmachine-event-manager'); ?>!</p>
-            </div>
-
         <?php 
+            }else{ 
+                $redirect_url = add_query_arg(
+                    array(
+                        'page'   => esc_html($_GET['page']),
+                        'status' => isset($_GET['status']) ? esc_html($_GET['status']) : false,
+                        'saved' => 'success',
+                        'action' => 'deleted',
+                    ),
+                    admin_url( 'admin.php' )
+                );
+                
+                wp_safe_redirect( $redirect_url );
             }
         }
     } 

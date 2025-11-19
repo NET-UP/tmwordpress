@@ -67,7 +67,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
             if(isset($_GET['s'])){
                 $params = ticketmachine_array_push_assoc($params, "query",sanitize_text_field( $_GET['s']));
             }
-            if(isset($_GET['status']) && sanitize_text_field($_GET['status']) == "upcoming" || !isset($_GET['status']) && !isset($_GET['s'])){
+            if(isset($_GET['status']) && sanitize_text_field($_GET['status']) == "upcoming" || empty($_GET['status']) && !isset($_GET['s'])){
                 $params = ticketmachine_array_push_assoc($params, "show_old", 0);
             }else{
                 $params = ticketmachine_array_push_assoc($params, "show_old", 1);
@@ -82,6 +82,16 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
 			if(isset($_GET['paged'])) {
             	$params = ticketmachine_array_push_assoc($params, "pg", $_GET['paged']);
 			}
+            if(isset($_GET['orderby'])) {
+                $sort = $_GET['orderby'];
+                if(isset($_GET['order']) && $_GET['order'] == "desc") {
+                    $sort = "-" . $_GET['orderby'];
+                }
+            }
+            if(isset($sort)) {
+                $params = ticketmachine_array_push_assoc($params, "sort", $sort);
+            }
+
             $events = ticketmachine_tmapi_events($params);
             return $events;
         }
@@ -161,9 +171,54 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
                 $view_text = esc_html__("View", 'ticketmachine-event-manager');
             }
 
-            $ticketmachine_action_toggle_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s', esc_html($_REQUEST['page']),$toggle_action,esc_attr($item['id'])) ) );
-            $ticketmachine_action_copy_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_copy_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s', esc_html($_REQUEST['page']),'copy',esc_attr($item['id'])) ) );
-            $ticketmachine_action_delete_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_delete_event' ), admin_url( sprintf( 'admin.php?page=%s&action=%s&id=%s', esc_html($_REQUEST['page']),'delete',esc_attr($item['id'])) ) );
+            // Define the base path once
+            $base_url_path = admin_url( 'admin.php?page=' . esc_html($_REQUEST['page']) );
+
+            // Helper for 'status' to avoid errors if it's not set
+            $current_status = isset($_GET['status']) ? esc_html($_GET['status']) : false;
+
+
+            // TOGGLE URL
+            $ticketmachine_action_toggle_url = add_query_arg( 
+                '_wpnonce', 
+                wp_create_nonce( 'ticketmachine_action_toggle_event' ), 
+                add_query_arg(
+                    array(
+                        'action' => $toggle_action,
+                        'id'     => esc_attr($item['id']),
+                        'status' => $current_status // Preserves status filter
+                    ), 
+                    $base_url_path
+                )
+            );
+
+            // COPY URL
+            $ticketmachine_action_copy_url = add_query_arg( 
+                '_wpnonce', 
+                wp_create_nonce( 'ticketmachine_action_copy_event' ), 
+                add_query_arg(
+                    array(
+                        'action' => 'copy',
+                        'id'     => esc_attr($item['id']),
+                        'status' => $current_status // Preserves status filter
+                    ), 
+                    $base_url_path
+                )
+            );
+
+            // DELETE URL
+            $ticketmachine_action_delete_url = add_query_arg( 
+                '_wpnonce', 
+                wp_create_nonce( 'ticketmachine_action_delete_event' ), 
+                add_query_arg(
+                    array(
+                        'action' => 'delete',
+                        'id'     => esc_attr($item['id']),
+                        'status' => $current_status // Preserves status filter
+                    ), 
+                    $base_url_path
+                )
+            );
 
             //Build row actions
             $actions = array(
@@ -244,10 +299,10 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
          **************************************************************************/
         function get_sortable_columns() {
             $sortable_columns = array(
-                //'ev_name'   => array('ev_name',false), //true means it's already sorted
+                'ev_name'   => array('ev_name', false), //true means it's already sorted
                 //'tags'      => array('tags',false),
-                //'ev_date'   => array('ev_date',false),
-                //'endtime'   => array('endtime',false)
+                'ev_date'   => array('ev_date', true),
+                'endtime'   => array('endtime', false)
             );
             return $sortable_columns;
         }
@@ -430,6 +485,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
     * it's the way the list tables are used in the WordPress core.
     */
     function ticketmachine_render_list_page(){
+        global $ticketmachine_globals;
 
         if( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "edit" ) {
             include_once "event_edit.php";
@@ -443,6 +499,71 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
                 include_once "actions/event_delete.php";
             } elseif ( isset($_GET['action']) && sanitize_text_field($_GET['action']) == "copy" && isset($_GET['id']) ){
                 include_once "actions/event_copy.php";
+            }
+
+            if ( isset( $_GET['saved'] ) && $_GET['saved'] === 'success' ) {
+                // Event save success
+                if ( isset( $_GET['action'] ) && $_GET['action'] === 'saved' && isset( $_GET['id'] ) ) {
+                    $event_id = absint( $_GET['id'] );
+                    $view_url = home_url( '/' . esc_html($ticketmachine_globals->event_slug) . '?id=' . $event_id );
+                ?>
+                    <div class="notice notice-success is-dismissable">
+                        <p>
+                            <?php echo __('Event saved', 'ticketmachine-event-manager'); ?>!
+                            &nbsp;-&nbsp;
+                            <a target="_blank" href="<?php echo esc_url($view_url); ?>">
+                                <?php echo esc_html__("View", 'ticketmachine-event-manager'); ?>
+                            </a>
+                        </p>
+                    </div>
+                <?php
+                }
+
+                // Event copy success
+                if ( isset( $_GET['action'] ) && $_GET['action'] === 'copied' && isset( $_GET['id'] ) ) {
+                    $event_id = absint( $_GET['id'] );
+                    $view_url = home_url( '/' . esc_html($ticketmachine_globals->event_slug) . '?id=' . $event_id );
+                ?>
+                    <div class="notice notice-success is-dismissible">
+                        <p>
+                            <?php esc_html_e('Event successfully copied', 'ticketmachine-event-manager'); ?>!
+                            &nbsp;-&nbsp;
+                            <a target="_blank" href="<?php echo esc_url($view_url); ?>">
+                                <?php echo esc_html__("Preview", 'ticketmachine-event-manager'); ?>
+                            </a>
+                        </p>
+                    </div>
+                <?php
+                }
+
+                // Event toggle success
+                if ( isset( $_GET['action'] ) && $_GET['action'] === 'toggled' && isset( $_GET['id'] ) && isset( $_GET['state'] ) ) {
+                    $event_id = absint( $_GET['id'] );
+                    $state = $_GET['state'];
+                    $current_status = isset($_GET['status']) ? esc_html($_GET['status']) : 'all';
+                ?>
+                    <div class="notice notice-success is-dismissable">
+                        <p>
+                            <?php 
+                                $state == "published" ? esc_html_e('Published', 'ticketmachine-event-manager') : esc_html_e('Deactivated', 'ticketmachine-event-manager'); 
+                                
+                                $ticketmachine_action_toggle_url = add_query_arg(  '_wpnonce', wp_create_nonce( 'ticketmachine_action_toggle_event' ), admin_url( 'admin.php?page=ticketmachine_events&action=deactivate&id='.$event_id.'&status='.$current_status ) );
+                            ?>!
+                            &nbsp;-&nbsp;
+                            <a href="<?php echo esc_url($ticketmachine_action_toggle_url); ?>"><?php esc_html_e('Undo', 'ticketmachine-event-manager'); ?></a>
+                        </p>
+                    </div>
+                <?php
+                }
+
+                // Event delete success
+                if ( isset( $_GET['action'] ) && $_GET['action'] === 'deleted' ) {
+                ?>
+                    <div class="notice notice-success is-dismissable">
+                        <p><?php esc_html_e('Event successfully deleted', 'ticketmachine-event-manager'); ?>!</p>
+                    </div>
+                <?php
+                }
             }
 
             //Create an instance of our package class...
@@ -470,7 +591,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
                                     </a> |
                                 </li>
                                 <li class="upcoming">
-                                    <a href="<?php echo admin_url('admin.php?page=ticketmachine_events&status=upcoming'); ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming" || !isset($_GET['status']) && !isset($_GET['s'])){ ?>class="current"<?php } ?>>
+                                    <a href="<?php echo admin_url('admin.php?page=ticketmachine_events&status=upcoming'); ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming" || empty($_GET['status']) && !isset($_GET['s'])){ ?>class="current"<?php } ?>>
                                         <?php esc_html_e('Upcoming', 'ticketmachine-event-manager'); ?> 
                                         <span class="count"></span>
                                     </a> |

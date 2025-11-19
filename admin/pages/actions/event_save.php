@@ -182,24 +182,21 @@
             <div class="notice notice-error is-dismissable">
                 <p><?php echo __('Something went wrong', 'ticketmachine-event-manager'); ?>!</p>
             </div>
-        <?php }else{ ?>
-            <div class="notice notice-success is-dismissable">
-                <p>
-                    <?php echo __('Event saved', 'ticketmachine-event-manager'); ?>!
-                    &nbsp;-&nbsp;
-                    <a target="_blank" href="/<?php echo esc_html($ticketmachine_globals->event_slug); ?>?id=<?php echo esc_html($response->id); ?>">
-                        <?php 
-                            if($response->approved == 1){
-                                echo __('View', 'ticketmachine-event-manager'); 
-                            }else{
-                                echo __('Preview', 'ticketmachine-event-manager'); 
-                            }
-                        ?>
-                    </a>
-                </p>
-            </div>
-
+            
         <?php 
+            }else{ 
+                $redirect_url = add_query_arg(
+                    array(
+                        'page'   => esc_html($_GET['page']),
+                        'status' => isset($_GET['status']) ? esc_html($_GET['status']) : false,
+                        'saved' => 'success',
+                        'action' => 'saved',
+                        'id' => absint($response->id)
+                    ),
+                    admin_url( 'admin.php' )
+                );
+                
+                wp_safe_redirect( $redirect_url );
             }
         }
     } 
