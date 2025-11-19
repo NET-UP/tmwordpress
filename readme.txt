@@ -108,6 +108,8 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 = 1.11.4 =
 * Fixed wordpress warnings in frontend and admin panel
 * Default view for events in admin panel is now upcoming
+* Fixed bugs with copying, deleting and toggling events in admin panel
+* Events in admin panel can now be sorted by name or date
 
 = 1.11.3 =
 * Small UI optimizations
