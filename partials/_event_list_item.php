@@ -21,10 +21,11 @@
 			$colxl = 4;
 		}
 
-		$image_ratio = $atts['image_ratio'];
 
-		if(empty($image_ratio)) {
+		if(empty($atts['image_ratio'])) {
 			$image_ratio = $ticketmachine_globals->event_box_image_ratio;
+		}else{
+			$image_ratio = $atts['image_ratio'];
 		}
 
 		if(empty($image_ratio)) {

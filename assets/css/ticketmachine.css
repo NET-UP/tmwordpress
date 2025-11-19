@@ -252,8 +252,11 @@ body .ticketmachine_page .media-body {
   word-break: break-word;
 }
 
-body .ticketmachine_page .title-height {
-  height: 50px;
+body .ticketmachine_page .ticketmachine_actions {
+  display: inline-flex;
+  gap: 0.25em;
+  align-items: center;
+  flex-flow: row wrap;
 }
 
 body .ticketmachine_page .read-more {

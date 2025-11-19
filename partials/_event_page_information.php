@@ -19,7 +19,7 @@
         $image_ratio = str_replace(":", "-", $image_ratio);
 
         $ticketmachine_output = '
-            <div class="title-height no-height-mobile">
+            <div>
                 <h3>' . esc_html($event->ev_name) . '</h3>
             </div>
             <div class="card mb-3">

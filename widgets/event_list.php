@@ -38,14 +38,14 @@
                 $atts['pagination'] = 1;
             }
 
-            $image_ratio = $atts['image_ratio'];
-
-            if(empty($image_ratio)) {
+            if(empty($atts['image_ratio'])) {
                 $image_ratio = $ticketmachine_globals->event_list_image_ratio;
+            }else{
+                $image_ratio = $atts['image_ratio'];
             }
 
             if(empty($image_ratio)) {
-                $image_ratio = "1:1";
+                $image_ratio = "16:9";
             }
 
             $image_ratio = str_replace(" ", "", $image_ratio);
@@ -121,13 +121,13 @@
 
                             if(isset($event->has_location) && $event->has_location == 1){   
                                 if(empty($event->ev_location_name)) {
-                                    $event_location = $event->event_location->street . " " . $event->event_location->house_number;
+                                    $event_location = $event->event_location["street"] . " " . $event->event_location["house_number"];
                                 }else{
                                     $event_location = $event->ev_location_name;
                                 }
                                 $ticketmachine_output .= '<div class="card-meta-tag"><i class="fas fa-map-marker-alt tm-icon"></i> &nbsp; ';
                                     if(isset($event->has_location_link) && $event->has_location_link == 1){        
-                                        $ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($ticketmachine_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location->street . " " . $event->event_location->house_number . " " . $event->event_location->zip . " " . $event->event_location->city . " " . $event->event_location->country )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
+                                        $ticketmachine_output .= '<a aria-label="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event->ev_location_name) . '" href="' . esc_url($ticketmachine_globals->map_query_url . urlencode($event->ev_location_name . " " .$event->event_location["street"] . " " . $event->event_location["house_number"] . " " . $event->event_location["zip"] . " " . $event->event_location["city"] . " " . $event->event_location["country"] )) . '" target="_blank" title="' . esc_attr__("Event Location", 'ticketmachine-event-manager') . ': ' . esc_html($event_location) . '">' . esc_html($event_location) . '</a>';
                                     }else{
                                         $ticketmachine_output .= $event_location;
                                     }

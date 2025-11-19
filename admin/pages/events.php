@@ -67,7 +67,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
             if(isset($_GET['s'])){
                 $params = ticketmachine_array_push_assoc($params, "query",sanitize_text_field( $_GET['s']));
             }
-            if(isset($_GET['status']) && sanitize_text_field($_GET['status']) == "upcoming"){
+            if(isset($_GET['status']) && sanitize_text_field($_GET['status']) == "upcoming" || !isset($_GET['status']) && !isset($_GET['s'])){
                 $params = ticketmachine_array_push_assoc($params, "show_old", 0);
             }else{
                 $params = ticketmachine_array_push_assoc($params, "show_old", 1);
@@ -79,7 +79,7 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
                 $params = ticketmachine_array_push_assoc($params, "approved", 0);
             }
             $params = ticketmachine_array_push_assoc($params, "per_page", $per_page);
-			if($_GET['paged']) {
+			if(isset($_GET['paged'])) {
             	$params = ticketmachine_array_push_assoc($params, "pg", $_GET['paged']);
 			}
             $events = ticketmachine_tmapi_events($params);
@@ -464,13 +464,13 @@ if( current_user_can('edit_posts') || current_user_can('edit_pages') ) {
                         <form method="get">
                             <ul class="subsubsub">
                                 <li class="all">
-                                    <a href="<?php echo admin_url('admin.php?page=ticketmachine_events'); ?>" <?php if(!isset($_GET['status'])){ ?>class="current"<?php } ?>>
+                                    <a href="<?php echo admin_url('admin.php?page=ticketmachine_events&status=all'); ?>" <?php if(isset($_GET['s']) || isset($_GET['status']) && $_GET['status'] == "all"){ ?>class="current"<?php } ?>>
                                         <?php esc_html_e('All', 'ticketmachine-event-manager'); ?> 
                                         <span class="count"></span>
                                     </a> |
                                 </li>
                                 <li class="upcoming">
-                                    <a href="<?php echo admin_url('admin.php?page=ticketmachine_events&status=upcoming'); ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming"){ ?>class="current"<?php } ?>>
+                                    <a href="<?php echo admin_url('admin.php?page=ticketmachine_events&status=upcoming'); ?>" <?php if(isset($_GET['status']) && $_GET['status'] == "upcoming" || !isset($_GET['status']) && !isset($_GET['s'])){ ?>class="current"<?php } ?>>
                                         <?php esc_html_e('Upcoming', 'ticketmachine-event-manager'); ?> 
                                         <span class="count"></span>
                                     </a> |
