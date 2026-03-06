@@ -89,7 +89,7 @@
                         $ticketmachine_output .= '<li class="media mx-0 mt-2 p-3">';
 
                         if(isset($atts['show_image']) && $atts['show_image'] > 0){
-                            $ticketmachine_output .= '<div><a class="me-3 media-img ratio-' . $image_ratio . '" href="' . $event->link . '" style="background-image:url(https://nu.ticketmachine.de/ajax/event/' . esc_attr($event->id) . '/image?width=180&height=180&gravity=cover%3Acentre)"></a></div>';
+                            $ticketmachine_output .= '<div><a class="me-3 media-img ratio-' . $image_ratio . '" href="' . $event->link . '" style="background-image:url(https://nu.ticketmachine.de/ajax/event/' . esc_attr($event->id) . '/image?width=200&height=200&gravity=cover%3Acentre)"></a></div>';
                         }
                                             
                             $ticketmachine_output .= '<div class="media-body">';
