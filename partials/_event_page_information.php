@@ -19,11 +19,11 @@
         $image_ratio = str_replace(":", "-", $image_ratio);
 
         $ticketmachine_output = '
-            <div>
-                <h3>' . esc_html($event->ev_name) . '</h3>
+            <div class="mb-3">
+                <h3 class="mb-0">' . esc_html($event->ev_name) . '</h3>
             </div>
             <div class="card mb-3">
-                <div class="card-img-top ratio-' . $image_ratio . '" style="background-image:url('. esc_url($event->event_img_url) .')">
+                <div class="card-img-top ratio-' . $image_ratio . '" style="background-image:url( https://nu.ticketmachine.de/ajax/event/' . esc_attr($event->id) . '/image?width=712&height=400&gravity=cover%3Acentre )">
                     <div class="event-badges"><div class="badge bg-danger float-right mt-1 me-2">'. esc_html($event->rules["badge"]) .'</div></div>
                 </div>
                 <div class="card-body position-relative">

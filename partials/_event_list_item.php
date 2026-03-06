@@ -38,7 +38,7 @@
 		
 		$ticketmachine_output = '<div class="col-12 col-md-' . $colmd . ' col-xl-' . $colxl . ' card-group">';
 			$ticketmachine_output .= '<card class="card mb-4">';
-				$ticketmachine_output .= '<a aria-label="' . esc_attr($event->ev_name) . ' am ' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '" href="' . $event->link . '" class="card-img-top ratio-' . $image_ratio .'" style="background-image:url( ' . esc_url($event->event_img_url) . ' )" title="' . esc_attr($event->ev_name) . '">';
+				$ticketmachine_output .= '<a aria-label="' . esc_attr($event->ev_name) . ' am ' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '" href="' . $event->link . '" class="card-img-top ratio-' . $image_ratio .'" style="background-image:url( https://nu.ticketmachine.de/ajax/event/' . esc_attr($event->id) . '/image?width=712&height=400&gravity=cover%3Acentre )" title="' . esc_attr($event->ev_name) . '">';
 					$ticketmachine_output .= '<div class="event-badges">';
 					if($event->rules["sale_active"] && !$event->state["sale_active"]) {
 						$ticketmachine_output .= '<div class="badge bg-danger float-right mt-1 me-2">'. __("Sold out", "ticketmachine-event-manager") .'</div>';
