@@ -35,10 +35,18 @@
 		$image_ratio = str_replace(" ", "", $image_ratio);
 		$image_ratio = str_replace("/", "-", $image_ratio);
 		$image_ratio = str_replace(":", "-", $image_ratio);
-		
+
+		$ratio_parts = explode('-', $image_ratio);
+		$ratio_w = (int)$ratio_parts[0];
+		$ratio_h = (int)$ratio_parts[1];
+		$width = 712;
+		$height = round(($width / $ratio_w) * $ratio_h);
+
+		$img_src = 'https://nu.ticketmachine.de/ajax/event/' . esc_attr($event->id) . '/image?width=' . $width . '&height=' . $height . '&gravity=cover%3Acentre';
+				
 		$ticketmachine_output = '<div class="col-12 col-md-' . $colmd . ' col-xl-' . $colxl . ' card-group">';
 			$ticketmachine_output .= '<card class="card mb-4">';
-				$ticketmachine_output .= '<a aria-label="' . esc_attr($event->ev_name) . ' am ' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '" href="' . $event->link . '" class="card-img-top ratio-' . $image_ratio .'" style="background-image:url( https://nu.ticketmachine.de/ajax/event/' . esc_attr($event->id) . '/image?width=712&height=400&gravity=cover%3Acentre )" title="' . esc_attr($event->ev_name) . '">';
+				$ticketmachine_output .= '<a aria-label="' . esc_attr($event->ev_name) . ' am ' . ticketmachine_i18n_date("d. F Y", $event->ev_date) . '" href="' . $event->link . '" class="card-img-top ratio-' . $image_ratio .'" style="background-image:url( ' . $img_src . ' )" title="' . esc_attr($event->ev_name) . '">';
 					$ticketmachine_output .= '<div class="event-badges">';
 					if($event->rules["sale_active"] && !$event->state["sale_active"]) {
 						$ticketmachine_output .= '<div class="badge bg-danger float-right mt-1 me-2">'. __("Sold out", "ticketmachine-event-manager") .'</div>';

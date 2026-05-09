@@ -38,20 +38,6 @@
                 $atts['pagination'] = 1;
             }
 
-            if(empty($atts['image_ratio'])) {
-                $image_ratio = $ticketmachine_globals->event_list_image_ratio;
-            }else{
-                $image_ratio = $atts['image_ratio'];
-            }
-
-            if(empty($image_ratio)) {
-                $image_ratio = "16:9";
-            }
-
-            $image_ratio = str_replace(" ", "", $image_ratio);
-            $image_ratio = str_replace("/", "-", $image_ratio);
-            $image_ratio = str_replace(":", "-", $image_ratio);
-
             if($isWidget == 1){
                 $ticketmachine_output .= "<div class='row'><div class='row ticketmachine_widget_event_list'>";
             }
@@ -68,6 +54,28 @@
 
                     foreach($events as $event){
                         $event = (object)$event;
+
+                        if(empty($atts['image_ratio'])) {
+                            $image_ratio = $ticketmachine_globals->event_list_image_ratio;
+                        }else{
+                            $image_ratio = $atts['image_ratio'];
+                        }
+
+                        if(empty($image_ratio)) {
+                            $image_ratio = "16:9";
+                        }
+
+                        $image_ratio = str_replace(" ", "", $image_ratio);
+                        $image_ratio = str_replace("/", "-", $image_ratio);
+                        $image_ratio = str_replace(":", "-", $image_ratio);
+
+                        $ratio_parts = explode('-', $image_ratio);
+                        $ratio_w = (int)$ratio_parts[0];
+                        $ratio_h = (int)$ratio_parts[1];
+                        $width = 200;
+                        $height = round(($width / $ratio_w) * $ratio_h);
+
+                        $img_src = 'https://nu.ticketmachine.de/ajax/event/' . esc_attr($event->id) . '/image?width=' . $width . '&height=' . $height . '&gravity=cover%3Acentre';
 
                         $event->has_location = 0;
                         $event->has_location_link = 0;
@@ -89,7 +97,7 @@
                         $ticketmachine_output .= '<li class="media mx-0 mt-2 p-3">';
 
                         if(isset($atts['show_image']) && $atts['show_image'] > 0){
-                            $ticketmachine_output .= '<div><a class="me-3 media-img ratio-' . $image_ratio . '" href="' . $event->link . '" style="background-image:url(https://nu.ticketmachine.de/ajax/event/' . esc_attr($event->id) . '/image?width=200&height=200&gravity=cover%3Acentre)"></a></div>';
+                            $ticketmachine_output .= '<div><a class="me-3 media-img ratio-' . $image_ratio . '" href="' . $event->link . '" style="background-image:url( ' . $img_src . ' )"></a></div>';
                         }
                                             
                             $ticketmachine_output .= '<div class="media-body">';
