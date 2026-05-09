@@ -71,7 +71,7 @@
 
                         $ratio_parts = explode('-', $image_ratio);
                         $ratio_w = (int)$ratio_parts[0];
-                        $ratio_h = (int)$ratio_parts[1];
+                        $ratio_h = isset($ratio_parts[1]) ? (int)$ratio_parts[1] : $ratio_w;
                         $width = 200;
                         $height = round(($width / $ratio_w) * $ratio_h);
 
