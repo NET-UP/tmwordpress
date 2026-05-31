@@ -13,6 +13,9 @@
 		if(isset($_GET['tag'])){
 			$params = ticketmachine_array_push_assoc($params, "tag", sanitize_text_field($_GET['tag']));
 		}
+		if(isset($_GET['search_date'])){
+			$params = ticketmachine_array_push_assoc($params, "search_date", sanitize_text_field($_GET['search_date']));
+		}
 		if(isset($_GET['pg'])){
 			$params = ticketmachine_array_push_assoc($params, "pg", sanitize_text_field($_GET['pg']));
 		}

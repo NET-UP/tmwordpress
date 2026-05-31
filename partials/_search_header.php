@@ -36,6 +36,10 @@
                                                     <span class='btn btn-secondary' id='calendar-title'></span>
                                                     <a href='#' aria-label='" . esc_attr__("To next month", "ticketmachine-event-manager") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
                                                 </div>";
+                                            } elseif ($ticketmachine_globals->filter_date_enabled) {
+                                $ticketmachine_output .= "<div class='input-group'>
+                                                    <input type='date' aria-label='" . esc_attr__("Select event date", "ticketmachine-event-manager") . "' class='form-control' name='search_date' value='" . esc_attr(isset($_GET['search_date']) ? sanitize_text_field($_GET['search_date']) : '') . "'>
+                                                </div>";
                                             }
     
                                             $ticketmachine_output .= "<div class='btn-group ticketmachine-view-switch'>";

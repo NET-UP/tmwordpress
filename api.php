@@ -109,9 +109,23 @@
                 $ticketmachine_url .= "organizer.og_abbreviation[eq]=" . $params->organizer;
             }
             
-            if(empty($params->show_old)) {
-                $ticketmachine_url .= "&endtime[gte]=" . $ticketmachine_globals->first_event_date;
+           
+            if(empty($params->show_old)) { 
+                if(!empty($params->search_date)) {
+                    $search_date = sanitize_text_field($params->search_date);
+
+                    $ticketmachine_url .= "&ev_date[gte]=" . $search_date;
+
+                    $date_obj = new DateTime($search_date);
+                    $date_obj->modify('+1 day');
+                    $next_day = $date_obj->format('Y-m-d');
+                    
+                    $ticketmachine_url .= "&endtime[lte]=" . $next_day;
+                }else{
+                    $ticketmachine_url .= "&endtime[gte]=" . $ticketmachine_globals->first_event_date;
+                }
             }
+            
             $ticketmachine_url .= "&sort=". $params->sort;
             if(empty($params->per_page)) {
                 $params->per_page = 30;

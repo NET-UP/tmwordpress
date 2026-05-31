@@ -29,9 +29,16 @@
 				$ticketmachine_post->show_search = false;
 			}
 
+			if (!empty($ticketmachine_post->filter_date_enabled)){
+				$ticketmachine_post->filter_date_enabled = true;
+			}else{
+				$ticketmachine_post->filter_date_enabled = false;
+			}
+
 			$save_array = 
 				array(
 					"show_search" => (bool)($ticketmachine_post->show_search),
+					"filter_date_enabled" => (bool)($ticketmachine_post->filter_date_enabled),
 					"events_slug_id" => absint($ticketmachine_post->events_slug_id),
 					"event_slug_id" => absint($ticketmachine_post->event_slug_id),
 					"privacy_slug_id" => absint($ticketmachine_post->privacy_slug_id)
@@ -114,4 +121,17 @@
             <td><input name="show_search" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->show_search){ ?>checked <?php } ?>/></td>
 		</tr>
 	</tbody>
+</table>
+
+
+<table class="form-table">
+	<tbody>
+		<tr>
+			<th><label><?php esc_html_e('Search filters', 'ticketmachine-event-manager'); ?></label></th>
+        </tr>
+        <tr class="filter">
+            <th class="ps-4 py-2"><label><?php esc_html_e('Date', 'ticketmachine-event-manager'); ?></label></th>
+            <td class="py-2"><input name="filter_date_enabled" type="checkbox" value=1 class="regular-text" <?php if($ticketmachine_config->filter_date_enabled){ ?>checked <?php  } ?>/></td>
+        </tr>
+    </tbody>
 </table>

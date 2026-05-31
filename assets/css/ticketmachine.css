@@ -9,9 +9,10 @@
 }
 
 body .ticketmachine_page {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
   line-height: 1.5;
 }
 
@@ -470,4 +471,18 @@ textarea,
 .ticketmachine_page a.tm-list-title {
   color: inherit;
   font-size: 1.125rem;
+}
+
+@media (max-width: 767px) {
+  .ticketmachine-search-container + .input-group,
+  .input-group:has(input[name="search_date"]) {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .input-group:has(input[name="search_date"]) {
+    max-width: 200px !important;
+  }
 }
