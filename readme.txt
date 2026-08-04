@@ -105,6 +105,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 
 == Changelog ==
+= 1.11.8 =
+* Small bugfixes and code cleanup
+
 = 1.11.7 =
 * Added wordpress 7.0 compatibility
 * Added configurable search by date filter

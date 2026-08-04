@@ -37,8 +37,19 @@
                                                     <a href='#' aria-label='" . esc_attr__("To next month", "ticketmachine-event-manager") . "' class='btn btn-secondary' id='calendar-next'><i class='fas fa-angle-right'></i></a>
                                                 </div>";
                                             } elseif ($ticketmachine_globals->filter_date_enabled) {
-                                $ticketmachine_output .= "<div class='input-group'>
-                                                    <input type='date' aria-label='" . esc_attr__("Select event date", "ticketmachine-event-manager") . "' class='form-control' name='search_date' value='" . esc_attr(isset($_GET['search_date']) ? sanitize_text_field($_GET['search_date']) : '') . "'>
+                                                // Determine if we should show the date picker as text (if no value is set) or as a date
+                                                $current_date = isset($_GET['search_date']) ? sanitize_text_field($_GET['search_date']) : '';
+                                                $input_type = !empty($current_date) ? 'date' : '';
+
+                                                $ticketmachine_output .= "<div class='input-group'>
+                                                    <input type='" . $input_type . "' 
+                                                        aria-label='" . esc_attr__("Select event date", "ticketmachine-event-manager") . "' 
+                                                        class='form-control' 
+                                                        name='search_date' 
+                                                        value='" . esc_attr($current_date) . "' 
+                                                        placeholder='" . esc_attr__("Select event date", "ticketmachine-event-manager") . "'
+                                                        onfocus=\"this.type='date'\" 
+                                                        onblur=\"if(!this.value) this.type=''\">
                                                 </div>";
                                             }
     
