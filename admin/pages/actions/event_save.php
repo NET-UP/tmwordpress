@@ -176,7 +176,10 @@
             </div>
         <?php }elseif(isset($response->error)) { ?>
             <div class="notice notice-error is-dismissable">
-                <p><?php echo __($response->error['error_message']); ?></p>
+                <p><?php 
+                    $error_message = is_array($response->error) ? $response->error['error_message'] : $response->error;
+                    echo __($error_message, 'ticketmachine-event-manager'); 
+                ?></p>
             </div>
         <?php }elseif(empty($ticketmachine_json) || !empty($errors)){ ?>
             <div class="notice notice-error is-dismissable">
