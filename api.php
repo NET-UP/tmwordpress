@@ -401,7 +401,7 @@
 
         $api_key = $ticketmachine_globals->api_access_token;
 
-        // 1. Fetch Image
+        // Fetch Image
         $image_response = wp_remote_get( $image_url, [
             'timeout'   => 30,
             'sslverify' => false,
@@ -426,7 +426,7 @@
         $conversion_required = ( strpos( $original_mime_type, 'image/png' ) === false );
         $conversion_success  = true;
 
-        // 2. Conversion Layer with Throwable Protection
+        // Conversion Layer with Throwable Protection
         if ( $conversion_required ) {
             $conversion_success = false;
             
@@ -473,7 +473,7 @@
         $base64_digest_raw     = base64_encode( $binary_hash );
         $content_digest_header = 'sha-256=:' . $base64_digest_raw . ':';
 
-        // 3. GraphQL Request for Pre-signed URL
+        // GraphQL Request for Pre-signed URL
         $graphql_query = sprintf(
             'mutation { updateEventImage(id: "%s", checksum: "%s") { target { url, token } } }',
             (string)$event_id, 
@@ -512,7 +512,7 @@
         $upload_url   = $graphql_body->data->updateEventImage->target->url;
         $upload_token = $graphql_body->data->updateEventImage->target->token;
 
-        // 4. Raw Image Upload Post
+        // Raw Image Upload Post
         $upload_response = wp_remote_post( $upload_url, [
             'method'      => 'POST', 
             'headers'     => [
