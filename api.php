@@ -2,7 +2,7 @@
     if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     
     // Send GET or POST request to the TicketMachine API
-    function ticketmachine_apiRequest($ticketmachine_url, $ticketmachine_post=FALSE, $method="GET", $headers=array()) {
+    function ticketmachine_apiRequest($ticketmachine_url, $ticketmachine_post=false, $method="GET", $headers=array()) {
         global $ticketmachine_globals;
 
         if(!$headers) {
@@ -21,7 +21,7 @@
                     
                     $resource = wp_remote_post($ticketmachine_url, array(
                         'method'  => 'POST',
-                        'sslverify' => FALSE,
+                        'sslverify' => false,
                         'timeout' => 45,
                         'headers' => $headers,
                         'body' 	  => str_replace("\'", "'", str_replace("\r\n", "<br>", str_replace("&nbsp;", "", str_replace('\"', "'", json_encode($ticketmachine_post, JSON_UNESCAPED_SLASHES)))))
@@ -69,7 +69,7 @@
 
                 $resource = wp_remote_get($ticketmachine_url, array(
                     'method'  => 'GET',
-                    'sslverify' => FALSE,
+                    'sslverify' => false,
                     'timeout' => 45,
                     'headers' => $headers
                 ));
@@ -88,7 +88,7 @@
 
     /* API Requests */
     // Get event list
-    function ticketmachine_tmapi_events($params=array(), $method="GET", $ticketmachine_post=FALSE,  $headers=array(), $ticketmachine_url_only=0){
+    function ticketmachine_tmapi_events($params=array(), $method="GET", $ticketmachine_post=false,  $headers=array(), $ticketmachine_url_only=0){
         global $ticketmachine_api, $ticketmachine_globals;
 
         if(isset($ticketmachine_api)) {
@@ -162,7 +162,7 @@
     }
 
     // Get event
-    function ticketmachine_tmapi_event($params=array(), $method="GET", $ticketmachine_post=FALSE, $headers=array()){
+    function ticketmachine_tmapi_event($params=array(), $method="GET", $ticketmachine_post=false, $headers=array()){
         global $ticketmachine_api, $ticketmachine_globals;
         if(isset($ticketmachine_api)) {
                 
@@ -209,7 +209,7 @@
     }
 
     // Get connected organizer
-    function ticketmachine_tmapi_organizers($params=array(), $method="GET", $ticketmachine_post=FALSE, $headers=array()){
+    function ticketmachine_tmapi_organizers($params=array(), $method="GET", $ticketmachine_post=false, $headers=array()){
         global $ticketmachine_api;
 
         $params = (object)$params;
@@ -394,130 +394,155 @@
     function ticketmachine_tmapi_update_event_image( $event_id, $image_url ) {
         global $ticketmachine_globals, $ticketmachine_api;
 
+        if ( empty( $ticketmachine_globals->api_access_token ) ) {
+            error_log( 'Ticketmachine API Error: Missing API access token for event image update.' );
+            return new WP_Error( 'missing_token', 'API access token is missing.' );
+        }
+
         $api_key = $ticketmachine_globals->api_access_token;
 
+        // 1. Fetch Image
         $image_response = wp_remote_get( $image_url, [
-            'timeout' => 30,
+            'timeout'   => 30,
+            'sslverify' => false,
         ] );
 
         if ( is_wp_error( $image_response ) ) {
-            return new WP_Error( 'image_fetch_failed', 'Failed to retrieve image from URL.', $image_response->get_error_message() );
+            $error_msg = $image_response->get_error_message();
+            error_log( 'Ticketmachine API Error: Image fetch failed from URL (' . $image_url . ') - ' . $error_msg );
+            return new WP_Error( 'image_fetch_failed', 'Failed to retrieve image from URL: ' . $error_msg );
         }
 
-        $image_data_raw = wp_remote_retrieve_body( $image_response );
+        $image_data_raw     = wp_remote_retrieve_body( $image_response );
         $original_mime_type = wp_remote_retrieve_header( $image_response, 'Content-Type' );
         
         if ( empty( $image_data_raw ) ) {
+            error_log( 'Ticketmachine API Error: Retrieved image body was empty for URL: ' . $image_url );
             return new WP_Error( 'image_empty', 'Image data retrieved was empty.' );
         }
         
-        $image_data = $image_data_raw;
-        $target_mime_type = 'image/png';
+        $image_data          = $image_data_raw;
+        $target_mime_type    = 'image/png';
         $conversion_required = ( strpos( $original_mime_type, 'image/png' ) === false );
-        $conversion_success = true;
+        $conversion_success  = true;
 
+        // 2. Conversion Layer with Throwable Protection
         if ( $conversion_required ) {
             $conversion_success = false;
             
-            if ( class_exists( 'Imagick' ) ) {
-                try {
+            try {
+                if ( class_exists( 'Imagick' ) ) {
                     $imagick = new Imagick();
                     $imagick->readImageBlob( $image_data_raw );
                     $imagick->setImageFormat( 'png' );
                     $image_data = $imagick->getImageBlob();
                     $conversion_success = true;
-                } catch ( Exception $e ) {
-                    error_log( 'Ticketmachine API: Imagick conversion failed: ' . $e->getMessage() );
                 }
+            } catch ( Throwable $e ) {
+                error_log( 'Ticketmachine API Warning: Imagick conversion threw an exception/fatal error: ' . $e->getMessage() );
             }
 
             if ( ! $conversion_success && function_exists( 'imagecreatefromstring' ) ) {
-                $gd_image = imagecreatefromstring( $image_data_raw );
-                
-                if ( $gd_image !== false ) {
-                    ob_start();
-                    imagepng( $gd_image, null, 9 );
-                    $image_data = ob_get_clean();
-                    imagedestroy( $gd_image );
-                    $conversion_success = true;
+                try {
+                    $gd_image = @imagecreatefromstring( $image_data_raw );
+                    
+                    if ( $gd_image !== false ) {
+                        ob_start();
+                        imagepng( $gd_image, null, 9 );
+                        $image_data = ob_get_clean();
+                        imagedestroy( $gd_image );
+                        $conversion_success = true;
+                    }
+                } catch ( Throwable $e ) {
+                    error_log( 'Ticketmachine API Warning: GD conversion threw an exception/fatal error: ' . $e->getMessage() );
                 }
             }
         }
         
         if ( $conversion_required && ( ! $conversion_success || empty( $image_data ) ) ) {
+            error_log( 'Ticketmachine API Error: Image conversion to PNG failed entirely for event ID ' . $event_id );
             return new WP_Error( 
                 'conversion_dependency_error', 
-                'Image conversion to PNG failed. The original image was not PNG and the necessary PHP extensions (GD or Imagick) are not installed or are failing.' 
+                'Image conversion to PNG failed. The original image was not PNG and the necessary PHP extensions (GD or Imagick) are missing or failing.' 
             );
         }
         
-        $image_mime_type = $target_mime_type;
-        $content_length = strlen( $image_data );
-
-        $binary_hash = hash( 'sha256', $image_data, true );
-        $base64_digest_raw = base64_encode( $binary_hash );
-
+        $image_mime_type       = $target_mime_type;
+        $content_length        = strlen( $image_data );
+        $binary_hash           = hash( 'sha256', $image_data, true );
+        $base64_digest_raw     = base64_encode( $binary_hash );
         $content_digest_header = 'sha-256=:' . $base64_digest_raw . ':';
 
+        // 3. GraphQL Request for Pre-signed URL
         $graphql_query = sprintf(
             'mutation { updateEventImage(id: "%s", checksum: "%s") { target { url, token } } }',
             (string)$event_id, 
             $content_digest_header
         );
 
-        $graphql_payload = json_encode( ['query' => $graphql_query] );
-
+        $graphql_payload  = json_encode( ['query' => $graphql_query] );
         $graphql_endpoint = $ticketmachine_api->base_url . "ticketmachine.de/graphql";
 
         $graphql_call_response = wp_remote_post( $graphql_endpoint, [
-            'method'    => 'POST', 
-            'headers'   => [
+            'method'      => 'POST', 
+            'headers'     => [
                 'Content-Type'  => 'application/json',
                 'Authorization' => 'Bearer ' . $api_key,
             ],
-            'body'      => $graphql_payload,
+            'body'        => $graphql_payload,
             'data_format' => 'body',
+            'sslverify'   => false,
         ] );
 
         if ( is_wp_error( $graphql_call_response ) ) {
-            return new WP_Error( 'graphql_call_failed', 'GraphQL call failed.', $graphql_call_response->get_error_message() );
+            $error_msg = $graphql_call_response->get_error_message();
+            error_log( 'Ticketmachine API Error: GraphQL call failed via cURL: ' . $error_msg );
+            return new WP_Error( 'graphql_call_failed', 'GraphQL network call failed: ' . $error_msg );
         }
         
-        $graphql_body = json_decode( wp_remote_retrieve_body( $graphql_call_response ) );
+        $graphql_body_raw = wp_remote_retrieve_body( $graphql_call_response );
+        $graphql_body     = json_decode( $graphql_body_raw );
 
         if ( isset( $graphql_body->errors ) || empty( $graphql_body->data->updateEventImage->target->url ) ) {
-            $error_details = json_encode( $graphql_body->errors ?? 'Target data missing.' );
+            $error_details = ! empty( $graphql_body->errors ) ? json_encode( $graphql_body->errors ) : $graphql_body_raw;
+            error_log( 'Ticketmachine API Error: GraphQL response contained errors or empty target URL: ' . $error_details );
             return new WP_Error( 'graphql_response_error', 'GraphQL response invalid or contained errors.', $error_details );
         }
 
-        $upload_url = $graphql_body->data->updateEventImage->target->url;
+        $upload_url   = $graphql_body->data->updateEventImage->target->url;
         $upload_token = $graphql_body->data->updateEventImage->target->token;
 
+        // 4. Raw Image Upload Post
         $upload_response = wp_remote_post( $upload_url, [
-            'method'    => 'POST', 
-            'headers'   => [
-                'Content-Type'      => $image_mime_type, 
-                'Authorization'     => 'Bearer ' . $upload_token,
-                'Content-Digest'    => $content_digest_header,
-                'Content-Length'    => $content_length, 
+            'method'      => 'POST', 
+            'headers'     => [
+                'Content-Type'     => $image_mime_type, 
+                'Authorization'    => 'Bearer ' . $upload_token,
+                'Content-Digest'   => $content_digest_header,
+                'Content-Length'   => $content_length, 
             ],
-            'body'      => $image_data,
+            'body'        => $image_data,
             'data_format' => 'body',
+            'sslverify'   => false,
         ] );
 
         if ( is_wp_error( $upload_response ) ) {
-            return new WP_Error( 'upload_failed', 'Raw image upload failed.', $upload_response->get_error_message() );
+            $error_msg = $upload_response->get_error_message();
+            error_log( 'Ticketmachine API Error: Raw image upload POST failed via cURL: ' . $error_msg );
+            return new WP_Error( 'upload_failed', 'Raw image upload failed: ' . $error_msg );
         }
         
         $http_code = wp_remote_retrieve_response_code( $upload_response );
 
         if ( $http_code < 200 || $http_code >= 300 ) {
-            return new WP_Error( 'upload_server_error', 'Upload failed with HTTP code ' . $http_code . '.', wp_remote_retrieve_body( $upload_response ) );
+            $error_response_body = wp_remote_retrieve_body( $upload_response );
+            error_log( 'Ticketmachine API Error: Upload server responded with HTTP code ' . $http_code . '. Body: ' . $error_response_body );
+            return new WP_Error( 'upload_server_error', 'Upload failed with HTTP code ' . $http_code . '.', $error_response_body );
         }
         
         return [
-            'status' => 'success',
-            'message' => 'Image successfully uploaded and assigned to event ' . $event_id . '.',
+            'status'    => 'success',
+            'message'   => 'Image successfully uploaded and assigned to event ' . $event_id . '.',
             'http_code' => $http_code,
         ];
     }
