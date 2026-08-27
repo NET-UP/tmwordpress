@@ -5,7 +5,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Tags: Events, Veranstaltungen, Kalender, GDPR, DSGVO
 Requires at least: 4.5.1
 Tested up to: 7.1
-Stable tag: 1.12.4
+Stable tag: 1.12.5
 
 Easily create, manage and share your events with TicketMachine
 
@@ -105,6 +105,10 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 
 == Changelog ==
+
+= 1.12.5 =
+* Fixed white screen errors when saving, copying, deleting events
+* Fixed image upload timeout errors
 
 = 1.12.4 =
 * Improved logging

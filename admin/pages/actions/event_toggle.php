@@ -5,9 +5,10 @@
 
     global $ticketmachine_globals, $ticketmachine_api;
 
-    $errors = array();
-    $response = null;
+    $errors             = array();
+    $response           = null;
     $ticketmachine_json = null;
+    $ticketmachine_post = array();
 
     // Check user capabilities
     if ( ! current_user_can( 'edit_posts' ) ) {
@@ -52,7 +53,7 @@
                     $ticketmachine_json = ticketmachine_tmapi_event( $ticketmachine_post, 'POST' );
                     $response           = json_decode( json_encode( $ticketmachine_json ) );
 
-                    // Handle API Errors (matching your actual API response structure)
+                    // Handle API Errors
                     if ( isset( $response->error->error_message ) ) {
                         $errors[] = $response->error->error_message;
                     } elseif ( empty( $ticketmachine_json ) || ( isset( $response->result ) && $response->result === 'failure' ) ) {
@@ -63,23 +64,14 @@
         }
     }
 
-
-
+    // Optional Debugging (safe execution)
     if ( function_exists( 'ticketmachine_debug' ) ) {
         ticketmachine_debug( $ticketmachine_post );
         ticketmachine_debug( $response );
     }
 
-    // Output Errors or Handle Success/Redirect
-    if ( ! empty( $errors ) ) {
-        foreach ( $errors as $error_message ) {
-            ?>
-            <div class="notice notice-error is-dismissable">
-                <p><?php echo esc_html( $error_message ); ?></p>
-            </div>
-            <?php
-        }
-    } else {
+    // Handle Success & Redirect Immediately if no errors occurred
+    if ( empty( $errors ) ) {
         $redirect_url = add_query_arg(
             array(
                 'page'   => isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : '',
@@ -94,5 +86,16 @@
 
         wp_safe_redirect( $redirect_url );
         exit;
+    }
+
+    // Fallback: Output Errors if any occurred
+    if ( ! empty( $errors ) ) {
+        foreach ( $errors as $error_message ) {
+            ?>
+            <div class="notice notice-error is-dismissable">
+                <p><?php echo esc_html( $error_message ); ?></p>
+            </div>
+            <?php
+        }
     }
 ?>

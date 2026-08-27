@@ -491,6 +491,7 @@
             ],
             'body'        => $graphql_payload,
             'data_format' => 'body',
+            'timeout'     => 45,
             'sslverify'   => false,
         ] );
 
@@ -523,6 +524,7 @@
             ],
             'body'        => $image_data,
             'data_format' => 'body',
+            'timeout'     => 45,
             'sslverify'   => false,
         ] );
 
