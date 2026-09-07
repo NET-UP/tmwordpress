@@ -381,7 +381,7 @@
 	
 	function ticketmachine_update() {
 		global $ticketmachine_db_version;
-		if ( get_site_option( 'ticketmachine_db_version' ) != $ticketmachine_db_version) {
+		if ( get_option( 'ticketmachine_db_version' ) !== $ticketmachine_db_version ) {
 			ticketmachine_activate();
 		}
 	}
