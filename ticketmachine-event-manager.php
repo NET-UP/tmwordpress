@@ -189,8 +189,13 @@
 	register_deactivation_hook(__FILE__, 'ticketmachine_deactivate');
 
 	function ticketmachine_activate() {
-		global $wpdb;
-		global $ticketmachine_db_version;
+		global $wpdb, $wp_rewrite, $ticketmachine_db_version;
+
+		// Safety guard for plugins_loaded: initialize rewrite rules if WP hasn't loaded them yet
+		if ( ! isset( $wp_rewrite ) || null === $wp_rewrite ) {
+			require_once ABSPATH . WPINC . '/rewrite.php';
+			$wp_rewrite = new WP_Rewrite();
+		}
 
 		$table_name = $wpdb->prefix . 'ticketmachine_config';
 		$query = $wpdb->prepare('SHOW TABLES LIKE %s', $wpdb->esc_like($table_name));
