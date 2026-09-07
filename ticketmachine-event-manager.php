@@ -3,7 +3,7 @@
 	Plugin Name:        TicketMachine Event Manager & Calendar
     Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
-	Version:            1.12.7
+	Version:            1.12.8
     Requires at least:  4.5
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
@@ -212,22 +212,22 @@
 			}
 		}
 
-		// HANDLE EVENTS LIST PAGE
+		// --- HANDLE EVENTS LIST PAGE ---
 		$events_post = get_post($events_slug_id);
-		// Ensure the ID points to a real, non-trashed post
 		if ($events_slug_id <= 0 || !$events_post || $events_post->post_status === 'trash') {
-			$events_slug_id = 0; // Reset invalid ID
-			$page_check = get_page_by_path('events');
+			$events_slug_id = 0;
+			$target_slug    = 'events';
+			$page_check     = get_page_by_path($target_slug);
 
-			if (!$page_check) {
-				$page_check = get_page_by_path('tm-events');
+			// If 'events' exists but doesn't have our shortcode, fall back to 'tm-events'
+			if ($page_check && !has_shortcode($page_check->post_content, 'ticketmachine')) {
+				$target_slug = 'tm-events';
+				$page_check  = get_page_by_path($target_slug);
 			}
 
-			// Check if page exists and is NOT trashed
 			if ($page_check && $page_check->post_status !== 'trash') {
 				$events_slug_id = $page_check->ID;
 			} elseif ($page_check && $page_check->post_status === 'trash') {
-				// Restore trashed page
 				wp_untrash_post($page_check->ID);
 				wp_update_post(array(
 					'ID'          => $page_check->ID,
@@ -235,11 +235,10 @@
 				));
 				$events_slug_id = $page_check->ID;
 			} else {
-				// Create brand new page
 				$events_slug_id = wp_insert_post(array(
 					'post_type'    => 'page',
 					'post_title'   => 'Events',
-					'post_name'    => 'events',
+					'post_name'    => $target_slug,
 					'post_content' => '[ticketmachine page="event_list"]',
 					'post_status'  => 'publish',
 					'post_author'  => 1,
@@ -247,22 +246,22 @@
 			}
 		}
 
-		// HANDLE SINGLE EVENT PAGE
+		// --- HANDLE SINGLE EVENT PAGE ---
 		$event_post = get_post($event_slug_id);
-		// Ensure the ID points to a real, non-trashed post
 		if ($event_slug_id <= 0 || !$event_post || $event_post->post_status === 'trash') {
-			$event_slug_id = 0; // Reset invalid ID
-			$page_check = get_page_by_path('event');
+			$event_slug_id = 0;
+			$target_slug   = 'event';
+			$page_check    = get_page_by_path($target_slug);
 
-			if (!$page_check) {
-				$page_check = get_page_by_path('tm-event');
+			// If 'event' exists but doesn't have our shortcode, fall back to 'tm-event'
+			if ($page_check && !has_shortcode($page_check->post_content, 'ticketmachine')) {
+				$target_slug = 'tm-event';
+				$page_check  = get_page_by_path($target_slug);
 			}
 
-			// Check if page exists and is NOT trashed
 			if ($page_check && $page_check->post_status !== 'trash') {
 				$event_slug_id = $page_check->ID;
 			} elseif ($page_check && $page_check->post_status === 'trash') {
-				// Restore trashed page
 				wp_untrash_post($page_check->ID);
 				wp_update_post(array(
 					'ID'          => $page_check->ID,
@@ -270,11 +269,10 @@
 				));
 				$event_slug_id = $page_check->ID;
 			} else {
-				// Create brand new page
 				$event_slug_id = wp_insert_post(array(
 					'post_type'    => 'page',
 					'post_title'   => 'Event',
-					'post_name'    => 'event',
+					'post_name'    => $target_slug,
 					'post_content' => '[ticketmachine page="event_details"]',
 					'post_status'  => 'publish',
 					'post_author'  => 1,
@@ -282,6 +280,7 @@
 			}
 		}
 
+		// --- DATABASE MIGRATIONS & TABLES ---
 		$charset_collate = $wpdb->get_charset_collate();
 
 		$table = $wpdb->prefix . 'ticketmachine_config';
@@ -328,7 +327,7 @@
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		dbDelta($sql);
 
-		// Ensure initial record exists or update current IDs
+		// Save/update resolved IDs
 		$wpdb->query($wpdb->prepare(
 			"INSERT INTO {$table} (id, events_slug_id, event_slug_id) VALUES (1, %d, %d)
 			ON DUPLICATE KEY UPDATE events_slug_id = %d, event_slug_id = %d",
@@ -338,6 +337,7 @@
 			$event_slug_id
 		));
 
+		// Design Table
 		$table = $wpdb->prefix . 'ticketmachine_design';
 		$sql = "CREATE TABLE $table (
 					id mediumint(9) DEFAULT 1 NOT NULL,
@@ -368,6 +368,7 @@
 
 		$wpdb->query("INSERT IGNORE INTO $table (id) VALUES (1)");
 
+		// Organizers Table
 		$table = $wpdb->prefix . 'ticketmachine_organizers';
 		$sql = "CREATE TABLE IF NOT EXISTS $table (
 					id int(11) NOT NULL AUTO_INCREMENT,
@@ -384,6 +385,7 @@
 				) $charset_collate;";
 		dbDelta($sql);
 
+		// Organizers Match Table
 		$table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
 		$sql = "CREATE TABLE $table (
 					id int(11) NOT NULL AUTO_INCREMENT,
@@ -394,6 +396,7 @@
 				) $charset_collate;";
 		dbDelta($sql);
 
+		// Log Table
 		$table = $wpdb->prefix . 'ticketmachine_log';
 		$sql = "CREATE TABLE $table (
 					id int(11) NOT NULL AUTO_INCREMENT,
@@ -404,7 +407,6 @@
 				) $charset_collate;";
 		dbDelta($sql);
 
-		// Update version option at the very end
 		update_option('ticketmachine_db_version', $ticketmachine_db_version);
 	}
 
