@@ -3,7 +3,7 @@
 	Plugin Name:        TicketMachine Event Manager & Calendar
     Plugin URI:         https://www.ticketmachine.de/
 	Description:        Easily create and manage cloud-based events for your wordpress site.
-	Version:            1.12.5
+	Version:            1.12.6
     Requires at least:  4.5
     Author:             NET-UP AG
 	Author URI:         https://www.net-up.de
@@ -22,7 +22,7 @@
 	add_action( 'init', 'ticketmachine_wpdocs_load_textdomain' );
 
 	global $ticketmachine_db_version;
-	$ticketmachine_db_version = "1.12.5";
+	$ticketmachine_db_version = "1.12.6";
 	
 	// Load translations if they don't already exist
     function ticketmachine_wpdocs_load_textdomain() {
@@ -189,217 +189,194 @@
     register_deactivation_hook(__FILE__, 'ticketmachine_deactivate');
 
 	// Run when plugin is activated
-    function ticketmachine_activate( ) {
-        global $wpdb;
+	function ticketmachine_activate( ) {
+		global $wpdb;
 		global $ticketmachine_db_version;
 
-		$table_name = $wpdb->prefix.'ticketmachine_config';
+		$table_name = $wpdb->prefix . 'ticketmachine_config';
 		$query = $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->esc_like( $table_name ) );
 
-		// check if table doesnt exist
-		if ( ! $wpdb->get_var( $query ) == $table_name ) {
-			//create events overview page
-			$new_page_title = 'Events';
-			$new_page_slug = 'events';
-			$new_page_content = '[ticketmachine page="event_list"]';
-			$new_page_template = '';
-			$create_new_page = false;
-		
-			$page_check = get_page_by_path($new_page_slug);
+		$events_slug_id = 0;
+		$event_slug_id  = 0;
 
-			if(!isset($page_check->ID)){
-				$create_new_page = true;
-			}else{
-				if(!has_shortcode( $page_check->post_content, 'ticketmachine')){
-					$new_page_slug = 'tm-events';
-					$page_check = get_page_by_path($new_page_slug);
-					if(!isset($page_check->ID)){
-						$create_new_page = true;
-					}
-				}
+		// Fetch existing page IDs if the configuration table already exists
+		if ( $wpdb->get_var( $query ) === $table_name ) {
+			$ticketmachine_config_temp = $wpdb->get_results("SELECT events_slug_id, event_slug_id FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
+			if ( ! empty( $ticketmachine_config_temp ) ) {
+				$events_slug_id = (int) $ticketmachine_config_temp[0]->events_slug_id;
+				$event_slug_id  = (int) $ticketmachine_config_temp[0]->event_slug_id;
 			}
-
-			$new_page = array(
-				'post_type' => 'page',
-				'post_title' => $new_page_title,
-				'post_name' => $new_page_slug,
-				'post_content' => $new_page_content,
-				'post_status' => 'publish',
-				'post_author' => 1,
-			);
-
-			if($create_new_page === true){
-				$new_page_id = wp_insert_post($new_page);
-				if(!empty($new_page_template)){
-					update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
-				}
-			}
-
-			$events_slug = get_page_by_path($new_page_slug);
-
-			//create event detail page
-			$new_page_title = 'Event';
-			$new_page_slug = 'event';
-			$new_page_content = '[ticketmachine page="event_details"]';
-			$new_page_template = '';
-			$create_new_page = false;
-		
-			$page_check = get_page_by_path($new_page_slug);
-
-			if(!isset($page_check->ID)){
-				$create_new_page = true;
-			}else{
-				if(!has_shortcode( $page_check->post_content, 'ticketmachine')){
-					$new_page_slug = 'tm-event';
-					$page_check = get_page_by_path($new_page_slug);
-					if(!isset($page_check->ID)){
-						$create_new_page = true;
-					}
-				}
-			}
-
-			$new_page = array(
-				'post_type' => 'page',
-				'post_title' => $new_page_title,
-				'post_name' => $new_page_slug,
-				'post_content' => $new_page_content,
-				'post_status' => 'publish',
-				'post_author' => 1,
-			);
-
-			if($create_new_page === true){
-				$new_page_id = wp_insert_post($new_page);
-				if(!empty($new_page_template)){
-					update_post_meta($new_page_id, '_wp_page_template', $new_page_template);
-				}
-			}
-
-			$event_slug = get_page_by_path($new_page_slug);	
-
-			$event_slug_id = $event_slug->ID;
-			$events_slug_id = $events_slug->ID;
-		}else{
-			$ticketmachine_config_temp = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}ticketmachine_config LIMIT 0,1");
-			$ticketmachine_config_temp = $ticketmachine_config_temp[0];
-
-			$event_slug_id = $ticketmachine_config_temp->event_slug_id;
-			$events_slug_id = $ticketmachine_config_temp->events_slug_id;
 		}
-		
-        $charset_collate = $wpdb->get_charset_collate();
 
-        $table = $wpdb->prefix . 'ticketmachine_config';
-        $sql = "CREATE TABLE $table (
-                    id mediumint(9) DEFAULT 1 NOT NULL,
-                    organizer_id int(11) DEFAULT 0 NOT NULL,
-                    organizer varchar(64) DEFAULT '' NOT NULL,
-                    webshop_url varchar(64) DEFAULT '' NOT NULL,
-                    api_client_id varchar(64) DEFAULT 'c16727aa80540e51edcd276641c6f68974bb312ec5b17b75a3bc0ba254236a14' NOT NULL,
-                    api_client_secret varchar(64) DEFAULT '1d3fb26a828f0e09700464997271c5236bb7d3194992299331eaa1c420a7f522' NOT NULL,
-                    api_refresh_token varchar(64) DEFAULT '' NOT NULL,
-                    api_access_token varchar(64) DEFAULT '' NOT NULL,
-                    api_refresh_last int(11) DEFAULT " . time() . " NOT NULL,
-                    api_refresh_interval int(11) DEFAULT 3600 NOT NULL,
+		// If the saved ID points to a valid post, keep it! (handles renamed slugs like "veranstaltungen")
+		if ( $events_slug_id <= 0 || ! get_post( $events_slug_id ) ) {
+			$page_check = get_page_by_path( 'events' );
+
+			if ( ! isset( $page_check->ID ) ) {
+				$page_check = get_page_by_path( 'tm-events' );
+			}
+
+			if ( isset( $page_check->ID ) ) {
+				$events_slug_id = $page_check->ID;
+			} else {
+				// Create page only if no valid page exists at all
+				$events_slug_id = wp_insert_post( array(
+					'post_type'    => 'page',
+					'post_title'   => 'Events',
+					'post_name'    => 'events',
+					'post_content' => '[ticketmachine page="event_list"]',
+					'post_status'  => 'publish',
+					'post_author'  => 1,
+				) );
+			}
+		}
+
+		// If the saved ID points to a valid post, keep it! (handles renamed slugs like "veranstaltung")
+		if ( $event_slug_id <= 0 || ! get_post( $event_slug_id ) ) {
+			$page_check = get_page_by_path( 'event' );
+
+			if ( ! isset( $page_check->ID ) ) {
+				$page_check = get_page_by_path( 'tm-event' );
+			}
+
+			if ( isset( $page_check->ID ) ) {
+				$event_slug_id = $page_check->ID;
+			} else {
+				// Create page only if no valid page exists at all
+				$event_slug_id = wp_insert_post( array(
+					'post_type'    => 'page',
+					'post_title'   => 'Event',
+					'post_name'    => 'event',
+					'post_content' => '[ticketmachine page="event_details"]',
+					'post_status'  => 'publish',
+					'post_author'  => 1,
+				) );
+			}
+		}
+
+		$charset_collate = $wpdb->get_charset_collate();
+
+		$table = $wpdb->prefix . 'ticketmachine_config';
+		$sql = "CREATE TABLE $table (
+					id mediumint(9) DEFAULT 1 NOT NULL,
+					organizer_id int(11) DEFAULT 0 NOT NULL,
+					organizer varchar(64) DEFAULT '' NOT NULL,
+					webshop_url varchar(64) DEFAULT '' NOT NULL,
+					api_client_id varchar(64) DEFAULT 'c16727aa80540e51edcd276641c6f68974bb312ec5b17b75a3bc0ba254236a14' NOT NULL,
+					api_client_secret varchar(64) DEFAULT '1d3fb26a828f0e09700464997271c5236bb7d3194992299331eaa1c420a7f522' NOT NULL,
+					api_refresh_token varchar(64) DEFAULT '' NOT NULL,
+					api_access_token varchar(64) DEFAULT '' NOT NULL,
+					api_refresh_last int(11) DEFAULT " . time() . " NOT NULL,
+					api_refresh_interval int(11) DEFAULT 3600 NOT NULL,
 					api_token_failed bit(1) DEFAULT 0 NOT NULL,
-                    api_environment varchar(64) DEFAULT 'shop' NOT NULL,
-                    show_list bit(1) DEFAULT 1 NOT NULL,
-                    show_boxes bit(1) DEFAULT 1 NOT NULL,
-                    show_calendar bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_ical bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_google_cal bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_facebook bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_twitter bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_email bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_messenger bit(1) DEFAULT 1 NOT NULL,
-                    show_social_media_whatsapp bit(1) DEFAULT 1 NOT NULL,
-                    show_google_map bit(1) DEFAULT 1 NOT NULL,
-                    show_additional_info bit(1) DEFAULT 1 NOT NULL,
+					api_environment varchar(64) DEFAULT 'shop' NOT NULL,
+					show_list bit(1) DEFAULT 1 NOT NULL,
+					show_boxes bit(1) DEFAULT 1 NOT NULL,
+					show_calendar bit(1) DEFAULT 1 NOT NULL,
+					show_social_media bit(1) DEFAULT 1 NOT NULL,
+					show_social_media_ical bit(1) DEFAULT 1 NOT NULL,
+					show_social_media_google_cal bit(1) DEFAULT 1 NOT NULL,
+					show_social_media_facebook bit(1) DEFAULT 1 NOT NULL,
+					show_social_media_twitter bit(1) DEFAULT 1 NOT NULL,
+					show_social_media_email bit(1) DEFAULT 1 NOT NULL,
+					show_social_media_messenger bit(1) DEFAULT 1 NOT NULL,
+					show_social_media_whatsapp bit(1) DEFAULT 1 NOT NULL,
+					show_google_map bit(1) DEFAULT 1 NOT NULL,
+					show_additional_info bit(1) DEFAULT 1 NOT NULL,
 					show_calendar_start_time bit(1) DEFAULT 0 NOT NULL,
 					show_search bit(1) DEFAULT 1 NOT NULL,
 					filter_date_enabled bit(1) DEFAULT 0 NOT NULL,
-                    detail_page_layout int(3) DEFAULT 2 NOT NULL,
-                    event_grouping varchar(64) DEFAULT 'Year' NOT NULL,
-                    events_slug_id int(11) DEFAULT " . $events_slug_id . " NOT NULL,
-                    event_slug_id int(11) DEFAULT " . $event_slug_id . " NOT NULL,
-                    privacy_slug_id varchar(11) DEFAULT 0 NOT NULL,
+					detail_page_layout int(3) DEFAULT 2 NOT NULL,
+					event_grouping varchar(64) DEFAULT 'Year' NOT NULL,
+					events_slug_id int(11) DEFAULT " . (int)$events_slug_id . " NOT NULL,
+					event_slug_id int(11) DEFAULT " . (int)$event_slug_id . " NOT NULL,
+					privacy_slug_id varchar(11) DEFAULT 0 NOT NULL,
 					event_detail_image_ratio varchar(64) DEFAULT '16:9' NOT NULL,
 					event_box_image_ratio varchar(64) DEFAULT '16:9' NOT NULL,
 					event_list_image_ratio varchar(64) DEFAULT '1:1' NOT NULL,
-                PRIMARY KEY  (id)
-                ) $charset_collate;";
+				PRIMARY KEY  (id)
+				) $charset_collate;";
 
-        require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-        dbDelta( $sql );
-        
-        $wpdb->query("INSERT IGNORE INTO $table (id) VALUES (1)");
-        
-        $table = $wpdb->prefix . 'ticketmachine_design';
-        $sql = "CREATE TABLE $table (
-                    id mediumint(9) DEFAULT 1 NOT NULL,
-                    link_text_color varchar(64) DEFAULT '#0fb1e4' NOT NULL,
-                    link_text_color_hover varchar(64) DEFAULT '#0056b3' NOT NULL,
-                    container_background_color varchar(64) DEFAULT '#ffffff' NOT NULL,
-                    box_text_color varchar(64) DEFAULT '#222222' NOT NULL,
-                    box_meta_color varchar(64) DEFAULT '#222222' NOT NULL,
-                    box_header_color varchar(64) DEFAULT '#222222' NOT NULL,
-                    box_border_color varchar(64) DEFAULT '#DDDDDD' NOT NULL,
-                    date_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
-                    price_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
-                    button_primary_background_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
-                    button_primary_text_color varchar(64) DEFAULT '#ffffff' NOT NULL,
-                    button_primary_border_color varchar(64) DEFAULT '#f58d3e' NOT NULL,
-                    button_primary_background_color_hover varchar(64) DEFAULT '#f58d3e' NOT NULL,
-                    button_primary_text_color_hover varchar(64) DEFAULT '#ffffff' NOT NULL,
-                    button_primary_border_color_hover varchar(64) DEFAULT '#f58d3e' NOT NULL,
-                    button_secondary_background_color varchar(64) DEFAULT '#f7f7f7' NOT NULL,
-                    button_secondary_text_color varchar(64) DEFAULT '#666666' NOT NULL,
-                    button_secondary_border_color varchar(64) DEFAULT '#dadada' NOT NULL,
-                    button_secondary_background_color_hover varchar(64) DEFAULT '#f7f7f7' NOT NULL,
-                    button_secondary_text_color_hover varchar(64) DEFAULT '#666666' NOT NULL,
-                    button_secondary_border_color_hover varchar(64) DEFAULT '#dadada' NOT NULL,
-                	PRIMARY KEY  (id)
-                ) $charset_collate;";
-        dbDelta( $sql );
-        
-        $wpdb->query("INSERT IGNORE INTO $table (id) VALUES (1)");
-        
-        $table = $wpdb->prefix . 'ticketmachine_organizers';
-        $sql = "CREATE TABLE IF NOT EXISTS $table (
-					id int(11) NOT NULL AUTO_INCREMENT,
-                    approved tinyint(1) DEFAULT 0 NOT NULL,
-                    og_name varchar(128) DEFAULT '' NOT NULL,
-                    og_street varchar(128) DEFAULT '' NOT NULL,
-                    og_house_number varchar(128) DEFAULT '' NOT NULL,
-                    og_zip varchar(128) DEFAULT '' NOT NULL,
-                    og_city varchar(128) DEFAULT '' NOT NULL,
-                    og_country varchar(128) DEFAULT '' NOT NULL,
-                    og_email varchar(128) DEFAULT '' NOT NULL,
-                    og_phone varchar(128) DEFAULT '' NOT NULL,
-                	PRIMARY KEY  (id)
-                ) $charset_collate;";
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
 		dbDelta( $sql );
-        
-        $table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
-        $sql = "CREATE TABLE $table (
+
+		// Ensure initial record exists or update current IDs
+		$wpdb->query( $wpdb->prepare(
+			"INSERT INTO {$table} (id, events_slug_id, event_slug_id) VALUES (1, %d, %d)
+			ON DUPLICATE KEY UPDATE events_slug_id = %d, event_slug_id = %d",
+			$events_slug_id,
+			$event_slug_id,
+			$events_slug_id,
+			$event_slug_id
+		) );
+
+		$table = $wpdb->prefix . 'ticketmachine_design';
+		$sql = "CREATE TABLE $table (
+					id mediumint(9) DEFAULT 1 NOT NULL,
+					link_text_color varchar(64) DEFAULT '#0fb1e4' NOT NULL,
+					link_text_color_hover varchar(64) DEFAULT '#0056b3' NOT NULL,
+					container_background_color varchar(64) DEFAULT '#ffffff' NOT NULL,
+					box_text_color varchar(64) DEFAULT '#222222' NOT NULL,
+					box_meta_color varchar(64) DEFAULT '#222222' NOT NULL,
+					box_header_color varchar(64) DEFAULT '#222222' NOT NULL,
+					box_border_color varchar(64) DEFAULT '#DDDDDD' NOT NULL,
+					date_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
+					price_text_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
+					button_primary_background_color varchar(64) DEFAULT '#ee7d26' NOT NULL,
+					button_primary_text_color varchar(64) DEFAULT '#ffffff' NOT NULL,
+					button_primary_border_color varchar(64) DEFAULT '#f58d3e' NOT NULL,
+					button_primary_background_color_hover varchar(64) DEFAULT '#f58d3e' NOT NULL,
+					button_primary_text_color_hover varchar(64) DEFAULT '#ffffff' NOT NULL,
+					button_primary_border_color_hover varchar(64) DEFAULT '#f58d3e' NOT NULL,
+					button_secondary_background_color varchar(64) DEFAULT '#f7f7f7' NOT NULL,
+					button_secondary_text_color varchar(64) DEFAULT '#666666' NOT NULL,
+					button_secondary_border_color varchar(64) DEFAULT '#dadada' NOT NULL,
+					button_secondary_background_color_hover varchar(64) DEFAULT '#f7f7f7' NOT NULL,
+					button_secondary_text_color_hover varchar(64) DEFAULT '#666666' NOT NULL,
+					button_secondary_border_color_hover varchar(64) DEFAULT '#dadada' NOT NULL,
+					PRIMARY KEY  (id)
+				) $charset_collate;";
+		dbDelta( $sql );
+
+		$wpdb->query("INSERT IGNORE INTO $table (id) VALUES (1)");
+
+		$table = $wpdb->prefix . 'ticketmachine_organizers';
+		$sql = "CREATE TABLE IF NOT EXISTS $table (
 					id int(11) NOT NULL AUTO_INCREMENT,
-                    organizer_id int(11) DEFAULT 0 NOT NULL,
-                    api_event_id int(11) DEFAULT 0 NOT NULL,
-                    local_event_id int(11) DEFAULT 0 NOT NULL,
-                	PRIMARY KEY  (id)
-                ) $charset_collate;";
-        dbDelta( $sql );
-        
-        $table = $wpdb->prefix . 'ticketmachine_log';
-        $sql = "CREATE TABLE $table (
+					approved tinyint(1) DEFAULT 0 NOT NULL,
+					og_name varchar(128) DEFAULT '' NOT NULL,
+					og_street varchar(128) DEFAULT '' NOT NULL,
+					og_house_number varchar(128) DEFAULT '' NOT NULL,
+					og_zip varchar(128) DEFAULT '' NOT NULL,
+					og_city varchar(128) DEFAULT '' NOT NULL,
+					og_country varchar(128) DEFAULT '' NOT NULL,
+					og_email varchar(128) DEFAULT '' NOT NULL,
+					og_phone varchar(128) DEFAULT '' NOT NULL,
+					PRIMARY KEY  (id)
+				) $charset_collate;";
+		dbDelta( $sql );
+
+		$table = $wpdb->prefix . 'ticketmachine_organizers_events_match';
+		$sql = "CREATE TABLE $table (
 					id int(11) NOT NULL AUTO_INCREMENT,
-                    log_message text DEFAULT '' NOT NULL,
-                    log_type varchar(64) DEFAULT 'info' NOT NULL,
-                    log_time int(11) DEFAULT 0 NOT NULL,
-                	PRIMARY KEY  (id)
-                ) $charset_collate;";
-        dbDelta( $sql );
-        update_option('ticketmachine_db_version', $ticketmachine_db_version);
+					organizer_id int(11) DEFAULT 0 NOT NULL,
+					api_event_id int(11) DEFAULT 0 NOT NULL,
+					local_event_id int(11) DEFAULT 0 NOT NULL,
+					PRIMARY KEY  (id)
+				) $charset_collate;";
+		dbDelta( $sql );
+
+		$table = $wpdb->prefix . 'ticketmachine_log';
+		$sql = "CREATE TABLE $table (
+					id int(11) NOT NULL AUTO_INCREMENT,
+					log_message text DEFAULT '' NOT NULL,
+					log_type varchar(64) DEFAULT 'info' NOT NULL,
+					log_time int(11) DEFAULT 0 NOT NULL,
+					PRIMARY KEY  (id)
+				) $charset_collate;";
+		dbDelta( $sql );
+
+		update_option('ticketmachine_db_version', $ticketmachine_db_version);
 	}
 	
 	function ticketmachine_update() {
