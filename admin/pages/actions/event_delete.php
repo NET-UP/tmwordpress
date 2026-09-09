@@ -63,7 +63,6 @@
                             exit;
                         }
 
-                        error_log( "TicketMachine Warning: Delete event headers sent in {$file} on line {$line}. Falling back to JS redirect." );
                         ?>
                         <div>
                             <p><?php esc_html_e( 'Redirecting...', 'ticketmachine-event-manager' ); ?></p>
