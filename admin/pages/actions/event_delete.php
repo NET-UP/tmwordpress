@@ -58,7 +58,23 @@
                             admin_url( 'admin.php' )
                         );
 
-                        wp_safe_redirect( $redirect_url );
+                        if ( ! headers_sent( $file, $line ) ) {
+                            wp_safe_redirect( $redirect_url );
+                            exit;
+                        }
+
+                        error_log( "TicketMachine Warning: Delete event headers sent in {$file} on line {$line}. Falling back to JS redirect." );
+                        ?>
+                        <div>
+                            <p><?php esc_html_e( 'Redirecting...', 'ticketmachine-event-manager' ); ?></p>
+                        </div>
+                        <script type="text/javascript">
+                            window.location.href = <?php echo wp_json_encode( esc_url_raw( $redirect_url ) ); ?>;
+                        </script>
+                        <noscript>
+                            <meta http-equiv="refresh" content="0;url=<?php echo esc_url( $redirect_url ); ?>" />
+                        </noscript>
+                        <?php
                         exit;
                     }
                 }

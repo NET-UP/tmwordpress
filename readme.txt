@@ -106,6 +106,9 @@ When using the TicketMachine Event Manager plugin, you automatically receive a T
 
 == Changelog ==
 
+= 1.12.9 =
+* Fallback for redirect issues when headers are already sent in admin panel
+
 = 1.12.8 =
 * Optimized plugin activation hook
 
